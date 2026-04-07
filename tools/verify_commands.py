@@ -2,7 +2,7 @@
 """
 Command Verification System
 
-Validates all 43 lesson command files for structural integrity,
+Validates all lesson command files for structural integrity,
 format consistency, and completeness.
 """
 
@@ -10,10 +10,8 @@ import re
 import json
 from pathlib import Path
 from datetime import datetime
-from collections import defaultdict
-
 # Configuration
-PROJECT_ROOT = Path.home() / "aiagent-base"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 COMMANDS_DIRS = [
     PROJECT_ROOT / ".cursor" / "commands" / "lesson",
     PROJECT_ROOT / ".claude" / "commands" / "lesson",
@@ -110,58 +108,22 @@ def validate_link_references(filepath):
 
 def validate_all_commands():
     """Run validation on all command files"""
+    command_files = []
+    for cmd_dir in COMMANDS_DIRS:
+        if cmd_dir.exists():
+            command_files.extend(sorted(cmd_dir.glob("start-*.md")))
+
     results = {
         'timestamp': datetime.now().isoformat(),
-        'total_files': 0,
+        'total_files': len(command_files),
         'passed': 0,
         'failed': 0,
         'files': {}
     }
 
-    # Process all command files
-    for file_num in range(43):
-        module = file_num // 10 if file_num < 10 else file_num // 6
-        lesson = (file_num % 10) + 1 if file_num < 10 else (file_num % 6) + 1
-
-        # Adjust for actual module structure
-        if file_num < 5:  # Module 0
-            module, lesson = 0, file_num + 1
-        elif file_num < 8:  # Module 1
-            module, lesson = 1, file_num - 4
-        elif file_num < 11:  # Module 2
-            module, lesson = 2, file_num - 7
-        elif file_num < 17:  # Module 3
-            module, lesson = 3, file_num - 10
-        elif file_num < 21:  # Module 4
-            module, lesson = 4, file_num - 16
-        elif file_num < 23:  # Module 5
-            module, lesson = 5, file_num - 20
-        elif file_num < 25:  # Module 6
-            module, lesson = 6, file_num - 22
-        elif file_num < 31:  # Module 7
-            module, lesson = 7, file_num - 24
-        elif file_num < 34:  # Module 8
-            module, lesson = 8, file_num - 30
-        elif file_num < 36:  # Module 9
-            module, lesson = 9, file_num - 33
-        elif file_num < 38:  # Module 10
-            module, lesson = 10, file_num - 35
-        else:  # Module 11
-            module, lesson = 11, file_num - 37
-
-        # Search across all command directories
-        filepath = None
-        for cmd_dir in COMMANDS_DIRS:
-            candidate = cmd_dir / f"start-{module}-{lesson}.md"
-            if candidate.exists():
-                filepath = candidate
-                break
-
-        if filepath is None:
-            continue
-
-        results['total_files'] += 1
-        file_key = f"start-{module}-{lesson}"
+    # Process all lesson command files that exist in the repo.
+    for filepath in command_files:
+        file_key = str(filepath.relative_to(PROJECT_ROOT))
 
         # Run validations
         structure_result = validate_file_structure(filepath)
@@ -238,7 +200,7 @@ def main():
 
     print(f"\n✅ Validation complete!")
     print(f"📊 Results:")
-    print(f"   - Files checked: {results['total_files']}/43")
+    print(f"   - Files checked: {results['total_files']}")
     print(f"   - Passed: {results['passed']}")
     print(f"   - Failed: {results['failed']}")
     print(f"\n📄 Reports generated:")
