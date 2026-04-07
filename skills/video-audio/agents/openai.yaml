@@ -1,0 +1,3 @@
+interface:
+  display_name: "Video Audio"
+  short_description: "動画用音声生成スキル。ElevenLabs TTS APIでscenes.jsonのナレーションから"

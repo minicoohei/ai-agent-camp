@@ -1,0 +1,15 @@
+# Chapter 7: 動画生成
+id: "module15-video"
+order: 7
+name: "動画生成"
+description: "AI UGC動画の絵コンテ作成と動画生成を行います。"
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "絵コンテ（ストーリーボード）を生成できる"
+  - "キャラクター一貫性を維持できる"
+  - "Kling APIで動画生成できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-15"
+  slides: "https://ai-agent.camp/ja/course/module-15"

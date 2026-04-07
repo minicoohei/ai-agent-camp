@@ -1,0 +1,23 @@
+# AI Agent Training Course
+id: "aiagent"
+name: "AI Agent Training"
+description: "A practical course on leveraging AI agents for non-engineers. Learn business automation and efficiency using Claude Code / Cursor / Codex."
+icon: "bot"
+version: "1.0.0"
+author: "AI Brain Partners"
+audience: "Non-engineers (marketing, sales, planning, etc.)"
+estimatedHours: 12
+cover: "cover.png"
+prerequisites:
+  - "Basic PC operations"
+  - "Internet connection"
+  - "Eagerness to learn"
+tags:
+  - "AI Agent"
+  - "Claude Code"
+  - "Cursor"
+  - "Codex"
+  - "Business Automation"
+  - "Efficiency"
+language: "en"
+lastUpdated: "2026-02-10"

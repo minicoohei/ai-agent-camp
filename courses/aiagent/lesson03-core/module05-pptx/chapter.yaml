@@ -1,0 +1,15 @@
+# Chapter 5: PPTX解析・編集
+id: "module05-pptx"
+order: 5
+name: "PPTX解析・編集"
+description: "PowerPointファイルの解析と自動編集を行います。"
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "スライド構造を解析できる"
+  - "テンプレートを抽出できる"
+  - "新規スライドを生成できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-5"
+  slides: "https://ai-agent.camp/ja/course/module-5"

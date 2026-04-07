@@ -1,0 +1,15 @@
+# Chapter 4: データ分析
+id: "module08-data-analysis"
+order: 4
+name: "データ分析"
+description: "BigQuery/Snowflakeに接続してデータ分析を行います。"
+type: "manual"
+estimatedMinutes: 120
+objectives:
+  - "GCP認証とBigQuery接続ができる"
+  - "探索的データ分析（EDA）ができる"
+  - "可視化グラフを作成できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-8"
+  slides: "https://ai-agent.camp/ja/course/module-8"

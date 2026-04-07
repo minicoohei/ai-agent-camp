@@ -1,0 +1,16 @@
+# Chapter 2: Token Concepts
+id: "ch02-tokens"
+order: 2
+name: "Token Concepts"
+description: "Learn about tokens and context windows."
+type: "manual"
+estimatedMinutes: 30
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch01-llm-basics"
+objectives:
+  - "Understand the concept of tokens"
+  - "Understand the difference between input and output tokens"
+  - "Understand context window limitations"
+externalContent:
+  manual: "../../../../course/foundation/tokens.html"

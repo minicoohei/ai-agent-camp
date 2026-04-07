@@ -1,0 +1,57 @@
+[project]
+name = "ai-agent-camp"
+version = "1.0.0"
+description = "AI Agent Training Platform"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_default_fixture_loop_scope = "function"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests requiring external services",
+    "tools: marks tests for tools/ modules",
+    "skills: marks tests for .claude/skills/ modules",
+    "knowledge_base: marks tests for sync-data helper modules",
+    "structure: marks tests for project structure validation",
+    "e2e: marks end-to-end tests",
+    "quality: marks content quality validation tests",
+    "smoke: marks full invocation smoke tests (very slow, requires API)",
+]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--tb=short",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.coverage.run]
+omit = [
+    "*/test_*",
+    "*/__pycache__/*",
+    ".venv/*",
+    "*/node_modules/*",
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+precision = 1
+fail_under = 0
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.",
+    "if TYPE_CHECKING:",
+    "pass",
+]
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.coverage.xml]
+output = "coverage.xml"

@@ -1,0 +1,50 @@
+@startuml 営業フロー
+
+' ==================================================
+' 営業プロセス フローチャート テンプレート
+' このテンプレートを編集して営業フローを作成してください
+' ==================================================
+
+' テーマ設定
+skinparam backgroundColor #FEFEFE
+skinparam activity {
+    BackgroundColor #E3F2FD
+    BorderColor #1565C0
+    FontSize 14
+}
+skinparam diamond {
+    BackgroundColor #FFF9C4
+    BorderColor #F9A825
+}
+
+title 営業プロセスフロー
+
+start
+
+:【ステップ1】リード獲得;
+note right
+  担当: マーケティング
+  アクション: ここに記入
+end note
+
+:【ステップ2】初回提案;
+note right
+  担当: インサイドセールス
+  アクション: ここに記入
+end note
+
+:【ステップ3】ヒアリング;
+
+:【ステップ4】見積・提案;
+
+if (受注判定?) then (受注)
+    :契約締結;
+    :カスタマーサクセスへ引き渡し;
+else (失注)
+    :失注理由を記録;
+    :ナーチャリングリストへ;
+endif
+
+stop
+
+@enduml

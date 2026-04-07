@@ -1,0 +1,3 @@
+interface:
+  display_name: "Remotion Trace"
+  short_description: "参考動画からプロ品質の Remotion 動画を再現するワークフロースキル。"

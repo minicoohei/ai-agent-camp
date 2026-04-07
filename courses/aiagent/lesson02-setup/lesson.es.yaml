@@ -1,0 +1,17 @@
+# Lección 2: Configuración del Entorno
+id: "lesson02-setup"
+order: 2
+name: "Configuración del Entorno"
+description: "Configura tu entorno de aprendizaje. Prepara Claude Code / Cursor / Codex, configura extensiones o skills y obtén claves API."
+estimatedMinutes: 90
+cover: "cover.png"
+prerequisites:
+  - "lesson01-foundation"
+chapters:
+  - "ch01-environment"
+  - "ch02-extensions"
+  - "ch03-api-settings"
+objectives:
+  - "Entender el flujo inicial de Claude Code / Cursor / Codex"
+  - "Configurar las extensiones necesarias"
+  - "Obtener y configurar las claves API"

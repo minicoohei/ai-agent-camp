@@ -1,0 +1,3 @@
+interface:
+  display_name: "Data Visualization"
+  short_description: "Create effective data visualizations with Python (matplotlib, seaborn, plotly). "

@@ -1,0 +1,15 @@
+# Capítulo 17: Outlook para Windows
+id: "module19-outlook-windows"
+order: 17
+name: "Outlook para Windows"
+description: "Aprende los conceptos básicos de Outlook para Windows: vistas, búsqueda, carpetas, reglas y cuándo pasar a la automatización con Microsoft 365 CLI."
+type: "manual"
+estimatedMinutes: 70
+thumbnail: "thumbnail.png"
+objectives:
+  - "Explicar el rol de Outlook de escritorio"
+  - "Diseñar carpetas, categorías y reglas básicas"
+  - "Explicar cuándo usar GUI y cuándo automatización por CLI"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-19"
+  slides: "https://ai-agent.camp/es/course/module-19"

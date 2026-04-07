@@ -1,0 +1,31 @@
+# Lección 1: Conocimientos Fundamentales
+id: "lesson01-foundation"
+order: 1
+name: "Conocimientos Fundamentales"
+description: "Aprende los conocimientos base para usar agentes de IA de manera efectiva. Cubre principios de LLM, tokens, agentes, MCP, IA multimodal, RAG y seguridad."
+estimatedMinutes: 290
+cover: "cover.png"
+chapters:
+  - "ch01-llm-basics"
+  - "ch02-tokens"
+  - "ch03-agents"
+  - "ch04-context-engineering"
+  - "ch05-cursor-usage"
+  - "ch06-mcp"
+  - "ch07-multimodal"
+  - "ch08-rag"
+  - "ch09-subagent"
+  - "ch10-hallucination"
+  - "ch11-security"
+objectives:
+  - "Entender cómo funcionan los LLMs (Modelos de Lenguaje Grande)"
+  - "Comprender los conceptos de tokens y ventanas de contexto"
+  - "Entender la diferencia entre agentes y asistentes"
+  - "Diseñar prompts efectivos"
+  - "Dominar las operaciones básicas de Cursor"
+  - "Entender cómo funciona MCP"
+  - "Comprender el concepto de IA multimodal"
+  - "Entender RAG y cómo usarlo"
+  - "Saber cuándo usar Skill/SubAgent/Agent Team"
+  - "Entender los riesgos de alucinación y contramedidas"
+  - "Comprender los principios fundamentales de seguridad en IA"

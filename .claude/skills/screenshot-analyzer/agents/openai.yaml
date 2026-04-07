@@ -1,0 +1,3 @@
+interface:
+  display_name: "Screenshot Analyzer"
+  short_description: "Analyze screenshots for error diagnosis and tutorial generation using Gemini Vis"

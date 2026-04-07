@@ -1,0 +1,134 @@
+{
+  "storyboard_styles": {
+    "animal_crossing": {
+      "name": "どうぶつの森風",
+      "base_prompt": "Animal Crossing aesthetic, soft pastel colors, warm cozy atmosphere, cute rounded design, cheerful lighting",
+      "avatar_style": "A friendly young person with cute rounded features, pastel-colored casual clothing",
+      "setting": "cozy room with warm wood furniture, soft natural lighting through windows, houseplants"
+    },
+    "modern_clean": {
+      "name": "モダン・クリーン",
+      "base_prompt": "Modern minimalist aesthetic, clean white background, professional lighting, sleek design",
+      "avatar_style": "A stylish young professional in modern casual attire",
+      "setting": "minimalist white room with clean lines, bright natural lighting"
+    },
+    "vibrant_ugc": {
+      "name": "ビビッドUGC",
+      "base_prompt": "Vibrant energetic aesthetic, bold colors, dynamic composition, TikTok style",
+      "avatar_style": "An energetic young influencer with trendy fashion",
+      "setting": "colorful room with neon accents, ring light illumination"
+    },
+    "anime": {
+      "name": "アニメ風",
+      "base_prompt": "Anime illustration style, clean lines, vibrant colors, expressive characters, Japanese animation aesthetic",
+      "avatar_style": "Anime-style character with expressive eyes and dynamic pose",
+      "setting": "stylized room with anime aesthetic, soft lighting"
+    }
+  },
+  "storyboard_prompts": {
+    "character_reference": {
+      "template": "Character reference sheet for UGC video storyboard.\n{style_prompt}\n\nCharacter description: {character_description}\n\nCreate a clear, well-lit portrait showing the character from chest up.\nThe character should have a friendly, approachable expression.\nSetting: {setting}\nHigh quality, detailed, consistent character design suitable for animation reference.",
+      "description": "キャラクター参照画像生成用のプロンプト"
+    },
+    "frame_generation": {
+      "template": "Storyboard frame {frame_number} for UGC video.\n{style_prompt}\n\nCharacter: {character_description}\nScene: {scene_description}\nCamera angle: {camera_angle}\nCharacter emotion: {emotion}\nSetting: {setting}\n\nIMPORTANT: Maintain consistent character appearance throughout.\nGenerate a single frame suitable for video storyboard.\nHigh quality, detailed illustration.",
+      "description": "絵コンテフレーム画像生成用のプロンプト"
+    },
+    "scene_decomposition": {
+      "template": "あなたはUGC動画の絵コンテを作成するディレクターです。\n以下のシナリオを{num_frames}コマの絵コンテに分解してください。\n\n## シナリオ\n{scenario}\n\n## 形式\n{orientation}\n\n## 要件\n1. 各コマは動画の流れを示す静止画として機能する\n2. キャラクターのポーズ、表情、カメラアングルを具体的に指定\n3. 動画のストーリーが自然に流れるように配置\n4. 最初のフックから最後のCTAまで一貫した流れを作る",
+      "description": "シナリオからシーン分解用のプロンプト"
+    },
+    "camera_motions": {
+      "zoom_in": "Camera slowly zooms in toward the subject",
+      "zoom_out": "Camera slowly zooms out from the subject",
+      "pan_left": "Camera pans horizontally to the left",
+      "pan_right": "Camera pans horizontally to the right",
+      "tilt_up": "Camera tilts upward",
+      "tilt_down": "Camera tilts downward",
+      "static": "Camera remains stationary"
+    }
+  },
+  "storyboard_scenes": {
+    "promo_30sec": [
+      {
+        "name": "opening",
+        "duration": 3,
+        "description": "オープニング - フック",
+        "prompt_template": "{avatar_style}, {setting}, holding a smartphone toward camera with excited expression, smartphone screen shows bright green (#00FF00), {base_prompt}"
+      },
+      {
+        "name": "pain_point",
+        "duration": 7,
+        "description": "問題提起",
+        "prompt_template": "{avatar_style}, {setting}, looking thoughtful and relatable, holding smartphone showing green screen, {base_prompt}"
+      },
+      {
+        "name": "solution_demo",
+        "duration": 10,
+        "description": "ソリューション紹介",
+        "prompt_template": "{avatar_style}, {setting}, demonstrating app on smartphone with enthusiasm, phone screen bright green, pointing at screen, {base_prompt}"
+      },
+      {
+        "name": "feature_highlight",
+        "duration": 7,
+        "description": "機能ハイライト",
+        "prompt_template": "{avatar_style}, {setting}, showing impressive results on smartphone, amazed happy expression, green screen on phone, {base_prompt}"
+      },
+      {
+        "name": "cta",
+        "duration": 3,
+        "description": "CTA",
+        "prompt_template": "{avatar_style}, {setting}, holding smartphone toward camera with inviting smile, encouraging gesture, phone shows green screen, {base_prompt}"
+      }
+    ]
+  },
+  "promo_script_template": {
+    "torisetsu_ai": {
+      "duration": 30,
+      "prompt": "トリセツAIの30秒YouTube広告用スクリプトを作成してください。\n\nアプリ概要: AIがあなたの性格を分析して「自分のトリセツ（取扱説明書）」を生成するアプリ\n\n機能:\n- 質問に答えるだけで性格診断\n- 恋愛・仕事・友人関係のアドバイス\n- AIチャットで自分について深掘り\n\n構成（必ず以下のJSON形式で出力）:\n```json\n{{\n  \"scenes\": [\n    {{\"name\": \"opening\", \"duration\": 3, \"script\": \"フックとなるセリフ\"}},\n    {{\"name\": \"pain_point\", \"duration\": 7, \"script\": \"問題提起のセリフ\"}},\n    {{\"name\": \"solution_demo\", \"duration\": 10, \"script\": \"ソリューション紹介のセリフ\"}},\n    {{\"name\": \"feature_highlight\", \"duration\": 7, \"script\": \"機能ハイライトのセリフ\"}},\n    {{\"name\": \"cta\", \"duration\": 3, \"script\": \"CTAのセリフ\"}}\n  ]\n}}\n```\n\nトーン: カジュアル、親しみやすい、共感を呼ぶ\n言語: 日本語\n\nJSONのみを出力してください。"
+    }
+  },
+  "script_templates": {
+    "tiktok": {
+      "duration": 30,
+      "structure": [
+        {"name": "hook", "duration": 3, "description": "視聴者の注意を引くフック"},
+        {"name": "pain_point", "duration": 8, "description": "ペインポイント（問題提起）"},
+        {"name": "solution", "duration": 15, "description": "ソリューション（解決策の紹介）"},
+        {"name": "cta", "duration": 4, "description": "CTA（行動喚起）"}
+      ],
+      "prompt": "TikTok向けの{duration}秒UGCスクリプトを作成してください。\n\nトピック: {topic}\n\n構成:\n1. フック（3秒）: 視聴者の注意を引く衝撃的な導入\n2. ペインポイント（8秒）: ターゲットが抱える問題\n3. ソリューション（15秒）: アプリ/サービスでの解決方法\n4. CTA（4秒）: 行動を促す締め\n\n言語: {language}\nトーン: カジュアル、親しみやすい、熱意がある\n\n日本語で、実際に話すセリフだけを出力してください。"
+    },
+    "youtube_shorts": {
+      "duration": 60,
+      "structure": [
+        {"name": "hook", "duration": 5, "description": "視聴者の注意を引くフック"},
+        {"name": "context", "duration": 10, "description": "背景説明"},
+        {"name": "pain_point", "duration": 15, "description": "ペインポイント（問題提起）"},
+        {"name": "solution", "duration": 25, "description": "ソリューション（解決策の紹介）"},
+        {"name": "cta", "duration": 5, "description": "CTA（行動喚起）"}
+      ],
+      "prompt": "YouTube Shorts向けの{duration}秒UGCスクリプトを作成してください。\n\nトピック: {topic}\n\n構成:\n1. フック（5秒）: 視聴者の注意を引く質問や驚き\n2. 背景説明（10秒）: 問題の文脈を説明\n3. ペインポイント（15秒）: 具体的な問題とその影響\n4. ソリューション（25秒）: 詳細な解決方法とデモ\n5. CTA（5秒）: 行動を促す締め\n\n言語: {language}\nトーン: 情報的、信頼できる、熱意がある\n\n日本語で、実際に話すセリフだけを出力してください。"
+    },
+    "instagram": {
+      "duration": 30,
+      "structure": [
+        {"name": "hook", "duration": 3, "description": "視聴者の注意を引くフック"},
+        {"name": "story", "duration": 12, "description": "ストーリー（体験談）"},
+        {"name": "solution", "duration": 12, "description": "ソリューション（解決策の紹介）"},
+        {"name": "cta", "duration": 3, "description": "CTA（行動喚起）"}
+      ],
+      "prompt": "Instagram Reels向けの{duration}秒UGCスクリプトを作成してください。\n\nトピック: {topic}\n\n構成:\n1. フック（3秒）: 視覚的に魅力的な導入\n2. ストーリー（12秒）: 個人的な体験談\n3. ソリューション（12秒）: 製品/サービスの紹介\n4. CTA（3秒）: 行動を促す締め\n\n言語: {language}\nトーン: 本物感、ライフスタイル重視\n\n日本語で、実際に話すセリフだけを出力してください。"
+    }
+  },
+  "avatar_prompts": {
+    "default": "A friendly young person in their 20s holding a smartphone toward the camera. The smartphone screen displays a solid bright green color (#00FF00) for chroma key compositing. The person has a natural, enthusiastic expression and is in a casual indoor setting with good lighting. The smartphone is clearly visible and positioned to show the screen to the viewer.",
+    "tech_influencer": "A tech-savvy young professional holding a modern smartphone toward the camera. The smartphone screen shows a solid bright green color (#00FF00). They wear casual but stylish clothing, have confident body language, and are in a modern, minimalist room with natural light.",
+    "student": "A friendly college student holding their smartphone toward the camera excitedly. The smartphone screen displays a solid bright green color (#00FF00). They are in a study room or library setting, dressed casually, with an energetic and relatable expression.",
+    "professional": "A professional-looking person in business casual attire holding a smartphone toward the camera. The smartphone screen shows a solid bright green color (#00FF00). They are in a clean, modern office setting with professional lighting."
+  },
+  "veo_prompts": {
+    "base": "A {avatar_style} speaking to the camera while holding a smartphone. The smartphone screen displays a solid bright green color for chroma key. The person is enthusiastically explaining: \"{script_preview}\". Natural lighting, {duration} seconds, the person maintains eye contact with the camera and gestures naturally while speaking.",
+    "with_emotion": "A {avatar_style} with {emotion} expression, speaking directly to the camera while holding up a smartphone. The phone screen shows bright green (#00FF00). They are saying: \"{script_preview}\". The scene has warm, natural lighting in a {setting}."
+  }
+}

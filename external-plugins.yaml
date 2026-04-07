@@ -1,0 +1,124 @@
+# 外部スキルプラグインレジストリ
+#
+# SkillsBench 論文 (arXiv:2602.12670) の知見に基づき、
+# 全スキルを一括インストールせず、タスクに応じて厳選する「レジストリ方式」を採用。
+#
+# 使い方:
+#   python tools/skill_manager.py plugin-list          # 利用可能なスキル一覧
+#   python tools/skill_manager.py plugin-install ...   # スキルインストール
+#   python tools/skill_manager.py plugin-update        # インストール済みスキル更新
+
+version: 1
+
+plugins:
+  knowledge-work-plugins:
+    repo: anthropics/knowledge-work-plugins
+    ref: main
+    pinned_sha: "89f6599ddfe72ea9e3380975390d301c5cdb9c04"
+    description: "Anthropic公式ビジネスプラグイン（11職種対応）"
+    skill_pattern: "{plugin}/skills/{skill}"
+    recommended:
+      - plugin: data
+        skills:
+          - sql-queries
+          - data-visualization
+          - interactive-dashboard-builder
+      - plugin: product-management
+        skills:
+          - feature-spec
+      - plugin: cowork-plugin-management
+        skills:
+          - create-cowork-plugin
+    optional:
+      - plugin: marketing
+        skills:
+          - campaign-builder
+          - content-calendar
+      - plugin: sales
+        skills:
+          - sales-research
+      - plugin: finance
+        skills:
+          - financial-analysis
+
+  ui-ux-pro-max-skill:
+    repo: nextlevelbuilder/ui-ux-pro-max-skill
+    ref: main
+    pinned_sha: "07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4"
+    description: "67スタイル×96パレット×57フォントのUI/UXデザインDB"
+    skill_pattern: "skills/{skill}"
+    recommended:
+      - skills:
+          - ui-ux-pro-max
+
+  planning-with-files:
+    repo: OthmanAdi/planning-with-files
+    ref: master
+    pinned_sha: "57d13d7bd4de012089859098751e64f2f7fab9a3"
+    description: "3ファイル計画パターン（長時間タスク管理の改善）"
+    skill_pattern: "skills/{skill}"
+    recommended:
+      - skills:
+          - planning-with-files
+
+  claude-scientific-skills:
+    repo: K-Dense-AI/claude-scientific-skills
+    ref: main
+    pinned_sha: "575f1e586f6b484feb3cba040b6e29f2a56f3c74"
+    description: "科学研究向け160+スキルコレクション"
+    skill_pattern: "scientific-skills/{skill}"
+    recommended:
+      - skills:
+          - exploratory-data-analysis
+          - scientific-visualization
+          - statistical-analysis
+          - matplotlib
+          - plotly
+    optional:
+      - skills:
+          - pandas
+          - numpy
+          - scikit-learn
+          - pytorch-lightning
+          - rdkit
+
+  claude-skills:
+    repo: alirezarezvani/claude-skills
+    ref: main
+    pinned_sha: "c53f2bcbb2dc8efa82e633b4553d35764cc1f03c"
+    description: "エンジニアリング・規制・PM向け65+スキル"
+    skill_pattern: "{domain}/{skill}"
+    recommended:
+      - domain: engineering
+        skills:
+          - agent-designer
+      - domain: engineering-team
+        skills:
+          - tdd-guide
+          - code-reviewer
+    optional:
+      - domain: engineering
+        skills:
+          - api-design-reviewer
+          - database-designer
+      - domain: product-team
+        skills:
+          - product-roadmap-builder
+      - domain: project-management
+        skills:
+          - sprint-planner
+
+  marimo-skills:
+    repo: marimo-team/skills
+    ref: main
+    pinned_sha: "343b0e05764bd528807608ea76995c80076dacef"
+    description: "marimoノートブック開発スキル"
+    skill_pattern: "skills/{skill}"
+    recommended:
+      - skills:
+          - marimo-notebook
+          - jupyter-to-marimo
+    optional:
+      - skills:
+          - marimo-batch
+          - anywidget

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Marimo Notebook"
+  short_description: "Write a marimo notebook in a Python file in the right format."

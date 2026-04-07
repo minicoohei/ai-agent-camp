@@ -1,0 +1,15 @@
+# Chapter 5: PPTX Analysis & Editing
+id: "module05-pptx"
+order: 5
+name: "PPTX Analysis & Editing"
+description: "Analyze and auto-edit PowerPoint files."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Analyze slide structure"
+  - "Extract templates"
+  - "Generate new slides"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-5"
+  slides: "https://ai-agent.camp/en/course/module-5"

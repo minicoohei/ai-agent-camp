@@ -1,0 +1,3 @@
+interface:
+  display_name: "Aiagent Utility Runner"
+  short_description: "Reproduce ai-agent-camp utility and setup commands in Codex using the shared command manifest and source markdown files."

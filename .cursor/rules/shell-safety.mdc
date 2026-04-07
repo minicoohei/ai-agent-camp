@@ -1,0 +1,36 @@
+---
+alwaysApply: true
+description: "シェルの危険コマンド禁止・.env保護・安全な削除ルール"
+---
+
+# シェル安全ガイドライン
+
+## 禁止コマンド
+
+- `rm -rf /` / `rm -rf ~` / `rm -rf *` - システム・ディレクトリ全削除
+- `dd if=/dev/zero of=/dev/sda` - ディスク破壊
+- `:(){ :|:& };:` - フォークボム
+- `chmod -R 777 /` / `chown -R nobody /` - 危険な権限変更
+
+## 絶対に削除・上書きしないファイル
+
+`.env`, `.env.local`, `credentials.json`, `client_secret.json`, `token.json`
+
+### .env / .env.local（キーバリュー形式）
+- `Write` / `cat >` / `echo >` での全体上書き禁止（既存キーが消える）
+- 編集は**追記（`>>`）のみ**許可。変更前に `cp .env .env.bak`
+
+### JSON/鍵ファイル（credentials.json, token.json 等）
+- 原則手動編集禁止（必要時は再発行手順を利用）
+- `rm` / `gomi` / `git clean -x` での削除禁止
+
+## 安全な削除
+
+削除は `gomi` コマンドを使用（ゴミ箱へ移動、`gomi -b` で復元可能）。
+
+## ベストプラクティス
+
+1. 削除前に `ls` で内容を確認
+2. 重要ファイルはバックアップ後に操作
+3. 複雑なコマンドは分割して実行
+4. `--dry-run` で事前確認

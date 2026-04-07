@@ -1,0 +1,337 @@
+# Slack通知ワークフロー
+#
+# 機能:
+# - CI/CDの結果をSlackに通知
+# - デプロイ完了通知
+# - エラーアラート
+# - 日次サマリー投稿
+#
+# 必要なSecrets:
+# - SLACK_WEBHOOK_URL: Slack Incoming Webhook URL
+# - SLACK_BOT_TOKEN: Slack Bot Token（オプション、高度な機能用）
+# - SLACK_CHANNEL_ID: 投稿先チャンネルID（Bot Token使用時）
+
+name: Slack Notification
+
+on:
+  # 他のワークフローから呼び出し
+  workflow_call:
+    inputs:
+      message:
+        description: '通知メッセージ'
+        required: true
+        type: string
+      status:
+        description: 'ステータス (success/failure/warning/info)'
+        required: false
+        type: string
+        default: 'info'
+      title:
+        description: '通知タイトル'
+        required: false
+        type: string
+        default: 'GitHub Actions 通知'
+      mention:
+        description: 'メンション (@channel, @here, <@USER_ID>)'
+        required: false
+        type: string
+        default: ''
+    secrets:
+      SLACK_WEBHOOK_URL:
+        required: true
+
+  # 手動実行（テスト用）
+  workflow_dispatch:
+    inputs:
+      message:
+        description: '通知メッセージ'
+        required: true
+        default: 'これはテスト通知です'
+      status:
+        description: 'ステータス'
+        required: true
+        type: choice
+        options:
+          - success
+          - failure
+          - warning
+          - info
+        default: 'info'
+
+  # プッシュ時に自動通知
+  push:
+    branches:
+      - main
+      - develop
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+
+  # PRマージ時
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  notify-slack:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine notification content
+        id: content
+        run: |
+          # イベントタイプに応じたコンテンツ設定
+          EVENT="${{ github.event_name }}"
+          
+          if [ "$EVENT" = "push" ]; then
+            TITLE="📦 新しいプッシュ"
+            STATUS="info"
+            # 最新コミットメッセージを取得
+            COMMIT_MSG=$(git log -1 --pretty=format:"%s")
+            COMMIT_AUTHOR=$(git log -1 --pretty=format:"%an")
+            MESSAGE="*${{ github.ref_name }}* ブランチに新しいコミット\n\n> ${COMMIT_MSG}\n\n👤 ${COMMIT_AUTHOR}"
+            
+          elif [ "$EVENT" = "pull_request" ] && [ "${{ github.event.pull_request.merged }}" = "true" ]; then
+            TITLE="🎉 PRがマージされました"
+            STATUS="success"
+            MESSAGE="*${{ github.event.pull_request.title }}*\n\nby @${{ github.event.pull_request.user.login }}"
+            
+          elif [ "$EVENT" = "workflow_dispatch" ]; then
+            TITLE="${{ inputs.title || 'GitHub Actions 通知' }}"
+            STATUS="${{ inputs.status }}"
+            MESSAGE="${{ inputs.message }}"
+            
+          elif [ "$EVENT" = "workflow_call" ]; then
+            TITLE="${{ inputs.title }}"
+            STATUS="${{ inputs.status }}"
+            MESSAGE="${{ inputs.message }}"
+            
+          else
+            TITLE="GitHub Actions 通知"
+            STATUS="info"
+            MESSAGE="イベント: ${EVENT}"
+          fi
+          
+          echo "title=${TITLE}" >> $GITHUB_OUTPUT
+          echo "status=${STATUS}" >> $GITHUB_OUTPUT
+          echo "message<<EOF" >> $GITHUB_OUTPUT
+          echo -e "${MESSAGE}" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Set color and emoji
+        id: style
+        run: |
+          STATUS="${{ steps.content.outputs.status }}"
+          
+          case "$STATUS" in
+            success)
+              COLOR="#36a64f"
+              EMOJI="✅"
+              ;;
+            failure)
+              COLOR="#dc3545"
+              EMOJI="❌"
+              ;;
+            warning)
+              COLOR="#ffc107"
+              EMOJI="⚠️"
+              ;;
+            *)
+              COLOR="#0969da"
+              EMOJI="ℹ️"
+              ;;
+          esac
+          
+          echo "color=${COLOR}" >> $GITHUB_OUTPUT
+          echo "emoji=${EMOJI}" >> $GITHUB_OUTPUT
+
+      - name: Send Slack notification (Webhook)
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          # メンション処理
+          MENTION="${{ inputs.mention }}"
+          if [ -n "$MENTION" ]; then
+            MENTION_TEXT="${MENTION}\n"
+          else
+            MENTION_TEXT=""
+          fi
+          
+          # Slack Block Kit形式でペイロード作成
+          PAYLOAD=$(cat << 'PAYLOAD_END'
+          {
+            "blocks": [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "${{ steps.style.outputs.emoji }} ${{ steps.content.outputs.title }}",
+                  "emoji": true
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ steps.content.outputs.message }}"
+                }
+              },
+              {
+                "type": "context",
+                "elements": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "📁 *Repository:* <${{ github.server_url }}/${{ github.repository }}|${{ github.repository }}>"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "🔀 *Branch:* `${{ github.ref_name }}`"
+                  }
+                ]
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "actions",
+                "elements": [
+                  {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "🔗 Actions を見る",
+                      "emoji": true
+                    },
+                    "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  },
+                  {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "📂 リポジトリを見る",
+                      "emoji": true
+                    },
+                    "url": "${{ github.server_url }}/${{ github.repository }}"
+                  }
+                ]
+              }
+            ],
+            "attachments": [
+              {
+                "color": "${{ steps.style.outputs.color }}",
+                "footer": "GitHub Actions | ${{ github.workflow }}",
+                "footer_icon": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+                "ts": ${{ github.run_id }}
+              }
+            ]
+          }
+          PAYLOAD_END
+          )
+          
+          # Webhookに送信
+          curl -X POST \
+            -H 'Content-type: application/json' \
+            --data "$PAYLOAD" \
+            "$SLACK_WEBHOOK_URL"
+          
+          echo ""
+          echo "✅ Slack通知を送信しました"
+
+
+  # Bot Token使用の高度な通知（オプション）
+  notify-slack-advanced:
+    runs-on: ubuntu-latest
+    if: ${{ false }}  # デフォルト無効、必要に応じてtrueに
+    
+    steps:
+      - name: Post to Slack channel (Bot Token)
+        uses: slackapi/slack-github-action@v1.25.0
+        with:
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+          payload: |
+            {
+              "text": "${{ inputs.message }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "${{ inputs.message }}"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
+
+# ===========================================
+# 使用例: CI/CDワークフローからの呼び出し
+# ===========================================
+#
+# name: CI/CD with Slack Notification
+# 
+# on:
+#   push:
+#     branches: [main]
+# 
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Build
+#         run: npm run build
+# 
+#   test:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Test
+#         run: npm test
+# 
+#   deploy:
+#     needs: test
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Deploy
+#         run: echo "Deploying..."
+# 
+#   # 成功時の通知
+#   notify-success:
+#     needs: deploy
+#     if: success()
+#     uses: ./.github/workflows/slack-notification.yml
+#     with:
+#       title: "デプロイ完了"
+#       message: |
+#         🚀 *${{ github.repository }}* のデプロイが完了しました！
+#         
+#         • ブランチ: `${{ github.ref_name }}`
+#         • コミット: `${{ github.sha }}`
+#       status: success
+#     secrets:
+#       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+# 
+#   # 失敗時の通知
+#   notify-failure:
+#     needs: [build, test, deploy]
+#     if: failure()
+#     uses: ./.github/workflows/slack-notification.yml
+#     with:
+#       title: "ビルド/デプロイ失敗"
+#       message: |
+#         ⚠️ *${{ github.repository }}* でエラーが発生しました
+#         
+#         詳細を確認してください。
+#       status: failure
+#       mention: "@channel"
+#     secrets:
+#       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

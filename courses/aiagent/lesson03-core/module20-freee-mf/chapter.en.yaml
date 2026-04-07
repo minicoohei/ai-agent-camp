@@ -1,0 +1,15 @@
+# Chapter 18: Freee / MoneyForward Integration
+id: "module20-freee-mf"
+order: 18
+name: "Freee / MoneyForward Integration"
+description: "Learn the entry point for accounting SaaS integrations: authentication setup, transaction review, and basic operations around accounts and invoices."
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand authentication and permission requirements for accounting integrations"
+  - "Explain basic operations for transactions, chart-of-accounts data, and invoices"
+  - "Organize safety considerations when handling accounting data"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-20"
+  slides: "https://ai-agent.camp/en/course/module-20"

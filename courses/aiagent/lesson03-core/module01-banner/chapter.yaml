@@ -1,0 +1,15 @@
+# Chapter 1: バナー・画像生成
+id: "module01-banner"
+order: 1
+name: "バナー・画像生成"
+description: "SNS投稿やプレスリリース用のバナーを自動生成します。"
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Gemini Image Generation APIを活用できる"
+  - "プラットフォーム別サイズ設定ができる"
+  - "トーン・配色を指定できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-1"
+  slides: "https://ai-agent.camp/ja/course/module-1"

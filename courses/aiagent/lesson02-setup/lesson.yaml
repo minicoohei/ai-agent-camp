@@ -1,0 +1,17 @@
+# Lesson 2: 環境構築（Setup）
+id: "lesson02-setup"
+order: 2
+name: "環境構築（Setup）"
+description: "学習に必要な環境を整えます。Claude Code / Cursor / Codex のインストール方針、拡張機能や skill の設定、APIキーの取得を行います。"
+estimatedMinutes: 90
+cover: "cover.png"
+prerequisites:
+  - "lesson01-foundation"
+chapters:
+  - "ch01-environment"
+  - "ch02-extensions"
+  - "ch03-api-settings"
+objectives:
+  - "Claude Code / Cursor / Codex の開始導線を理解できる"
+  - "必要な拡張機能を設定できる"
+  - "APIキーを取得して設定できる"

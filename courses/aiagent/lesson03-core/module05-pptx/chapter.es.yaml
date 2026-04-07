@@ -1,0 +1,15 @@
+# Capítulo 5: Análisis y Edición de PPTX
+id: "module05-pptx"
+order: 5
+name: "Análisis y Edición de PPTX"
+description: "Analiza y edita automáticamente archivos de PowerPoint."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Analizar la estructura de diapositivas"
+  - "Extraer plantillas"
+  - "Generar nuevas diapositivas"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-5"
+  slides: "https://ai-agent.camp/es/course/module-5"

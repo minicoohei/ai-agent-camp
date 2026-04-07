@@ -1,0 +1,17 @@
+# Chapter 10: ハルシネーション
+id: "ch10-hallucination"
+order: 10
+name: "ハルシネーション"
+description: "AIが「もっともらしいウソ」をつく現象を理解する"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch09-fine-tuning"
+objectives:
+  - "ハルシネーションとは何か、なぜ起きるかを説明できる"
+  - "ハルシネーションの種類を区別できる"
+  - "軽減策を知り、実践できる"
+  - "AIの出力を適切に検証する習慣を身につける"
+externalContent:
+  manual: "../../../../course/foundation/hallucination.html"

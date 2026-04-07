@@ -1,0 +1,65 @@
+@startuml flow-recruitment
+title 採用選考フロー
+
+skinparam backgroundColor #FEFEFE
+skinparam activityBackgroundColor #E8F5E9
+skinparam activityBorderColor #388E3C
+skinparam activityDiamondBackgroundColor #FFF8E1
+skinparam activityDiamondBorderColor #FFA000
+
+start
+:応募書類受付;
+:書類審査;
+
+if (書類審査通過?) then (Yes)
+  :一次面接日程調整;
+  :一次面接\n(人事担当);
+  
+  if (一次面接通過?) then (Yes)
+    :二次面接日程調整;
+    :二次面接\n(部門責任者);
+    
+    if (二次面接通過?) then (Yes)
+      :最終面接日程調整;
+      :最終面接\n(役員);
+      
+      if (最終面接通過?) then (Yes)
+        :内定通知;
+        :オファー提示;
+        
+        if (内定承諾?) then (Yes)
+          :入社手続き;
+          :入社日確定;
+          #90EE90:採用完了;
+          stop
+        else (No)
+          :辞退受理;
+          #FFCCCB:採用見送り;
+          stop
+        endif
+        
+      else (No)
+        :見送り通知;
+        #FFCCCB:不採用;
+        stop
+      endif
+      
+    else (No)
+      :見送り通知;
+      #FFCCCB:不採用;
+      stop
+    endif
+    
+  else (No)
+    :見送り通知;
+    #FFCCCB:不採用;
+    stop
+  endif
+  
+else (No)
+  :見送り通知;
+  #FFCCCB:書類不通過;
+  stop
+endif
+
+@enduml

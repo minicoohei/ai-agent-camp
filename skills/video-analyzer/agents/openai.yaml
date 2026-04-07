@@ -1,0 +1,3 @@
+interface:
+  display_name: "Video Analyzer"
+  short_description: "TikTok/YouTube動画を分析してテンプレート化するスキル。"

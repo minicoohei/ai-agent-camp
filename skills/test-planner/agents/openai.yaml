@@ -1,0 +1,3 @@
+interface:
+  display_name: "Test Planner"
+  short_description: "テスト計画書・テストケース・テストレポートの生成に使用。「テスト計画を作って」「テストケースを生成して」「E2Eテストを書いて」等で発動。"

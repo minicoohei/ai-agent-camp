@@ -1,0 +1,17 @@
+# Chapter 6: MCP（Model Context Protocol）
+id: "ch06-mcp"
+order: 6
+name: "MCP（Model Context Protocol）"
+description: "AIと外部ツールを繋ぐ標準プロトコルを理解する"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch05-cursor-usage"
+objectives:
+  - "MCPとは何か、なぜ重要かを説明できる"
+  - "4つの主要概念（Tools, Resources, Prompts, Sampling）を理解する"
+  - "主要なMCPサーバーを知る"
+  - "Claude Code / Cursor / Codex でのMCP活用方法を把握する"
+externalContent:
+  manual: "../../../../course/foundation/mcp.html"

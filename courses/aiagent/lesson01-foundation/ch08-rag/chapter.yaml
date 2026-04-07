@@ -1,0 +1,17 @@
+# Chapter 8: RAG
+id: "ch08-rag"
+order: 8
+name: "RAG"
+description: "外部知識を検索してLLMの回答を強化する技術"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch07-multimodal"
+objectives:
+  - "RAGとは何か、なぜ必要かを説明できる"
+  - "RAGの4ステップ（Ingestion → Retrieval → Augmentation → Generation）を理解する"
+  - "ベクトルデータベースの役割を把握する"
+  - "RAGとファインチューニングの使い分けを判断できる"
+externalContent:
+  manual: "../../../../course/foundation/rag.html"

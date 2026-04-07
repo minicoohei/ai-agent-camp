@@ -1,0 +1,19 @@
+# Chapter 13: Product Management & System Requirements Definition
+id: "module18-pm-sysdef"
+order: 13
+name: "Product Management & System Requirements Definition"
+description: "Using a task management app as an example, experience the full product development cycle—from planning through design, implementation, testing, and operation—with AI assistance."
+type: "manual"
+estimatedMinutes: 480
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module06-agent-development"
+objectives:
+  - "Create a PRD (Working Backwards style)"
+  - "Create a requirements definition document (IPA-compliant)"
+  - "Create various design diagrams with PlantUML"
+  - "Auto-generate test plans"
+  - "Create a progress dashboard with marimo"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-18"
+  slides: "https://ai-agent.camp/en/course/module-18"

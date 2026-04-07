@@ -1,0 +1,3 @@
+interface:
+  display_name: "Data Analyst"
+  short_description: "BigQuery/Snowflake接続、EDA、可視化、Marimoノートブック作成を行うサブエージェント。"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Aiagent Material Sync"
+  short_description: "Update ai-agent-camp from upstream safely. Use when the user wants to pull course"

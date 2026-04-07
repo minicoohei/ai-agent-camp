@@ -1,0 +1,17 @@
+# Capítulo 11: Seguridad en IA
+id: "ch11-security"
+order: 11
+name: "Seguridad en IA"
+description: "Conocimientos para usar LLMs y agentes de IA de forma segura."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch10-hallucination"
+objectives:
+  - "Entender la Inyección de Prompt y la diferencia entre Directa e Indirecta"
+  - "Conocer el OWASP Top 10 para LLMs"
+  - "Comprender los riesgos ampliados introducidos por MCP y agentes"
+  - "Adoptar una mentalidad de Defensa en Profundidad"
+externalContent:
+  manual: "../../../../course/foundation/security.html"

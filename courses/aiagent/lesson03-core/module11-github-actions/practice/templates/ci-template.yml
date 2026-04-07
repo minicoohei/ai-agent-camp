@@ -1,0 +1,39 @@
+# CI/CD テンプレート
+# TODO: トリガー、ジョブ、ステップを実装してください
+
+name: CI/CD Pipeline
+
+on:
+  # TODO: push と pull_request トリガーを設定
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20]
+    steps:
+      - uses: actions/checkout@v4
+
+      # TODO: Node.js セットアップ
+      # ヒント: actions/setup-node@v4
+
+      # TODO: 依存関係インストール
+
+      # TODO: テスト実行
+
+  build:
+    # TODO: test ジョブへの依存を設定
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # TODO: ビルド処理
+
+  deploy:
+    # TODO: build ジョブへの依存を設定
+    # TODO: main ブランチのみ実行する条件を設定
+    runs-on: ubuntu-latest
+    steps:
+      # TODO: デプロイ処理
+      - run: echo "Deploy step placeholder"

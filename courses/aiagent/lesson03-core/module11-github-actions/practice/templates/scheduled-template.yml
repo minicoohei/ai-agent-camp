@@ -1,0 +1,33 @@
+# 定期実行テンプレート
+# TODO: 各ステップを実装してください
+
+name: Scheduled Data Sync
+
+on:
+  schedule:
+    # JST 9:00 = UTC 0:00（平日のみ: 月〜金）
+    # ヒント: cron書式は「分 時 日 月 曜日」。曜日は 0=日,1=月,...,5=金
+    - cron: '0 0 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      sync_target:
+        description: '同期対象（all / slack / google）'
+        required: false
+        default: 'all'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # TODO: Python セットアップ
+
+      # TODO: 依存関係インストール
+
+      # TODO: 同期スクリプト実行
+
+      # TODO: 変更があればコミット＆プッシュ
+      # ヒント: git diff --quiet || (git add . && git commit -m "..." && git push)
+
+      # TODO: Slack 通知

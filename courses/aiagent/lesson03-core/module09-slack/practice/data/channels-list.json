@@ -1,0 +1,72 @@
+[
+  {
+    "id": "C001",
+    "name": "general",
+    "member_count": 50,
+    "topic": "全社連絡・お知らせ",
+    "purpose": "会社全体のアナウンスや連絡事項を共有するチャネル"
+  },
+  {
+    "id": "C002",
+    "name": "dev-team",
+    "member_count": 15,
+    "topic": "開発チーム",
+    "purpose": "開発に関する議論、コードレビュー依頼、技術的な質問"
+  },
+  {
+    "id": "C003",
+    "name": "marketing",
+    "member_count": 10,
+    "topic": "マーケティング",
+    "purpose": "マーケティング施策の企画・実行・レポート共有"
+  },
+  {
+    "id": "C004",
+    "name": "project-alpha",
+    "member_count": 8,
+    "topic": "プロジェクトAlpha",
+    "purpose": "新規プロダクトAlphaの開発進捗管理"
+  },
+  {
+    "id": "C005",
+    "name": "support",
+    "member_count": 12,
+    "topic": "カスタマーサポート",
+    "purpose": "顧客からの問い合わせ対応、エスカレーション"
+  },
+  {
+    "id": "C006",
+    "name": "random",
+    "member_count": 50,
+    "topic": "雑談",
+    "purpose": "仕事以外の雑談、ランチの誘い、趣味の話題"
+  },
+  {
+    "id": "C007",
+    "name": "design",
+    "member_count": 6,
+    "topic": "デザインチーム",
+    "purpose": "UIデザイン、ブランディング、デザインレビュー"
+  },
+  {
+    "id": "C008",
+    "name": "infra",
+    "member_count": 5,
+    "topic": "インフラ・SRE",
+    "purpose": "サーバー管理、監視、デプロイメント、障害対応"
+  },
+  {
+    "id": "C009",
+    "name": "sales",
+    "member_count": 8,
+    "topic": "営業チーム",
+    "purpose": "商談進捗、顧客情報共有、売上報告"
+  },
+  {
+    "id": "C010",
+    "name": "hr",
+    "member_count": 4,
+    "topic": "人事・採用",
+    "purpose": "採用活動、社内制度、研修案内"
+  }
+]

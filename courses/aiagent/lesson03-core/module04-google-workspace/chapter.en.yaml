@@ -1,0 +1,18 @@
+# Chapter 16: Google Workspace Integration
+id: "module04-google-workspace"
+order: 16
+name: "Google Workspace Integration"
+description: "Build an AI assistant workflow across Calendar, Gmail, Drive, Sheets, and GAS to automate day-to-day operations."
+type: "manual"
+estimatedMinutes: 180
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "lesson02-setup"
+objectives:
+  - "Understand the roles of each Google Workspace API"
+  - "Operate Calendar, Gmail, Drive, and Sheets from AI agents"
+  - "Explain the flow of scheduled automation with GAS"
+  - "Organize inputs and outputs for an integrated workflow"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-4"
+  slides: "https://ai-agent.camp/en/course/module-4"

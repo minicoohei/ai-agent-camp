@@ -1,0 +1,15 @@
+# Chapter 7: Skill/Commands
+id: "module07-skill-commands"
+order: 7
+name: "Skill/Commands"
+description: "Learn skill design, SKILL.md structure, testing, and practical design patterns for building task-specific workflows."
+type: "manual"
+estimatedMinutes: 120
+objectives:
+  - "Explain the role of skills and design principles"
+  - "Structure a SKILL.md file and supporting resources"
+  - "Design commands and skills for real work scenarios"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-7"
+  slides: "https://ai-agent.camp/en/course/module-7"

@@ -1,0 +1,15 @@
+# Chapter 18: Freee / MoneyForward 連携
+id: "module20-freee-mf"
+order: 18
+name: "Freee / MoneyForward 連携"
+description: "会計 SaaS と AI エージェントの連携入口として、認証セットアップ、取引データ確認、勘定科目や請求書の基本操作を学びます。"
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "会計連携の前提となる認証と権限を理解する"
+  - "取引データ、勘定科目、請求書の基本操作を説明できる"
+  - "会計データを扱う際の安全上の注意点を整理できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-20"
+  slides: "https://ai-agent.camp/ja/course/module-20"

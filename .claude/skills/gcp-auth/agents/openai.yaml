@@ -1,0 +1,3 @@
+interface:
+  display_name: "Gcp Auth"
+  short_description: "Google Cloud Platform (GCP) の Application Default Credentials 認証を実行。BigQuery や C"

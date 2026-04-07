@@ -1,0 +1,15 @@
+# Chapter 3: スクリーンショットでCursorを使いこなす
+id: "module03-screenshot"
+order: 3
+name: "スクリーンショットでCursorを使いこなす"
+description: "スクリーンショットを活用したエラー診断、マニュアル作成、チュートリアル自動生成を学びます。"
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "エラー画面を自動診断できる"
+  - "操作手順をステップ化できる"
+  - "マニュアルを自動生成できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-3"
+  slides: "https://ai-agent.camp/ja/course/module-3"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Interactive Dashboard Builder"
+  short_description: "Build self-contained interactive HTML dashboards with Chart.js, dropdown filters"

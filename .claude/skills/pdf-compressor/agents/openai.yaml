@@ -1,0 +1,3 @@
+interface:
+  display_name: "Pdf Compressor"
+  short_description: "Compress large PDF files by resizing pages and optimizing images. Use when PDF f"

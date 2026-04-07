@@ -1,0 +1,15 @@
+# Chapter 11: GitHub Actions
+id: "module11-github-actions"
+order: 11
+name: "GitHub Actions"
+description: "CI/CD自動化とワークフロー作成を行います。"
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "GitHub Actionsの基礎を理解する"
+  - "ワークフローを定義できる"
+  - "Secrets管理ができる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-11"
+  slides: "https://ai-agent.camp/ja/course/module-11"

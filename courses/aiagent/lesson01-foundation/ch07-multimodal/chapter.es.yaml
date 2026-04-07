@@ -1,0 +1,17 @@
+# Capítulo 7: IA Multimodal
+id: "ch07-multimodal"
+order: 7
+name: "IA Multimodal"
+description: "Comprende cómo la IA integra imágenes, texto y audio."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch06-mcp"
+objectives:
+  - "Explicar qué son la IA multimodal y los VLMs"
+  - "Entender la arquitectura de 3 capas de los VLMs"
+  - "Conocer casos de uso como análisis de imágenes y documentos"
+  - "Entender las características de los principales modelos multimodales"
+externalContent:
+  manual: "../../../../course/foundation/multimodal.html"

@@ -1,0 +1,18 @@
+# Chapter 14: Email Automation & Marketing
+id: "module16-email-automation"
+order: 14
+name: "Email Automation & Marketing"
+description: "Learn the full workflow from inbound email analysis and reply management to outbound automation and marketing delivery."
+type: "manual"
+estimatedMinutes: 180
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module06-agent-development"
+objectives:
+  - "Explain the basic inbound and outbound email flow"
+  - "Automate inbox review and reply-follow-up checks"
+  - "Understand the difference between transactional and marketing email"
+  - "Explain authentication requirements and operational cautions for email delivery"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-16"
+  slides: "https://ai-agent.camp/en/course/module-16"

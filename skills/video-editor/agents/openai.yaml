@@ -1,0 +1,3 @@
+interface:
+  display_name: "Video Editor"
+  short_description: "TikTok/YouTube向け動画編集スキル。ffmpegでキャプション焼き込み、"

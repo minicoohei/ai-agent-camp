@@ -1,0 +1,3 @@
+interface:
+  display_name: "Storyboard Generator"
+  short_description: "AI UGC用の絵コンテを生成。1枚シート生成→切り出しでキャラクター一貫性を保証。「絵コンテを作って」「ストーリーボード生成」で発動。"

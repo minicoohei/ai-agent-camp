@@ -1,0 +1,15 @@
+# Chapter 2: Diagram & Flow Creation
+id: "module02-diagram"
+order: 2
+name: "Diagram & Flow Creation"
+description: "Auto-generate diagrams and flowcharts from text."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Generate infographics"
+  - "Create PlantUML diagrams"
+  - "Use Mermaid notation"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-2"
+  slides: "https://ai-agent.camp/en/course/module-2"

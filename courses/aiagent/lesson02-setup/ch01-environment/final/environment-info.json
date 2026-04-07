@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-02-10T09:00:00+09:00",
+  "os": {
+    "platform": "darwin",
+    "version": "Darwin 24.4.0",
+    "arch": "arm64"
+  },
+  "tools": {
+    "git": {
+      "version": "2.44.0",
+      "user_name": "田中太郎",
+      "user_email": "tanaka@example.com",
+      "status": "ok"
+    },
+    "node": {
+      "version": "v20.11.1",
+      "npm_version": "10.2.4",
+      "global_packages": ["@anthropic-ai/claude-code", "@google/clasp"],
+      "status": "ok"
+    },
+    "python": {
+      "version": "3.11.8",
+      "pip_version": "24.0",
+      "venv": true,
+      "status": "ok"
+    },
+    "cursor": {
+      "version": "0.45.x",
+      "extensions_count": 12,
+      "status": "ok"
+    },
+    "claude_code": {
+      "version": "1.x.x",
+      "authenticated": true,
+      "status": "ok"
+    },
+    "ffmpeg": {
+      "version": "7.0",
+      "status": "ok"
+    }
+  },
+  "repository": {
+    "name": "aiagent-base",
+    "branch": "main",
+    "python_deps_installed": true,
+    "node_deps_installed": true,
+    "status": "ok"
+  },
+  "api_keys": {
+    "GEMINI_API_KEY": "configured",
+    "ANTHROPIC_API_KEY": "configured",
+    "FAL_KEY": "not_configured",
+    "SLACK_BOT_TOKEN": "not_configured"
+  },
+  "overall_status": "ready",
+  "missing_optional": ["FAL_KEY", "SLACK_BOT_TOKEN"]
+}

@@ -1,0 +1,13 @@
+# Capítulo 2: Extensiones
+id: "ch02-extensions"
+order: 2
+name: "Extensiones"
+description: "Instala y configura las extensiones necesarias."
+type: "manual"
+estimatedMinutes: 15
+prerequisites:
+  - "ch01-environment"
+objectives:
+  - "Instalar extensiones recomendadas"
+  - "Completar la configuración de extensiones"
+thumbnail: "thumbnail.png"

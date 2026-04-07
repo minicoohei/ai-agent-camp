@@ -1,0 +1,3 @@
+interface:
+  display_name: "Bigquery Auth"
+  short_description: "GCPプロジェクト単位でBigQuery認証を設定。gcloud設定プロファイルで複数プロジェクトを安全に分離管理。「BigQueryに繋ぎたい」「{プロジェク"

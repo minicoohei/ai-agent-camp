@@ -1,0 +1,15 @@
+# Capítulo 2: Creación de Diagramas y Flujos
+id: "module02-diagram"
+order: 2
+name: "Creación de Diagramas y Flujos"
+description: "Genera automáticamente diagramas y diagramas de flujo a partir de texto."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Generar infografías"
+  - "Crear diagramas en PlantUML"
+  - "Usar la notación Mermaid"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-2"
+  slides: "https://ai-agent.camp/es/course/module-2"

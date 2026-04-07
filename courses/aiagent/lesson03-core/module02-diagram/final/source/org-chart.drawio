@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-10T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram name="IT企業 組織図" id="org-chart-final">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- CEO -->
+        <mxCell id="ceo" value="代表取締役 CEO&#xa;田中 太郎" style="rounded=1;whiteSpace=wrap;fillColor=#1565C0;fontColor=#FFFFFF;strokeColor=#0D47A1;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="40" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- エンジニアリング部 -->
+        <mxCell id="eng" value="エンジニアリング部&#xa;VPoE 鈴木 一郎" style="rounded=1;whiteSpace=wrap;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565C0;" edge="1" parent="1" source="ceo" target="eng">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- プロダクト部 -->
+        <mxCell id="prod" value="プロダクト部&#xa;CPO 佐藤 花子" style="rounded=1;whiteSpace=wrap;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="160" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565C0;" edge="1" parent="1" source="ceo" target="prod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- マーケティング部 -->
+        <mxCell id="mktg" value="マーケティング部&#xa;CMO 高橋 次郎" style="rounded=1;whiteSpace=wrap;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="160" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565C0;" edge="1" parent="1" source="ceo" target="mktg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- コーポレート部 -->
+        <mxCell id="corp" value="コーポレート部&#xa;CFO 渡辺 美咲" style="rounded=1;whiteSpace=wrap;fillColor=#F3E5F5;strokeColor=#6A1B9A;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="160" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565C0;" edge="1" parent="1" source="ceo" target="corp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- エンジニアリング部 チーム -->
+        <mxCell id="be" value="バックエンドチーム&#xa;(8名)" style="rounded=1;whiteSpace=wrap;fillColor=#BBDEFB;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0" y="270" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#90CAF9;" edge="1" parent="1" source="eng" target="be">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fe" value="フロントエンドチーム&#xa;(6名)" style="rounded=1;whiteSpace=wrap;fillColor=#BBDEFB;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="180" y="270" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#90CAF9;" edge="1" parent="1" source="eng" target="fe">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sre" value="SRE / インフラ&#xa;(4名)" style="rounded=1;whiteSpace=wrap;fillColor=#BBDEFB;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="90" y="330" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#90CAF9;" edge="1" parent="1" source="eng" target="sre">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- プロダクト部 チーム -->
+        <mxCell id="pm" value="プロダクトマネジメント&#xa;(3名)" style="rounded=1;whiteSpace=wrap;fillColor=#C8E6C9;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="300" y="270" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#81C784;" edge="1" parent="1" source="prod" target="pm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="design" value="デザインチーム&#xa;(4名)" style="rounded=1;whiteSpace=wrap;fillColor=#C8E6C9;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="480" y="270" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#81C784;" edge="1" parent="1" source="prod" target="design">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- マーケティング部 チーム -->
+        <mxCell id="content" value="コンテンツマーケ&#xa;(3名)" style="rounded=1;whiteSpace=wrap;fillColor=#FFE0B2;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="580" y="270" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFB74D;" edge="1" parent="1" source="mktg" target="content">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sales" value="セールスチーム&#xa;(5名)" style="rounded=1;whiteSpace=wrap;fillColor=#FFE0B2;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="760" y="270" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFB74D;" edge="1" parent="1" source="mktg" target="sales">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- コーポレート部 チーム -->
+        <mxCell id="hr" value="人事・総務&#xa;(3名)" style="rounded=1;whiteSpace=wrap;fillColor=#E1BEE7;strokeColor=#6A1B9A;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="880" y="270" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#BA68C8;" edge="1" parent="1" source="corp" target="hr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="finance" value="経理・法務&#xa;(2名)" style="rounded=1;whiteSpace=wrap;fillColor=#E1BEE7;strokeColor=#6A1B9A;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="270" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#BA68C8;" edge="1" parent="1" source="corp" target="finance">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

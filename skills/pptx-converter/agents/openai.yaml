@@ -1,0 +1,3 @@
+interface:
+  display_name: "Pptx Converter"
+  short_description: "PPTXテンプレート変換 & ゼロからデッキ生成。元PPTXのテーマ・アニメーション・SmartArtを保持したまま、Geminiで意味解析してコンテンツを書き"

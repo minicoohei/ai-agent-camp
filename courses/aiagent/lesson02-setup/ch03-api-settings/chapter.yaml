@@ -1,0 +1,13 @@
+# Chapter 3: API設定
+id: "ch03-api-settings"
+order: 3
+name: "API設定"
+description: "必要なAPIキーを取得して設定します。"
+type: "manual"
+estimatedMinutes: 45
+prerequisites:
+  - "ch02-extensions"
+objectives:
+  - "Gemini APIキーを取得できる"
+  - "各種APIキーを設定できる"
+thumbnail: "thumbnail.png"
