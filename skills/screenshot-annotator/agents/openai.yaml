@@ -1,0 +1,3 @@
+interface:
+  display_name: "Screenshot Annotator"
+  short_description: "Add manual-style annotations (red boxes, arrows, callouts, highlights) to screen"

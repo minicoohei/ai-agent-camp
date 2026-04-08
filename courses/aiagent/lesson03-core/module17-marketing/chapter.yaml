@@ -1,0 +1,17 @@
+# Chapter 12: マーケティング
+id: "module17-marketing"
+order: 12
+name: "マーケティング"
+description: "AIスキルを活用したマーケティングコンテンツの作成と運用を学びます。"
+type: "manual"
+estimatedMinutes: 120
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module01-banner"
+objectives:
+  - "SNS投稿コンテンツを効率的に作成できる"
+  - "SEO監査を実施し改善提案ができる"
+  - "マーケティングコピーを作成・改善できる"
+  - "Pencil MCPでデザインモックアップを作成できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-17"

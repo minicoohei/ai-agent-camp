@@ -1,0 +1,3 @@
+interface:
+  display_name: "Session Retrospective"
+  short_description: "セッション終了時に自己改善Issueを自動生成するスキル。セッション中に遭遇した問題・非効率・改善点を振り返り、GitHub Issueとして登録する。「振り返"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Meeting Notes Summarizer"
+  short_description: "会議テキストやメモから構造化された議事録を自動生成するスキル。参加者、議題、決定事項、アクション項目、次回予定をMarkdownで整理したいときに使う。「議事録"

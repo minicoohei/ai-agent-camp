@@ -1,0 +1,15 @@
+# Chapter 8: GAS自動化
+id: "module10-gas"
+order: 8
+name: "GAS自動化"
+description: "Google Apps Scriptの自動デプロイと実行を行います。"
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "clasp CLIを活用できる"
+  - "複数プロジェクトを管理できる"
+  - "自動デプロイを設定できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-10"
+  slides: "https://ai-agent.camp/ja/course/module-10"

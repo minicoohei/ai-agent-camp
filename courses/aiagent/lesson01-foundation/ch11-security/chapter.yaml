@@ -1,0 +1,17 @@
+# Chapter 11: AIセキュリティ
+id: "ch11-security"
+order: 11
+name: "AIセキュリティ"
+description: "LLMとAIエージェントを安全に使うための知識"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch10-hallucination"
+objectives:
+  - "Prompt Injectionとは何か、Direct/Indirectの違いを理解する"
+  - "OWASP Top 10 for LLMを知る"
+  - "MCPやエージェントがもたらすリスクの拡大を理解する"
+  - "多層防御（Defense in Depth）の考え方を身につける"
+externalContent:
+  manual: "../../../../course/foundation/security.html"

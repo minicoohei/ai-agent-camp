@@ -1,0 +1,6 @@
+id,name,age,score
+1,Alice,25,85.5
+2,Bob,30,90.0
+3,Charlie,35,78.5
+4,David,,82.0
+5,Eve,28,88.5

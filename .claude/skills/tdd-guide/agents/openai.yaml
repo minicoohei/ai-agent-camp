@@ -1,0 +1,3 @@
+interface:
+  display_name: "Tdd Guide"
+  short_description: "Test-driven development workflow with test generation, coverage analysis, and mu"

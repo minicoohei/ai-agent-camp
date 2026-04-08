@@ -1,0 +1,3 @@
+interface:
+  display_name: "Csv Analyzer"
+  short_description: "Analyze CSV files from skills/csv-analyzer, report row and column counts"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Planning With Files"
+  short_description: "Implements Manus-style file-based planning for complex tasks. Creates task_plan."

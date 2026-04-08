@@ -1,0 +1,3 @@
+interface:
+  display_name: "Slack Todo Extractor"
+  short_description: "Slackの同期データから特定ユーザー宛のメンションを検索し、スレッド返信を含めてTODO/タスクを抽出・ステータス判定する。"

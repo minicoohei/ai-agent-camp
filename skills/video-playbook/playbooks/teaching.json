@@ -1,0 +1,70 @@
+{
+  "type": "teaching",
+  "description": "ティーチング・解説（ハウツー、知識共有、tips、ノウハウ）",
+  "insights": [
+    {
+      "source_url": "https://vt.tiktok.com/ZSaEacBVt/",
+      "analyzed_at": "2026-02-07T20:04:03.446614",
+      "duration": 65.6,
+      "total_scenes": 16,
+      "timing": {
+        "avg_scene_duration": 4.1,
+        "min_scene_duration": 1.0,
+        "max_scene_duration": 50.6,
+        "pacing": "fast"
+      },
+      "structure": {
+        "pattern": "hook (0s) → problem (1s) → core_concept (2s) → mechanism_explanation (3s-8s) → solution_conditions (9s-15s)",
+        "hook_duration": 1.0,
+        "key_techniques": [
+          "1秒ごとの高速カット",
+          "プレゼンターの顔出しによる信頼性確保",
+          "インフォグラフィックやストック映像を多用した視覚的説明",
+          "視聴者の疑問をフックにする（1s）"
+        ]
+      },
+      "captions": {
+        "style": "非常に大きく太いゴシック体を使用。中央配置。赤、緑、紫などの原色を多用し、視認性の高い白と黒の二重縁取りを施している。フック部分（0s）は特に派手なグラデーションを使用。",
+        "dominant_position": "center",
+        "colors_used": [
+          "#FF0000",
+          "#FFFF00",
+          "#800080",
+          "#FFFFFF",
+          "#FFD700"
+        ],
+        "density": 1.0
+      },
+      "visual": {
+        "dominant_shot_type": "medium",
+        "shot_variety": 4,
+        "resolution": "1080x1920"
+      },
+      "audio": {
+        "has_narration": true,
+        "narration_density": 4.115853658536586,
+        "words_per_scene": 40.4375
+      }
+    }
+  ],
+  "aggregated": {
+    "sample_count": 1,
+    "avg_duration": 65.6,
+    "avg_scenes": 16.0,
+    "avg_scene_duration": 4.1,
+    "common_pacing": "fast",
+    "common_structures": [
+      "hook (0s) → problem (1s) → core_concept (2s) → mechanism_explanation (3s-8s) → solution_conditions (9s-15s)"
+    ],
+    "all_techniques": [
+      "1秒ごとの高速カット",
+      "プレゼンターの顔出しによる信頼性確保",
+      "インフォグラフィックやストック映像を多用した視覚的説明",
+      "視聴者の疑問をフックにする（1s）"
+    ],
+    "caption_styles": [
+      "非常に大きく太いゴシック体を使用。中央配置。赤、緑、紫などの原色を多用し、視認性の高い白と黒の二重縁取りを施している。フック部分（0s）は特に派手なグラデーションを使用。"
+    ],
+    "common_caption_position": "center"
+  }
+}

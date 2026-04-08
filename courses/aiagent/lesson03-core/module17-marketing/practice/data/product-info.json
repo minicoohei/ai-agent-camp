@@ -1,0 +1,62 @@
+{
+  "product": {
+    "name": "SmartTask Pro",
+    "tagline": "AIが変える、チームの働き方",
+    "category": "タスク管理・プロジェクト管理 SaaS",
+    "url": "https://smarttaskpro.example.com",
+    "version": "2.0",
+    "launch_date": "2026-03-01"
+  },
+  "features": [
+    {
+      "name": "AI タスク自動振り分け",
+      "description": "プロジェクトの目標とメンバーのスキルセットを分析し、最適なタスク割り当てをAIが提案。手動アサインの工数を80%削減。",
+      "icon": "robot"
+    },
+    {
+      "name": "スマート進捗ダッシュボード",
+      "description": "リアルタイムで進捗を可視化。遅延リスクのあるタスクをAIが事前に検知し、アラートで通知。",
+      "icon": "chart-line"
+    },
+    {
+      "name": "自然言語レポート生成",
+      "description": "「今週の進捗をまとめて」と入力するだけで、チームの週次レポートを自動生成。経営層への報告資料も瞬時に作成。",
+      "icon": "file-text"
+    }
+  ],
+  "pricing": {
+    "free": {
+      "name": "Starter",
+      "price": 0,
+      "users": "最大5名",
+      "features": ["基本タスク管理", "カンバンボード", "Slack連携"]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": 1980,
+      "price_unit": "ユーザー/月（税込）",
+      "users": "無制限",
+      "features": ["AIタスク振り分け", "進捗ダッシュボード", "レポート生成", "API連携", "優先サポート"]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "要問合せ",
+      "users": "無制限",
+      "features": ["全Pro機能", "SSO/SAML", "専任CSM", "SLA保証", "オンプレミス対応"]
+    }
+  },
+  "metrics": {
+    "registered_companies": 1200,
+    "active_users": 15000,
+    "avg_efficiency_gain": "40%",
+    "customer_satisfaction": 4.6,
+    "nps": 72
+  },
+  "target_industries": ["IT・SaaS", "コンサルティング", "広告・マーケティング", "製造業", "金融"],
+  "competitors": ["Asana", "Notion", "Monday.com", "ClickUp"],
+  "differentiators": [
+    "日本語に最適化されたAIエンジン",
+    "国内SaaS連携が豊富（kintone, Chatwork, freee等）",
+    "導入支援プログラム付き（無料オンボーディング）"
+  ]
+}

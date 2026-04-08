@@ -1,0 +1,208 @@
+# Gmail通知ワークフロー
+# 
+# 機能:
+# - CI/CDの結果をGmailで通知
+# - 日次レポートをメール送信
+# - エラー発生時のアラート通知
+#
+# 必要なSecrets:
+# - GMAIL_ADDRESS: 送信元Gmailアドレス
+# - GMAIL_APP_PASSWORD: Gmailアプリパスワード（2段階認証必須）
+# - NOTIFY_EMAIL: 通知先メールアドレス
+
+name: Gmail Notification
+
+on:
+  # 他のワークフローから呼び出し
+  workflow_call:
+    inputs:
+      subject:
+        description: 'メールの件名'
+        required: true
+        type: string
+      body:
+        description: 'メール本文'
+        required: true
+        type: string
+      priority:
+        description: '優先度 (high/normal/low)'
+        required: false
+        type: string
+        default: 'normal'
+    secrets:
+      GMAIL_ADDRESS:
+        required: true
+      GMAIL_APP_PASSWORD:
+        required: true
+      NOTIFY_EMAIL:
+        required: true
+
+  # 手動実行（テスト用）
+  workflow_dispatch:
+    inputs:
+      subject:
+        description: 'メールの件名'
+        required: true
+        default: 'GitHub Actions テスト通知'
+      body:
+        description: 'メール本文'
+        required: true
+        default: 'これはGitHub Actionsからのテストメールです。'
+
+  # スケジュール実行（日次レポート）
+  schedule:
+    # 毎日午前9時（JST）に実行
+    - cron: '0 0 * * *'
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install secure-smtplib
+
+      - name: Prepare email content
+        id: prepare
+        run: |
+          # スケジュール実行の場合は日次レポートを生成
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            SUBJECT="【日次レポート】${{ github.repository }} - $(date '+%Y-%m-%d')"
+            BODY="
+            ========================================
+            日次レポート: ${{ github.repository }}
+            日時: $(date '+%Y-%m-%d %H:%M:%S JST')
+            ========================================
+            
+            ■ リポジトリ情報
+            - リポジトリ: ${{ github.repository }}
+            - ブランチ: ${{ github.ref_name }}
+            - 最新コミット: ${{ github.sha }}
+            
+            ■ 本日のアクティビティ
+            - ワークフロー実行回数: 確認してください
+            - 最終デプロイ: 確認してください
+            
+            ----------------------------------------
+            このメールはGitHub Actionsから自動送信されています。
+            "
+          else
+            SUBJECT="${{ inputs.subject }}"
+            BODY="${{ inputs.body }}"
+          fi
+          
+          echo "subject=${SUBJECT}" >> $GITHUB_OUTPUT
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          echo "${BODY}" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Send Email via Gmail
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+        run: |
+          python << 'EOF'
+          import smtplib
+          import os
+          from email.mime.text import MIMEText
+          from email.mime.multipart import MIMEMultipart
+          from email.header import Header
+          from datetime import datetime
+          
+          # 環境変数から取得
+          gmail_address = os.environ['GMAIL_ADDRESS']
+          gmail_password = os.environ['GMAIL_APP_PASSWORD']
+          notify_email = os.environ['NOTIFY_EMAIL']
+          
+          # メール設定
+          subject = """${{ steps.prepare.outputs.subject }}"""
+          body = """${{ steps.prepare.outputs.body }}"""
+          
+          # MIMEメッセージ作成
+          msg = MIMEMultipart()
+          msg['From'] = gmail_address
+          msg['To'] = notify_email
+          msg['Subject'] = Header(subject, 'utf-8')
+          
+          # HTML形式の本文
+          html_body = f"""
+          <html>
+          <body style="font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333;">
+            <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+              <div style="background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0;">
+                <h2 style="margin: 0;">🤖 GitHub Actions 通知</h2>
+              </div>
+              <div style="background: #f8f9fa; padding: 20px; border: 1px solid #e9ecef; border-radius: 0 0 8px 8px;">
+                <pre style="white-space: pre-wrap; font-family: monospace; background: white; padding: 15px; border-radius: 4px; border: 1px solid #dee2e6;">{body}</pre>
+                <hr style="border: none; border-top: 1px solid #dee2e6; margin: 20px 0;">
+                <p style="font-size: 12px; color: #6c757d; margin: 0;">
+                  送信元: GitHub Actions<br>
+                  リポジトリ: ${{ github.repository }}<br>
+                  実行日時: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} UTC
+                </p>
+              </div>
+            </div>
+          </body>
+          </html>
+          """
+          
+          msg.attach(MIMEText(html_body, 'html', 'utf-8'))
+          
+          # Gmail SMTPで送信
+          try:
+              with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+                  server.login(gmail_address, gmail_password)
+                  server.send_message(msg)
+              print(f"✅ メール送信成功: {notify_email}")
+          except Exception as e:
+              print(f"❌ メール送信エラー: {e}")
+              raise
+          EOF
+
+      - name: Log success
+        run: |
+          echo "📧 メール送信完了"
+          echo "  宛先: ${{ secrets.NOTIFY_EMAIL }}"
+          echo "  件名: ${{ steps.prepare.outputs.subject }}"
+
+
+# ===========================================
+# CI/CDと連携する場合の呼び出し例
+# ===========================================
+#
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Build
+#         run: npm run build
+#
+#   notify-on-failure:
+#     needs: build
+#     if: failure()
+#     uses: ./.github/workflows/gmail-notification.yml
+#     with:
+#       subject: "🚨 ビルド失敗: ${{ github.repository }}"
+#       body: |
+#         ビルドが失敗しました。
+#         
+#         リポジトリ: ${{ github.repository }}
+#         ブランチ: ${{ github.ref_name }}
+#         コミット: ${{ github.sha }}
+#         
+#         詳細: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+#       priority: high
+#     secrets:
+#       GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+#       GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+#       NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Check Inbox"
+  short_description: "メールとSlackから返信すべき項目・タスクを抽出する統合型スキル。"

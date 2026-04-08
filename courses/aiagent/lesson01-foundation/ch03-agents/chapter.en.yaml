@@ -1,0 +1,16 @@
+# Chapter 3: AI Agents
+id: "ch03-agents"
+order: 3
+name: "AI Agents"
+description: "Learn about the concept and mechanics of AI agents."
+type: "manual"
+estimatedMinutes: 30
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch02-tokens"
+objectives:
+  - "Understand the difference between agents and assistants"
+  - "Understand the agent loop mechanism"
+  - "Understand autonomy levels"
+externalContent:
+  manual: "../../../../course/foundation/agents.html"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Media Generator"
+  short_description: "バナー/図表/スライド/画像の生成・編集を行うサブエージェント。"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Post Publisher"
+  short_description: "コンテンツの投稿・配信実行スキル。Typefully経由のX投稿、画像アップロード、"

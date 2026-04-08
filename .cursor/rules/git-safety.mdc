@@ -1,0 +1,35 @@
+---
+alwaysApply: true
+description: "Gitの危険操作・Secrets保護・ブランチ運用ルール"
+---
+
+# Git安全ガイドライン
+
+## 禁止操作
+
+### 絶対に禁止
+- `git push --force` / `--force-with-lease` - mainブランチへの強制プッシュ
+- `git reset --hard` - コミットされていない変更がある場合
+- `git clean -fd` / `-fdx` - 確認なしの未追跡ファイル削除（`.env` も消える）
+- `git branch -D` - 未マージブランチの強制削除
+
+### 要注意（確認必須）
+- `git rebase` - プッシュ済みコミットに対する使用
+- `git commit --amend` - プッシュ済みコミットの修正
+- `git filter-branch` - 履歴の書き換え
+
+## Secrets保護
+
+### 絶対にコミットしないファイル
+`.env`, `.env.local`, `credentials.json`, `client_secret.json`, `token.json`, `*.pem`, `*.key`
+
+### 編集ルール
+- `.env` / `.env.local` は**追記（`>>`）のみ**許可。変更前に `cp .env .env.bak` でバックアップ
+- JSON/鍵ファイル（`credentials.json`, `client_secret.json`, `token.json`, `*.pem`, `*.key`）は原則手動編集禁止（必要時は再発行手順を利用）
+- 上記すべてのファイルの削除・上書きは禁止
+
+## ブランチ運用ルール
+- 新機能はブランチで開発、PRでマージ
+- 長期ブランチは週1以上 main をリベース
+- PRブランチは main からの乖離コミット数を20以下に保つ
+- PR マージ前に `git fetch origin` してから `git diff --stat origin/main...HEAD` でコンフリクト量を事前チェック

@@ -1,0 +1,18 @@
+# Chapter 16: Google Workspace 統合
+id: "module04-google-workspace"
+order: 16
+name: "Google Workspace 統合"
+description: "Calendar、Gmail、Drive、Sheets、GAS をまたいだ AI 秘書ワークフローを構築し、日常業務を自動化します。"
+type: "manual"
+estimatedMinutes: 180
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "lesson02-setup"
+objectives:
+  - "Google Workspace API の役割分担を理解する"
+  - "Calendar、Gmail、Drive、Sheets を AI エージェントから操作できる"
+  - "GAS を使った定期実行の流れを説明できる"
+  - "統合ワークフローの入出力を整理できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-4"
+  slides: "https://ai-agent.camp/ja/course/module-4"

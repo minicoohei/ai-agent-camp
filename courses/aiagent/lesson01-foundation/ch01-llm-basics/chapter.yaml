@@ -1,0 +1,14 @@
+# Chapter 1: LLM基礎
+id: "ch01-llm-basics"
+order: 1
+name: "LLM基礎"
+description: "LLM（大規模言語モデル）の動作原理を学びます。"
+type: "manual"
+estimatedMinutes: 30
+thumbnail: "thumbnail.png"
+objectives:
+  - "LLMの基本概念を理解する"
+  - "AIの進化と歴史を把握する"
+  - "次トークン予測の仕組みを理解する"
+externalContent:
+  manual: "../../../../course/foundation/llm-basics.html"

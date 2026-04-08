@@ -1,0 +1,18 @@
+# Capítulo 15: Redacción de Artículos
+id: "module14-article-writing"
+order: 15
+name: "Redacción de Artículos"
+description: "Usa agentes de IA para ejecutar el flujo completo de un artículo: tema, estructura, ajuste de estilo, imágenes, corrección y verificación de hechos."
+type: "manual"
+estimatedMinutes: 230
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "Diseñar el tema del artículo y el lector objetivo"
+  - "Acelerar el flujo desde el esquema hasta el primer borrador"
+  - "Separar los roles de estilo, corrección y fact-checking"
+  - "Organizar los materiales de apoyo necesarios para la producción"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-14"
+  slides: "https://ai-agent.camp/es/course/module-14"

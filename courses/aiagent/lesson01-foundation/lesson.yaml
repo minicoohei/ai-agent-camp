@@ -1,0 +1,31 @@
+# Lesson 1: 基礎知識（Foundation）
+id: "lesson01-foundation"
+order: 1
+name: "基礎知識（Foundation）"
+description: "AIエージェントを使いこなすための基礎知識を学びます。LLMの動作原理、トークン、エージェントの概念、MCP、マルチモーダル、RAG、セキュリティまで幅広く理解します。"
+estimatedMinutes: 290
+cover: "cover.png"
+chapters:
+  - "ch01-llm-basics"
+  - "ch02-tokens"
+  - "ch03-agents"
+  - "ch04-context-engineering"
+  - "ch05-cursor-usage"
+  - "ch06-mcp"
+  - "ch07-multimodal"
+  - "ch08-rag"
+  - "ch09-subagent"
+  - "ch10-hallucination"
+  - "ch11-security"
+objectives:
+  - "LLM（大規模言語モデル）の動作原理を理解する"
+  - "トークンとコンテキストウィンドウの概念を理解する"
+  - "エージェントとアシスタントの違いを理解する"
+  - "効果的なプロンプト設計ができる"
+  - "Cursorの基本操作を習得する"
+  - "MCPの仕組みを理解する"
+  - "マルチモーダルAIの概念を把握する"
+  - "RAGの仕組みと活用方法を理解する"
+  - "Skill/SubAgent/Agent Teamの使い分けを理解する"
+  - "ハルシネーションのリスクと対策を理解する"
+  - "AIセキュリティの基本原則を身につける"

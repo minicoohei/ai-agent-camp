@@ -1,0 +1,3 @@
+interface:
+  display_name: "Video Scriptwriter"
+  short_description: "TikTok/YouTube向け動画スクリプト自動生成スキル。"

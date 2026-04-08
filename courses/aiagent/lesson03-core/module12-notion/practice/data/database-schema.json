@@ -1,0 +1,71 @@
+{
+  "parent": {
+    "type": "page_id",
+    "page_id": "<親ページIDをここに設定>"
+  },
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "タスク管理"
+      }
+    }
+  ],
+  "properties": {
+    "タイトル": {
+      "title": {}
+    },
+    "ステータス": {
+      "select": {
+        "options": [
+          { "name": "未着手", "color": "gray" },
+          { "name": "進行中", "color": "blue" },
+          { "name": "レビュー中", "color": "yellow" },
+          { "name": "完了", "color": "green" },
+          { "name": "保留", "color": "red" }
+        ]
+      }
+    },
+    "担当者": {
+      "select": {
+        "options": [
+          { "name": "田中太郎", "color": "blue" },
+          { "name": "佐藤花子", "color": "pink" },
+          { "name": "鈴木一郎", "color": "green" },
+          { "name": "山田次郎", "color": "orange" }
+        ]
+      }
+    },
+    "期限": {
+      "date": {}
+    },
+    "優先度": {
+      "select": {
+        "options": [
+          { "name": "高", "color": "red" },
+          { "name": "中", "color": "yellow" },
+          { "name": "低", "color": "gray" }
+        ]
+      }
+    },
+    "カテゴリ": {
+      "multi_select": {
+        "options": [
+          { "name": "開発", "color": "blue" },
+          { "name": "ドキュメント", "color": "green" },
+          { "name": "バグ修正", "color": "red" },
+          { "name": "改善", "color": "purple" },
+          { "name": "調査", "color": "orange" }
+        ]
+      }
+    },
+    "見積もり時間": {
+      "number": {
+        "format": "number"
+      }
+    },
+    "GitHub Issue": {
+      "url": {}
+    }
+  }
+}

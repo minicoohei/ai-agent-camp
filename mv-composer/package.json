@@ -1,0 +1,22 @@
+{
+  "name": "mv-composer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx remotion studio",
+    "build": "npx remotion render src/index.ts",
+    "render:horizontal": "npx remotion render src/index.ts ScreenExplainer --codec h264",
+    "render:vertical": "npx remotion render src/index.ts ScreenExplainerVertical --codec h264"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.434",
+    "@remotion/player": "4.0.434",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.434"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,71 @@
+@startuml 営業プロセスフロー
+
+skinparam backgroundColor #FEFEFE
+skinparam activity {
+    BackgroundColor #E3F2FD
+    BorderColor #1565C0
+    FontSize 14
+}
+skinparam diamond {
+    BackgroundColor #FFF9C4
+    BorderColor #F9A825
+}
+skinparam note {
+    BackgroundColor #F5F5F5
+    BorderColor #9E9E9E
+}
+
+title BtoB SaaS 営業プロセスフロー
+
+start
+
+:【ステップ1】リード獲得;
+note right
+  **担当**: マーケティング / IS
+  **アクション**: ウェビナー・展示会・
+  Web問い合わせからリード獲得
+  **ツール**: HubSpot / Salesforce
+end note
+
+:【ステップ2】初回提案;
+note right
+  **担当**: インサイドセールス
+  **アクション**: 電話/メールでコンタクト、
+  製品概要説明、ミーティング設定
+  **判定**: 見込み度 A/B/C ランク付け
+end note
+
+if (見込み度?) then (A/B)
+    :【ステップ3】ヒアリング;
+    note right
+      **担当**: フィールドセールス
+      **アクション**: 課題・要件の深掘り
+      **確認**: BANT条件
+      (Budget, Authority, Need, Timeline)
+    end note
+
+    :【ステップ4】見積・提案;
+    note right
+      **担当**: FS / ソリューションアーキテクト
+      **アクション**: カスタマイズ提案書、
+      デモ実施、見積書提出
+      **成果物**: 提案書、ROI試算
+    end note
+
+    if (受注判定?) then (受注)
+        #90EE90:【受注】契約締結;
+        :カスタマーサクセスへ引き渡し;
+        :オンボーディング開始;
+    else (失注)
+        #FFCDD2:【失注】失注理由を記録;
+        :ナーチャリングリストに追加;
+        :3ヶ月後にフォローアップ;
+    endif
+else (C)
+    :ナーチャリング（メルマガ等）;
+    :再アプローチ判定;
+endif
+
+stop
+
+@enduml

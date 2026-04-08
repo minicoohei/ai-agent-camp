@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "ms-ceintl.vscode-language-pack-ja",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens",
+    "github.copilot",
+    "redhat.vscode-yaml",
+    "yzhang.markdown-all-in-one",
+    "christian-kohler.path-intellisense",
+    "ritwickdey.liveserver",
+    "rangav.vscode-thunder-client",
+    "oderwat.indent-rainbow"
+  ],
+  "unwantedRecommendations": []
+}

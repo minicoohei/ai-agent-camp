@@ -1,0 +1,941 @@
+[
+  {
+    "id": "M001",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "PRレビューお願いします。API認証の修正を入れました。 #123",
+    "timestamp": "2026-02-03T09:15:00",
+    "reactions": [
+      "eyes",
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M002",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "了解です。午前中にレビューします。",
+    "timestamp": "2026-02-03T09:20:00",
+    "reactions": []
+  },
+  {
+    "id": "M003",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "レビュー完了しました。1点コメントつけたので確認お願いします。",
+    "timestamp": "2026-02-03T11:30:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M004",
+    "channel": "project-alpha",
+    "user": "山田一郎",
+    "text": "プロジェクトAlphaの進捗確認ミーティング、今週金曜14:00からでどうですか？",
+    "timestamp": "2026-02-03T10:00:00",
+    "reactions": [
+      "thumbsup",
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M005",
+    "channel": "project-alpha",
+    "user": "佐藤美咲",
+    "text": "金曜14:00、OKです。議題をまとめておきます。",
+    "timestamp": "2026-02-03T10:05:00",
+    "reactions": []
+  },
+  {
+    "id": "M006",
+    "channel": "infra",
+    "user": "高橋次郎",
+    "text": "本番環境へのデプロイ、今日の18:00に実施予定です。影響範囲はAPIサーバーのみです。",
+    "timestamp": "2026-02-03T14:00:00",
+    "reactions": [
+      "eyes"
+    ]
+  },
+  {
+    "id": "M007",
+    "channel": "infra",
+    "user": "田中太郎",
+    "text": "デプロイ前にステージング環境での最終確認をお願いします。",
+    "timestamp": "2026-02-03T14:10:00",
+    "reactions": []
+  },
+  {
+    "id": "M008",
+    "channel": "general",
+    "user": "渡辺美咲",
+    "text": "来週月曜日に全社MTGがあります。参加必須でお願いします。13:00〜14:00、会議室A。",
+    "timestamp": "2026-02-03T15:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M009",
+    "channel": "support",
+    "user": "小林健太",
+    "text": "お客様からバグ報告がありました。ログイン画面で500エラーが発生するとのこと。エスカレーションお願いします。",
+    "timestamp": "2026-02-03T16:00:00",
+    "reactions": [
+      "rotating_light"
+    ]
+  },
+  {
+    "id": "M010",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "ログインのバグ、確認しました。認証トークンの有効期限チェックが原因でした。修正PR出します。",
+    "timestamp": "2026-02-03T16:30:00",
+    "reactions": [
+      "thumbsup",
+      "pray"
+    ]
+  },
+  {
+    "id": "M011",
+    "channel": "marketing",
+    "user": "木村有希",
+    "text": "来週のキャンペーンバナー、デザインチームにお願いしてあります。木曜までに初稿確認お願いします。",
+    "timestamp": "2026-02-03T11:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M012",
+    "channel": "design",
+    "user": "伊藤誠",
+    "text": "キャンペーンバナーの初稿です。3パターン作成しました。確認お願いします。",
+    "timestamp": "2026-02-04T10:00:00",
+    "reactions": [
+      "heart"
+    ]
+  },
+  {
+    "id": "M013",
+    "channel": "marketing",
+    "user": "木村有希",
+    "text": "パターンBが良いと思います。CTAのテキストだけ「今すぐ申し込む」に変更してください。",
+    "timestamp": "2026-02-04T11:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M014",
+    "channel": "sales",
+    "user": "中村大輔",
+    "text": "A社との商談が進んでいます。来週水曜にデモを実施する予定です。技術担当の同席をお願いします。",
+    "timestamp": "2026-02-04T09:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M015",
+    "channel": "sales",
+    "user": "山田一郎",
+    "text": "デモの準備、田中さんにお願いできますか？環境構築が必要です。来週火曜までにお願いします。",
+    "timestamp": "2026-02-04T09:15:00",
+    "reactions": []
+  },
+  {
+    "id": "M016",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "バグ修正完了です。PR #125 をマージしました。ステージングにデプロイ済みです。",
+    "timestamp": "2026-02-04T14:00:00",
+    "reactions": [
+      "tada"
+    ]
+  },
+  {
+    "id": "M017",
+    "channel": "support",
+    "user": "小林健太",
+    "text": "バグ修正を確認しました。お客様に報告済みです。対応ありがとうございます。",
+    "timestamp": "2026-02-04T15:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M018",
+    "channel": "hr",
+    "user": "松本真理",
+    "text": "新卒エンジニアの面接日程を調整中です。来週の候補日をいくつかください。",
+    "timestamp": "2026-02-04T10:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M019",
+    "channel": "random",
+    "user": "鈴木花子",
+    "text": "今日のランチ、新しくできたイタリアンに行きませんか？12:00集合で。",
+    "timestamp": "2026-02-04T11:30:00",
+    "reactions": [
+      "yum",
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M020",
+    "channel": "random",
+    "user": "伊藤誠",
+    "text": "行きます！",
+    "timestamp": "2026-02-04T11:32:00",
+    "reactions": []
+  },
+  {
+    "id": "M021",
+    "channel": "project-alpha",
+    "user": "山田一郎",
+    "text": "Alpha の API設計書を更新しました。新しいエンドポイント3つ追加してます。レビューお願いします。",
+    "timestamp": "2026-02-05T09:00:00",
+    "reactions": [
+      "eyes"
+    ]
+  },
+  {
+    "id": "M022",
+    "channel": "project-alpha",
+    "user": "佐藤美咲",
+    "text": "API設計書確認しました。認証周りのフローが少し複雑なので、シーケンス図を追加してもらえますか？",
+    "timestamp": "2026-02-05T11:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M023",
+    "channel": "infra",
+    "user": "高橋次郎",
+    "text": "昨日のデプロイ、問題なく完了しました。レスポンスタイムも改善しています。",
+    "timestamp": "2026-02-05T09:30:00",
+    "reactions": [
+      "tada",
+      "clap"
+    ]
+  },
+  {
+    "id": "M024",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "テストカバレッジが85%まで上がりました。目標の90%まであと少しです。",
+    "timestamp": "2026-02-05T10:00:00",
+    "reactions": [
+      "muscle"
+    ]
+  },
+  {
+    "id": "M025",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "週末までに残りのテストを追加します。認証モジュールのテストが不足しているので対応します。",
+    "timestamp": "2026-02-05T10:15:00",
+    "reactions": []
+  },
+  {
+    "id": "M026",
+    "channel": "marketing",
+    "user": "木村有希",
+    "text": "ブログ記事の執筆をお願いしたいです。テーマは「AIエージェントの業務活用事例」で、来週金曜が締切です。",
+    "timestamp": "2026-02-05T13:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M027",
+    "channel": "general",
+    "user": "渡辺美咲",
+    "text": "社内Wi-Fiのメンテナンスを今週土曜に実施します。8:00〜12:00の間、接続が不安定になる可能性があります。",
+    "timestamp": "2026-02-05T14:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M028",
+    "channel": "support",
+    "user": "小林健太",
+    "text": "B社からの問い合わせ。APIのレート制限に引っかかっているとのこと。プラン変更の提案が必要です。",
+    "timestamp": "2026-02-05T15:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M029",
+    "channel": "sales",
+    "user": "中村大輔",
+    "text": "B社のプラン変更について、営業からフォローします。見積もり作成をお願いします。期限は来週月曜です。",
+    "timestamp": "2026-02-05T15:30:00",
+    "reactions": []
+  },
+  {
+    "id": "M030",
+    "channel": "design",
+    "user": "伊藤誠",
+    "text": "新しいダッシュボードのUIモックアップが完成しました。Figmaリンクを共有します。フィードバックお願いします。",
+    "timestamp": "2026-02-05T16:00:00",
+    "reactions": [
+      "eyes",
+      "heart"
+    ]
+  },
+  {
+    "id": "M031",
+    "channel": "project-alpha",
+    "user": "田中太郎",
+    "text": "シーケンス図を追加しました。認証フローの全体像が分かるようになっていると思います。確認お願いします。",
+    "timestamp": "2026-02-06T09:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M032",
+    "channel": "project-alpha",
+    "user": "佐藤美咲",
+    "text": "確認しました。分かりやすいです。これで設計書はFIXでいいと思います。",
+    "timestamp": "2026-02-06T10:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M033",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "リファクタリングのPRを出しました。#128 です。大きな変更なのでじっくりレビューお願いします。",
+    "timestamp": "2026-02-06T11:00:00",
+    "reactions": [
+      "eyes"
+    ]
+  },
+  {
+    "id": "M034",
+    "channel": "infra",
+    "user": "高橋次郎",
+    "text": "監視アラートの設定を見直しました。誤検知が減るはずです。1週間様子を見てください。",
+    "timestamp": "2026-02-06T13:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M035",
+    "channel": "general",
+    "user": "松本真理",
+    "text": "来月の社内研修のアンケートを送りました。今週金曜までに回答をお願いします。",
+    "timestamp": "2026-02-06T14:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M036",
+    "channel": "marketing",
+    "user": "木村有希",
+    "text": "SNSの投稿スケジュールを作成しました。来週分のコンテンツ確認をお願いします。月曜までに。",
+    "timestamp": "2026-02-06T15:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M037",
+    "channel": "random",
+    "user": "田中太郎",
+    "text": "週末にハッカソンイベントがあるんですが、参加する人いますか？チーム組みたいです。",
+    "timestamp": "2026-02-06T17:00:00",
+    "reactions": [
+      "raised_hand",
+      "raised_hand"
+    ]
+  },
+  {
+    "id": "M038",
+    "channel": "project-alpha",
+    "user": "山田一郎",
+    "text": "金曜のミーティング、議題をまとめました。1) 進捗報告 2) API設計FIX 3) スプリント計画 4) リスク確認",
+    "timestamp": "2026-02-06T16:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M039",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "テスト追加完了しました。カバレッジ91%まで上がりました。目標達成です。",
+    "timestamp": "2026-02-07T09:00:00",
+    "reactions": [
+      "tada",
+      "clap",
+      "muscle"
+    ]
+  },
+  {
+    "id": "M040",
+    "channel": "support",
+    "user": "小林健太",
+    "text": "今週の問い合わせ対応件数: 23件。うちエスカレーション3件。完了率87%です。",
+    "timestamp": "2026-02-07T10:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M041",
+    "channel": "project-alpha",
+    "user": "佐藤美咲",
+    "text": "ミーティング完了。決定事項: API設計FIX、来週からフロントエンド実装開始、QA環境の準備を木曜までに。",
+    "timestamp": "2026-02-07T15:30:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M042",
+    "channel": "infra",
+    "user": "高橋次郎",
+    "text": "QA環境の構築、来週木曜までに対応します。Terraform の設定を流用するので大きな作業にはならない想定です。",
+    "timestamp": "2026-02-07T16:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M043",
+    "channel": "sales",
+    "user": "中村大輔",
+    "text": "A社デモの準備完了しました。デモ環境のURLとアカウント情報を共有します。",
+    "timestamp": "2026-02-07T11:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M044",
+    "channel": "design",
+    "user": "伊藤誠",
+    "text": "ダッシュボードのデザインレビュー、来週火曜の15:00からでお願いします。デザインチーム + PM参加で。",
+    "timestamp": "2026-02-07T13:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M045",
+    "channel": "hr",
+    "user": "松本真理",
+    "text": "面接日程が確定しました。来週水曜の14:00と木曜の10:00の2枠です。面接官の調整をお願いします。",
+    "timestamp": "2026-02-07T14:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M046",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "来週のスプリントで対応するバックログを整理しました。優先度順にJiraチケットを更新しています。",
+    "timestamp": "2026-02-07T16:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M047",
+    "channel": "general",
+    "user": "渡辺美咲",
+    "text": "社内研修アンケートの回答期限は本日中です。まだの方はお願いします。回答率は現在65%です。",
+    "timestamp": "2026-02-07T16:30:00",
+    "reactions": []
+  },
+  {
+    "id": "M048",
+    "channel": "marketing",
+    "user": "木村有希",
+    "text": "キャンペーンバナーの最終版を確認しました。問題なしです。来週月曜から配信開始します。",
+    "timestamp": "2026-02-07T17:00:00",
+    "reactions": [
+      "tada"
+    ]
+  },
+  {
+    "id": "M049",
+    "channel": "random",
+    "user": "高橋次郎",
+    "text": "ハッカソン、参加します！AIテーマだったら面白そうですね。",
+    "timestamp": "2026-02-07T17:30:00",
+    "reactions": []
+  },
+  {
+    "id": "M050",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "今週のまとめ: バグ修正2件完了、テストカバレッジ91%達成、PR3件マージ。来週はフロントエンド実装に着手します。お疲れ様でした！",
+    "timestamp": "2026-02-07T18:00:00",
+    "reactions": [
+      "clap",
+      "beer"
+    ]
+  },
+  {
+    "id": "M051",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "おはようございます。今週はフロントエンド実装に集中します。まずログイン画面から着手します。",
+    "timestamp": "2026-02-10T09:00:00",
+    "reactions": [
+      "muscle"
+    ]
+  },
+  {
+    "id": "M052",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "私はダッシュボード画面を担当します。デザインチームのモックアップをベースに進めます。",
+    "timestamp": "2026-02-10T09:10:00",
+    "reactions": []
+  },
+  {
+    "id": "M053",
+    "channel": "project-alpha",
+    "user": "山田一郎",
+    "text": "フロントエンド実装のキックオフです。React + TypeScript で進めます。ブランチ戦略は feature/* → develop → main で。",
+    "timestamp": "2026-02-10T09:30:00",
+    "reactions": [
+      "thumbsup",
+      "rocket"
+    ]
+  },
+  {
+    "id": "M054",
+    "channel": "infra",
+    "user": "高橋次郎",
+    "text": "QA環境の構築を開始しました。Terraform apply は午前中に完了予定です。",
+    "timestamp": "2026-02-10T10:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M055",
+    "channel": "design",
+    "user": "伊藤誠",
+    "text": "フロントエンドチームへ。デザイントークンのJSONファイルを共有します。カラー、タイポグラフィ、スペーシングの定義が入っています。",
+    "timestamp": "2026-02-10T10:30:00",
+    "reactions": [
+      "thumbsup",
+      "heart"
+    ]
+  },
+  {
+    "id": "M056",
+    "channel": "general",
+    "user": "渡辺美咲",
+    "text": "全社MTGのアジェンダを共有します。1) Q4実績報告 2) 新プロダクト発表 3) 来期方針 4) Q&A",
+    "timestamp": "2026-02-10T11:00:00",
+    "reactions": [
+      "eyes"
+    ]
+  },
+  {
+    "id": "M057",
+    "channel": "support",
+    "user": "小林健太",
+    "text": "B社のプラン変更が完了しました。APIレート制限の問題は解消されたとのこと。クローズします。",
+    "timestamp": "2026-02-10T11:30:00",
+    "reactions": [
+      "tada"
+    ]
+  },
+  {
+    "id": "M058",
+    "channel": "sales",
+    "user": "中村大輔",
+    "text": "A社デモは水曜14:00に決定。参加者: 先方3名（CTO、エンジニアリーダー、PM）。こちらは田中さんと私で。",
+    "timestamp": "2026-02-10T13:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M059",
+    "channel": "marketing",
+    "user": "木村有希",
+    "text": "キャンペーンバナーの配信を開始しました。初日のインプレッション速報は後ほど共有します。",
+    "timestamp": "2026-02-10T14:00:00",
+    "reactions": [
+      "crossed_fingers"
+    ]
+  },
+  {
+    "id": "M060",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "ログイン画面のPR出しました。#130 です。レスポンシブ対応済み、バリデーションも入れてます。",
+    "timestamp": "2026-02-10T17:00:00",
+    "reactions": [
+      "eyes"
+    ]
+  },
+  {
+    "id": "M061",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "ダッシュボードのグリッドレイアウト組みました。KPIカード4枚とチャートエリアの配置完了。PR #131。",
+    "timestamp": "2026-02-10T17:30:00",
+    "reactions": [
+      "eyes"
+    ]
+  },
+  {
+    "id": "M062",
+    "channel": "infra",
+    "user": "高橋次郎",
+    "text": "QA環境の構築完了しました。URL: https://qa.example.com 認証情報はDMで送ります。",
+    "timestamp": "2026-02-10T16:00:00",
+    "reactions": [
+      "tada",
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M063",
+    "channel": "project-alpha",
+    "user": "佐藤美咲",
+    "text": "フロントエンド実装の進捗、初日にして2画面分のPRが出てます。いいペースですね。",
+    "timestamp": "2026-02-10T18:00:00",
+    "reactions": [
+      "fire"
+    ]
+  },
+  {
+    "id": "M064",
+    "channel": "random",
+    "user": "伊藤誠",
+    "text": "ハッカソンの結果報告です。チーム田中で参加して、3位入賞でした！AIチャットボットを作りました。",
+    "timestamp": "2026-02-10T12:00:00",
+    "reactions": [
+      "tada",
+      "clap",
+      "trophy"
+    ]
+  },
+  {
+    "id": "M065",
+    "channel": "random",
+    "user": "田中太郎",
+    "text": "ハッカソン楽しかったです。48時間でプロトタイプまで作れたのは良い経験でした。次回も参加したい！",
+    "timestamp": "2026-02-10T12:10:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M066",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "#130 レビュー完了。LGTM です。フォームのアクセシビリティ対応が丁寧で良いですね。",
+    "timestamp": "2026-02-11T09:30:00",
+    "reactions": []
+  },
+  {
+    "id": "M067",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "#131 もレビューしました。Chart.js の設定でレスポンシブ時のフォントサイズ調整を入れた方が良さそうです。",
+    "timestamp": "2026-02-11T10:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M068",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "了解です。フォントサイズの調整を追加しました。修正コミット済みです。",
+    "timestamp": "2026-02-11T11:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M069",
+    "channel": "design",
+    "user": "伊藤誠",
+    "text": "ダッシュボードのデザインレビュー、本日15:00からです。フロントの実装状況も見せてもらえると助かります。",
+    "timestamp": "2026-02-11T13:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M070",
+    "channel": "marketing",
+    "user": "木村有希",
+    "text": "キャンペーンバナー初日速報: インプレッション12,500、クリック率2.1%。目標の1.5%を上回っています。",
+    "timestamp": "2026-02-11T10:00:00",
+    "reactions": [
+      "tada",
+      "chart_with_upwards_trend"
+    ]
+  },
+  {
+    "id": "M071",
+    "channel": "hr",
+    "user": "松本真理",
+    "text": "本日14:00の面接、面接官は田中さんと山田さんでお願いします。候補者の履歴書はDMで共有済みです。",
+    "timestamp": "2026-02-11T09:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M072",
+    "channel": "sales",
+    "user": "中村大輔",
+    "text": "B社のプラン変更に伴う追加契約、受注しました。月額+15万円。ARR +180万円の貢献です。",
+    "timestamp": "2026-02-11T14:00:00",
+    "reactions": [
+      "moneybag",
+      "tada",
+      "clap"
+    ]
+  },
+  {
+    "id": "M073",
+    "channel": "support",
+    "user": "小林健太",
+    "text": "C社から機能要望が来ています。ダッシュボードにカスタムウィジェットを追加したいとのこと。PM に共有お願いします。",
+    "timestamp": "2026-02-11T15:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M074",
+    "channel": "project-alpha",
+    "user": "佐藤美咲",
+    "text": "C社の要望をバックログに追加しました。優先度は「中」で。次スプリントで検討します。",
+    "timestamp": "2026-02-11T15:30:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M075",
+    "channel": "general",
+    "user": "渡辺美咲",
+    "text": "社内研修アンケートの最終結果: 回答率82%。最も人気のテーマは「生成AI活用」でした。次回研修に反映します。",
+    "timestamp": "2026-02-11T16:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M076",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "設定画面の実装に着手します。プロフィール編集、通知設定、API キー管理の3タブ構成です。",
+    "timestamp": "2026-02-12T09:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M077",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "ダッシュボードにリアルタイム更新を入れたいです。WebSocket vs SSE、どちらがいいと思いますか？",
+    "timestamp": "2026-02-12T09:30:00",
+    "reactions": [
+      "thinking_face"
+    ]
+  },
+  {
+    "id": "M078",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "SSE の方がシンプルでいいと思います。双方向通信は今回不要だし、再接続もブラウザが自動でやってくれます。",
+    "timestamp": "2026-02-12T09:45:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M079",
+    "channel": "infra",
+    "user": "高橋次郎",
+    "text": "監視アラートの見直し結果: 誤検知が先週の12件→今週は2件に減りました。閾値の調整が効いています。",
+    "timestamp": "2026-02-12T10:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M080",
+    "channel": "sales",
+    "user": "中村大輔",
+    "text": "A社デモ、明日14:00です。デモシナリオの最終確認を田中さんとしたいです。本日16:00にミーティングお願いします。",
+    "timestamp": "2026-02-12T11:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M081",
+    "channel": "marketing",
+    "user": "木村有希",
+    "text": "ブログ記事「AIエージェントの業務活用事例」の初稿が上がりました。レビューお願いします。3,000字です。",
+    "timestamp": "2026-02-12T13:00:00",
+    "reactions": [
+      "eyes"
+    ]
+  },
+  {
+    "id": "M082",
+    "channel": "design",
+    "user": "伊藤誠",
+    "text": "デザインレビューの結果を反映しました。ダッシュボードのカラーパレットを微調整し、コントラスト比を改善しています。",
+    "timestamp": "2026-02-12T14:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M083",
+    "channel": "project-alpha",
+    "user": "山田一郎",
+    "text": "フロントエンド進捗: ログイン画面完了、ダッシュボード80%、設定画面着手。予定通りです。",
+    "timestamp": "2026-02-12T17:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M084",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "設定画面のPR #132 を出しました。プロフィール編集タブは完了、通知設定とAPIキーは明日仕上げます。",
+    "timestamp": "2026-02-12T18:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M085",
+    "channel": "sales",
+    "user": "中村大輔",
+    "text": "A社デモ完了しました！先方の反応はとても良好で、CTO が「来月から導入したい」とのこと。見積もり送付します。",
+    "timestamp": "2026-02-13T15:30:00",
+    "reactions": [
+      "tada",
+      "champagne",
+      "moneybag"
+    ]
+  },
+  {
+    "id": "M086",
+    "channel": "sales",
+    "user": "山田一郎",
+    "text": "素晴らしい！A社は50ユーザー規模の導入になりそうですね。Enterprise プランの提案をしましょう。",
+    "timestamp": "2026-02-13T15:45:00",
+    "reactions": []
+  },
+  {
+    "id": "M087",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "SSE でのリアルタイム更新を実装しました。PR #133。KPIカードが30秒ごとに自動更新されます。",
+    "timestamp": "2026-02-13T10:00:00",
+    "reactions": [
+      "rocket"
+    ]
+  },
+  {
+    "id": "M088",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "設定画面の残りタブ（通知設定・APIキー管理）も完了しました。#132 に追加コミットしてます。",
+    "timestamp": "2026-02-13T11:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M089",
+    "channel": "support",
+    "user": "小林健太",
+    "text": "先週の対応振り返り: 問い合わせ23件、平均応答時間2.3時間。SLA内に収まっています。",
+    "timestamp": "2026-02-13T09:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M090",
+    "channel": "infra",
+    "user": "高橋次郎",
+    "text": "QA環境にフロントエンドの最新ビルドをデプロイしました。テストお願いします。",
+    "timestamp": "2026-02-13T14:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M091",
+    "channel": "hr",
+    "user": "松本真理",
+    "text": "面接結果の共有です。火曜の候補者は技術力・コミュニケーション共に良好。オファーを出す方向で進めたいです。",
+    "timestamp": "2026-02-13T10:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M092",
+    "channel": "marketing",
+    "user": "木村有希",
+    "text": "キャンペーン3日目: 累計インプレッション45,000、CTR 1.9%、CV 12件。順調に推移しています。",
+    "timestamp": "2026-02-13T16:00:00",
+    "reactions": [
+      "chart_with_upwards_trend"
+    ]
+  },
+  {
+    "id": "M093",
+    "channel": "project-alpha",
+    "user": "佐藤美咲",
+    "text": "QA環境で一通り触りました。全体的に良いですが、ダッシュボードのモバイル表示で崩れがあります。#issue-45 で報告しました。",
+    "timestamp": "2026-02-13T16:30:00",
+    "reactions": []
+  },
+  {
+    "id": "M094",
+    "channel": "dev-team",
+    "user": "鈴木花子",
+    "text": "#issue-45 確認しました。モバイル時のグリッドカラム数の設定漏れでした。修正PR #134 出します。",
+    "timestamp": "2026-02-13T17:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M095",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "E2Eテストのセットアップを始めます。Playwright を使って主要フローをカバーする予定です。",
+    "timestamp": "2026-02-14T09:00:00",
+    "reactions": []
+  },
+  {
+    "id": "M096",
+    "channel": "project-alpha",
+    "user": "山田一郎",
+    "text": "今週のスプリントレビュー。完了: ログイン画面、ダッシュボード、設定画面。残: E2Eテスト、パフォーマンス最適化。",
+    "timestamp": "2026-02-14T10:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M097",
+    "channel": "general",
+    "user": "渡辺美咲",
+    "text": "来週月曜は祝日（建国記念日振替）のため、お休みです。火曜日からの出勤となります。",
+    "timestamp": "2026-02-14T11:00:00",
+    "reactions": [
+      "thumbsup"
+    ]
+  },
+  {
+    "id": "M098",
+    "channel": "marketing",
+    "user": "木村有希",
+    "text": "ブログ記事を公開しました。SNSでのシェアにご協力お願いします。リンクはスレッドに貼ります。",
+    "timestamp": "2026-02-14T13:00:00",
+    "reactions": [
+      "thumbsup",
+      "mega"
+    ]
+  },
+  {
+    "id": "M099",
+    "channel": "random",
+    "user": "鈴木花子",
+    "text": "三連休のおすすめスポットありますか？温泉に行きたいんですが。",
+    "timestamp": "2026-02-14T17:00:00",
+    "reactions": [
+      "hotsprings"
+    ]
+  },
+  {
+    "id": "M100",
+    "channel": "dev-team",
+    "user": "田中太郎",
+    "text": "今週のまとめ: フロントエンド実装3画面完了、QA環境デプロイ済み、E2Eテスト着手。来週はテストとパフォーマンス最適化に集中します。良い週末を！",
+    "timestamp": "2026-02-14T18:00:00",
+    "reactions": [
+      "clap",
+      "beer",
+      "wave"
+    ]
+  }
+]

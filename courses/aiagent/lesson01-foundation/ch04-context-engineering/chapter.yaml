@@ -1,0 +1,16 @@
+# Chapter 4: Context Engineering
+id: "ch04-context-engineering"
+order: 4
+name: "Context Engineering"
+description: "効果的なプロンプト設計とコンテキスト管理を学びます。"
+type: "manual"
+estimatedMinutes: 30
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch03-agents"
+objectives:
+  - "プロンプトとコンテキストの違いを理解する"
+  - "効果的なコンテキスト設計ができる"
+  - "MCPの概念を理解する"
+externalContent:
+  manual: "../../../../course/foundation/context-engineering.html"

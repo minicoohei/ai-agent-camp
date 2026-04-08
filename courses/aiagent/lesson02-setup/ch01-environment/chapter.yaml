@@ -1,0 +1,13 @@
+# Chapter 1: 環境セットアップ
+id: "ch01-environment"
+order: 1
+name: "環境セットアップ"
+description: "Claude Code / Cursor / Codex の開始準備と初期設定を行います。"
+type: "manual"
+estimatedMinutes: 30
+objectives:
+  - "Claude Code / Cursor / Codex の開始方法を説明できる"
+  - "基本的な初期設定を完了できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "../../../../course/index.html"

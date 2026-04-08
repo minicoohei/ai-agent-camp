@@ -1,0 +1,17 @@
+# Chapter 7: Multimodal AI
+id: "ch07-multimodal"
+order: 7
+name: "Multimodal AI"
+description: "Understand how AI integrates images, text, and audio."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch06-mcp"
+objectives:
+  - "Explain what multimodal AI and VLMs are"
+  - "Understand the 3-layer VLM architecture"
+  - "Know use cases like image and document analysis"
+  - "Understand the characteristics of major multimodal models"
+externalContent:
+  manual: "../../../../course/foundation/multimodal.html"

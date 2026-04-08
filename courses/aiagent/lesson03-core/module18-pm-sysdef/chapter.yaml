@@ -1,0 +1,19 @@
+# Chapter 13: プロダクトマネジメント & システム要件定義
+id: "module18-pm-sysdef"
+order: 13
+name: "プロダクトマネジメント & システム要件定義"
+description: "タスク管理アプリを題材に、企画から設計・実装・テスト・運用まで、AI活用でプロダクト開発の全工程を体験します。"
+type: "manual"
+estimatedMinutes: 480
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module06-agent-development"
+objectives:
+  - "PRD（Working Backwards方式）を作成できる"
+  - "要件定義書（IPA準拠）を作成できる"
+  - "PlantUMLで各種設計図を作成できる"
+  - "テスト計画書を自動生成できる"
+  - "marimoで進捗ダッシュボードを作成できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-18"
+  slides: "https://ai-agent.camp/ja/course/module-18"

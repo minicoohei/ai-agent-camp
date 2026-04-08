@@ -1,0 +1,3 @@
+interface:
+  display_name: "Gas Clasp Ops"
+  short_description: "Google Apps Script (GAS) プロジェクトを clasp 経由で操作するスキル。"

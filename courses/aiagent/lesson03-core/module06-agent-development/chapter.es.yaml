@@ -1,0 +1,15 @@
+# Capítulo 10: Desarrollo de Agentes
+id: "module06-agent-development"
+order: 10
+name: "Desarrollo de Agentes"
+description: "Aprende cómo desarrollar agentes de IA personalizados."
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "Crear archivos Skill"
+  - "Definir Commands"
+  - "Diseñar sub-agentes"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-6"
+  slides: "https://ai-agent.camp/es/course/module-6"

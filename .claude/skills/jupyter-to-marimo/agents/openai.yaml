@@ -1,0 +1,3 @@
+interface:
+  display_name: "Jupyter To Marimo"
+  short_description: "Convert a Jupyter notebook (.ipynb) to a marimo notebook (.py)."

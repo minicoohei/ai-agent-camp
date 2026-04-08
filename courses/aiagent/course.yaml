@@ -1,0 +1,23 @@
+# AIエージェント研修コース
+id: "aiagent"
+name: "AIエージェント研修"
+description: "非エンジニア向けのAIエージェント活用講座。Claude Code / Cursor / Codex を使った業務効率化・自動化を学ぶ実践的な講座です。"
+icon: "bot"
+version: "1.0.0"
+author: "AI Brain Partners"
+audience: "非エンジニア（マーケ、営業、企画等）"
+estimatedHours: 12
+cover: "cover.png"
+prerequisites:
+  - "基本的なPC操作"
+  - "インターネット接続環境"
+  - "学習意欲"
+tags:
+  - "AIエージェント"
+  - "Claude Code"
+  - "Cursor"
+  - "Codex"
+  - "業務効率化"
+  - "自動化"
+language: "ja"
+lastUpdated: "2026-02-10"

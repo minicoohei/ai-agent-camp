@@ -1,0 +1,31 @@
+# Lesson 1: Foundation Knowledge
+id: "lesson01-foundation"
+order: 1
+name: "Foundation Knowledge"
+description: "Learn the foundational knowledge for using AI agents effectively. Covers LLM principles, tokens, agents, MCP, multimodal AI, RAG, and security."
+estimatedMinutes: 290
+cover: "cover.png"
+chapters:
+  - "ch01-llm-basics"
+  - "ch02-tokens"
+  - "ch03-agents"
+  - "ch04-context-engineering"
+  - "ch05-cursor-usage"
+  - "ch06-mcp"
+  - "ch07-multimodal"
+  - "ch08-rag"
+  - "ch09-subagent"
+  - "ch10-hallucination"
+  - "ch11-security"
+objectives:
+  - "Understand how LLMs (Large Language Models) work"
+  - "Understand the concepts of tokens and context windows"
+  - "Understand the difference between agents and assistants"
+  - "Design effective prompts"
+  - "Master basic Cursor operations"
+  - "Understand how MCP works"
+  - "Grasp the concept of multimodal AI"
+  - "Understand RAG and how to use it"
+  - "Understand when to use Skill/SubAgent/Agent Team"
+  - "Understand hallucination risks and countermeasures"
+  - "Understand fundamental AI security principles"

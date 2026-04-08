@@ -1,0 +1,3 @@
+interface:
+  display_name: "Pm Toolkit"
+  short_description: "PRD・要件定義書・要求資料・レビューの生成に使用。「PRDを作って」「要件定義書を書いて」「レビューして」「議事録を分析して」等で発動。"

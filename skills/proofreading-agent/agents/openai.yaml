@@ -1,0 +1,3 @@
+interface:
+  display_name: "Proofreading Agent"
+  short_description: "日本語記事の校閲エージェント。誤字脱字、文法、表現の一貫性、読みやすさをチェックし、修正提案をインライン注釈で出力する。「校閲して」「文章をチェック」「誤字脱字"

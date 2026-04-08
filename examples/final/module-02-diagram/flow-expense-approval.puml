@@ -1,0 +1,55 @@
+@startuml flow-expense-approval
+title 経費精算承認フロー
+
+skinparam backgroundColor #FEFEFE
+skinparam activityBackgroundColor #E3F2FD
+skinparam activityBorderColor #1976D2
+skinparam activityDiamondBackgroundColor #FFF3E0
+skinparam activityDiamondBorderColor #F57C00
+
+|申請者|
+start
+:経費申請を作成;
+:申請書を提出;
+
+|直属上司|
+:内容を確認;
+if (内容は適切?) then (Yes)
+  :承認;
+else (No)
+  :差し戻し;
+  |申請者|
+  :修正して再提出;
+  detach
+endif
+
+|直属上司|
+if (金額 >= 10万円?) then (Yes)
+  |部長|
+  :高額承認確認;
+  if (承認?) then (Yes)
+    :承認;
+  else (No)
+    :却下;
+    |申請者|
+    :却下通知受領;
+    stop
+  endif
+else (No)
+endif
+
+|経理部|
+:最終確認;
+if (問題なし?) then (Yes)
+  :振込処理;
+  |申請者|
+  :入金確認;
+  stop
+else (No)
+  :差し戻し;
+  |申請者|
+  :修正対応;
+  detach
+endif
+
+@enduml

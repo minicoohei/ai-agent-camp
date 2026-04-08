@@ -1,0 +1,20 @@
+{
+  "project": "module14-sample",
+  "updatedAt": "2026-03-13",
+  "tasks": [
+    {
+      "id": "WBS-1",
+      "name": "PRD作成",
+      "owner": "pm",
+      "status": "done",
+      "progress": 100
+    },
+    {
+      "id": "WBS-2",
+      "name": "要件定義レビュー",
+      "owner": "dev",
+      "status": "in_progress",
+      "progress": 60
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Chapter 4: Data Analysis
+id: "module08-data-analysis"
+order: 4
+name: "Data Analysis"
+description: "Connect to BigQuery/Snowflake and perform data analysis."
+type: "manual"
+estimatedMinutes: 120
+objectives:
+  - "Authenticate with GCP and connect to BigQuery"
+  - "Perform exploratory data analysis (EDA)"
+  - "Create visualization graphs"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-8"
+  slides: "https://ai-agent.camp/en/course/module-8"

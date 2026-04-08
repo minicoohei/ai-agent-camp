@@ -1,0 +1,120 @@
+# Environment variables
+.env
+.env.local
+*.env
+
+# API keys and credentials
+*credentials*.json
+*client_secret*.json
+# 教材用デスクトップ OAuth（gog auth credentials set）— 運営が実値に差し替えてコミット可
+!credentials/google-workspace-desktop-oauth.json
+token.json
+refresh_token.json
+*.pem
+*.key
+
+# Setup progress (personal, per-machine)
+.setup-progress.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+.venv/
+ENV/
+env/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output files
+output/
+*.tmp
+*.temp
+
+# Large files
+*.mp4
+*.mov
+*.avi
+*.zip
+*.tar.gz
+
+# Legacy path (正規パスは data/slack-sync)
+/slack-sync/
+
+# Knowledge-base data (synced at runtime, contains sensitive info)
+data/slack-sync/data/
+data/slack-sync/index/
+data/google-sync/data/
+
+# SpecStory
+.specstory/
+
+# User workspace (examples)
+work/
+my-projects/
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+playwright-report/
+test-results/
+
+# Generated outputs (local only)
+outputs/
+inputs/
+docs/generated/
+
+# Firebase
+firebase-debug.log
+
+# Data artifacts (frames, videos)
+data/frames/*
+!data/frames/README.md
+data/videos/*
+!data/videos/module7-lesson1-frame-lab-sample.mp4
+
+# Credentials directory (except shared templates)
+credentials/*
+!credentials/README.md
+!credentials/google-workspace-desktop-oauth.json
+
+# Embedded repos
+aiagent-base-pr-setup-api/
+
+# Claude subagents (generated)
+.claude/subagents/

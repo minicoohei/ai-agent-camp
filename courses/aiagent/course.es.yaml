@@ -1,0 +1,23 @@
+# Curso de Capacitación en Agentes de IA
+id: "aiagent"
+name: "Capacitación en Agentes de IA"
+description: "Curso práctico sobre el uso de agentes de IA para no ingenieros. Aprende automatización y eficiencia empresarial con Claude Code / Cursor / Codex."
+icon: "bot"
+version: "1.0.0"
+author: "AI Brain Partners"
+audience: "No ingenieros (marketing, ventas, planificación, etc.)"
+estimatedHours: 12
+cover: "cover.png"
+prerequisites:
+  - "Operaciones básicas de PC"
+  - "Conexión a internet"
+  - "Ganas de aprender"
+tags:
+  - "Agente de IA"
+  - "Claude Code"
+  - "Cursor"
+  - "Codex"
+  - "Automatización empresarial"
+  - "Eficiencia"
+language: "es"
+lastUpdated: "2026-03-10"

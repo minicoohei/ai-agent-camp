@@ -1,0 +1,3 @@
+interface:
+  display_name: "Tutorial Generator"
+  short_description: "Generate step-by-step operation tutorials from screenshots using Gemini Vision A"

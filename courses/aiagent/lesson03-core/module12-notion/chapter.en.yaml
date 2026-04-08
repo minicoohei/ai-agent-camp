@@ -1,0 +1,15 @@
+# Chapter 9: Notion Integration
+id: "module12-notion"
+order: 9
+name: "Notion Integration"
+description: "Integrate Notion databases with AI."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Configure the Notion API"
+  - "Operate databases"
+  - "Build automated integration workflows"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-12"
+  slides: "https://ai-agent.camp/en/course/module-12"

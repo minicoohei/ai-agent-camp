@@ -1,0 +1,3 @@
+interface:
+  display_name: "Code Reviewer"
+  short_description: "Code review automation for TypeScript, JavaScript, Python, Go, Swift, Kotlin. An"

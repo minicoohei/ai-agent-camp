@@ -1,0 +1,3 @@
+interface:
+  display_name: "Slack Search"
+  short_description: "Slackチャンネルやメッセージをセマンティック検索する。"

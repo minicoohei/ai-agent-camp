@@ -1,0 +1,3 @@
+interface:
+  display_name: "Monitoring Dashboard"
+  short_description: "marimoダッシュボード・プロジェクト進捗可視化に使用。「ダッシュボードを作って」「進捗を可視化して」「テスト結果を表示して」等で発動。"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Aiagent Check Setup"
+  short_description: "Verify local setup for ai-agent-camp with Codex. Use for install checks, dependency checks, hook checks, and initial readiness review."

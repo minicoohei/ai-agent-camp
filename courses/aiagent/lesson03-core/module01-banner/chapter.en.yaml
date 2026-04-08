@@ -1,0 +1,15 @@
+# Chapter 1: Banner & Image Generation
+id: "module01-banner"
+order: 1
+name: "Banner & Image Generation"
+description: "Auto-generate banners for SNS posts and press releases."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Use the Gemini Image Generation API"
+  - "Configure platform-specific sizes"
+  - "Specify tone and color schemes"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-1"
+  slides: "https://ai-agent.camp/en/course/module-1"

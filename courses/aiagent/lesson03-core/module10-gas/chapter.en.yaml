@@ -1,0 +1,15 @@
+# Chapter 8: GAS Automation
+id: "module10-gas"
+order: 8
+name: "GAS Automation"
+description: "Auto-deploy and execute Google Apps Scripts."
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "Use the clasp CLI"
+  - "Manage multiple projects"
+  - "Set up automatic deployment"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-10"
+  slides: "https://ai-agent.camp/en/course/module-10"

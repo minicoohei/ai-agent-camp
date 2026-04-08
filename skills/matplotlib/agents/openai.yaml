@@ -1,0 +1,3 @@
+interface:
+  display_name: "Matplotlib"
+  short_description: "Low-level plotting library for full customization. Use when you need fine-graine"

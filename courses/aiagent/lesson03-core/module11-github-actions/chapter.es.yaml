@@ -1,0 +1,15 @@
+# Capítulo 11: GitHub Actions
+id: "module11-github-actions"
+order: 11
+name: "GitHub Actions"
+description: "Automatización CI/CD y creación de flujos de trabajo."
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "Entender los fundamentos de GitHub Actions"
+  - "Definir flujos de trabajo"
+  - "Gestionar Secrets"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-11"
+  slides: "https://ai-agent.camp/es/course/module-11"

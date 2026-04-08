@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIエージェント研修 - コース一覧</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <header class="text-center mb-5">
+      <h1 class="display-5 fw-bold">AIエージェント研修</h1>
+      <p class="lead text-muted">Claude Code / Cursor / Codex 活用コース</p>
+    </header>
+
+    <div class="text-center mb-4">
+      <a href="introduction.html" class="btn btn-outline-primary btn-lg"><i class="bi bi-play-circle me-2"></i>はじめに（この講座について）</a>
+    </div>
+
+    <section class="alert alert-primary border-0 shadow-sm mb-5">
+      <h2 class="h6 mb-2">開始方法</h2>
+      <p class="small mb-2">Cursor / Claude Code は既存の slash command 導線を維持し、Codex は skill と AGENTS.md を入口にします。</p>
+      <ul class="small mb-0">
+        <li>Cursor: <code>/check-setup</code> → <code>/overview</code> → <code>/start-0-1</code></li>
+        <li>Claude Code: <code>CLAUDE.md</code> を読んで setup から開始</li>
+        <li>Codex: <code>AGENTS.md</code> を読んで <code>aiagent-lesson-runner</code> で <code>start-0-1</code> を開始</li>
+      </ul>
+    </section>
+
+    <section id="modules" class="mb-5">
+      <h2 class="h5 text-primary mb-3"><i class="bi bi-list-ul me-2"></i>モジュール一覧</h2>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">0</span>
+              <h3 class="h6 card-title mt-2">セットアップ</h3>
+              <p class="card-text small text-muted">Cursor / Claude Code / Codex 環境の構築</p>
+              <p class="small mb-0">Cursor は <code>/start-0-1</code> 〜 <code>/start-0-8</code>、Codex は Lesson Runner で <code>start-0-1</code> から開始</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">1</span>
+              <h3 class="h6 card-title mt-2">バナー・画像生成</h3>
+              <p class="card-text small text-muted">SNSバナーの自動生成</p>
+              <p class="small mb-0"><code>/start-1-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">2</span>
+              <h3 class="h6 card-title mt-2">図表・フロー</h3>
+              <p class="card-text small text-muted">業務プロセスの可視化</p>
+              <p class="small mb-0"><code>/start-2-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">3</span>
+              <h3 class="h6 card-title mt-2">スクショ分析</h3>
+              <p class="card-text small text-muted">UIエラーの自動診断</p>
+              <p class="small mb-0"><code>/start-3-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">4</span>
+              <h3 class="h6 card-title mt-2">データ分析</h3>
+              <p class="card-text small text-muted">BigQuery接続とEDA</p>
+              <p class="small mb-0"><code>/start-8-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">5</span>
+              <h3 class="h6 card-title mt-2">PPTX</h3>
+              <p class="card-text small text-muted">PowerPoint解析・生成</p>
+              <p class="small mb-0"><code>/start-5-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">6</span>
+              <h3 class="h6 card-title mt-2">Slack</h3>
+              <p class="card-text small text-muted">メッセージの意味検索</p>
+              <p class="small mb-0"><code>/start-9-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">7</span>
+              <h3 class="h6 card-title mt-2">動画生成</h3>
+              <p class="card-text small text-muted">キーフレーム抽出と動画生成</p>
+              <p class="small mb-0"><code>/start-13-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">8</span>
+              <h3 class="h6 card-title mt-2">GAS</h3>
+              <p class="card-text small text-muted">Google Apps Script自動化</p>
+              <p class="small mb-0"><code>/start-10-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">9</span>
+              <h3 class="h6 card-title mt-2">GitHub Actions</h3>
+              <p class="card-text small text-muted">CI/CDワークフロー</p>
+              <p class="small mb-0"><code>/start-11-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">10</span>
+              <h3 class="h6 card-title mt-2">Notion</h3>
+              <p class="card-text small text-muted">Notion API連携</p>
+              <p class="small mb-0"><code>/start-12-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">11</span>
+              <h3 class="h6 card-title mt-2">エージェント開発</h3>
+              <p class="card-text small text-muted">Command/Skill開発</p>
+              <p class="small mb-0"><code>/start-6-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">12</span>
+              <h3 class="h6 card-title mt-2">マーケティング</h3>
+              <p class="card-text small text-muted">X投稿・SEO・コピー</p>
+              <p class="small mb-0"><code>/start-17-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">13</span>
+              <h3 class="h6 card-title mt-2">LP/HP制作</h3>
+              <p class="card-text small text-muted">訴求整理からデプロイまで</p>
+              <p class="small mb-0"><code>/start-15-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">14</span>
+              <h3 class="h6 card-title mt-2">PM & システム要件定義</h3>
+              <p class="card-text small text-muted">PRD・要件定義・テスト</p>
+              <p class="small mb-0"><code>/start-18-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">15</span>
+              <h3 class="h6 card-title mt-2">メール自動化</h3>
+              <p class="card-text small text-muted">Gmail同期・分析・送信・シーケンス設計</p>
+              <p class="small mb-0"><code>/start-16-1</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge bg-primary rounded-pill">16</span>
+              <h3 class="h6 card-title mt-2">記事作成</h3>
+              <p class="card-text small text-muted">文体・校閲・ファクトチェック</p>
+              <p class="small mb-0"><code>/start-14-1</code></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center text-muted small pt-4 border-top">
+      <p class="mb-0">Cursor は <code>/start-0-1</code>、Claude Code は <code>CLAUDE.md</code>、Codex は <code>AGENTS.md</code> と Lesson Runner を入口に使います。</p>
+    </footer>
+  </div>
+</body>
+</html>

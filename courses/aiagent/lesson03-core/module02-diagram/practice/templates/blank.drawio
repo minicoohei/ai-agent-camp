@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-10T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram name="組織図" id="org-chart-template">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!--
+          組織図テンプレート
+          このテンプレートをベースに組織構造を作成してください。
+
+          使い方:
+          1. mxCell を追加して各部門・チームを表現
+          2. edge で親子関係を接続
+          3. style でデザインをカスタマイズ
+        -->
+        <!-- CEO -->
+        <mxCell id="2" value="代表取締役 CEO" style="rounded=1;whiteSpace=wrap;fillColor=#1565C0;fontColor=#FFFFFF;strokeColor=#0D47A1;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="40" width="200" height="60" as="geometry" />
+        </mxCell>
+        <!-- 部門サンプル: ここに部門を追加 -->
+        <mxCell id="3" value="部門名" style="rounded=1;whiteSpace=wrap;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="160" width="200" height="50" as="geometry" />
+        </mxCell>
+        <!-- 接続サンプル -->
+        <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565C0;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

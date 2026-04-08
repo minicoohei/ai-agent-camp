@@ -1,0 +1,3 @@
+interface:
+  display_name: "X Research"
+  short_description: "X (Twitter) のリアルタイム検索を行い、トピックに関するツイートを収集・分析する。"

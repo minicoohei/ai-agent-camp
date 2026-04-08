@@ -1,0 +1,18 @@
+# Chapter 15: Article Writing
+id: "module14-article-writing"
+order: 15
+name: "Article Writing"
+description: "Use AI agents to run the full article workflow: topic design, outlining, style alignment, illustrations, proofreading, and fact-checking."
+type: "manual"
+estimatedMinutes: 230
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "Design the article topic and target reader"
+  - "Speed up the flow from outline to first draft"
+  - "Separate style editing, proofreading, and fact-checking roles"
+  - "Organize supporting assets required for article production"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-14"
+  slides: "https://ai-agent.camp/en/course/module-14"

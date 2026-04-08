@@ -1,0 +1,17 @@
+# Chapter 11: AI Security
+id: "ch11-security"
+order: 11
+name: "AI Security"
+description: "Knowledge for using LLMs and AI agents safely."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch10-hallucination"
+objectives:
+  - "Understand Prompt Injection and the difference between Direct and Indirect"
+  - "Know the OWASP Top 10 for LLMs"
+  - "Understand expanded risks introduced by MCP and agents"
+  - "Adopt a Defense in Depth mindset"
+externalContent:
+  manual: "../../../../course/foundation/security.html"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Gslides Creator"
+  short_description: "テンプレートから Google Slides を作成するスキル。"

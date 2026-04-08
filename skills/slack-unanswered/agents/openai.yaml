@@ -1,0 +1,3 @@
+interface:
+  display_name: "Slack Unanswered"
+  short_description: "Find unanswered Slack messages where you are mentioned or threads you created. S"

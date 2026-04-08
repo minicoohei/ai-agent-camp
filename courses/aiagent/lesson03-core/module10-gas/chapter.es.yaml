@@ -1,0 +1,15 @@
+# Capítulo 8: Automatización con GAS
+id: "module10-gas"
+order: 8
+name: "Automatización con GAS"
+description: "Despliegue automático y ejecución de Google Apps Scripts."
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "Usar la CLI clasp"
+  - "Gestionar múltiples proyectos"
+  - "Configurar despliegue automático"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-10"
+  slides: "https://ai-agent.camp/es/course/module-10"

@@ -1,0 +1,14 @@
+# Chapter 1: LLM Basics
+id: "ch01-llm-basics"
+order: 1
+name: "LLM Basics"
+description: "Learn how LLMs (Large Language Models) work."
+type: "manual"
+estimatedMinutes: 30
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand the basic concepts of LLMs"
+  - "Grasp the history and evolution of AI"
+  - "Understand the next-token prediction mechanism"
+externalContent:
+  manual: "../../../../course/foundation/llm-basics.html"
