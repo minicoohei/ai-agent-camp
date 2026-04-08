@@ -123,7 +123,18 @@ def validate_all_commands():
 
     # Process all lesson command files that exist in the repo.
     for filepath in command_files:
-        file_key = str(filepath.relative_to(PROJECT_ROOT))
+        try:
+            file_key = str(filepath.relative_to(PROJECT_ROOT))
+        except ValueError:
+            file_key = None
+            for cmd_dir in COMMANDS_DIRS:
+                try:
+                    file_key = f"{cmd_dir.name}/{filepath.relative_to(cmd_dir)}"
+                    break
+                except ValueError:
+                    continue
+            if file_key is None:
+                file_key = str(filepath)
 
         # Run validations
         structure_result = validate_file_structure(filepath)
