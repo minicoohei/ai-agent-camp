@@ -50,6 +50,7 @@ tags: ["setup", "slack", "api"]
     "prompt": "準備はできていますか？",
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
+      {"id": "chrome", "label": "/chrome でブラウザ操作を自動化する"},
       {"id": "check_prereq", "label": "前提条件を確認したい"},
       {"id": "no_slack", "label": "Slackワークスペースを持っていない"},
       {"id": "different_lesson", "label": "別のレッスンに移動したい"}
@@ -59,6 +60,7 @@ tags: ["setup", "slack", "api"]
 ```
 
 (ready → Step 1へ)
+(chrome → Step 1 でブラウザを開いた後、「Chrome 統合で自動化する場合」セクションの手順で自動実行する)
 (check_prereq → 「Slackワークスペースにログイン済みで、App追加の権限があれば準備OKです。権限がない場合はワークスペース管理者に確認してください」と案内)
 (no_slack → 「Slackは無料で作成できます。https://slack.com/create からテスト用ワークスペースを作成してから、このセットアップを再開してください」と案内)
 (different_lesson → モジュール一覧を表示)
@@ -104,6 +106,31 @@ xdg-open https://api.slack.com/apps
 (no_create_button → 「Slackにログインしていない可能性があります。まず右上の 'Sign in' からSlackアカウントでログインしてください」と案内)
 (no_workspace → 「ワークスペースにログインした状態でページを再読み込みしてください。それでも表示されない場合は、新しいワークスペースを作成する必要があるかもしれません」と案内)
 (permission_error → 「ワークスペースの管理者がApp追加を制限している可能性があります。管理者に『AIAgent Bootcamp という Slack App を追加したい』と依頼してください。または、テスト用の無料ワークスペースを https://slack.com/create から作成してください」と案内)
+
+---
+
+## Chrome 統合で自動化する場合（`/chrome` モード）
+
+**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がインストール済みで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
+
+**AIが Chrome 統合で自動実行する内容:**
+1. ブラウザで https://api.slack.com/apps を開く
+2. Chrome 統合を使って以下の操作を順番に実行する:
+   - 「Create New App」ボタンをクリック
+   - 「From scratch」を選択
+   - App Name に「AIAgent Bootcamp」と入力
+   - 「Pick a workspace」でワークスペースを選択
+   - 「Create App」をクリック
+   - 左メニューの「OAuth & Permissions」をクリック
+   - 「Bot Token Scopes」セクションで「Add an OAuth Scope」をクリックし、以下の4つを1つずつ追加: channels:history, channels:read, chat:write, users:read
+   - ページ上部の「Install to Workspace」をクリック
+   - 権限確認画面で「Allow」をクリック
+3. Bot User OAuth Token（xoxb-...）が表示されたことを確認したら、ユーザーに「トークンの横のCopyボタンをクリックしてコピーしてください」と案内する
+4. Step 4 に進む
+
+**注意:** トークンの値はブラウザ画面から読み取らないこと。ユーザーが手動でコピーする。
+
+Chrome 統合が利用できない場合は、以下の Step 2〜3 の手順を手動で実行してください。
 
 ---
 

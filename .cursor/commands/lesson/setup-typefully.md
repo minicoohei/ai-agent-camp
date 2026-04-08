@@ -53,6 +53,7 @@ X (Twitter)、LinkedIn等のSNS投稿をスケジューリング・管理する�
     "prompt": "準備はできていますか？",
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
+      {"id": "chrome", "label": "/chrome でブラウザ操作を自動化する"},
       {"id": "check_prereq", "label": "前提条件を確認したい"},
       {"id": "skip", "label": "このセットアップをスキップしたい"},
       {"id": "different_lesson", "label": "別のレッスンに移動したい"}
@@ -62,6 +63,7 @@ X (Twitter)、LinkedIn等のSNS投稿をスケジューリング・管理する�
 ```
 
 (ready → Step 1へ)
+(chrome → Step 1 でブラウザを開いた後、「Chrome 統合で自動化する場合」セクションの手順で自動実行する)
 (check_prereq → 「X (Twitter) アカウントでブラウザにログインできれば準備OKです。Typefullyは無料プランがあるので、費用はかかりません」と案内)
 (skip → 「Typefully APIのセットアップをスキップしました。後で必要になったら /setup-typefully で設定できます」と案内して終了)
 (different_lesson → モジュール一覧を表示)
@@ -105,6 +107,26 @@ xdg-open https://typefully.com
 (already_account → Step 2へ)
 (browser_not_open → 「ブラウザで直接このURLを開いてください: https://typefully.com」と案内)
 (x_auth_issue → 「Xアカウントでの認証がブロックされる場合は、X側のプライバシー設定でサードパーティアプリの連携を許可してください。X → 設定 → セキュリティとアカウントアクセス → アプリとセッション で確認できます」と案内)
+
+---
+
+## Chrome 統合で自動化する場合（`/chrome` モード）
+
+**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がインストール済みで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
+
+**AIが Chrome 統合で自動実行する内容:**
+1. ブラウザで https://typefully.com を開く
+2. Chrome 統合を使って以下の操作を順番に実行する:
+   - 「Get started free」をクリック
+   - 「Sign up with X (Twitter)」で認証（ユーザーの操作を待つ）
+   - ログイン後、https://typefully.com/settings/api に移動
+   - 「Generate API Key」または「Create API Key」をクリック
+3. APIキーが表示されたことを確認したら、ユーザーに「APIキーをコピーしてください」と案内する
+4. Step 3 に進む
+
+**注意:** APIキーの値はブラウザ画面から読み取らないこと。ユーザーが手動でコピーする。
+
+Chrome 統合が利用できない場合は、以下の手順を手動で実行してください。
 
 ---
 

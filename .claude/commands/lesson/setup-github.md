@@ -51,6 +51,7 @@ tags: ["setup", "github"]
     "prompt": "準備はできていますか？",
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
+      {"id": "chrome", "label": "/chrome でブラウザ操作を自動化する"},
       {"id": "check_prereq", "label": "/setup-start をまだやっていない"},
       {"id": "what_is_github", "label": "GitHub って何？"}
     ]
@@ -59,6 +60,7 @@ tags: ["setup", "github"]
 ```
 
 (ready → Step 1へ)
+(chrome → Step 1 でアカウント作成が必要な場合、ブラウザを開いた後に「Chrome 統合で自動化する場合」セクションの手順で自動実行する)
 (check_prereq → 「先に /setup-start を実行してください。必要なソフトウェアのインストールを確認します。」と案内)
 (what_is_github → 以下を案内:「GitHub は、プログラムやファイルを安全に保存・管理できるクラウドサービスです。Google ドライブのプログラマー版のようなものです。この研修では、あなたの作業内容を保存するために使います。無料で使えます。」→ Step 1へ)
 
@@ -121,6 +123,27 @@ start https://github.com/signup
 
 アカウント作成が完了したら、ここに「できた」と入力してください。
 ```
+
+### Chrome 統合で自動化する場合（`/chrome` モード、新規アカウント作成時のみ）
+
+**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がインストール済みで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
+
+**AIが Chrome 統合で自動実行する内容:**
+1. ブラウザで https://github.com/signup を開く
+2. Chrome 統合を使って以下の操作を順番に実行する:
+   - メールアドレス入力欄にフォーカスし、ユーザーに入力を促す
+   - 「Continue」ボタンをクリック
+   - パスワード入力後に「Continue」をクリック
+   - ユーザー名入力後に「Continue」をクリック
+   - メール通知設定後に「Continue」をクリック
+   - パズル認証はユーザーに操作を任せる
+   - 「Create account」をクリック
+3. メール確認コードの入力はユーザーが手動で行う
+4. アカウント作成完了後、Step 2 に進む
+
+**注意:** パスワードやメールアドレスの値はブラウザ画面から読み取らないこと。
+
+Chrome 統合が利用できない場合は、上記の手順を手動で実行してください。
 
 **AskQuestionの設定（完了確認）:**
 ```json

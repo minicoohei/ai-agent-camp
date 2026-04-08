@@ -48,6 +48,7 @@ tags: ["setup", "gemini", "api"]
     "prompt": "準備はできていますか？",
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
+      {"id": "chrome", "label": "/chrome でブラウザ操作を自動化する"},
       {"id": "check_prereq", "label": "前提条件を確認したい"},
       {"id": "different_lesson", "label": "別のレッスンに移動したい"}
     ]
@@ -56,6 +57,7 @@ tags: ["setup", "gemini", "api"]
 ```
 
 (ready → Step 1へ)
+(chrome → Step 1 でブラウザを開いた後、「Chrome 統合で自動化する場合」セクションの手順で自動実行する)
 (check_prereq → 「Googleアカウントでブラウザにログインできれば準備OKです」と案内)
 (different_lesson → モジュール一覧を表示)
 
@@ -98,6 +100,26 @@ xdg-open https://aistudio.google.com/apikey
 (browser_not_open → 「ブラウザで直接このURLを開いてください: https://aistudio.google.com/apikey」と案内)
 (no_button → 「ページが完全に読み込まれるまで待ってください。それでも表示されない場合は、ページ上部の "Get API key" タブをクリックしてください」と案内)
 (login_issue → 「Google AI Studioにはgmail.comまたはGoogle Workspaceのアカウントが必要です。会社のアカウントでログインしてみてください」と案内)
+
+---
+
+## Chrome 統合で自動化する場合（`/chrome` モード）
+
+**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がインストール済みで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
+
+**AIが Chrome 統合で自動実行する内容:**
+1. ブラウザで https://aistudio.google.com/apikey を開く
+2. Chrome 統合を使って以下の操作を順番に実行する:
+   - Googleアカウントへのログインが必要な場合はユーザーの操作を待つ
+   - 「Get API key」または「APIキーを取得」ボタンをクリック
+   - 「Create API key」または「APIキーを作成」ボタンをクリック
+   - プロジェクト選択画面が出たら、デフォルトのプロジェクトを選んで「Create API key in existing project」をクリック
+3. APIキーが画面に表示されたことを確認したら、ユーザーに「コピーボタンをクリックしてAPIキーをコピーしてください」と案内する
+4. Step 2 に進む
+
+**注意:** APIキーの値はブラウザ画面から読み取らないこと。ユーザーが手動でコピーする。
+
+Chrome 統合が利用できない場合は、Step 1 の手順を手動で実行してください。
 
 ---
 

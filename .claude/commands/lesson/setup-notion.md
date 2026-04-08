@@ -48,6 +48,7 @@ tags: ["setup", "notion", "mcp", "api"]
     "prompt": "準備はできていますか？",
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
+      {"id": "chrome", "label": "/chrome でブラウザ操作を自動化する"},
       {"id": "check_prereq", "label": "前提条件を確認したい"},
       {"id": "which_tool", "label": "Claude Code と Cursor のどちらを使っているか確認したい"},
       {"id": "different_lesson", "label": "別のレッスンに移動したい"}
@@ -57,6 +58,7 @@ tags: ["setup", "notion", "mcp", "api"]
 ```
 
 (ready → Step 1へ)
+(chrome → Step 1 でブラウザを開いた後、「Chrome 統合で自動化する場合」セクションの手順で自動実行する)
 (check_prereq → 「Notionアカウント（無料プランでOK）があり、ブラウザでログインできれば準備OKです」と案内)
 (which_tool → 「Claude Code を使っている場合と Cursor を使っている場合で設定ファイルの場所が異なります。Step 3 でそれぞれの手順を案内します」と説明)
 (different_lesson → モジュール一覧を表示)
@@ -100,6 +102,28 @@ xdg-open https://www.notion.so/my-integrations
 (browser_not_open → 「ブラウザで直接このURLを開いてください: https://www.notion.so/my-integrations」と案内)
 (no_button → 「ページが完全に読み込まれるまで待ってください。Notionにログインした状態で https://www.notion.so/my-integrations にアクセスすると、右上付近に「New integration」ボタンが表示されます」と案内)
 (login_issue → 「Notionアカウントをお持ちでない場合は https://www.notion.so/signup から無料で作成できます。既にアカウントがある場合は、メールアドレスまたはGoogleアカウントでログインしてください」と案内)
+
+---
+
+## Chrome 統合で自動化する場合（`/chrome` モード）
+
+**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がインストール済みで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
+
+**AIが Chrome 統合で自動実行する内容:**
+1. ブラウザで https://www.notion.so/my-integrations を開く
+2. Chrome 統合を使って以下の操作を順番に実行する:
+   - 「New integration」ボタンをクリック
+   - Name に「AIAgent Bootcamp」と入力
+   - Associated workspace でデフォルトのワークスペースを選択
+   - Type で「Internal」を選択
+   - Capabilities で Read content、Update content、Insert content にチェック
+   - 「Submit」をクリック
+3. Internal Integration Secret が表示されたことを確認したら、ユーザーに「シークレットの横のCopyボタンをクリックしてコピーしてください」と案内する
+4. Step 3 に進む
+
+**注意:** シークレットの値はブラウザ画面から読み取らないこと。ユーザーが手動でコピーする。
+
+Chrome 統合が利用できない場合は、以下の手順を手動で実行してください。
 
 ---
 

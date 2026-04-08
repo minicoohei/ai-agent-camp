@@ -50,6 +50,7 @@ tags: ["setup", "fal", "api", "video", "image"]
     "prompt": "準備はできていますか？",
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
+      {"id": "chrome", "label": "/chrome でブラウザ操作を自動化する"},
       {"id": "check_prereq", "label": "前提条件を確認したい"},
       {"id": "different_lesson", "label": "別のレッスンに移動したい"}
     ]
@@ -58,6 +59,7 @@ tags: ["setup", "fal", "api", "video", "image"]
 ```
 
 (ready → Step 1へ)
+(chrome → Step 1 でブラウザを開いた後、「Chrome 統合で自動化する場合」セクションの手順で自動実行する)
 (check_prereq → 「GitHubアカウントまたはGoogleアカウントがあればサインアップできます。ブラウザでログインできれば準備OKです」と案内)
 (different_lesson → モジュール一覧を表示)
 
@@ -100,6 +102,26 @@ xdg-open https://fal.ai
 (browser_not_open → 「ブラウザで直接このURLを開いてください: https://fal.ai」と案内)
 (signup_issue → 「GitHubアカウントでの認証をお試しください。それでもうまくいかない場合は、Googleアカウントでの認証を試してみてください」と案内)
 (already_have_account → Step 2へ)
+
+---
+
+## Chrome 統合で自動化する場合（`/chrome` モード）
+
+**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がインストール済みで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
+
+**AIが Chrome 統合で自動実行する内容:**
+1. ブラウザで https://fal.ai を開く
+2. Chrome 統合を使って以下の操作を順番に実行する:
+   - 「Sign Up」または「Login」ボタンをクリック
+   - GitHub または Google アカウントで認証（ユーザーの操作を待つ）
+   - ログイン後、https://fal.ai/dashboard/keys に移動
+   - 「Create Key」または「Add Key」ボタンをクリック
+3. APIキーが表示されたことを確認したら、ユーザーに「APIキーをコピーしてください」と案内する
+4. Step 3 に進む
+
+**注意:** APIキーの値はブラウザ画面から読み取らないこと。ユーザーが手動でコピーする。
+
+Chrome 統合が利用できない場合は、以下の手順を手動で実行してください。
 
 ---
 

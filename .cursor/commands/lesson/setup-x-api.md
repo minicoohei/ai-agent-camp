@@ -63,6 +63,7 @@ X API がなくても問題なく受講できます。
     "prompt": "X API のセットアップには Basic plan ($100/月) が必要です。準備はできていますか？",
     "options": [
       {"id": "ready", "label": "有料プランに加入済み / 加入する予定です。始めましょう"},
+      {"id": "chrome", "label": "/chrome でブラウザ操作を自動化する"},
       {"id": "check_cost", "label": "料金について詳しく知りたい"},
       {"id": "skip", "label": "スキップする（X APIは使わない）"},
       {"id": "different_lesson", "label": "別のレッスンに移動したい"}
@@ -72,6 +73,7 @@ X API がなくても問題なく受講できます。
 ```
 
 (ready -> Step 1へ)
+(chrome → Step 1 でブラウザを開いた後、「Chrome 統合で自動化する場合」セクションの手順で自動実行する)
 (check_cost -> 「X API の料金体系: Free tier は投稿のみ（検索API不可）。Basic plan ($100/月) で Recent Search API が使えます。Pro plan ($5,000/月) は Full-Archive Search が使えますが、研修では Basic で十分です。コストに見合わない場合はスキップを推奨します」と案内)
 (skip -> 「X APIセットアップをスキップしました。他のレッスンに影響はありません。後から /setup-x-api で再開できます」と案内して完了処理へ)
 (different_lesson -> モジュール一覧を表示)
@@ -115,6 +117,32 @@ xdg-open https://developer.x.com/en/portal/dashboard
 (browser_not_open -> 「ブラウザで直接このURLを開いてください: https://developer.x.com/en/portal/dashboard」と案内)
 (signup_issue -> 「Developer Portal の申請には審査が必要な場合があります。利用目的は具体的に記入してください（例: 'Building an AI-powered social media research tool for corporate training'）。審査に数日かかる場合があります。承認メールが届いてから再度このセットアップを実行してください」と案内)
 (already_have_account -> Step 2へ)
+
+---
+
+## Chrome 統合で自動化する場合（`/chrome` モード）
+
+**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がインストール済みで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
+
+**AIが Chrome 統合で自動実行する内容:**
+1. ブラウザで https://developer.x.com/en/portal/dashboard を開く
+2. Chrome 統合を使って以下の操作を順番に実行する:
+   - 「Subscribe to Basic」を選択（Recent Search API を使うには Basic plan が必要。Free Account では検索APIが使えません）
+   - 支払い情報の入力はユーザーに任せる（ユーザーの操作を待つ）
+   - Use case に「AI agent training and educational purposes」と入力
+   - Developer Agreement に同意して Submit（ユーザーの操作を待つ）
+   - Dashboard で「Projects & Apps」に移動
+   - 「+ Add Project」をクリック → Project name に「AIAgent Bootcamp」、Use case で「Exploring the API」を選択
+   - 「+ Add App」をクリック → App name に「AIAgent Bootcamp」、Environment で「Development」を選択
+   - 「Keys and tokens」タブを開く
+   - Bearer Token の横にある「Regenerate」をクリック
+   - 確認ダイアログで「Yes, regenerate」をクリック
+3. Bearer Token が表示されたことを確認したら、ユーザーに「トークンをコピーしてください。ページを離れると再表示できません」と案内する
+4. Step 3 に進む
+
+**注意:** Bearer Token の値はブラウザ画面から読み取らないこと。ユーザーが手動でコピーする。
+
+Chrome 統合が利用できない場合は、以下の手順を手動で実行してください。
 
 ---
 

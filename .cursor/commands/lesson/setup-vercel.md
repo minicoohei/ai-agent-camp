@@ -49,6 +49,7 @@ tags: ["setup", "vercel", "deploy", "hosting"]
     "prompt": "準備はできていますか？（このセットアップは任意です。Lesson 15-5 で使用します）",
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
+      {"id": "chrome", "label": "/chrome でブラウザ操作を自動化する"},
       {"id": "check_prereq", "label": "前提条件を確認したい"},
       {"id": "skip", "label": "今は必要ないのでスキップする"},
       {"id": "different_lesson", "label": "別のレッスンに移動したい"}
@@ -58,6 +59,7 @@ tags: ["setup", "vercel", "deploy", "hosting"]
 ```
 
 (ready → Step 1へ)
+(chrome → Step 1 でブラウザを開いた後、「Chrome 統合で自動化する場合」セクションの手順で自動実行する)
 (check_prereq → 「Node.js 18以上が必要です。`node --version` で確認できます」と案内)
 (skip → 「スキップしました。必要になったら `/setup-vercel` で再度セットアップできます」と案内して終了)
 (different_lesson → モジュール一覧を表示)
@@ -101,6 +103,21 @@ xdg-open https://vercel.com/signup
 (already_have → Step 2へ)
 (no_github → 「Emailでもサインアップできます。サインアップページで『Continue with Email』を選択してください。または先に `/setup-github` でGitHubアカウントを作成することもおすすめです」と案内)
 (browser_not_open → 「ブラウザで直接このURLを開いてください: https://vercel.com/signup」と案内)
+
+---
+
+## Chrome 統合で自動化する場合（`/chrome` モード）
+
+**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がインストール済みで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
+
+**AIが Chrome 統合で自動実行する内容:**
+1. ブラウザで https://vercel.com/signup を開く
+2. Chrome 統合を使って以下の操作を実行する:
+   - 「Continue with GitHub」をクリック
+   - GitHub の認証画面が表示されたら、ユーザーに承認を促す
+3. サインアップ完了を確認したら、Step 2 に進む
+
+Chrome 統合が利用できない場合は、Step 1 の手順を手動で実行してください。
 
 ---
 
