@@ -14,4 +14,4 @@ objectives:
   - "軽減策を知り、実践できる"
   - "AIの出力を適切に検証する習慣を身につける"
 externalContent:
-  manual: "../../../../course/foundation/hallucination.html"
+  manual: "https://ai-agent.camp/ja/course/foundation/hallucination"

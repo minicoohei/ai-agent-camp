@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-7-7 — Module 7 Lesson 7-7: SKILL.md駆動のスキル開発"
+chapter: "courses/aiagent/lesson03-core/module07-skill-commands/chapter.yaml"
 duration: "約40分"
 prerequisites: ["start-7-5", "start-7-1"]
 level: "intermediate"
@@ -28,7 +29,7 @@ tags: ["skill", "skill-design", "python", "SKILL.md"]
 
 セッション終了時には、自分だけのオリジナルスキルが完成し、`skills/` の正本として管理できる状態になっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -125,7 +126,7 @@ tags: ["skill", "skill-design", "python", "SKILL.md"]
 
 ## 🚀 Step 2: SKILL.mdのドラフト作成
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -213,7 +214,7 @@ python skills/[スキル名]/scripts/main.py --input [入力] --format markdown 
 
 ## 🚀 Step 3: Pythonスクリプトの実装
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -347,7 +348,7 @@ process() 関数の中身を、スキルの目的に合わせて書き換えま�
 
 ## 🚀 Step 4: SKILL.mdを最終版に仕上げる
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -404,7 +405,7 @@ Step 2で作成したSKILL.mdを以下の観点で改善してください：
 
 ## 🚀 Step 5: 動作テスト
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -460,7 +461,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -576,7 +577,7 @@ head -30 skills/{skill_name}/SKILL.md
 
 これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

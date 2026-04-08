@@ -802,20 +802,6 @@ When the user wants to plan, design, or implement an A/B test or experiment. 統
 
 ---
 
-### `course-editor` - HTML 教材エディター
-
-**目的**: HTML 教材（course/）の編集・新規作成を効率化
-
-**説明**:
-テンプレート構造、CSSフレームワーク、セクション単位編集の手順を提供し、並列エージェントによるリライト時のコンテキスト消費を最小化するガイドラインスキル。
-
-**機能**:
-- テンプレート構造に沿った教材作成
-- セクション単位の効率的な編集
-- CSS フレームワーク準拠
-
----
-
 ## SNSリサーチ系スキル (1個)
 
 ### `x-research` - X (Twitter) リアルタイム検索・分析

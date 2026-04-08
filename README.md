@@ -193,7 +193,7 @@ pip install -r requirements.txt
 
 ```bash
 # ブラウザで教材を開く
-open course/index.html
+open https://ai-agent.camp/ja/course/module-0
 
 # Cursor でワークスペースを開く
 cursor .
@@ -371,7 +371,7 @@ Module 1 → Module 17 → Module 13 → Module 15 → Module 14 → Module 16
 ```
 ai-agent-camp/
 │
-├── 📚 course/                          # HTML インタラクティブ教材
+├── 📚 courses/                         # カリキュラム source of truth
 │   ├── index.html                      # ポータルページ
 │   ├── CURRICULUM.md                   # カリキュラム全体
 │   ├── MODULES_GUIDE.md                # モジュールガイド
@@ -714,8 +714,8 @@ ai-agent-camp/
 
 | ドキュメント | 説明 |
 |------------|------|
-| [カリキュラム全体](course/CURRICULUM.md) | 全 11 モジュールの詳細シラバス |
-| [モジュールガイド](course/MODULES_GUIDE.md) | モジュール選択のロードマップ |
+| [courses/aiagent](courses/aiagent) | カリキュラム source of truth |
+| [docs/codex-guide.md](docs/codex-guide.md) | Codex 向け開始ガイド |
 | [学習チェックリスト](PROGRESS_CHECKLIST.md) | 進捗追跡用チェックリスト |
 
 ### リファレンス
@@ -846,7 +846,7 @@ Issue は日本語での記載で OK です。日本語コミュニティとし�
 ### ドキュメント
 
 - 📖 [ドキュメント一覧](#ドキュメント)
-- 🎓 [カリキュラム](course/CURRICULUM.md)
+- 🎓 [コースサイト](https://ai-agent.camp/ja/course/module-0)
 - 🔧 [トラブルシューティング](docs/troubleshoot.md)
 
 ### 質問・相談

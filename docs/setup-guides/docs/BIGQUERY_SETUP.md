@@ -348,5 +348,5 @@ client = bigquery.Client(project='infobox-jp-prd')
 ## 次のステップ
 
 - [NOTION_API_SETUP.md](./NOTION_API_SETUP.md) - Notion API設定
-- [Module 4: データ分析](../../course/CURRICULUM.md) - データ分析の学習
+- [Module 4: データ分析](https://ai-agent.camp/ja/course/module-4) - データ分析の学習
 - [data-analyst スキル](../../skills/data-analyst/SKILL.md) - 詳細な使用方法

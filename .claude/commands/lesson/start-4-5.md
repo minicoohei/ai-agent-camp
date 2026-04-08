@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-4-5 — Module 4 Lesson 4-5: Google Drive操作"
+chapter: "courses/aiagent/lesson03-core/module04-google-workspace/chapter.yaml"
 duration: "約25分"
 prerequisites: ["start-4-1"]
 level: "beginner"
@@ -26,7 +27,7 @@ tags: ["google", "workspace", "gogcli", "drive"]
 
 セッション終了時には、gogcliを使ってGoogle Driveのファイル操作ができるようになっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -58,7 +59,7 @@ tags: ["google", "workspace", "gogcli", "drive"]
 
 ## 🚀 Step 1: Drive内のファイルを一覧表示・検索する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -118,7 +119,7 @@ gog drive ls --account your-email@gmail.com --query "modifiedTime > '2026-03-01'
 
 ## 🚀 Step 2: ファイルをダウンロードする
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -173,7 +174,7 @@ gog drive download <ファイルID> --account your-email@gmail.com --format pptx
 
 ## 🚀 Step 3: ファイルをアップロードする
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -305,7 +306,7 @@ https://drive.google.com/drive/folders/<ここがフォルダID>
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 以下のgogcliコマンドを実行して、Drive操作が正しく動作するか確認してください:

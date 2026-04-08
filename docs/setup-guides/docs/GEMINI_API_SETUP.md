@@ -225,4 +225,4 @@ Error: GEMINI_API_KEY not found
 
 - [SLACK_TOKEN_SETUP.md](./SLACK_TOKEN_SETUP.md) - Slack API設定
 - [GOOGLE_OAUTH_SETUP.md](./GOOGLE_OAUTH_SETUP.md) - Google OAuth設定
-- [CURRICULUM](../../course/CURRICULUM.md) - 学習を開始
+- [コースサイト](https://ai-agent.camp/ja/course/module-0) - 学習を開始

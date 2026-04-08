@@ -75,7 +75,7 @@ export GEMINI_API_KEY=your_gemini_key
 
 ```bash
 python generate_lecture.py \
-  --html course/foundation/llm-basics.html \
+  --html https://ai-agent.camp/ja/course/foundation/llm-basics \
   --output output/lecture/llm-basics/
 ```
 
@@ -84,13 +84,13 @@ python generate_lecture.py \
 ```bash
 # Fabricエンジンで生成
 python generate_lecture.py \
-  --html course/foundation/llm-basics.html \
+  --html https://ai-agent.camp/ja/course/foundation/llm-basics \
   --engine fabric \
   --output output/lecture/llm-basics/
 
 # Veo3で生成
 python generate_lecture.py \
-  --html course/foundation/llm-basics.html \
+  --html https://ai-agent.camp/ja/course/foundation/llm-basics \
   --engine veo \
   --output output/lecture/llm-basics/
 ```

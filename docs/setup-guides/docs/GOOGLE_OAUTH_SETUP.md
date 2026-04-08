@@ -296,4 +296,4 @@ Request had insufficient authentication scopes
 
 - [BIGQUERY_SETUP.md](./BIGQUERY_SETUP.md) - BigQuery設定
 - [NOTION_API_SETUP.md](./NOTION_API_SETUP.md) - Notion API設定
-- [Module 4: データ分析](../../course/CURRICULUM.md) - データ分析の学習
+- [Module 4: データ分析](https://ai-agent.camp/ja/course/module-4) - データ分析の学習

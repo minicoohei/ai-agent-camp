@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-14 — Module 18 Lesson 18-14: PM - Playwright E2Eテスト"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "25分"
 category: "lesson"
 prerequisites: ["start-18-13", "output/pm/prototype/"]

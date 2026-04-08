@@ -13,4 +13,4 @@ objectives:
   - "入力トークンと出力トークンの違いを理解する"
   - "コンテキストウィンドウの制限を理解する"
 externalContent:
-  manual: "../../../../course/foundation/tokens.html"
+  manual: "https://ai-agent.camp/ja/course/foundation/tokens"

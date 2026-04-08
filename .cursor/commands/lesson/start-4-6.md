@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-4-6 — Module 4 Lesson 4-6: Google Sheets操作"
+chapter: "courses/aiagent/lesson03-core/module04-google-workspace/chapter.yaml"
 duration: "約30分"
 prerequisites: ["start-4-1"]
 level: "beginner"
@@ -26,7 +27,7 @@ tags: ["google", "workspace", "gogcli", "sheets"]
 
 セッション終了時には、gogcliを使ってGoogle Sheetsのデータ読み取りと分析ができるようになっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -58,7 +59,7 @@ tags: ["google", "workspace", "gogcli", "sheets"]
 
 ## 🚀 Step 1: Driveからスプレッドシートを検索する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -101,7 +102,7 @@ gog drive ls --query "mimeType='application/vnd.google-apps.spreadsheet'" --acco
 
 ## 🚀 Step 2: シートのデータを取得する（CSV出力）
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -155,7 +156,7 @@ gog drive download <スプレッドシートID> --format csv --out ./downloads/s
 
 ## 🚀 Step 3: 取得したデータをAIで分析する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -302,7 +303,7 @@ A3: 鈴木, B3: マーケ, C3: 350000, D3: 1月
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 以下のgogcliコマンドを実行して、Sheets操作が正しく動作するか確認してください:

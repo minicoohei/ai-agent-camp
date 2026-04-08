@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-14-2 — Module 14 Lesson 14-2: 文体学習 - スタイルプロファイル作成"
+chapter: "courses/aiagent/lesson03-core/module14-article-writing/chapter.yaml"
 category: "lesson"
 duration: "30分"
 prerequisites: ["start-14-1"]
@@ -28,7 +29,7 @@ tags: ["article", "style"]
 
 セッション終了時には、あなたの文体特徴を数値化したスタイルプロファイル（YAML形式）が完成しています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -62,7 +63,7 @@ tags: ["article", "style"]
 
 ## 🚀 Step 1: 文章サンプルの準備
 
-AskUserQuestion（AskQuestion）でサンプルの準備状況を選びます。
+Codex では通常チャットで選択肢を提示しながらでサンプルの準備状況を選びます。
 
 **AskQuestionの設定例:**
 ```json
@@ -114,7 +115,7 @@ output/samples/ ディレクトリに文章サンプルを作成しましょう�
 
 ## 🚀 Step 2: style-analyzerで文体分析を実行
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -162,7 +163,7 @@ python skills/style-analyzer/scripts/style_analyzer.py --input output/samples/sa
 
 ## 🚀 Step 3: プロファイル結果の確認と解説
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -201,7 +202,7 @@ output/style_profile.yamlの内容を読み込んで、以下を説明してく�
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -295,7 +296,7 @@ head -30 output/article-14-2-*.md
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```bash
 # 完了確認: output/ フォルダに期待される出力ファイルが生成されているか確認してください。
@@ -309,7 +310,7 @@ head -30 output/article-14-2-*.md
 
 これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

@@ -33,7 +33,7 @@ MODULE_MAP = {
     16: 14,  # 記事作成
 }
 
-# Directory name suffixes (historically used for course/modules/{N}-{name}/, now external)
+# Directory name suffixes (historically used for module URLs, now external)
 MODULE_DIR_NAMES = {
     4: "data",
     6: "search",
@@ -110,7 +110,7 @@ def rename_command_files(base_dir: Path, dry_run: bool = True):
 
 
 def rename_course_modules(dry_run: bool = True):
-    """Rename course/modules/{N}-{name}/ directories (no-op if directory removed)."""
+    """Rename historical module directory identifiers (no-op if directory removed)."""
     modules_dir = ROOT / "course" / "modules"
     if not modules_dir.exists():
         print(f"  [SKIP] {modules_dir} does not exist")

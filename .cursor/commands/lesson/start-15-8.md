@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-15-8 — Module 15 Lesson 15-8: Clipper × Remotion でマーケ素材を自動生成"
+chapter: "courses/aiagent/lesson03-core/module15-video/chapter.yaml"
 duration: 45分
 prerequisites: ["start-15-7"]
 level: intermediate
@@ -163,7 +164,7 @@ open output/ugc/*.mp4
 
 これでModule 15（動画制作）は完了です。
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

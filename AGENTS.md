@@ -29,7 +29,7 @@
 ## Safety Rules
 - Do not run destructive commands such as `rm -rf`, `git reset --hard`, `git clean -fd`, or `git push --force`.
 - Do not heavily rewrite important files without explicit confirmation.
-- Treat these paths as confirmation-required: `README.md`, `CLAUDE.md`, `AGENTS.md`, `.env.example`, `.githooks/`, `scripts/install_hooks.sh`, `courses/`, `course/`, `skills/`.
+- Treat these paths as confirmation-required: `README.md`, `CLAUDE.md`, `AGENTS.md`, `.env.example`, `.githooks/`, `scripts/install_hooks.sh`, `courses/`, `skills/`.
 - Never print secret values from `.env`, Keychain, or any credential store.
 - Never ask the user to paste API keys or tokens into chat.
 
@@ -49,7 +49,7 @@
 
 ## Directory Map
 - `courses/aiagent/`: source curriculum and lesson metadata
-- `course/`: rendered local course pages
+- `docs/codex-guide.md`: Codex onboarding and entry flow
 - `skills/`: Codex workflow skills for this repo
 - `tools/`: helper and validation scripts
 - `.cursor/`: Cursor-only commands and rules

@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-13-4 — Module 13 Lesson 13-4: LP制作 - 実際に動くLP作成"
+chapter: "courses/aiagent/lesson03-core/module13-lp/chapter.yaml"
 prerequisites: ["start-13-3"]
 duration: "約30分"
 level: "intermediate"
@@ -20,7 +21,7 @@ tags: ["lp", "html", "tailwind", "implementation"]
 | 前提条件 | Lesson 13-3 完了（.pen デザインファイルが存在） |
 | 教材ページ | [Module 13: LP/HP制作](https://ai-agent.camp/ja/course/module-13) を並行参照 |
 
-> **💡 ツール情報**: このレッスンでは Pencil MCP を使用します。Cursor IDE、Claude Code（CLI/デスクトップ）のいずれでも利用可能です。Codex CLI 等の一部環境では `request_user_input is not supported` エラーが出る場合があります。その場合は「代替ワークフロー」セクションを参照してください。
+> **💡 ツール情報**: このレッスンでは Pencil MCP を使用します。現在のワークスペース、Claude Code（CLI/デスクトップ）のいずれでも利用可能です。Codex CLI 等の一部環境では `request_user_input is not supported` エラーが出る場合があります。その場合は「代替ワークフロー」セクションを参照してください。
 
 **このセッションの流れ:**
 1. コード化ガイドラインの取得
@@ -31,7 +32,7 @@ tags: ["lp", "html", "tailwind", "implementation"]
 
 セッション終了時には、実際にブラウザで動くLP/HPが完成しています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -331,7 +332,7 @@ Pencil MCP が利用できない環境（Claude Code、Codex CLI、SSH等）で�
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -399,7 +400,7 @@ open output/lp/index.html
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 output/lp-project/ のファイル一覧を表示し、
@@ -414,7 +415,7 @@ index.html のセクション数とファイルサイズを確認してくださ
 
 これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

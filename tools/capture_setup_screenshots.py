@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """セットアップ系コマンドで操作するWebサイト画面のスクリーンショットを自動撮影する。
 
-教材用スクリーンショットを取得し、course/assets/images/module0/ に保存する。
+教材用スクリーンショットを取得し、公開教材向けアセットとして保存する。
 
 方式: Playwright persistent context でユーザーの Chrome プロファイルを利用。
 認証済みセッション（GitHub, Google, Slack 等）のスクリーンショットを撮影できる。

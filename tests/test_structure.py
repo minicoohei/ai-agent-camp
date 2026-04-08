@@ -12,7 +12,7 @@ def test_directory_structure(project_root):
         ".cursor/rules",
         ".cursor/commands/lesson",
         ".cursor/commands/utility",
-        "course",
+        "courses",
         "tools",
         "docs",
     ]
@@ -26,7 +26,7 @@ def test_required_files(project_root):
         "README.md",
         ".env.example",
         ".gitignore",
-        "course/index.html",
+        "courses/lessons.manifest.yaml",
     ]
     for file_path in required_files:
         assert (project_root / file_path).exists(), f"Missing file: {file_path}"

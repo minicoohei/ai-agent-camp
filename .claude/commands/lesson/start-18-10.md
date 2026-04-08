@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-10 — Module 18 Lesson 18-10: PM - WBS & ガントチャート"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "25分"
 category: "lesson"
 prerequisites: ["start-18-9", "output/pm/api-spec.yaml"]

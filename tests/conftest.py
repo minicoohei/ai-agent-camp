@@ -64,7 +64,7 @@ def _add_project_to_path(project_root):
 @pytest.fixture
 def sample_slack_data(project_root):
     """Slackサンプルデータを読み込む"""
-    sample_path = project_root / "course/exercises/basic/samples/slack-sample-1.json"
+    sample_path = project_root / "tests/fixtures/slack-sample-1.json"
     if sample_path.exists():
         with open(sample_path) as f:
             return json.load(f)
@@ -74,7 +74,7 @@ def sample_slack_data(project_root):
 @pytest.fixture
 def sample_gmail_data(project_root):
     """Gmailサンプルデータを読み込む"""
-    sample_path = project_root / "course/exercises/basic/samples/gmail-sample-1.json"
+    sample_path = project_root / "tests/fixtures/gmail-sample-1.json"
     if sample_path.exists():
         with open(sample_path) as f:
             return json.load(f)

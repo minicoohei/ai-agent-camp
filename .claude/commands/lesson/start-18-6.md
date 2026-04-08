@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-6 — Module 18 Lesson 18-6: PM - ユースケース記述 & シーケンス図"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "30分"
 category: "lesson"
 prerequisites: ["start-18-5", "output/pm/requirements-spec.md"]

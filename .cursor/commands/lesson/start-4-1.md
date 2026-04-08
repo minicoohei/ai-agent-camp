@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-4-1 — Module 4 Lesson 4-1: gogcli認証セットアップ"
+chapter: "courses/aiagent/lesson03-core/module04-google-workspace/chapter.yaml"
 duration: "約25分"
 prerequisites: ["start-0-1"]
 level: "beginner"
@@ -26,7 +27,7 @@ tags: ["google", "workspace", "gogcli", "auth"]
 
 セッション終了時には、gogcliからGmail・Calendar・Driveにアクセスできる状態になっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -58,7 +59,7 @@ tags: ["google", "workspace", "gogcli", "auth"]
 
 ## 🚀 Step 1: gogcliのインストール確認
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -98,7 +99,7 @@ brew install gogcli
 
 ## 🚀 Step 2: OAuth認証でGoogleアカウントを追加
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -147,7 +148,7 @@ gog --help
 
 ## 🚀 Step 3: 基本動作テスト
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -268,7 +269,7 @@ Google Workspace管理者がAPI制限をかけている場合は管理者に相�
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 以下のコマンドを実行して、gogcliの認証状態を確認してください:

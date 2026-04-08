@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-7-5 — Module 7 Lesson 7-5: 既存Skill/Commandの構造理解と分析"
+chapter: "courses/aiagent/lesson03-core/module07-skill-commands/chapter.yaml"
 duration: "約30分"
 prerequisites: ["start-6-1", "start-6-2"]
 level: "intermediate"
@@ -27,7 +28,7 @@ tags: ["skill", "command", "agent", "analysis"]
 
 セッション終了時には、SkillとCommandの設計パターンを体系的に理解し、自分で作成するための知識が身についています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -61,7 +62,7 @@ tags: ["skill", "command", "agent", "analysis"]
 
 ## 🚀 Step 1: Commandディレクトリの構造を探索する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -82,7 +83,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 **選択後の案内（例）**:
 
 Commandは2つの場所に配置されます：
-- `.cursor/commands/` — Cursor IDE 用のカスタムコマンド
+- `.cursor/commands/` — 現在のワークスペース 用のカスタムコマンド
 - `.claude/commands/` — Claude Code 用のカスタムコマンド
 
 入力内容:
@@ -104,7 +105,7 @@ Commandは2つの場所に配置されます：
 
 ## 🚀 Step 2: Skillディレクトリの構造を探索する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -152,7 +153,7 @@ skills/ ディレクトリを探索して、以下をレポートしてくださ
 
 ## 🚀 Step 3: 既存コマンドの共通パターンを分析する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -209,7 +210,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 
 ## 🚀 Step 4: 既存スキルの共通パターンを分析する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -267,7 +268,7 @@ SKILL.mdはスキルの「設計書」であり、AIエージェントがスキ�
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -376,7 +377,7 @@ head -30 skills/{skill_name}/SKILL.md
 
 これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

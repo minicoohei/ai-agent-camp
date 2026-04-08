@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-17 — Module 18 Lesson 18-17: PM - 結合テスト実施"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "25分"
 category: "lesson"
 prerequisites: ["start-18-16", "output/pm/unit-test-code/"]

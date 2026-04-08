@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-12 — Module 18 Lesson 18-12: PM - UIデザイン（Pencil MCP）"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "30分"
 category: "lesson"
 prerequisites: ["start-18-11", "output/pm/wireframes.md"]
@@ -17,7 +18,7 @@ tags: ["pm", "ui", "design", "pencil-mcp"]
 | 前提条件 | Lesson 18-11 完了、output/pm/wireframes.md が存在する。Pencil MCPがCursorに接続済み |
 | 教材ページ | [Module 18](https://ai-agent.camp/ja/course/module-18) |
 
-> **💡 ツール情報**: このレッスンでは Pencil MCP を使用します。Cursor IDE、Claude Code（CLI/デスクトップ）のいずれでも利用可能です。Codex CLI 等の一部環境では `request_user_input is not supported` エラーが出る場合があります。その場合は「代替ワークフロー」セクションを参照してください。
+> **💡 ツール情報**: このレッスンでは Pencil MCP を使用します。現在のワークスペース、Claude Code（CLI/デスクトップ）のいずれでも利用可能です。Codex CLI 等の一部環境では `request_user_input is not supported` エラーが出る場合があります。その場合は「代替ワークフロー」セクションを参照してください。
 
 ## 📍 Step 1: デザインシステムの定義
 

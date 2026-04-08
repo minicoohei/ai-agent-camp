@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-14-3 — Module 14 Lesson 14-3: 記事執筆 - スタイル適用ドラフト作成"
+chapter: "courses/aiagent/lesson03-core/module14-article-writing/chapter.yaml"
 category: "lesson"
 duration: "35分"
 prerequisites: ["start-14-1", "start-14-2"]
@@ -28,7 +29,7 @@ tags: ["article", "writing"]
 
 セッション終了時には、あなたの文体が反映された記事ドラフト（Markdown形式）が完成しています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -62,7 +63,7 @@ tags: ["article", "writing"]
 
 ## 🚀 Step 1: アウトラインとスタイルプロファイルの確認
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -102,7 +103,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 
 ## 🚀 Step 2: article-writerでスタイル適用ドラフト生成
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -143,7 +144,7 @@ python skills/article-writer/scripts/article_writer.py --theme output/article-14
 
 ## 🚀 Step 3: ドラフトのレビューと手動調整
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -183,7 +184,7 @@ output/article-16-3-draft.mdのドラフトをレビューしてください。
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -278,7 +279,7 @@ head -30 output/article-14-3-*.md
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```bash
 # 完了確認: output/ フォルダに期待される出力ファイルが生成されているか確認してください。
@@ -292,7 +293,7 @@ head -30 output/article-14-3-*.md
 
 これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

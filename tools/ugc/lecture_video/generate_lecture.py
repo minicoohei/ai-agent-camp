@@ -8,13 +8,13 @@ HTMLの講義コンテンツから、Remotion + Veo3/Fabric/Viduを使用して
 使用例:
     # Fabricエンジンで生成
     python generate_lecture.py \
-        --html course/foundation/llm-basics.html \
+        --html https://ai-agent.camp/ja/course/foundation/llm-basics \
         --engine fabric \
         --output output/lecture/llm-basics/
 
     # Veo3で生成
     python generate_lecture.py \
-        --html course/foundation/llm-basics.html \
+        --html https://ai-agent.camp/ja/course/foundation/llm-basics \
         --engine veo \
         --output output/lecture/llm-basics/
 """
@@ -342,13 +342,13 @@ def main():
         epilog="""
 例:
   # HTMLから講義動画を生成
-  python generate_lecture.py --html course/foundation/llm-basics.html
+  python generate_lecture.py --html https://ai-agent.camp/ja/course/foundation/llm-basics
 
   # Veo3エンジンで生成
-  python generate_lecture.py --html course/foundation/llm-basics.html --engine veo
+  python generate_lecture.py --html https://ai-agent.camp/ja/course/foundation/llm-basics --engine veo
 
   # スクリプトのみ生成（動画生成なし）
-  python generate_lecture.py --html course/foundation/llm-basics.html --script-only
+  python generate_lecture.py --html https://ai-agent.camp/ja/course/foundation/llm-basics --script-only
         """
     )
     

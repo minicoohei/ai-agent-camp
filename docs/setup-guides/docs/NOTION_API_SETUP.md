@@ -364,7 +364,7 @@ new_page = notion.pages.create(
 
 ## 次のステップ
 
-- [Module 10: Notion連携](../../course/CURRICULUM.md) - Notion連携の学習
+- [Module 10: Notion連携](https://ai-agent.camp/ja/course/module-10) - Notion連携の学習
 - [GEMINI_API_SETUP.md](./GEMINI_API_SETUP.md) - Gemini API設定
 - [SLACK_TOKEN_SETUP.md](./SLACK_TOKEN_SETUP.md) - Slack Token設定
 

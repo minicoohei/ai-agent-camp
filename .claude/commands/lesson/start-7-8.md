@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-7-8 — Module 7 Lesson 7-8: テスト・デバッグ・イテレーション"
+chapter: "courses/aiagent/lesson03-core/module07-skill-commands/chapter.yaml"
 duration: "約30分"
 prerequisites: ["start-7-6", "start-7-7"]
 level: "intermediate"
@@ -28,7 +29,7 @@ tags: ["skill", "command", "testing", "debugging", "iteration"]
 
 セッション終了時には、作成したSkill/Commandが「他の人にも渡せる品質」に仕上がっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -202,7 +203,7 @@ python skills/[スキル名]/scripts/main.py --input /tmp/empty_test.txt
 
 ## 🚀 Step 3: セルフレビュー
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -277,7 +278,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 
 ## 🚀 Step 4: 改善イテレーション
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -333,7 +334,7 @@ Critical/High の問題を全て修正してから次のStepに進んでくだ�
 
 ## 🚀 Step 5: ドキュメント整備
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -400,7 +401,7 @@ SKILL.md に以下が含まれているか確認し、不足していれば追�
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -523,7 +524,7 @@ Module 7「Skill/Commands作成」は全8レッスンが完了です。おめで
 - SKILL.md駆動のスキル開発能力
 - テスト・デバッグ・イテレーションの実践力
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

@@ -18,7 +18,6 @@ TEXT_CHECKS = [
     (PROJECT_ROOT / "README.md", "Codex"),
     (PROJECT_ROOT / "README.md", "Claude Code"),
     (PROJECT_ROOT / "README.md", "Cursor"),
-    (PROJECT_ROOT / "course" / "index.html", "Codex"),
     (PROJECT_ROOT / "courses" / "aiagent" / "course.yaml", "Codex"),
     (PROJECT_ROOT / "courses" / "aiagent" / "course.en.yaml", "Codex"),
     (PROJECT_ROOT / "courses" / "aiagent" / "course.es.yaml", "Codex"),

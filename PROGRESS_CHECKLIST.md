@@ -67,28 +67,28 @@
 - [ ] Transformerの基本概念を理解した
 - [ ] Large Language Model（大規模言語モデル）の仕組みがわかった
 - [ ] Claude / GPT-4 などのモデルの違いがわかった
-- [ ] 学習内容: `course/foundation/0-1-llm-basics.md`
+- [ ] 学習内容: `https://ai-agent.camp/ja/course/foundation/llm-basics`
 
 #### トークン概念 (0-2)
 - [ ] トークンとは何かを説明できる
 - [ ] コンテキストウィンドウの概念を理解した
 - [ ] トークン数の計算方法がわかった
 - [ ] API コストの概算ができるようになった
-- [ ] 学習内容: `course/foundation/0-2-token-concepts.md`
+- [ ] 学習内容: `https://ai-agent.camp/ja/course/foundation/tokens`
 
 #### AIエージェント概念 (0-3)
 - [ ] エージェントとアシスタントの違いを説明できる
 - [ ] ツール使用（Tool Use）の仕組みを理解した
 - [ ] Function Calling の概念がわかった
 - [ ] MCP（Model Context Protocol）について理解した
-- [ ] 学習内容: `course/foundation/0-3-ai-agents.md`
+- [ ] 学習内容: `https://ai-agent.camp/ja/course/foundation/agents`
 
 #### コンテキスト エンジニアリング (0-4)
 - [ ] 効果的なプロンプトの構造を理解した
 - [ ] CLAUDE.md とシステムプロンプトの役割を理解した
 - [ ] ファイルコンテキストの活用方法がわかった
 - [ ] セマンティック検索の概念を理解した
-- [ ] 学習内容: `course/foundation/0-4-context-engineering.md`
+- [ ] 学習内容: `https://ai-agent.camp/ja/course/foundation/context-engineering`
 
 ---
 
@@ -933,7 +933,7 @@
 #### よくある質問
 
 - [ ] レッスンが理解できない
-  → `course/{module}/README.md` を確認
+  → 対応する module の lesson command と `courses/aiagent/` を確認
   → `/help-{module}` コマンドで詳細を確認
 
 - [ ] API キーがうまくいかない
@@ -952,7 +952,7 @@
 
 | リソース | 場所 |
 |--------|------|
-| 公式ドキュメント | `/course/` |
+| 公式ドキュメント | `https://ai-agent.camp/ja/course/module-0` |
 | トラブルシューティング | `/docs/troubleshoot.md` |
 | Commands 一覧 | `/docs/commands-reference.md` |
 | Skills 一覧 | `/docs/skills-reference.md` |

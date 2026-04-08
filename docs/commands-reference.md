@@ -339,17 +339,6 @@ Codex と Claude Code では同じ lesson id を使いますが、入口が異�
 
 ---
 
-### Cursor Workshop (4個)
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-cursor-workshop` | Cursorの使い方研修（メール・議事録・画像要約） |
-| `/start-cursor-workshop-email` | Cursor研修: メール作成 |
-| `/start-cursor-workshop-minutes` | Cursor研修: 議事録作成・レビュー |
-| `/start-cursor-workshop-image` | Cursor研修: 画像読み込み・要約 |
-
----
-
 ### その他のレッスンコマンド
 
 #### セキュリティ・確認系

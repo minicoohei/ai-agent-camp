@@ -383,26 +383,17 @@ def cmd_onboard(
                 pass
             mark_step_completed("invitation_accepted")
 
-    # Step 5: コンテンツセットアップ
+    # Step 5: コース導線の確認
     if "content_setup" in completed:
-        print("✅ コンテンツセットアップ: 完了済み")
+        print("✅ コース導線の確認: 完了済み")
     else:
-        print("\n📋 Step 5/5: 教材コンテンツのセットアップ")
-        import content_updater
-
-        if not content_updater.has_upstream():
-            ret = content_updater.cmd_setup()
-            if ret != 0:
-                print("❌ コンテンツのセットアップに失敗しました。")
-                return 1
-        else:
-            ret = content_updater.cmd_update(skill_check=True, skill_strategy="ask")
-            if ret != 0:
-                print("⚠️  コンテンツ更新で問題が発生しました。再実行してください。")
-                return 1
-
+        print("\n📋 Step 5/5: コース導線の確認")
+        print("以下を確認してください:")
+        print("  1. https://ai-agent.camp/ja/course/module-0 にアクセスできる")
+        print("  2. このリポジトリで start-0-1 からレッスンを開始できる")
+        print("  3. docs/codex-guide.md と docs/codex-safety.md を読める")
         mark_step_completed("content_setup")
-        print("✅ コンテンツセットアップ完了")
+        print("✅ コース導線の確認完了")
 
     # 完了後に一時トークンを削除
     state.pop("firebase_token", None)
@@ -415,8 +406,8 @@ def cmd_onboard(
     print(f"  GitHub: {github_username}")
     print(f"  リポジトリ: {content_repo}")
     print()
-    print("  教材を更新するには:")
-    print("    uv run python tools/content_updater.py")
+    print("  次のステップ:")
+    print("    start-0-1 でレッスンを開始")
     print()
     return 0
 

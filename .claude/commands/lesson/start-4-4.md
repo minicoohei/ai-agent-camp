@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-4-4 — Module 4 Lesson 4-4: Google Calendar 予定登録・管理"
+chapter: "courses/aiagent/lesson03-core/module04-google-workspace/chapter.yaml"
 duration: "約30分"
 prerequisites: ["start-4-3"]
 level: "beginner"
@@ -28,7 +29,7 @@ tags: ["google", "workspace", "gogcli", "calendar", "event-management"]
 
 セッション終了時には、gogcliを使ってカレンダーイベントの作成・管理が自在にできるようになっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -60,7 +61,7 @@ tags: ["google", "workspace", "gogcli", "calendar", "event-management"]
 
 ## 🚀 Step 1: シンプルなイベント作成
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -106,7 +107,7 @@ gog calendar create primary --account your-email@gmail.com \
 
 ## 🚀 Step 2: 参加者付き・Google Meet付きイベント
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -166,7 +167,7 @@ gog calendar create primary --account your-email@gmail.com \
 
 ## 🚀 Step 3: 定期予定（繰り返しルール）
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -230,7 +231,7 @@ gog calendar create primary --account your-email@gmail.com \
 
 ## 🚀 Step 4: イベント削除・管理
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -303,7 +304,7 @@ gog calendar create primary --account your-email@gmail.com \
 
 ## 🚀 Step 5: 実践演習（1週間のスケジュールを一括登録）
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -479,7 +480,7 @@ Google Workspace アカウントでない場合、Meet生成に制限がある�
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 以下のコマンドを実行して、Calendar予定登録・管理が正しく動作するか確認してください:

@@ -14,4 +14,4 @@ objectives:
   - "Agent Team（エージェントチーム）で複数エージェントを協調させる方法を理解する"
   - "実務でのSkill/SubAgent/Agent Teamの使い分けを判断できる"
 externalContent:
-  manual: "../../../../course/foundation/subagent.html"
+  manual: "https://ai-agent.camp/ja/course/foundation/subagent"

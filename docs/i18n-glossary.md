@@ -9,9 +9,7 @@
 **対象ロケール / Target Locales:** 日本語 (ja), English (en), Español (es)
 
 **ロケールファイル / Locale Files:**
-- `course/locales/ja.json` (10847 keys)
-- `course/locales/en.json` (10846 keys)
-- `course/locales/es.json` (10846 keys)
+- 旧 `course/locales/*.json` は静的HTML教材とともに廃止済み
 
 ---
 

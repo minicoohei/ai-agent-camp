@@ -182,48 +182,48 @@
   lesson: 2
 
 # === Module 7: Video ===
-- lessonId: start-13-1
+- lessonId: start-15-1
   title: "動画からキーフレームを抽出して分析"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 7
   lesson: 1
 
-- lessonId: start-13-2
+- lessonId: start-15-2
   title: "動画AIエンジンの全体像を理解し、fal.aiの使い方を学ぶ"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 7
   lesson: 2
 
-- lessonId: start-13-3
+- lessonId: start-15-3
   title: "プロダクト紹介動画を作成する（グリーンスクリーンアバター + スクショ合成）"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 7
   lesson: 3
 
-- lessonId: start-13-4
+- lessonId: start-15-4
   title: "絵コンテからアニメ動画を生成する（Gemini画像 + Kling/Veo I2V + FFmpeg結合）"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 7
   lesson: 4
 
-- lessonId: start-13-5
+- lessonId: start-15-5
   title: "スライド解説動画を作成する（HTML解析 + TTS + プレゼンター合成）"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 7
   lesson: 5
 
-- lessonId: start-13-6
+- lessonId: start-15-6
   title: "AIでミュージックビデオを作成する（Suno + ビート同期 + シーン動画化）"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 7
   lesson: 6
 
-- lessonId: start-13-7
+- lessonId: start-15-7
   title: "YouTube Clipper で動画ハイライト抽出"
   module: 7
   lesson: 7
 
-- lessonId: start-13-8
+- lessonId: start-15-8
   title: "Clipper × Remotion でマーケ素材を自動生成"
   module: 7
   lesson: 8
@@ -354,28 +354,33 @@
   lesson: 4
 
 # === Module 13: LP制作 ===
-- lessonId: start-15-1
+- lessonId: start-13-1
   title: "LP制作 - 訴求の整理"
+  chapterRef: "courses/aiagent/lesson03-core/module13-lp"
   module: 13
   lesson: 1
 
-- lessonId: start-15-2
+- lessonId: start-13-2
   title: "LP制作 - ワイヤーフレーム作成"
+  chapterRef: "courses/aiagent/lesson03-core/module13-lp"
   module: 13
   lesson: 2
 
-- lessonId: start-15-3
+- lessonId: start-13-3
   title: "LP制作 - Pencilデザインファイル作成"
+  chapterRef: "courses/aiagent/lesson03-core/module13-lp"
   module: 13
   lesson: 3
 
-- lessonId: start-15-4
+- lessonId: start-13-4
   title: "LP制作 - 実際に動くLP作成"
+  chapterRef: "courses/aiagent/lesson03-core/module13-lp"
   module: 13
   lesson: 4
 
-- lessonId: start-15-5
+- lessonId: start-13-5
   title: "LP制作 - Vercelデプロイ"
+  chapterRef: "courses/aiagent/lesson03-core/module13-lp"
   module: 13
   lesson: 5
 
@@ -593,20 +598,3 @@
 - lessonId: exercise-review
   title: "演習レビュー"
   type: utility
-
-# === Workshop (Cursor研修) ===
-- lessonId: start-cursor-workshop
-  title: "Cursorの使い方研修（メール・議事録・画像要約）を開始する"
-  type: workshop
-
-- lessonId: start-cursor-workshop-email
-  title: "Cursor研修: メール作成（Step 1〜3）"
-  type: workshop
-
-- lessonId: start-cursor-workshop-minutes
-  title: "Cursor研修: 議事録を作成・レビューする（Step 1〜3）"
-  type: workshop
-
-- lessonId: start-cursor-workshop-image
-  title: "Cursor研修: 画像を読み込んで要約を作成する（Step 1〜3）"
-  type: workshop

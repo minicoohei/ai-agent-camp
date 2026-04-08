@@ -14,4 +14,4 @@ objectives:
   - "Know use cases like image and document analysis"
   - "Understand the characteristics of major multimodal models"
 externalContent:
-  manual: "../../../../course/foundation/multimodal.html"
+  manual: "https://ai-agent.camp/en/course/foundation/multimodal"

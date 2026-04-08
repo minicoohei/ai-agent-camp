@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-4 — Module 18 Lesson 18-4: PM - 3種レビュー（Devil's Advocate / セキュリティ / 事業企画）"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "40分"
 category: "lesson"
 prerequisites: ["start-18-3", "output/pm/prd.md"]
@@ -34,7 +35,7 @@ tags: ["pm", "review", "devils-advocate", "security", "business"]
 - `output/pm/review-security.md`
 - `output/pm/review-business-case.md`
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -646,7 +647,7 @@ head -30 output/pm/review-*.md
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 output/pm/ のレビュー関連ファイルの一覧を表示してください:

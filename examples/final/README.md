@@ -94,6 +94,6 @@ Notion APIによるデータベース操作、ページ作成、外部同期。
 
 ## 関連リンク
 
-- [コースポータル](../course/index.html)
+- [コースサイト](https://ai-agent.camp/ja/course/module-0)
 - [CLAUDE.md](../CLAUDE.md)
 - [レッスンコマンド一覧](../commands/lesson/)

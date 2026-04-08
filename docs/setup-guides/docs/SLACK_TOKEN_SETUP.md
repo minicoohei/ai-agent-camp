@@ -278,4 +278,4 @@ timeline = search.get_timeline("2025-12-01", "2025-12-31")
 
 - [GOOGLE_OAUTH_SETUP.md](./GOOGLE_OAUTH_SETUP.md) - Google OAuth設定
 - [BIGQUERY_SETUP.md](./BIGQUERY_SETUP.md) - BigQuery設定
-- [Module 6: Slack検索](../../course/CURRICULUM.md) - Slack連携の学習
+- [Module 6: Slack検索](https://ai-agent.camp/ja/course/module-6) - Slack連携の学習

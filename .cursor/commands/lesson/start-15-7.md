@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-15-7 — Module 15 Lesson 15-7: YouTube Clipper で動画ハイライト抽出"
+chapter: "courses/aiagent/lesson03-core/module15-video/chapter.yaml"
 duration: 40分
 prerequisites: ["FFmpeg", "yt-dlp", "Gemini API キー"]
 level: intermediate

@@ -1,7 +1,7 @@
 ---
 description: "研修環境セットアップ（最初に実行）"
 duration: "約10分"
-prerequisites: ["Cursor をインストール済み"]
+prerequisites: ["Codex Desktop または Cursor をインストール済み"]
 level: "beginner"
 tags: ["setup", "environment"]
 ---
@@ -28,7 +28,7 @@ tags: ["setup", "environment"]
 | ゴール | Python / Node.js / Git / GitHub CLI がインストールされていることを確認し、未導入なら案内する |
 | 所要時間 | 約10分（全てインストール済みなら3分） |
 | 使うスキル | なし（AIが全て自動で確認します） |
-| 前提条件 | Cursor をインストール済み、ai-agent-camp フォルダを開いている |
+| 前提条件 | Codex Desktop または Cursor をインストール済み、ai-agent-camp フォルダを開いている |
 | 次のコマンド | `/setup-github`（GitHub アカウント設定） |
 
 **このセッションの流れ:**
@@ -39,6 +39,8 @@ tags: ["setup", "environment"]
 5. GitHub CLI の確認
 
 > **重要**: あなたがターミナルにコマンドを入力する必要は一切ありません。全てAIが裏側で自動実行します。画面に表示される結果を確認するだけでOKです。
+>
+> **Codex向けメモ**: Codex では `/setup-start` を slash command として呼ぶ代わりに、このドキュメントに書かれたチェック項目を順番に実行します。ダウンロードやブラウザ認証が必要な箇所だけ、ユーザーに引き継ぎます。
 >
 > **ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
 

@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-14-7 — Module 14 Lesson 14-7: 並列実行と仕上げ - 複数記事の同時処理"
+chapter: "courses/aiagent/lesson03-core/module14-article-writing/chapter.yaml"
 category: "lesson"
 duration: "40分"
 prerequisites: ["start-14-1", "start-14-2", "start-14-3", "start-14-4", "start-14-5", "start-14-6"]
@@ -29,7 +30,7 @@ tags: ["article", "parallel"]
 
 セッション終了時には、複数テーマの記事が並列で完成し、全工程の一括実行パターンを習得しています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -63,7 +64,7 @@ tags: ["article", "parallel"]
 
 ## 🚀 Step 1: 複数テーマの設定
 
-AskUserQuestion（AskQuestion）でテーマ数を選びます。
+Codex では通常チャットで選択肢を提示しながらでテーマ数を選びます。
 
 **AskQuestionの設定例:**
 ```json
@@ -116,7 +117,7 @@ AskUserQuestion（AskQuestion）でテーマ数を選びます。
 
 ## 🚀 Step 2: Task toolを使った並列記事生成
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -159,7 +160,7 @@ Task toolを使って、複数テーマの記事を並列生成してくださ�
 
 ## 🚀 Step 3: 校閲・ファクトチェックの並列実行
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -203,7 +204,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 
 ## 🚀 Step 4: 全記事の最終確認と出力
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -255,7 +256,7 @@ output/batch/ の全記事について、最終レポートを作成してくだ
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -348,7 +349,7 @@ head -30 output/article-14-7-*.md
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```bash
 # 完了確認: output/ フォルダに期待される出力ファイルが生成されているか確認してください。
@@ -362,7 +363,7 @@ head -30 output/article-14-7-*.md
 
 これでModule 14: 記事作成の全レッスンが完了です！
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

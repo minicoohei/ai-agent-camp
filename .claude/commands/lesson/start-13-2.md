@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-13-2 — Module 13 Lesson 13-2: LP制作 - ワイヤーフレーム作成"
+chapter: "courses/aiagent/lesson03-core/module13-lp/chapter.yaml"
 prerequisites: ["start-13-1"]
 duration: "約25分"
 level: "intermediate"
@@ -28,7 +29,7 @@ tags: ["lp", "wireframe", "design", "information-architecture"]
 
 セッション終了時には、LPの構造設計が完成しています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -226,7 +227,7 @@ uv run python tools/generate_diagram.py --topic "LPワイヤーフレーム: Her
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -293,7 +294,7 @@ open output/lp/index.html
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 output/lp-wireframe.txt と output/images/lp-wireframe.png が存在するか確認し、
@@ -308,7 +309,7 @@ output/lp-wireframe.txt と output/images/lp-wireframe.png が存在するか確
 
 これでこのセクションは完了です。次は Pencil MCP のセットアップを行い、デザインファイル作成に進みます。
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

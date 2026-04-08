@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-9 — Module 18 Lesson 18-9: PM - システム構成図 & API設計"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "30分"
 category: "lesson"
 prerequisites: ["start-18-8", "output/pm/er-diagram.puml"]

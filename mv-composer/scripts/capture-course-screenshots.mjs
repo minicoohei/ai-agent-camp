@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 import { join } from "path";
 
-const OUT_DIR = join(import.meta.dirname, "../public/course");
+const OUT_DIR = join(import.meta.dirname, "../public/course-assets");
 const BASE = "http://localhost:3000";
 
 const MODULES = [

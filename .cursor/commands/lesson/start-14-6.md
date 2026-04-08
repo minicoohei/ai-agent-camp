@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-14-6 — Module 14 Lesson 14-6: ファクトチェック - 事実検証エージェント"
+chapter: "courses/aiagent/lesson03-core/module14-article-writing/chapter.yaml"
 category: "lesson"
 duration: "30分"
 prerequisites: ["start-14-5"]
@@ -28,7 +29,7 @@ tags: ["article", "factcheck"]
 
 セッション終了時には、事実検証済み・出典付きの記事が完成しています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -62,7 +63,7 @@ tags: ["article", "factcheck"]
 
 ## 🚀 Step 1: ファクトチェックの対象カテゴリを理解する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -100,7 +101,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 
 ## 🚀 Step 2: fact-checkerで検証実行
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -151,7 +152,7 @@ python skills/fact-checker/scripts/fact_checker.py --input output/article-14-5-p
 
 ## 🚀 Step 3: 検証結果の確認と出典追加
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -194,7 +195,7 @@ output/article-14-6-factcheck.jsonの検証結果をもとに、
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -287,7 +288,7 @@ head -30 output/article-14-6-*.md
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```bash
 # 完了確認: output/ フォルダに期待される出力ファイルが生成されているか確認してください。
@@ -301,7 +302,7 @@ head -30 output/article-14-6-*.md
 
 これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

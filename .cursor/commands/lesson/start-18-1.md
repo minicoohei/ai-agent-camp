@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-1 — Module 18 Lesson 18-1: PM - 顧客インタビュー & ニーズ収集"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "25分"
 category: "lesson"
 prerequisites: []
@@ -17,8 +18,8 @@ tags: ["pm", "interview", "customer-needs"]
 |------|------|
 | ゴール | AIが顧客役になりインタビューシミュレーション。ペルソナ定義、ニーズ抽出を行う |
 | 所要時間 | 約25分 |
-| 使うスキル | pm-toolkit スキル, AskQuestion Tool |
-| 前提条件 | Cursor 利用中、ai-agent-camp を開いている |
+| 使うスキル | pm-toolkit スキル, 選択肢付きの対話フロー |
+| 前提条件 | ai-agent-camp を開いている |
 | 教材ページ | [Module 18: PM & システム要件定義](https://ai-agent.camp/ja/course/module-18) を並行参照 |
 
 **このセッションの流れ:**
@@ -29,7 +30,7 @@ tags: ["pm", "interview", "customer-needs"]
 
 セッション終了時には、TaskFlowの顧客ニーズ分析ドキュメントが完成しています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -313,7 +314,7 @@ head -30 output/pm/stakeholder-map.md
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 output/pm/customer-needs.md の内容を確認し、ペルソナ定義・ニーズ一覧・ペインポイントが

@@ -118,3 +118,9 @@ aiagent-base-pr-setup-api/
 
 # Claude subagents (generated)
 .claude/subagents/
+
+# Machine-local Claude settings
+.claude/settings.local.json
+
+# Codex agent skills (generated per-user)
+.agents/

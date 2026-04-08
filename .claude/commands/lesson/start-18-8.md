@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-8 — Module 18 Lesson 18-8: PM - DB設計（ER図 & エンティティ仕様書）"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "25分"
 category: "lesson"
 prerequisites: ["start-18-7", "output/pm/usecases.md", "output/pm/requirements-spec.md"]

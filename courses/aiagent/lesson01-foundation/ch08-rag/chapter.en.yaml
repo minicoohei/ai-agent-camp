@@ -14,4 +14,4 @@ objectives:
   - "Understand the role of vector databases"
   - "Decide when to use RAG vs. fine-tuning"
 externalContent:
-  manual: "../../../../course/foundation/rag.html"
+  manual: "https://ai-agent.camp/en/course/foundation/rag"

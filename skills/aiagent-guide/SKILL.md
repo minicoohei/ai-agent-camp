@@ -27,7 +27,6 @@ Use this skill to orient the user inside `ai-agent-camp`.
 - `AGENTS.md`
 - `CLAUDE.md` — Claude Code project instructions
 - `docs/codex-guide.md`
-- `course/index.html`
 
 ## Output
 - A short orientation summary

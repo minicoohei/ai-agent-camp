@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-4-2 — Module 4 Lesson 4-2: Gmail検索・閲覧"
+chapter: "courses/aiagent/lesson03-core/module04-google-workspace/chapter.yaml"
 duration: "約25分"
 prerequisites: ["start-4-1"]
 level: "beginner"
@@ -26,7 +27,7 @@ tags: ["google", "workspace", "gogcli", "gmail"]
 
 セッション終了時には、gogcliを使ってGmailのメールを自在に検索・分析できるようになっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -58,7 +59,7 @@ tags: ["google", "workspace", "gogcli", "gmail"]
 
 ## 🚀 Step 1: Gmailの検索クエリ構文を学ぶ
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -119,7 +120,7 @@ gog gmail search "is:unread newer_than:3d" --account your-email@gmail.com
 
 ## 🚀 Step 2: メールスレッドの詳細を閲覧する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -163,7 +164,7 @@ gog gmail message get <メッセージID> --account your-email@gmail.com
 
 ## 🚀 Step 3: 検索結果をAIで分析・要約する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -294,7 +295,7 @@ alias gogg="gog --account your-email@gmail.com"
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 以下のgogcliコマンドを実行して、Gmail検索・閲覧が正しく動作するか確認してください:

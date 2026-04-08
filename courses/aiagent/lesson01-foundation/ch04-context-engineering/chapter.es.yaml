@@ -13,4 +13,4 @@ objectives:
   - "Diseñar contexto efectivo"
   - "Comprender el concepto de MCP"
 externalContent:
-  manual: "../../../../course/foundation/context-engineering.html"
+  manual: "https://ai-agent.camp/es/course/foundation/context-engineering"

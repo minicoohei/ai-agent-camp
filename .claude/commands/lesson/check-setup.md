@@ -1,7 +1,7 @@
 ---
 description: "環境セットアップ状態の自動チェック"
 duration: "約2分"
-prerequisites: ["ai-agent-camp フォルダを Cursor で開いている"]
+prerequisites: ["ai-agent-camp フォルダを Codex または Cursor で開いている"]
 level: "beginner"
 tags: ["setup", "check"]
 ---
@@ -27,8 +27,10 @@ tags: ["setup", "check"]
 |------|------|
 | ゴール | 環境の健全性を確認し、問題があれば修正方法を案内する |
 | 所要時間 | 約2分（自動実行） |
-| 前提条件 | ai-agent-camp フォルダを Cursor で開いている |
+| 前提条件 | ai-agent-camp フォルダを Codex または Cursor で開いている |
 | ユーザー操作 | 結果を確認するだけ（CLIコマンドの入力は不要） |
+
+> **Codex向けメモ**: Codex では `/check-setup` という slash command は存在しないため、このドキュメントに列挙された確認コマンドを AI が順に実行して同じレポートを組み立てます。
 
 ---
 

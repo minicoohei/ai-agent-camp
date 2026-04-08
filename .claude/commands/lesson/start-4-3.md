@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-4-3 — Module 4 Lesson 4-3: Google Calendar操作"
+chapter: "courses/aiagent/lesson03-core/module04-google-workspace/chapter.yaml"
 duration: "約25分"
 prerequisites: ["start-4-1"]
 level: "beginner"
@@ -26,7 +27,7 @@ tags: ["google", "workspace", "gogcli", "calendar"]
 
 セッション終了時には、gogcliを使ってカレンダーイベントの閲覧・作成ができるようになっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -58,7 +59,7 @@ tags: ["google", "workspace", "gogcli", "calendar"]
 
 ## 🚀 Step 1: 今日・今週のイベントを一覧表示する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -109,7 +110,7 @@ gog calendar calendars --account your-email@gmail.com
 
 ## 🚀 Step 2: 新しいイベントを作成する
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -155,7 +156,7 @@ gog calendar create primary --account your-email@gmail.com \
 
 ## 🚀 Step 3: 定例ミーティングの自動セットアップ
 
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+Codex では通常チャットで選択肢を提示しながらで「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
@@ -284,7 +285,7 @@ gog calendar list で確認してください。Google Calendar のWebページ�
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 以下のコマンドを実行して、Calendar操作が正しく動作するか確認してください:

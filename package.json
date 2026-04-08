@@ -7,13 +7,12 @@
     "test": "playwright test",
     "test:ui": "playwright test --ui",
     "test:report": "playwright show-report",
-    "dev": "node -e \"const{spawn}=require('child_process');const c=process.platform==='darwin'?'open':process.platform==='win32'?'start':'xdg-open';spawn(c,['course/index.html'],{stdio:'inherit',shell:process.platform==='win32'})\"",
-    "serve": "python -m http.server 8081 --directory course",
+    "dev": "node -e \"const{spawn}=require('child_process');const c=process.platform==='darwin'?'open':process.platform==='win32'?'start':'xdg-open';spawn(c,['https://ai-agent.camp/ja/course/module-0'],{stdio:'inherit',shell:process.platform==='win32'})\"",
     "remotion:init": "cd tools/ugc/remotion && npm init video",
     "remotion:dev": "cd tools/ugc/remotion && npm start",
     "remotion:build": "cd tools/ugc/remotion && npm run build",
-    "format": "prettier --write 'course/**/*.html'",
-    "format:check": "prettier --check 'course/**/*.html'"
+    "format": "prettier --write 'README.md' 'docs/**/*.md' 'courses/**/*.yaml' '.cursor/commands/**/*.md' '.claude/commands/**/*.md' 'skills/**/*.md'",
+    "format:check": "prettier --check 'README.md' 'docs/**/*.md' 'courses/**/*.yaml' '.cursor/commands/**/*.md' '.claude/commands/**/*.md' 'skills/**/*.md'"
   },
   "repository": {
     "type": "git",

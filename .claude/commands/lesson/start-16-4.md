@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-16-4 — Module 16 Lesson 16-4: メールシーケンス設計 - ドリップキャンペーン"
+chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "30分"
 prerequisites: ["start-16-1"]

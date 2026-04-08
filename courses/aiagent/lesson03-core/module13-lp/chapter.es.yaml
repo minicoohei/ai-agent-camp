@@ -1,0 +1,17 @@
+# Chapter 14: Creacion de Landing Pages
+id: "module13-lp"
+order: 14
+name: "Creacion de Landing Pages"
+description: "Usa agentes de IA para pasar de la propuesta de valor y el wireframe al diseno en Pencil, la implementacion HTML y el despliegue en Vercel."
+type: "manual"
+estimatedMinutes: 180
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "Crear un brief de posicionamiento para una landing page o homepage"
+  - "Disenar la estructura de secciones y el wireframe"
+  - "Conectar el diseno en Pencil con la implementacion"
+  - "Entender la verificacion final y el despliegue en Vercel"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-13"
+  slides: "https://ai-agent.camp/es/course/module-13"

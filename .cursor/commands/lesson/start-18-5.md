@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-5 — Module 18 Lesson 18-5: PM - 要件定義書の作成（IPA準拠）"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "25分"
 category: "lesson"
 prerequisites: ["start-18-4", "output/pm/prd.md", "output/pm/requirements-brief.md"]

@@ -89,7 +89,7 @@ def main():
     parser = argparse.ArgumentParser(description="研修教材用挿絵一括生成")
     parser.add_argument("--category", choices=["foundation", "headers", "concepts", "exercises", "portal", "all"],
                         default="all", help="生成するカテゴリ")
-    parser.add_argument("--output", type=Path, default=Path("course/assets/images"),
+    parser.add_argument("--output", type=Path, default=Path("public/course-assets/assets/images"),
                         help="出力ディレクトリ")
     parser.add_argument("--dry-run", action="store_true", help="実際の生成は行わずログのみ")
     args = parser.parse_args()

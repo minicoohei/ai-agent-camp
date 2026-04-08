@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-13-1 — Module 13 Lesson 13-1: LP制作 - 訴求の整理"
+chapter: "courses/aiagent/lesson03-core/module13-lp/chapter.yaml"
 duration: "約20分"
 prerequisites: ["start-0-1"]
 level: "intermediate"
@@ -16,8 +17,8 @@ tags: ["lp", "copywriting", "persona", "brief"]
 |------|------|
 | ゴール | AskQuestionでヒアリングし、ペルソナ・訴求軸・コピーを整理してLP制作の土台を作る |
 | 所要時間 | 約20分 |
-| 使うスキル | AskQuestion Tool, lp-designer スキル |
-| 前提条件 | Lesson 0-1 完了、Cursor 利用中、ai-agent-camp を開いている |
+| 使うスキル | 選択肢付きの対話フロー, lp-designer スキル |
+| 前提条件 | Lesson 0-1 完了、ai-agent-camp を開いている |
 | 教材ページ | [Module 13: LP/HP制作](https://ai-agent.camp/ja/course/module-13) を並行参照 |
 
 **このセッションの流れ:**
@@ -28,7 +29,7 @@ tags: ["lp", "copywriting", "persona", "brief"]
 
 セッション終了時には、LP制作に必要な訴求ブリーフが完成しています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -288,7 +289,7 @@ output/lp-brief.md にまとめてください。
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -354,7 +355,7 @@ head -30 output/lp-brief.md
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```text
 output/lp-brief.md の内容を確認し、ペルソナ・訴求軸・コピー・セクション構成が
@@ -369,7 +370,7 @@ output/lp-brief.md の内容を確認し、ペルソナ・訴求軸・コピー�
 
 これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

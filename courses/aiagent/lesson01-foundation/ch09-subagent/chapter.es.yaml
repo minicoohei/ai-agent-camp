@@ -14,4 +14,4 @@ objectives:
   - "Entender cómo coordinar múltiples agentes como un Agent Team"
   - "Decidir cuándo usar Skills, SubAgentes o Agent Teams en la práctica"
 externalContent:
-  manual: "../../../../course/foundation/subagent.html"
+  manual: "https://ai-agent.camp/es/course/foundation/subagent"

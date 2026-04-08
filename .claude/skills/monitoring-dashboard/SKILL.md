@@ -139,6 +139,6 @@ marimo ノートブック（.py）を生成:
 
 ```
 monitoring-dashboardスキルを使って、ダミーデータからプロジェクト統合ダッシュボードを作成してください。
-データ: course/exercises/14-pm-sysdef/samples/dummy-wbs-progress.json
+データ: 任意の進捗 JSON または CSV
 → output/pm/dashboard.py が生成される → marimo run で起動
 ```

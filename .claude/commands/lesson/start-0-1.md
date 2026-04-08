@@ -2,7 +2,7 @@
 description: "When the user says /start-0-1 — Module 0 Lesson 0-1: 環境セットアップ確認"
 chapter: "courses/aiagent/lesson02-setup/ch01-environment"
 duration: "約15分"
-prerequisites: ["Cursor をインストール済み", "ai-agent-camp フォルダを開いている"]
+prerequisites: ["Codex Desktop または Cursor をインストール済み", "ai-agent-camp フォルダを開いている"]
 level: "beginner"
 tags: ["setup", "environment"]
 ---
@@ -19,9 +19,9 @@ tags: ["setup", "environment"]
 
 | 項目 | 内容 |
 |------|------|
-| ゴール | Cursor / Node.js / Python / GitHub CLI の動作を確認し、環境が整っているかチェックする |
+| ゴール | Codex で学習を始められるよう、Node.js / Python / GitHub CLI を含む環境が整っているかチェックする |
 | 所要時間 | 約15分 |
-| 前提条件 | Cursor をインストール済み、ai-agent-camp フォルダを開いている |
+| 前提条件 | Codex Desktop または Cursor をインストール済み、ai-agent-camp フォルダを開いている |
 | 教材ページ | [コース教材トップ](https://ai-agent.camp/ja/course/module-0) を並行参照 |
 
 > **ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。
@@ -32,6 +32,8 @@ tags: ["setup", "environment"]
 
 このレッスンでは、以下の2つのコマンドを使って環境を整えます。
 **ターミナルの操作は一切不要です。全てAIが自動で実行します。**
+
+> **Codex向けメモ**: Codex では `/setup-start` や `/check-setup` を Cursor の slash command として直接実行するのではなく、このファイルに書かれた確認内容を順番に実行します。ブラウザ認証など GUI 操作が必要になったら、その時点でユーザー操作に切り替えます。
 
 ### Step 1: セットアップ開始
 
@@ -137,7 +139,7 @@ AIが以下を全て自動でチェックし、レポートを表示します:
 ---
 
 ## チェックポイント
-- [ ] Cursor が起動する
+- [ ] Codex Desktop または Cursor が起動する
 - [ ] Python 3.9 以上がインストールされている
 - [ ] Node.js 18 以上がインストールされている
 - [ ] Git がインストールされている

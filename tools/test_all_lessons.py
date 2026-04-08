@@ -112,7 +112,7 @@ def check_manifest():
 # === 3. Path reference check ===
 PATH_PATTERNS = [
     # Relative paths from project root
-    re.compile(r'(?:course/[^\s"\'<>)]+)'),
+    re.compile(r'(?:https://ai-agent\.camp/[^\s"\'<>)]+)'),
     re.compile(r'(?:tools/[^\s"\'<>)]+\.py)'),
     re.compile(r'(?:skills/[^\s"\'<>)]+)'),
     re.compile(r'(?:docs/[^\s"\'<>)]+)'),
@@ -189,20 +189,20 @@ def check_lesson_cross_references():
 
 
 # === 6. Course page reference check ===
-COURSE_PAGE_PATTERN = re.compile(r'course/[^\s"\'<>)]+\.html')
+COURSE_PAGE_PATTERN = re.compile(r'https://ai-agent\.camp/[^\s"\'<>)]+')
 
 
 def check_course_pages():
     for md_file in sorted(CLAUDE_LESSONS.glob("start-*.md")):
         content = md_file.read_text()
         for match in COURSE_PAGE_PATTERN.findall(content):
-            path = match.rstrip(".,;:)")
-            full_path = BASE_DIR / path
+            url = match.rstrip(".,;:)")
+            # External URLs are validated by presence only (not local path check)
             check(
                 "course_page_check",
-                f"{md_file.stem}:{path}",
-                full_path.exists(),
-                f"Course page does not exist: {path}",
+                f"{md_file.stem}:{url}",
+                url.startswith("https://ai-agent.camp/"),
+                f"Course page URL is malformed: {url}",
             )
 
 

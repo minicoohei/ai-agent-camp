@@ -1,0 +1,3 @@
+interface:
+  display_name: "Narration Qa"
+  short_description: "ElevenLabsで生成したナレーション音声の品質を自動検証するスキル。"

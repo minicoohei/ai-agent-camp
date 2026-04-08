@@ -13,4 +13,4 @@ objectives:
   - "Conocer el flujo básico de cada herramienta"
   - "Comprender la configuración de seguridad"
 externalContent:
-  manual: "../../../../course/foundation/cursor-usage.html"
+  manual: "https://ai-agent.camp/es/course/foundation/cursor-usage"

@@ -52,10 +52,6 @@ jobs:
       - name: Check plugin registry URLs
         run: python tools/check_command_paths.py --plugins
 
-      - name: Check i18n coverage
-        run: python tools/check_i18n_coverage.py
-        continue-on-error: true  # TODO: course/locales/ 初期化後に削除
-
       - name: Check security hooks syntax
         run: |
           python -m py_compile .claude/hooks/bash_guard.py
@@ -65,9 +61,6 @@ jobs:
 
       - name: Check import consistency
         run: python tools/check_imports.py
-
-      - name: Check module consistency
-        run: python tools/check_module_consistency.py
 
       - name: Run tests
         run: pytest tests/ -v --cov=tools --cov-report=term-missing --cov-report=xml

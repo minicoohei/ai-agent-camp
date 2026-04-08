@@ -14,4 +14,4 @@ objectives:
   - "Comprender el rol de las bases de datos vectoriales"
   - "Decidir cuándo usar RAG vs. fine-tuning"
 externalContent:
-  manual: "../../../../course/foundation/rag.html"
+  manual: "https://ai-agent.camp/es/course/foundation/rag"

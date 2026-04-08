@@ -32,7 +32,6 @@
 - `.githooks/pre-commit`
 - `scripts/install_hooks.sh`
 - `courses/`
-- `course/`
 - `skills/`
 
 ## Hooks And Guardrails

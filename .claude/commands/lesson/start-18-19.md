@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-18-19 — Module 18 Lesson 18-19: PM - marimo ダッシュボード"
+chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "30分"
 category: "lesson"
 prerequisites: ["start-18-18"]

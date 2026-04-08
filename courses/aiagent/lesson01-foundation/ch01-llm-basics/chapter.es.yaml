@@ -11,4 +11,4 @@ objectives:
   - "Conocer la historia y evolución de la IA"
   - "Entender el mecanismo de predicción del siguiente token"
 externalContent:
-  manual: "../../../../course/foundation/llm-basics.html"
+  manual: "https://ai-agent.camp/es/course/foundation/llm-basics"

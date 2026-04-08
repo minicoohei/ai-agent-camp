@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-13-5 — Module 13 Lesson 13-5: LP制作 - Vercelデプロイ"
+chapter: "courses/aiagent/lesson03-core/module13-lp/chapter.yaml"
 prerequisites: ["start-13-4"]
 duration: "約15分"
 level: "intermediate"
@@ -31,7 +32,7 @@ tags: ["lp", "vercel", "deploy", "hosting"]
 
 セッション終了時には、LPが世界中からアクセス可能なURLで公開されています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 
@@ -381,7 +382,7 @@ browser_snapshot でスクリーンショットを取得してください。
 
 ## ⚠️ よくあるトラブルと解決方法
 
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
+Codex では通常チャットで選択肢を提示しながらでトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -452,7 +453,7 @@ open output/lp/index.html
 ---
 
 ## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+以下をCodexのチャットに入力して、完了状況を確認してください:
 
 ```bash
 vercel ls で現在のデプロイ一覧を表示し、
@@ -486,7 +487,7 @@ Module 13 のすべてのレッスンを完了しました！
 
 これで全セクション完了です。次にやることを選んでください。
 
-AskUserQuestion（AskQuestion）で選べます。
+Codex では通常チャットで選択肢を提示しながらで選べます。
 
 **AskQuestionの設定例:**
 ```json

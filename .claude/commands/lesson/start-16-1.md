@@ -1,5 +1,6 @@
 ---
 description: "When the user says /start-16-1 — Module 16 Lesson 16-1: Gmail セットアップ - gogcli 認証とメール同期"
+chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "25分"
 prerequisites: []
@@ -29,7 +30,7 @@ tags: ["email", "gmail", "gogcli", "setup"]
 
 セッション終了時には、gogcli で Gmail にアクセスし、メールの検索・閲覧ができる状態になっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。ツールによって応答が途中で止まることがありますが、故障ではありません。
 
 ---
 

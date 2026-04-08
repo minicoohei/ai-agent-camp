@@ -13,4 +13,4 @@ objectives:
   - "Understand the agent loop mechanism"
   - "Understand autonomy levels"
 externalContent:
-  manual: "../../../../course/foundation/agents.html"
+  manual: "https://ai-agent.camp/en/course/foundation/agents"

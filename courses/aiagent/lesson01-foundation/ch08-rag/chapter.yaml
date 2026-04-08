@@ -14,4 +14,4 @@ objectives:
   - "ベクトルデータベースの役割を把握する"
   - "RAGとファインチューニングの使い分けを判断できる"
 externalContent:
-  manual: "../../../../course/foundation/rag.html"
+  manual: "https://ai-agent.camp/ja/course/foundation/rag"

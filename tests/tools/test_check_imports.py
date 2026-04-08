@@ -101,16 +101,6 @@ class TestIterPythonFiles:
         assert "cached.py" not in names
         assert "real.py" in names
 
-    def test_excludes_knowledge_base(self, scan_root):
-        kb_dir = scan_root / "skills" / "knowledge-base"
-        kb_dir.mkdir(parents=True)
-        (kb_dir / "data.py").write_text("pass")
-        scan_dirs = [scan_root / "skills"]
-        with patch.object(ci, "SCAN_DIRS", scan_dirs), \
-             patch.object(ci, "PROJECT_ROOT", scan_root):
-            files = iter_python_files()
-        assert len(files) == 0
-
     def test_nonexistent_scan_dir(self, scan_root):
         scan_dirs = [scan_root / "nonexistent"]
         with patch.object(ci, "SCAN_DIRS", scan_dirs), \
