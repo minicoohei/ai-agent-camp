@@ -1,0 +1,17 @@
+# Chapter 12: Extended Thinking
+id: "ch12-extended-thinking"
+order: 12
+name: "Extended Thinking"
+description: "Learn how Extended Thinking gives LLMs time to reason and improves accuracy."
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch06-mcp"
+objectives:
+  - "Understand what Extended Thinking is"
+  - "Understand the two-step process (thinking → answering)"
+  - "Judge when Extended Thinking is effective"
+  - "Grasp the concept of Inference Scaling"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-6?slideId=ext-thinking-intro"

@@ -14,4 +14,4 @@ objectives:
   - "MCPやエージェントがもたらすリスクの拡大を理解する"
   - "多層防御（Defense in Depth）の考え方を身につける"
 externalContent:
-  manual: "https://ai-agent.camp/ja/course/foundation/security"
+  manual: "https://ai-agent.camp/ja/course/foundation-4?slideId=security-intro"

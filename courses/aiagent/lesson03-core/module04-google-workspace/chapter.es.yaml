@@ -1,8 +1,8 @@
 # Capítulo 16: Integración con Google Workspace
 id: "module04-google-workspace"
 order: 16
-name: "Integración con Google Workspace"
-description: "Construye un flujo de asistente de IA entre Calendar, Gmail, Drive, Sheets y GAS para automatizar tareas diarias."
+name: "Secretario IA — Integracion con Google Workspace"
+description: "Obten tu propio secretario IA. Desde busqueda de horarios libres en Calendar, deteccion de emails sin responder, gestion de archivos en Drive, hasta integracion de datos en Sheets."
 type: "manual"
 estimatedMinutes: 180
 thumbnail: "thumbnail.png"

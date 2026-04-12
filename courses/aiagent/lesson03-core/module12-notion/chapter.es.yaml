@@ -1,8 +1,8 @@
 # Capítulo 9: Integración con Notion
 id: "module12-notion"
 order: 9
-name: "Integración con Notion"
-description: "Integra bases de datos de Notion con IA."
+name: "Notion CLI (ncli)"
+description: "Aprende a usar la CLI de Notion (@sakasegawa/ncli) desde la terminal y flujos pensados para agentes."
 type: "manual"
 estimatedMinutes: 60
 objectives:
