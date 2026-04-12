@@ -17,10 +17,10 @@ Serena風セマンティック検索を提供する。
     results = search.find_channels("DX展示会")
     
     # チャンネル詳細
-    detail = search.get_channel_detail("infobox/buyingshift")
+    detail = search.get_channel_detail("my-workspace/example-channel")
     
     # 関連チャンネル
-    related = search.find_related_channels("infobox/buyingshift")
+    related = search.find_related_channels("my-workspace/example-channel")
     
     # 人物検索
     person = search.find_person("清水")

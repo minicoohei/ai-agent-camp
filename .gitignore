@@ -79,6 +79,10 @@ data/slack-sync/data/
 data/slack-sync/index/
 data/google-sync/data/
 
+# Generated book index (contains real Slack workspace data)
+**/book_index.json
+!**/book_index.json.sample
+
 # SpecStory
 .specstory/
 

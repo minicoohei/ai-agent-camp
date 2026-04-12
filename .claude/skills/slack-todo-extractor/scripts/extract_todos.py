@@ -6,9 +6,9 @@ Slackの同期データから、特定ユーザー宛のメンションを検索
 スレッド返信を含めてTODO/タスクを抽出・ステータス判定します。
 
 使い方:
-  python extract_todos.py --users "Kohei,minicoohei" --period "2026-01-06:2026-01-08"
-  python extract_todos.py --users "Kohei" --workspace yoake --period "2026-01-06:2026-01-08"
-  python extract_todos.py --users "Kohei" --period "1/6:8" --use-llm  # LLMで判定
+  python extract_todos.py --users "YourName,your-username" --period "2026-01-06:2026-01-08"
+  python extract_todos.py --users "YourName" --workspace my-workspace --period "2026-01-06:2026-01-08"
+  python extract_todos.py --users "YourName" --period "1/6:8" --use-llm  # LLMで判定
 """
 
 import argparse

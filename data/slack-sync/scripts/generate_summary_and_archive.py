@@ -157,7 +157,8 @@ def main():
     
     # 全ワークスペースを処理
     total = 0
-    for workspace in ["fungiblex", "tokenpocket", "yoake", "infobox"]:
+    # 自分のワークスペースに合わせて変更してください
+    for workspace in ["my-workspace"]:
         total += process_workspace(workspace)
     
     print(f"\n{'='*50}")

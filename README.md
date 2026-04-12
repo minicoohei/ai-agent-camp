@@ -4,8 +4,8 @@
 
 **AI Agent Training for Non-Engineers - Complete Guide to Claude Code / Cursor / Codex**
 
-[![GitHub](https://img.shields.io/badge/GitHub-minicoohei%2Faiagent--base-181717?style=flat&logo=github)](https://github.com/TokenPocket/ai-agent-camp)
-[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/TokenPocket/ai-agent-camp/releases)
+[![GitHub](https://img.shields.io/badge/GitHub-minicoohei%2Faiagent--base-181717?style=flat&logo=github)](https://github.com/aibrainpartners/ai-agent-camp)
+[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/aibrainpartners/ai-agent-camp/releases)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-3776ab.svg?style=flat&logo=python)](https://www.python.org/)
 
 ## Table of Contents
@@ -112,7 +112,7 @@ This can be done entirely through the GitHub web interface.
 
 1. Log in to GitHub and select "+" > "Import repository" in the top right
 2. Enter:
-   - **Your old repository's clone URL**: `https://github.com/TokenPocket/ai-agent-camp.git`
+   - **Your old repository's clone URL**: `https://github.com/aibrainpartners/ai-agent-camp.git`
    - **Repository name**: any name (e.g., `my-aiagent`)
    - **Privacy**: Select **Private**
 3. Click "Begin import"
@@ -130,7 +130,7 @@ For those comfortable with the terminal.
 # 1. Create an empty Private repository on GitHub
 
 # 2. Create a mirror clone
-git clone --bare https://github.com/TokenPocket/ai-agent-camp.git my-aiagent.git
+git clone --bare https://github.com/aibrainpartners/ai-agent-camp.git my-aiagent.git
 cd my-aiagent.git
 
 # 3. Set the new origin and push
@@ -147,7 +147,7 @@ When the source materials are updated, pull changes with:
 
 ```bash
 # First time only: add the original repo as upstream
-git remote add upstream https://github.com/TokenPocket/ai-agent-camp.git
+git remote add upstream https://github.com/aibrainpartners/ai-agent-camp.git
 
 # Pull updates
 git fetch upstream
@@ -163,7 +163,7 @@ If you use Cursor, you can run **`/update-material`** in chat to do the same thi
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/TokenPocket/ai-agent-camp.git ~/ai-agent-camp
+git clone https://github.com/aibrainpartners/ai-agent-camp.git ~/ai-agent-camp
 cd ~/ai-agent-camp
 ```
 
@@ -789,7 +789,7 @@ We welcome your feedback and suggestions for improvement!
 
 ### Bug Reports & Feature Requests
 
-1. Check [Issues](https://github.com/TokenPocket/ai-agent-camp/issues) for existing reports
+1. Check [Issues](https://github.com/aibrainpartners/ai-agent-camp/issues) for existing reports
 2. Create a new Issue if needed
 3. Follow the template and provide detailed information
 
@@ -827,8 +827,8 @@ Issues can be written in English or Japanese. The community is multilingual.
 
 | Method | Use For |
 |--------|---------|
-| [GitHub Issues](https://github.com/TokenPocket/ai-agent-camp/issues) | Bug reports, feature requests, technical questions |
-| [Discussions](https://github.com/TokenPocket/ai-agent-camp/discussions) | General questions, information sharing, idea proposals |
+| [GitHub Issues](https://github.com/aibrainpartners/ai-agent-camp/issues) | Bug reports, feature requests, technical questions |
+| [Discussions](https://github.com/aibrainpartners/ai-agent-camp/discussions) | General questions, information sharing, idea proposals |
 
 ### In-Tool Help
 
@@ -852,9 +852,9 @@ Codex: aiagent-check-setup
 
 ### Other Resources
 
-- **Official Repository**: [github.com/TokenPocket/ai-agent-camp](https://github.com/TokenPocket/ai-agent-camp)
-- **Issue Tracker**: [Issues](https://github.com/TokenPocket/ai-agent-camp/issues)
-- **Release Notes**: [Releases](https://github.com/TokenPocket/ai-agent-camp/releases)
+- **Official Repository**: [github.com/aibrainpartners/ai-agent-camp](https://github.com/aibrainpartners/ai-agent-camp)
+- **Issue Tracker**: [Issues](https://github.com/aibrainpartners/ai-agent-camp/issues)
+- **Release Notes**: [Releases](https://github.com/aibrainpartners/ai-agent-camp/releases)
 
 ---
 

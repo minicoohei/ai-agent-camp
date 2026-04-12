@@ -152,7 +152,7 @@ events = search.find_events("DX")
 # 全ワークスペースのcafeチャンネル
 cafes = search.list_channels_by_category("cafe")
 
-# infoboxのprojectチャンネルのみ
+# 特定ワークスペースのprojectチャンネルのみ
 projects = search.list_channels_by_category("project", workspace="my-workspace")
 ```
 

@@ -15,7 +15,7 @@ class TestParseDateSection:
     def test_basic_message(self):
         from slack_parser import parse_date_section
         content = """### 10:30 - Tanaka [[Slack]](https://slack.com/link1)
-こんにちは @Kohei、タスクの確認お願いします。
+こんにちは @TestUser、タスクの確認お願いします。
 """
         messages = parse_date_section(content, "2026-01-15")
         assert len(messages) == 1
@@ -55,9 +55,9 @@ Afternoon message
 class TestExtractTaskSummary:
     def test_basic(self):
         from slack_parser import extract_task_summary
-        result = extract_task_summary("@Kohei タスクをお願いします")
+        result = extract_task_summary("@TestUser タスクをお願いします")
         assert "タスクをお願いします" in result
-        assert "@Kohei" not in result
+        assert "@TestUser" not in result
 
     def test_url_replaced(self):
         from slack_parser import extract_task_summary
@@ -82,43 +82,43 @@ class TestHasReplyFromUser:
         msg = SlackMessage(
             date="2026-01-15", time="10:00", sender="Alice",
             body="test", channel="general", workspace="ws",
-            slack_link="", mentioned_user="Kohei",
+            slack_link="", mentioned_user="TestUser",
             thread_replies=[
-                ThreadReply(time="10:05", sender="Kohei Nakamura", body="ok")
+                ThreadReply(time="10:05", sender="TestUser", body="ok")
             ]
         )
-        assert has_reply_from_user(msg, ["Kohei"]) is True
+        assert has_reply_from_user(msg, ["TestUser"]) is True
 
     def test_no_reply(self):
         from slack_parser import has_reply_from_user, SlackMessage, ThreadReply
         msg = SlackMessage(
             date="2026-01-15", time="10:00", sender="Alice",
             body="test", channel="general", workspace="ws",
-            slack_link="", mentioned_user="Kohei",
+            slack_link="", mentioned_user="TestUser",
             thread_replies=[
                 ThreadReply(time="10:05", sender="Bob", body="ok")
             ]
         )
-        assert has_reply_from_user(msg, ["Kohei"]) is False
+        assert has_reply_from_user(msg, ["TestUser"]) is False
 
     def test_empty_replies(self):
         from slack_parser import has_reply_from_user, SlackMessage
         msg = SlackMessage(
             date="2026-01-15", time="10:00", sender="Alice",
             body="test", channel="general", workspace="ws",
-            slack_link="", mentioned_user="Kohei",
+            slack_link="", mentioned_user="TestUser",
             thread_replies=[]
         )
-        assert has_reply_from_user(msg, ["Kohei"]) is False
+        assert has_reply_from_user(msg, ["TestUser"]) is False
 
     def test_case_insensitive(self):
         from slack_parser import has_reply_from_user, SlackMessage, ThreadReply
         msg = SlackMessage(
             date="2026-01-15", time="10:00", sender="Alice",
             body="test", channel="general", workspace="ws",
-            slack_link="", mentioned_user="kohei",
+            slack_link="", mentioned_user="testuser",
             thread_replies=[
-                ThreadReply(time="10:05", sender="KOHEI", body="replied")
+                ThreadReply(time="10:05", sender="TESTUSER", body="replied")
             ]
         )
-        assert has_reply_from_user(msg, ["kohei"]) is True
+        assert has_reply_from_user(msg, ["testuser"]) is True

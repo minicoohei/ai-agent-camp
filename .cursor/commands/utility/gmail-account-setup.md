@@ -50,8 +50,8 @@ python scripts/setup_gmail_account.py --label <アカウント名>
 ### 例
 
 ```bash
-python scripts/setup_gmail_account.py --label aibrain
-python scripts/setup_gmail_account.py --label infobox
+python scripts/setup_gmail_account.py --label my-account
+python scripts/setup_gmail_account.py --label work
 python scripts/setup_gmail_account.py --label work
 ```
 
@@ -76,9 +76,9 @@ gh secret list --repo <owner/repo> | grep GMAIL
 **アカウントを追加するたびに更新が必要です：**
 
 ```bash
-# 例: aibrain と infobox の2アカウント
+# 例: my-account と work の2アカウント
 gh secret set GMAIL_ACCOUNTS_CONFIG \
-  --body '{"accounts":[{"label":"aibrain","type":"oauth"},{"label":"infobox","type":"oauth"}]}' \
+  --body '{"accounts":[{"label":"my-account","type":"oauth"},{"label":"work","type":"oauth"}]}' \
   --repo <owner/repo>
 ```
 
@@ -112,10 +112,10 @@ gh workflow run "Fetch Google Cloud Data" --repo <owner/repo> -f days=1
 ログで確認：
 ```
 Starting Multi-Gmail fetch...
-Processing account: aibrain
-[aibrain] OAuth authentication successful
-Processing account: infobox
-[infobox] OAuth authentication successful
+Processing account: my-account
+[my-account] OAuth authentication successful
+Processing account: work
+[work] OAuth authentication successful
 ```
 
 ---
@@ -143,7 +143,7 @@ gh auth status
 ### 「multiple remotes detected」エラー
 
 ```bash
-python scripts/setup_gmail_account.py --label aibrain --repo owner/repo
+python scripts/setup_gmail_account.py --label my-account --repo owner/repo
 ```
 で明示的にリポジトリを指定。
 

@@ -74,7 +74,7 @@ python skills/viral-short-video/scripts/generate_viral_script.py \
   --product "My Product" \
   --duration 15 \
   --tone casual \
-  --session "tp_fees"
+  --session "product_fees"
 
 # ストーリーボード生成まで一気通貫
 python skills/viral-short-video/scripts/generate_viral_script.py \

@@ -88,25 +88,25 @@ Slackのメンションからタスクを抽出し、ステータス判定を行
 ```bash
 # 基本（キーワードベース）
 python skills/slack-todo-extractor/scripts/extract_todos.py \
-  --users "Kohei,minicoohei" \
+  --users "YourName,your-username" \
   --period "2026-01-06:2026-01-08"
 
 # LLMベース（高精度、要GEMINI_API_KEY）
 python skills/slack-todo-extractor/scripts/extract_todos.py \
-  --users "Kohei,minicoohei" \
+  --users "YourName,your-username" \
   --period "1/6:8" \
   --use-llm
 
 # JSON出力
 python skills/slack-todo-extractor/scripts/extract_todos.py \
-  -u "Kohei" -p "1/6:8" --use-llm -o json
+  -u "YourName" -p "1/6:8" --use-llm -o json
 ```
 
 ### パラメータ
 
 | パラメータ | 必須 | 説明 | 例 |
 |-----------|------|------|-----|
-| `--users`, `-u` | ✅ | 対象ユーザー名（カンマ区切り） | `Kohei, minicoohei` |
+| `--users`, `-u` | ✅ | 対象ユーザー名（カンマ区切り） | `YourName, your-username` |
 | `--period`, `-p` | ✅ | 検索期間 | `2026-01-06:2026-01-08` or `1/6:8` |
 | `--workspace`, `-w` | ❌ | ワークスペース | `my-workspace`, `my-workspace-2` |
 | `--use-llm` | ❌ | LLM（Gemini）で判定 | - |
@@ -161,7 +161,7 @@ tasks:
     priority: high
     status: pending
     due_date: "2026-01-10"
-    assignee: "Kohei"
+    assignee: "YourName"
     channel: "my-workspace/team-core"
 ```
 

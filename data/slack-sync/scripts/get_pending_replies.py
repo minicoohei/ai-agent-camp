@@ -9,7 +9,7 @@ Slack返信が必要な投稿を取得するスクリプト
 
 使い方:
   python get_pending_replies.py                    # 全ワークスペース
-  python get_pending_replies.py --workspace yoake  # 特定ワークスペースのみ
+  python get_pending_replies.py --workspace my-workspace  # 特定ワークスペースのみ
   python get_pending_replies.py --days 3           # 過去3日間のみ
 """
 
@@ -36,27 +36,20 @@ load_dotenv(ROOT_DIR / ".env")
 load_dotenv(ROOT_DIR.parent / ".env")
 
 # ワークスペース設定
+# 自分のワークスペースに合わせて追加・変更してください。
+# slack_domain はワークスペースの Slack URL に含まれるドメイン部分です。
 WORKSPACES = {
-    "tokenpocket": {
+    "my-workspace": {
         "token_env": "SLACK_USER_TOKEN",
-        "display_name": "TokenPocket",
-        "slack_domain": "token-pocket",
+        "display_name": "My Workspace",
+        "slack_domain": "my-workspace",
     },
-    "infobox": {
-        "token_env": "SLACK_USER_TOKEN_INFOBOX",
-        "display_name": "Infobox",
-        "slack_domain": "w1620058434-jsi867044",
-    },
-    "yoake": {
-        "token_env": "SLACK_USER_TOKEN_YOAKE",
-        "display_name": "YOAKE",
-        "slack_domain": "yoake-entertainment",
-    },
-    "fungiblex": {
-        "token_env": "SLACK_USER_TOKEN_FUNGIBLEX",
-        "display_name": "Fungible X",
-        "slack_domain": "thex2y2",
-    },
+    # 複数ワークスペースを使う場合は以下のように追加:
+    # "my-workspace-2": {
+    #     "token_env": "SLACK_USER_TOKEN_WS2",
+    #     "display_name": "My Workspace 2",
+    #     "slack_domain": "my-workspace-2",
+    # },
 }
 
 

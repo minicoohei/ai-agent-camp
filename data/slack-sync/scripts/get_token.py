@@ -3,15 +3,15 @@
 Slack OAuth Token 取得スクリプト（複数ワークスペース対応）
 
 使い方:
-1. 認証URLを生成（TokenPocket）:
+1. 認証URLを生成（デフォルトワークスペース）:
    python get_token.py --generate-url
 
-2. 認証URLを生成（Infobox）:
-   python get_token.py --generate-url --workspace infobox
+2. 認証URLを生成（別のワークスペース）:
+   python get_token.py --generate-url --workspace my-workspace-2
 
 3. Tokenを取得:
    python get_token.py --code=コピーしたコード
-   python get_token.py --code=コピーしたコード --workspace infobox
+   python get_token.py --code=コピーしたコード --workspace my-workspace-2
 """
 
 import argparse
@@ -30,31 +30,22 @@ load_dotenv(ROOT_DIR / ".env")
 load_dotenv(ROOT_DIR.parent / ".env")
 
 # ワークスペース設定
+# 自分のワークスペースに合わせて追加・変更してください。
+# 各ワークスペースに対応する環境変数名と表示名を定義します。
 WORKSPACES = {
-    "tokenpocket": {
+    "my-workspace": {
         "client_id_env": "SLACK_CLIENT_ID",
         "client_secret_env": "SLACK_CLIENT_SECRET",
         "token_env": "SLACK_USER_TOKEN",
-        "display_name": "TokenPocket",
+        "display_name": "My Workspace",
     },
-    "infobox": {
-        "client_id_env": "SLACK_CLIENT_ID_INFOBOX",
-        "client_secret_env": "SLACK_CLIENT_SECRET_INFOBOX",
-        "token_env": "SLACK_USER_TOKEN_INFOBOX",
-        "display_name": "Infobox",
-    },
-    "yoake": {
-        "client_id_env": "SLACK_CLIENT_ID_YOAKE",
-        "client_secret_env": "SLACK_CLIENT_SECRET_YOAKE",
-        "token_env": "SLACK_USER_TOKEN_YOAKE",
-        "display_name": "YOAKE",
-    },
-    "fungiblex": {
-        "client_id_env": "SLACK_CLIENT_ID_FUNGIBLEX",
-        "client_secret_env": "SLACK_CLIENT_SECRET_FUNGIBLEX",
-        "token_env": "SLACK_USER_TOKEN_FUNGIBLEX",
-        "display_name": "Fungible X",
-    },
+    # 複数ワークスペースを使う場合は以下のように追加:
+    # "my-workspace-2": {
+    #     "client_id_env": "SLACK_CLIENT_ID_WS2",
+    #     "client_secret_env": "SLACK_CLIENT_SECRET_WS2",
+    #     "token_env": "SLACK_USER_TOKEN_WS2",
+    #     "display_name": "My Workspace 2",
+    # },
 }
 
 REDIRECT_URI = os.getenv("SLACK_REDIRECT_URI", "https://example.com/callback")
@@ -119,9 +110,9 @@ def main():
     parser.add_argument(
         "--workspace", "-w",
         type=str,
-        default="tokenpocket",
+        default="my-workspace",
         choices=list(WORKSPACES.keys()),
-        help="対象ワークスペース（デフォルト: tokenpocket）"
+        help="対象ワークスペース（デフォルト: my-workspace）"
     )
     parser.add_argument(
         "--generate-url",

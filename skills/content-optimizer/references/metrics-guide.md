@@ -315,7 +315,7 @@ python skills/content-optimizer/scripts/collect_metrics.py \
 
 # ユーザーの直近投稿メトリクスを一括取得
 python skills/content-optimizer/scripts/collect_metrics.py \
-  --username minicoohei \
+  --username your-x-username \
   --output ./output/content-optimizer/metrics/
 ```
 

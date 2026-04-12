@@ -41,7 +41,7 @@ python skills/video-audio/scripts/generate_audio.py \
 | PmgfHCGeS5b7sH90BOOJ | Fumi | 落ち着いた女性 | `fumi` |
 | StTDrGrPSyfaHGmzwXbj | Masa | 日本語男性 | `masa` |
 | gARvXPexe5VF3cKZBian | Mitsuki | ニュートラル | `mitsuki` |
-| sRYzP8TwEiiqAWebdYPJ | Hatake Kohei | ボイスアクター | `kohei` |
+| YOUR_VOICE_ID | Custom Voice | カスタムボイス | `custom` |
 
 ## オプション
 

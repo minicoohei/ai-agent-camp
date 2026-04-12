@@ -815,7 +815,7 @@ done < banners.csv
 ## 参考リンク
 
 - [Claude Code 公式ドキュメント](https://claude.com/claude-code)
-- [ai-agent-camp GitHub](https://github.com/TokenPocket/ai-agent-camp)
+- [ai-agent-camp GitHub](https://github.com/aibrainpartners/ai-agent-camp)
 - [Codex Guide](./codex-guide.md)
 - [Skills リファレンス](./skills-reference.md)
 - [トラブルシューティング](./troubleshoot.md)

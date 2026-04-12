@@ -126,7 +126,8 @@ def regenerate_summaries(workspace_name: str):
 
 def main():
     print("🚀 サマリー再生成を開始...")
-    total = regenerate_summaries("infobox")
+    # 自分のワークスペースに合わせて変更してください
+    total = regenerate_summaries("my-workspace")
     print(f"\n🎉 完了: {total} 件のサマリーを再生成")
 
 

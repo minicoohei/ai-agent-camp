@@ -356,7 +356,7 @@ Error: Secret not found
 | `SLACK_BOT_TOKEN` | `xoxb-...` | Slack Bot | 無期限 |
 | `SLACK_USER_TOKEN` | `xoxp-...` | Slack ユーザー | 90日 |
 | `GOOGLE_CREDENTIALS_BASE64` | Base64エンコード値 | OAuth認証 | 無期限 |
-| `BIGQUERY_PROJECT_ID` | `infobox-jp-prd` | BigQuery | 無期限 |
+| `BIGQUERY_PROJECT_ID` | `my-gcp-project` | BigQuery | 無期限 |
 | `GITHUB_TOKEN` | `ghp_...` | GitHub API | 設定可能 |
 
 ---

@@ -52,8 +52,8 @@ python scripts/setup_google_account.py --label <アカウント名>
 ### 例
 
 ```bash
-python scripts/setup_google_account.py --label aibrain
-python scripts/setup_google_account.py --label infobox
+python scripts/setup_google_account.py --label my-account
+python scripts/setup_google_account.py --label work
 python scripts/setup_google_account.py --label work
 ```
 
@@ -83,9 +83,9 @@ gh secret list --repo <owner/repo> | grep GOOGLE
 **アカウントを追加するたびに更新が必要です：**
 
 ```bash
-# 例: aibrain と infobox の2アカウント
+# 例: my-account と work の2アカウント
 gh secret set GOOGLE_ACCOUNTS_CONFIG \
-  --body '{"accounts":[{"label":"aibrain","type":"oauth"},{"label":"infobox","type":"oauth"}]}' \
+  --body '{"accounts":[{"label":"my-account","type":"oauth"},{"label":"work","type":"oauth"}]}' \
   --repo <owner/repo>
 ```
 
@@ -94,7 +94,7 @@ gh secret set GOOGLE_ACCOUNTS_CONFIG \
 Driveからファイルを取得する場合、対象フォルダIDを設定します：
 
 ```bash
-gh secret set GOOGLE_AIBRAIN_DRIVE_FOLDER_ID \
+gh secret set GOOGLE_MYACCOUNT_DRIVE_FOLDER_ID \
   --body '<Google DriveのフォルダID>' \
   --repo <owner/repo>
 ```
@@ -105,7 +105,7 @@ gh secret set GOOGLE_AIBRAIN_DRIVE_FOLDER_ID \
 {
   "accounts": [
     {
-      "label": "aibrain",
+      "label": "my-account",
       "type": "oauth",
       "drive_folder_id": "1234567890abcdef"
     }
@@ -145,13 +145,13 @@ gh workflow run "Fetch Google Cloud Data" --repo <owner/repo> -f days=1
 ログで確認：
 ```
 Starting Multi-Calendar fetch (OAuth mode)...
-Processing Calendar for account: aibrain
-[aibrain] OAuth authentication successful for Calendar
-[aibrain] Fetched 5 calendar events
+Processing Calendar for account: my-account
+[my-account] OAuth authentication successful for Calendar
+[my-account] Fetched 5 calendar events
 Starting Multi-Drive fetch (OAuth mode)...
-Processing Drive for account: aibrain
-[aibrain] OAuth authentication successful for Drive
-[aibrain] Fetched 10 Drive files
+Processing Drive for account: my-account
+[my-account] OAuth authentication successful for Drive
+[my-account] Fetched 10 Drive files
 ```
 
 ---
@@ -161,17 +161,17 @@ Processing Drive for account: aibrain
 ```
 output/
 ├── calendar/
-│   ├── aibrain/
+│   ├── my-account/
 │   │   ├── 2026-01-16_events.md
 │   │   └── 2026-01-17_events.md
-│   └── infobox/
+│   └── work/
 │       └── 2026-01-16_events.md
 └── drive/
-    ├── aibrain/
+    ├── my-account/
     │   ├── docs/
     │   ├── sheets/
     │   └── slides/
-    └── infobox/
+    └── work/
         └── docs/
 ```
 
@@ -205,6 +205,6 @@ gh auth status
 ### 「multiple remotes detected」エラー
 
 ```bash
-python scripts/setup_google_account.py --label aibrain --repo owner/repo
+python scripts/setup_google_account.py --label my-account --repo owner/repo
 ```
 で明示的にリポジトリを指定。

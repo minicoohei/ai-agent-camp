@@ -43,16 +43,16 @@ STATE_FILE = PROJECT_ROOT / "work" / ".onboarding-state.json"
 
 DEFAULT_HOSTING_URL = os.getenv(
     "AIAGENT_ONBOARDING_HOSTING_URL",
-    "https://ai-tutor-dev-9c015.web.app",
+    "https://your-firebase-project.web.app",
 )
 # Cloud Function URL はデプロイ後に確定（リージョンはデプロイ設定に依存）
 DEFAULT_CLOUD_FUNCTION_URL = os.getenv(
     "AIAGENT_ONBOARDING_FUNCTION_URL",
-    "https://asia-northeast1-ai-tutor-dev-9c015.cloudfunctions.net/grant-access",
+    "https://asia-northeast1-your-firebase-project.cloudfunctions.net/grant-access",
 )
 DEFAULT_CONTENT_REPO = os.getenv(
     "AIAGENT_CONTENT_REPO",
-    "TokenPocket/ai-agent-camp",
+    "aibrainpartners/ai-agent-camp",
 )
 
 JWT_PATTERN = re.compile(r"^[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+$")

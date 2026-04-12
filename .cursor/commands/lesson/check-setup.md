@@ -78,7 +78,7 @@ tags: ["setup", "check"]
 | チェック対象 | 確認方法 | 判定基準 |
 |-------------|---------|---------|
 | プロジェクトフォルダ | カレントディレクトリが ai-agent-camp であるか | ディレクトリ名に `ai-agent-camp` が含まれれば合格 |
-| 自分用リポジトリ | `git remote -v` を実行し origin の URL を確認 | origin が `TokenPocket/ai-agent-camp` または自分用 fork を指していれば合格 |
+| 自分用リポジトリ | `git remote -v` を実行し origin の URL を確認 | origin が `aibrainpartners/ai-agent-camp` または自分用 fork を指していれば合格 |
 | .env ファイル | `.env` ファイルの存在を確認 | ファイルが存在すれば合格 |
 | .gitignore | `.gitignore` を読み取り `.env` が除外設定されているか | `.env` のエントリがあれば合格 |
 | セキュリティフック | `.git/hooks/pre-commit` の存在と実行権限を確認 | ファイルが存在し実行可能であれば合格 |

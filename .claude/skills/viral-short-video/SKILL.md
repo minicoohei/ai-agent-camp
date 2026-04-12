@@ -71,10 +71,10 @@ python skills/viral-short-video/scripts/generate_viral_script.py \
 # 商材名を指定してスクリプト生成
 python skills/viral-short-video/scripts/generate_viral_script.py \
   --topic "このアプリで送金手数料を90%カットする方法" \
-  --product "TokenPocket" \
+  --product "My Product" \
   --duration 15 \
   --tone casual \
-  --session "tp_fees"
+  --session "product_fees"
 
 # ストーリーボード生成まで一気通貫
 python skills/viral-short-video/scripts/generate_viral_script.py \

@@ -81,10 +81,9 @@ SERVICES = {
         "name": "Slack API",
         "description": "Slack ワークスペースのメッセージ取得・送信",
         "env_vars": [
-            {"name": "SLACK_USER_TOKEN", "required": False, "description": "TokenPocket ユーザートークン"},
-            {"name": "SLACK_USER_TOKEN_INFOBOX", "required": False, "description": "Infobox ユーザートークン"},
-            {"name": "SLACK_USER_TOKEN_YOAKE", "required": False, "description": "YOAKE ユーザートークン"},
-            {"name": "SLACK_USER_TOKEN_FUNGIBLEX", "required": False, "description": "Fungible X ユーザートークン"},
+            {"name": "SLACK_USER_TOKEN", "required": False, "description": "メインワークスペース ユーザートークン"},
+            # 複数ワークスペースを使う場合は以下のように追加:
+            # {"name": "SLACK_USER_TOKEN_WS2", "required": False, "description": "ワークスペース2 ユーザートークン"},
         ],
         "docs_url": "https://api.slack.com/apps",
     },
@@ -531,9 +530,8 @@ NOTION_DATABASE_ID="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"  # オプション
 # Credential Store に保存（別ターミナルで実行）
 # uv run python tools/credential_manager.py store（ワークスペースごと）
 SLACK_USER_TOKEN="xoxp-xxxxx"           # メインワークスペース
-SLACK_USER_TOKEN_INFOBOX="xoxp-xxxxx"   # Infobox
-SLACK_USER_TOKEN_YOAKE="xoxp-xxxxx"     # YOAKE
-SLACK_USER_TOKEN_FUNGIBLEX="xoxp-xxxxx" # Fungible X
+# 複数ワークスペースを使う場合は以下のように追加:
+# SLACK_USER_TOKEN_WS2="xoxp-xxxxx"    # ワークスペース2
 ```
 """,
         "fal": """

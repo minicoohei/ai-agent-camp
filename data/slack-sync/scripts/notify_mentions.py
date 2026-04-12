@@ -3,7 +3,7 @@
 Slackメンション検出 & LINE通知スクリプト
 
 GitHub Actionsでslack-sync/data/**/*.mdへのpush時に実行され、
-@Kohei宛のメンションを検出してLINEに通知します。
+自分宛のメンションを検出してLINEに通知します。
 
 使い方:
   python notify_mentions.py
@@ -31,11 +31,9 @@ class MentionInfo:
 
 
 # メンション検出対象のパターン（大文字小文字無視）
-MENTION_PATTERNS = [
-    r"@Kohei Nakamura",
-    r"@minicoohei",
-    r"@Kohei(?!\s+Nakamura)",  # @Kohei だけの場合（@Kohei Nakamuraは除外）
-]
+# 環境変数 MENTION_NAMES から取得するか、デフォルト値を使用
+_mention_names = os.environ.get("MENTION_NAMES", "Your Name,your-username").split(",")
+MENTION_PATTERNS = [rf"@{name.strip()}" for name in _mention_names]
 
 
 def get_git_diff() -> str:
