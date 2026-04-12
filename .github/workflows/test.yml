@@ -62,6 +62,12 @@ jobs:
       - name: Check import consistency
         run: python tools/check_imports.py
 
+      - name: Check translation coverage
+        run: python tools/check_translations.py --lang all --verbose --ignore-stale
+
+      - name: Check residual Japanese in translations
+        run: python tools/check_residual_japanese.py
+
       - name: Run tests
         run: pytest tests/ -v --cov=tools --cov-report=term-missing --cov-report=xml
 
