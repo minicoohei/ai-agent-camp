@@ -96,6 +96,32 @@ def check_manifest():
             cursor_path.exists(),
             f"Missing: {cursor_path}",
         )
+        if lid.startswith("start-") and "module" in entry and "lesson" in entry:
+            match = re.fullmatch(r"start-(\d+)-(\d+)", lid)
+            if match:
+                expected_module = int(match.group(1))
+                expected_lesson = int(match.group(2))
+                check(
+                    "manifest_check",
+                    f"module_number_match:{lid}",
+                    entry["module"] == expected_module,
+                    f"manifest module={entry['module']} but lessonId implies module={expected_module}",
+                )
+                check(
+                    "manifest_check",
+                    f"lesson_number_match:{lid}",
+                    entry["lesson"] == expected_lesson,
+                    f"manifest lesson={entry['lesson']} but lessonId implies lesson={expected_lesson}",
+                )
+        if lid.startswith("start-") and "chapterRef" in entry:
+            chapter_path = BASE_DIR / entry["chapterRef"]
+            chapter_exists = chapter_path.exists() or chapter_path.with_name("chapter.yaml").exists()
+            check(
+                "manifest_check",
+                f"chapter_ref_exists:{lid}",
+                chapter_exists,
+                f"Missing chapterRef target: {entry['chapterRef']}",
+            )
 
     # Check reverse: files not in manifest
     manifest_ids = {e["lessonId"] for e in manifest}
