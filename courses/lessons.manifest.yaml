@@ -54,7 +54,6 @@
   module: 0
   lesson: 8
 
-
 # === Module 1: Banner ===
 - lessonId: start-1-1
   title: "バナー生成入門"
@@ -130,30 +129,48 @@
   module: 3
   lesson: 6
 
-# === Module 4: Data Analysis ===
-- lessonId: start-8-1
-  title: "BigQuery接続と認証設定"
-  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+# === Module 4: Google Workspace ===
+- lessonId: start-4-1
+  title: "gogcli認証セットアップ"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
   module: 4
   lesson: 1
 
-- lessonId: start-8-2
-  title: "EDA（探索的データ分析）の実行"
-  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+- lessonId: start-4-2
+  title: "Gmail検索・閲覧"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
   module: 4
   lesson: 2
 
-- lessonId: start-8-3
-  title: "Marimoノートブックで対話型分析"
-  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+- lessonId: start-4-3
+  title: "Google Calendar操作"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
   module: 4
   lesson: 3
 
-- lessonId: start-8-4
-  title: "データ可視化とダッシュボード作成"
-  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+- lessonId: start-4-4
+  title: "Google Calendar 予定登録・管理"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
   module: 4
   lesson: 4
+
+- lessonId: start-4-5
+  title: "Google Drive操作"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
+  module: 4
+  lesson: 5
+
+- lessonId: start-4-6
+  title: "Google Sheets操作"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
+  module: 4
+  lesson: 6
+
+- lessonId: start-4-7
+  title: "AI秘書ワークフロー統合"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
+  module: 4
+  lesson: 7
 
 # === Module 5: PPTX ===
 - lessonId: start-5-1
@@ -168,190 +185,192 @@
   module: 5
   lesson: 2
 
-# === Module 6: Slack ===
-- lessonId: start-9-1
-  title: "Slackメッセージのセマンティック検索"
-  chapterRef: "courses/aiagent/lesson03-core/module09-slack"
-  module: 6
-  lesson: 1
-
-- lessonId: start-9-2
-  title: "SlackメッセージからTODOとタスクを抽出"
-  chapterRef: "courses/aiagent/lesson03-core/module09-slack"
-  module: 6
-  lesson: 2
-
-# === Module 7: Video ===
-- lessonId: start-15-1
-  title: "動画からキーフレームを抽出して分析"
-  chapterRef: "courses/aiagent/lesson03-core/module15-video"
-  module: 7
-  lesson: 1
-
-- lessonId: start-15-2
-  title: "動画AIエンジンの全体像を理解し、fal.aiの使い方を学ぶ"
-  chapterRef: "courses/aiagent/lesson03-core/module15-video"
-  module: 7
-  lesson: 2
-
-- lessonId: start-15-3
-  title: "プロダクト紹介動画を作成する（グリーンスクリーンアバター + スクショ合成）"
-  chapterRef: "courses/aiagent/lesson03-core/module15-video"
-  module: 7
-  lesson: 3
-
-- lessonId: start-15-4
-  title: "絵コンテからアニメ動画を生成する（Gemini画像 + Kling/Veo I2V + FFmpeg結合）"
-  chapterRef: "courses/aiagent/lesson03-core/module15-video"
-  module: 7
-  lesson: 4
-
-- lessonId: start-15-5
-  title: "スライド解説動画を作成する（HTML解析 + TTS + プレゼンター合成）"
-  chapterRef: "courses/aiagent/lesson03-core/module15-video"
-  module: 7
-  lesson: 5
-
-- lessonId: start-15-6
-  title: "AIでミュージックビデオを作成する（Suno + ビート同期 + シーン動画化）"
-  chapterRef: "courses/aiagent/lesson03-core/module15-video"
-  module: 7
-  lesson: 6
-
-- lessonId: start-15-7
-  title: "YouTube Clipper で動画ハイライト抽出"
-  module: 7
-  lesson: 7
-
-- lessonId: start-15-8
-  title: "Clipper × Remotion でマーケ素材を自動生成"
-  module: 7
-  lesson: 8
-
-# === Module 8: GAS ===
-- lessonId: start-10-1
-  title: "Clasp基本・GASプロジェクト管理"
-  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
-  module: 8
-  lesson: 1
-
-- lessonId: start-10-2
-  title: "Google Calendar API連携・イベント自動化"
-  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
-  module: 8
-  lesson: 2
-
-- lessonId: start-10-3
-  title: "Google Sheets自動化・データ処理レポート"
-  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
-  module: 8
-  lesson: 3
-
-# === Module 9: GitHub Actions ===
-- lessonId: start-11-1
-  title: "GitHub Actions Workflow基本・自動化"
-  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
-  module: 9
-  lesson: 1
-
-- lessonId: start-11-2
-  title: "GitHub Actions Secrets設定・Google連携"
-  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
-  module: 9
-  lesson: 2
-
-# === Module 10: Notion ===
-- lessonId: start-12-1
-  title: "Notion MCP接続とセットアップ"
-  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
-  module: 10
-  lesson: 1
-
-- lessonId: start-12-2
-  title: "Notionデータベース操作"
-  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
-  module: 10
-  lesson: 2
-
-# === Module 11: Agent Development ===
+# === Module 6: Agent Development ===
 - lessonId: start-6-1
   title: "カスタムCommand作成基本"
   chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
-  module: 11
+  module: 6
   lesson: 1
 
 - lessonId: start-6-2
   title: "Skill作成基本（Claude Codeスキル）"
   chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
-  module: 11
+  module: 6
   lesson: 2
 
 - lessonId: start-6-3
   title: "Rules設定（Cursor Rules）とAI行動制御"
   chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
-  module: 11
+  module: 6
   lesson: 3
 
 - lessonId: start-6-4
   title: "SubAgent設計パターンと実装"
   chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
-  module: 11
+  module: 6
   lesson: 4
 
 - lessonId: start-6-5
   title: "総合演習（全機能統合）"
   chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
-  module: 11
+  module: 6
   lesson: 5
 
-- lessonId: start-6-6
+# === Module 7: Skill / Commands ===
+- lessonId: start-7-1
   title: "スキル設計の基礎（Anthropicベストプラクティス）"
-  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
-  module: 11
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 1
+
+- lessonId: start-7-2
+  title: "SKILL.md の実装（議事録スキル開発）"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 2
+
+- lessonId: start-7-3
+  title: "テストとイテレーション（スキル品質改善）"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 3
+
+- lessonId: start-7-4
+  title: "5つの設計パターン（スキル設計の応用）"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 4
+
+- lessonId: start-7-5
+  title: "既存Skill/Commandの構造理解と分析"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 5
+
+- lessonId: start-7-6
+  title: "自分のワークフロー用Command作成"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
   lesson: 6
 
-- lessonId: start-6-7
-  title: "SKILL.md の実装（議事録スキル開発）"
-  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
-  module: 11
+- lessonId: start-7-7
+  title: "SKILL.md駆動のスキル開発"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
   lesson: 7
 
-- lessonId: start-6-8
-  title: "テストとイテレーション（スキル品質改善）"
-  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
-  module: 11
+- lessonId: start-7-8
+  title: "テスト・デバッグ・イテレーション"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
   lesson: 8
 
-- lessonId: start-6-9
-  title: "5つの設計パターン（スキル設計の応用）"
-  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
-  module: 11
-  lesson: 9
+# === Module 8: Data Analysis ===
+- lessonId: start-8-1
+  title: "BigQuery接続と認証設定"
+  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+  module: 8
+  lesson: 1
 
-# === Module 12: Marketing ===
-- lessonId: start-17-1
-  title: "X投稿 & バナー作成"
-  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+- lessonId: start-8-2
+  title: "EDA（探索的データ分析）の実行"
+  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+  module: 8
+  lesson: 2
+
+- lessonId: start-8-3
+  title: "Marimoノートブックで対話型分析"
+  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+  module: 8
+  lesson: 3
+
+- lessonId: start-8-4
+  title: "データ可視化とダッシュボード作成"
+  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+  module: 8
+  lesson: 4
+
+# === Module 9: Slack ===
+- lessonId: start-9-1
+  title: "Slackメッセージのセマンティック検索"
+  chapterRef: "courses/aiagent/lesson03-core/module09-slack"
+  module: 9
+  lesson: 1
+
+- lessonId: start-9-2
+  title: "SlackメッセージからTODOとタスクを抽出"
+  chapterRef: "courses/aiagent/lesson03-core/module09-slack"
+  module: 9
+  lesson: 2
+
+# === Module 10: GAS ===
+- lessonId: start-10-1
+  title: "Clasp基本・GASプロジェクト管理"
+  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
+  module: 10
+  lesson: 1
+
+- lessonId: start-10-2
+  title: "Google Calendar API連携・イベント自動化"
+  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
+  module: 10
+  lesson: 2
+
+- lessonId: start-10-3
+  title: "Google Sheets自動化・データ処理レポート"
+  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
+  module: 10
+  lesson: 3
+
+# === Module 11: GitHub Actions ===
+- lessonId: start-11-1
+  title: "GitHub Actions Workflow基本・自動化"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 1
+
+- lessonId: start-11-2
+  title: "GitHub Actions Secrets設定・Google連携"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 2
+
+# === Module 12: Notion ===
+- lessonId: start-12-1
+  title: "Notion MCP接続とセットアップ"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 1
 
-- lessonId: start-17-2
-  title: "SEO調査 & キーワード戦略"
-  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+- lessonId: start-12-2
+  title: "Notionデータベース操作"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 2
 
-- lessonId: start-17-3
-  title: "コピーライティング"
-  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+- lessonId: start-12-3
+  title: "Notion MCP接続とセットアップ"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 3
 
-- lessonId: start-17-4
-  title: "Pencil MCPでデザインモックアップ"
-  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+- lessonId: start-12-4
+  title: "1回の取得で触れる範囲を要約して返す"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 4
+
+- lessonId: start-12-5
+  title: "Notion のファイル・添付を取得しエージェント側で確認する"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
+  module: 12
+  lesson: 5
+
+- lessonId: start-12-6
+  title: "Notion への書き込み・更新と安全な確認フロー"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
+  module: 12
+  lesson: 6
 
 # === Module 13: LP制作 ===
 - lessonId: start-13-1
@@ -384,180 +403,306 @@
   module: 13
   lesson: 5
 
-# === Module 14: PM ===
-- lessonId: start-18-1
-  title: "PM - 顧客インタビュー & ニーズ収集"
-  module: 14
-  lesson: 1
-
-- lessonId: start-18-2
-  title: "PM - 要求資料の作成"
-  module: 14
-  lesson: 2
-
-- lessonId: start-18-3
-  title: "PM - PRD作成（Working Backwards方式）"
-  module: 14
-  lesson: 3
-
-- lessonId: start-18-4
-  title: "PM - 3種レビュー（Devil's Advocate / セキュリティ / 事業企画）"
-  module: 14
-  lesson: 4
-
-- lessonId: start-18-5
-  title: "PM - 要件定義書の作成（IPA準拠）"
-  module: 14
-  lesson: 5
-
-- lessonId: start-18-6
-  title: "PM - ユースケース記述 & シーケンス図"
-  module: 14
-  lesson: 6
-
-- lessonId: start-18-7
-  title: "PM - 画面遷移図 & ワイヤーフレーム"
-  module: 14
-  lesson: 7
-
-- lessonId: start-18-8
-  title: "PM - DB設計（ER図 & エンティティ仕様書）"
-  module: 14
-  lesson: 8
-
-- lessonId: start-18-9
-  title: "PM - システム構成図 & API設計"
-  module: 14
-  lesson: 9
-
-- lessonId: start-18-10
-  title: "PM - WBS & ガントチャート"
-  module: 14
-  lesson: 10
-
-- lessonId: start-18-11
-  title: "PM - Notion連携（要件トラッカーDB）"
-  module: 14
-  lesson: 11
-
-- lessonId: start-18-12
-  title: "PM - UIデザイン（Pencil MCP）"
-  module: 14
-  lesson: 12
-
-- lessonId: start-18-13
-  title: "PM - HTML + Tailwind CSS プロトタイプ実装"
-  module: 14
-  lesson: 13
-
-- lessonId: start-18-14
-  title: "PM - Playwright E2Eテスト"
-  module: 14
-  lesson: 14
-
-- lessonId: start-18-15
-  title: "PM - テスト計画書 & テストケース生成"
-  module: 14
-  lesson: 15
-
-- lessonId: start-18-16
-  title: "PM - 単体テスト実施（pytest）"
-  module: 14
-  lesson: 16
-
-- lessonId: start-18-17
-  title: "PM - 結合テスト実施"
-  module: 14
-  lesson: 17
-
-- lessonId: start-18-18
-  title: "PM - 会議体設計 & 議事録分析"
-  module: 14
-  lesson: 18
-
-- lessonId: start-18-19
-  title: "PM - marimo ダッシュボード"
-  module: 14
-  lesson: 19
-
-- lessonId: start-18-20
-  title: "PM - 総合演習（カプストーン）"
-  module: 14
-  lesson: 20
-
-# === Module 15: Email ===
-- lessonId: start-16-1
-  title: "Gmail セットアップ - gogcli 認証とメール同期"
-  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
-  module: 15
-  lesson: 1
-
-- lessonId: start-16-2
-  title: "受信メール分析 & タスク抽出 - check-inbox"
-  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
-  module: 15
-  lesson: 2
-
-- lessonId: start-16-3
-  title: "gogcli でメール送信 - 新規・返信・添付"
-  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
-  module: 15
-  lesson: 3
-
-- lessonId: start-16-4
-  title: "メールシーケンス設計 - ドリップキャンペーン"
-  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
-  module: 15
-  lesson: 4
-
-- lessonId: start-16-5
-  title: "メール自動化ワークフロー - GitHub Actions & 総合演習"
-  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
-  module: 15
-  lesson: 5
-
-# === Module 16: Article ===
+# === Module 14: Article ===
 - lessonId: start-14-1
   title: "記事企画 - テーマ決定・アウトライン生成"
   chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
-  module: 16
+  module: 14
   lesson: 1
 
 - lessonId: start-14-2
   title: "文体学習 - スタイルプロファイル作成"
   chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
-  module: 16
+  module: 14
   lesson: 2
 
 - lessonId: start-14-3
   title: "記事執筆 - スタイル適用ドラフト作成"
   chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
-  module: 16
+  module: 14
   lesson: 3
 
 - lessonId: start-14-4
   title: "挿絵計画と生成 - nanobanana + PlantUML"
   chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
-  module: 16
+  module: 14
   lesson: 4
 
 - lessonId: start-14-5
   title: "校閲 - 校閲エージェントによるレビュー"
   chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
-  module: 16
+  module: 14
   lesson: 5
 
 - lessonId: start-14-6
   title: "ファクトチェック - 事実検証エージェント"
   chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
-  module: 16
+  module: 14
   lesson: 6
 
 - lessonId: start-14-7
   title: "並列実行と仕上げ - 複数記事の同時処理"
   chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
+  module: 14
+  lesson: 7
+
+# === Module 15: Video ===
+- lessonId: start-15-1
+  title: "動画からキーフレームを抽出して分析"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 1
+
+- lessonId: start-15-2
+  title: "動画AIエンジンの全体像を理解し、fal.aiの使い方を学ぶ"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 2
+
+- lessonId: start-15-3
+  title: "プロダクト紹介動画を作成する（グリーンスクリーンアバター + スクショ合成）"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 3
+
+- lessonId: start-15-4
+  title: "絵コンテからアニメ動画を生成する（Gemini画像 + Kling/Veo I2V + FFmpeg結合）"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 4
+
+- lessonId: start-15-5
+  title: "スライド解説動画を作成する（HTML解析 + TTS + プレゼンター合成）"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 5
+
+- lessonId: start-15-6
+  title: "AIでミュージックビデオを作成する（Suno + ビート同期 + シーン動画化）"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 6
+
+- lessonId: start-15-7
+  title: "YouTube Clipper で動画ハイライト抽出"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 7
+
+- lessonId: start-15-8
+  title: "Clipper × Remotion でマーケ素材を自動生成"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 8
+
+# === Module 16: Email ===
+- lessonId: start-16-1
+  title: "Gmail セットアップ - gogcli 認証とメール同期"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 1
+
+- lessonId: start-16-2
+  title: "受信メール分析 & タスク抽出 - check-inbox"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 2
+
+- lessonId: start-16-3
+  title: "gogcli でメール送信 - 新規・返信・添付"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 3
+
+- lessonId: start-16-4
+  title: "メールシーケンス設計 - ドリップキャンペーン"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 4
+
+- lessonId: start-16-5
+  title: "メール自動化ワークフロー - GitHub Actions & 総合演習"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 5
+
+- lessonId: start-16-6
+  title: "Google Workspace連携 - Gmail + Calendar 一括活用"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 6
+
+- lessonId: start-16-7
+  title: "Typefully CLI でX投稿自動化"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
   module: 16
   lesson: 7
+
+- lessonId: start-16-8
+  title: "Resend Sequence & CLI でドリップキャンペーン自動化"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 8
+
+# === Module 17: Marketing ===
+- lessonId: start-17-1
+  title: "X投稿 & バナー作成"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 1
+
+- lessonId: start-17-2
+  title: "SEO調査 & キーワード戦略"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 2
+
+- lessonId: start-17-3
+  title: "コピーライティング"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 3
+
+- lessonId: start-17-4
+  title: "Pencil MCPでデザインモックアップ"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 4
+
+# === Module 18: PM ===
+- lessonId: start-18-1
+  title: "PM - 顧客インタビュー & ニーズ収集"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 1
+
+- lessonId: start-18-2
+  title: "PM - 要求資料の作成"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 2
+
+- lessonId: start-18-3
+  title: "PM - PRD作成（Working Backwards方式）"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 3
+
+- lessonId: start-18-4
+  title: "PM - 3種レビュー（Devil's Advocate / セキュリティ / 事業企画）"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 4
+
+- lessonId: start-18-5
+  title: "PM - 要件定義書の作成（IPA準拠）"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 5
+
+- lessonId: start-18-6
+  title: "PM - ユースケース記述 & シーケンス図"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 6
+
+- lessonId: start-18-7
+  title: "PM - 画面遷移図 & ワイヤーフレーム"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 7
+
+- lessonId: start-18-8
+  title: "PM - DB設計（ER図 & エンティティ仕様書）"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 8
+
+- lessonId: start-18-9
+  title: "PM - システム構成図 & API設計"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 9
+
+- lessonId: start-18-10
+  title: "PM - WBS & ガントチャート"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 10
+
+- lessonId: start-18-11
+  title: "PM - Notion連携（要件トラッカーDB）"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 11
+
+- lessonId: start-18-12
+  title: "PM - UIデザイン（Pencil MCP）"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 12
+
+- lessonId: start-18-13
+  title: "PM - HTML + Tailwind CSS プロトタイプ実装"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 13
+
+- lessonId: start-18-14
+  title: "PM - Playwright E2Eテスト"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 14
+
+- lessonId: start-18-15
+  title: "PM - テスト計画書 & テストケース生成"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 15
+
+- lessonId: start-18-16
+  title: "PM - 単体テスト実施（pytest）"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 16
+
+- lessonId: start-18-17
+  title: "PM - 結合テスト実施"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 17
+
+- lessonId: start-18-18
+  title: "PM - 会議体設計 & 議事録分析"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 18
+
+- lessonId: start-18-19
+  title: "PM - marimo ダッシュボード"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 19
+
+- lessonId: start-18-20
+  title: "PM - 総合演習（カプストーン）"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 20
+
+# === Module 19: Outlook / Microsoft 365 ===
+- lessonId: start-19-1
+  title: "Microsoft Office連携(Outlook) 入門"
+  chapterRef: "courses/aiagent/lesson03-core/module19-outlook-windows"
+  module: 19
+  lesson: 1
+
+# === Module 20: Freee / MoneyForward ===
+- lessonId: start-20-1
+  title: "Freee/MoneyForward連携 入門"
+  chapterRef: "courses/aiagent/lesson03-core/module20-freee-mf"
+  module: 20
+  lesson: 1
 
 # === Utility commands (non-lesson) ===
 # These are not lessons but utility commands. They are listed here
