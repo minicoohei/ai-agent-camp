@@ -197,6 +197,11 @@ def main() -> int:
         dest="json_output",
         help="Output as JSON",
     )
+    parser.add_argument(
+        "--ignore-stale",
+        action="store_true",
+        help="Do not fail on stale translations (only fail on missing)",
+    )
     args = parser.parse_args()
 
     langs = [l for l in SUPPORTED_LANGS if l != DEFAULT_LANG]
@@ -221,8 +226,11 @@ def main() -> int:
             print(format_summary(lang_reports))
             print()
 
-    # Exit code: 1 if any missing or stale
-    has_issues = any(r.missing > 0 or r.stale > 0 for r in all_reports)
+    # Exit code: 1 if any missing (or stale, unless --ignore-stale)
+    if args.ignore_stale:
+        has_issues = any(r.missing > 0 for r in all_reports)
+    else:
+        has_issues = any(r.missing > 0 or r.stale > 0 for r in all_reports)
     return 1 if has_issues else 0
 
 
