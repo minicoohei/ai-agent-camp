@@ -1,9 +1,17 @@
 ---
 name: aiagent-tooling-setup
-description: Configure Codex tooling for ai-agent-camp. Use when enabling MCP servers, installing repo hooks, or explaining tool-specific setup.
+description: "ai-agent-camp用のCodexツーリングを設定するスキル。 「MCPサーバーを設定」「フックをインストール」「Codexの設定」「ツールセットアップ」「Codex CLIのインストール」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []
+triggers:
+  - aiagent-tooling-setup
+  - MCPサーバー設定
+  - フックをインストール
+  - Codexの設定
+  - ツールセットアップ
+  - Codex CLI
+  - tooling setup
 ---
 
 # AI Agent Tooling Setup

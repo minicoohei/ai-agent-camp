@@ -1,6 +1,14 @@
 ---
 name: pptx-converter
-description: PPTXテンプレート変換 & ゼロからデッキ生成。元PPTXのテーマ・アニメーション・SmartArtを保持したまま、Geminiで意味解析してコンテンツを書き換え。
+description: "PPTXテンプレート変換 & ゼロからデッキ生成。テーマ・アニメーション・SmartArtを保持してコンテンツを書き換え。 「PPTX変換」「スライド作成」「パワポ書き換え」「デッキ生成」等のリクエストで発動。"
+triggers:
+  - PPTX変換
+  - スライド作成
+  - パワポ書き換え
+  - デッキ生成
+  - pptx-converter
+  - PowerPoint変換
+  - テンプレートを使ってスライド作成
 version: 1.0.0
 author: CursorBootcamp
 dependencies:

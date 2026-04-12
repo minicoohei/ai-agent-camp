@@ -1,7 +1,14 @@
 ---
 name: planning-with-files
 version: "2.10.0"
-description: Implements Manus-style file-based planning for complex tasks. Creates task_plan.md, findings.md, and progress.md. Use when starting complex multi-step tasks, research projects, or any task requiring >5 tool calls. Now with automatic session recovery after /clear.
+description: "複雑なタスクをファイルベースで計画管理するスキル。task_plan.md、findings.md、progress.mdを作成。 「計画を立てて」「タスクを整理して」「プランニング」等のリクエストで発動。"
+triggers:
+  - 計画を立てて
+  - タスクを整理して
+  - プランニング
+  - planning-with-files
+  - 作業計画を作成
+  - task plan
 user-invocable: true
 allowed-tools:
   - Read

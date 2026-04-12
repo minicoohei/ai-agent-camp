@@ -27,7 +27,7 @@ VOICE_ALIASES = {
     "fumi": "PmgfHCGeS5b7sH90BOOJ",
     "masa": "StTDrGrPSyfaHGmzwXbj",
     "mitsuki": "gARvXPexe5VF3cKZBian",
-    "kohei": "sRYzP8TwEiiqAWebdYPJ",
+    "custom": "YOUR_VOICE_ID",
     "sakura": "RBnMinrYKeccY3vaUxlZ",
     "otani": "3JDquces8E8bkmvbh6Bc",
     "shohei": "8FuuqoKHuM48hIEwni5e",

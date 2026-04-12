@@ -1,7 +1,14 @@
 ---
 name: jupyter-to-marimo
-description: Convert a Jupyter notebook (.ipynb) to a marimo notebook (.py).
+description: "Jupyter ノートブック (.ipynb) を marimo ノートブック (.py) に変換するスキル。 「Jupyterを変換して」「ipynbをmarimoに」「ノートブック変換」等のリクエストで発動。"
 source: github.com/marimo-team/skills@main
+triggers:
+  - jupyter-to-marimo
+  - Jupyter変換
+  - ipynb変換
+  - marimoに変換
+  - ノートブック変換
+  - marimo convert
 ---
 
 ## トリガーワード

@@ -1,9 +1,13 @@
 ---
 name: narration-qa
-description: |
-  ElevenLabsで生成したナレーション音声の品質を自動検証するスキル。
-  trigger: "ナレーションチェック" / "音声確認" / "発音チェック"。
-  ナレーション生成を含むすべてのMV制作タスクで自動適用。
+description: "ElevenLabsで生成したナレーション音声の品質を自動検証するスキル。 「ナレーションチェック」「音声確認」「発音チェック」等のリクエストで発動。"
+triggers:
+  - ナレーションチェック
+  - 音声確認
+  - 発音チェック
+  - narration-qa
+  - ナレーション品質検証
+  - TTS検証
 ---
 
 # Narration QA Skill

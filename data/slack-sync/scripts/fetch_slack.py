@@ -5,9 +5,9 @@ Slack メッセージ取得スクリプト（複数ワークスペース対応�
 GitHub Actionsから定期実行され、新規メッセージをMarkdown形式で保存します。
 
 使い方:
-  python fetch_slack.py                    # 全ワークスペースを処理
-  python fetch_slack.py --workspace yoake  # 特定のワークスペースのみ
-  python fetch_slack.py --workspace infobox
+  python fetch_slack.py                              # 全ワークスペースを処理
+  python fetch_slack.py --workspace my-workspace     # 特定のワークスペースのみ
+  python fetch_slack.py --workspace my-workspace-2
 """
 
 import argparse

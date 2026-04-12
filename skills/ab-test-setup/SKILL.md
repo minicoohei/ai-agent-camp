@@ -1,7 +1,16 @@
 ---
 name: ab-test-setup
 version: 1.0.0
-description: When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions "A/B test," "split test," "experiment," "test this change," "variant copy," "multivariate test," or "hypothesis." For tracking implementation, see analytics-tracking.
+description: "A/Bテストや実験の設計・実装を支援するスキル。 「A/Bテストを設計して」「スプリットテストしたい」「仮説を立ててテストしたい」「バリアントを比較」等のリクエストで発動。 トラッキング実装は analytics-tracking を参照。"
+triggers:
+  - ab-test-setup
+  - A/Bテスト
+  - スプリットテスト
+  - 実験設計
+  - 仮説を立てて
+  - バリアントを比較
+  - split test
+  - multivariate test
 ---
 
 # A/B Test Setup

@@ -1,9 +1,17 @@
 ---
 name: aiagent-guide
-description: Orient Codex inside ai-agent-camp. Use when the user wants repo overview, tool differences, or the next recommended lesson and workflow.
+description: "ai-agent-campリポジトリの案内・オリエンテーションスキル。 「リポジトリ案内」「次のレッスンは？」「どこから始める」「ツールの違い」「aiagent概要」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []
+triggers:
+  - aiagent-guide
+  - リポジトリ案内
+  - 次のレッスン
+  - どこから始める
+  - ツールの違い
+  - aiagent概要
+  - guide
 ---
 
 ## トリガーワード

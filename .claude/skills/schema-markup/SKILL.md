@@ -1,7 +1,16 @@
 ---
 name: schema-markup
 version: 1.0.0
-description: When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user mentions "schema markup," "structured data," "JSON-LD," "rich snippets," "schema.org," "FAQ schema," "product schema," "review schema," or "breadcrumb schema." For broader SEO issues, see seo-audit.
+description: "構造化データ・スキーママークアップの追加・修正・最適化を行うスキル。 「構造化データを追加して」「JSON-LDを作って」「リッチスニペットを設定」等のリクエストで発動。"
+triggers:
+  - 構造化データを追加して
+  - JSON-LDを作って
+  - リッチスニペットを設定
+  - スキーママークアップ
+  - FAQスキーマ
+  - schema-markup
+  - structured data
+  - schema.org
 ---
 
 # Schema Markup

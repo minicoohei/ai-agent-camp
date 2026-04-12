@@ -1,9 +1,16 @@
 ---
 name: aiagent-material-sync
-description: Update ai-agent-camp from upstream safely. Use when the user wants to pull course updates without relying on unsafe Git shortcuts or force operations.
+description: "ai-agent-campの教材をupstreamから安全に同期するスキル。 「教材を最新にしたい」「upstreamから更新」「コースを同期」「git pullしたい」「教材アップデート」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []
+triggers:
+  - aiagent-material-sync
+  - 教材を最新に
+  - upstreamから更新
+  - コースを同期
+  - 教材アップデート
+  - material sync
 ---
 
 # AI Agent Material Sync

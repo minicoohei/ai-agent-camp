@@ -16,10 +16,10 @@
 ユーザーの入力から以下の情報を確認してください：
 
 1. **GCPプロジェクトID**（必須）:
-   - 例: `my-project-123`, `infobox-jp-prd`
+   - 例: `my-project-123`, `my-gcp-project`
 
 2. **プロファイル名**（任意、デフォルト: プロジェクトIDから自動生成）:
-   - 例: `infobox`, `yoake`, `default`
+   - 例: `my-profile`, `my-dev`, `default`
 
 3. **Googleアカウント**（任意、ユーザーが選択）
 
@@ -145,17 +145,17 @@ print(f"接続成功！{len(datasets)}個のデータセットが見つかりま
 
 ### 基本的な使用
 ```
-/bigquery-auth infobox-jp-prd
+/bigquery-auth my-gcp-project
 ```
 
 ### プロファイル名を指定
 ```
-/bigquery-auth yoake-dev-analysis --profile yoake
+/bigquery-auth my-dev-project --profile my-dev
 ```
 
 ### プロファイルの切り替え
 ```
-/bigquery-auth --switch infobox
+/bigquery-auth --switch my-profile
 ```
 
 ## 利用可能なGCPプロファイル（参考）
@@ -163,8 +163,8 @@ print(f"接続成功！{len(datasets)}個のデータセットが見つかりま
 | プロファイル名 | プロジェクトID | 用途 |
 |---------------|---------------|------|
 | `default` | - | デフォルト環境 |
-| `infobox` | infobox-jp-prd | InfoBox本番データ分析 |
-| `imagen4` | yoake-dev-analysis | YOAKE開発分析 |
+| `my-profile` | my-gcp-project | 本番データ分析 |
+| `my-dev` | my-dev-project | 開発分析 |
 
 ## トラブルシューティング
 

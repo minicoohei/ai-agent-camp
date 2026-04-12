@@ -1,9 +1,17 @@
 ---
 name: aiagent-check-setup
-description: Verify local setup for ai-agent-camp with Codex. Use for install checks, dependency checks, hook checks, and initial readiness review.
+description: "ai-agent-campのローカル環境セットアップを確認するスキル。 「セットアップ確認」「環境チェック」「初期設定できてる？」「インストール確認」「依存関係チェック」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []
+triggers:
+  - aiagent-check-setup
+  - セットアップ確認
+  - 環境チェック
+  - 初期設定
+  - インストール確認
+  - 依存関係チェック
+  - check setup
 ---
 
 ## トリガーワード

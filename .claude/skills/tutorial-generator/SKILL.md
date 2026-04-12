@@ -1,6 +1,14 @@
 ---
 name: tutorial-generator
-description: Generate step-by-step operation tutorials from screenshots using Gemini Vision API. Analyzes UI elements and creates actionable instructions for user manuals. Use when creating how-to guides, onboarding docs, or operation manuals from screen captures.
+description: "スクリーンショットからGemini Vision APIで操作チュートリアルを自動生成する。 「操作マニュアルを作って」「スクショから手順書を生成」「使い方ガイドを作成」等で発動。"
+triggers:
+  - 操作マニュアルを作って
+  - スクショから手順書を生成
+  - 使い方ガイドを作成
+  - チュートリアルを作って
+  - 画面キャプチャから説明
+  - tutorial-generator
+  - how-to guide
 ---
 
 # Tutorial Generator

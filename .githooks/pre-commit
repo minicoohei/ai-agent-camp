@@ -33,6 +33,25 @@ for pattern in "${PATTERNS[@]}"; do
   fi
 done
 
+# 1b. プロジェクト固有名の漏洩検出（OSS公開用）
+echo "🔍 Checking for project-specific identifiers..."
+PRIVATE_PATTERNS=(
+  'infobox-jp-prd'
+  'yoake-entertainment'
+  'ai-tutor-dev-9c015'
+  '@ycp\.com'
+  'aibrainpartners\.jp'
+)
+
+for pattern in "${PRIVATE_PATTERNS[@]}"; do
+  if git diff --cached --diff-filter=ACM | grep '^+' | grep -qiE "$pattern"; then
+    echo -e "${RED}❌ ERROR: Project-specific identifier detected in staged files!${NC}"
+    echo -e "${YELLOW}Pattern: $pattern${NC}"
+    echo -e "${YELLOW}Please use generic placeholders for open-source readiness.${NC}"
+    exit 1
+  fi
+done
+
 # 2. .envファイルのコミット防止
 echo "🔍 Checking for .env files..."
 if git diff --cached --name-only | grep -qE '\.env$|\.env\.local$'; then

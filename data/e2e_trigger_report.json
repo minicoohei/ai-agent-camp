@@ -1,0 +1,521 @@
+{
+  "timestamp": "2026-04-12T14:18:05",
+  "total": 57,
+  "passed": 35,
+  "failed": 22,
+  "results": [
+    {
+      "trigger": "バナーを作って",
+      "expected": "banner-creator",
+      "category": "positive",
+      "passed": true,
+      "invoked": "banner-creator",
+      "error": null,
+      "duration": 29.1
+    },
+    {
+      "trigger": "記事を書いて",
+      "expected": "article-writer",
+      "category": "positive",
+      "passed": true,
+      "invoked": "article-writer",
+      "error": null,
+      "duration": 43.1
+    },
+    {
+      "trigger": "コピーを書いて",
+      "expected": "copywriting",
+      "category": "positive",
+      "passed": true,
+      "invoked": "copywriting",
+      "error": null,
+      "duration": 53.9
+    },
+    {
+      "trigger": "SNS投稿を作って",
+      "expected": "social-content",
+      "category": "positive",
+      "passed": true,
+      "invoked": "social-content",
+      "error": null,
+      "duration": 41.5
+    },
+    {
+      "trigger": "投稿作って",
+      "expected": "content-creator",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 41.3
+    },
+    {
+      "trigger": "LPを作って",
+      "expected": "lp-designer",
+      "category": "positive",
+      "passed": true,
+      "invoked": "lp-designer",
+      "error": null,
+      "duration": 35.2
+    },
+    {
+      "trigger": "プレゼンを作って",
+      "expected": "pptx-creator",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 15.2
+    },
+    {
+      "trigger": "SEOを監査して",
+      "expected": "seo-audit",
+      "category": "positive",
+      "passed": true,
+      "invoked": "seo-audit",
+      "error": null,
+      "duration": 49.0
+    },
+    {
+      "trigger": "広告を出したい",
+      "expected": "paid-ads",
+      "category": "positive",
+      "passed": true,
+      "invoked": "paid-ads",
+      "error": null,
+      "duration": 33.2
+    },
+    {
+      "trigger": "マーケティングアイデア",
+      "expected": "marketing-ideas",
+      "category": "positive",
+      "passed": true,
+      "invoked": "marketing-ideas",
+      "error": null,
+      "duration": 43.8
+    },
+    {
+      "trigger": "コンテンツ戦略",
+      "expected": "content-strategy",
+      "category": "positive",
+      "passed": true,
+      "invoked": "content-strategy",
+      "error": null,
+      "duration": 37.6
+    },
+    {
+      "trigger": "競合比較",
+      "expected": "competitor-alternatives",
+      "category": "positive",
+      "passed": true,
+      "invoked": "competitor-alternatives",
+      "error": null,
+      "duration": 41.8
+    },
+    {
+      "trigger": "購買心理を教えて",
+      "expected": "marketing-psychology",
+      "category": "positive",
+      "passed": true,
+      "invoked": "marketing-psychology",
+      "error": null,
+      "duration": 46.2
+    },
+    {
+      "trigger": "ローンチ戦略",
+      "expected": "launch-strategy",
+      "category": "positive",
+      "passed": true,
+      "invoked": "launch-strategy",
+      "error": null,
+      "duration": 46.2
+    },
+    {
+      "trigger": "料金を決めたい",
+      "expected": "pricing-strategy",
+      "category": "positive",
+      "passed": true,
+      "invoked": "pricing-strategy",
+      "error": null,
+      "duration": 53.0
+    },
+    {
+      "trigger": "データ分析",
+      "expected": "data-analyst",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 19.0
+    },
+    {
+      "trigger": "CSV分析",
+      "expected": "csv-analyzer",
+      "category": "positive",
+      "passed": true,
+      "invoked": "csv-analyzer",
+      "error": null,
+      "duration": 36.6
+    },
+    {
+      "trigger": "統計分析をして",
+      "expected": "statistical-analysis",
+      "category": "positive",
+      "passed": true,
+      "invoked": "statistical-analysis",
+      "error": null,
+      "duration": 36.9
+    },
+    {
+      "trigger": "SQLを書いて",
+      "expected": "sql-queries",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 15.8
+    },
+    {
+      "trigger": "データ探索",
+      "expected": "exploratory-data-analysis",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 32.8
+    },
+    {
+      "trigger": "グラフを作って",
+      "expected": "matplotlib",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 25.3
+    },
+    {
+      "trigger": "インタラクティブグラフを作って",
+      "expected": "plotly",
+      "category": "positive",
+      "passed": false,
+      "invoked": "interactive-dashboard-builder",
+      "error": null,
+      "duration": 41.0
+    },
+    {
+      "trigger": "図を作って",
+      "expected": "diagram-generator",
+      "category": "positive",
+      "passed": true,
+      "invoked": "diagram-generator",
+      "error": null,
+      "duration": 25.6
+    },
+    {
+      "trigger": "ダッシュボード作成",
+      "expected": "interactive-dashboard-builder",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 31.0
+    },
+    {
+      "trigger": "論文用のグラフを作って",
+      "expected": "scientific-visualization",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 16.6
+    },
+    {
+      "trigger": "動画レビュー",
+      "expected": "motion-review",
+      "category": "positive",
+      "passed": true,
+      "invoked": "motion-review",
+      "error": null,
+      "duration": 30.8
+    },
+    {
+      "trigger": "MV作成",
+      "expected": "mv-composer",
+      "category": "positive",
+      "passed": true,
+      "invoked": "mv-composer",
+      "error": null,
+      "duration": 24.6
+    },
+    {
+      "trigger": "絵コンテを作って",
+      "expected": "storyboard-generator",
+      "category": "positive",
+      "passed": true,
+      "invoked": "storyboard-generator",
+      "error": null,
+      "duration": 44.5
+    },
+    {
+      "trigger": "動画のスクリプトを作成",
+      "expected": "video-scriptwriter",
+      "category": "positive",
+      "passed": true,
+      "invoked": "video-scriptwriter",
+      "error": null,
+      "duration": 26.8
+    },
+    {
+      "trigger": "動画を分析",
+      "expected": "video-analyzer",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 10.9
+    },
+    {
+      "trigger": "画像を生成して",
+      "expected": "nanobanana",
+      "category": "positive",
+      "passed": false,
+      "invoked": "media-generator",
+      "error": null,
+      "duration": 26.6
+    },
+    {
+      "trigger": "PDFを圧縮して",
+      "expected": "pdf-compressor",
+      "category": "positive",
+      "passed": true,
+      "invoked": "pdf-compressor",
+      "error": null,
+      "duration": 35.7
+    },
+    {
+      "trigger": "PDFを分析",
+      "expected": "document-processor",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 22.3
+    },
+    {
+      "trigger": "PPTXを解析して",
+      "expected": "pptx-analyzer",
+      "category": "positive",
+      "passed": true,
+      "invoked": "pptx-analyzer",
+      "error": null,
+      "duration": 24.6
+    },
+    {
+      "trigger": "校閲して",
+      "expected": "proofreading-agent",
+      "category": "positive",
+      "passed": true,
+      "invoked": "proofreading-agent",
+      "error": null,
+      "duration": 16.3
+    },
+    {
+      "trigger": "議事録をまとめて",
+      "expected": "meeting-notes-summarizer",
+      "category": "positive",
+      "passed": true,
+      "invoked": "meeting-notes-summarizer",
+      "error": null,
+      "duration": 23.4
+    },
+    {
+      "trigger": "Slackで検索して",
+      "expected": "slack-search",
+      "category": "positive",
+      "passed": true,
+      "invoked": "slack-search",
+      "error": null,
+      "duration": 18.8
+    },
+    {
+      "trigger": "受信箱チェック",
+      "expected": "check-inbox",
+      "category": "positive",
+      "passed": true,
+      "invoked": "check-inbox",
+      "error": null,
+      "duration": 29.4
+    },
+    {
+      "trigger": "メール設計",
+      "expected": "email-sequence",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 34.7
+    },
+    {
+      "trigger": "未返信メッセージ",
+      "expected": "slack-unanswered",
+      "category": "positive",
+      "passed": false,
+      "invoked": "check-inbox",
+      "error": null,
+      "duration": 38.4
+    },
+    {
+      "trigger": "コードレビュー",
+      "expected": "code-reviewer",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": "TIMEOUT",
+      "duration": 60.0
+    },
+    {
+      "trigger": "テスト計画を作って",
+      "expected": "test-planner",
+      "category": "positive",
+      "passed": true,
+      "invoked": "test-planner",
+      "error": null,
+      "duration": 38.5
+    },
+    {
+      "trigger": "PRD作成",
+      "expected": "feature-spec",
+      "category": "positive",
+      "passed": true,
+      "invoked": "feature-spec",
+      "error": null,
+      "duration": 27.1
+    },
+    {
+      "trigger": "GASデプロイ",
+      "expected": "gas-clasp-ops",
+      "category": "positive",
+      "passed": true,
+      "invoked": "gas-clasp-ops",
+      "error": null,
+      "duration": 44.9
+    },
+    {
+      "trigger": "UI設計",
+      "expected": "ui-ux-pro-max",
+      "category": "positive",
+      "passed": true,
+      "invoked": "ui-ux-pro-max",
+      "error": null,
+      "duration": 30.1
+    },
+    {
+      "trigger": "セットアップ確認",
+      "expected": "aiagent-check-setup",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": "TIMEOUT",
+      "duration": 60.0
+    },
+    {
+      "trigger": "リポジトリ案内",
+      "expected": "aiagent-guide",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 31.3
+    },
+    {
+      "trigger": "レッスン開始",
+      "expected": "aiagent-lesson-runner",
+      "category": "positive",
+      "passed": false,
+      "invoked": "aiagent-guide",
+      "error": null,
+      "duration": 30.0
+    },
+    {
+      "trigger": "A/Bテスト",
+      "expected": "ab-test-setup",
+      "category": "positive",
+      "passed": true,
+      "invoked": "ab-test-setup",
+      "error": null,
+      "duration": 21.0
+    },
+    {
+      "trigger": "ファクトチェック",
+      "expected": "fact-checker",
+      "category": "positive",
+      "passed": true,
+      "invoked": "fact-checker",
+      "error": null,
+      "duration": 18.4
+    },
+    {
+      "trigger": "操作マニュアルを作って",
+      "expected": "tutorial-generator",
+      "category": "positive",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 31.2
+    },
+    {
+      "trigger": "こんにちは",
+      "expected": "banner-creator",
+      "category": "negative",
+      "passed": true,
+      "invoked": null,
+      "error": null,
+      "duration": 10.6
+    },
+    {
+      "trigger": "天気を教えて",
+      "expected": "seo-audit",
+      "category": "negative",
+      "passed": true,
+      "invoked": null,
+      "error": null,
+      "duration": 12.5
+    },
+    {
+      "trigger": "このファイルを読んで",
+      "expected": "document-processor",
+      "category": "negative",
+      "passed": true,
+      "invoked": null,
+      "error": null,
+      "duration": 9.7
+    },
+    {
+      "trigger": "/start-0-1",
+      "expected": "start-0-1",
+      "category": "command",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 1.9
+    },
+    {
+      "trigger": "/start-1-1",
+      "expected": "start-1-1",
+      "category": "command",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 2.0
+    },
+    {
+      "trigger": "/check-setup",
+      "expected": "check-setup",
+      "category": "command",
+      "passed": false,
+      "invoked": null,
+      "error": null,
+      "duration": 1.8
+    }
+  ]
+}

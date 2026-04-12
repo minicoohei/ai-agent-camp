@@ -1,7 +1,15 @@
 ---
 name: email-sequence
 version: 1.0.0
-description: When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions "email sequence," "drip campaign," "nurture sequence," "onboarding emails," "welcome sequence," "re-engagement emails," "email automation," or "lifecycle emails." For in-app onboarding, see onboarding-cro.
+description: "メールシーケンス、ステップメール、ドリップキャンペーンの設計・最適化を行うスキル。 「メール設計」「ステップメール作成」「ウェルカムメール」等のリクエストで発動。 For in-app onboarding, see onboarding-cro."
+triggers:
+  - email-sequence
+  - メール設計
+  - ステップメール
+  - ドリップキャンペーン
+  - ウェルカムメール
+  - メール自動化
+  - nurture sequence
 ---
 
 # Email Sequence Design

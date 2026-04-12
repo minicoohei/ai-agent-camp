@@ -1,8 +1,15 @@
 ---
 name: mv-composer
-description: |
-  Remotion + Kling i2v でプロモーションMV動画・バイラルショート動画を生成するスキル。
-  横型(16:9)のプロモーションMVと縦型(9:16)のTikTok/Shorts動画の両方に対応。
+description: "Remotion + Kling i2v でプロモーションMV動画・バイラルショート動画を生成するスキル。 「MV作成」「動画を作って」「プロモーション動画」「TikTok動画」等のリクエストで発動。"
+triggers:
+  - MV作成
+  - 動画を作って
+  - プロモーション動画
+  - TikTok動画を作って
+  - ショート動画
+  - mv-composer
+  - Remotion動画
+  - バイラル動画
 ---
 
 ## トリガーキーワード

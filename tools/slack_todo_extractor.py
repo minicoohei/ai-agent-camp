@@ -9,7 +9,7 @@ Usage:
     uv run python tools/slack_todo_extractor.py
     uv run python tools/slack_todo_extractor.py --days 7
     uv run python tools/slack_todo_extractor.py --end-date 2026-02-02 --days 14
-    uv run python tools/slack_todo_extractor.py --workspace yoake --output outputs/custom.md
+    uv run python tools/slack_todo_extractor.py --workspace my-workspace --output outputs/custom.md
 """
 
 from __future__ import annotations

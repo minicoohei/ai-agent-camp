@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TokenPocket/ai-agent-camp.git"
+    "url": "git+https://github.com/aibrainpartners/ai-agent-camp.git"
   },
   "keywords": [
     "ai",
@@ -28,9 +28,9 @@
   ],
   "author": "minicoohei",
   "bugs": {
-    "url": "https://github.com/TokenPocket/ai-agent-camp/issues"
+    "url": "https://github.com/aibrainpartners/ai-agent-camp/issues"
   },
-  "homepage": "https://github.com/TokenPocket/ai-agent-camp#readme",
+  "homepage": "https://github.com/aibrainpartners/ai-agent-camp#readme",
   "devDependencies": {
     "@playwright/test": "^1.58.1",
     "prettier": "^3.8.1"

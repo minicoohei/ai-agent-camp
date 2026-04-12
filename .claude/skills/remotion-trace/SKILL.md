@@ -1,8 +1,14 @@
 ---
 name: remotion-trace
-description: |
-  参考動画からプロ品質の Remotion 動画を再現するワークフロースキル。
-  「参考動画から再現したい」「動画トレース」「PVを作りたい」「Remotion動画を参考動画ベースで作りたい」で使用。
+description: "参考動画からプロ品質の Remotion 動画を再現するワークフロースキル。 「参考動画から再現したい」「動画トレース」「PVを作りたい」「Remotion動画を参考動画ベースで作りたい」で発動。"
+triggers:
+  - 参考動画から再現したい
+  - 動画トレース
+  - PVを作りたい
+  - Remotion動画を作りたい
+  - 参考動画ベースで動画作成
+  - remotion-trace
+  - Remotion
 ---
 
 

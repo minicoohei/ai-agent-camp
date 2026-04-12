@@ -11,7 +11,7 @@ category: utility
 ```
 
 ## 概要
-元リポジトリ（TokenPocket/ai-agent-camp）から最新のスキル更新を取り込みます。
+元リポジトリ（aibrainpartners/ai-agent-camp）から最新のスキル更新を取り込みます。
 内部的には `git fetch upstream` + `git merge upstream/main` を実行します。
 `/update-material` と同様の仕組みですが、スキル更新に特化した案内を行います。
 

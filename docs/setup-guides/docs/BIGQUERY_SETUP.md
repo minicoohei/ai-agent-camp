@@ -75,10 +75,10 @@ gcloud config set project YOUR_PROJECT_ID
 
 ```bash
 # 新しいプロファイルを作成
-gcloud config configurations create infobox
+gcloud config configurations create my-profile
 
 # プロジェクトを設定
-gcloud config set project infobox-jp-prd
+gcloud config set project my-gcp-project
 
 # リージョンを設定
 gcloud config set compute/region asia-northeast1
@@ -95,16 +95,16 @@ gcloud config configurations list
 
 出力例:
 ```
-NAME      IS_ACTIVE  ACCOUNT                      PROJECT         COMPUTE_DEFAULT_ZONE  COMPUTE_DEFAULT_REGION
-default   False      user@example.com             -               -                     -
-infobox   True       user@example.com             infobox-jp-prd  -                     asia-northeast1
-imagen4   False      user@example.com             yoake-dev       -                     asia-northeast1
+NAME        IS_ACTIVE  ACCOUNT                      PROJECT           COMPUTE_DEFAULT_ZONE  COMPUTE_DEFAULT_REGION
+default     False      user@example.com             -                 -                     -
+my-profile  True       user@example.com             my-gcp-project    -                     asia-northeast1
+my-dev      False      user@example.com             my-dev-project    -                     asia-northeast1
 ```
 
 ### プロファイルの切り替え
 
 ```bash
-gcloud config configurations activate infobox
+gcloud config configurations activate my-profile
 ```
 
 ---
@@ -183,8 +183,8 @@ for row in results:
 | プロファイル名 | プロジェクトID | 用途 |
 |---------------|---------------|------|
 | `default` | - | デフォルト環境 |
-| `infobox` | infobox-jp-prd | InfoBox本番データ分析 |
-| `imagen4` | yoake-dev-analysis | YOAKE開発分析 |
+| `my-profile` | my-gcp-project | 本番データ分析 |
+| `my-dev` | my-dev-project | 開発分析 |
 
 ---
 
@@ -331,7 +331,7 @@ print(df.head())
 
 ```python
 # 特定のプロジェクトを使用
-client = bigquery.Client(project='infobox-jp-prd')
+client = bigquery.Client(project='my-gcp-project')
 ```
 
 ---

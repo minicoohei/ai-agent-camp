@@ -1,9 +1,14 @@
 ---
 name: slack-unanswered
-description: |
-  Find unanswered Slack messages where you are mentioned or threads you created.
-  Searches slack-sync/data/ for messages mentioning your configured identifiers that have no replies.
-  「未返信メッセージ」「返信してないメッセージ」「Slack確認」で使用。
+description: "Slackの未返信メッセージを検出し、返信ドラフトを生成するスキル。 「未返信メッセージ」「返信してないメッセージ」「Slack確認」等のリクエストで発動。"
+triggers:
+  - 未返信メッセージ
+  - 返信してないメッセージ
+  - Slack確認
+  - 未読メンション
+  - 返信が必要なメッセージ
+  - slack-unanswered
+  - unanswered messages
 ---
 
 ## トリガーワード

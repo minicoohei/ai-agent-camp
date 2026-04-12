@@ -1,10 +1,18 @@
 ---
 name: exploratory-data-analysis
-description: Perform comprehensive exploratory data analysis on scientific data files across 200+ file formats. This skill should be used when analyzing any scientific data file to understand its structure, content, quality, and characteristics. Automatically detects file type and generates detailed markdown reports with format-specific analysis, quality metrics, and downstream analysis recommendations. Covers chemistry, bioinformatics, microscopy, spectroscopy, proteomics, metabolomics, and general scientific data formats.
+description: "200以上のファイル形式に対応した探索的データ分析（EDA）スキル。 「データを分析して」「EDAして」「ファイルの中身を調べて」等のリクエストで発動。 ファイル自動検出、品質評価、統計サマリー、可視化推奨を含むレポート生成。"
 license: MIT license
 metadata:
     skill-author: K-Dense Inc.
 source: github.com/K-Dense-AI/claude-scientific-skills@main
+triggers:
+  - exploratory-data-analysis
+  - EDA
+  - データ探索
+  - 探索的データ分析
+  - ファイル解析
+  - データ品質チェック
+  - データプロファイリング
 ---
 
 ## トリガーワード

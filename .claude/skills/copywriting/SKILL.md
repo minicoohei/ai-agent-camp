@@ -1,7 +1,15 @@
 ---
 name: copywriting
 version: 1.0.0
-description: When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says "write copy for," "improve this copy," "rewrite this page," "marketing copy," "headline help," or "CTA copy." For email copy, see email-sequence. For popup copy, see popup-cro.
+description: "ランディングページ、ホームページ、料金ページ等のマーケティングコピーを作成・改善するスキル。 「コピーを書いて」「LPのコピー作成」「ヘッドライン考えて」等のリクエストで発動。 For email copy, see email-sequence. For popup copy, see popup-cro."
+triggers:
+  - copywriting
+  - コピーを書いて
+  - LPコピー作成
+  - マーケティングコピー
+  - ヘッドライン
+  - CTA作成
+  - ページのコピー
 ---
 
 # Copywriting

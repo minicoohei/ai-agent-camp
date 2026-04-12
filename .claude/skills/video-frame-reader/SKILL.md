@@ -1,14 +1,14 @@
 ---
 name: video-frame-reader
-description: |
-  A skill that extracts keyframes from video files and analyzes their content.
-  Automatically removes duplicate frames and optimizes image quality to reduce token consumption.
-
-  Use when:
-  - User provides a video file (.mp4, .mov, .avi, etc.)
-  - User requests "watch this video", "analyze this video", "what's in this video"
-  - Checking screen recordings or screencasts
-  - Keyframe extraction is needed from video
+description: "動画ファイルからキーフレームを抽出し、重複除去・最適化した上で内容を分析するスキル。 「動画の中身を見て」「キーフレームを抽出」「この動画を分析して」等で発動。"
+triggers:
+  - 動画の中身を見て
+  - キーフレームを抽出
+  - この動画を分析して
+  - 動画を確認して
+  - スクリーン録画を見て
+  - video-frame-reader
+  - keyframe extraction
 ---
 
 # Video Frame Reader

@@ -1,9 +1,14 @@
 ---
 name: motion-review
-description: |
-  Remotionコンポジションを20項目チェックリストで品質レビューする。
-  trigger: "motion review" / "video review" / "動画レビュー"。
-  use case: GTM Manager・Campaign OrchestratorのQuality Reviewで、P1/P2/P3判定と修正指示を返す場合に使用。
+description: "Remotionコンポジションを20項目チェックリストで品質レビューする。 「動画レビュー」「motion review」「Remotion品質チェック」等のリクエストで発動。"
+triggers:
+  - 動画レビュー
+  - 動画の品質チェック
+  - motion review
+  - motion-review
+  - Remotion品質チェック
+  - PVレビュー
+  - video review
 ---
 
 # Motion Review Skill

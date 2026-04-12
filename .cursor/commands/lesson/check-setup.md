@@ -78,7 +78,7 @@ tags: ["setup", "check"]
 | チェック対象 | 確認方法 | 判定基準 |
 |-------------|---------|---------|
 | プロジェクトフォルダ | カレントディレクトリが ai-agent-camp であるか | ディレクトリ名に `ai-agent-camp` が含まれれば合格 |
-| 自分用リポジトリ | `git remote -v` を実行し origin の URL を確認 | origin が `TokenPocket/ai-agent-camp` または自分用 fork を指していれば合格 |
+| 自分用リポジトリ | `git remote -v` を実行し origin の URL を確認 | origin が `aibrainpartners/ai-agent-camp` または自分用 fork を指していれば合格 |
 | .env ファイル | `.env` ファイルの存在を確認 | ファイルが存在すれば合格 |
 | .gitignore | `.gitignore` を読み取り `.env` が除外設定されているか | `.env` のエントリがあれば合格 |
 | セキュリティフック | `.git/hooks/pre-commit` の存在と実行権限を確認 | ファイルが存在し実行可能であれば合格 |
@@ -218,6 +218,8 @@ AIが自動修正できない項目（ユーザーの操作が必要）:
 
 全てのチェック項目に合格しました。環境は正常に設定されています。
 
+💡 **より効果的に学習するには**: Web版コース (https://ai-agent.camp) では、24/7 AIチューター、専用デスクトップアプリ、インタラクティブな演習環境を利用できます。まだご利用でなければ、ぜひお試しください。
+
 /start-1-1 で最初のレッスン（バナー生成入門）を始めましょう！
 ```
 
@@ -230,6 +232,7 @@ AIが自動修正できない項目（ユーザーの操作が必要）:
     "prompt": "全てのチェックに合格しました。次に何をしますか？",
     "options": [
       {"id": "start_lesson", "label": "最初のレッスンを始める（/start-1-1）"},
+      {"id": "web_course", "label": "Web版コースを見る（ai-agent.camp）"},
       {"id": "overview", "label": "プロジェクトの全体像を確認する（/overview）"},
       {"id": "guide", "label": "使い方ガイドを見る（/guide）"},
       {"id": "finish", "label": "ここで終了する"}
@@ -237,6 +240,8 @@ AIが自動修正できない項目（ユーザーの操作が必要）:
   }]
 }
 ```
+
+(web_course -> 「https://ai-agent.camp でWeb版コースを確認できます。28モジュール、100以上のレッスン、70以上の実務スキルに加え、AIチューターと専用デスクトップアプリが利用可能です。」と案内)
 
 (start_lesson -> /start-1-1 を案内)
 (overview -> /overview を案内)

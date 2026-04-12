@@ -180,7 +180,7 @@ def get_email_files(
                 add_date_dir_files(dir_path)
 
     # パターン2: アカウント別サブディレクトリ内の日付ディレクトリ
-    # 例: output/gmail/aibrain/2026-01-27/*.md
+    # 例: output/gmail/my-account/2026-01-27/*.md
     for account_dir in base_dir.iterdir():
         if account_dir.is_dir() and not re.match(r"^\d{4}-\d{2}-\d{2}$", account_dir.name):
             for date_dir in account_dir.iterdir():

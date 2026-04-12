@@ -1,7 +1,15 @@
 ---
 name: marketing-ideas
 version: 1.0.0
-description: "When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the user asks for 'marketing ideas,' 'growth ideas,' 'how to market,' 'marketing strategies,' 'marketing tactics,' 'ways to promote,' or 'ideas to grow.' This skill provides 139 proven marketing approaches organized by category."
+description: "SaaSやソフトウェア製品のマーケティングアイデア・戦略を139のアプローチから提案するスキル。 「マーケティングアイデア」「集客方法を教えて」「成長戦略」等のリクエストで発動。"
+triggers:
+  - マーケティングアイデア
+  - 集客方法を教えて
+  - 成長戦略を考えて
+  - プロモーション方法
+  - marketing ideas
+  - marketing-ideas
+  - どうやって売るか
 ---
 
 # Marketing Ideas for SaaS

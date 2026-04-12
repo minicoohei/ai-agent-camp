@@ -1,12 +1,14 @@
 ---
 name: gas-clasp-ops
-description: |
-  Google Apps Script (GAS) プロジェクトを clasp 経由で操作するスキル。
-  push（コード反映）、deploy（デプロイ）、run（関数実行/テスト）を一括または個別に実行。
-  .clasp.json を持つプロジェクトを自動検出し、複数プロジェクトの管理を効率化する。
-  
-  トリガー: GAS, clasp, デプロイ, push, テスト実行, Apps Script, スクリプト反映
-  使用例: 「GASをデプロイして」「claspでpush」「GAS関数をテスト」「全プロジェクトをpush」
+description: "Google Apps Script (GAS) プロジェクトを clasp 経由で操作するスキル。 「GASをデプロイして」「claspでpush」「GAS関数をテスト」等のリクエストで発動。 push / deploy / run を一括または個別に実行。複数プロジェクト管理に対応。"
+triggers:
+  - gas-clasp-ops
+  - GASデプロイ
+  - clasp push
+  - Apps Script
+  - GASテスト
+  - スクリプト反映
+  - clasp
 ---
 
 # GAS clasp 操作スキル

@@ -1,13 +1,13 @@
 ---
 name: gslides-creator
-description: |
-  テンプレートから Google Slides を作成するスキル。
-  GAS (Google Apps Script) + clasp CLI でテンプレートコピー、
-  コンテンツ書き換え、ゼロからのデッキ生成を行う。
-  Gemini Flash でアウトライン生成 + コンテンツ最適化。
-
-  トリガー: Google Slides 作成, テンプレートコピー, スライド生成, gslides
-  使用例: 「Google Slidesを作って」「テンプレートからスライド作成」「プレゼン生成」
+description: "テンプレートから Google Slides を作成するスキル。 「Google Slidesを作って」「スライド生成」「プレゼン作成」等のリクエストで発動。 GAS + clasp CLI でテンプレートコピー・コンテンツ書き換え・ゼロからのデッキ生成を行う。"
+triggers:
+  - gslides-creator
+  - Google Slides作成
+  - スライド生成
+  - プレゼン作成
+  - テンプレートからスライド
+  - gslides
 ---
 
 # /gslides-creator - Google Slides クリエーター

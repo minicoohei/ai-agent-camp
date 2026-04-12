@@ -42,7 +42,7 @@ gog auth list
 1. `credentials/google-workspace-desktop-oauth.json` が存在するか確認する。無い場合はユーザーに教材の Appendix（`slideId=lesson-18-1-gcp-appendix`）へ進むか、運営から JSON を入手するよう案内する。
 2. `gog auth credentials set credentials/google-workspace-desktop-oauth.json` を **リポジトリルートから**実行し、共有クライアントを登録する。
 3. ユーザーに **ログインに使う Google アカウントのメール**を確認し、`gog auth add <メールアドレス>` を実行する。ブラウザが開いたら、教材スライド `lesson-18-1-gcp`（Google 認証クイック）の **OAuth 画面キャプチャ 4 枚**に沿って案内する（表示順は前後しうる）:
-   - **未確認アプリ**: 「詳細」→ 下部の **Cursor Bootcamp** への続行リンク（開発者表示は想定どおり `info@aibrainpartners.jp` など）。
+   - **未確認アプリ**: 「詳細」→ 下部の **Cursor Bootcamp** への続行リンク（開発者表示は想定どおり `user@example.com` など）。
    - **基本同意**: プロフィール・メールの確認後、「次へ」等で進む。
    - **スコープ**: 必要に応じ「すべて選択」して許可・続行。
    - **Gog アカウント UI**（表示される場合）: DEFAULT とサービス別バッジで接続と権限を確認。

@@ -1,7 +1,15 @@
 ---
 name: agent-designer
-description: Multi-agent system architecture design toolkit
+description: "マルチエージェントシステムのアーキテクチャ設計ツールキット。 「エージェントを設計して」「マルチエージェント構成」「エージェントのアーキテクチャ」「オーケストレーション設計」等のリクエストで発動。"
 source: github.com/alirezarezvani/claude-skills@main
+triggers:
+  - agent-designer
+  - エージェント設計
+  - マルチエージェント
+  - エージェントのアーキテクチャ
+  - オーケストレーション設計
+  - multi-agent
+  - agent architecture
 ---
 # Agent Designer - Multi-Agent System Architecture
 

@@ -1,7 +1,15 @@
 ---
 name: feature-spec
-description: Write structured product requirements documents (PRDs) with problem statements, user stories, requirements, and success metrics. Use when speccing a new feature, writing a PRD, defining acceptance criteria, prioritizing requirements, or documenting product decisions.
+description: "PRD（プロダクト要件定義書）の作成、機能仕様の策定、受け入れ基準の定義を行うスキル。 「PRDを書いて」「機能仕様を作って」「要件定義して」等のリクエストで発動。"
 source: github.com/anthropics/knowledge-work-plugins@main
+triggers:
+  - feature-spec
+  - PRD作成
+  - 機能仕様
+  - 要件定義
+  - ユーザーストーリー
+  - 受け入れ基準
+  - product requirements
 ---
 
 # Feature Spec Skill

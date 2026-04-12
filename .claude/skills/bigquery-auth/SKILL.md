@@ -1,6 +1,14 @@
 ---
 name: bigquery-auth
-description: GCPプロジェクト単位でBigQuery認証を設定。gcloud設定プロファイルで複数プロジェクトを安全に分離管理。「BigQueryに繋ぎたい」「{プロジェクト名}のデータを見たい」と言うだけで認証をガイド。
+description: "GCPプロジェクト単位でBigQuery認証を設定するスキル。 gcloud設定プロファイルで複数プロジェクトを安全に分離管理。 「BigQueryに繋ぎたい」「BQ認証」「gcloud認証」「データ分析の認証設定」等のリクエストで発動。"
+triggers:
+  - bigquery-auth
+  - BigQuery認証
+  - BQ繋ぎたい
+  - gcloud認証
+  - データ分析の認証
+  - BigQuery接続
+  - GCP認証
 ---
 
 ## トリガーワード

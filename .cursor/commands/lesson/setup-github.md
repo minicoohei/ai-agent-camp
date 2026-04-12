@@ -319,7 +319,7 @@ AIが以下を順番に実行:
 ```
 → 完了セクションへ
 
-**ケースB: origin が TokenPocket/ai-agent-camp（教材配布元）のままの場合**
+**ケースB: origin が aibrainpartners/ai-agent-camp（教材配布元）のままの場合**
 
 表示:
 ```text

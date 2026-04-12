@@ -1,9 +1,17 @@
 ---
 name: aiagent-lesson-runner
-description: Start and guide ai-agent-camp lessons in Codex（OpenAIが提供するターミナルベースのAIコーディングアシスタント） by lesson id such as start-0-1 or start-1-1. Use when the user wants the Codex equivalent of the existing slash-command lesson flow.
+description: "ai-agent-campのレッスンをCodexで開始・進行するスキル。 「レッスン開始」「次のレッスン」「start-0-1を始めたい」「Codexでレッスン」「スラッシュコマンドのレッスン」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []
+triggers:
+  - aiagent-lesson-runner
+  - レッスン開始
+  - 次のレッスン
+  - レッスン実行
+  - Codexレッスン
+  - start-0-1
+  - lesson runner
 ---
 
 ## トリガーワード

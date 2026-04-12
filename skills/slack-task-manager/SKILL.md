@@ -1,9 +1,6 @@
 ---
 name: slack-task-manager
-description: |
-  Slack検索・TODO抽出・タスク管理を行うサブエージェント。
-  複数データソースからタスクを抽出し、優先順位付けを行う。
-  「Slackを検索」「タスクを抽出」「TODO確認」「メンション確認」等のリクエストで発動。
+description: "Slack検索・TODO抽出・タスク管理を行うサブエージェント。 複数データソースからタスクを抽出し、優先順位付けを行う。 「Slackを検索」「タスクを抽出」「TODO確認」「メンション確認」等のリクエストで発動。"
 triggers:
   - Slackを検索
   - Slack検索
@@ -63,10 +60,10 @@ overview = search.get_workspace_overview()
 results = search.find_channels("DX展示会")
 
 # チャンネル詳細
-detail = search.get_channel_detail("infobox/buyingshift")
+detail = search.get_channel_detail("my-workspace/example-channel")
 
 # 関連チャンネル
-related = search.find_related_channels("infobox/buyingshift")
+related = search.find_related_channels("my-workspace/example-channel")
 
 # 人物検索
 person = search.find_person("清水")
@@ -91,27 +88,27 @@ Slackのメンションからタスクを抽出し、ステータス判定を行
 ```bash
 # 基本（キーワードベース）
 python skills/slack-todo-extractor/scripts/extract_todos.py \
-  --users "Kohei,minicoohei" \
+  --users "YourName,your-username" \
   --period "2026-01-06:2026-01-08"
 
 # LLMベース（高精度、要GEMINI_API_KEY）
 python skills/slack-todo-extractor/scripts/extract_todos.py \
-  --users "Kohei,minicoohei" \
+  --users "YourName,your-username" \
   --period "1/6:8" \
   --use-llm
 
 # JSON出力
 python skills/slack-todo-extractor/scripts/extract_todos.py \
-  -u "Kohei" -p "1/6:8" --use-llm -o json
+  -u "YourName" -p "1/6:8" --use-llm -o json
 ```
 
 ### パラメータ
 
 | パラメータ | 必須 | 説明 | 例 |
 |-----------|------|------|-----|
-| `--users`, `-u` | ✅ | 対象ユーザー名（カンマ区切り） | `Kohei, minicoohei` |
+| `--users`, `-u` | ✅ | 対象ユーザー名（カンマ区切り） | `YourName, your-username` |
 | `--period`, `-p` | ✅ | 検索期間 | `2026-01-06:2026-01-08` or `1/6:8` |
-| `--workspace`, `-w` | ❌ | ワークスペース | `yoake`, `fungiblex` |
+| `--workspace`, `-w` | ❌ | ワークスペース | `my-workspace`, `my-workspace-2` |
 | `--use-llm` | ❌ | LLM（Gemini）で判定 | - |
 | `--output`, `-o` | ❌ | 出力形式 | `markdown` or `json` |
 
@@ -164,8 +161,8 @@ tasks:
     priority: high
     status: pending
     due_date: "2026-01-10"
-    assignee: "Kohei"
-    channel: "yoake/team-core"
+    assignee: "YourName"
+    channel: "my-workspace/team-core"
 ```
 
 ## サブエージェント呼び出しパターン
@@ -197,11 +194,11 @@ Task(
 status: success
 query: "DX展示会"
 results:
-  - channel: "infobox/dx-event-2026"
+  - channel: "my-workspace/example-event-2026"
     description: "2026年DX展示会の準備チャンネル"
     relevance: 0.95
     recent_activity: "2026-01-25"
-  - channel: "yoake/dx-project"
+  - channel: "my-workspace-2/example-project"
     description: "DXプロジェクト全般"
     relevance: 0.82
 total_matches: 5
@@ -220,7 +217,7 @@ summary:
 high_priority:
   - title: "EASソリューションの調査"
     from: "Sota Moriyama"
-    channel: "yoake/team-core"
+    channel: "my-workspace/team-core"
     status: pending
 ```
 
@@ -231,10 +228,10 @@ high_priority:
 
 ```bash
 # Slack同期
-python slack-sync/scripts/fetch_slack.py --workspace yoake
+python slack-sync/scripts/fetch_slack.py --workspace my-workspace
 
 # スレッド返信も取得
-python slack-sync/scripts/fetch_slack.py --workspace yoake --refresh-threads
+python slack-sync/scripts/fetch_slack.py --workspace my-workspace --refresh-threads
 ```
 
 ## 依存関係

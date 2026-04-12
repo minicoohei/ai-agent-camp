@@ -1,9 +1,6 @@
 ---
 name: post-publisher
-description: |
-  コンテンツの投稿・配信実行スキル。Typefully経由のX投稿、画像アップロード、
-  投稿スケジューリングを行う。
-  「投稿して」「スケジュール設定」「Typefullyに下書き」等で発動。
+description: "コンテンツの投稿・配信実行スキル。Typefully経由のX投稿、画像アップロード、 投稿スケジューリングを行う。 「投稿して」「スケジュール設定」「Typefullyに下書き」等で発動。"
 triggers:
   - 投稿して
   - 投稿する

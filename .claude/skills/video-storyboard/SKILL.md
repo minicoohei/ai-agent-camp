@@ -1,6 +1,14 @@
 ---
 name: video-storyboard
-description: Convert video scripts into visual storyboards with AI-generated images
+description: "動画スクリプトからAI画像生成で絵コンテ（ストーリーボード）を作成するスキル。 「絵コンテを作って」「ストーリーボード生成」「スクリプトから画像を作成」等で発動。"
+triggers:
+  - 絵コンテを作って
+  - ストーリーボード生成
+  - スクリプトから画像を作成
+  - 動画のフレーム画像を生成
+  - シーン画像を作って
+  - video-storyboard
+  - storyboard
 ---
 
 ## トリガーワード

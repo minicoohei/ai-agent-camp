@@ -1,9 +1,16 @@
 ---
 name: aiagent-utility-runner
-description: Run existing ai-agent-camp utility and setup commands in Codex. Use when the user invokes /guide, /tutor, /setup-api-key, /generate-slide, /utility/*, or non-start command files that originally lived in Cursor or Claude command folders.
+description: "ai-agent-campのユーティリティ・セットアップコマンドをCodexで実行するスキル。 「/guideを実行」「/setup-api-key」「ユーティリティコマンド」「Cursorのユーティリティを使いたい」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []
+triggers:
+  - aiagent-utility-runner
+  - ユーティリティコマンド
+  - /guide
+  - /setup-api-key
+  - ユーティリティ実行
+  - utility runner
 ---
 
 # AI Agent Utility Runner

@@ -1,10 +1,6 @@
 ---
 name: content-creator
-description: |
-  マーケティングコンテンツ制作スキル。X/Instagram投稿、Note/Medium記事、
-  バナー画像、動画スクリプト等を作成する。
-  「投稿作って」「バナー作成」「記事書いて」「コピー作成」等で発動。
-  product-context.mdを参照してブランド一貫性を保つ。
+description: "マーケティングコンテンツ制作スキル。X/Instagram投稿、Note/Medium記事、 バナー画像、動画スクリプト等を作成する。 「投稿作って」「バナー作成」「記事書いて」「コピー作成」等で発動。 product-context.mdを参照してブランド一貫性を保つ。"
 triggers:
   - 投稿作って
   - コンテンツ作成

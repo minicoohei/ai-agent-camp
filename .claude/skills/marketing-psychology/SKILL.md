@@ -1,7 +1,15 @@
 ---
 name: marketing-psychology
 version: 1.0.0
-description: "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' or 'consumer behavior.' This skill provides 70+ mental models organized for marketing application."
+description: "心理学・メンタルモデル・行動科学をマーケティングに応用するスキル。70以上のメンタルモデルを提供。 「購買心理」「認知バイアス」「説得テクニック」「なぜ買うのか」等のリクエストで発動。"
+triggers:
+  - 購買心理を教えて
+  - 認知バイアスを活用
+  - 説得テクニック
+  - なぜ買うのか
+  - marketing-psychology
+  - mental model
+  - 消費者行動
 ---
 
 # Marketing Psychology & Mental Models

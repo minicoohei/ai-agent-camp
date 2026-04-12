@@ -4,7 +4,7 @@ Collect Metrics - X API v2 からツイートメトリクスを収集し、バ�
 
 Usage:
     python collect_metrics.py --tweet-ids "123456,789012"
-    python collect_metrics.py --username minicoohei
+    python collect_metrics.py --username your-x-username
     python collect_metrics.py --experiment-id exp-2026-02-18-001
     python collect_metrics.py --test
 """

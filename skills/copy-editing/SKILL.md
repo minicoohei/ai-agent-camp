@@ -1,7 +1,15 @@
 ---
 name: copy-editing
 version: 1.0.0
-description: "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This skill provides a systematic approach to editing marketing copy through multiple focused passes."
+description: "マーケティングコピーの編集・レビュー・改善を行うスキル。 「コピーを編集して」「文章を校正して」「コピーのフィードバック」等のリクエストで発動。 Multiple focused passes による体系的な編集アプローチ。"
+triggers:
+  - copy-editing
+  - コピー編集
+  - 文章を校正
+  - コピーのレビュー
+  - 文章を改善して
+  - proofread
+  - コピーを直して
 ---
 
 # Copy Editing

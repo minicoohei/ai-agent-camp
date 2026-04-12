@@ -1,9 +1,14 @@
 ---
 name: video-audio
-description: |
-  動画用音声生成スキル。ElevenLabs TTS APIでscenes.jsonのナレーションから
-  音声ファイルを生成し、動画と同期可能な形式で出力する。
-  「ナレーション生成」「TTS」「音声追加」等で発動。
+description: "動画用音声生成スキル。ElevenLabs TTS APIでscenes.jsonのナレーションから 音声ファイルを生成し、動画と同期可能な形式で出力する。 「ナレーション生成」「TTS」「音声追加」等で発動。"
+triggers:
+  - ナレーション生成
+  - 音声を生成
+  - TTSで読み上げ
+  - 動画に音声を追加
+  - ボイスを選んで
+  - video-audio
+  - ElevenLabs
 ---
 
 # Video Audio (TTS)
@@ -36,7 +41,7 @@ python skills/video-audio/scripts/generate_audio.py \
 | PmgfHCGeS5b7sH90BOOJ | Fumi | 落ち着いた女性 | `fumi` |
 | StTDrGrPSyfaHGmzwXbj | Masa | 日本語男性 | `masa` |
 | gARvXPexe5VF3cKZBian | Mitsuki | ニュートラル | `mitsuki` |
-| sRYzP8TwEiiqAWebdYPJ | Hatake Kohei | ボイスアクター | `kohei` |
+| YOUR_VOICE_ID | Custom Voice | カスタムボイス | `custom` |
 
 ## オプション
 

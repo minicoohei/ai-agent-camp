@@ -65,10 +65,10 @@ uv run python tools/extract_tasks.py --days {日数} --workspaces {ワークス�
 ### 特定ワークスペースのみ
 
 ```
-/extract-tasks yoakeとfungiblexだけ
+/extract-tasks workspace-1とworkspace-2だけ
 ```
 
-→ `--workspaces yoake,fungiblex` で実行
+→ `--workspaces workspace-1,workspace-2` で実行
 
 ### git pullなし
 

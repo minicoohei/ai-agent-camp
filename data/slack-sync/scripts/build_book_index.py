@@ -3,7 +3,7 @@
 BookIndex生成スクリプト
 
 BookRAG論文に基づく階層的インデックスを構築する。
-- 4ワークスペース（infobox, yoake, tokenpocket, fungiblex）を解析
+- 設定されたワークスペースを解析
 - 3データソース（data, summary, archive）を統合
 - チャンネル分類ルールに基づいて階層ツリーを構築
 - エンティティ（人物、イベント）を抽出
@@ -24,7 +24,8 @@ OUTPUT_DIR = BASE_DIR / "output"
 INDEX_DIR = SLACK_SYNC_DIR / "index"
 
 # ワークスペース一覧
-WORKSPACES = ["infobox", "yoake", "tokenpocket", "fungiblex"]
+# 自分のワークスペースに合わせて変更してください
+WORKSPACES = ["my-workspace"]
 
 # チャンネル分類ルール（プレフィックス -> カテゴリ）
 CATEGORY_RULES = [
@@ -47,7 +48,7 @@ CATEGORY_RULES = [
     (r"^ex-", "external"),
     (r"^ext-", "external"),
     (r"^shared-", "external"),
-    (r"_infobox$", "partner"),
+    (r"_partner$", "partner"),
     (r"^x2y2", "x2y2"),
     (r"^sentry", "notify"),
     (r"^ap-", "accounting"),
