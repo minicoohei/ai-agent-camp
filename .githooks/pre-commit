@@ -36,11 +36,14 @@ done
 # 1b. プロジェクト固有名の漏洩検出（OSS公開用）
 echo "🔍 Checking for project-specific identifiers..."
 PRIVATE_PATTERNS=(
-  # Add your org-specific project IDs, domains, and identifiers here.
-  # Examples:
-  #   'your-org-project-prd'
-  #   '@your-company\.com'
-  #   'your-internal-app-id'
+  # ── Customize: replace these examples with your actual org identifiers ──
+  # 'my-company-prod-project'
+  # '@my-company\.com'
+  # 'my-internal-app-[a-z0-9]+'
+
+  # ── Generic catch-all: common secret/credential filenames in diffs ──
+  'PRIVATE_KEY\s*=\s*["\x27]-----BEGIN'
+  'password\s*=\s*["\x27][^\x27"]{8,}'
 )
 
 for pattern in "${PRIVATE_PATTERNS[@]}"; do
