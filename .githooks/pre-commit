@@ -36,11 +36,11 @@ done
 # 1b. プロジェクト固有名の漏洩検出（OSS公開用）
 echo "🔍 Checking for project-specific identifiers..."
 PRIVATE_PATTERNS=(
-  'infobox-jp-prd'
-  'yoake-entertainment'
-  'ai-tutor-dev-9c015'
-  '@ycp\.com'
-  'aibrainpartners\.jp'
+  # Add your org-specific project IDs, domains, and identifiers here.
+  # Examples:
+  #   'your-org-project-prd'
+  #   '@your-company\.com'
+  #   'your-internal-app-id'
 )
 
 for pattern in "${PRIVATE_PATTERNS[@]}"; do
