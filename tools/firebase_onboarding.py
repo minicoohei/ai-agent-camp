@@ -52,7 +52,7 @@ DEFAULT_CLOUD_FUNCTION_URL = os.getenv(
 )
 DEFAULT_CONTENT_REPO = os.getenv(
     "AIAGENT_CONTENT_REPO",
-    "aibrainpartners/ai-agent-camp",
+    "minicoohei/ai-agent-camp",
 )
 
 JWT_PATTERN = re.compile(r"^[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+$")

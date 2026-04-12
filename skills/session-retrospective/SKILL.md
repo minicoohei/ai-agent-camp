@@ -81,7 +81,7 @@ export GH_TOKEN=$(git remote get-url origin | grep -oP '(?<=https://)[^@]+(?=@)'
 cat > /tmp/issue_body.md << 'EOF'
 Issue本文（Markdown）
 EOF
-gh issue create --repo aibrainpartners/ai-agent-camp \
+gh issue create --repo minicoohei/ai-agent-camp \
   --title "改善: <タイトル>" \
   --body-file /tmp/issue_body.md
 ```
@@ -130,5 +130,5 @@ python skills/session-retrospective/scripts/create_issues.py --input issues.json
 
 ## 出力
 
-- GitHub Issues（aibrainpartners/ai-agent-camp リポジトリ）
+- GitHub Issues（minicoohei/ai-agent-camp リポジトリ）
 - コンソールにIssue URLを一覧表示

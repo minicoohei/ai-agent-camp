@@ -1,46 +1,47 @@
 ---
-description: "GitHub アカウント設定とリポジトリ作成"
-duration: "約10分"
-prerequisites: ["/setup-start 完了"]
+description: "Configuracion de cuenta de GitHub y creacion de repositorio"
+duration: "~10 min"
+prerequisites: ["/setup-start completado"]
 level: "beginner"
 tags: ["setup", "github"]
 ---
 
-# GitHub アカウント設定とリポジトリ作成
 
-## Step 0: セットアップ進捗の確認
+# Configuracion de cuenta de GitHub y creacion de repositorio
 
-**AIが自動実行する内容:**
-1. `uv run python tools/setup_progress.py show --current setup-github` を実行して進捗を表示
+## Step 0: Verificar progreso de configuracion
+
+**Lo que la IA ejecuta automaticamente:**
+1. `uv run python tools/setup_progress.py show --current setup-github`  para mostrar el progreso
 2. `gh auth status` で既にログイン済みか確認。ログイン済みなら「GitHub認証は完了しています」と表示
-3. `git remote -v` で自分用リポが既にあるか確認。あれば「リポジトリも設定済みです。スキップしますか？」と確認
+3. `git remote -v` で自分用リポが既にあるか確認。あれば「リポジトリもConfiguradoです。スキップしますか？」と確認
 
-## このセッションでやること
+## Lo que hara en esta sesion
 
 **GitHub アカウント設定** へようこそ！
 
-| 項目 | 内容 |
-|------|------|
-| ゴール | GitHub にログインし、自分専用の private リポジトリを作成する |
-| 所要時間 | 約10分（アカウント作成が必要な場合は15分） |
-| 使うスキル | なし（AIが全て自動で実行します） |
-| 前提条件 | `/setup-start` 完了済み（Python / Node.js / Git / GitHub CLI がインストール済み） |
-| 次のコマンド | `/start-0-1`（環境セットアップ確認） |
+| Elemento | Contenido |
+|----------|-----------|
+| Objetivo | GitHub にログインし、自分専用の private リポジトリを作成する |
+| Duracion | 約10分（アカウント作成が必要な場合は15分） |
+| Skills utilizados | なし（AIが全て自動で実行します） |
+| Requisitos previos | `/setup-start` 完了済み（Python / Node.js / Git / GitHub CLI がInstalado） |
+| Siguiente comando | `/start-0-1`（環境セットアップ確認） |
 
 **このセッションの流れ:**
 1. GitHub アカウントの確認
 2. GitHub 認証（ブラウザで「許可」ボタンを押すだけ）
 3. 自分専用リポジトリの作成
 
-> **重要**: あなたがターミナルにコマンドを入力する必要は一切ありません。全てAIが裏側で自動実行します。ブラウザが開いたら画面の指示に従うだけでOKです。
+> **重要**: あなたがターミナルにコマンドを入力する必要は一切ありません。全てen segundo plano自動実行します。ブラウザが開いたら画面の指示に従うだけでOKです。
 > **セキュリティ注意**: パスワードやトークンをチャットに貼り付けないでください。認証は全てブラウザ経由で安全に行います。
-> **ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **ヒント**: Si la IA deja de responder, escriba "por favor continua" o "se detuvo" para reanudar.Este es un comportamiento de Cursor, no un error.
 >
 > **Codex向けメモ**: Codex では `/setup-github` をそのまま実行するのではなく、このドキュメント内の確認手順と `gh auth` の実処理を順番に進めます。ブラウザ上のログインや認可ボタンのクリックだけユーザーが担当します。
 
 ---
 
-## セッション開始前の確認
+## Verificacion previa a la sesion
 
 **AskQuestionの設定:**
 ```json
@@ -48,9 +49,9 @@ tags: ["setup", "github"]
   "title": "セッション開始前の確認",
   "questions": [{
     "id": "readiness",
-    "prompt": "準備はできていますか？",
+    "prompt": "Esta listo?",
     "options": [
-      {"id": "ready", "label": "準備OK！始めましょう"},
+      {"id": "ready", "label": "Listo! Comencemos"},
       {"id": "chrome", "label": "/chrome でブラウザ操作を自動化する"},
       {"id": "check_prereq", "label": "/setup-start をまだやっていない"},
       {"id": "what_is_github", "label": "GitHub って何？"}
@@ -90,7 +91,7 @@ tags: ["setup", "github"]
 
 ### アカウントを持っていない場合 (no)
 
-**AIが自動実行する内容:**
+**Lo que la IA ejecuta automaticamente:**
 まず `uname -s` を実行して OS を判定する（Step 1 で判定済みの場合はその結果を使用）。
 
 表示:
@@ -126,7 +127,7 @@ start https://github.com/signup
 
 ### Chrome 統合で自動化する場合（`/chrome` モード、新規アカウント作成時のみ）
 
-**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がインストール済みで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
+**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がInstaladoで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
 
 **AIが Chrome 統合で自動実行する内容:**
 1. ブラウザで https://github.com/signup を開く
@@ -163,7 +164,7 @@ Chrome 統合が利用できない場合は、上記の手順を手動で実行�
 
 (done → Step 2 へ)
 (stuck → 「どの画面で止まっていますか？画面に表示されている内容を教えてください。」と聞いて対応)
-(browser_not_open → 「ブラウザを開いて、アドレスバーに https://github.com/signup と入力してください」と案内)
+(browser_not_open → 「ブラウザを開いて、アドレスバーに https://github.com/signup escribalo aqui」と案内)
 
 ### わからない場合 (not_sure)
 
@@ -198,7 +199,7 @@ Chrome 統合が利用できない場合は、上記の手順を手動で実行�
 
 ## Step 2: GitHub 認証
 
-**AIが自動実行する内容:**
+**Lo que la IA ejecuta automaticamente:**
 
 ### 2-1. 既存の認証状態を確認
 
@@ -297,7 +298,7 @@ AIが `gh auth status` を実行して結果を確認する。
 
 ## Step 3: 自分専用リポジトリの作成
 
-**AIが自動実行する内容:**
+**Lo que la IA ejecuta automaticamente:**
 
 ### 3-1. 現在の状態を確認
 
@@ -420,7 +421,7 @@ AIがエラーメッセージを解析して原因を特定:
 
 ---
 
-## よくあるトラブルと解決方法
+## Solucion de problemas comunes
 
 **AskQuestionの設定:**
 ```json
@@ -496,7 +497,7 @@ AIが原因を診断して解決策を提示します。
 
 ---
 
-## チェックポイント
+## Punto de verificacion
 
 AIが全項目を自動で確認し、結果を一覧表示する:
 
@@ -523,28 +524,28 @@ AIが全項目を自動で確認し、結果を一覧表示する:
 **AskQuestionの設定:**
 ```json
 {
-  "title": "次のステップを選択",
+  "title": "Elegir siguiente paso",
   "questions": [{
     "id": "next_step",
     "prompt": "次に進む操作を選んでください",
     "options": [
       {"id": "next_lesson", "label": "研修を開始する（/start-0-1）"},
       {"id": "view_repo", "label": "作成したリポジトリをブラウザで見る"},
-      {"id": "finish", "label": "ここで終了する"}
+      {"id": "finish", "label": "Terminar aqui"}
     ]
   }]
 }
 ```
 
-(next_lesson → 「新しいチャットを開いて /start-0-1 と入力してください」と案内)
-(view_repo → AIが `open https://github.com/{username}/ai-agent-camp` / `start https://github.com/{username}/ai-agent-camp` を実行してブラウザで表示 → その後「研修を開始するには、新しいチャットを開いて /start-0-1 と入力してください」と案内)
-(finish → 「お疲れさまでした！研修を始めるときは /start-0-1 と入力してください。」と案内)
+(next_lesson → 「新しいチャットを開いて /start-0-1 escribalo aqui」と案内)
+(view_repo → AIが `open https://github.com/{username}/ai-agent-camp` / `start https://github.com/{username}/ai-agent-camp` を実行してブラウザで表示 → その後「研修を開始するには、新しいチャットを開いて /start-0-1 escribalo aqui」と案内)
+(finish → 「Excelente trabajo!！研修を始めるときは /start-0-1 escribalo aqui。」と案内)
 
 ---
 
-## 完了処理
+## Procesamiento de finalizacion
 
-**AIが自動実行する内容:**
+**Lo que la IA ejecuta automaticamente:**
 1. `uv run python tools/setup_progress.py complete setup-github` を実行して進捗を更新
 2. 更新後の進捗サマリーが自動表示される
 3. ユーザーに次のステップを案内: 「次は `/setup-gemini` でGemini APIを設定しましょう」
