@@ -27,7 +27,7 @@ import tempfile
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parents[3]
-DEFAULT_REPO = "aibrainpartners/ai-agent-camp"
+DEFAULT_REPO = "minicoohei/ai-agent-camp"
 
 
 def get_gh_token() -> str | None:

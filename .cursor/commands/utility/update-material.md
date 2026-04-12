@@ -10,7 +10,7 @@ description: 元リポジトリ（upstream）から最新の教材を取り込�
 ```
 
 ## 概要
-Import repository または clone + push で作成した自分用リポジトリ（例: 自分の GitHub の ai-agent-camp）に、大元のリポジトリ（aibrainpartners/ai-agent-camp）の最新の教材変更を取り込みます。
+Import repository または clone + push で作成した自分用リポジトリ（例: 自分の GitHub の ai-agent-camp）に、大元のリポジトリ（minicoohei/ai-agent-camp）の最新の教材変更を取り込みます。
 
 ## 実行手順
 
@@ -24,7 +24,7 @@ git remote -v
 
 ### 2. upstream が未設定の場合のみ追加
 ```bash
-git remote add upstream https://github.com/aibrainpartners/ai-agent-camp.git
+git remote add upstream https://github.com/minicoohei/ai-agent-camp.git
 ```
 既に `upstream` がある場合はこのステップは不要です。
 

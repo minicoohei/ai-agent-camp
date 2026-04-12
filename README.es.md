@@ -4,8 +4,8 @@
 
 **Capacitacion en Agentes de IA para No Ingenieros - Guia Completa de Claude Code / Cursor / Codex**
 
-[![GitHub](https://img.shields.io/badge/GitHub-minicoohei%2Faiagent--base-181717?style=flat&logo=github)](https://github.com/aibrainpartners/ai-agent-camp)
-[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/aibrainpartners/ai-agent-camp/releases)
+[![GitHub](https://img.shields.io/badge/GitHub-minicoohei%2Faiagent--base-181717?style=flat&logo=github)](https://github.com/minicoohei/ai-agent-camp)
+[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/minicoohei/ai-agent-camp/releases)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-3776ab.svg?style=flat&logo=python)](https://www.python.org/)
 
 ## Tabla de Contenidos
@@ -112,7 +112,7 @@ Se completa solo con la interfaz de GitHub.
 
 1. Inicia sesion en GitHub, selecciona "+" en la esquina superior derecha -> "Import repository"
 2. Ingresa lo siguiente:
-   - **Your old repository's clone URL**: `https://github.com/aibrainpartners/ai-agent-camp.git`
+   - **Your old repository's clone URL**: `https://github.com/minicoohei/ai-agent-camp.git`
    - **Repository name**: un nombre de tu eleccion (ej: `my-aiagent`)
    - **Privacy**: selecciona **Private**
 3. Haz clic en "Begin import"
@@ -130,7 +130,7 @@ Para quienes estan familiarizados con la terminal.
 # 1. Crear un repositorio privado vacio en GitHub
 
 # 2. Crear un mirror clone
-git clone --bare https://github.com/aibrainpartners/ai-agent-camp.git my-aiagent.git
+git clone --bare https://github.com/minicoohei/ai-agent-camp.git my-aiagent.git
 cd my-aiagent.git
 
 # 3. Configurar el nuevo origin y hacer push
@@ -147,7 +147,7 @@ Cuando el material de la fuente original se actualice, puedes incorporar los cam
 
 ```bash
 # Solo la primera vez: agregar el repositorio original como upstream
-git remote add upstream https://github.com/aibrainpartners/ai-agent-camp.git
+git remote add upstream https://github.com/minicoohei/ai-agent-camp.git
 
 # Incorporar actualizaciones
 git fetch upstream
@@ -163,7 +163,7 @@ Si usas Cursor, puedes ejecutar **`/update-material`** en el chat para realizar 
 #### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/aibrainpartners/ai-agent-camp.git ~/ai-agent-camp
+git clone https://github.com/minicoohei/ai-agent-camp.git ~/ai-agent-camp
 cd ~/ai-agent-camp
 ```
 
@@ -786,7 +786,7 @@ Damos la bienvenida a comentarios y sugerencias de mejora.
 
 ### Reportar Errores / Solicitar Funciones
 
-1. Verifica si ya existe en [Issues](https://github.com/aibrainpartners/ai-agent-camp/issues)
+1. Verifica si ya existe en [Issues](https://github.com/minicoohei/ai-agent-camp/issues)
 2. Si es nuevo, crea un Issue
 3. Completa la informacion detallada siguiendo la plantilla
 
@@ -824,8 +824,8 @@ Los Issues se pueden escribir en espanol, ingles o japones.
 
 | Metodo | Uso |
 |--------|-----|
-| [GitHub Issues](https://github.com/aibrainpartners/ai-agent-camp/issues) | Reportar errores, solicitar funciones, preguntas tecnicas |
-| [Discussions](https://github.com/aibrainpartners/ai-agent-camp/discussions) | Preguntas generales, intercambio de informacion, propuesta de ideas |
+| [GitHub Issues](https://github.com/minicoohei/ai-agent-camp/issues) | Reportar errores, solicitar funciones, preguntas tecnicas |
+| [Discussions](https://github.com/minicoohei/ai-agent-camp/discussions) | Preguntas generales, intercambio de informacion, propuesta de ideas |
 
 ### Ayuda por Comandos
 
@@ -849,9 +849,9 @@ Codex: aiagent-check-setup
 
 ### Otros Recursos
 
-- **Repositorio oficial**: [github.com/aibrainpartners/ai-agent-camp](https://github.com/aibrainpartners/ai-agent-camp)
-- **Issue tracker**: [Issues](https://github.com/aibrainpartners/ai-agent-camp/issues)
-- **Notas de version**: [Releases](https://github.com/aibrainpartners/ai-agent-camp/releases)
+- **Repositorio oficial**: [github.com/minicoohei/ai-agent-camp](https://github.com/minicoohei/ai-agent-camp)
+- **Issue tracker**: [Issues](https://github.com/minicoohei/ai-agent-camp/issues)
+- **Notas de version**: [Releases](https://github.com/minicoohei/ai-agent-camp/releases)
 
 ---
 

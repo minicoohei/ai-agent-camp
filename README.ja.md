@@ -4,8 +4,8 @@
 
 **非エンジニア向けAIエージェント研修 - Claude Code / Cursor / Codex 活用完全ガイド**
 
-[![GitHub](https://img.shields.io/badge/GitHub-minicoohei%2Faiagent--base-181717?style=flat&logo=github)](https://github.com/aibrainpartners/ai-agent-camp)
-[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/aibrainpartners/ai-agent-camp/releases)
+[![GitHub](https://img.shields.io/badge/GitHub-minicoohei%2Faiagent--base-181717?style=flat&logo=github)](https://github.com/minicoohei/ai-agent-camp)
+[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/minicoohei/ai-agent-camp/releases)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-3776ab.svg?style=flat&logo=python)](https://www.python.org/)
 
 ## 目次
@@ -112,7 +112,7 @@ GitHub の画面操作だけで完結します。
 
 1. GitHub にログインし、右上の「+」→「Import repository」を選択
 2. 以下を入力:
-   - **Your old repository's clone URL**: `https://github.com/aibrainpartners/ai-agent-camp.git`
+   - **Your old repository's clone URL**: `https://github.com/minicoohei/ai-agent-camp.git`
    - **Repository name**: 任意の名前（例: `my-aiagent`）
    - **Privacy**: **Private** を選択
 3. 「Begin import」をクリック
@@ -130,7 +130,7 @@ GitHub の画面操作だけで完結します。
 # 1. GitHub で空の Private リポジトリを作成
 
 # 2. ミラー clone を作成
-git clone --bare https://github.com/aibrainpartners/ai-agent-camp.git my-aiagent.git
+git clone --bare https://github.com/minicoohei/ai-agent-camp.git my-aiagent.git
 cd my-aiagent.git
 
 # 3. 新しい origin を設定して push
@@ -147,7 +147,7 @@ git clone https://github.com/{あなたのユーザ名}/my-aiagent.git
 
 ```bash
 # 初回のみ: 元リポジトリを upstream として追加
-git remote add upstream https://github.com/aibrainpartners/ai-agent-camp.git
+git remote add upstream https://github.com/minicoohei/ai-agent-camp.git
 
 # 更新を取り込む
 git fetch upstream
@@ -163,7 +163,7 @@ Cursor を使っている場合は、チャットで **`/update-material`** を�
 #### 1. リポジトリをクローン
 
 ```bash
-git clone https://github.com/aibrainpartners/ai-agent-camp.git ~/ai-agent-camp
+git clone https://github.com/minicoohei/ai-agent-camp.git ~/ai-agent-camp
 cd ~/ai-agent-camp
 ```
 
@@ -793,7 +793,7 @@ A: [セキュリティガードレール](docs/security-guardrails.md) を参照
 
 ### バグ報告・機能リクエスト
 
-1. [Issues](https://github.com/aibrainpartners/ai-agent-camp/issues) で既出かどうか確認
+1. [Issues](https://github.com/minicoohei/ai-agent-camp/issues) で既出かどうか確認
 2. 新しい Issue がある場合は作成
 3. テンプレートに従って詳細情報を記入
 
@@ -831,8 +831,8 @@ Issue は日本語での記載で OK です。日本語コミュニティとし�
 
 | 方法 | 用途 |
 |------|------|
-| [GitHub Issues](https://github.com/aibrainpartners/ai-agent-camp/issues) | バグ報告、機能リクエスト、技術的な質問 |
-| [Discussions](https://github.com/aibrainpartners/ai-agent-camp/discussions) | 一般的な質問、情報交換、アイデア提案 |
+| [GitHub Issues](https://github.com/minicoohei/ai-agent-camp/issues) | バグ報告、機能リクエスト、技術的な質問 |
+| [Discussions](https://github.com/minicoohei/ai-agent-camp/discussions) | 一般的な質問、情報交換、アイデア提案 |
 
 ### コマンドでのヘルプ
 
@@ -856,9 +856,9 @@ Codex: aiagent-check-setup
 
 ### その他のリソース
 
-- **公式リポジトリ**: [github.com/aibrainpartners/ai-agent-camp](https://github.com/aibrainpartners/ai-agent-camp)
-- **Issue トラッカー**: [Issues](https://github.com/aibrainpartners/ai-agent-camp/issues)
-- **Release ノート**: [Releases](https://github.com/aibrainpartners/ai-agent-camp/releases)
+- **公式リポジトリ**: [github.com/minicoohei/ai-agent-camp](https://github.com/minicoohei/ai-agent-camp)
+- **Issue トラッカー**: [Issues](https://github.com/minicoohei/ai-agent-camp/issues)
+- **Release ノート**: [Releases](https://github.com/minicoohei/ai-agent-camp/releases)
 
 ---
 
