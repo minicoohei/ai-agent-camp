@@ -1,8 +1,8 @@
 # Capítulo 3: Dominar Cursor con Capturas de Pantalla
 id: "module03-screenshot"
 order: 3
-name: "Crear Tutoriales con AI Agent"
-description: "Aprende a darle "ojos" a la IA — analiza capturas de pantalla y videos para generar tutoriales y manuales automáticamente"
+name: "Dominar Cursor con Capturas de Pantalla"
+description: "Aprende diagnóstico de errores, creación de manuales y generación automática de tutoriales usando capturas de pantalla."
 type: "manual"
 estimatedMinutes: 60
 objectives:

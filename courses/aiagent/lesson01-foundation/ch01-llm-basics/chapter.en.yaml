@@ -11,4 +11,4 @@ objectives:
   - "Grasp the history and evolution of AI"
   - "Understand the next-token prediction mechanism"
 externalContent:
-  manual: "https://ai-agent.camp/en/course/foundation-1?slideId=ai-evolution"
+  manual: "https://ai-agent.camp/en/course/foundation/llm-basics"

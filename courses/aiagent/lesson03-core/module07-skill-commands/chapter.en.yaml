@@ -1,8 +1,8 @@
 # Chapter 7: Skill/Commands
 id: "module07-skill-commands"
 order: 7
-name: "Skill / Command Development"
-description: "Design reusable SKILL.md files and slash commands, then apply them to real workflows like invoices and PDF updates."
+name: "Skill/Commands"
+description: "Learn skill design, SKILL.md structure, testing, and practical design patterns for building task-specific workflows."
 type: "manual"
 estimatedMinutes: 120
 objectives:
@@ -11,5 +11,5 @@ objectives:
   - "Design commands and skills for real work scenarios"
 thumbnail: "thumbnail.png"
 externalContent:
-  manual: "https://ai-agent.camp/en/course/module-skills"
-  slides: "https://ai-agent.camp/en/course/module-skills"
+  manual: "https://ai-agent.camp/en/course/module-7"
+  slides: "https://ai-agent.camp/en/course/module-7"

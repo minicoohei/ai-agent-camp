@@ -11,4 +11,4 @@ objectives:
   - "AIの進化と歴史を把握する"
   - "次トークン予測の仕組みを理解する"
 externalContent:
-  manual: "https://ai-agent.camp/ja/course/foundation-1?slideId=ai-evolution"
+  manual: "https://ai-agent.camp/ja/course/foundation/llm-basics"

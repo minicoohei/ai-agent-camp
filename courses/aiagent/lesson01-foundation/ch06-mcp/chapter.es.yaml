@@ -14,4 +14,4 @@ objectives:
   - "Conocer los principales servidores MCP"
   - "Entender cómo usar MCP con Claude Code / Cursor / Codex"
 externalContent:
-  manual: "https://ai-agent.camp/es/course/foundation-6?slideId=mcp-intro"
+  manual: "https://ai-agent.camp/es/course/foundation/mcp"

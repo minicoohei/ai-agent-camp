@@ -1,8 +1,8 @@
 # Chapter 7: Skill/Commands
 id: "module07-skill-commands"
 order: 7
-name: "Skill / Commands 開発"
-description: "再利用可能な SKILL.md とスラッシュコマンドを設計し、請求書生成・PDF更新などの実務パターンに落とし込みます。"
+name: "Skill/Commands"
+description: "SKILL.md 設計、コマンド設計、テスト、デザインパターンを通して業務特化スキルを作ります。"
 type: "manual"
 estimatedMinutes: 120
 objectives:
@@ -11,5 +11,5 @@ objectives:
   - "業務ユースケースに合わせた command/skill を設計できる"
 thumbnail: "thumbnail.png"
 externalContent:
-  manual: "https://ai-agent.camp/ja/course/module-skills"
-  slides: "https://ai-agent.camp/ja/course/module-skills"
+  manual: "https://ai-agent.camp/ja/course/module-7"
+  slides: "https://ai-agent.camp/ja/course/module-7"

@@ -1,8 +1,8 @@
 # Chapter 14: Landing Page Creation
 id: "module13-lp"
 order: 14
-name: "LP/HP Production"
-description: "From hearing to appeal design, wireframes, Pencil design, HTML implementation, and Vercel deploy. Experience the end-to-end LP/HP production workflow."
+name: "Landing Page Creation"
+description: "Use AI agents to move from messaging and wireframes to Pencil design, HTML implementation, and Vercel deployment."
 type: "manual"
 estimatedMinutes: 180
 prerequisites:

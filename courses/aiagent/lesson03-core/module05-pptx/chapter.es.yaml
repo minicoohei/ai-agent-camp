@@ -1,8 +1,8 @@
 # Capítulo 5: Análisis y Edición de PPTX
 id: "module05-pptx"
 order: 5
-name: "Analisis, Conversion y Generacion de PPTX"
-description: "Domina el analisis de archivos PowerPoint, la conversion de plantillas y la generacion automatica de presentaciones usando tres herramientas especializadas"
+name: "Análisis y Edición de PPTX"
+description: "Analiza y edita automáticamente archivos de PowerPoint."
 type: "manual"
 estimatedMinutes: 60
 objectives:

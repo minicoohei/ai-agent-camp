@@ -1,8 +1,8 @@
 # Chapter 16: Google Workspace 統合
 id: "module04-google-workspace"
 order: 16
-name: "AI秘書 — Google Workspace 統合活用"
-description: "あなた専属のAI秘書を手に入れよう。Calendar の空き時間検索、メールの返信漏れ抽出、Drive のファイル管理、Sheets のデータ連携まで、Google Workspace をAIエージェントで統合操作します"
+name: "Google Workspace 統合"
+description: "Calendar、Gmail、Drive、Sheets、GAS をまたいだ AI 秘書ワークフローを構築し、日常業務を自動化します。"
 type: "manual"
 estimatedMinutes: 180
 thumbnail: "thumbnail.png"

@@ -1,7 +1,7 @@
 # Chapter 9: Skill / SubAgent / Agent Team
 id: "ch09-subagent"
 order: 9
-name: "Skill / SubAgent"
+name: "Skill / SubAgent / Agent Team"
 description: "AIエージェントの能力を拡張し、チームとして協調させる技術"
 type: "manual"
 estimatedMinutes: 25
@@ -14,4 +14,4 @@ objectives:
   - "Agent Team（エージェントチーム）で複数エージェントを協調させる方法を理解する"
   - "実務でのSkill/SubAgent/Agent Teamの使い分けを判断できる"
 externalContent:
-  manual: "https://ai-agent.camp/ja/course/foundation-3?slideId=what-is-skill"
+  manual: "https://ai-agent.camp/ja/course/foundation/subagent"

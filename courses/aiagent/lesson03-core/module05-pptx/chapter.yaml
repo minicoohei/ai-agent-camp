@@ -1,8 +1,8 @@
 # Chapter 5: PPTX解析・編集
 id: "module05-pptx"
 order: 5
-name: "PPTX解析・変換・生成"
-description: "3つの専門ツールを使い分けて、PowerPointファイルの解析、テンプレート変換、ゼロからのプレゼン自動生成をマスターします"
+name: "PPTX解析・編集"
+description: "PowerPointファイルの解析と自動編集を行います。"
 type: "manual"
 estimatedMinutes: 60
 objectives:

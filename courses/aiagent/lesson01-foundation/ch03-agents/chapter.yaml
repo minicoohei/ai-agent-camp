@@ -13,4 +13,4 @@ objectives:
   - "エージェントループの仕組みを理解する"
   - "自律性レベルを理解する"
 externalContent:
-  manual: "https://ai-agent.camp/ja/course/foundation-3?slideId=what-is-agent"
+  manual: "https://ai-agent.camp/ja/course/foundation/agents"

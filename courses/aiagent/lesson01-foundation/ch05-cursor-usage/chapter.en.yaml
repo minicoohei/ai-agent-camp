@@ -1,7 +1,7 @@
 # Chapter 5: How to Use AI Coding Tools
 id: "ch05-cursor-usage"
 order: 5
-name: "Tool Operation Basics"
+name: "How to Use AI Coding Tools"
 description: "Learn the core workflows and safety model for Cursor / Claude Code / Codex."
 type: "manual"
 estimatedMinutes: 25
@@ -13,4 +13,4 @@ objectives:
   - "Know the basic workflow for each tool"
   - "Understand safety settings"
 externalContent:
-  manual: "https://ai-agent.camp/en/course/foundation-5"
+  manual: "https://ai-agent.camp/en/course/foundation/cursor-usage"

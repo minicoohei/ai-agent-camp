@@ -1,8 +1,8 @@
 # Chapter 9: Notion連携
 id: "module12-notion"
 order: 9
-name: "Notion CLI（ncli）"
-description: "ターミナルからNotionを操作するCLI（@sakasegawa/ncli）の導入とエージェント向けワークフローを学びます。"
+name: "Notion連携"
+description: "NotionデータベースとAIの連携を行います。"
 type: "manual"
 estimatedMinutes: 60
 objectives:
