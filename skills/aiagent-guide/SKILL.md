@@ -1,8 +1,6 @@
 ---
 name: aiagent-guide
-description: |
-  ai-agent-campリポジトリの案内・オリエンテーションスキル。
-  「リポジトリ案内」「次のレッスンは？」「どこから始める」「ツールの違い」「aiagent概要」等のリクエストで発動。
+description: "ai-agent-campリポジトリの案内・オリエンテーションスキル。 「リポジトリ案内」「次のレッスンは？」「どこから始める」「ツールの違い」「aiagent概要」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []

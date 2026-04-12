@@ -1,10 +1,7 @@
 ---
 name: competitor-alternatives
 version: 1.0.0
-description: |
-  競合比較ページ・代替製品ページをSEO・営業資料向けに作成するスキル。
-  「競合比較ページを作って」「代替ツールのページ」「vs ページ」「〇〇 vs △△」「alternative page」等のリクエストで発動。
-  単数alternative、複数alternatives、自社vs競合、競合同士比較の4フォーマットに対応。
+description: "競合比較ページ・代替製品ページをSEO・営業資料向けに作成するスキル。 「競合比較ページを作って」「代替ツールのページ」「vs ページ」「〇〇 vs △△」「alternative page」等のリクエストで発動。 単数alternative、複数alternatives、自社vs競合、競合同士比較の4フォーマットに対応。"
 triggers:
   - competitor-alternatives
   - 競合比較

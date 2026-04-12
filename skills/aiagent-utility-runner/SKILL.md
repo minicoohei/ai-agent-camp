@@ -1,8 +1,6 @@
 ---
 name: aiagent-utility-runner
-description: |
-  ai-agent-campのユーティリティ・セットアップコマンドをCodexで実行するスキル。
-  「/guideを実行」「/setup-api-key」「ユーティリティコマンド」「Cursorのユーティリティを使いたい」等のリクエストで発動。
+description: "ai-agent-campのユーティリティ・セットアップコマンドをCodexで実行するスキル。 「/guideを実行」「/setup-api-key」「ユーティリティコマンド」「Cursorのユーティリティを使いたい」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []

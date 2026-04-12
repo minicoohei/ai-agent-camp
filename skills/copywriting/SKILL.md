@@ -1,10 +1,7 @@
 ---
 name: copywriting
 version: 1.0.0
-description: |
-  ランディングページ、ホームページ、料金ページ等のマーケティングコピーを作成・改善するスキル。
-  「コピーを書いて」「LPのコピー作成」「ヘッドライン考えて」等のリクエストで発動。
-  For email copy, see email-sequence. For popup copy, see popup-cro.
+description: "ランディングページ、ホームページ、料金ページ等のマーケティングコピーを作成・改善するスキル。 「コピーを書いて」「LPのコピー作成」「ヘッドライン考えて」等のリクエストで発動。 For email copy, see email-sequence. For popup copy, see popup-cro."
 triggers:
   - copywriting
   - コピーを書いて

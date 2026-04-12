@@ -1,8 +1,6 @@
 ---
 name: ui-ux-pro-max
-description: |
-  UI/UX デザインガイド。50スタイル・97パレット・57フォント組み合わせ・9スタック対応。
-  「UI設計して」「デザインシステムを作って」「画面レビュー」等のリクエストで発動。
+description: "UI/UX デザインガイド。50スタイル・97パレット・57フォント組み合わせ・9スタック対応。 「UI設計して」「デザインシステムを作って」「画面レビュー」等のリクエストで発動。"
 source: github.com/nextlevelbuilder/ui-ux-pro-max-skill@main
 triggers:
   - UI設計

@@ -1,9 +1,6 @@
 ---
 name: banner-creator
-description: |
-  各種SNS・広告プラットフォーム向けのバナー/クリエイティブを生成するスキル。
-  X, Facebook, Instagram, PRTimes, YouTube, LINE, Web広告に対応。
-  「バナーを作って」「広告画像を生成」「SNS用の画像」「クリエイティブ制作」等のリクエストで発動。
+description: "各種SNS・広告プラットフォーム向けのバナー/クリエイティブを生成するスキル。 X, Facebook, Instagram, PRTimes, YouTube, LINE, Web広告に対応。 「バナーを作って」「広告画像を生成」「SNS用の画像」「クリエイティブ制作」等のリクエストで発動。"
 triggers:
   - banner-creator
   - バナーを作って

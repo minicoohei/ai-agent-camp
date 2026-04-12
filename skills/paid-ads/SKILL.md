@@ -1,9 +1,7 @@
 ---
 name: paid-ads
 version: 1.0.0
-description: |
-  Google Ads・Meta・LinkedIn等の有料広告キャンペーンを設計・最適化するスキル。
-  「広告を出したい」「広告キャンペーンを作って」「リターゲティング」等のリクエストで発動。
+description: "Google Ads・Meta・LinkedIn等の有料広告キャンペーンを設計・最適化するスキル。 「広告を出したい」「広告キャンペーンを作って」「リターゲティング」等のリクエストで発動。"
 triggers:
   - 広告を出したい
   - 広告キャンペーンを作って

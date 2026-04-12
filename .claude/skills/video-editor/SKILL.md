@@ -1,11 +1,6 @@
 ---
 name: video-editor
-description: |
-  TikTok/YouTube向け動画編集スキル。ffmpegでキャプション焼き込み、
-  Ken Burnsエフェクト、シーン結合、音声合成を行う。
-  scenes.jsonから自動的に編集指示を読み取り最終動画を出力する。
-  Remotionコンポーネントも同梱（ローカル環境用）。
-  「動画編集」「キャプション追加」「テロップ付き動画」等で発動。
+description: "TikTok/YouTube向け動画編集スキル。ffmpegでキャプション焼き込み、 Ken Burnsエフェクト、シーン結合、音声合成を行う。 scenes.jsonから自動的に編集指示を読み取り最終動画を出力する。 Remotionコンポーネントも同梱（ローカル環境用）。 「動画編集」「キャプション追加」「テロップ付き動画」等で発動。"
 triggers:
   - 動画を編集
   - キャプションを追加

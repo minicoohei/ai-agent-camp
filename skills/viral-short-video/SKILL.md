@@ -1,10 +1,6 @@
 ---
 name: viral-short-video
-description: |
-  TikTok/YouTube Shorts向けのバイラル動画スクリプト&ストーリーボード生成スキル。
-  調査済みのバイラルテクニック（3秒フック、モジュラー構造、ループブリッジ、フラッシュテキスト、
-  スプリットスクリーン等）をスクリプティングとストーリーボード作成に自動組み込み。
-  「TikTok動画のスクリプト」「バイラル動画を作りたい」「Short動画の台本」等で発動。
+description: "TikTok/YouTube Shorts向けのバイラル動画スクリプト&ストーリーボード生成スキル。 調査済みのバイラルテクニック（3秒フック、モジュラー構造、ループブリッジ、フラッシュテキスト、 スプリットスクリーン等）をスクリプティングとストーリーボード作成に自動組み込み。 「TikTok動画のスクリプト」「バイラル動画を作りたい」「Short動画の台本」等で発動。"
 triggers:
   - バイラル動画を作りたい
   - TikTok動画のスクリプト
@@ -75,7 +71,7 @@ python skills/viral-short-video/scripts/generate_viral_script.py \
 # 商材名を指定してスクリプト生成
 python skills/viral-short-video/scripts/generate_viral_script.py \
   --topic "このアプリで送金手数料を90%カットする方法" \
-  --product "TokenPocket" \
+  --product "My Product" \
   --duration 15 \
   --tone casual \
   --session "tp_fees"

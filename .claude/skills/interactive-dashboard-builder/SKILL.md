@@ -1,9 +1,6 @@
 ---
 name: interactive-dashboard-builder
-description: |
-  Chart.js を使ったインタラクティブなHTMLダッシュボードを構築するスキル。
-  「ダッシュボードを作って」「インタラクティブなレポート」「HTMLチャート作成」等のリクエストで発動。
-  フィルター・グラフ・プロフェッショナルなスタイリング付きのスタンドアロンHTMLを生成。
+description: "Chart.js を使ったインタラクティブなHTMLダッシュボードを構築するスキル。 「ダッシュボードを作って」「インタラクティブなレポート」「HTMLチャート作成」等のリクエストで発動。 フィルター・グラフ・プロフェッショナルなスタイリング付きのスタンドアロンHTMLを生成。"
 source: github.com/anthropics/knowledge-work-plugins@main
 triggers:
   - interactive-dashboard-builder

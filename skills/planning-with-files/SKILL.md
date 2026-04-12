@@ -1,9 +1,7 @@
 ---
 name: planning-with-files
 version: "2.10.0"
-description: |
-  複雑なタスクをファイルベースで計画管理するスキル。task_plan.md、findings.md、progress.mdを作成。
-  「計画を立てて」「タスクを整理して」「プランニング」等のリクエストで発動。
+description: "複雑なタスクをファイルベースで計画管理するスキル。task_plan.md、findings.md、progress.mdを作成。 「計画を立てて」「タスクを整理して」「プランニング」等のリクエストで発動。"
 triggers:
   - 計画を立てて
   - タスクを整理して

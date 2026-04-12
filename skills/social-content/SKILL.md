@@ -1,9 +1,7 @@
 ---
 name: social-content
 version: 1.0.0
-description: |
-  SNS投稿の作成・スケジュール・最適化を支援するスキル。
-  「SNS投稿を作って」「LinkedInの投稿を書いて」「コンテンツカレンダーを作成」等のリクエストで発動。
+description: "SNS投稿の作成・スケジュール・最適化を支援するスキル。 「SNS投稿を作って」「LinkedInの投稿を書いて」「コンテンツカレンダーを作成」等のリクエストで発動。"
 triggers:
   - SNS投稿を作って
   - LinkedInの投稿を書いて

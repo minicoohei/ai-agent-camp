@@ -1,9 +1,6 @@
 ---
 name: exploratory-data-analysis
-description: |
-  200以上のファイル形式に対応した探索的データ分析（EDA）スキル。
-  「データを分析して」「EDAして」「ファイルの中身を調べて」等のリクエストで発動。
-  ファイル自動検出、品質評価、統計サマリー、可視化推奨を含むレポート生成。
+description: "200以上のファイル形式に対応した探索的データ分析（EDA）スキル。 「データを分析して」「EDAして」「ファイルの中身を調べて」等のリクエストで発動。 ファイル自動検出、品質評価、統計サマリー、可視化推奨を含むレポート生成。"
 license: MIT license
 metadata:
     skill-author: K-Dense Inc.

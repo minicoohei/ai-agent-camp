@@ -1,9 +1,6 @@
 ---
 name: youtube-uploader
-description: |
-  YouTube Data API v3 を使用した動画アップロードスキル。
-  Shorts自動検出、UTMリンク自動挿入、予約投稿に対応。
-  「YouTube投稿」「動画アップロード」「Shorts投稿」等で発動。
+description: "YouTube Data API v3 を使用した動画アップロードスキル。 Shorts自動検出、UTMリンク自動挿入、予約投稿に対応。 「YouTube投稿」「動画アップロード」「Shorts投稿」等で発動。"
 triggers:
   - YouTubeに投稿
   - 動画をアップロード

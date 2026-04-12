@@ -2,10 +2,7 @@
 name: x-research
 version: 1.0.0
 author: ai-agent-camp
-description: |
-  X (Twitter) のリアルタイム検索を行い、トピックに関するツイートを収集・分析する。
-  検索結果を構造化レポート（Markdown + JSON + TXT）として出力。
-  「Xで検索して」「Twitterで調べて」「ツイートを分析」等で発動。
+description: "X (Twitter) のリアルタイム検索を行い、トピックに関するツイートを収集・分析する。 検索結果を構造化レポート（Markdown + JSON + TXT）として出力。 「Xで検索して」「Twitterで調べて」「ツイートを分析」等で発動。"
 triggers:
   - Xで検索して
   - Twitterで調べて

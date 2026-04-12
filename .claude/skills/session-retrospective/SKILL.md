@@ -1,8 +1,6 @@
 ---
 name: session-retrospective
-description: |
-  セッション終了時に自己改善Issueを自動生成するスキル。
-  「振り返りIssue出して」「レトロスペクティブ」「改善点をIssueにして」等のリクエストで発動。
+description: "セッション終了時に自己改善Issueを自動生成するスキル。 「振り返りIssue出して」「レトロスペクティブ」「改善点をIssueにして」等のリクエストで発動。"
 triggers:
   - 振り返りIssue出して
   - レトロスペクティブ

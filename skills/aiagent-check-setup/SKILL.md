@@ -1,8 +1,6 @@
 ---
 name: aiagent-check-setup
-description: |
-  ai-agent-campのローカル環境セットアップを確認するスキル。
-  「セットアップ確認」「環境チェック」「初期設定できてる？」「インストール確認」「依存関係チェック」等のリクエストで発動。
+description: "ai-agent-campのローカル環境セットアップを確認するスキル。 「セットアップ確認」「環境チェック」「初期設定できてる？」「インストール確認」「依存関係チェック」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []

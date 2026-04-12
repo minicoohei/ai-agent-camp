@@ -1,9 +1,6 @@
 ---
 name: create-cowork-plugin
-description: |
-  Cowork セッションでプラグインをゼロから作成するスキル。
-  「プラグインを作って」「プラグイン開発」「plugin作成」等のリクエストで発動。
-  Cowork モードで .plugin ファイルを生成。
+description: "Cowork セッションでプラグインをゼロから作成するスキル。 「プラグインを作って」「プラグイン開発」「plugin作成」等のリクエストで発動。 Cowork モードで .plugin ファイルを生成。"
 compatibility: Requires Cowork desktop app environment with access to the outputs directory for delivering .plugin files.
 source: github.com/anthropics/knowledge-work-plugins@main
 triggers:

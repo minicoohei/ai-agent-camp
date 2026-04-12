@@ -1,8 +1,6 @@
 ---
 name: matplotlib
-description: |
-  Pythonのmatplotlibでグラフ・チャートを作成するスキル。PNG/PDF/SVG出力対応。
-  「グラフを作って」「チャートを描いて」「可視化して」「matplotlib」等のリクエストで発動。
+description: "Pythonのmatplotlibでグラフ・チャートを作成するスキル。PNG/PDF/SVG出力対応。 「グラフを作って」「チャートを描いて」「可視化して」「matplotlib」等のリクエストで発動。"
 triggers:
   - グラフを作って
   - チャートを描いて

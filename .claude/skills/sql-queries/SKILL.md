@@ -1,8 +1,6 @@
 ---
 name: sql-queries
-description: |
-  主要データウェアハウス方言で正確かつ高性能なSQLを記述するスキル。
-  「SQLを書いて」「クエリを最適化して」「BigQueryで集計」等のリクエストで発動。
+description: "主要データウェアハウス方言で正確かつ高性能なSQLを記述するスキル。 「SQLを書いて」「クエリを最適化して」「BigQueryで集計」等のリクエストで発動。"
 triggers:
   - SQLを書いて
   - クエリを最適化して

@@ -1,9 +1,6 @@
 ---
 name: gcp-auth
-description: |
-  Google Cloud Platform (GCP) の Application Default Credentials 認証を実行するスキル。
-  「GCP認証して」「Google Cloud認証」「gcloud login」等のリクエストで発動。
-  BigQuery や Cloud Storage 等の GCP サービス利用前の認証手順をガイド。
+description: "Google Cloud Platform (GCP) の Application Default Credentials 認証を実行するスキル。 「GCP認証して」「Google Cloud認証」「gcloud login」等のリクエストで発動。 BigQuery や Cloud Storage 等の GCP サービス利用前の認証手順をガイド。"
 triggers:
   - gcp-auth
   - GCP認証

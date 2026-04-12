@@ -1,10 +1,6 @@
 ---
 name: video-analyzer
-description: |
-  TikTok/YouTube動画を分析してテンプレート化するスキル。
-  動画ダウンロード→フレーム抽出→STT→構成分析→テンプレートJSON生成。
-  競合分析、人気動画の構成学習に使用。
-  「TikTok分析」「YouTube分析」「動画テンプレート化」「競合動画分析」等で発動。
+description: "TikTok/YouTube動画を分析してテンプレート化するスキル。 動画ダウンロード→フレーム抽出→STT→構成分析→テンプレートJSON生成。 競合分析、人気動画の構成学習に使用。 「TikTok分析」「YouTube分析」「動画テンプレート化」「競合動画分析」等で発動。"
 triggers:
   - 動画を分析
   - TikTok分析

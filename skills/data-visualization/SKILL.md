@@ -1,9 +1,6 @@
 ---
 name: data-visualization
-description: |
-  Python (matplotlib, seaborn, plotly) でデータ可視化を行うスキル。
-  「グラフを作って」「チャート作成」「データを可視化して」等のリクエストで発動。
-  チャート選定、デザイン原則、アクセシビリティ対応も含む。
+description: "Python (matplotlib, seaborn, plotly) でデータ可視化を行うスキル。 「グラフを作って」「チャート作成」「データを可視化して」等のリクエストで発動。 チャート選定、デザイン原則、アクセシビリティ対応も含む。"
 source: github.com/anthropics/knowledge-work-plugins@main
 triggers:
   - data-visualization

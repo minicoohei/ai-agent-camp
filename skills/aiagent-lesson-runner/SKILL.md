@@ -1,8 +1,6 @@
 ---
 name: aiagent-lesson-runner
-description: |
-  ai-agent-campのレッスンをCodexで開始・進行するスキル。
-  「レッスン開始」「次のレッスン」「start-0-1を始めたい」「Codexでレッスン」「スラッシュコマンドのレッスン」等のリクエストで発動。
+description: "ai-agent-campのレッスンをCodexで開始・進行するスキル。 「レッスン開始」「次のレッスン」「start-0-1を始めたい」「Codexでレッスン」「スラッシュコマンドのレッスン」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []

@@ -1,8 +1,6 @@
 ---
 name: aiagent-command-router
-description: |
-  ai-agent-campのスラッシュコマンドをCodexでルーティングするスキル。
-  「/start-0-1を実行」「スラッシュコマンドを使いたい」「コマンドルーティング」「Cursorのコマンドを使いたい」等のリクエストで発動。
+description: "ai-agent-campのスラッシュコマンドをCodexでルーティングするスキル。 「/start-0-1を実行」「スラッシュコマンドを使いたい」「コマンドルーティング」「Cursorのコマンドを使いたい」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []

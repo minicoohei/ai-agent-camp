@@ -1,8 +1,6 @@
 ---
 name: aiagent-material-sync
-description: |
-  ai-agent-campの教材をupstreamから安全に同期するスキル。
-  「教材を最新にしたい」「upstreamから更新」「コースを同期」「git pullしたい」「教材アップデート」等のリクエストで発動。
+description: "ai-agent-campの教材をupstreamから安全に同期するスキル。 「教材を最新にしたい」「upstreamから更新」「コースを同期」「git pullしたい」「教材アップデート」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []

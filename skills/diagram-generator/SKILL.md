@@ -1,8 +1,6 @@
 ---
 name: diagram-generator
-description: |
-  Gemini Image Generation API でテキストから図解・インフォグラフィック・ダイアグラムを生成するスキル。
-  「図を作って」「インフォグラフィック生成」「プロセスを図解して」等のリクエストで発動。
+description: "Gemini Image Generation API でテキストから図解・インフォグラフィック・ダイアグラムを生成するスキル。 「図を作って」「インフォグラフィック生成」「プロセスを図解して」等のリクエストで発動。"
 triggers:
   - diagram-generator
   - 図を作って

@@ -1,9 +1,7 @@
 ---
 name: free-tool-strategy
 version: 1.0.0
-description: |
-  マーケティング目的の無料ツール戦略（リード獲得、SEO、ブランド認知）を立案するスキル。
-  「無料ツールを作りたい」「リード獲得ツール」「engineering as marketing」等のリクエストで発動。
+description: "マーケティング目的の無料ツール戦略（リード獲得、SEO、ブランド認知）を立案するスキル。 「無料ツールを作りたい」「リード獲得ツール」「engineering as marketing」等のリクエストで発動。"
 triggers:
   - free-tool-strategy
   - 無料ツール戦略

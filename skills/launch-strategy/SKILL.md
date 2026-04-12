@@ -1,10 +1,7 @@
 ---
 name: launch-strategy
 version: 1.0.0
-description: |
-  プロダクトローンチ、機能リリース、Go-to-Market 戦略を立案するスキル。
-  「ローンチ戦略を立てて」「リリース計画」「Product Hunt準備」等のリクエストで発動。
-  フェーズドローンチ、チャネル戦略、モメンタム構築をカバー。
+description: "プロダクトローンチ、機能リリース、Go-to-Market 戦略を立案するスキル。 「ローンチ戦略を立てて」「リリース計画」「Product Hunt準備」等のリクエストで発動。 フェーズドローンチ、チャネル戦略、モメンタム構築をカバー。"
 triggers:
   - launch-strategy
   - ローンチ戦略

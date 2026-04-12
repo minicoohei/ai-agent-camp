@@ -1,9 +1,6 @@
 ---
 name: video-audio
-description: |
-  動画用音声生成スキル。ElevenLabs TTS APIでscenes.jsonのナレーションから
-  音声ファイルを生成し、動画と同期可能な形式で出力する。
-  「ナレーション生成」「TTS」「音声追加」等で発動。
+description: "動画用音声生成スキル。ElevenLabs TTS APIでscenes.jsonのナレーションから 音声ファイルを生成し、動画と同期可能な形式で出力する。 「ナレーション生成」「TTS」「音声追加」等で発動。"
 triggers:
   - ナレーション生成
   - 音声を生成

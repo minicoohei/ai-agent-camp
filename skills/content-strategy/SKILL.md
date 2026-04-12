@@ -1,10 +1,7 @@
 ---
 name: content-strategy
 version: 1.0.0
-description: |
-  コンテンツ戦略の立案、トピック選定、記事テーマ決めを行うスキル。
-  「コンテンツ戦略を立てて」「何を書けばいい？」「ブログのテーマを考えて」等のリクエストで発動。
-  For writing individual pieces, see copywriting. For SEO-specific audits, see seo-audit.
+description: "コンテンツ戦略の立案、トピック選定、記事テーマ決めを行うスキル。 「コンテンツ戦略を立てて」「何を書けばいい？」「ブログのテーマを考えて」等のリクエストで発動。 For writing individual pieces, see copywriting. For SEO-specific audits, see seo-audit."
 triggers:
   - content-strategy
   - コンテンツ戦略

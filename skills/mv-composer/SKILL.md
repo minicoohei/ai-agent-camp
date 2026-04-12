@@ -1,8 +1,6 @@
 ---
 name: mv-composer
-description: |
-  Remotion + Kling i2v でプロモーションMV動画・バイラルショート動画を生成するスキル。
-  「MV作成」「動画を作って」「プロモーション動画」「TikTok動画」等のリクエストで発動。
+description: "Remotion + Kling i2v でプロモーションMV動画・バイラルショート動画を生成するスキル。 「MV作成」「動画を作って」「プロモーション動画」「TikTok動画」等のリクエストで発動。"
 triggers:
   - MV作成
   - 動画を作って

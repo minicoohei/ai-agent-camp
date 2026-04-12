@@ -1,10 +1,6 @@
 ---
 name: video-scriptwriter
-description: |
-  TikTok/YouTube向け動画スクリプト自動生成スキル。
-  テーマ+フォーマット+尺を指定すると、scenes.json（storyboard/audio/editor互換）を生成。
-  Playbookの知見を自動参照して最適な構成を適用。
-  「スクリプト作成」「台本生成」「企画作って」等で発動。
+description: "TikTok/YouTube向け動画スクリプト自動生成スキル。 テーマ+フォーマット+尺を指定すると、scenes.json（storyboard/audio/editor互換）を生成。 Playbookの知見を自動参照して最適な構成を適用。 「スクリプト作成」「台本生成」「企画作って」等で発動。"
 triggers:
   - 動画のスクリプトを作成
   - 台本を生成

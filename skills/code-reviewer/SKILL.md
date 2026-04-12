@@ -1,9 +1,6 @@
 ---
 name: code-reviewer
-description: |
-  TypeScript, JavaScript, Python, Go, Swift, Kotlin対応のコードレビュー自動化スキル。
-  PRの複雑度・リスク分析、SOLID違反・コードスメルの検出、レビューレポート生成。
-  「コードレビューして」「PRを分析」「コード品質チェック」「レビューレポート」等のリクエストで発動。
+description: "TypeScript, JavaScript, Python, Go, Swift, Kotlin対応のコードレビュー自動化スキル。 PRの複雑度・リスク分析、SOLID違反・コードスメルの検出、レビューレポート生成。 「コードレビューして」「PRを分析」「コード品質チェック」「レビューレポート」等のリクエストで発動。"
 source: github.com/alirezarezvani/claude-skills@main
 triggers:
   - code-reviewer

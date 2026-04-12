@@ -1,9 +1,6 @@
 ---
 name: data-analyst
-description: |
-  BigQuery/Snowflake接続、EDA、可視化、Marimoノートブック作成を行うサブエージェント。
-  データ分析関連の4つのルール（data_analysis, visualization, notebook, marimo_variable_naming）を統合。
-  「データ分析して」「BigQueryに接続」「EDAを実行」「Marimoで分析」等のリクエストで発動。
+description: "BigQuery/Snowflake接続、EDA、可視化、Marimoノートブック作成を行うサブエージェント。 データ分析関連の4つのルール（data_analysis, visualization, notebook, marimo_variable_naming）を統合。 「データ分析して」「BigQueryに接続」「EDAを実行」「Marimoで分析」等のリクエストで発動。"
 triggers:
   - データ分析
   - BigQuery
@@ -204,8 +201,8 @@ gcloud auth application-default login
 | プロファイル名 | プロジェクトID | 用途 |
 |---------------|---------------|------|
 | `default` | - | デフォルト環境 |
-| `infobox` | infobox-jp-prd | InfoBox本番データ分析 |
-| `imagen4` | yoake-dev-analysis | YOAKE開発分析 |
+| `my-profile` | my-gcp-project | 本番データ分析 |
+| `my-dev` | my-dev-project | 開発分析 |
 
 ---
 
@@ -237,7 +234,7 @@ Task(
 ```yaml
 status: success
 analysis_type: EDA
-data_source: BigQuery (yoake-dev-analysis)
+data_source: BigQuery (my-dev-project)
 summary:
   total_rows: 150000
   columns: 25

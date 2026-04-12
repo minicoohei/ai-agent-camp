@@ -1,8 +1,6 @@
 ---
 name: lp-designer
-description: |
-  LP/HP作成ワークフロー。ヒアリング→訴求整理→WF→Pencilデザイン→HTML実装→Vercelデプロイの全フローをガイド。
-  「LPを作って」「ランディングページ作成」「HPデザイン」「Webページ制作」等のリクエストで発動。
+description: "LP/HP作成ワークフロー。ヒアリング→訴求整理→WF→Pencilデザイン→HTML実装→Vercelデプロイの全フローをガイド。 「LPを作って」「ランディングページ作成」「HPデザイン」「Webページ制作」等のリクエストで発動。"
 triggers:
   - LPを作って
   - ランディングページを作成

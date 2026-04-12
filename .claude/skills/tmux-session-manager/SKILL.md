@@ -1,8 +1,6 @@
 ---
 name: tmux-session-manager
-description: |
-  Lightsail上のClaude Code tmuxセッションをSSH経由で管理。
-  「セッション確認」「PR同期」「tmuxの状態」等のリクエストで発動。
+description: "Lightsail上のClaude Code tmuxセッションをSSH経由で管理。 「セッション確認」「PR同期」「tmuxの状態」等のリクエストで発動。"
 triggers:
   - セッション確認
   - セッション一覧

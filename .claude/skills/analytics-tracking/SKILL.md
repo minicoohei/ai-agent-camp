@@ -1,10 +1,7 @@
 ---
 name: analytics-tracking
 version: 1.0.0
-description: |
-  アナリティクスのトラッキング設定・改善・監査を支援するスキル。
-  「トラッキングを設定」「GA4を導入」「コンバージョン計測」「イベントトラッキング」「UTMパラメータ」「GTMの設定」等のリクエストで発動。
-  A/Bテスト計測は ab-test-setup を参照。
+description: "アナリティクスのトラッキング設定・改善・監査を支援するスキル。 「トラッキングを設定」「GA4を導入」「コンバージョン計測」「イベントトラッキング」「UTMパラメータ」「GTMの設定」等のリクエストで発動。 A/Bテスト計測は ab-test-setup を参照。"
 triggers:
   - analytics-tracking
   - トラッキング設定

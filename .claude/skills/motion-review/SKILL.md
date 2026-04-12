@@ -1,8 +1,6 @@
 ---
 name: motion-review
-description: |
-  Remotionコンポジションを20項目チェックリストで品質レビューする。
-  「動画レビュー」「motion review」「Remotion品質チェック」等のリクエストで発動。
+description: "Remotionコンポジションを20項目チェックリストで品質レビューする。 「動画レビュー」「motion review」「Remotion品質チェック」等のリクエストで発動。"
 triggers:
   - 動画レビュー
   - 動画の品質チェック

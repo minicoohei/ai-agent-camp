@@ -1,9 +1,6 @@
 ---
 name: gslides-creator
-description: |
-  テンプレートから Google Slides を作成するスキル。
-  「Google Slidesを作って」「スライド生成」「プレゼン作成」等のリクエストで発動。
-  GAS + clasp CLI でテンプレートコピー・コンテンツ書き換え・ゼロからのデッキ生成を行う。
+description: "テンプレートから Google Slides を作成するスキル。 「Google Slidesを作って」「スライド生成」「プレゼン作成」等のリクエストで発動。 GAS + clasp CLI でテンプレートコピー・コンテンツ書き換え・ゼロからのデッキ生成を行う。"
 triggers:
   - gslides-creator
   - Google Slides作成

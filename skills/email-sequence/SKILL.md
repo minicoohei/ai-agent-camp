@@ -1,10 +1,7 @@
 ---
 name: email-sequence
 version: 1.0.0
-description: |
-  メールシーケンス、ステップメール、ドリップキャンペーンの設計・最適化を行うスキル。
-  「メール設計」「ステップメール作成」「ウェルカムメール」等のリクエストで発動。
-  For in-app onboarding, see onboarding-cro.
+description: "メールシーケンス、ステップメール、ドリップキャンペーンの設計・最適化を行うスキル。 「メール設計」「ステップメール作成」「ウェルカムメール」等のリクエストで発動。 For in-app onboarding, see onboarding-cro."
 triggers:
   - email-sequence
   - メール設計

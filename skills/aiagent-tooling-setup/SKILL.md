@@ -1,8 +1,6 @@
 ---
 name: aiagent-tooling-setup
-description: |
-  ai-agent-camp用のCodexツーリングを設定するスキル。
-  「MCPサーバーを設定」「フックをインストール」「Codexの設定」「ツールセットアップ」「Codex CLIのインストール」等のリクエストで発動。
+description: "ai-agent-camp用のCodexツーリングを設定するスキル。 「MCPサーバーを設定」「フックをインストール」「Codexの設定」「ツールセットアップ」「Codex CLIのインストール」等のリクエストで発動。"
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []

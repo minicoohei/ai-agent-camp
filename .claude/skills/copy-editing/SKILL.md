@@ -1,10 +1,7 @@
 ---
 name: copy-editing
 version: 1.0.0
-description: |
-  マーケティングコピーの編集・レビュー・改善を行うスキル。
-  「コピーを編集して」「文章を校正して」「コピーのフィードバック」等のリクエストで発動。
-  Multiple focused passes による体系的な編集アプローチ。
+description: "マーケティングコピーの編集・レビュー・改善を行うスキル。 「コピーを編集して」「文章を校正して」「コピーのフィードバック」等のリクエストで発動。 Multiple focused passes による体系的な編集アプローチ。"
 triggers:
   - copy-editing
   - コピー編集

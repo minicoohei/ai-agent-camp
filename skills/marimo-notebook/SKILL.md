@@ -1,8 +1,6 @@
 ---
 name: marimo-notebook
-description: |
-  marimo ノートブックを正しいフォーマットでPythonファイルに作成するスキル。
-  「marimoノートブック作成」「インタラクティブノートブック」「Pythonノートブック」等のリクエストで発動。
+description: "marimo ノートブックを正しいフォーマットでPythonファイルに作成するスキル。 「marimoノートブック作成」「インタラクティブノートブック」「Pythonノートブック」等のリクエストで発動。"
 triggers:
   - marimoノートブックを作って
   - インタラクティブノートブック

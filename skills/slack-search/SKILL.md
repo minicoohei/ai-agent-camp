@@ -1,8 +1,6 @@
 ---
 name: slack-search
-description: |
-  Slackチャンネルやメッセージをセマンティック検索するスキル。
-  「Slackで検索して」「チャンネルを探して」「発言を探して」等のリクエストで発動。
+description: "Slackチャンネルやメッセージをセマンティック検索するスキル。 「Slackで検索して」「チャンネルを探して」「発言を探して」等のリクエストで発動。"
 triggers:
   - Slackで検索して
   - チャンネルを探して
@@ -35,10 +33,10 @@ overview = search.get_workspace_overview()
 results = search.find_channels("DX展示会")
 
 # チャンネル詳細
-detail = search.get_channel_detail("infobox/buyingshift")
+detail = search.get_channel_detail("my-workspace/example-channel")
 
 # 関連チャンネル探索
-related = search.find_related_channels("infobox/buyingshift")
+related = search.find_related_channels("my-workspace/example-channel")
 
 # 人物検索
 persons = search.find_person("清水")
@@ -61,10 +59,10 @@ timeline = search.get_timeline("2025-12-01", "2025-12-31")
 overview = search.get_workspace_overview()
 
 # 特定のワークスペース
-overview = search.get_workspace_overview("infobox")
+overview = search.get_workspace_overview("my-workspace")
 ```
 
-**対応ワークスペース**: infobox, yoake, tokenpocket, fungiblex
+**対応ワークスペース**: 設定されたワークスペース（`build_book_index.py` の `WORKSPACES` を参照）
 
 ### 2. チャンネル検索 (`find_channels`)
 
@@ -77,7 +75,7 @@ results = search.find_channels("展示会")
 # フィルタ付き検索
 results = search.find_channels(
     query="プロジェクト",
-    workspace="infobox",
+    workspace="my-workspace",
     category="project",
     limit=20
 )
@@ -89,7 +87,7 @@ results = search.find_channels(
 - `product`: プロダクト開発（product_*）
 - `sales`: 営業（sales_*）
 - `notify`: 通知（notify_*）
-- `partner`: 外部パートナー（*_infobox）
+- `partner`: 外部パートナー（*_partner）
 - `event`: イベント（日付パターン）
 - `external`: 外部連携（ex-*, ext-*）
 
@@ -99,10 +97,10 @@ results = search.find_channels(
 
 ```python
 # フルID指定
-detail = search.get_channel_detail("infobox/buyingshift")
+detail = search.get_channel_detail("my-workspace/example-channel")
 
 # チャンネル名のみでも可
-detail = search.get_channel_detail("buyingshift")
+detail = search.get_channel_detail("example-channel")
 ```
 
 **返却情報**:
@@ -119,10 +117,10 @@ detail = search.get_channel_detail("buyingshift")
 
 ```python
 # 直接関連
-related = search.find_related_channels("buyingshift")
+related = search.find_related_channels("example-channel")
 
 # 間接関連まで（depth=2）
-related = search.find_related_channels("buyingshift", depth=2)
+related = search.find_related_channels("example-channel", depth=2)
 ```
 
 ### 5. 人物検索 (`find_person`)
@@ -155,7 +153,7 @@ events = search.find_events("DX")
 cafes = search.list_channels_by_category("cafe")
 
 # infoboxのprojectチャンネルのみ
-projects = search.list_channels_by_category("project", workspace="infobox")
+projects = search.list_channels_by_category("project", workspace="my-workspace")
 ```
 
 ### 8. タイムライン検索 (`get_timeline`)
@@ -166,7 +164,7 @@ projects = search.list_channels_by_category("project", workspace="infobox")
 timeline = search.get_timeline(
     start_date="2025-12-01",
     end_date="2025-12-31",
-    workspace="infobox"  # オプション
+    workspace="my-workspace"  # オプション
 )
 ```
 
@@ -248,11 +246,11 @@ for event in events:
     print(f"{event['name']}: {detail['overview']}")
 ```
 
-### 「buyingshiftに関連する活動を調べる」
+### 「example-channelに関連する活動を調べる」
 
 ```python
-detail = search.get_channel_detail("buyingshift")
-related = search.find_related_channels("buyingshift", depth=2)
+detail = search.get_channel_detail("example-channel")
+related = search.find_related_channels("example-channel", depth=2)
 print(f"関連チャンネル数: {related['total_related']}")
 ```
 
