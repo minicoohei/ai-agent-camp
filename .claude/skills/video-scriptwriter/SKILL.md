@@ -5,6 +5,14 @@ description: |
   テーマ+フォーマット+尺を指定すると、scenes.json（storyboard/audio/editor互換）を生成。
   Playbookの知見を自動参照して最適な構成を適用。
   「スクリプト作成」「台本生成」「企画作って」等で発動。
+triggers:
+  - 動画のスクリプトを作成
+  - 台本を生成
+  - 動画の企画を作って
+  - TikTok用の台本
+  - scenes.jsonを生成
+  - video-scriptwriter
+  - 動画の構成案
 ---
 
 # Video Scriptwriter

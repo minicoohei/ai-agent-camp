@@ -1,7 +1,18 @@
 ---
 name: launch-strategy
 version: 1.0.0
-description: "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature release,' 'announcement,' 'go-to-market,' 'beta launch,' 'early access,' 'waitlist,' or 'product update.' This skill covers phased launches, channel strategy, and ongoing launch momentum."
+description: |
+  プロダクトローンチ、機能リリース、Go-to-Market 戦略を立案するスキル。
+  「ローンチ戦略を立てて」「リリース計画」「Product Hunt準備」等のリクエストで発動。
+  フェーズドローンチ、チャネル戦略、モメンタム構築をカバー。
+triggers:
+  - launch-strategy
+  - ローンチ戦略
+  - リリース計画
+  - Product Hunt
+  - Go-to-Market
+  - ベータローンチ
+  - プロダクトリリース
 ---
 
 # Launch Strategy

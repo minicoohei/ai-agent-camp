@@ -1,13 +1,16 @@
 ---
 name: gslides-parser
 description: |
-  Google Slides プレゼンテーションの構造を GAS 経由でパースし、
-  pptx-converter 互換のマッピング YAML を出力するスキル。
-  GAS (Google Apps Script) + clasp CLI でスライド構造を取得し、
-  セマンティック解析 + プレースホルダー付与を行う。
-
-  トリガー: Google Slides パース, スライド構造解析, YAML マッピング, gslides
-  使用例: 「Google Slidesをパースして」「スライドのYAMLを作って」「プレゼンの構造を解析」
+  Google Slides の構造を GAS 経由でパースし、YAML マッピングを出力するスキル。
+  「スライドをパースして」「スライドの構造を解析」「YAMLマッピング作成」等のリクエストで発動。
+  pptx-converter 互換のセマンティック解析 + プレースホルダー付与。
+triggers:
+  - gslides-parser
+  - スライドパース
+  - スライド構造解析
+  - YAMLマッピング
+  - Google Slides解析
+  - gslides
 ---
 
 # /gslides-parser - Google Slides パーサー

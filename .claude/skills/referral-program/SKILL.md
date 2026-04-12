@@ -1,7 +1,17 @@
 ---
 name: referral-program
 version: 1.0.0
-description: "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' or 'partner program.' This skill covers program design, incentive structure, and growth optimization."
+description: |
+  紹介プログラム・アフィリエイト・口コミ戦略を設計・最適化するスキル。
+  「紹介プログラムを作りたい」「アフィリエイト設計」「口コミ施策を考えて」等のリクエストで発動。
+triggers:
+  - 紹介プログラムを作りたい
+  - アフィリエイト設計
+  - 口コミ施策を考えて
+  - リファラル施策
+  - バイラルループ
+  - referral-program
+  - referral program
 ---
 
 # Referral & Affiliate Programs

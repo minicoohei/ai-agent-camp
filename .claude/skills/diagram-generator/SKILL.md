@@ -1,6 +1,16 @@
 ---
 name: diagram-generator
-description: Generate infographics, diagrams, and visualizations from text topics using Gemini Image Generation API. Converts concepts, processes, or long text into visual representations. Use when creating presentations, documentation visuals, or explaining complex topics.
+description: |
+  Gemini Image Generation API でテキストから図解・インフォグラフィック・ダイアグラムを生成するスキル。
+  「図を作って」「インフォグラフィック生成」「プロセスを図解して」等のリクエストで発動。
+triggers:
+  - diagram-generator
+  - 図を作って
+  - ダイアグラム生成
+  - インフォグラフィック
+  - 図解して
+  - diagram
+  - フローチャート作成
 ---
 
 # Diagram Generator

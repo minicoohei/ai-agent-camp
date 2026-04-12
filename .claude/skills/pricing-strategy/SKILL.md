@@ -1,7 +1,18 @@
 ---
 name: pricing-strategy
 version: 1.0.0
-description: "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' or 'monetization.' This skill covers pricing research, tier structure, and packaging strategy."
+description: |
+  料金設計・パッケージング・マネタイズ戦略を支援するスキル。
+  「料金を決めたい」「プランを設計して」「pricing を見直したい」等のリクエストで発動。
+triggers:
+  - 料金を決めたい
+  - プランを設計して
+  - 価格戦略を考えて
+  - マネタイズ戦略
+  - フリーミアムの設計
+  - pricing-strategy
+  - pricing tiers
+  - Van Westendorp
 ---
 
 # Pricing Strategy

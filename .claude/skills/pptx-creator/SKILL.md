@@ -1,6 +1,16 @@
 ---
 name: pptx-creator
-description: トピックを入力するだけで、テンプレートのデザインを維持した編集可能な .pptx ファイルを自動生成。Gemini Flash でアウトライン生成、Gemini Vision で品質検証。
+description: |
+  トピックを入力するだけで、テンプレートのデザインを維持した .pptx を自動生成するスキル。
+  「プレゼンを作って」「スライド生成」「PPTX作成」「提案資料を作成」等のリクエストで発動。
+triggers:
+  - プレゼンを作って
+  - スライド生成
+  - PPTX作成
+  - 提案資料を作成
+  - pptx-creator
+  - PowerPoint作成
+  - デッキを作って
 ---
 
 # /pptx-creator — PPTX プレゼンテーション自動生成 v2

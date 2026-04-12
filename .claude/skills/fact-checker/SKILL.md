@@ -1,12 +1,22 @@
 ---
 name: fact-checker
-description: "記事内の事実主張（数値、日付、固有名詞、統計）を自動抽出し、Web検索で裏付け確認する。信頼度スコア付きレポートを出力。「ファクトチェックして」「事実確認」「裏付けを取って」などのリクエストで使用。"
+description: |
+  記事内の事実主張（数値、日付、固有名詞、統計）を自動抽出し、Web検索で裏付け確認するスキル。
+  「ファクトチェックして」「事実確認して」「裏付けを取って」等のリクエストで発動。
+  信頼度スコア付きレポートを出力。
 version: 1.0.0
 author: ai-agent-camp
 dependencies:
   - google-genai>=1.0.0
   - pyyaml>=6.0
   - python-dotenv>=0.19.0
+triggers:
+  - fact-checker
+  - ファクトチェック
+  - 事実確認
+  - 裏付け確認
+  - 情報の真偽
+  - fact check
 ---
 
 ## トリガーワード

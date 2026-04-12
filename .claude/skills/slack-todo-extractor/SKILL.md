@@ -1,9 +1,16 @@
 ---
 name: slack-todo-extractor
 description: |
-  Slackの同期データから特定ユーザー宛のメンションを検索し、スレッド返信を含めてTODO/タスクを抽出・ステータス判定する。
-  「Slackからタスク抽出」「TODO確認」「メンション確認」「@ユーザー宛のタスク」などのリクエストで使用する。
-  LLM（Gemini 2.0 Flash）による高精度な文脈判定にも対応。
+  Slackの同期データからメンションを検索しTODO/タスクを抽出・ステータス判定するスキル。
+  「Slackからタスク抽出」「TODO確認」「メンション確認」等のリクエストで発動。
+triggers:
+  - Slackからタスク抽出
+  - TODO確認
+  - メンション確認
+  - 宛のタスク
+  - Slackの未対応タスク
+  - slack-todo-extractor
+  - Slack TODO
 ---
 
 # Slack TODO抽出スキル
@@ -17,12 +24,12 @@ Slackの同期データ（`slack-sync/data/`）から、特定ユーザー宛の
 ```bash
 # 基本（キーワードベース）
 uv run python skills/slack-todo-extractor/scripts/extract_todos.py \
-  --users "Kohei,minicoohei" \
+  --users "YourName,your-username" \
   --period "2026-01-06:2026-01-08"
 
 # LLMベース（高精度、要GEMINI_API_KEY）
 uv run python skills/slack-todo-extractor/scripts/extract_todos.py \
-  --users "Kohei,minicoohei" \
+  --users "YourName,your-username" \
   --period "1/6:8" \
   --use-llm
 ```
@@ -31,7 +38,7 @@ uv run python skills/slack-todo-extractor/scripts/extract_todos.py \
 
 | パラメータ | 必須 | 説明 | 例 |
 |-----------|------|------|-----|
-| `--users`, `-u` | Yes | 対象ユーザー名（カンマ区切り） | `Kohei, minicoohei` |
+| `--users`, `-u` | Yes | 対象ユーザー名（カンマ区切り） | `YourName, your-username` |
 | `--period`, `-p` | Yes | 検索期間 | `2026-01-06:2026-01-08` or `1/6:8` |
 | `--workspace`, `-w` | No | ワークスペース（省略時は全て） | `yoake`, `fungiblex` |
 | `--use-llm` | No | LLM（Gemini 2.0 Flash）で判定 | - |

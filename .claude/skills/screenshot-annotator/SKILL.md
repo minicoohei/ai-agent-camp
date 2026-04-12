@@ -1,6 +1,16 @@
 ---
 name: screenshot-annotator
-description: Add manual-style annotations (red boxes, arrows, callouts, highlights) to screenshots for technical documentation. Use when creating user manuals, tutorials, or guides that need visual indicators pointing to UI elements.
+description: |
+  スクリーンショットに赤枠・矢印・吹き出し等の注釈を自動追加するスキル。
+  「スクショに注釈を付けて」「画面に矢印を追加」「マニュアル用の注釈」等のリクエストで発動。
+triggers:
+  - スクショに注釈を付けて
+  - 画面に矢印を追加
+  - マニュアル用の注釈
+  - 赤枠を付けて
+  - 吹き出しを追加
+  - screenshot-annotator
+  - annotate screenshot
 ---
 
 # Screenshot Annotator

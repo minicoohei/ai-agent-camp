@@ -1,6 +1,15 @@
 ---
 name: marimo-notebook
-description: Write a marimo notebook in a Python file in the right format.
+description: |
+  marimo ノートブックを正しいフォーマットでPythonファイルに作成するスキル。
+  「marimoノートブック作成」「インタラクティブノートブック」「Pythonノートブック」等のリクエストで発動。
+triggers:
+  - marimoノートブックを作って
+  - インタラクティブノートブック
+  - Pythonノートブック作成
+  - marimo-notebook
+  - marimo
+  - ノートブックを作成
 source: github.com/marimo-team/skills@main
 ---
 

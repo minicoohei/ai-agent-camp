@@ -1,11 +1,18 @@
 ---
 name: create-cowork-plugin
-description: >
-  Guide users through creating a new plugin from scratch in a cowork session.
-  Use when users want to create a plugin, build a plugin, make a new plugin, develop a plugin, scaffold a plugin, start a plugin from scratch, or design a plugin.
-  This skill requires Cowork mode with access to the outputs directory for delivering the final .plugin file.
+description: |
+  Cowork セッションでプラグインをゼロから作成するスキル。
+  「プラグインを作って」「プラグイン開発」「plugin作成」等のリクエストで発動。
+  Cowork モードで .plugin ファイルを生成。
 compatibility: Requires Cowork desktop app environment with access to the outputs directory for delivering .plugin files.
 source: github.com/anthropics/knowledge-work-plugins@main
+triggers:
+  - create-cowork-plugin
+  - プラグインを作って
+  - プラグイン開発
+  - plugin作成
+  - プラグイン設計
+  - cowork plugin
 ---
 
 # Create Cowork Plugin

@@ -1,6 +1,16 @@
 ---
 name: storyboard-generator
-description: AI UGC用の絵コンテを生成。1枚シート生成→切り出しでキャラクター一貫性を保証。「絵コンテを作って」「ストーリーボード生成」で発動。
+description: |
+  AI UGC動画用の絵コンテを自動生成するスキル。1枚シート生成→切り出しでキャラクター一貫性を保証。
+  「絵コンテを作って」「ストーリーボード生成」「UGC動画の流れを作って」等のリクエストで発動。
+triggers:
+  - 絵コンテを作って
+  - ストーリーボード生成
+  - UGC動画の流れを作って
+  - 動画の絵コンテ
+  - シーン構成を作成
+  - storyboard-generator
+  - storyboard
 ---
 
 # Storyboard Generator (UGC絵コンテ生成)

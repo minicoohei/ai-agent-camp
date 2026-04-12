@@ -1,6 +1,15 @@
 ---
 name: plotly
-description: Interactive visualization library. Use when you need hover info, zoom, pan, or web-embeddable charts. Best for dashboards, exploratory analysis, and presentations. For static publication figures use matplotlib or scientific-visualization.
+description: |
+  Plotlyでインタラクティブなグラフ・ダッシュボードを作成するスキル。ホバー、ズーム、パン対応。
+  「インタラクティブグラフ」「plotlyでチャート」「操作できるグラフ」等のリクエストで発動。
+triggers:
+  - インタラクティブグラフを作って
+  - plotlyでチャート作成
+  - 操作できるグラフ
+  - plotly
+  - ダッシュボード用グラフ
+  - 動的なチャート
 license: MIT license
 metadata:
     skill-author: K-Dense Inc.

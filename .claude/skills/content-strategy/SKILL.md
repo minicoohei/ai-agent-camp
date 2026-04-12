@@ -1,7 +1,18 @@
 ---
 name: content-strategy
 version: 1.0.0
-description: When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also use when the user mentions "content strategy," "what should I write about," "content ideas," "blog strategy," "topic clusters," or "content planning." For writing individual pieces, see copywriting. For SEO-specific audits, see seo-audit.
+description: |
+  コンテンツ戦略の立案、トピック選定、記事テーマ決めを行うスキル。
+  「コンテンツ戦略を立てて」「何を書けばいい？」「ブログのテーマを考えて」等のリクエストで発動。
+  For writing individual pieces, see copywriting. For SEO-specific audits, see seo-audit.
+triggers:
+  - content-strategy
+  - コンテンツ戦略
+  - 何を書けばいい
+  - ブログ戦略
+  - トピック選定
+  - コンテンツ企画
+  - content planning
 ---
 
 # Content Strategy
