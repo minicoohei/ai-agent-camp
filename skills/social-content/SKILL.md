@@ -1,7 +1,17 @@
 ---
 name: social-content
 version: 1.0.0
-description: "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn post,' 'Twitter thread,' 'social media,' 'content calendar,' 'social scheduling,' 'engagement,' or 'viral content.' This skill covers content creation, repurposing, and platform-specific strategies."
+description: |
+  SNS投稿の作成・スケジュール・最適化を支援するスキル。
+  「SNS投稿を作って」「LinkedInの投稿を書いて」「コンテンツカレンダーを作成」等のリクエストで発動。
+triggers:
+  - SNS投稿を作って
+  - LinkedInの投稿を書いて
+  - コンテンツカレンダーを作成
+  - Twitterスレッドを作って
+  - ソーシャルメディア戦略
+  - social-content
+  - social media
 ---
 
 # Social Content

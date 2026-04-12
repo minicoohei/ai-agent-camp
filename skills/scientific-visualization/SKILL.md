@@ -1,6 +1,16 @@
 ---
 name: scientific-visualization
-description: Meta-skill for publication-ready figures. Use when creating journal submission figures requiring multi-panel layouts, significance annotations, error bars, colorblind-safe palettes, and specific journal formatting (Nature, Science, Cell). Orchestrates matplotlib/seaborn/plotly with publication styles. For quick exploration use seaborn or plotly directly.
+description: |
+  論文投稿用の出版品質グラフ・図表を作成するメタスキル。
+  「論文用のグラフを作って」「Nature用の図を作成」「出版品質の可視化」等のリクエストで発動。
+triggers:
+  - 論文用のグラフを作って
+  - 出版品質の図を作成
+  - Nature用の図
+  - 学術図表を作って
+  - カラーブラインド対応のグラフ
+  - scientific-visualization
+  - publication-ready figure
 license: MIT license
 metadata:
     skill-author: K-Dense Inc.

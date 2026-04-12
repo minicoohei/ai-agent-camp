@@ -3,13 +3,15 @@ name: youtube-clipper
 description: |
   YouTube/マルチプラットフォーム動画からAIでハイライトを抽出し、
   バイリンガル字幕付きクリップを自動生成するスキル。
-
-  Use when:
-  - User wants to extract highlights from a YouTube video
-  - User mentions "clip", "highlight", "YouTube", "動画からクリップ"
-  - User wants to create marketing materials from video content
-  - User needs bilingual subtitles from video
-  - User wants to transcribe video without subtitles
+  「動画からクリップを切り出して」「ハイライトを抽出」「字幕付きクリップ」等で発動。
+triggers:
+  - 動画からクリップを切り出して
+  - ハイライトを抽出
+  - 字幕付きクリップを作成
+  - YouTubeからクリップ
+  - 動画の見どころを切り抜き
+  - youtube-clipper
+  - clip highlight
 ---
 
 # /youtube-clipper - 動画ハイライト抽出 & クリップ生成

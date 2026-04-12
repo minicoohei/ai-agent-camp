@@ -1,9 +1,18 @@
 ---
 name: aiagent-command-router
-description: Route ai-agent-camp slash-style commands in Codex. Use when the user inputs commands such as /start-0-1, /lesson/start-0-1, /guide, /utility/guide, /setup-api-key, or other existing Cursor-style commands and expects the same workflow in Codex.
+description: |
+  ai-agent-campのスラッシュコマンドをCodexでルーティングするスキル。
+  「/start-0-1を実行」「スラッシュコマンドを使いたい」「コマンドルーティング」「Cursorのコマンドを使いたい」等のリクエストで発動。
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []
+triggers:
+  - aiagent-command-router
+  - コマンドルーティング
+  - スラッシュコマンド
+  - /start-
+  - Cursorのコマンド
+  - command router
 ---
 
 # AI Agent Command Router

@@ -1,6 +1,16 @@
 ---
 name: session-retrospective
-description: "セッション終了時に自己改善Issueを自動生成するスキル。セッション中に遭遇した問題・非効率・改善点を振り返り、GitHub Issueとして登録する。「振り返り」「自己改善Issue」「レトロスペクティブ」「session-retro」などのリクエストで使用。"
+description: |
+  セッション終了時に自己改善Issueを自動生成するスキル。
+  「振り返りIssue出して」「レトロスペクティブ」「改善点をIssueにして」等のリクエストで発動。
+triggers:
+  - 振り返りIssue出して
+  - レトロスペクティブ
+  - 改善点をIssueにして
+  - 自己改善Issue
+  - セッション振り返り
+  - session-retrospective
+  - session-retro
 version: 1.0.0
 author: ai-agent-camp
 dependencies: []

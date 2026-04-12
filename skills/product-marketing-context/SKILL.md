@@ -1,7 +1,17 @@
 ---
 name: product-marketing-context
 version: 1.0.0
-description: "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' or wants to avoid repeating foundational information across marketing tasks. Creates `.claude/product-marketing-context.md` that other marketing skills reference."
+description: |
+  プロダクトマーケティングのコンテキスト文書を作成・更新するスキル。
+  「マーケティングコンテキストを作成」「ポジショニングを整理」「製品情報をまとめて」等のリクエストで発動。
+triggers:
+  - マーケティングコンテキストを作成
+  - ポジショニングを整理
+  - 製品情報をまとめて
+  - プロダクトコンテキスト
+  - ターゲット顧客を定義
+  - product-marketing-context
+  - product context
 ---
 
 # Product Marketing Context

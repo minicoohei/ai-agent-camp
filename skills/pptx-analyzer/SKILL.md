@@ -1,6 +1,15 @@
 ---
 name: pptx-analyzer
-description: PowerPointファイル（.pptx）の構造を解析し、スライド・図形・プレースホルダー・テキスト情報をJSON/テキスト形式で出力するツール。テンプレート分析、スライド自動生成の前処理、PPTX構造の理解が必要な場合に使用。「PPTXを解析」「テンプレート構造を確認」「スライドの要素を調べて」等のリクエストで発動。
+description: |
+  PowerPointファイル（.pptx）の構造を解析し、スライド・図形・テキスト情報を出力するスキル。
+  「PPTXを解析」「テンプレート構造を確認」「スライドの要素を調べて」等のリクエストで発動。
+triggers:
+  - PPTXを解析して
+  - テンプレート構造を確認
+  - スライドの要素を調べて
+  - pptx-analyzer
+  - PowerPoint解析
+  - パワポの中身を見て
 ---
 
 # PPTX Analyzer

@@ -1,209 +1,212 @@
+[English](README.md) | [日本語](README.ja.md) | [Español](README.es.md)
+
 # ai-agent-camp
 
-**非エンジニア向けAIエージェント研修 - Claude Code / Cursor / Codex 活用完全ガイド**
+**AI Agent Training for Non-Engineers - Complete Guide to Claude Code / Cursor / Codex**
 
 [![GitHub](https://img.shields.io/badge/GitHub-minicoohei%2Faiagent--base-181717?style=flat&logo=github)](https://github.com/TokenPocket/ai-agent-camp)
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/TokenPocket/ai-agent-camp/releases)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-3776ab.svg?style=flat&logo=python)](https://www.python.org/)
 
-## 目次
+## Table of Contents
 
-- [プロジェクト概要](#プロジェクト概要)
-- [主な特徴](#主な特徴)
-- [クイックスタート](#クイックスタート)
-- [ツール別の違い](#ツール別の違い)
-- [学習パス](#学習パス)
-- [ディレクトリ構造](#ディレクトリ構造)
-- [スキルマトリックス](#スキルマトリックス)
-- [必要なAPI](#必要なapi)
-- [ドキュメント](#ドキュメント)
-- [よくある質問](#よくある質問)
-- [コントリビューション](#コントリビューション)
-- [サポート](#サポート)
-
----
-
-## プロジェクト概要
-
-**ai-agent-camp** は、マーケティング、営業、企画、事務などの**非エンジニア職**が、Claude Code、Cursor、Codex などのAIエージェントを使って業務を自動化・効率化するための包括的な研修教材です。
-
-### 対象者
-
-- プログラミング経験がない方
-- AIツールを業務で活用したい方
-- 自動化やデータ分析に興味がある方
-- チーム全体のAIリテラシー向上を目指す方
-
-### プロジェクトの目指す未来
-
-AIエージェントを「専門家向けのツール」から「すべての職種が活用できるツール」へと民主化し、組織全体の生産性向上を実現します。
+- [Project Overview](#project-overview)
+- [Key Features](#key-features)
+- [Quick Start](#quick-start)
+- [Web Course (Recommended)](#web-course-recommended)
+- [Tool Comparison](#tool-comparison)
+- [Learning Path](#learning-path)
+- [Directory Structure](#directory-structure)
+- [Skill Matrix](#skill-matrix)
+- [Required APIs](#required-apis)
+- [Documentation](#documentation)
+- [FAQ](#faq)
+- [Contributing](#contributing)
+- [Support](#support)
 
 ---
 
-## 主な特徴
+## Project Overview
 
-✅ **非エンジニア向けに最適化**
-- プログラミング知識不要
-- ステップバイステップのチュートリアル
-- 実際の業務シナリオに基づいた教材
+**ai-agent-camp** is a comprehensive training resource for **non-engineering roles** such as marketing, sales, planning, and administration to automate and streamline their work using AI agents like Claude Code, Cursor, and Codex.
 
-🚀 **実践的なスキルセット**
-- すぐに業務で使える80個のコマンド
-- 実装済みの42個のスキル（マーケティング・LP/HP制作を含む）
-- 業務別のワークフローサンプル
+### Target Audience
 
-📚 **包括的なカリキュラム**
-- AI基礎（Foundation）11チャプター
-- 環境セットアップ（Setup）3チャプター
-- 20個のコアモジュール（Google Workspace・動画制作・要件定義・マーケティング等を含む）
-- CursorBootcamp YAML メタデータ対応（全25チャプター）
-- 総学習時間：約24時間（演習込みで約30時間以上）
+- People with no programming experience
+- Those who want to use AI tools in their daily work
+- Anyone interested in automation and data analysis
+- Teams looking to improve their overall AI literacy
 
-🔒 **セキュリティとベストプラクティス**
-- API キー管理のガイドライン
-- 安全なデータ処理の手法
-- 企業内での導入方針
+### Vision
 
-🎯 **業務別ワークフロー**
-- カスタマーサポート
-- セールスプロセス
-- コンテンツマーケティング
-- オンボーディング自動化
-- 承認フロー最適化
+Democratize AI agents from "tools for specialists" to "tools everyone can use," boosting productivity across the entire organization.
 
 ---
 
-## クイックスタート
+## Key Features
 
-### 前提条件
+- **Optimized for Non-Engineers**
+  - No programming knowledge required
+  - Step-by-step tutorials
+  - Materials based on real business scenarios
 
-- Git がインストール済み
-- Python 3.9 以上
-- インターネット接続
-- Cursor、Claude Code、または Codex が利用可能
+- **Practical Skill Set**
+  - 80+ ready-to-use commands
+  - 42+ implemented skills (including marketing and LP/HP creation)
+  - Business-specific workflow samples
 
-> **どのツールを選べばいい？** `/start-0-8`（ツール選択ガイド）で Cursor / Claude Code / Codex の比較と選び方を確認できます。
+- **Comprehensive Curriculum**
+  - AI Fundamentals (Foundation) - 11 chapters
+  - Environment Setup - 3 chapters
+  - 20 core modules (Google Workspace, video production, requirements definition, marketing, and more)
+  - CursorBootcamp YAML metadata support (all chapters)
+  - Total study time: approx. 24 hours (30+ hours including exercises)
 
-### 最短の始め方
+- **Security and Best Practices**
+  - API key management guidelines
+  - Secure data handling methods
+  - Enterprise deployment guidance
 
-1. この repo を clone する
-2. 自分の使うツールの入口を読む
+- **Business Workflow Templates**
+  - Customer support
+  - Sales processes
+  - Content marketing
+  - Onboarding automation
+  - Approval flow optimization
+
+---
+
+## Quick Start
+
+### Prerequisites
+
+- Git installed
+- Python 3.9+
+- Internet connection
+- Cursor, Claude Code, or Codex available
+
+> **Which tool should I choose?** Run `/start-0-8` (Tool Selection Guide) to compare Cursor / Claude Code / Codex and find the best fit.
+
+### Quickest Way to Begin
+
+1. Clone this repo
+2. Read the entry point for your tool:
    - Codex: `AGENTS.md`
    - Claude Code: `CLAUDE.md`
-   - Cursor: `.cursor/commands/lesson/start-0-1.md` を含む `.cursor/commands/*`（Google Workspace 教材 Module 4 用は `/module-18-google-auth` など `module-18-*.md`）
-3. 安全ルールを確認する
+   - Cursor: `.cursor/commands/lesson/start-0-1.md` and other files in `.cursor/commands/*`
+3. Review the safety rules:
    - Codex: `docs/codex-safety.md`
-   - Claude / Cursor: `docs/security-guardrails.md`
-4. セットアップ確認を行う
+   - Claude Code / Cursor: `docs/security-guardrails.md`
+4. Run setup verification:
    - Codex: `aiagent-check-setup`
    - Cursor: `/check-setup`
-5. `start-0-1` から最初の lesson を始める
+5. Start the first lesson with `start-0-1`
 
-### 自分専用のリポジトリを作成する
+### Create Your Own Repository
 
-このリポジトリを自分専用のプライベートリポジトリとしてコピーする方法です。以下のいずれかの方法を選択してください。
+Copy this repository as your own private repo using one of these methods:
 
-#### 方法1: Import repository（GUI操作・簡単）
+#### Method 1: Import Repository (GUI - Easy)
 
-GitHub の画面操作だけで完結します。
+This can be done entirely through the GitHub web interface.
 
-1. GitHub にログインし、右上の「+」→「Import repository」を選択
-2. 以下を入力:
+1. Log in to GitHub and select "+" > "Import repository" in the top right
+2. Enter:
    - **Your old repository's clone URL**: `https://github.com/TokenPocket/ai-agent-camp.git`
-   - **Repository name**: 任意の名前（例: `my-aiagent`）
-   - **Privacy**: **Private** を選択
-3. 「Begin import」をクリック
-4. インポート完了後、自分のリポジトリを clone:
+   - **Repository name**: any name (e.g., `my-aiagent`)
+   - **Privacy**: Select **Private**
+3. Click "Begin import"
+4. After import completes, clone your repository:
    ```bash
-   git clone https://github.com/{あなたのユーザ名}/my-aiagent.git
+   git clone https://github.com/{your-username}/my-aiagent.git
    cd my-aiagent
    ```
 
-#### 方法2: Clone & Push（コマンドライン）
+#### Method 2: Clone & Push (Command Line)
 
-ターミナル操作に慣れている方向けです。
+For those comfortable with the terminal.
 
 ```bash
-# 1. GitHub で空の Private リポジトリを作成
+# 1. Create an empty Private repository on GitHub
 
-# 2. ミラー clone を作成
+# 2. Create a mirror clone
 git clone --bare https://github.com/TokenPocket/ai-agent-camp.git my-aiagent.git
 cd my-aiagent.git
 
-# 3. 新しい origin を設定して push
-git push --mirror https://github.com/{あなたのユーザ名}/my-aiagent.git
+# 3. Set the new origin and push
+git push --mirror https://github.com/{your-username}/my-aiagent.git
 
-# 4. 通常の作業用 clone を取り直す
+# 4. Clone again for regular use
 cd ..
-git clone https://github.com/{あなたのユーザ名}/my-aiagent.git
+git clone https://github.com/{your-username}/my-aiagent.git
 ```
 
-### 元リポジトリの更新を取り込む
+### Pulling Updates from the Original Repository
 
-配布元の教材が更新された場合、以下の方法で変更を取り込めます。
+When the source materials are updated, pull changes with:
 
 ```bash
-# 初回のみ: 元リポジトリを upstream として追加
+# First time only: add the original repo as upstream
 git remote add upstream https://github.com/TokenPocket/ai-agent-camp.git
 
-# 更新を取り込む
+# Pull updates
 git fetch upstream
 git merge upstream/main
 ```
 
-Cursor を使っている場合は、チャットで **`/update-material`** を実行すると同様の操作ができます。
+If you use Cursor, you can run **`/update-material`** in chat to do the same thing.
 
-> **注意**: 自分で変更を加えている場合、コンフリクトが発生する可能性があります。その場合は手動で解決してください。
+> **Note**: If you have made local changes, merge conflicts may occur. Resolve them manually.
 
-### インストール手順
+### Installation Steps
 
-#### 1. リポジトリをクローン
+#### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/TokenPocket/ai-agent-camp.git ~/ai-agent-camp
 cd ~/ai-agent-camp
 ```
 
-#### 2. 環境変数を設定
+#### 2. Set Up Environment Variables
 
 ```bash
-# まず .env.local に必要なキーの行を用意
+# First, prepare the key entry in .env.local
 uv run python tools/credential_manager.py prepare-dotenv GEMINI_API_KEY
 
-# 保存後、必要に応じて Credential Store に移行
+# After saving, optionally migrate to the Credential Store
 # uv run python tools/credential_manager.py import-dotenv GEMINI_API_KEY --delete
 ```
 
-> API キーはチャットに貼らず、`.env.local` に保存してください。
+> Do not paste API keys in chat. Save them in `.env.local`.
 
-#### 3. Python 依存パッケージをインストール
+#### 3. Install Python Dependencies
 
 ```bash
-# 推奨: venv を使用
+# Recommended: use venv
 python3 -m venv venv
 source venv/bin/activate  # macOS/Linux
-# または
+# or
 venv\Scripts\activate  # Windows
 
-# パッケージのインストール
+# Install packages
 pip install -r requirements.txt
 ```
 
-#### 4. コースを開始
+#### 4. Start the Course
 
 ```bash
-# ブラウザで教材を開く
-open https://ai-agent.camp/ja/course/module-0
+# Open the course in a browser
+open https://ai-agent.camp
 
-# Cursor でワークスペースを開く
+# Open the workspace in Cursor
 cursor .
 
-# Claude Code / Codex でも同じリポジトリを開けます
+# Claude Code and Codex also work with the same repo
 claude
 codex
 ```
 
-### ツール別の開始方法
+### Getting Started by Tool
 
 #### Cursor
 
@@ -215,737 +218,655 @@ codex
 
 #### Claude Code
 
-- `CLAUDE.md` を読む
-- `docs/security-guardrails.md` を確認する
-- setup 確認後に lesson 導線へ進む
+- Read `CLAUDE.md`
+- Review `docs/security-guardrails.md`
+- After setup verification, proceed to the lesson flow
 
 #### Codex
 
-- `AGENTS.md` を読む
-- `docs/codex-guide.md` を開く
-- `aiagent-check-setup` skill で環境確認を行う
-- `aiagent-lesson-runner` skill に `start-0-1` を渡して最初のレッスンを開始する
+- Read `AGENTS.md`
+- Open `docs/codex-guide.md`
+- Run `aiagent-check-setup` skill for environment verification
+- Pass `start-0-1` to the `aiagent-lesson-runner` skill to start the first lesson
 
 ---
 
-## ツール別の違い
+## Web Course (Recommended)
 
-教材そのものは共通です。違うのは「どこから入るか」と「どう操作するか」です。
+> **Want a guided, structured learning experience?**
+>
+> [AI Agent Camp](https://ai-agent.camp) offers a comprehensive web-based course with 28 modules, 100+ lessons, and 70+ practical skills — including a 24/7 AI tutor and a dedicated desktop app for automated environment setup.
+>
+> The web course covers the same curriculum as this repository, plus additional content and interactive features designed for non-engineers.
+>
+> 👉 **[Start learning at ai-agent.camp](https://ai-agent.camp)**
 
-| 項目 | Codex | Claude Code | Cursor |
+<p align="center">
+  <a href="https://ai-agent.camp">
+    <img src="docs/images/ai-agent-camp-preview.png" alt="AI Agent Camp Web Course" width="600">
+  </a>
+</p>
+
+---
+
+## Tool Comparison
+
+The materials themselves are shared. The differences are in how you enter and interact.
+
+| Item | Codex | Claude Code | Cursor |
 | --- | --- | --- | --- |
-| 入口 | `AGENTS.md` | `CLAUDE.md` | `.cursor/commands/*` |
-| lesson 開始 | `aiagent-lesson-runner` | Claude 側の lesson 導線 | `/start-*` |
-| setup 確認 | `aiagent-check-setup` | Claude 側で確認 | `/check-setup` |
-| 安全モデル | sandbox + approval | Claude hooks + permissions | Cursor rules + commands |
-| lesson id | `start-*` | `start-*` | `start-*` |
+| Entry point | `AGENTS.md` | `CLAUDE.md` | `.cursor/commands/*` |
+| Start lesson | `aiagent-lesson-runner` | Claude lesson flow | `/start-*` |
+| Setup check | `aiagent-check-setup` | Claude-side check | `/check-setup` |
+| Safety model | sandbox + approval | Claude hooks + permissions | Cursor rules + commands |
+| Lesson ID | `start-*` | `start-*` | `start-*` |
 
-共通点:
-- 同じリポジトリを使います
-- 同じ lesson id を使います
-- 秘密情報と Git の安全原則は同じです
+Common points:
+- All tools use the same repository
+- All tools use the same lesson IDs
+- Security principles for secrets and Git are the same
 
-受講者向けの基本ルール:
-- 小さい作業は軽く進める
-- 大きい作業は短い計画を書いてから進める
-- Git、MCP、秘密情報を触る前に対応する safety ガイドを読む
-
----
-
-## 学習パス
-
-### フェーズ1: Foundation（AI基礎）- 5時間
-
-AI エージェントの基本を学びます。11チャプターで幅広く理解します。
-
-| チャプター | 内容 | 学習時間 |
-|-----------|------|---------|
-| 0-1 | LLM の基本原理と仕組み | 30分 |
-| 0-2 | Token 概念と計算方法 | 30分 |
-| 0-3 | AI エージェントとは | 30分 |
-| 0-4 | Context Engineering と Prompt | 30分 |
-| 0-5 | Cursor の使い方 | 25分 |
-| 0-6 | MCP（Model Context Protocol） | 25分 |
-| 0-7 | マルチモーダル AI | 25分 |
-| 0-8 | RAG（検索拡張生成） | 25分 |
-| 0-9 | Skill / SubAgent / Agent Team | 25分 |
-| 0-10 | ハルシネーション対策 | 25分 |
-| 0-11 | AI セキュリティ | 25分 |
-
-**学習目標**
-- LLM の基本を理解する
-- トークンが何か知る
-- AIエージェントの概念を把握する
-- より良いプロンプトを書く
-- MCP・RAG・マルチモーダルの仕組みを理解する
-- AI利用時のセキュリティリスクを把握する
+Basic rules for learners:
+- Keep small tasks lightweight
+- Write a short plan before starting large tasks
+- Read the relevant safety guide before touching Git, MCP, or secrets
 
 ---
 
-### フェーズ2: Setup（環境構築）- 1.5時間
+## Learning Path
 
-AIエージェントを実際に使うための準備です。
+### Phase 1: Foundation (AI Fundamentals) - 5 hours
 
-| モジュール | 内容 | 学習時間 |
-|-----------|------|---------|
-| 0 | Claude Code / Cursor のセットアップ | 30分 |
-| 0.5 | 拡張機能とカスタマイズ | 15分 |
-| 0.9 | API キー設定と認証 | 45分 |
+Learn the basics of AI agents across 11 chapters.
 
-**学習目標**
-- Claude Code / Cursor を導入する
-- API キーを安全に管理する
-- 基本的な設定を完了する
+| Chapter | Content | Study Time |
+|---------|---------|------------|
+| 0-1 | How LLMs Work - Fundamental Principles | 30 min |
+| 0-2 | Token Concepts and Calculation | 30 min |
+| 0-3 | What Are AI Agents | 30 min |
+| 0-4 | Context Engineering and Prompting | 30 min |
+| 0-5 | How to Use Cursor | 25 min |
+| 0-6 | MCP (Model Context Protocol) | 25 min |
+| 0-7 | Multimodal AI | 25 min |
+| 0-8 | RAG (Retrieval-Augmented Generation) | 25 min |
+| 0-9 | Skills / SubAgents / Agent Teams | 25 min |
+| 0-10 | Hallucination Prevention | 25 min |
+| 0-11 | AI Security | 25 min |
+
+**Learning Objectives**
+- Understand the fundamentals of LLMs
+- Know what tokens are
+- Grasp AI agent concepts
+- Write better prompts
+- Understand how MCP, RAG, and multimodal systems work
+- Recognize security risks when using AI
 
 ---
 
-### フェーズ3: Core Modules（コアスキル）- 17.5時間
+### Phase 2: Setup (Environment Setup) - 1.5 hours
 
-実際の業務で使えるスキルを習得します。
+Prepare to actually use AI agents.
 
-| # | モジュール | 主な Skills | レッスン数 | 難易度 |
-|---|-----------|-----------|---------|--------|
-| **1** | **バナー・画像生成** | banner-creator, nanobanana | 3 | ⭐ |
-| **2** | **図表・フロー作成** | diagram-generator, PlantUML | 3 | ⭐⭐ |
-| **3** | **チュートリアル** | screenshot-analyzer, tutorial-generator | 6 | ⭐⭐ |
-| **4** | **Google Workspace** | gogcli, Gmail, Calendar, Drive, Sheets | 7 | ⭐⭐⭐ |
-| **5** | **PPTX 解析・編集** | pptx-analyzer, pptx-creator, pptx-converter | 2 | ⭐⭐ |
-| **6** | **エージェント開発** | Commands/Skills 作成、カスタマイズ | 5 | ⭐⭐⭐⭐ |
-| **7** | **Skill/Commands** | Skill設計、SKILL.md実装、テスト、デザインパターン | 8 | ⭐⭐⭐⭐ |
-| **8** | **データ分析・EDA** | data-analyst, BigQuery, Marimo | 4 | ⭐⭐⭐ |
-| **9** | **Slack 連携** | slack-search, check-inbox, task-manager | 2 | ⭐ |
-| **10** | **GAS 自動化** | gas-clasp-ops, Calendar, Sheets | 3 | ⭐⭐⭐ |
-| **11** | **GitHub Actions** | Workflow, Secrets, CI/CD | 2 | ⭐⭐⭐ |
-| **12** | **Notion 連携** | Notion MCP, DB操作, ncli | 6 | ⭐⭐ |
-| **13** | **LP/HP 制作** | 訴求整理、WF作成、Pencilデザイン、HTML実装、Vercelデプロイ | 5 | ⭐⭐⭐ |
-| **14** | **記事制作** | article-writer, copy-editing, fact-checker | 7 | ⭐⭐⭐ |
-| **15** | **動画制作** | Kling, HeyGen, Veo, Remotion, MV | 8 | ⭐⭐⭐ |
-| **16** | **メール/LINE 自動化** | email-sequence, Resend, LINE API | 8 | ⭐⭐⭐ |
-| **17** | **マーケティング** | X投稿、SEO調査、コピーライティング、デザインモック | 4 | ⭐⭐⭐ |
-| **18** | **要件定義/システム開発** | pm-toolkit, test-planner, Notion連携 | 20 | ⭐⭐⭐⭐⭐ |
-| **19** | **Microsoft Office (Outlook)** | Outlook MCP 連携 | 1 | ⭐⭐ |
-| **20** | **Freee/MoneyForward** | Freee MCP 会計データ操作 | 1 | ⭐⭐ |
+| Module | Content | Study Time |
+|--------|---------|------------|
+| 0 | Claude Code / Cursor Setup | 30 min |
+| 0.5 | Extensions and Customization | 15 min |
+| 0.9 | API Key Setup and Authentication | 45 min |
 
-**総学習時間: 約 24 時間（演習・実践課題を含めると約 30 時間以上）**
+**Learning Objectives**
+- Install Claude Code / Cursor
+- Manage API keys securely
+- Complete basic configuration
 
-### 学習オプション
+---
 
-**推奨順序（初心者向け）**
+### Phase 3: Core Modules - 17.5 hours
+
+Acquire skills you can use in real work.
+
+| # | Module | Key Skills | Lessons | Difficulty |
+|---|--------|------------|---------|------------|
+| **1** | **Banner & Image Generation** | banner-creator, nanobanana | 3 | ★ |
+| **2** | **Diagrams & Flowcharts** | diagram-generator, PlantUML | 3 | ★★ |
+| **3** | **Tutorials** | screenshot-analyzer, tutorial-generator | 6 | ★★ |
+| **4** | **Google Workspace** | gogcli, Gmail, Calendar, Drive, Sheets | 7 | ★★★ |
+| **5** | **PPTX Analysis & Editing** | pptx-analyzer, pptx-creator, pptx-converter | 2 | ★★ |
+| **6** | **Agent Development** | Commands/Skills creation, customization | 5 | ★★★★ |
+| **7** | **Skills & Commands** | Skill design, SKILL.md implementation, testing, design patterns | 8 | ★★★★ |
+| **8** | **Data Analysis & EDA** | data-analyst, BigQuery, Marimo | 4 | ★★★ |
+| **9** | **Slack Integration** | slack-search, check-inbox, task-manager | 2 | ★ |
+| **10** | **GAS Automation** | gas-clasp-ops, Calendar, Sheets | 3 | ★★★ |
+| **11** | **GitHub Actions** | Workflow, Secrets, CI/CD | 2 | ★★★ |
+| **12** | **Notion Integration** | Notion MCP, DB operations, ncli | 6 | ★★ |
+| **13** | **LP/HP Creation** | Messaging, wireframes, Pencil design, HTML, Vercel deploy | 5 | ★★★ |
+| **14** | **Article Writing** | article-writer, copy-editing, fact-checker | 7 | ★★★ |
+| **15** | **Video Production** | Kling, HeyGen, Veo, Remotion, MV | 8 | ★★★ |
+| **16** | **Email/LINE Automation** | email-sequence, Resend, LINE API | 8 | ★★★ |
+| **17** | **Marketing** | X posts, SEO research, copywriting, design mocks | 4 | ★★★ |
+| **18** | **Requirements & System Dev** | pm-toolkit, test-planner, Notion integration | 20 | ★★★★★ |
+| **19** | **Microsoft Office (Outlook)** | Outlook MCP integration | 1 | ★★ |
+| **20** | **Freee/MoneyForward** | Freee MCP accounting data operations | 1 | ★★ |
+
+**Total study time: approx. 24 hours (30+ hours including exercises and hands-on tasks)**
+
+### Learning Options
+
+**Recommended order (Beginners)**
 ```text
 Module 1 → Module 2 → Module 3 → Module 5 → Module 6 → Module 8
 ```
 
-**推奨順序（実務効率化重視）**
+**Recommended order (Business Efficiency Focus)**
 ```text
 Module 4 → Module 9 → Module 10 → Module 11 → Module 12 → Module 8
 ```
 
-**推奨順序（クリエイティブ重視）**
+**Recommended order (Creative Focus)**
 ```text
 Module 1 → Module 2 → Module 3 → Module 15 → Module 13 → Module 14
 ```
 
-**推奨順序（マーケティング重視）**
+**Recommended order (Marketing Focus)**
 ```text
 Module 1 → Module 17 → Module 13 → Module 15 → Module 14 → Module 16
 ```
 
 ---
 
-### CursorBootcamp YAML メタデータ
+### CursorBootcamp YAML Metadata
 
-`courses/aiagent/` に、CursorBootcamp プラットフォーム向けの YAML メタデータを配備しています。各チャプターには `practice/`（演習）と `final/`（最終課題）が含まれます。
+YAML metadata for the CursorBootcamp platform is stored in `courses/aiagent/`. Each chapter includes `practice/` (exercises) and `final/` (final assignments).
 
-| レッスン | チャプター数 | 内容 |
-|---------|-----------|------|
-| **Lesson 01: Foundation** | 11 | LLM基礎、Token、Agent、Context Engineering、MCP、マルチモーダル、RAG、SubAgent、ハルシネーション、セキュリティ |
-| **Lesson 02: Setup** | 3 | 環境構築、拡張機能、API設定 |
-| **Lesson 03: Core** | 12 | Banner ～ Marketing（全コアモジュール対応） |
+| Lesson | Chapters | Content |
+|--------|----------|---------|
+| **Lesson 01: Foundation** | 11 | LLM basics, Tokens, Agents, Context Engineering, MCP, Multimodal, RAG, SubAgents, Hallucination, Security |
+| **Lesson 02: Setup** | 3 | Environment setup, Extensions, API configuration |
+| **Lesson 03: Core** | 20 | Banner through Marketing (all core modules) |
 
-合計 **26 チャプター**、全チャプターに practice/final コンテンツ付き。
+All chapters include practice/final content.
 
 ---
 
-## ディレクトリ構造
+## Directory Structure
 
 ```
 ai-agent-camp/
 │
-├── 📚 courses/                         # カリキュラム source of truth
-│   ├── index.html                      # ポータルページ
-│   ├── CURRICULUM.md                   # カリキュラム全体
-│   ├── MODULES_GUIDE.md                # モジュールガイド
-│   │
-│   ├── foundation/                     # AI 基礎 (4 セクション)
-│   │   ├── 0-1-llm-basics.html         # LLM 基本原理
-│   │   ├── 0-2-tokens.html             # Token 概念
-│   │   ├── 0-3-ai-agents.html          # AI エージェント入門
-│   │   └── 0-4-context.html            # Context Engineering
-│   │
-│   ├── setup/                          # セットアップガイド (3 セクション)
-│   │   ├── 0-setup.html                # 環境構築
-│   │   ├── 0-5-extensions.html         # 拡張機能
-│   │   └── 0-9-api-setup.html          # API 設定
-│   │
-│   ├── modules/                        # 13 個のコアモジュール
-│   │   ├── 1-banner/                   # バナー・画像生成
-│   │   ├── 2-diagram/                  # 図表・フロー作成
-│   │   ├── 3-screenshot/               # スクリーンショット分析
-│   │   ├── 4-data/                     # データ分析
-│   │   ├── 5-pptx/                     # PPTX 解析・編集
-│   │   ├── 6-search/                   # Slack 検索・分析
-│   │   ├── 7-video/                    # AI 動画生成
-│   │   ├── 8-gas/                      # GAS 自動化
-│   │   ├── 9-actions/                  # GitHub Actions
-│   │   ├── 10-notion/                  # Notion 連携
-│   │   ├── 11-agent/                   # AI エージェント開発
-│   │   ├── 12-marketing/              # マーケティング（NEW）
-│   │   └── 13-lp/                     # LP/HP 制作（NEW）
-│   │
-│   ├── exercises/                      # 実践演習
-│   │   ├── basic/                      # 基本演習
-│   │   │   ├── workflow-support.md     # カスタマーサポート
-│   │   │   ├── workflow-sales.md       # セールスプロセス
-│   │   │   ├── workflow-content.md     # コンテンツ作成
-│   │   │   └── workflow-onboarding.md  # オンボーディング
-│   │   │
-│   │   ├── samples/                    # サンプルコード
-│   │   │   ├── workflows/              # ワークフローサンプル
-│   │   │   ├── slack/                  # Slack 連携サンプル
-│   │   │   └── screenshots/            # スクリーンショット例
-│   │   │
-│   │   └── advanced/                   # 高度な演習（将来拡張）
-│   │
-│   ├── assets/                         # 画像・スタイルシート (style.css 共有)
-│   └── images/                         # 教材用画像
-│
-├── 📚 courses/                         # CursorBootcamp YAML メタデータ（NEW）
+├── courses/                              # Curriculum source of truth
+│   ├── lessons.manifest.yaml             # Lesson manifest
 │   └── aiagent/
-│       ├── course.yaml                 # コース全体定義
-│       ├── cover.png                   # コースカバー画像
-│       ├── lesson01-foundation/        # 基礎知識（11 チャプター）
-│       │   └── ch01 ~ ch11/           # LLM, Token, Agent, MCP, RAG, Security 等
-│       ├── lesson02-setup/             # 環境構築（3 チャプター）
-│       │   └── ch01 ~ ch03/           # 環境, 拡張機能, API設定
-│       └── lesson03-core/              # コアスキル（12 チャプター）
-│           └── ch01 ~ ch12/           # Banner ～ Marketing（practice/final 付き）
+│       ├── course.yaml / .en.yaml / .es.yaml  # Course definition (multilingual)
+│       ├── cover.png                     # Course cover image
+│       ├── lesson01-foundation/          # Fundamentals (11 chapters)
+│       │   └── ch01 ~ ch11/             # LLM, Tokens, Agents, MCP, RAG, Security, etc.
+│       ├── lesson02-setup/              # Environment setup (3 chapters)
+│       │   └── ch01 ~ ch03/             # Environment, Extensions, API setup
+│       └── lesson03-core/               # Core skills (20 modules)
+│           └── ch01 ~ ch20/             # Banner through Freee (practice/final included)
 │
-├── 💻 .cursor/commands/                # 80 個のコマンド
-│   ├── lesson/                         # 学習用コマンド (52 個)
-│   │   ├── /start-0-1 ~ /start-0-8    # Module 0: Setup
-│   │   ├── /start-1-1 ~ /start-1-3    # Module 1: バナー
-│   │   ├── /start-2-1 ~ /start-2-3    # Module 2: 図解
-│   │   ├── /start-3-1 ~ /start-3-6    # Module 3: チュートリアル
-│   │   ├── /start-4-1 ~ /start-4-7    # Module 4: Google Workspace
-│   │   ├── /start-5-1 ~ /start-5-2    # Module 5: PPTX
-│   │   ├── /start-6-1 ~ /start-6-5    # Module 6: エージェント開発
-│   │   ├── /start-7-1 ~ /start-7-8    # Module 7: Skill/Commands
-│   │   ├── /start-8-1 ~ /start-8-4    # Module 8: データ分析
-│   │   ├── /start-9-1 ~ /start-9-2    # Module 9: Slack連携
-│   │   ├── /start-10-1 ~ /start-10-3  # Module 10: GAS
-│   │   ├── /start-11-1 ~ /start-11-2  # Module 11: GitHub Actions
-│   │   ├── /start-12-1 ~ /start-12-6  # Module 12: Notion
-│   │   ├── /start-13-1 ~ /start-13-5  # Module 13: LP制作
-│   │   ├── /start-14-1 ~ /start-14-7  # Module 14: 記事制作
-│   │   ├── /start-15-1 ~ /start-15-8  # Module 15: 動画制作
-│   │   ├── /start-16-1 ~ /start-16-8  # Module 16: メール/LINE自動化
-│   │   ├── /start-17-1 ~ /start-17-4  # Module 17: マーケティング
-│   │   ├── /start-18-1 ~ /start-18-20 # Module 18: 要件定義/システム開発
-│   │   ├── /start-19-1               # Module 19: Outlook（準備中）
-│   │   └── /start-20-1               # Module 20: Freee/MoneyForward（準備中）
+├── .cursor/commands/                     # 80+ commands
+│   ├── lesson/                          # Learning commands (52+)
+│   │   ├── /start-0-1 ~ /start-0-8     # Module 0: Setup
+│   │   ├── /start-1-1 ~ /start-1-3     # Module 1: Banners
+│   │   ├── /start-2-1 ~ /start-2-3     # Module 2: Diagrams
+│   │   ├── /start-3-1 ~ /start-3-6     # Module 3: Tutorials
+│   │   ├── /start-4-1 ~ /start-4-7     # Module 4: Google Workspace
+│   │   ├── /start-5-1 ~ /start-5-2     # Module 5: PPTX
+│   │   ├── /start-6-1 ~ /start-6-5     # Module 6: Agent Development
+│   │   ├── /start-7-1 ~ /start-7-8     # Module 7: Skills/Commands
+│   │   ├── /start-8-1 ~ /start-8-4     # Module 8: Data Analysis
+│   │   ├── /start-9-1 ~ /start-9-2     # Module 9: Slack
+│   │   ├── /start-10-1 ~ /start-10-3   # Module 10: GAS
+│   │   ├── /start-11-1 ~ /start-11-2   # Module 11: GitHub Actions
+│   │   ├── /start-12-1 ~ /start-12-6   # Module 12: Notion
+│   │   ├── /start-13-1 ~ /start-13-5   # Module 13: LP Creation
+│   │   ├── /start-14-1 ~ /start-14-7   # Module 14: Article Writing
+│   │   ├── /start-15-1 ~ /start-15-8   # Module 15: Video Production
+│   │   ├── /start-16-1 ~ /start-16-8   # Module 16: Email/LINE Automation
+│   │   ├── /start-17-1 ~ /start-17-4   # Module 17: Marketing
+│   │   ├── /start-18-1 ~ /start-18-20  # Module 18: Requirements/System Dev
+│   │   ├── /start-19-1                  # Module 19: Outlook (in progress)
+│   │   └── /start-20-1                  # Module 20: Freee/MoneyForward (in progress)
 │   │
-│   └── utility/                        # ユーティリティコマンド (28 個)
-│       ├── /check-setup                # セットアップ確認
-│       ├── /overview                   # プロジェクト概要
-│       ├── /guide                      # 使い方ガイド
-│       ├── /tutor                      # 対話型ヘルプ
-│       ├── /update-material            # 教材を最新版に更新
-│       └── ... その他のヘルパー
+│   └── utility/                         # Utility commands (28+)
+│       ├── /check-setup                 # Setup verification
+│       ├── /overview                    # Project overview
+│       ├── /guide                       # Usage guide
+│       ├── /tutor                       # Interactive help
+│       ├── /update-material             # Update materials to latest
+│       └── ... other helpers
 │
-├── 🛠️ skills/                            # 42 個の再利用可能スキル
+├── skills/                              # 42+ reusable skills
 │   │
-│   │  ── 画像・バナー生成 ──
-│   ├── banner-creator/                 # SNS バナー生成
-│   ├── nanobanana/                     # 汎用画像生成・編集
-│   ├── diagram-generator/              # インフォグラフィック生成
+│   │  -- Image & Banner Generation --
+│   ├── banner-creator/                  # SNS banner generation
+│   ├── nanobanana/                      # General image generation/editing
+│   ├── diagram-generator/              # Infographic generation
 │   │
-│   │  ── スクリーンショット・チュートリアル ──
-│   ├── screenshot-analyzer/            # スクリーンショット分析
-│   ├── screenshot-annotator/           # スクリーンショット注釈
-│   ├── tutorial-generator/             # チュートリアル自動生成
+│   │  -- Screenshots & Tutorials --
+│   ├── screenshot-analyzer/             # Screenshot analysis
+│   ├── screenshot-annotator/            # Screenshot annotation
+│   ├── tutorial-generator/              # Auto tutorial generation
 │   │
-│   │  ── ドキュメント処理 ──
-│   ├── pptx-analyzer/                  # PPTX 構造分析
-│   ├── pptx-converter/                 # PPTX テンプレート変換（NEW）
-│   ├── pptx-creator/                   # トピック → PPTX 自動生成（NEW）
-│   ├── document-processor/             # PDF/Word 処理
-│   ├── pdf-compressor/                 # PDF 圧縮
+│   │  -- Document Processing --
+│   ├── pptx-analyzer/                   # PPTX structure analysis
+│   ├── pptx-converter/                  # PPTX template conversion
+│   ├── pptx-creator/                    # Topic to PPTX auto-generation
+│   ├── document-processor/              # PDF/Word processing
+│   ├── pdf-compressor/                  # PDF compression
 │   │
-│   │  ── 動画・メディア ──
-│   ├── storyboard-generator/           # 絵コンテ + Kling 動画生成
-│   ├── video-frame-reader/             # 動画キーフレーム抽出
-│   ├── media-generator/                # メディアファイル生成
+│   │  -- Video & Media --
+│   ├── storyboard-generator/            # Storyboard + Kling video generation
+│   ├── video-frame-reader/              # Video keyframe extraction
+│   ├── media-generator/                 # Media file generation
 │   │
-│   │  ── データ分析・認証 ──
-│   ├── data-analyst/                   # データ分析・EDA
-│   ├── bigquery-auth/                  # BigQuery 認証
-│   ├── gcp-auth/                       # GCP 認証・設定
+│   │  -- Data Analysis & Auth --
+│   ├── data-analyst/                    # Data analysis & EDA
+│   ├── bigquery-auth/                   # BigQuery authentication
+│   ├── gcp-auth/                        # GCP authentication & setup
 │   │
-│   │  ── Slack・通信 ──
-│   ├── check-inbox/                    # メール/Slack TODO 抽出
-│   ├── slack-search/                   # Slack セマンティック検索
-│   ├── slack-task-manager/             # Slack タスク管理
-│   ├── slack-unanswered/               # 未返信メッセージ検出
+│   │  -- Slack & Communication --
+│   ├── check-inbox/                     # Email/Slack TODO extraction
+│   ├── slack-search/                    # Slack semantic search
+│   ├── slack-task-manager/              # Slack task management
+│   ├── slack-unanswered/                # Unanswered message detection
 │   │
-│   │  ── GAS・その他 ──
-│   ├── gas-clasp-ops/                  # Google Apps Script 操作
-│   ├── lp-designer/                    # LP/HP 制作ワークフロー（NEW）
+│   │  -- GAS & Others --
+│   ├── gas-clasp-ops/                   # Google Apps Script operations
+│   ├── lp-designer/                     # LP/HP creation workflow
 │   │
-│   │  ── マーケティング（20 スキル・NEW）──
-│   ├── ab-test-setup/                  # A/B テスト設計・実装
-│   ├── analytics-tracking/             # GA4・GTM トラッキング
-│   ├── competitor-alternatives/         # 競合比較ページ
-│   ├── content-strategy/               # コンテンツ戦略
-│   ├── copy-editing/                   # コピー編集・レビュー
-│   ├── copywriting/                    # マーケティングコピー
-│   ├── email-sequence/                 # メールシーケンス
-│   ├── free-tool-strategy/             # 無料ツール戦略
-│   ├── launch-strategy/                # ローンチ戦略
-│   ├── marketing-ideas/                # マーケティングアイデア
-│   ├── marketing-psychology/           # マーケティング心理学
-│   ├── paid-ads/                       # 有料広告キャンペーン
-│   ├── pricing-strategy/               # 価格戦略
-│   ├── product-marketing-context/      # プロダクトマーケティング
-│   ├── programmatic-seo/               # プログラマティック SEO
-│   ├── referral-program/               # リファラルプログラム
-│   ├── schema-markup/                  # 構造化データ
-│   ├── seo-audit/                      # SEO 監査
-│   └── social-content/                 # SNS コンテンツ
+│   │  -- Marketing (20 skills) --
+│   ├── ab-test-setup/                   # A/B test design & implementation
+│   ├── analytics-tracking/              # GA4/GTM tracking
+│   ├── competitor-alternatives/          # Competitor comparison pages
+│   ├── content-strategy/                # Content strategy
+│   ├── copy-editing/                    # Copy editing & review
+│   ├── copywriting/                     # Marketing copy
+│   ├── email-sequence/                  # Email sequences
+│   ├── free-tool-strategy/              # Free tool strategy
+│   ├── launch-strategy/                 # Launch strategy
+│   ├── marketing-ideas/                 # Marketing ideas
+│   ├── marketing-psychology/            # Marketing psychology
+│   ├── paid-ads/                        # Paid ad campaigns
+│   ├── pricing-strategy/                # Pricing strategy
+│   ├── product-marketing-context/       # Product marketing
+│   ├── programmatic-seo/                # Programmatic SEO
+│   ├── referral-program/                # Referral programs
+│   ├── schema-markup/                   # Structured data
+│   ├── seo-audit/                       # SEO audits
+│   └── social-content/                  # Social media content
 │
-├── 🗂️ data/                            # lesson / Codex 実行に必要な最小データ
-│   ├── codex-command-manifest.json     # Codex ルーティング定義
-│   ├── google-sync/                    # Google 同期用スクリプトとテンプレート
-│   ├── slack-sync/                     # Slack 同期用スクリプトとデータ置き場
-│   └── videos/                         # 動画レッスン用サンプル
+├── data/                                # Minimum data for lessons/Codex
+│   ├── codex-command-manifest.json      # Codex routing definitions
+│   ├── google-sync/                     # Google sync scripts & templates
+│   ├── slack-sync/                      # Slack sync scripts & data
+│   └── videos/                          # Sample videos for lessons
 │
-├── 🧪 tests/                            # テストスイート
-│   ├── unit/                           # ユニットテスト
-│   ├── integration/                    # 統合テスト
-│   └── e2e/                            # エンドツーエンドテスト
+├── tests/                               # Test suite
+│   ├── e2e/                             # End-to-end tests
+│   ├── security/                        # Security tests
+│   ├── skills/                          # Skill tests
+│   ├── knowledge_base/                  # Knowledge base tests
+│   └── tools/                           # Tool tests
 │
-├── 🎬 tools/                            # Python スクリプト・ツール
-│   ├── ugc/                            # 動画生成エンジン
-│   │   ├── remotion/                   # Remotion (React 動画)
-│   │   └── ... その他の動画ツール
-│   └── ... その他のユーティリティ
+├── tools/                               # Python scripts & utilities
+│   ├── ugc/                             # Video generation engine
+│   │   ├── remotion/                    # Remotion (React video)
+│   │   └── ... other video tools
+│   └── ... other utilities
 │
-├── 📚 docs/                            # ドキュメント
-│   ├── commands-reference.md           # Commands 全体リファレンス
-│   ├── skills-reference.md             # Skills 全体リファレンス
-│   ├── troubleshoot.md                 # トラブルシューティング
-│   ├── setup-guides/                   # API 設定ガイド
-│   │   ├── GEMINI_API_SETUP.md
-│   │   ├── SLACK_TOKEN_SETUP.md
-│   │   ├── GOOGLE_OAUTH_SETUP.md
-│   │   ├── BIGQUERY_SETUP.md
-│   │   ├── NOTION_API_SETUP.md
-│   │   └── ... その他
-│   │
-│   └── best-practices/                 # ベストプラクティス
-│       ├── security.md                 # セキュリティガイド
-│       ├── performance.md              # パフォーマンス最適化
-│       └── workflows.md                # ワークフロー設計
+├── docs/                                # Documentation
+│   ├── commands-reference.md            # Full commands reference
+│   ├── skills-reference.md              # Full skills reference
+│   ├── security-guardrails.md           # Security guardrails
+│   ├── codex-guide.md                   # Codex getting started guide
+│   ├── codex-safety.md                  # Codex safety guide
+│   ├── troubleshoot.md                  # Troubleshooting
+│   ├── i18n-glossary.md                 # Internationalization glossary
+│   ├── images/                          # Documentation images
+│   ├── bootcamp/                        # Bootcamp materials
+│   ├── generated/                       # Generated content
+│   └── setup-guides/                    # API setup guides
+│       └── docs/
+│           ├── GEMINI_API_SETUP.md
+│           ├── SLACK_TOKEN_SETUP.md
+│           ├── GOOGLE_OAUTH_SETUP.md
+│           ├── BIGQUERY_SETUP.md
+│           ├── NOTION_API_SETUP.md
+│           └── GITHUB_SECRETS_SETUP.md
 │
-├── .cursor/                            # Cursor ルール
-│   └── rules/                          # カスタムルール
+├── .cursor/                             # Cursor rules
+│   └── rules/                           # Custom rules
 │
-├── .github/                            # GitHub Actions
-│   └── workflows/                      # CI/CD ワークフロー
+├── .claude/                             # Claude Code configuration
+│   ├── commands/                        # Claude commands
+│   └── hooks/                           # Claude hooks
 │
-├── .githooks/                          # Git フック
-│   └── pre-commit                      # Pre-commit ルール
+├── .github/                             # GitHub Actions
+│   └── workflows/                       # CI/CD workflows
 │
-├── .env.example                        # 環境変数テンプレート
-├── .gitignore                          # Git 除外ルール
-├── CLAUDE.md                           # Claude Code ガイド
-├── PROGRESS_CHECKLIST.md               # 学習進捗チェックリスト
-├── package.json                        # NPM パッケージ設定
-├── requirements.txt                    # Python 依存パッケージ
-├── requirements-test.txt               # テスト用パッケージ
-└── README.md                           # このファイル
+├── .githooks/                           # Git hooks
+│   └── pre-commit                       # Pre-commit rules
+│
+├── .env.example                         # Environment variable template
+├── .gitignore                           # Git ignore rules
+├── AGENTS.md                            # Codex guide
+├── CLAUDE.md                            # Claude Code guide
+├── PROGRESS_CHECKLIST.md                # Learning progress checklist
+├── package.json                         # NPM package config
+├── requirements.txt                     # Python dependencies
+├── requirements-test.txt                # Test dependencies
+└── README.md                            # This file
 ```
 
 ---
 
-## スキルマトリックス
+## Skill Matrix
 
-### 学習結果マップ
+### Skills Acquired After Completion
 
-完了後に習得できるスキル一覧です。
+#### Skills by Category
 
-#### タイプ別スキル分類
+**Data Processing & Analysis**
+- Data analysis with BigQuery
+- Exploratory Data Analysis (EDA) with Python
+- CSV/Excel file processing
+- Data visualization
 
-**📊 データ処理・分析**
-- BigQuery を使用したデータ分析
-- Python による EDA（探索的データ分析）
-- CSV/Excel ファイル処理
-- データビジュアライゼーション
+**Content Generation**
+- AI image generation
+- SNS banner & thumbnail creation
+- Infographic & diagram generation
+- Automated screenshot annotation
 
-**🎨 コンテンツ生成**
-- AI による画像生成
-- SNS バナー・サムネイル作成
-- インフォグラフィック・図表生成
-- スクリーンショット自動注釈
+**Video & Media**
+- AI video generation (Kling, HeyGen)
+- Automated short video creation
+- Keyframe extraction & analysis
+- Automated storyboard generation
 
-**📹 動画・メディア**
-- AI 動画生成（Kling, HeyGen）
-- ショート動画の自動作成
-- キーフレーム抽出・分析
-- 絵コンテの自動生成
+**Document Processing**
+- Automated PPTX slide generation & editing
+- PDF processing & compression
+- Word document operations
+- Document content analysis
 
-**📄 ドキュメント処理**
-- PPTX スライド自動生成・編集
-- PDF 処理・圧縮
-- Word ドキュメント操作
-- ドキュメント内容分析
+**Communication Automation**
+- Slack workflow automation
+- Email TODO auto-extraction
+- Chatbot development
+- Message routing
 
-**💬 コミュニケーション自動化**
-- Slack ワークフロー自動化
-- メール TODO 自動抽出
-- チャットボット開発
-- メッセージルーティング
+**Business Automation**
+- Google Sheets/Calendar automation
+- GAS (Google Apps Script) development
+- CI/CD with GitHub Actions
+- Notion database operations
 
-**🔄 業務オートメーション**
-- Google Sheets/Calendar 自動操作
-- GAS（Google Apps Script）開発
-- GitHub Actions による CI/CD
-- Notion データベース操作
+**AI Agent Development**
+- Custom Command creation
+- Custom Skill development
+- LLM prompt optimization
+- Workflow design
 
-**🤖 AI エージェント開発**
-- カスタム Command の作成
-- カスタム Skill の開発
-- LLM プロンプト最適化
-- ワークフロー設計
+**Marketing & CRO**
+- A/B test design & implementation
+- SEO audits & programmatic SEO
+- Copywriting & copy editing
+- Email sequences & social media content
+- Ad campaigns & pricing strategy
+- GA4 / GTM tracking implementation
 
-**📣 マーケティング・CRO**
-- A/B テスト設計・実装
-- SEO 監査・プログラマティック SEO
-- コピーライティング・コピー編集
-- メールシーケンス・SNS コンテンツ
-- 広告キャンペーン・価格戦略
-- GA4 / GTM トラッキング実装
+**LP/HP Creation**
+- Messaging & copywriting
+- Wireframe creation
+- Pencil MCP design
+- HTML/CSS/JS implementation
+- Vercel deployment
 
-**🌐 LP/HP 制作**
-- 訴求整理・コピーライティング
-- ワイヤーフレーム作成
-- Pencil MCP デザイン
-- HTML/CSS/JS 実装
-- Vercel デプロイ
+#### Skills by Module
 
-#### モジュール別習得スキル
-
-| モジュール | 習得スキル | 応用例 |
-|-----------|-----------|--------|
-| **1** | 画像生成、バナー作成 | SNS マーケティング、プレゼン資料 |
-| **2** | フロー図、ダイアグラム | プロセス設計、システム設計 |
-| **3** | スクショ分析、チュートリアル | マニュアル作成、UI/UX 改善報告 |
-| **4** | Google Workspace 統合 | Gmail分析、Calendar管理、Drive操作、AI秘書 |
-| **5** | PowerPoint 自動化 | プレゼン資料作成、定期レポート |
-| **6** | エージェント開発 | Commands/Skills 作成、カスタムツール |
-| **7** | Skill/Commands 設計 | 業務特化スキル、デザインパターン |
-| **8** | データ分析、可視化 | ビジネス分析、レポート自動化 |
-| **9** | Slack 統合、タスク管理 | 通知自動化、チーム運営効率化 |
-| **10** | GAS 自動化 | スケジュール管理、データ連携 |
-| **11** | GitHub Actions | CI/CD パイプライン、自動テスト |
-| **12** | Notion 連携 | ナレッジ管理、プロジェクト管理 |
-| **13** | LP/HP 制作 | 訴求整理、WF、デザイン、実装、デプロイ |
-| **14** | 記事制作 | テーマ設定、スタイル適用、校閲、ファクトチェック |
-| **15** | AI 動画生成 | プロダクト紹介、MV、スライド動画 |
-| **16** | メール/LINE 自動化 | メールシーケンス、LINE Bot |
-| **17** | マーケティング | X投稿、SEO、コピーライティング |
-| **18** | 要件定義/システム開発 | PRD、設計、テスト、Notionエクスポート |
-| **19** | Outlook連携 | Microsoft Office統合（準備中） |
-| **20** | Freee/MoneyForward | 会計データ操作（準備中） |
+| Module | Skills Acquired | Applications |
+|--------|----------------|--------------|
+| **1** | Image generation, banner creation | SNS marketing, presentations |
+| **2** | Flowcharts, diagrams | Process design, system design |
+| **3** | Screenshot analysis, tutorials | Manual creation, UI/UX improvement reports |
+| **4** | Google Workspace integration | Gmail analysis, Calendar management, Drive operations, AI assistant |
+| **5** | PowerPoint automation | Presentation materials, periodic reports |
+| **6** | Agent development | Commands/Skills creation, custom tools |
+| **7** | Skill/Commands design | Business-specific skills, design patterns |
+| **8** | Data analysis, visualization | Business analysis, report automation |
+| **9** | Slack integration, task management | Notification automation, team efficiency |
+| **10** | GAS automation | Schedule management, data integration |
+| **11** | GitHub Actions | CI/CD pipelines, automated testing |
+| **12** | Notion integration | Knowledge management, project management |
+| **13** | LP/HP creation | Messaging, wireframes, design, implementation, deployment |
+| **14** | Article writing | Theme setting, style application, proofreading, fact-checking |
+| **15** | AI video generation | Product introductions, music videos, slide videos |
+| **16** | Email/LINE automation | Email sequences, LINE Bot |
+| **17** | Marketing | X posts, SEO, copywriting |
+| **18** | Requirements & system dev | PRD, design, testing, Notion export |
+| **19** | Outlook integration | Microsoft Office integration (in progress) |
+| **20** | Freee/MoneyForward | Accounting data operations (in progress) |
 
 ---
 
-## 必要なAPI
+## Required APIs
 
-### 必須
+### Required
 
-| API | 説明 | 取得先 | 用途 |
-|-----|------|--------|------|
-| **Gemini API** | Google の生成 AI API | [Google AI Studio](https://aistudio.google.com/) | 画像生成、テキスト分析、コンテンツ作成 |
+| API | Description | Where to Get | Purpose |
+|-----|-------------|--------------|---------|
+| **Gemini API** | Google's generative AI API | [Google AI Studio](https://aistudio.google.com/) | Image generation, text analysis, content creation |
 
-### 強く推奨（Module 4, 8, 9, 12 で必要）
+### Strongly Recommended (Required for Modules 4, 8, 9, 12)
 
-| API | 説明 | 取得先 | 用途 | 必要なモジュール |
-|-----|------|--------|------|-----------------|
-| **Google OAuth** | Google アカウント連携 | [Google Cloud Console](https://console.cloud.google.com/) | Gmail、Calendar、Drive 操作 | 4, 10 |
-| **BigQuery** | Google の SQL データウェアハウス | [Google Cloud Console](https://console.cloud.google.com/) | 大規模データ分析 | 8 |
-| **Slack API** | Slack ワークスペース連携 | [Slack App Directory](https://api.slack.com/apps) | メッセージ取得、自動返信 | 9 |
-| **Notion API** | Notion ワークスペース連携 | [Notion Integrations](https://www.notion.so/my-integrations) | データベース操作 | 12 |
+| API | Description | Where to Get | Purpose | Required Module |
+|-----|-------------|--------------|---------|-----------------|
+| **Google OAuth** | Google account integration | [Google Cloud Console](https://console.cloud.google.com/) | Gmail, Calendar, Drive operations | 4, 10 |
+| **BigQuery** | Google's SQL data warehouse | [Google Cloud Console](https://console.cloud.google.com/) | Large-scale data analysis | 8 |
+| **Slack API** | Slack workspace integration | [Slack App Directory](https://api.slack.com/apps) | Message retrieval, auto-replies | 9 |
+| **Notion API** | Notion workspace integration | [Notion Integrations](https://www.notion.so/my-integrations) | Database operations | 12 |
 
-### オプション（Module 15 で推奨）
+### Optional (Recommended for Module 15)
 
-| API | 説明 | 取得先 | 用途 |
-|-----|------|--------|------|
-| **FAL.ai** | AI 画像・動画生成 | [fal.ai](https://fal.ai) | 高速画像生成 |
-| **Kling AI** | テキスト → 動画生成 | [Kling](https://klingai.com/) | ショート動画自動生成 |
-| **HeyGen** | アバター動画生成 | [HeyGen](https://www.heygen.com/) | 自動解説動画作成 |
-| **Google Veo** | AI 動画生成モデル | [Google AI Studio](https://aistudio.google.com/) | 高品質動画生成 |
-| **GitHub Token** | GitHub 連携 | [GitHub Settings](https://github.com/settings/tokens) | CI/CD 操作 |
+| API | Description | Where to Get | Purpose |
+|-----|-------------|--------------|---------|
+| **FAL.ai** | AI image/video generation | [fal.ai](https://fal.ai) | Fast image generation |
+| **Kling AI** | Text-to-video generation | [Kling](https://klingai.com/) | Automated short video creation |
+| **HeyGen** | Avatar video generation | [HeyGen](https://www.heygen.com/) | Automated explainer videos |
+| **Google Veo** | AI video generation model | [Google AI Studio](https://aistudio.google.com/) | High-quality video generation |
+| **GitHub Token** | GitHub integration | [GitHub Settings](https://github.com/settings/tokens) | CI/CD operations |
 
-### API キー取得ステップ
+### API Key Setup Steps
 
-詳細は以下のドキュメントを参照してください：
+Refer to the following guides for details:
 
-- [Gemini API セットアップ](docs/setup-guides/GEMINI_API_SETUP.md)
-- [Google OAuth セットアップ](docs/setup-guides/GOOGLE_OAUTH_SETUP.md)
-- [BigQuery セットアップ](docs/setup-guides/BIGQUERY_SETUP.md)
-- [Slack API セットアップ](docs/setup-guides/SLACK_TOKEN_SETUP.md)
-- [Notion API セットアップ](docs/setup-guides/NOTION_API_SETUP.md)
+- [Gemini API Setup](docs/setup-guides/docs/GEMINI_API_SETUP.md)
+- [Google OAuth Setup](docs/setup-guides/docs/GOOGLE_OAUTH_SETUP.md)
+- [BigQuery Setup](docs/setup-guides/docs/BIGQUERY_SETUP.md)
+- [Slack API Setup](docs/setup-guides/docs/SLACK_TOKEN_SETUP.md)
+- [Notion API Setup](docs/setup-guides/docs/NOTION_API_SETUP.md)
 
 ---
 
-## ドキュメント
+## Documentation
 
-### 学習教材
+### Learning Materials
 
-| ドキュメント | 説明 |
-|------------|------|
-| [courses/aiagent](courses/aiagent) | カリキュラム source of truth |
-| [docs/codex-guide.md](docs/codex-guide.md) | Codex 向け開始ガイド |
-| [学習チェックリスト](PROGRESS_CHECKLIST.md) | 進捗追跡用チェックリスト |
+| Document | Description |
+|----------|-------------|
+| [courses/aiagent](courses/aiagent) | Curriculum source of truth |
+| [docs/codex-guide.md](docs/codex-guide.md) | Codex getting started guide |
+| [Learning Checklist](PROGRESS_CHECKLIST.md) | Progress tracking checklist |
 
-### リファレンス
+### Reference
 
-| ドキュメント | 説明 |
-|------------|------|
-| [Commands リファレンス](docs/commands-reference.md) | 80 個のコマンド全体説明 |
-| [Skills リファレンス](docs/skills-reference.md) | 42 個のスキル詳細情報 |
-| [Claude Code ガイド](CLAUDE.md) | Claude Code 特有の機能解説 |
+| Document | Description |
+|----------|-------------|
+| [Commands Reference](docs/commands-reference.md) | Full reference for 80+ commands |
+| [Skills Reference](docs/skills-reference.md) | Detailed info on 42+ skills |
+| [Claude Code Guide](CLAUDE.md) | Claude Code specific features |
 
-### API 設定ガイド
+### API Setup Guides
 
-すべてのガイドは `docs/setup-guides/` ディレクトリにあります：
+All guides are in the `docs/setup-guides/docs/` directory:
 
 ```
-docs/setup-guides/
+docs/setup-guides/docs/
 ├── GEMINI_API_SETUP.md      # Gemini API
 ├── GOOGLE_OAUTH_SETUP.md    # Google OAuth
 ├── BIGQUERY_SETUP.md        # BigQuery
 ├── SLACK_TOKEN_SETUP.md     # Slack
 ├── NOTION_API_SETUP.md      # Notion
-└── ...
+└── GITHUB_SECRETS_SETUP.md  # GitHub Secrets
 ```
 
-### ベストプラクティス
+### Troubleshooting
 
-| ドキュメント | トピック |
-|------------|---------|
-| [セキュリティガイド](docs/best-practices/security.md) | API キー管理、データ保護 |
-| [パフォーマンス最適化](docs/best-practices/performance.md) | API 利用最適化、バッチ処理 |
-| [ワークフロー設計](docs/best-practices/workflows.md) | 効率的な業務フロー |
-
-### トラブルシューティング
-
-よくある問題の解決方法は [トラブルシューティングガイド](docs/troubleshoot.md) を参照してください。
+See the [Troubleshooting Guide](docs/troubleshoot.md) for solutions to common issues.
 
 ---
 
-## よくある質問（FAQ）
+## FAQ
 
-### セットアップについて
+### Setup
 
-**Q: Python がインストールされていない場合は？**
+**Q: What if Python is not installed?**
 
-A: 以下からダウンロード・インストールしてください：
-- [Python 公式](https://www.python.org/downloads/)
-- インストール時に「Add Python to PATH」にチェック
+A: Download and install from:
+- [Python Official](https://www.python.org/downloads/)
+- Check "Add Python to PATH" during installation
 
-**Q: macOS でパッケージがインストールできません**
+**Q: I can't install packages on macOS**
 
-A: Homebrew を使用してください：
+A: Use Homebrew:
 ```bash
 brew install python3
 ```
 
-**Q: 特定の API キーがない場合、進められないか？**
+**Q: Can I proceed without certain API keys?**
 
-A: いいえ。必須は Gemini API のみです。他は必要なモジュール時に取得できます。
+A: Yes. Only the Gemini API is required. Others can be obtained when you reach the relevant module.
 
-### 学習について
+### Learning
 
-**Q: プログラミング経験がなくても大丈夫？**
+**Q: Is this OK for someone with no programming experience?**
 
-A: はい。すべてのコマンドとスキルはプログラミング知識不要で設計されています。
+A: Yes. All commands and skills are designed to work without programming knowledge.
 
-**Q: モジュールの順序は固定か？**
+**Q: Is the module order fixed?**
 
-A: いいえ。興味のある順に学習できます。ただし、Foundation モジュール（0-1～0-4）は最初に受講を推奨します。
+A: No. You can study in any order you like. However, we recommend completing the Foundation modules (0-1 through 0-4) first.
 
-**Q: 学習にかかる時間は？**
+**Q: How long does the course take?**
 
-A: 講義部分で約 24 時間、演習・実践課題を含めると約 30 時間以上です。1 日 2-3 時間で 2 週間程度で完了できます。
+A: The lecture content takes about 24 hours. Including exercises and hands-on tasks, expect 30+ hours. At 2-3 hours per day, you can complete it in about 2 weeks.
 
-**Q: 修了証はもらえるか？**
+**Q: Is there a certificate of completion?**
 
-A: リポジトリ内の進捗チェックリスト ([PROGRESS_CHECKLIST.md](PROGRESS_CHECKLIST.md)) で進捗を追跡できます。
+A: You can track your progress with the checklist in [PROGRESS_CHECKLIST.md](PROGRESS_CHECKLIST.md).
 
-### 実務応用について
+### Practical Application
 
-**Q: 自分たちの業務に合わせてカスタマイズできるか？**
+**Q: Can I customize this for my own work?**
 
-A: はい。Module 6（エージェント開発）と Module 7（Skill/Commands）で、カスタム Command や Skill を作成できます。
+A: Yes. Module 6 (Agent Development) and Module 7 (Skills/Commands) teach you how to create custom Commands and Skills.
 
-**Q: 組織全体での導入を考えているが？**
+**Q: We're considering organization-wide adoption.**
 
-A: ライセンスガイドと企業向けカスタマイズについて Issue で相談してください。
+A: Please open an Issue to discuss licensing and enterprise customization.
 
-**Q: セキュリティを厳しくする必要があるが？**
+**Q: We need stricter security.**
 
-A: [セキュリティガイド](docs/best-practices/security.md) を参照し、エンタープライズ向けの設定も可能です。
-
----
-
-## コントリビューション
-
-皆さんのフィードバックや改善提案を歓迎します！
-
-### バグ報告・機能リクエスト
-
-1. [Issues](https://github.com/TokenPocket/ai-agent-camp/issues) で既出かどうか確認
-2. 新しい Issue がある場合は作成
-3. テンプレートに従って詳細情報を記入
-
-### Pull Request
-
-1. このリポジトリを Fork
-2. 機能ブランチを作成 (`git checkout -b feature/amazing-feature`)
-3. コミット (`git commit -m 'Add amazing feature'`)
-4. ブランチに Push (`git push origin feature/amazing-feature`)
-5. Pull Request を作成
-
-### ドキュメント改善
-
-誤字修正や説明の改善も大歓迎です。下記の形式で PR をお送りください：
-
-- 対象ファイルを明記
-- 改善理由を記載
-- 可能なら修正案を提示
-
-### 日本語での質問・相談
-
-Issue は日本語での記載で OK です。日本語コミュニティとして運営しています。
+A: Refer to [Security Guardrails](docs/security-guardrails.md) for security best practices. Enterprise configurations are possible.
 
 ---
 
-## サポート
+## Contributing
 
-### ドキュメント
+We welcome your feedback and suggestions for improvement!
 
-- 📖 [ドキュメント一覧](#ドキュメント)
-- 🎓 [コースサイト](https://ai-agent.camp/ja/course/module-0)
-- 🔧 [トラブルシューティング](docs/troubleshoot.md)
+### Bug Reports & Feature Requests
 
-### 質問・相談
+1. Check [Issues](https://github.com/TokenPocket/ai-agent-camp/issues) for existing reports
+2. Create a new Issue if needed
+3. Follow the template and provide detailed information
 
-| 方法 | 用途 |
-|------|------|
-| [GitHub Issues](https://github.com/TokenPocket/ai-agent-camp/issues) | バグ報告、機能リクエスト、技術的な質問 |
-| [Discussions](https://github.com/TokenPocket/ai-agent-camp/discussions) | 一般的な質問、情報交換、アイデア提案 |
+### Pull Requests
 
-### コマンドでのヘルプ
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Create a Pull Request
+
+### Documentation Improvements
+
+Typo fixes and wording improvements are also welcome. Please submit PRs with:
+
+- The target file clearly identified
+- The reason for the improvement
+- A proposed fix if possible
+
+### Questions & Discussion
+
+Issues can be written in English or Japanese. The community is multilingual.
+
+---
+
+## Support
+
+### Documentation
+
+- [Documentation Index](#documentation)
+- [Course Website](https://ai-agent.camp)
+- [Troubleshooting](docs/troubleshoot.md)
+
+### Questions & Help
+
+| Method | Use For |
+|--------|---------|
+| [GitHub Issues](https://github.com/TokenPocket/ai-agent-camp/issues) | Bug reports, feature requests, technical questions |
+| [Discussions](https://github.com/TokenPocket/ai-agent-camp/discussions) | General questions, information sharing, idea proposals |
+
+### In-Tool Help
 
 ```bash
-# セットアップ確認
+# Setup check
 Cursor: /check-setup
 Codex: aiagent-check-setup
 
-# 使い方ガイド
+# Usage guide
 /guide
 
-# プロジェクト概要
+# Project overview
 /overview
 
-# 対話型ヘルプ
+# Interactive help
 /tutor
 
-# 特定のモジュールについて
+# About a specific module
 /help-module-1
 ```
 
-### その他のリソース
+### Other Resources
 
-- **公式リポジトリ**: [github.com/TokenPocket/ai-agent-camp](https://github.com/TokenPocket/ai-agent-camp)
-- **Issue トラッカー**: [Issues](https://github.com/TokenPocket/ai-agent-camp/issues)
-- **Release ノート**: [Releases](https://github.com/TokenPocket/ai-agent-camp/releases)
+- **Official Repository**: [github.com/TokenPocket/ai-agent-camp](https://github.com/TokenPocket/ai-agent-camp)
+- **Issue Tracker**: [Issues](https://github.com/TokenPocket/ai-agent-camp/issues)
+- **Release Notes**: [Releases](https://github.com/TokenPocket/ai-agent-camp/releases)
 
 ---
 
-## 関連リソース
+## Related Resources
 
-### 公式ドキュメント
+### Official Documentation
 
 - [Claude AI Documentation](https://claude.ai/docs)
 - [Cursor Official Docs](https://cursor.com/docs)
 - [Google Gemini API Docs](https://ai.google.dev/docs)
 
-### コミュニティ
+### Community
 
 - [Claude Community Discord](https://discord.gg/claude)
 - [Cursor Community](https://community.cursor.sh)
-
----
-
-## 更新履歴
-
-### v3.0.0（2026-03-29）
-
-- **モジュール大幅拡充**: 13 → 20 モジュールへ拡大
-- **モジュール番号リナンバリング**: aiagent-course の表示順序と完全一致するよう全モジュール番号を再編成
-- **新規モジュール追加**: Module 4（Google Workspace）、Module 7（Skill/Commands）、Module 14（記事制作）、Module 15（動画制作）、Module 16（メール/LINE自動化）、Module 18（要件定義/システム開発）、Module 19（Outlook）、Module 20（Freee/MoneyForward）
-- **レッスン数**: 119 レッスン（start-0-1 〜 start-20-1）
-- **Trigger Word 導入**: 全レッスンの description に `When the user says /start-N-M` 形式を適用し、Skill 発動率を向上
-- **3ツール完全同期**: .claude/commands/lesson/ と .cursor/commands/lesson/ が完全同一
-
-### v2.0.0（2026-02-10）
-
-- **モジュール追加**: Module 12（マーケティング）、Module 13（LP/HP 制作）
-- **スキル大幅拡充**: 20 → 42 個（マーケティング系 20 スキル、PPTX Converter/Creator、LP Designer 追加）
-- **CursorBootcamp 対応**: `courses/aiagent/` に YAML メタデータレイヤー追加（3 レッスン・26 チャプター）
-- **教材全面リニューアル**: Foundation/Setup/Index 全 22 ページを新フォーマットに統一
-- **practice/final コンテンツ**: 全 25 チャプターに演習・最終課題を配備
-- **品質改善**: CodeRabbit レビュー対応、共有スタイルシート (style.css) 導入、Clipboard API エラーハンドリング追加
-- **コマンド追加**: 77 → 80 個（Module 12/13 のレッスンコマンド、ユーティリティ追加）
-
-### v1.0.0（2025-02-02）
-
-- 初回リリース
-- Foundation（4 セクション）
-- Setup（3 セクション）
-- Core Modules（11 モジュール）
-- 20 個のスキル、77 個のコマンド
-
-詳細は [CHANGELOG.md](CHANGELOG.md) を参照してください。
-
----
-
-## 最後に
-
-このプロジェクトは、**AI を「専門家だけのツール」から「すべての職種が活用できるツール」へ民主化する**という目標の下で開発されています。
-
-AIの力を活用して、あなたの仕事をより効率的に、より創造的に。
-
-Happy Learning! 🚀
-
----
-
-<div align="center">
-
-**Made with ❤️ for non-engineers who want to master AI agents**
-
-[Star us on GitHub](https://github.com/TokenPocket/ai-agent-camp) | [Report a Bug](https://github.com/TokenPocket/ai-agent-camp/issues) | [Request a Feature](https://github.com/TokenPocket/ai-agent-camp/issues)
-
-</div>

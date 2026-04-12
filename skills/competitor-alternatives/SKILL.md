@@ -1,7 +1,18 @@
 ---
 name: competitor-alternatives
 version: 1.0.0
-description: "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' or 'competitive landing pages.' Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. Emphasizes deep research, modular content architecture, and varied section types beyond feature tables."
+description: |
+  競合比較ページ・代替製品ページをSEO・営業資料向けに作成するスキル。
+  「競合比較ページを作って」「代替ツールのページ」「vs ページ」「〇〇 vs △△」「alternative page」等のリクエストで発動。
+  単数alternative、複数alternatives、自社vs競合、競合同士比較の4フォーマットに対応。
+triggers:
+  - competitor-alternatives
+  - 競合比較
+  - 代替ツール
+  - vs ページ
+  - alternative page
+  - 競合分析ページ
+  - comparison page
 ---
 
 # Competitor & Alternative Pages

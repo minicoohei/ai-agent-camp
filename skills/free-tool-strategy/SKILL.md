@@ -1,7 +1,16 @@
 ---
 name: free-tool-strategy
 version: 1.0.0
-description: When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the user mentions "engineering as marketing," "free tool," "marketing tool," "calculator," "generator," "interactive tool," "lead gen tool," "build a tool for leads," or "free resource." This skill bridges engineering and marketing — useful for founders and technical marketers.
+description: |
+  マーケティング目的の無料ツール戦略（リード獲得、SEO、ブランド認知）を立案するスキル。
+  「無料ツールを作りたい」「リード獲得ツール」「engineering as marketing」等のリクエストで発動。
+triggers:
+  - free-tool-strategy
+  - 無料ツール戦略
+  - リード獲得ツール
+  - engineering as marketing
+  - マーケティングツール企画
+  - 無料リソース設計
 ---
 
 # Free Tool Strategy (Engineering as Marketing)

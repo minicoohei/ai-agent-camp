@@ -4,6 +4,13 @@ description: |
   動画分析結果からタイプ別Playbookに知見を蓄積・活用するスキル。
   video-analyzerの出力template.jsonを入力として使う。
   「Playbook更新」「動画タイプ別知見」「Playbook確認」等で発動。
+triggers:
+  - Playbook更新
+  - 動画タイプ別の知見
+  - Playbookを確認
+  - 動画の制作ガイドライン
+  - 分析結果を蓄積
+  - video-playbook
 ---
 
 # Video Playbook

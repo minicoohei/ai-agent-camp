@@ -1,9 +1,19 @@
 ---
 name: aiagent-env-manager
-description: Manage environment variables and credentials for ai-agent-camp. Use when setting up API keys, .env handling, or the credential manager safely.
+description: |
+  ai-agent-campの環境変数・認証情報を安全に管理するスキル。
+  「APIキーを設定」「.envを管理」「環境変数の設定」「credential managerを使いたい」「秘密情報の管理」等のリクエストで発動。
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []
+triggers:
+  - aiagent-env-manager
+  - APIキーを設定
+  - 環境変数の設定
+  - .env管理
+  - credential manager
+  - 秘密情報の管理
+  - 認証情報の設定
 ---
 
 # AI Agent Env Manager

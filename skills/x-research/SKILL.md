@@ -5,12 +5,16 @@ author: ai-agent-camp
 description: |
   X (Twitter) のリアルタイム検索を行い、トピックに関するツイートを収集・分析する。
   検索結果を構造化レポート（Markdown + JSON + TXT）として出力。
-  以下のリクエストで使用:
-  - 「Xで○○を検索して」「Twitterで○○を調べて」
-  - 「○○についてのツイートを分析」「X上での反応を調べて」
-  - 「SNSリサーチ: ○○」「○○のトレンドを調査」
-  - 「○○に関するX上の意見を集めて」
-  - "search X for ○○" "analyze tweets about ○○"
+  「Xで検索して」「Twitterで調べて」「ツイートを分析」等で発動。
+triggers:
+  - Xで検索して
+  - Twitterで調べて
+  - ツイートを分析
+  - X上の反応を調べて
+  - SNSリサーチ
+  - トレンドを調査
+  - x-research
+  - search tweets
 dependencies:
   - requests>=2.28.0
   - python-dotenv>=0.19.0

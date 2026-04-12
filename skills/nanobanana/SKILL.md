@@ -1,6 +1,16 @@
 ---
 name: nanobanana
-description: Generate images from text prompts or edit existing images using Gemini Image Generation API. Supports text-to-image generation and image editing with multiple reference images. Use when creating visuals, editing photos, or generating illustrations.
+description: |
+  Gemini画像生成APIでテキストから画像生成、既存画像の編集を行うスキル。
+  「画像を生成して」「イラストを作って」「写真を編集して」等のリクエストで発動。
+triggers:
+  - 画像を生成して
+  - イラストを作って
+  - 写真を編集して
+  - 画像を作成
+  - nanobanana
+  - image generation
+  - ロゴをデザインして
 ---
 
 # Nano Banana Pro - Image Generation & Editing

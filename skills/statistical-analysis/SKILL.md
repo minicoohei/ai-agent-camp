@@ -1,6 +1,16 @@
 ---
 name: statistical-analysis
-description: Guided statistical analysis with test selection and reporting. Use when you need help choosing appropriate tests for your data, assumption checking, power analysis, and APA-formatted results. Best for academic research reporting, test selection guidance. For implementing specific models programmatically use statsmodels.
+description: |
+  統計検定の選択・仮定チェック・検出力分析・APA形式レポートを支援するスキル。
+  「統計分析をして」「t検定を実行」「適切な検定を選んで」等のリクエストで発動。
+triggers:
+  - 統計分析をして
+  - t検定を実行
+  - 適切な検定を選んで
+  - 検出力分析
+  - APA形式でレポート
+  - statistical-analysis
+  - hypothesis test
 license: MIT license
 metadata:
     skill-author: K-Dense Inc.

@@ -1,9 +1,18 @@
 ---
 name: aiagent-verify-module
-description: Verify module completion with AI evaluation. Use when the user wants to check if a module (e.g. module 1) was completed successfully after finishing lessons.
+description: |
+  モジュールの完了状況をAI評価で検証するスキル。
+  「モジュール確認」「モジュール1の達成度」「レッスンの完了チェック」「進捗を検証」「verify module」等のリクエストで発動。
 version: 1.0.0
 author: AI Brain Partners
 dependencies: []
+triggers:
+  - aiagent-verify-module
+  - モジュール確認
+  - モジュールの達成度
+  - レッスン完了チェック
+  - 進捗を検証
+  - verify module
 ---
 
 # AI Agent Verify Module

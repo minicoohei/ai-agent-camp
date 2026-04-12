@@ -1,9 +1,16 @@
 ---
 name: slack-todo-extractor
 description: |
-  Slackの同期データから特定ユーザー宛のメンションを検索し、スレッド返信を含めてTODO/タスクを抽出・ステータス判定する。
-  「Slackからタスク抽出」「TODO確認」「メンション確認」「@ユーザー宛のタスク」などのリクエストで使用する。
-  LLM（Gemini 2.0 Flash）による高精度な文脈判定にも対応。
+  Slackの同期データからメンションを検索しTODO/タスクを抽出・ステータス判定するスキル。
+  「Slackからタスク抽出」「TODO確認」「メンション確認」等のリクエストで発動。
+triggers:
+  - Slackからタスク抽出
+  - TODO確認
+  - メンション確認
+  - 宛のタスク
+  - Slackの未対応タスク
+  - slack-todo-extractor
+  - Slack TODO
 ---
 
 # Slack TODO抽出スキル

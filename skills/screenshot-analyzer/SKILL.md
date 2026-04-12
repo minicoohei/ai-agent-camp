@@ -1,6 +1,16 @@
 ---
 name: screenshot-analyzer
-description: Analyze screenshots for error diagnosis and tutorial generation using Gemini Vision API. Detects errors, suggests solutions, or generates step-by-step operation guides. Use when debugging from screenshots or creating how-to documentation.
+description: |
+  スクリーンショットからエラー診断や操作チュートリアルを自動生成するスキル。
+  「スクショを分析して」「画面のエラーを調べて」「操作手順を作って」等のリクエストで発動。
+triggers:
+  - スクショを分析して
+  - 画面のエラーを調べて
+  - 操作手順を作って
+  - スクリーンショット解析
+  - エラー画面を診断
+  - screenshot-analyzer
+  - screenshot analysis
 ---
 
 # Screenshot Analyzer

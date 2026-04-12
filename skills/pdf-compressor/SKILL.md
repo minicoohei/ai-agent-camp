@@ -1,6 +1,15 @@
 ---
 name: pdf-compressor
-description: Compress large PDF files by resizing pages and optimizing images. Use when PDF file size is too large for sharing, uploading, or when Gemini generates oversized slides. Reduces file size by up to 98% while maintaining acceptable quality.
+description: |
+  大きなPDFファイルを圧縮するスキル。ファイルサイズを最大98%削減。
+  「PDFを圧縮して」「PDFを軽くして」「ファイルサイズを小さくして」等のリクエストで発動。
+triggers:
+  - PDFを圧縮して
+  - PDFを軽くして
+  - ファイルサイズを小さくして
+  - pdf-compressor
+  - PDF compress
+  - PDFが重い
 ---
 
 # PDF Compressor
