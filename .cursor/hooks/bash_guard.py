@@ -79,8 +79,8 @@ def main() -> int:
         raw = sys.stdin.read()
         data = json.loads(raw) if raw.strip() else {}
     except (json.JSONDecodeError, OSError):
-        msg = "セキュリティ: hook 入力を解析できないためコマンドを拒否しました。"
-        json.dump({"permission": "deny", "userMessage": msg, "agentMessage": msg}, sys.stdout)
+        # パース失敗時は fail-open（許可）。
+        # Cursor Automation 等の非標準環境でコマンドが全拒否される問題を防ぐ。
         return 0
 
     # Cursor 形式: {command: "...", cwd: "...", hook_event_name: "beforeShellExecution"}

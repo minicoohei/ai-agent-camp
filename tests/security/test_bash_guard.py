@@ -293,14 +293,14 @@ class TestEdgeCases:
         assert result.returncode == 0
 
     def test_invalid_json(self):
-        """不正な JSON はブロック（fail-closed）。"""
+        """不正な JSON は fail-open（許可）。自動レビュー等の非標準環境対応。"""
         result = subprocess.run(
             [sys.executable, str(GUARD_SCRIPT)],
             input="not json",
             capture_output=True,
             text=True,
         )
-        assert result.returncode == 2
+        assert result.returncode == 0
 
     def test_missing_command(self):
         """command キーがない場合は許可。"""

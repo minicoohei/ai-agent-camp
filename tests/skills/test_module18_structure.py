@@ -102,7 +102,11 @@ class TestLessonCommands:
         assert "duration" in fm, f"start-18-{n}.md missing duration"
 
     def test_total_lesson_count(self, commands_dir):
-        files = list(commands_dir.glob("start-18-*.md"))
+        import re
+        files = [
+            f for f in commands_dir.glob("start-18-*.md")
+            if not re.search(r'\.\w{2}\.md$', f.name)
+        ]
         assert len(files) == TOTAL_LESSONS, (
             f"Expected {TOTAL_LESSONS} lesson files, found {len(files)}"
         )

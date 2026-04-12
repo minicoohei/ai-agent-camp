@@ -36,7 +36,10 @@ START_REF_RE = re.compile(r"/start-(\d+)-(\d+)")
 
 
 def _all_lesson_paths() -> list[Path]:
-    return sorted(CLAUDE_LESSON_DIR.glob("start-*.md"))
+    return sorted(
+        f for f in CLAUDE_LESSON_DIR.glob("start-*.md")
+        if not re.search(r'\.\w{2}\.md$', f.name)
+    )
 
 
 def _all_lesson_ids() -> set[str]:
@@ -235,6 +238,9 @@ class TestNavigationIntegrity:
             or "finish" in text.lower()
             or "完了" in text
             or "おめでとう" in text
+            or "siguiente" in text.lower()
+            or "completado" in text.lower()
+            or "felicidades" in text.lower()
         )
         assert has_next, f"{stem}: 次のステップ / 完了セクションがない"
 

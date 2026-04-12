@@ -1,480 +1,479 @@
 ---
-description: "GitHub Account Settings and Repository Creation"
+description: "GitHub Account Setup and Repository Creation"
 duration: "~10 min"
 prerequisites: ["/setup-start completed"]
 level: "beginner"
 tags: ["setup", "github"]
 ---
 
-
-# GitHub Account Settings and Repository Creation
+# GitHub Account Setup and Repository Creation
 
 ## Step 0: Check Setup Progress
 
 **What the AI auto-runs:**
-1. `uv run python tools/setup_progress.py show --current setup-github`  to display progress
-2. `gh auth status` で既にログイン済みか確認。ログイン済みなら「GitHub認証は完了しています」と表示
-3. `git remote -v` で自分用リポが既にあるか確認。あれば「リポジトリもConfiguredです。スキップしますか？」と確認
+1. Run `uv run python tools/setup_progress.py show --current setup-github` to display progress
+2. Check if already logged in with `gh auth status`. If logged in, display "GitHub authentication is complete."
+3. Check if a personal repo already exists with `git remote -v`. If it exists, confirm "Repository is also configured. Do you want to skip?"
 
-## What You'll Do
+## What You'll Do in This Session
 
-**GitHub アカウント設定** へようこそ！
+**Welcome to GitHub Account Setup!**
 
 | Item | Details |
 |------|---------|
-| Goal | GitHub にログインし、自分専用の private リポジトリを作成する |
-| Duration | 約10分（アカウント作成が必要な場合は15分） |
-| Skills Used | なし（AIが全て自動で実行します） |
-| Prerequisites | `/setup-start` 完了済み（Python / Node.js / Git / GitHub CLI がInstalled） |
-| Next Command | `/start-0-1`（環境セットアップ確認） |
+| Goal | Log in to GitHub and create your own private repository |
+| Duration | ~10 minutes (15 minutes if account creation is needed) |
+| Skills Used | None (the AI handles everything automatically) |
+| Prerequisites | `/setup-start` completed (Python / Node.js / Git / GitHub CLI are installed) |
+| Next Command | `/start-0-1` (Environment setup check) |
 
-**このセッションの流れ:**
-1. GitHub アカウントの確認
-2. GitHub 認証（ブラウザで「許可」ボタンを押すだけ）
-3. 自分専用リポジトリの作成
+**Session flow:**
+1. Verify your GitHub account
+2. GitHub authentication (just click "Allow" in the browser)
+3. Create your personal repository
 
-> **重要**: あなたがターミナルにコマンドを入力する必要は一切ありません。全てbehind the scenes自動実行します。ブラウザが開いたら画面の指示に従うだけでOKです。
-> **セキュリティ注意**: パスワードやトークンをチャットに貼り付けないでください。認証は全てブラウザ経由で安全に行います。
-> **ヒント**: If the AI stops responding midway, type "please continue" or "it stopped" to resume.This is a Cursor behavior, not a malfunction.
+> **Important**: You don't need to type any commands in the terminal. The AI handles everything behind the scenes. When the browser opens, just follow the on-screen instructions.
+> **Security note**: Do not paste passwords or tokens in the chat. All authentication is done securely through the browser.
+> **Hint**: If the AI's response stops midway, type "please continue" or "it stopped" to resume. This is a Cursor behavior, not a bug.
 >
-> **Codex向けメモ**: Codex では `/setup-github` をそのまま実行するのではなく、このドキュメント内の確認手順と `gh auth` の実処理を順番に進めます。ブラウザ上のログインや認可ボタンのクリックだけユーザーが担当します。
+> **Note for Codex**: In Codex, rather than running `/setup-github` directly, follow the verification steps in this document and proceed through `gh auth` sequentially. Only the browser login and authorization button clicks are done by the user.
 
 ---
 
-## Pre-Session Check
+## Pre-session Confirmation
 
-**AskQuestionの設定:**
+**AskQuestion configuration:**
 ```json
 {
-  "title": "セッション開始前の確認",
+  "title": "Pre-session confirmation",
   "questions": [{
     "id": "readiness",
     "prompt": "Are you ready?",
     "options": [
       {"id": "ready", "label": "Ready! Let's start"},
-      {"id": "chrome", "label": "/chrome でブラウザ操作を自動化する"},
-      {"id": "check_prereq", "label": "/setup-start をまだやっていない"},
-      {"id": "what_is_github", "label": "GitHub って何？"}
+      {"id": "chrome", "label": "Automate browser operations with /chrome"},
+      {"id": "check_prereq", "label": "I haven't done /setup-start yet"},
+      {"id": "what_is_github", "label": "What is GitHub?"}
     ]
   }]
 }
 ```
 
-(ready → Step 1へ)
-(chrome → Step 1 でアカウント作成が必要な場合、ブラウザを開いた後に「Chrome 統合で自動化する場合」セクションの手順で自動実行する)
-(check_prereq → 「先に /setup-start を実行してください。必要なソフトウェアのインストールを確認します。」と案内)
-(what_is_github → 以下を案内:「GitHub は、プログラムやファイルを安全に保存・管理できるクラウドサービスです。Google ドライブのプログラマー版のようなものです。この研修では、あなたの作業内容を保存するために使います。無料で使えます。」→ Step 1へ)
+(ready -> Proceed to Step 1)
+(chrome -> When account creation is needed in Step 1, after opening the browser, follow the "Automating with Chrome integration" section for automatic execution)
+(check_prereq -> Guide: "Please run /setup-start first. It will check that the required software is installed.")
+(what_is_github -> Guide: "GitHub is a cloud service for safely storing and managing programs and files. Think of it as the programmer's version of Google Drive. In this training, we'll use it to save your work. It's free to use." -> Proceed to Step 1)
 
 ---
 
-## Step 1: GitHub アカウントの確認
+## Step 1: Verify Your GitHub Account
 
-**AskQuestionの設定:**
+**AskQuestion configuration:**
 ```json
 {
-  "title": "Step 1: GitHub アカウントの確認",
+  "title": "Step 1: GitHub Account Verification",
   "questions": [{
     "id": "has_account",
-    "prompt": "GitHub のアカウントを持っていますか？",
+    "prompt": "Do you have a GitHub account?",
     "options": [
-      {"id": "yes", "label": "持っている"},
-      {"id": "no", "label": "持っていない（作りたい）"},
-      {"id": "not_sure", "label": "わからない"}
+      {"id": "yes", "label": "Yes, I have one"},
+      {"id": "no", "label": "No (I want to create one)"},
+      {"id": "not_sure", "label": "I'm not sure"}
     ]
   }]
 }
 ```
 
-### アカウントを持っている場合 (yes)
+### If you have an account (yes)
 
-→ Step 2 へ進む
+-> Proceed to Step 2
 
-### アカウントを持っていない場合 (no)
+### If you don't have an account (no)
 
 **What the AI auto-runs:**
-まず `uname -s` を実行して OS を判定する（Step 1 で判定済みの場合はその結果を使用）。
+First, run `uname -s` to detect the OS (if already detected in Step 1, use that result).
 
-表示:
+Display:
 ```text
-GitHub のアカウントを作成しましょう。
-AIがブラウザを自動で開きます。少しお待ちください...
+Let's create a GitHub account.
+The AI will open the browser automatically. Please wait a moment...
 ```
 
 ```bash
-# AIが実行:
+# AI runs:
 # Mac:
 open https://github.com/signup
 # Windows:
 start https://github.com/signup
 ```
 
-**アカウント作成手順の案内:**
+**Account creation instructions:**
 ```text
-ブラウザが開いたら、以下の手順で進めてください:
+Once the browser opens, follow these steps:
 
-1. メールアドレスを入力して「Continue」をクリック
-2. パスワードを設定して「Continue」をクリック
-   （8文字以上、数字または記号を含むパスワードにしてください）
-3. ユーザー名を決めて「Continue」をクリック
-   （半角英数字とハイフンのみ。例: taro-yamada）
-4. メール通知の設定を選んで「Continue」をクリック
-5. パズル認証を解いて「Create account」をクリック
-6. 登録したメールアドレスに確認コードが届きます
-7. メールに記載された 6桁のコードを入力
+1. Enter your email address and click "Continue"
+2. Set a password and click "Continue"
+   (Use a password with 8+ characters, including numbers or symbols)
+3. Choose a username and click "Continue"
+   (Only half-width alphanumeric characters and hyphens. Example: taro-yamada)
+4. Choose your email notification preference and click "Continue"
+5. Solve the puzzle verification and click "Create account"
+6. A confirmation code will be sent to your registered email
+7. Enter the 6-digit code from the email
 
-アカウント作成が完了したら、ここに「できた」と入力してください。
+Once account creation is complete, type "done" here.
 ```
 
-### Chrome 統合で自動化する場合（`/chrome` モード、新規アカウント作成時のみ）
+### Automating with Chrome Integration (`/chrome` mode, for new account creation only)
 
-**前提条件:** Chrome に「Claude in Chrome」拡張機能（v1.0.36+）がInstalledで、`claude --chrome` で起動しているか、セッション内で `/chrome` を実行済みであること。
+**Prerequisite:** The "Claude in Chrome" extension (v1.0.36+) must be installed in Chrome, and you must have launched with `claude --chrome` or run `/chrome` in the session.
 
-**AIが Chrome 統合で自動実行する内容:**
-1. ブラウザで https://github.com/signup を開く
-2. Chrome 統合を使って以下の操作を順番に実行する:
-   - メールアドレス入力欄にフォーカスし、ユーザーに入力を促す
-   - 「Continue」ボタンをクリック
-   - パスワード入力後に「Continue」をクリック
-   - ユーザー名入力後に「Continue」をクリック
-   - メール通知設定後に「Continue」をクリック
-   - パズル認証はユーザーに操作を任せる
-   - 「Create account」をクリック
-3. メール確認コードの入力はユーザーが手動で行う
-4. アカウント作成完了後、Step 2 に進む
+**What the AI auto-runs with Chrome integration:**
+1. Open https://github.com/signup in the browser
+2. Use Chrome integration to perform the following operations in order:
+   - Focus on the email input field and prompt the user to enter their email
+   - Click "Continue"
+   - Click "Continue" after password entry
+   - Click "Continue" after username entry
+   - Click "Continue" after email notification settings
+   - Leave the puzzle verification to the user
+   - Click "Create account"
+3. Email confirmation code entry is done manually by the user
+4. After account creation is complete, proceed to Step 2
 
-**注意:** パスワードやメールアドレスの値はブラウザ画面から読み取らないこと。
+**Note:** Do not read password or email values from the browser screen.
 
-Chrome 統合が利用できない場合は、上記の手順を手動で実行してください。
+If Chrome integration is not available, follow the steps above manually.
 
-**AskQuestionの設定（完了確認）:**
+**AskQuestion configuration (completion check):**
 ```json
 {
-  "title": "アカウント作成の確認",
+  "title": "Account creation confirmation",
   "questions": [{
     "id": "account_created",
-    "prompt": "GitHub アカウントの作成は完了しましたか？",
+    "prompt": "Is the GitHub account creation complete?",
     "options": [
-      {"id": "done", "label": "完了した！"},
-      {"id": "stuck", "label": "途中でつまった"},
-      {"id": "browser_not_open", "label": "ブラウザが開かなかった"}
+      {"id": "done", "label": "Done!"},
+      {"id": "stuck", "label": "I got stuck partway"},
+      {"id": "browser_not_open", "label": "The browser didn't open"}
     ]
   }]
 }
 ```
 
-(done → Step 2 へ)
-(stuck → 「どの画面で止まっていますか？画面に表示されている内容を教えてください。」と聞いて対応)
-(browser_not_open → 「ブラウザを開いて、アドレスバーに https://github.com/signup type it here」と案内)
+(done -> Proceed to Step 2)
+(stuck -> "Which screen are you on? Please tell me what's displayed on your screen." and assist)
+(browser_not_open -> Guide: "Open your browser and type https://github.com/signup in the address bar.")
 
-### わからない場合 (not_sure)
+### If not sure (not_sure)
 
-表示:
+Display:
 ```text
-確認してみましょう。以下のどちらかに心当たりはありますか？
-- GitHub から登録確認メールを受け取ったことがある
-- https://github.com にログインできる
+Let's check. Do either of the following ring a bell?
+- You received a registration confirmation email from GitHub
+- You can log in at https://github.com
 
-わからない場合は、新しく作成しても問題ありません。
+If you're not sure, it's fine to create a new one.
 ```
 
-**AskQuestionの設定:**
+**AskQuestion configuration:**
 ```json
 {
-  "title": "アカウントの確認",
+  "title": "Account verification",
   "questions": [{
     "id": "account_check",
-    "prompt": "どうしますか？",
+    "prompt": "What would you like to do?",
     "options": [
-      {"id": "try_login", "label": "ログインを試してみる（ブラウザを開いて）"},
-      {"id": "create_new", "label": "新しく作成する"}
+      {"id": "try_login", "label": "Try logging in (open browser)"},
+      {"id": "create_new", "label": "Create a new one"}
     ]
   }]
 }
 ```
 
-(try_login → AIが `open https://github.com/login` / `start https://github.com/login` を実行してブラウザを開く → ログインできたら Step 2 へ、できなかったら新規作成フローへ)
-(create_new → 上記「アカウントを持っていない場合」のフローへ)
+(try_login -> AI runs `open https://github.com/login` / `start https://github.com/login` to open browser -> If login succeeds, proceed to Step 2; if not, go to the new account creation flow)
+(create_new -> Go to "If you don't have an account" flow above)
 
 ---
 
-## Step 2: GitHub 認証
+## Step 2: GitHub Authentication
 
 **What the AI auto-runs:**
 
-### 2-1. 既存の認証状態を確認
+### 2-1. Check Existing Authentication
 
-まず `gh auth status` を実行して、既にログイン済みか確認する。
+First, run `gh auth status` to check if already logged in.
 
-**既にログイン済みの場合:**
+**If already logged in:**
 ```text
-GitHub に {ユーザー名} としてログイン済みです。
+You are logged in to GitHub as {username}.
 ```
-→ Step 3 へ進む
+-> Proceed to Step 3
 
-**未ログインの場合:**
+**If not logged in:**
 
-### 2-2. ブラウザ認証を開始
+### 2-2. Start Browser Authentication
 
-表示:
+Display:
 ```text
-GitHub にログインします。
-AIがブラウザを自動で開きます。以下の手順に従ってください:
+Logging in to GitHub.
+The AI will open the browser automatically. Follow these steps:
 ```
 
 ```bash
-AIが実行: gh auth login --web -p https
+AI runs: gh auth login --web -p https
 ```
 
-このコマンドの結果に応じて2つのパターンがある:
+This command has two possible results:
 
-**パターンA: ブラウザが自動で開く場合**
+**Pattern A: Browser opens automatically**
 ```text
-ブラウザが自動で開きました。
-画面に表示される「Authorize GitHub CLI」の緑色のボタンをクリックしてください。
-完了すると、このチャットに自動で結果が表示されます。
+The browser opened automatically.
+Click the green "Authorize GitHub CLI" button on the screen.
+The result will automatically appear in this chat when done.
 ```
 
-**パターンB: 8桁のコードが表示される場合**
+**Pattern B: An 8-digit code is displayed**
 
-コマンド出力から表示された 8桁のコード（例: `XXXX-XXXX`）を読み取り、以下を案内:
+Read the 8-digit code (e.g., `XXXX-XXXX`) from the command output and guide:
 ```text
-ブラウザに認証ページが開いています。
-以下のコードを画面に入力してください:
+An authentication page has opened in the browser.
+Enter the following code on the screen:
 
     XXXX-XXXX
 
-（上のコードをそのまま入力してください）
+(Enter this code exactly as shown)
 
-手順:
-1. ブラウザの画面に 8桁の入力欄が表示されています
-2. 上記のコードを入力して「Continue」をクリック
-3. 「Authorize GitHub CLI」の緑色のボタンをクリック
-4. 完了すると、このチャットに自動で結果が表示されます
+Steps:
+1. An 8-digit input field is displayed in the browser
+2. Enter the code above and click "Continue"
+3. Click the green "Authorize GitHub CLI" button
+4. The result will automatically appear in this chat when done
 ```
 
-もしブラウザが開かない場合:
+If the browser doesn't open:
 ```text
-ブラウザが開かなかった場合は、以下のURLをブラウザで開いてください:
+If the browser didn't open, open the following URL in your browser:
 https://github.com/login/device
 
-開いたら、上記のコードを入力してください。
+Then enter the code above.
 ```
 
-### 2-3. 認証結果の確認
+### 2-3. Verify Authentication Result
 
-AIが `gh auth status` を実行して結果を確認する。
+AI runs `gh auth status` to check the result.
 
-**認証成功の場合:**
+**If authentication succeeded:**
 ```text
-認証成功です！ {ユーザー名} として GitHub にログインしました。
+Authentication successful! You are now logged in to GitHub as {username}.
 ```
-→ Step 3 へ進む
+-> Proceed to Step 3
 
-**認証失敗の場合:**
+**If authentication failed:**
 
-**AskQuestionの設定:**
+**AskQuestion configuration:**
 ```json
 {
-  "title": "認証に問題が発生しました",
+  "title": "Authentication problem occurred",
   "questions": [{
     "id": "auth_trouble",
-    "prompt": "認証がうまくいかなかったようです。状況を教えてください。",
+    "prompt": "Authentication didn't seem to work. Please tell me your situation.",
     "options": [
-      {"id": "retry", "label": "もう一度やり直す"},
-      {"id": "browser_issue", "label": "ブラウザが開かなかった"},
-      {"id": "code_expired", "label": "コードの入力画面が消えてしまった"},
-      {"id": "other_error", "label": "エラーメッセージが表示された"}
+      {"id": "retry", "label": "Try again"},
+      {"id": "browser_issue", "label": "The browser didn't open"},
+      {"id": "code_expired", "label": "The code entry screen disappeared"},
+      {"id": "other_error", "label": "An error message was displayed"}
     ]
   }]
 }
 ```
 
-(retry → `gh auth login --web -p https` を再実行)
-(browser_issue → 「ブラウザを開いて https://github.com/login/device にアクセスしてください」と案内し、コードを再表示)
-(code_expired → 「コードの有効期限が切れた可能性があります。もう一度実行します。」→ `gh auth login --web -p https` を再実行)
-(other_error → 「表示されているエラーメッセージを教えてください」と聞いて対応)
+(retry -> Re-run `gh auth login --web -p https`)
+(browser_issue -> Guide: "Open your browser and go to https://github.com/login/device" and re-display the code)
+(code_expired -> "The code may have expired. Running again." -> Re-run `gh auth login --web -p https`)
+(other_error -> "Please tell me the error message displayed." and assist)
 
 ---
 
-## Step 3: 自分専用リポジトリの作成
+## Step 3: Create Your Personal Repository
 
 **What the AI auto-runs:**
 
-### 3-1. 現在の状態を確認
+### 3-1. Check Current State
 
-AIが以下を順番に実行:
-1. `gh auth status` からログインユーザー名を取得
-2. `git remote -v` で現在の remote 設定を確認
+AI runs the following in order:
+1. Get the login username from `gh auth status`
+2. Check current remote settings with `git remote -v`
 
-### 3-2. 状態に応じた処理
+### 3-2. Actions Based on State
 
-**ケースA: 既に自分用リポジトリが設定されている場合**
-（`git remote -v` の origin URL にログインユーザー名が含まれている場合）
+**Case A: Personal repository is already configured**
+(The origin URL in `git remote -v` contains the login username)
 
-表示:
+Display:
 ```text
-あなた専用のリポジトリは既に設定されています。
-  リポジトリ: https://github.com/{username}/ai-agent-camp
+Your personal repository is already configured.
+  Repository: https://github.com/{username}/ai-agent-camp
 
-問題ありません。次のステップへ進みましょう。
+No issues. Let's proceed to the next step.
 ```
-→ 完了セクションへ
+-> Go to Completion section
 
-**ケースB: origin が minicoohei/ai-agent-camp（教材配布元）のままの場合**
+**Case B: origin is still set to minicoohei/ai-agent-camp (the course distribution source)**
 
-表示:
+Display:
 ```text
-現在の設定は教材の配布元リポジトリを指しています。
-あなた専用の private リポジトリを作成します。
+The current settings point to the course distribution repository.
+We'll create your personal private repository.
 ```
 
-**AskQuestionの設定:**
+**AskQuestion configuration:**
 ```json
 {
-  "title": "自分専用リポジトリの作成",
+  "title": "Create personal repository",
   "questions": [{
     "id": "create_repo",
-    "prompt": "{username}/ai-agent-camp という名前で、あなた専用の private リポジトリを作成します。よろしいですか？",
+    "prompt": "We'll create a private repository named {username}/ai-agent-camp for you. Is that OK?",
     "options": [
-      {"id": "yes", "label": "作成する"},
-      {"id": "different_name", "label": "別の名前にしたい"},
-      {"id": "explain", "label": "リポジトリって何？"}
+      {"id": "yes", "label": "Create it"},
+      {"id": "different_name", "label": "I want a different name"},
+      {"id": "explain", "label": "What is a repository?"}
     ]
   }]
 }
 ```
 
-(yes → リポジトリ作成を実行)
-(different_name → 「どのような名前にしますか？半角英数字とハイフンが使えます。」と聞いて入力を受け取る)
-(explain → 「リポジトリとは、ファイルの保存場所です。Google ドライブのフォルダのようなものと考えてください。private に設定するので、あなただけがアクセスできます。」と案内 → 再度 AskQuestion を表示)
+(yes -> Execute repository creation)
+(different_name -> "What name would you like? You can use half-width alphanumeric characters and hyphens." and accept input)
+(explain -> "A repository is a storage location for files. Think of it like a Google Drive folder. It will be set to private, so only you can access it." -> Re-display the AskQuestion)
 
-**リポジトリ作成の実行:**
+**Execute repository creation:**
 
-AIが以下を順番に実行:
+AI runs the following in order:
 
-1. 既存の origin を upstream にリネーム（教材配布元として保持）:
+1. Rename existing origin to upstream (keep as the course distribution source):
    ```bash
    git remote rename origin upstream
    ```
-   （既に upstream がある場合はスキップ）
+   (Skip if upstream already exists)
 
-2. 自分用リポジトリを作成して origin に設定:
+2. Create personal repository and set as origin:
    ```bash
    gh repo create {username}/ai-agent-camp --private --source . --remote origin --push
    ```
 
-3. 結果を確認:
+3. Verify the result:
    ```bash
    git remote -v
    ```
 
-**作成成功の場合:**
+**On success:**
 ```text
-あなた専用の private リポジトリが作成されました！
+Your personal private repository has been created!
 
-  リポジトリURL: https://github.com/{username}/ai-agent-camp
-  公開設定: private（あなただけがアクセスできます）
+  Repository URL: https://github.com/{username}/ai-agent-camp
+  Visibility: private (only you can access it)
 
-これで研修の成果物が安全に保存されるようになりました。
+Your training deliverables will now be safely saved.
 ```
-→ 完了セクションへ
+-> Go to Completion section
 
-**作成失敗の場合:**
+**On failure:**
 
-AIがエラーメッセージを解析して原因を特定:
+AI analyzes the error message and identifies the cause:
 
-- 「already exists」→ 同名リポジトリが既にある場合:
+- "already exists" -> A repository with the same name already exists:
   ```text
-  同じ名前のリポジトリが既に存在しています。
+  A repository with the same name already exists.
   ```
-  **AskQuestionの設定:**
+  **AskQuestion configuration:**
   ```json
   {
-    "title": "リポジトリが既に存在しています",
+    "title": "Repository already exists",
     "questions": [{
       "id": "repo_exists",
-      "prompt": "同名のリポジトリが見つかりました。どうしますか？",
+      "prompt": "A repository with the same name was found. What would you like to do?",
       "options": [
-        {"id": "use_existing", "label": "既存のリポジトリを使う"},
-        {"id": "different_name", "label": "別の名前で作成する"}
+        {"id": "use_existing", "label": "Use the existing repository"},
+        {"id": "different_name", "label": "Create with a different name"}
       ]
     }]
   }
   ```
-  (use_existing → AIが `git remote add origin https://github.com/{username}/ai-agent-camp.git` と `git push -u origin main` を実行)
-  (different_name → 「どのような名前にしますか？」と聞いて入力を受け取り、その名前で再実行)
+  (use_existing -> AI runs `git remote add origin https://github.com/{username}/ai-agent-camp.git` and `git push -u origin main`)
+  (different_name -> "What name would you like?" and accept input, then re-run with that name)
 
-- 「permission denied」→ 認証に問題がある場合:
-  → Step 2 の認証フローへ戻る
+- "permission denied" -> Authentication issue:
+  -> Go back to Step 2 authentication flow
 
-- その他のエラー → エラー内容を表示し、「画面に表示されている内容を教えてください」と聞いて対応
+- Other errors -> Display error content and ask "Please tell me what's displayed on your screen." to assist
 
-**ケースC: origin がない場合**
-（`git remote -v` で何も表示されない場合）
+**Case C: No origin exists**
+(Nothing is displayed by `git remote -v`)
 
-表示:
+Display:
 ```text
-リモートリポジトリが設定されていません。
-あなた専用の private リポジトリを新規作成します。
+No remote repository is configured.
+We'll create a new private repository for you.
 ```
-→ ケースB の「リポジトリ作成の実行」と同じ手順を実行（ただし手順1のリネームはスキップ）
+-> Execute the same "Execute repository creation" steps as Case B (but skip step 1 rename)
 
 ---
 
-## Common Troubleshooting
+## Common Troubles and Solutions
 
-**AskQuestionの設定:**
+**AskQuestion configuration:**
 ```json
 {
-  "title": "トラブル内容を選択",
+  "title": "Select the trouble type",
   "questions": [{
     "id": "trouble",
-    "prompt": "当てはまる内容を1つ選んでください",
+    "prompt": "Select the one that applies to you",
     "options": [
-      {"id": "trouble_1", "label": "ブラウザが開かない"},
-      {"id": "trouble_2", "label": "認証コードを入力する画面がない"},
-      {"id": "trouble_3", "label": "リポジトリ作成でエラーが出る"},
-      {"id": "trouble_4", "label": "GitHub のパスワードを忘れた"},
-      {"id": "trouble_5", "label": "その他のトラブル"}
+      {"id": "trouble_1", "label": "The browser doesn't open"},
+      {"id": "trouble_2", "label": "There's no screen to enter the authentication code"},
+      {"id": "trouble_3", "label": "I get an error creating the repository"},
+      {"id": "trouble_4", "label": "I forgot my GitHub password"},
+      {"id": "trouble_5", "label": "Other trouble"}
     ]
   }]
 }
 ```
 
-### トラブル1: 「ブラウザが開かない」
-**原因**: デフォルトブラウザの設定、またはセキュリティソフトのブロック
-**解決方法**:
+### Trouble 1: "Browser Doesn't Open"
+**Cause**: Default browser settings, or security software blocking
+**Solution**:
 ```text
-ブラウザを手動で開いて、以下のURLにアクセスしてください:
-- アカウント作成: https://github.com/signup
-- ログイン: https://github.com/login
-- デバイス認証: https://github.com/login/device
+Open the browser manually and go to one of these URLs:
+- Account creation: https://github.com/signup
+- Login: https://github.com/login
+- Device authentication: https://github.com/login/device
 ```
 
-### トラブル2: 「認証コードを入力する画面がない」
-**原因**: ブラウザの別タブで開かれている、またはポップアップブロック
-**解決方法**:
+### Trouble 2: "No Screen to Enter Authentication Code"
+**Cause**: Opened in another browser tab, or popup blocker
+**Solution**:
 ```text
-1. ブラウザのタブを確認してください（新しいタブが開いているかもしれません）
-2. 見つからない場合は、ブラウザで https://github.com/login/device を開いてください
-3. 表示されたコードを入力してください
+1. Check your browser tabs (a new tab may have been opened)
+2. If not found, open https://github.com/login/device in your browser
+3. Enter the displayed code
 ```
 
-### トラブル3: 「リポジトリ作成でエラーが出る」
-**原因**: 認証切れ、ネットワーク問題、または権限不足
-**解決方法**:
-AIが `gh auth status` を実行して認証状態を確認。
-- 認証切れ → Step 2 の認証フローへ戻る
-- ネットワーク問題 → インターネット接続を確認するよう案内
-- 権限不足 → `gh auth refresh -s repo` を実行して権限を更新
+### Trouble 3: "Error Creating Repository"
+**Cause**: Expired authentication, network issues, or insufficient permissions
+**Solution**:
+AI runs `gh auth status` to check authentication state.
+- Expired authentication -> Go back to Step 2 authentication flow
+- Network issue -> Guide to check internet connection
+- Insufficient permissions -> Run `gh auth refresh -s repo` to update permissions
 
-### トラブル4: 「GitHub のパスワードを忘れた」
-**解決方法**:
+### Trouble 4: "Forgot GitHub Password"
+**Solution**:
 ```text
-AIがパスワードリセットページを開きます。
+The AI will open the password reset page.
 ```
 ```bash
-# AIが実行:
+# AI runs:
 # Mac:
 open https://github.com/password_reset
 # Windows:
@@ -482,70 +481,70 @@ start https://github.com/password_reset
 ```
 
 ```text
-1. メールアドレスを入力して「Send password reset email」をクリック
-2. メールに届いたリンクをクリック
-3. 新しいパスワードを設定
-4. 完了したら、ここに「できた」と入力してください
+1. Enter your email address and click "Send password reset email"
+2. Click the link in the email that arrives
+3. Set a new password
+4. Once done, type "done" here
 ```
 
-### トラブル5: 「その他のトラブル」
-**解決方法**:
+### Trouble 5: "Other Trouble"
+**Solution**:
 ```text
-どのような問題が起きていますか？画面に表示されているエラーメッセージや状況を教えてください。
-AIが原因を診断して解決策を提示します。
+What kind of problem are you experiencing? Please tell me the error message or the situation on your screen.
+The AI will diagnose the cause and suggest a solution.
 ```
 
 ---
 
 ## Checkpoint
 
-AIが全項目を自動で確認し、結果を一覧表示する:
+AI auto-checks all items and displays results:
 
-| 項目 | 確認コマンド | 期待される結果 |
-|------|-------------|---------------|
-| GitHub 認証 | `gh auth status` | ログインユーザー名が表示される |
-| リモートリポジトリ | `git remote -v` | origin が自分のリポジトリを指している |
-| Push 状態 | `git log --oneline -1` | 最新のコミットが存在する |
+| Item | Check Command | Expected Result |
+|------|--------------|----------------|
+| GitHub authentication | `gh auth status` | Login username is displayed |
+| Remote repository | `git remote -v` | origin points to your repository |
+| Push state | `git log --oneline -1` | Latest commit exists |
 
 ---
 
-## 完了
+## Completion
 
 ```text
-おめでとうございます！GitHub の設定が全て完了しました！
+Congratulations! GitHub setup is complete!
 
-  GitHubユーザー名: {username}
-  リポジトリURL: https://github.com/{username}/ai-agent-camp
-  公開設定: private（あなただけがアクセスできます）
+  GitHub username: {username}
+  Repository URL: https://github.com/{username}/ai-agent-camp
+  Visibility: private (only you can access it)
 
-これで研修を始める準備が整いました。
+You're now ready to start the training.
 ```
 
-**AskQuestionの設定:**
+**AskQuestion configuration:**
 ```json
 {
-  "title": "Choose Next Step",
+  "title": "Select next step",
   "questions": [{
     "id": "next_step",
-    "prompt": "次に進む操作を選んでください",
+    "prompt": "Choose what to do next",
     "options": [
-      {"id": "next_lesson", "label": "研修を開始する（/start-0-1）"},
-      {"id": "view_repo", "label": "作成したリポジトリをブラウザで見る"},
+      {"id": "next_lesson", "label": "Start the training (/start-0-1)"},
+      {"id": "view_repo", "label": "View the created repository in the browser"},
       {"id": "finish", "label": "Finish here"}
     ]
   }]
 }
 ```
 
-(next_lesson → 「新しいチャットを開いて /start-0-1 type it here」と案内)
-(view_repo → AIが `open https://github.com/{username}/ai-agent-camp` / `start https://github.com/{username}/ai-agent-camp` を実行してブラウザで表示 → その後「研修を開始するには、新しいチャットを開いて /start-0-1 type it here」と案内)
-(finish → 「Great work!！研修を始めるときは /start-0-1 type it here。」と案内)
+(next_lesson -> Guide: "Open a new chat and type /start-0-1")
+(view_repo -> AI runs `open https://github.com/{username}/ai-agent-camp` / `start https://github.com/{username}/ai-agent-camp` to show in browser -> Then guide: "To start the training, open a new chat and type /start-0-1")
+(finish -> Guide: "Great work! When you're ready to start the training, type /start-0-1.")
 
 ---
 
 ## Completion Processing
 
 **What the AI auto-runs:**
-1. `uv run python tools/setup_progress.py complete setup-github` を実行して進捗を更新
-2. 更新後の進捗サマリーが自動表示される
-3. ユーザーに次のステップを案内: 「次は `/setup-gemini` でGemini APIを設定しましょう」
+1. Run `uv run python tools/setup_progress.py complete setup-github` to update progress
+2. The updated progress summary is displayed automatically
+3. Guide the user to the next step: "Next, set up the Gemini API with `/setup-gemini`"

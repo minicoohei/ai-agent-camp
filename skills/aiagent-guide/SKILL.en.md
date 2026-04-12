@@ -1,0 +1,46 @@
+---
+name: aiagent-guide
+description: "An orientation and navigation skill for the ai-agent-camp repository. Triggered by requests like 'repository guide', 'what's the next lesson?', 'where do I start', 'tool differences', 'aiagent overview', etc."
+version: 1.0.0
+author: AI Brain Partners
+dependencies: []
+triggers:
+  - aiagent-guide
+  - repository guide
+  - next lesson
+  - where to start
+  - tool differences
+  - aiagent overview
+  - guide
+  - リポジトリ案内
+  - 次のレッスン
+  - どこから始める
+---
+
+## Trigger Words
+"repository guide", "next lesson", "where to start", "tool differences", "aiagent overview"
+
+# AI Agent Guide
+
+Use this skill to orient the user inside `ai-agent-camp`.
+
+## Workflow
+1. Read `AGENTS.md`.
+2. Read `README.md` if a broader overview is needed.
+3. If the user asks where to start, recommend:
+   - `aiagent-check-setup` for environment readiness
+   - `aiagent-lesson-runner` for any `start-*` lesson id
+4. Explain the shared lesson model and the differences between Codex, Claude Code, and Cursor only at the level learners need.
+5. For larger tasks, tell the user to make a short plan before implementation.
+6. Keep explanations short and tie them to real files.
+
+## Required References
+- `AGENTS.md`
+- `CLAUDE.md` -- Claude Code project instructions
+- `docs/codex-guide.md`
+
+## Output
+- A short orientation summary
+- The relevant tool differences when needed
+- The next file or skill to use
+- Any safety warning that matters for the requested task

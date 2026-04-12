@@ -58,8 +58,11 @@ def _parse_frontmatter(path: Path) -> dict | None:
 
 
 def _lesson_files_for(directory: Path) -> list[Path]:
-    """start-X-Y.md のみを返す"""
-    return sorted(directory.glob("start-*.md"))
+    """start-X-Y.md のみを返す（.en.md / .es.md 等の言語サフィックス付きは除外）"""
+    return sorted(
+        f for f in directory.glob("start-*.md")
+        if not re.search(r'\.\w{2}\.md$', f.name)
+    )
 
 
 def _all_lesson_ids(directory: Path) -> set[str]:

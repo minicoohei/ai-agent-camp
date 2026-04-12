@@ -1,89 +1,89 @@
 ---
-description: "Verificacion automatica del estado de configuracion del entorno"
+description: "Verificación automática del estado de configuración del entorno"
 duration: "~2 min"
 prerequisites: ["La carpeta ai-agent-camp esta abierta en Codex o Cursor"]
 level: "beginner"
 tags: ["setup", "check"]
 ---
 
-# /check-setup -- Verificacion automatica del entorno
+# /check-setup -- Verificación automática del entorno
 
-## Step 0: Verificar progreso de configuracion
+## Step 0: Verificar progreso de configuración
 
-**Lo que la IA ejecuta automaticamente:**
+**Lo que la IA ejecuta automáticamente:**
 1. Ejecutar `uv run python tools/setup_progress.py show --current check-setup` para mostrar el progreso general
-2. Si hay pasos incompletos, advertir: "Los siguientes pasos estan incompletos: {nombres de pasos}. Se recomienda completarlos primero, pero la verificacion puede ejecutarse."
+2. Si hay pasos incompletos, advertir: "Los siguientes pasos están incompletos: {nombres de pasos}. Se recomienda completarlos primero, pero la verificación puede ejecutarse."
 
 ---
 
-## Que hace este comando
+## Qué hace este comando
 
-La IA **verifica de forma completamente automatica** el estado de su entorno de desarrollo y muestra los resultados como un informe.
-Para los elementos con problemas, sugiere guiarlo al comando de configuracion correspondiente o propone correcciones automaticas.
+La IA **verifica de forma completamente automática** el estado de su entorno de desarrollo y muestra los resultados como un informe.
+Para los elementos con problemas, sugiere guiarlo al comando de configuración correspondiente o propone correcciones automáticas.
 
-**No necesita escribir ningun comando en la terminal. La IA ejecuta todo en segundo plano.**
+**No necesita escribir ningún comando en la terminal. La IA ejecuta todo en segundo plano.**
 
 | Elemento | Contenido |
 |----------|-----------|
-| Objetivo | Verificar la salud de su entorno y proporcionar guia de correccion si se encuentran problemas |
-| Duracion | ~2 min (ejecucion automatica) |
+| Objetivo | Verificar la salud de su entorno y proporcionar guía de corrección si se encuentran problemas |
+| Duración | ~2 min (ejecución automática) |
 | Requisitos previos | La carpeta ai-agent-camp esta abierta en Codex o Cursor |
-| Accion del usuario | Solo revisar los resultados (no se necesita entrada de comandos CLI) |
+| Acción del usuario | Solo revisar los resultados (no se necesita entrada de comandos CLI) |
 
-> **Nota para Codex**: El comando slash `/check-setup` no existe en Codex, por lo que la IA ejecuta secuencialmente los comandos de verificacion listados en este documento para armar el mismo informe.
+> **Nota para Codex**: El comando slash `/check-setup` no existe en Codex, por lo que la IA ejecuta secuencialmente los comandos de verificación listados en este documento para armar el mismo informe.
 
 ---
 
-## Procedimiento de verificacion ejecutado automaticamente por la IA
+## Procedimiento de verificación ejecutado automáticamente por la IA
 
-Cuando se ejecuta este comando, la IA **ejecuta automaticamente todo lo siguiente en segundo plano** y muestra los resultados como un informe resumido. No solicite al usuario que ingrese comandos.
+Cuando se ejecuta este comando, la IA **ejecuta automáticamente todo lo siguiente en segundo plano** y muestra los resultados como un informe resumido. No solicite al usuario que ingrese comandos.
 
-### Verificacion 1: Herramientas basicas
+### Verificación 1: Herramientas básicas
 
-La IA ejecuta los siguientes comandos **en segundo plano** para verificar cada herramienta y su version:
+La IA ejecuta los siguientes comandos **en segundo plano** para verificar cada herramienta y su versión:
 
-| Objetivo de verificacion | Comando a ejecutar | Criterio de aprobacion |
+| Objetivo de verificación | Comando a ejecutar | Criterio de aprobación |
 |--------------------------|--------------------|-----------------------|
 | Tipo de SO | `uname -s` (Mac/Linux), PowerShell `$env:OS` (Windows) | Solo mostrar |
-| Python | `python3 --version 2>/dev/null \|\| python --version 2>/dev/null` | Aprobado si version 3.9+ |
-| Node.js | `node --version 2>/dev/null` | Aprobado si version 18+ |
-| Git | `git --version 2>/dev/null` | Aprobado si esta presente |
-| GitHub CLI | `gh --version 2>/dev/null` | Aprobado si esta presente |
+| Python | `python3 --version 2>/dev/null \|\| python --version 2>/dev/null` | Aprobado si versión 3.9+ |
+| Node.js | `node --version 2>/dev/null` | Aprobado si versión 18+ |
+| Git | `git --version 2>/dev/null` | Aprobado si está presente |
+| GitHub CLI | `gh --version 2>/dev/null` | Aprobado si está presente |
 
-### Verificacion 2: Autenticacion y APIs
+### Verificación 2: Autenticación y APIs
 
-La IA ejecuta los siguientes comandos **en segundo plano** para verificar el estado de autenticacion y la configuracion de API:
+La IA ejecuta los siguientes comandos **en segundo plano** para verificar el estado de autenticación y la configuración de API:
 
-| Objetivo de verificacion | Comando a ejecutar | Criterio de aprobacion |
+| Objetivo de verificación | Comando a ejecutar | Criterio de aprobación |
 |--------------------------|--------------------|-----------------------|
-| Autenticacion GitHub | `gh auth status 2>&1` | Aprobado si incluye "Logged in" |
-| Gemini API | Leer archivo `.env` y verificar `GEMINI_API_KEY` | Aprobado si la clave esta configurada (no mostrar el valor) |
-| Slack API | Leer archivo `.env` y verificar `SLACK_BOT_TOKEN` | Configurado o "se puede configurar despues" |
-| fal.ai API | Verificar `FAL_KEY` con `uv run python tools/credential_manager.py status` | Configurado o "se puede configurar despues" |
-| ElevenLabs API | Verificar `ELEVENLABS_API_KEY` con `uv run python tools/credential_manager.py status` | Configurado o "se puede configurar despues" |
-| Notion API | Verificar si existe entrada `notion` en archivo de configuracion MCP (`~/.claude/mcp_settings.json` o `.cursor/mcp.json`) | Configurado o "se puede configurar despues" |
-| Clasp (GAS) | `clasp --version 2>/dev/null` | Aprobado si esta presente o "se puede configurar despues" |
-| Typefully API | Verificar `TYPEFULLY_API_KEY` con `uv run python tools/credential_manager.py status` | Configurado o "se puede configurar despues" |
-| X API | Verificar `X_BEARER_TOKEN` con `uv run python tools/credential_manager.py status` | Configurado o "se puede configurar despues" |
-| gogcli (Google) | `gog version 2>/dev/null` | Aprobado si esta presente o "se puede configurar despues" |
-| BigQuery/GCP | `gcloud --version 2>/dev/null` + `gcloud auth application-default print-access-token 2>/dev/null` | gcloud presente + ADC configurado o "se puede configurar despues" |
-| Vercel CLI | `vercel --version 2>/dev/null` + `vercel whoami 2>/dev/null` | Presente + sesion iniciada o "se puede configurar despues" |
+| Autenticación GitHub | `gh auth status 2>&1` | Aprobado si incluye "Logged in" |
+| Gemini API | Leer archivo `.env` y verificar `GEMINI_API_KEY` | Aprobado si la clave está configurada (no mostrar el valor) |
+| Slack API | Leer archivo `.env` y verificar `SLACK_BOT_TOKEN` | Configurado o "se puede configurar después" |
+| fal.ai API | Verificar `FAL_KEY` con `uv run python tools/credential_manager.py status` | Configurado o "se puede configurar después" |
+| ElevenLabs API | Verificar `ELEVENLABS_API_KEY` con `uv run python tools/credential_manager.py status` | Configurado o "se puede configurar después" |
+| Notion API | Verificar si existe entrada `notion` en archivo de configuración MCP (`~/.claude/mcp_settings.json` o `.cursor/mcp.json`) | Configurado o "se puede configurar después" |
+| Clasp (GAS) | `clasp --version 2>/dev/null` | Aprobado si está presente o "se puede configurar después" |
+| Typefully API | Verificar `TYPEFULLY_API_KEY` con `uv run python tools/credential_manager.py status` | Configurado o "se puede configurar después" |
+| X API | Verificar `X_BEARER_TOKEN` con `uv run python tools/credential_manager.py status` | Configurado o "se puede configurar después" |
+| gogcli (Google) | `gog version 2>/dev/null` | Aprobado si está presente o "se puede configurar después" |
+| BigQuery/GCP | `gcloud --version 2>/dev/null` + `gcloud auth application-default print-access-token 2>/dev/null` | gcloud presente + ADC configurado o "se puede configurar después" |
+| Vercel CLI | `vercel --version 2>/dev/null` + `vercel whoami 2>/dev/null` | Presente + sesión iniciada o "se puede configurar después" |
 
 **Importante: Nunca muestre valores de claves API en pantalla. Solo muestre "Configurado" o "No configurado".**
 
-### Verificacion 3: Configuracion del proyecto
+### Verificación 3: Configuración del proyecto
 
 La IA verifica lo siguiente **en segundo plano**:
 
-| Objetivo de verificacion | Metodo de verificacion | Criterio de aprobacion |
+| Objetivo de verificación | Método de verificación | Criterio de aprobación |
 |--------------------------|------------------------|----------------------|
 | Carpeta del proyecto | Verificar si el directorio actual es ai-agent-camp | Aprobado si el nombre del directorio contiene `ai-agent-camp` |
 | Repositorio personal | Ejecutar `git remote -v` y verificar la URL de origin | Aprobado si origin apunta a `minicoohei/ai-agent-camp` o su propio fork |
 | Archivo .env | Verificar si existe el archivo `.env` | Aprobado si el archivo existe |
-| .gitignore | Leer `.gitignore` y verificar si `.env` esta excluido | Aprobado si existe la entrada `.env` |
-| Hook de seguridad | Verificar existencia y permisos de ejecucion de `.git/hooks/pre-commit` | Aprobado si el archivo existe y es ejecutable |
+| .gitignore | Leer `.gitignore` y verificar si `.env` está excluido | Aprobado si existe la entrada `.env` |
+| Hook de seguridad | Verificar existencia y permisos de ejecución de `.git/hooks/pre-commit` | Aprobado si el archivo existe y es ejecutable |
 
-### Verificacion 4: Extensiones
+### Verificación 4: Extensiones
 
 La IA ejecuta el siguiente comando **en segundo plano**:
 ```bash
@@ -92,7 +92,7 @@ cursor --list-extensions 2>/dev/null || code --list-extensions 2>/dev/null
 
 Extensiones a verificar:
 
-| Extension | ID |
+| Extensión | ID |
 |-----------|----|
 | Python | `ms-python.python` |
 | Marp | `marp-team.marp-vscode` |
@@ -106,7 +106,7 @@ Extensiones a verificar:
 
 ## Formato de salida del informe
 
-Despues de completar las verificaciones, muestre los resultados al usuario en el siguiente formato:
+Después de completar las verificaciones, muestre los resultados al usuario en el siguiente formato:
 
 ```markdown
 ## Informe de verificacion del entorno
@@ -145,18 +145,18 @@ Despues de completar las verificaciones, muestre los resultados al usuario en el
 | PlantUML | (aprobado/reprobado) |
 ```
 
-**Reglas de visualizacion de estado:**
+**Reglas de visualización de estado:**
 - Aprobado: Mostrar "OK" a la derecha del nombre del elemento (ej: `Python | OK | 3.12.1`)
-- Reprobado: Mostrar "Accion necesaria" a la derecha (ej: `Python | Accion necesaria | No instalado`)
+- Reprobado: Mostrar "Acción necesaria" a la derecha (ej: `Python | Accion necesaria | No instalado`)
 - Omitible: Mostrar "Opcional" a la derecha (ej: `Slack API | Opcional | No configurado (se puede configurar despues)`)
 
 ---
 
 ## Mostrar acciones recomendadas
 
-Despues del informe, muestre acciones recomendadas si hay elementos con "Accion necesaria".
+Después del informe, muestre acciones recomendadas si hay elementos con "Acción necesaria".
 
-### Si existen elementos con "Accion necesaria"
+### Si existen elementos con "Acción necesaria"
 
 ```markdown
 ### Acciones recomendadas
@@ -174,7 +174,7 @@ Los siguientes elementos necesitan atencion:
    -> Ejecute /setup-extensions para instalar automaticamente
 ```
 
-**Configuracion de AskQuestion:**
+**Configuración de AskQuestion:**
 ```json
 {
   "title": "Desea corregir los problemas?",
@@ -192,21 +192,21 @@ Los siguientes elementos necesitan atencion:
 }
 ```
 
-(auto_fix -> Ejecutar todos los elementos que la IA puede corregir automaticamente)
+(auto_fix -> Ejecutar todos los elementos que la IA puede corregir automáticamente)
 
-Elementos que la IA puede corregir automaticamente:
-- Configuracion de .gitignore -> Agregar automaticamente entradas faltantes a `.gitignore`
-- Hooks de seguridad -> Crear automaticamente `.git/hooks/pre-commit`
-- Instalacion de extensiones -> Ejecutar automaticamente `cursor --install-extension`
-- Creacion de archivo .env -> Copiar `.env.example` para crear `.env`
+Elementos que la IA puede corregir automáticamente:
+- Configuración de .gitignore -> Agregar automáticamente entradas faltantes a `.gitignore`
+- Hooks de seguridad -> Crear automáticamente `.git/hooks/pre-commit`
+- Instalación de extensiones -> Ejecutar automáticamente `cursor --install-extension`
+- Creación de archivo .env -> Copiar `.env.example` para crear `.env`
 
-Elementos que requieren accion del usuario (no se pueden corregir automaticamente):
-- Instalacion de Python / Node.js / Git -> Proporcionar URLs de paginas de descarga
-- Instalacion e inicio de sesion de GitHub CLI -> Proporcionar pasos de instalacion y guia GUI
-- Obtencion de clave de Gemini API -> Guiar a `/start-0-3`
-- Creacion de repositorio personal -> Guiar al Step 1.5 de `/start-0-1`
+Elementos que requieren acción del usuario (no se pueden corregir automáticamente):
+- Instalación de Python / Node.js / Git -> Proporcionar URLs de páginas de descarga
+- Instalación e inicio de sesión de GitHub CLI -> Proporcionar pasos de instalación y guía GUI
+- Obtención de clave de Gemini API -> Guiar a `/start-0-3`
+- Creación de repositorio personal -> Guiar al Step 1.5 de `/start-0-1`
 
-(guide_fix -> Guiar elementos con "Accion necesaria" uno por uno con AskQuestion)
+(guide_fix -> Guiar elementos con "Acción necesaria" uno por uno con AskQuestion)
 (extensions_only -> Guiar a /setup-extensions)
 (security_only -> Guiar a /setup-security)
 (skip -> Fin)
@@ -223,7 +223,7 @@ Todos los elementos de verificacion han aprobado. Su entorno esta configurado co
 Comience la primera leccion (Introduccion a generacion de banners) con /start-1-1!
 ```
 
-**Configuracion de AskQuestion:**
+**Configuración de AskQuestion:**
 ```json
 {
   "title": "Configuracion completada! Elegir siguiente paso",
@@ -241,7 +241,7 @@ Comience la primera leccion (Introduccion a generacion de banners) con /start-1-
 }
 ```
 
-(web_course -> Guiar: "Puede acceder al curso web en https://ai-agent.camp. Incluye 28 modulos, 100+ lecciones, 70+ habilidades practicas, ademas de un tutor de IA y una aplicacion de escritorio dedicada.")
+(web_course -> Guiar: "Puede acceder al curso web en https://ai-agent.camp. Incluye 28 modulos, 100+ lecciones, 70+ habilidades prácticas, además de un tutor de IA y una aplicación de escritorio dedicada.")
 
 (start_lesson -> Guiar a /start-1-1)
 (overview -> Guiar a /overview)
@@ -250,9 +250,9 @@ Comience la primera leccion (Introduccion a generacion de banners) con /start-1-
 
 ---
 
-## Solucion de problemas comunes
+## Solución de problemas comunes
 
-**Configuracion de AskQuestion:**
+**Configuración de AskQuestion:**
 ```json
 {
   "title": "Tiene algun problema?",
@@ -271,40 +271,40 @@ Comience la primera leccion (Introduccion a generacion de banners) con /start-1-
 }
 ```
 
-### Problema 1: No sabe como instalar Python
-**Remediacion de IA (pasos GUI)**:
+### Problema 1: No sabe cómo instalar Python
+**Remediación de IA (pasos GUI)**:
 - **Mac**: "Abra https://www.python.org/downloads/ en su navegador, haga clic en el boton 'Download Python 3.x' para descargar el instalador. Haga doble clic en el archivo descargado y siga las instrucciones en pantalla para instalar."
-- **Windows**: "Abra Microsoft Store y escriba 'Python' en la barra de busqueda. Seleccione 'Python 3.x' y haga clic en 'Obtener' para instalar. Alternativamente, descargue el instalador de https://www.python.org/downloads/. Recuerde marcar 'Add Python to PATH' durante la instalacion."
-- Despues de la instalacion: "Reinicie Cursor, luego ejecute /check-setup nuevamente."
+- **Windows**: "Abra Microsoft Store y escriba 'Python' en la barra de búsqueda. Seleccione 'Python 3.x' y haga clic en 'Obtener' para instalar. Alternativamente, descargue el instalador de https://www.python.org/downloads/. Recuerde marcar 'Add Python to PATH' durante la instalación."
+- Después de la instalación: "Reinicie Cursor, luego ejecute /check-setup nuevamente."
 
-### Problema 2: No sabe como instalar Node.js
-**Remediacion de IA (pasos GUI)**:
+### Problema 2: No sabe cómo instalar Node.js
+**Remediación de IA (pasos GUI)**:
 - **Mac**: "Abra https://nodejs.org/ en su navegador y haga clic en el boton verde 'LTS' para descargar el instalador. Haga doble clic en el archivo descargado y siga las instrucciones en pantalla para instalar."
 - **Windows**: "Abra https://nodejs.org/ en su navegador y haga clic en el boton verde 'LTS' para descargar el instalador. Haga doble clic en el archivo .msi descargado y siga las instrucciones en pantalla para instalar."
-- Despues de la instalacion: "Reinicie Cursor, luego ejecute /check-setup nuevamente."
+- Después de la instalación: "Reinicie Cursor, luego ejecute /check-setup nuevamente."
 
-### Problema 3: No puede iniciar sesion en GitHub
-**Remediacion de IA**:
+### Problema 3: No puede iniciar sesión en GitHub
+**Remediación de IA**:
 1. La IA ejecuta `gh auth status` en segundo plano para verificar el estado actual
-2. Si no esta autenticado:
-   - "Abra https://github.com/ en su navegador e inicie sesion en su cuenta"
-   - "Luego escriba 'Iniciar sesion en GitHub' en el chat de Cursor. La IA le guiara a traves del proceso de inicio de sesion"
+2. Si no está autenticado:
+   - "Abra https://github.com/ en su navegador e inicie sesión en su cuenta"
+   - "Luego escriba 'Iniciar sesión en GitHub' en el chat de Cursor. La IA le guiará a través del proceso de inicio de sesión"
 
-### Problema 4: No sabe como obtener una clave de Gemini API
-**Remediacion de IA**:
-- Guiar: "Ejecute /start-0-3 y le guiara a traves del proceso de obtencion de la clave API paso a paso"
+### Problema 4: No sabe cómo obtener una clave de Gemini API
+**Remediación de IA**:
+- Guiar: "Ejecute /start-0-3 y le guiará a través del proceso de obtención de la clave API paso a paso"
 
-### Problema 5: La verificacion "La carpeta ai-agent-camp esta abierta" fallo
-**Remediacion de IA (pasos GUI)**:
+### Problema 5: La verificación "La carpeta ai-agent-camp esta abierta" falló
+**Remediación de IA (pasos GUI)**:
 - "Desde el menu de Cursor, seleccione 'Archivo' > 'Abrir carpeta' (Mac: Cmd+O / Windows: Ctrl+O) y elija la carpeta ai-agent-camp para abrirla"
-- "Despues de abrir la carpeta, ejecute /check-setup nuevamente"
+- "Después de abrir la carpeta, ejecute /check-setup nuevamente"
 
 ---
 
-## Procesamiento de finalizacion
+## Procesamiento de finalización
 
-**Lo que la IA ejecuta automaticamente:**
+**Lo que la IA ejecuta automáticamente:**
 1. Si todas las verificaciones son OK: Actualizar progreso con `uv run python tools/setup_progress.py complete check-setup`
 2. Mostrar resumen de progreso actualizado
-3. Si todos los pasos estan completos: "La configuracion esta completamente terminada! Comience la primera leccion con `/start-1-1`!"
+3. Si todos los pasos están completos: "La configuración está completamente terminada! Comience la primera lección con `/start-1-1`!"
 4. Si quedan pasos incompletos: Guiar "Por favor complete los siguientes pasos: {nombres de pasos}"

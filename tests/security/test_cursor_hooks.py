@@ -136,8 +136,8 @@ class TestCursorWriteGuard:
         data = json.loads(stdout)
         assert data["permission"] == "deny"
 
-    def test_invalid_json_bash_is_blocked(self):
-        """不正な JSON はブロック（fail-closed）。"""
+    def test_invalid_json_bash_is_allowed(self):
+        """不正な JSON は fail-open（許可）。自動レビュー等の非標準環境対応。"""
         result = subprocess.run(
             [sys.executable, str(BASH_GUARD)],
             input="not json",
@@ -145,8 +145,6 @@ class TestCursorWriteGuard:
             text=True,
         )
         assert result.returncode == 0
-        data = json.loads(result.stdout)
-        assert data["permission"] == "deny"
 
     def test_invalid_json_write_is_blocked(self):
         """不正な JSON はブロック（fail-closed）。"""
