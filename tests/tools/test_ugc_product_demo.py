@@ -19,19 +19,19 @@ def _touch_copy(src, dst, *a, **kw):
     Path(dst).write_bytes(b"\x00")
 
 
+def _make_result(**kw):
+    out = kw.get("output_path", "")
+    if out:
+        Path(out).parent.mkdir(parents=True, exist_ok=True)
+        Path(out).write_bytes(b"\x00")
+    r = MagicMock(); r.cost = 0.10; r.video_path = out; r.duration = 30.0; r.engine = "fabric"
+    return r
+
+
 def _make_engine(requires_tts=True):
     e = MagicMock()
     e.requires_tts = requires_tts
-
-    def _gen(**kw):
-        out = kw.get("output_path", "")
-        if out:
-            Path(out).parent.mkdir(parents=True, exist_ok=True)
-            Path(out).write_bytes(b"\x00")
-        r = MagicMock(); r.cost = 0.10; r.video_path = out; r.duration = 30.0
-        return r
-
-    e.generate.side_effect = _gen
+    e.generate.side_effect = _make_result
     return e
 
 
@@ -53,11 +53,16 @@ def _base_mods(engine=None):
             generate_speech=MagicMock(),
             composite_video=MagicMock(),
         ),
-        "ugc.engines": MagicMock(get_engine=MagicMock(return_value=engine)),
+        "ugc.engines": MagicMock(
+            get_engine=MagicMock(return_value=engine),
+            generate_with_fallback=MagicMock(side_effect=_make_result),
+        ),
         "ugc.audio_post": MagicMock(mux_audio=MagicMock(), mix_bgm=MagicMock(side_effect=_touch_output)),
         "ugc.script_generator": MagicMock(),
         "ugc.tts": MagicMock(generate_speech=MagicMock()),
         "ugc.compositor": MagicMock(composite_video=MagicMock()),
+        "ugc.video_qa": MagicMock(validate_video_output=MagicMock(return_value={"status": "PASS", "issues": []})),
+        "ugc.narration_qa": MagicMock(qa_and_retry=MagicMock(return_value="/tmp/audio.mp3")),
     }
 
 
@@ -167,27 +172,27 @@ class TestRunProductDemo:
     def test_kling_clamp(self, tmp_path):
         ss = tmp_path / "ss.png"; ss.write_bytes(b"\x89PNG")
         av = tmp_path / "av.png"; av.write_bytes(b"\x89PNG")
-        engine = _make_engine()
-        mods = _base_mods(engine=engine)
+        mods = _base_mods()
         with patch.dict(sys.modules, mods), patch("shutil.copy2", side_effect=_touch_copy):
             mod = _load(mods)
             r = mod.run_product_demo(product="App", screenshot_path=str(ss),
                                      avatar_path=str(av), engine_name="kling",
                                      duration=60, output_dir=str(tmp_path / "o"))
-        kw = engine.generate.call_args.kwargs
+        fallback_mock = mods["ugc.engines"].generate_with_fallback
+        kw = fallback_mock.call_args.kwargs
         assert kw["duration"] == 10
 
     def test_veo_clamp(self, tmp_path):
         ss = tmp_path / "ss.png"; ss.write_bytes(b"\x89PNG")
         av = tmp_path / "av.png"; av.write_bytes(b"\x89PNG")
-        engine = _make_engine()
-        mods = _base_mods(engine=engine)
+        mods = _base_mods()
         with patch.dict(sys.modules, mods), patch("shutil.copy2", side_effect=_touch_copy):
             mod = _load(mods)
             r = mod.run_product_demo(product="App", screenshot_path=str(ss),
                                      avatar_path=str(av), engine_name="veo",
                                      duration=60, output_dir=str(tmp_path / "o"))
-        kw = engine.generate.call_args.kwargs
+        fallback_mock = mods["ugc.engines"].generate_with_fallback
+        kw = fallback_mock.call_args.kwargs
         assert kw["duration"] == 8
 
 

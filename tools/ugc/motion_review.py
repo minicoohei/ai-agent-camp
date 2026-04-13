@@ -53,6 +53,11 @@ def review_rendered_video(
     if frames:
         frame_analyses = _analyze_frames_with_gemini(frames, model)
         for fa in frame_analyses:
+            fa.setdefault("issues", [])
+            # quality が poor/unknown の場合も issues に追記
+            quality = fa.get("quality", "unknown")
+            if quality not in ("good", "acceptable"):
+                fa["issues"].append(f"フレーム品質: {quality}")
             if fa.get("issues"):
                 issues.extend(fa["issues"])
 

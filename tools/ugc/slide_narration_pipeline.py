@@ -258,6 +258,16 @@ JSONのみを返してください（```json等は不要）。"""
                     output_path=clip_path,
                 )
                 total_cost += result.cost
+                # Kling/Veo は audio_file を無視するので、音声を再合成する
+                if result.engine in ("kling", "veo") and audio_path and Path(audio_path).exists():
+                    from ugc.audio_post import mux_audio
+                    muxed = clip_path.replace(".mp4", "_mux.mp4")
+                    try:
+                        mux_audio(clip_path, audio_path, muxed)
+                        shutil.move(muxed, clip_path)
+                        print(f"  -> Presenter {i+1}: audio re-mux ({result.engine})")
+                    except Exception as me:
+                        print(f"  -> Presenter {i+1}: audio mux failed: {me}")
                 presenter_clips.append(clip_path)
                 print(f"  -> Presenter {i+1}: ${result.cost:.2f} (engine={result.engine})")
             except Exception as e:

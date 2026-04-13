@@ -81,6 +81,35 @@
 - **音量バランス**: ナレーション `volume={1.0-1.2}`, BGM `volume={0.18-0.25}`
 - **キャプション整合**: NARRATIONのcaptionテキストは音声内容と一致させる（数値の%表記も統一）
 
+### 多言語版 (i18n) 制作ルール（AgentCampOnboarding v11oで確立）
+
+#### アーキテクチャ
+- **React Context + useText() パターン**: `LangCtx = createContext<Lang>("jp")` + `useText = () => getText(useContext(LangCtx))`
+- 各シーンコンポーネントは `React.FC` のまま、内部で `useText()` からテキスト取得。props経由（`t={t}`）とContext経由（`useText()`）を**混在させない**
+- i18nテキストファイルは `compositions/xxxI18n.ts` に分離。`getText(lang)` で全テキストを返す
+- Root.tsx で Composition 登録時に `lang: "en"` / `lang: "es"` と `narrationPrefix` を props で指定
+
+#### テキスト・アセットの分離ポイント
+- **ハードコード禁止**: 通貨記号（`&yen;`）、日付フォーマット（`日 4月13日`）、人名（田中→John Smith）をすべてi18nファイルに移動
+- **画像アセットもi18n**: バナー画像パスを `designBannerImages: string[]` でi18n管理。日本語バナーと英語バナーを言語別に切替
+- **定数配列はコンポーネント外に置かない**: i18n対象の定数配列（`BANNER_IMAGES` 等）はコンポーネント内で `const x = t.xxx` として取得
+
+#### 変数シャドウイングに注意
+- `.map((t, i) => ...)` のコールバック変数名が外側の `t`（OnboardingText）をシャドウする事故が頻発
+- **ルール**: i18nテキストオブジェクトには `t` を使う。map コールバックには `row`, `item`, `entry` 等を使う
+
+#### ナレーション多言語化
+- **EN/ES**: ElevenLabs `eleven_multilingual_v2` + Chris voice (`iP95p4xoKVk53GoZ742B`) — 英語・スペイン語両方対応
+- **JP**: Masa voice (`StTDrGrPSyfaHGmzwXbj`)
+- **Voice ID は完全な文字列を使う**: 切り詰めると ElevenLabs API が 404 を返す（`iP95p4xoKVk5` NG → `iP95p4xoKVk53GoZ742B` OK）
+- EN/ES のナレーションは具体的金額を避け一般表現にすると、価格変更時にナレーション再生成が不要
+- Gemini QA は全言語・全クリップ必須。EN/ES でも意味が変わっていないか書き起こし確認
+
+#### 自律レビューループの運用
+- ナレーション生成 → `narration-qa` スキルで QA → NG があれば原稿修正 → 再生成 → 再QA を **max 3ラウンド自動実行**
+- レンダリング → `motion-review` スキルで品質チェック → P1 があれば自動修正 → 再レンダリング → 再レビュー を **max 3ラウンド自動実行**
+- 複数エージェントが同一ファイルを同時編集するとコンフリクトする。**1ファイル = 1エージェント** を厳守
+
 ### ファイル保全ルール
 - 大きな変更は早めにfeature branchでcommit（linter巻き戻し対策）
 - レンダリング前に `grep sectionDurations` で値が期待通りか確認

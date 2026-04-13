@@ -18,17 +18,22 @@ from typing import Optional
 # Step 0: TTS 入力テキストの前処理ルール
 # ============================================================
 
-# 既知の誤読漢字 → ひらがな/平易表現への変換テーブル
+# 既知の誤読漢字 → ひらがな/平易表現への変換テーブル（複数文字）
 KANJI_FIXES = {
     "返信": "へんしん",
     "受信": "届いた",
     "議事録": "ぎじろく",
-    "各": "それぞれの",
     "即座に": "すぐに",
     "承認": "しょうにん",
     "税理士": "ぜいりし",
     "成果": "せいか",
     "閉める": "しめる",
+}
+
+# 単漢字ルール: 漢字連続中での誤爆を避けるため前後が漢字でないときのみ置換
+# 例: 「各タスク」→「それぞれのタスク」だが「価格」は対象外
+SINGLE_KANJI_FIXES = {
+    "各": "それぞれの",
 }
 
 # 英語 → カタカナ変換テーブル（定着した外来語）
@@ -148,9 +153,13 @@ def preprocess_narration_text(text: str) -> str:
     for eng, kata in sorted(ENGLISH_TO_KATAKANA.items(), key=lambda x: -len(x[0])):
         text = text.replace(eng, kata)
 
-    # 既知の誤読漢字 → ひらがな/平易表現
+    # 既知の誤読漢字 → ひらがな/平易表現（複数文字は単純置換）
     for kanji, reading in KANJI_FIXES.items():
         text = text.replace(kanji, reading)
+
+    # 単漢字ルール: 前後に漢字がない場合のみ置換（価格→価それぞれの のような誤爆防止）
+    for kanji, reading in SINGLE_KANJI_FIXES.items():
+        text = re.sub(rf"(?<![一-龥]){re.escape(kanji)}(?![一-龥])", reading, text)
 
     # 金額展開: 12,800円 → ひらがな
     text = re.sub(r"([\d,]+)円", _expand_number_yen, text)
@@ -219,13 +228,12 @@ def verify_narration(
     status = "PASS"
 
     # 簡易照合: 意味の大きな乖離を検出
+    from difflib import SequenceMatcher
     orig_clean = re.sub(r"[\s、。,.\n]", "", original_text)
     trans_clean = re.sub(r"[\s、。,.\n]", "", transcript)
 
-    # 文字レベルの一致率
-    common = sum(1 for a, b in zip(orig_clean, trans_clean) if a == b)
-    max_len = max(len(orig_clean), len(trans_clean), 1)
-    similarity = common / max_len
+    # SequenceMatcher で長さの異なるテキストも正確に照合
+    similarity = SequenceMatcher(None, orig_clean, trans_clean).ratio()
 
     if similarity < 0.5:
         status = "CRITICAL"
@@ -286,6 +294,7 @@ def qa_and_retry(
         print(f"  narration-qa: テキスト前処理適用")
 
     current_text = processed_text
+    audio_path = output_path  # フォールバック値（generate_speech が例外を投げた場合に備える）
 
     for attempt in range(max_retries):
         # Step 2: 音声生成

@@ -552,6 +552,51 @@ TaxAccountantDemo v34-v40 で確立。ナレーション付き動画の必須チ
 - **検出方法**: `<Img src={staticFile("...png")}` を含むシーンで、親 Sequence の `durationInFrames / fps >= 3` かつ `interpolate` / `spring` が画像に適用されていない場合
 - **判定基準**: 3秒以上の静的PNG表示があったら P2（アニメーション化を推奨）
 
+
+---
+
+### Category K: 多言語対応（i18n Quality）
+
+AgentCampOnboarding v11o EN/ES制作で確立。多言語版コンポジションの必須チェック。
+
+#### K1. ハードコード文字列の残留 [P1]
+
+**チェック**: コンポーネント内に日本語ハードコード文字列が残っていないか？
+- NG: `<span>&yen;</span>` がi18n化されず全言語で¥表示
+- NG: `"日 4月13日 12:34"` が全言語で日本語日付
+- OK: `<span>{t.ctaCurrency}</span>` でi18n管理
+- **検出方法**: `.tsx` ファイル内で日本語文字列（`[\u3000-\u9FFF]`）を grep。i18n ファイル以外にヒットしたら NG
+- **例外**: コメント内、staticFile パス内は OK
+
+#### K2. 画像アセットの言語不一致 [P1]
+
+**チェック**: 日本語テキスト入り画像が EN/ES 版でそのまま使われていないか？
+- NG: 日本語バナー（`hq_13_roi.png`「月12,800円で残業ゼロへ」）が EN 版で表示
+- OK: `t.designBannerImages` で言語別パスを切替
+- **検出方法**: i18n テキストファイルの `Images` / `Banner` 系フィールドが全言語で同一パスなら NG
+- **判定基準**: 視認できるテキストを含む画像が全言語共通なら P1
+
+#### K3. 変数シャドウイング [P1]
+
+**チェック**: `.map((t, i) => ...)` のコールバック変数が外側の i18n テキストオブジェクト `t` をシャドウしていないか？
+- NG: `tasks.map((t, j) => { ... t.minutesStatusDone ... })` → ループ変数 `t` にアクセスしてしまう
+- OK: `tasks.map((row, j) => { ... t.minutesStatusDone ... })` → 外側の `t`（OnboardingText）にアクセス
+- **検出方法**: `const t = useText()` がある `.tsx` ファイルで `.map((t` を grep
+
+#### K4. 通貨・価格の整合性 [P2]
+
+**チェック**: 価格表示が言語に合った通貨で表示されているか？
+- NG: EN 版で `¥12,800` 表示（日本市場価格が外国語版に残る）
+- OK: EN 版 `$80/mo`, JP 版 `¥12,800/月`
+- **検出方法**: i18n ファイルの `ctaPrice`, `ctaCurrency`, `ctaPricePer` が言語ごとに適切か確認
+
+#### K5. useText() vs props の混在 [P2]
+
+**チェック**: 同一コンポジション内で i18n テキスト取得方法が混在していないか？
+- NG: HookScene は `useText()` 内部使用、CTAScene は `props.t` 受け取り → `<CTAScene t={t} />` で TS エラー
+- OK: 全シーンが `useText()` で統一、scenes 配列は `<CTAScene />` のみ
+- **判定基準**: `React.FC<{ t: ... }>` と `React.FC` (useText内部使用) が混在していたら P2
+
 ---
 
 ## 出力フォーマット
@@ -610,66 +655,91 @@ VERDICT が FIX_REQUIRED の場合、Auto-fix Loop に入る（max 3回）。
 
 ---
 
-## Render & Review Loop（自己改善ワークフロー）
+## Render & Review Loop（自律改善ワークフロー）
 
 レンダリング後に自動で品質チェックし、問題を検出したら修正→再レンダリングを繰り返す。
-max 3イテレーションで収束させる。
+**ユーザーの介入なしに max 3イテレーションで品質を収束させる。**
 
 ### トリガーワード
-`render and review`, `レンダリング＆レビュー`, `自己改善ループ`
+`render and review`, `レンダリング＆レビュー`, `自己改善ループ`, `自律レビュー`
 
-### フロー
+### 自律ループフロー
 
 ```
-[1] Render
-    npx remotion render src/index.ts {CompositionId} out/{Name}_v{N}.mp4
+[1] Pre-check
+    npx tsc --noEmit → TSエラー0であることを確認
+    grep sectionDurations → 値が期待通りか確認
         ↓
-[2] QA Frame Extraction
-    bash scripts/qa_frames.sh out/{Name}_v{N}.mp4
-    → data/qa_{Name}_v{N}/ に12フレーム出力
+[2] Render
+    npx remotion render {CompositionId} out/{Name}_v{N}.mp4
         ↓
-[3] Visual Review（QAフレーム目視）
+[3] QA Frame Extraction
+    ffmpeg で各シーン境界から1フレーム抽出
+    → data/qa_{Name}_v{N}/ に出力
+        ↓
+[4] Visual Review（QAフレーム目視）
     Read ツールで各フレームを確認:
     - 黒フレーム検出（opacity=0の遷移境界）
     - テキスト見切れ・改行崩れ
     - 要素重なり・余白不足
     - 色彩・視認性の問題
+    - [多言語] 日本語テキスト残留（K1）、日本語画像残留（K2）
         ↓
-[4] Code Review（20項目チェックリスト）
-    対象 .tsx ファイルを Read → 本スキルの A1-H8 をチェック
+[5] Code Review（30項目チェックリスト A1-K5）
+    対象 .tsx ファイルを Read → 全カテゴリをチェック
         ↓
-[5] VERDICT 判定
+[6] VERDICT 判定
     ├─ PASS (P1=0) → 完了。ユーザーに結果報告
     ├─ FIX_RECOMMENDED (P2のみ) → 修正提案をユーザーに提示
-    └─ FIX_REQUIRED (P1あり) → 自動修正 → Step 1 に戻る（max 3回）
+    └─ FIX_REQUIRED (P1あり) → Step 7 へ
         ↓
-[6] Auto-fix（P1の場合のみ自動実行）
+[7] Auto-fix & Re-render（P1自動修正）
     - P1 の修正を .tsx に適用
+    - npx tsc --noEmit で型チェック
     - v{N+1} としてレンダリング
-    - 再度 Step 2-5
+    - Step 3 に戻る（max 3回）
 ```
+
+### ナレーション付き動画の統合ループ
+
+ナレーション付きコンポジションでは `narration-qa` スキルと連携して以下を自律実行:
+
+```
+[A] narration-qa: Step 0 ルール適用 → テキスト修正
+[B] narration-qa: Step 2 ElevenLabs 生成
+[C] narration-qa: Step 3 Gemini QA（全クリップ必須）
+    ├─ Critical/Major NG → テキスト修正 → [B] に戻る（max 3回）
+    └─ All Pass → [D] へ
+[D] motion-review: Render & Review Loop（上記 [1]-[7]）
+    ├─ FIX_REQUIRED → 自動修正 → 再レンダリング → 再レビュー
+    └─ PASS → 完了
+```
+
+**重要**: narration-qa と motion-review は **順次実行**。ナレーションが確定してからレンダリング・レビューに入る。
 
 ### 実行方法
 
 会話内で以下のように指示:
 
 ```
-CCTrend-All をレンダリングしてレビューして
+AgentCampOnboardingEN をレンダリングしてレビューして
 ```
 
-Claude Code が以下を自動実行:
-1. `npx remotion render src/index.ts CCTrend-All out/CCTrend-All_v1.mp4`
-2. `bash scripts/qa_frames.sh out/CCTrend-All_v1.mp4`
-3. QAフレームを Read で目視確認
-4. .tsx を Read → 20項目チェック
+Claude Code が以下を自律実行:
+1. `npx tsc --noEmit` で型チェック
+2. `npx remotion render AgentCampOnboardingEN out/agent_camp_onboarding_en_v1.mp4`
+3. QAフレーム抽出 → Read で目視確認
+4. .tsx を Read → 30項目チェック（K1-K5 含む）
 5. レビューレポート出力
 6. P1があれば自動修正 → v2 レンダリング → 再レビュー
+7. PASS まで繰り返し（max 3回）
 
 ### 注意事項
 
 - **max 3回**のイテレーションで止める。3回で解決しない場合はユーザーに報告
 - P2/P3 は自動修正しない。提案のみ
-- レンダリング前に `npx tsc --noEmit` で型チェック
+- **1ファイル = 1エージェント**: 複数エージェントが同一 .tsx を同時編集すると「File has been modified since read」エラーが頻発する。必ず直列で修正
+- レンダリング出力サイズが前バージョンから大幅に変わったら巻き戻しを疑う
 - QAフレームは `data/qa_{Name}_v{N}/` に世代管理（上書きしない）
 - 各イテレーションでバージョン番号をインクリメント（v1→v2→v3）
 

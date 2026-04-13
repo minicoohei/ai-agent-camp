@@ -122,13 +122,19 @@ def render_video(
     ]
 
     print(f"  Remotion レンダリング: {template} → {output_path}")
-    result = subprocess.run(
-        cmd,
-        cwd=str(REMOTION_DIR),
-        capture_output=True,
-        text=True,
-        timeout=600,
-    )
+    try:
+        result = subprocess.run(
+            cmd,
+            cwd=str(REMOTION_DIR),
+            capture_output=True,
+            text=True,
+            timeout=600,
+        )
+    except Exception:
+        props_path.unlink(missing_ok=True)
+        raise
+    finally:
+        props_path.unlink(missing_ok=True)
 
     if result.returncode != 0:
         print(f"  警告: Remotionレンダリング失敗 ({template})")
@@ -137,9 +143,6 @@ def render_video(
         final = ffmpeg_fallback(data, template, output_path, tmpl)
         _run_motion_review(final)
         return final
-
-    # props一時ファイル削除
-    props_path.unlink(missing_ok=True)
 
     # motion-review でレンダー結果を自動チェック
     _run_motion_review(output_path)
@@ -198,11 +201,15 @@ def ffmpeg_fallback(
         font_opt = ""
         for fp in cjk_fonts:
             if Path(fp).exists():
-                font_opt = f":fontfile='{fp}'"
+                # FFmpeg フィルタ内ではコロンとバックスラッシュをエスケープ
+                escaped_fp = fp.replace("\\", "\\\\").replace(":", "\\:")
+                font_opt = f":fontfile={escaped_fp}"
                 break
 
+        # textfile パスもエスケープ（空白・コロン対策）
+        escaped_textfile = textfile_path.replace("\\", "\\\\").replace(":", "\\:")
         filters.append(
-            f"drawtext=textfile='{textfile_path}'{font_opt}:fontsize=36:fontcolor=white:"
+            f"drawtext=textfile={escaped_textfile}{font_opt}:fontsize=36:fontcolor=white:"
             f"x=(w-text_w)/2:y=h-100:box=1:boxcolor=black@0.6:boxborderw=10"
         )
 
@@ -218,7 +225,10 @@ def ffmpeg_fallback(
     ]
 
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+        except subprocess.TimeoutExpired as e:
+            raise RuntimeError(f"FFmpegフォールバックがタイムアウトしました（300秒）: {e}") from e
     finally:
         # textfile 一時ファイルを削除
         if textfile_path:
