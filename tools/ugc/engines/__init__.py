@@ -94,16 +94,23 @@ def generate_with_fallback(
             engine = get_engine(name)
             # timeout を強制するため ThreadPoolExecutor 経由で呼び出す
             # （stalled な engine.generate() が fallback chain をブロックしないように）
-            with ThreadPoolExecutor(max_workers=1) as executor:
-                future = executor.submit(
-                    engine.generate,
-                    avatar_image=avatar_image,
-                    script=script,
-                    audio_file=audio_file,
-                    output_path=output_path,
-                    **kwargs,
-                )
+            # NOTE: context manager を使わない — shutdown(wait=True) がタイムアウト後もブロックするため
+            executor = ThreadPoolExecutor(max_workers=1)
+            future = executor.submit(
+                engine.generate,
+                avatar_image=avatar_image,
+                script=script,
+                audio_file=audio_file,
+                output_path=output_path,
+                **kwargs,
+            )
+            try:
                 result = future.result(timeout=timeout)
+            except FuturesTimeoutError:
+                executor.shutdown(wait=False, cancel_futures=True)
+                raise
+            else:
+                executor.shutdown(wait=False)
             result.engine = name
             if name != engine_name:
                 print(f"  フォールバック成功: {engine_name} → {name}")
