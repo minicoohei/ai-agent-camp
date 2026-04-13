@@ -9,8 +9,10 @@ UGC動画生成エンジン
 - ViduEngine: Vidu（高品質、長尺対応）[未実装]
 """
 
+import os
 import time
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
+from pathlib import Path
 from typing import Optional
 
 from .base import BaseEngine, VideoResult
@@ -89,6 +91,14 @@ def generate_with_fallback(
     last_error = None
 
     for name in chain:
+        # タイムアウト後にワーカースレッドが output_path を上書きするのを防ぐため、
+        # 各エンジンごとに一時出力パスを使用し、成功時にリネームする
+        if output_path:
+            out_p = Path(output_path)
+            tmp_output = str(out_p.with_stem(out_p.stem + f"_tmp_{name}"))
+        else:
+            tmp_output = None
+
         try:
             print(f"  エンジン: {name} で生成開始...")
             engine = get_engine(name)
@@ -101,7 +111,7 @@ def generate_with_fallback(
                 avatar_image=avatar_image,
                 script=script,
                 audio_file=audio_file,
-                output_path=output_path,
+                output_path=tmp_output,
                 **kwargs,
             )
             try:
@@ -111,6 +121,11 @@ def generate_with_fallback(
                 raise
             else:
                 executor.shutdown(wait=False)
+
+            # 成功: 一時ファイルを正式な出力パスにリネーム
+            if tmp_output and output_path and os.path.exists(tmp_output):
+                os.replace(tmp_output, output_path)
+
             result.engine = name
             if name != engine_name:
                 print(f"  フォールバック成功: {engine_name} → {name}")
@@ -123,6 +138,12 @@ def generate_with_fallback(
         except Exception as e:
             last_error = e
             print(f"  エンジン {name} 失敗: {e}")
+            # 失敗した一時ファイルを削除
+            if tmp_output:
+                try:
+                    os.unlink(tmp_output)
+                except OSError:
+                    pass
             # API 制限回避のため少し待機
             time.sleep(2)
             continue

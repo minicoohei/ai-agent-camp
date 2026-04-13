@@ -1,8 +1,8 @@
 # Chapter 5: PPTX Analysis & Editing
 id: "module05-pptx"
 order: 5
-name: "PPTX Analysis & Editing"
-description: "Analyze and auto-edit PowerPoint files."
+name: "PPTX Analysis, Conversion & Generation"
+description: "Master PowerPoint file analysis, template conversion, and automated presentation generation using three specialized tools"
 type: "manual"
 estimatedMinutes: 60
 objectives:

@@ -1,0 +1,16 @@
+# Capítulo 15: Seguridad en Git
+id: "ch15-git-safety"
+order: 15
+name: "Seguridad en Git"
+description: "Comprende las operaciones peligrosas de Git y aprende prácticas seguras de control de versiones."
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch14-git-basics"
+objectives:
+  - "Comprender las operaciones peligrosas de Git (force push, reset --hard, etc.)"
+  - "Adoptar prácticas seguras de Git"
+  - "Entender la colaboración segura entre agentes de IA y Git"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-7?slideId=dangerous-ops"

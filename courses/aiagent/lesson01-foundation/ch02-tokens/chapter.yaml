@@ -13,4 +13,4 @@ objectives:
   - "入力トークンと出力トークンの違いを理解する"
   - "コンテキストウィンドウの制限を理解する"
 externalContent:
-  manual: "https://ai-agent.camp/ja/course/foundation/tokens"
+  manual: "https://ai-agent.camp/ja/course/foundation-1?slideId=transformer-mechanism"

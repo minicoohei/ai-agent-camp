@@ -52,7 +52,9 @@ def _pad_silent_audio(clips: list[str], audio_flags: list[bool]) -> list[str]:
             result.append(clip)
         else:
             # サイレント音声を追加した一時ファイルを生成
-            padded = clip.replace(".mp4", "_padded.mp4")
+            # pathlib で拡張子に依存しないパス構築（.MP4, .mov 等にも対応）
+            clip_path = Path(clip)
+            padded = str(clip_path.with_stem(clip_path.stem + "_padded"))
             cmd = [
                 "ffmpeg", "-y",
                 "-i", clip,

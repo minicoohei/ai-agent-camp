@@ -13,4 +13,4 @@ objectives:
   - "Entender la diferencia entre tokens de entrada y salida"
   - "Comprender las limitaciones de la ventana de contexto"
 externalContent:
-  manual: "https://ai-agent.camp/es/course/foundation/tokens"
+  manual: "https://ai-agent.camp/es/course/foundation-1?slideId=transformer-mechanism"

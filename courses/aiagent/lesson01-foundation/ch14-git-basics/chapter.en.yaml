@@ -1,0 +1,15 @@
+# Chapter 14: Git Basics
+id: "ch14-git-basics"
+order: 14
+name: "Git Basics"
+description: "Learn the fundamentals of version control and how to use Git/GitHub."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand what Git is and why it's needed"
+  - "Understand the basic Git flow (add/commit/push/pull)"
+  - "Grasp branching, merging, and rebasing concepts"
+  - "Understand the role of Pull Requests"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-7?slideId=git-intro"

@@ -1,0 +1,17 @@
+# Chapter 12: Extended Thinking
+id: "ch12-extended-thinking"
+order: 12
+name: "Extended Thinking"
+description: "LLMに「考える時間」を与えて推論精度を高めるExtended Thinkingの仕組みを学びます。"
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch06-mcp"
+objectives:
+  - "Extended Thinkingとは何かを理解する"
+  - "2ステッププロセス（思考→回答）を理解する"
+  - "どのような場面で有効かを判断できる"
+  - "Inference Scalingの概念を把握する"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-6?slideId=ext-thinking-intro"

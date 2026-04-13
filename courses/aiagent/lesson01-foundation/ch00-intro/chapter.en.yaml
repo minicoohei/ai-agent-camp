@@ -1,0 +1,13 @@
+# Chapter 0: Learning Path
+id: "ch00-intro"
+order: 0
+name: "Learning Path"
+description: "Get an overview of the AI agent training and how to proceed."
+type: "manual"
+estimatedMinutes: 10
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand the overall training structure"
+  - "Grasp the learning path and how to progress"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-1?slideId=learning-path"

@@ -1,0 +1,16 @@
+# Chapter 15: Git Safety
+id: "ch15-git-safety"
+order: 15
+name: "Git Safety"
+description: "Understand dangerous Git operations and learn safe version control practices."
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch14-git-basics"
+objectives:
+  - "Understand dangerous Git operations (force push, reset --hard, etc.)"
+  - "Adopt safe Git practices"
+  - "Understand safe collaboration between AI agents and Git"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-7?slideId=dangerous-ops"

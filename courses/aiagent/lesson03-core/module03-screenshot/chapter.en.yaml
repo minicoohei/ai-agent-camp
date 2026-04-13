@@ -1,8 +1,8 @@
 # Chapter 3: Mastering Cursor with Screenshots
 id: "module03-screenshot"
 order: 3
-name: "Mastering Cursor with Screenshots"
-description: "Learn error diagnosis, manual creation, and automatic tutorial generation using screenshots."
+name: "Create Tutorials with AI Agent"
+description: "Learn how to give AI "eyes" — analyze screenshots and videos to auto-generate tutorials and manuals"
 type: "manual"
 estimatedMinutes: 60
 objectives:

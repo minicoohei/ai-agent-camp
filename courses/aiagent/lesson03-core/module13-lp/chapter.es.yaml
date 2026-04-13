@@ -1,8 +1,8 @@
 # Chapter 14: Creacion de Landing Pages
 id: "module13-lp"
 order: 14
-name: "Creacion de Landing Pages"
-description: "Usa agentes de IA para pasar de la propuesta de valor y el wireframe al diseno en Pencil, la implementacion HTML y el despliegue en Vercel."
+name: "Produccion LP/HP"
+description: "Desde la entrevista hasta el diseno de atractivos, wireframes, diseno en Pencil, implementacion HTML y despliegue en Vercel. Experimenta el flujo completo de produccion LP/HP."
 type: "manual"
 estimatedMinutes: 180
 prerequisites:
