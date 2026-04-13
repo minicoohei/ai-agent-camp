@@ -291,6 +291,73 @@ ffmpeg -y \
 
 ---
 
+## 多言語ナレーション対応（EN/ES）
+
+AgentCampOnboarding v11o で確立。日本語以外のナレーション生成時のルール。
+
+### ボイス選択
+
+| 言語 | Voice | Voice ID | 備考 |
+|------|-------|----------|------|
+| JP | Masa | `StTDrGrPSyfaHGmzwXbj` | 日本語専用 |
+| EN | Chris | `iP95p4xoKVk53GoZ742B` | 英語・多言語対応 |
+| ES | Chris | `iP95p4xoKVk53GoZ742B` | スペイン語も同ボイスで自然 |
+
+### Voice ID の注意事項
+- **Voice ID は完全な文字列を使う**: `iP95p4xoKVk5`（切り詰め）→ 404 エラー。必ず `iP95p4xoKVk53GoZ742B`（完全版）を使用
+- 不明な場合は `client.voices.get_all()` で一覧取得して確認
+
+### EN/ES テキスト作成のコツ
+- **具体的金額を避ける**: 「One flat monthly fee」のように一般表現にすると、価格変更時にナレーション再生成が不要
+- **Step 0 ルールは JP 専用**: EN/ES では英語IT用語のカタカナ化や漢字ひらがな化は不要
+- **atempo 調整**: EN/ES は JP より発話速度が速いため、atempo 不要なケースが多い。1.0-1.2 の範囲なら自然
+
+### EN/ES の Gemini QA
+- **全クリップ必須**: EN/ES でも省略しない。ElevenLabs multilingual_v2 は英語でも稀に誤読する
+- **判定基準は同じ**: 意味が変わったら Critical、固有名詞崩壊は Major、表記違いは Minor
+- **Gemini モデル**: `gemini-3-flash-preview` を使用（EN/ES 認識精度も高い）
+
+---
+
+## 自律ループ運用（推奨）
+
+このスキルは **自律的に繰り返し実行** して品質を収束させることを前提に設計されている。
+
+### 自律ループフロー
+
+```
+[Round 1]
+  Step 0: テキストルール適用
+  Step 2: ElevenLabs 全クリップ生成
+  Step 3: Gemini QA 全クリップ検証
+    → Critical/Major NG が出た場合 ↓
+
+[Round 2]
+  NG クリップのテキストを修正（ひらがな化 / 言い換え）
+  対象クリップのみ再生成
+  Gemini QA 対象クリップのみ再検証
+    → まだ NG があれば ↓
+
+[Round 3]
+  文章構造自体を大幅に書き直す
+  再生成 → 再検証
+    → まだ NG → そのセグメントのナレーションを諦める（ユーザーに報告）
+```
+
+### 運用のポイント
+
+- **Round 2以降は NG クリップだけ再生成**: 全クリップ再生成は時間とAPI費用の無駄
+- **Minor 判定は自動 Pass にしない**: 実音声を聴いて許容範囲か判断してから Pass（ただし3回ループ後は妥協してよい）
+- **motion-review と連携**: ナレーション確定後に motion-review の Render & Review Loop に入る。ナレーションが未確定のままレンダリングしない
+- **多言語版は言語ごとに独立ループ**: JP → EN → ES の順で実行。JP の教訓（誤読パターン等）を EN/ES に活かす
+
+### トリガーワード（自律ループ起動）
+- `ナレーション生成してQAして` → 生成 + Gemini QA + NG 修正ループを自律実行
+- `narration full loop` → 同上（英語指示でも起動）
+- `ナレーションQAだけ` → 既存の mp3 に対して Gemini QA のみ実行
+
+---
+
 ## 依存
 
 - **ElevenLabs API**: `ELEVENLABS_API_KEY` in `.env`
@@ -309,4 +376,8 @@ data/
   audio_final.mp3          # BGM + ナレーション最終ミックス
   bgm.mp3 / bgm_extended.mp3  # BGM
   narration_qa_results.json    # Gemini検証結果ログ
+  gen_narration_en.py      # EN ナレーション生成スクリプト
+  gen_narration_es.py      # ES ナレーション生成スクリプト
+  narration_en_results.json    # EN QA結果
+  narration_es_results.json    # ES QA結果
 ```
