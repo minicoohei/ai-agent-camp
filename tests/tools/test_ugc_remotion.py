@@ -138,7 +138,7 @@ class TestFfmpegFallback:
         tmpl = {"width": 1920, "height": 1080}
 
         with patch("subprocess.run", side_effect=subprocess.TimeoutExpired("ffmpeg", 300)):
-            with pytest.raises(subprocess.TimeoutExpired):
+            with pytest.raises(RuntimeError, match="タイムアウト"):
                 remotion.ffmpeg_fallback(data, "short", tmp_path / "out.mp4", tmpl)
 
     def test_ffmpeg_failure_raises(self, remotion, tmp_path):

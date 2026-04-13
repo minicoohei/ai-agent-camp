@@ -748,7 +748,8 @@ class TestVideoConcat:
         monkeypatch.setattr(shutil, "which", lambda x: "/usr/bin/ffmpeg")
         with patch.object(subprocess, "run") as mock_run:
             mock_run.return_value = MagicMock(returncode=0)
-            with patch.object(self.mod, "_get_duration", return_value=10.0):
+            with patch.object(self.mod, "_get_duration", return_value=10.0), \
+                 patch.object(self.mod, "_has_audio", return_value=False):
                 self.mod.concat_with_crossfade(
                     ["a.mp4", "b.mp4"], "out.mp4", transition_duration=0.5
                 )
@@ -767,7 +768,8 @@ class TestVideoConcat:
         monkeypatch.setattr(shutil, "which", lambda x: "/usr/bin/ffmpeg")
         with patch.object(subprocess, "run") as mock_run:
             mock_run.return_value = MagicMock(returncode=0)
-            with patch.object(self.mod, "_get_duration", return_value=10.0):
+            with patch.object(self.mod, "_get_duration", return_value=10.0), \
+                 patch.object(self.mod, "_has_audio", return_value=False):
                 self.mod.concat_with_crossfade(
                     ["a.mp4", "b.mp4", "c.mp4"], "out.mp4",
                     transition="dissolve", transition_duration=0.5,
@@ -782,7 +784,8 @@ class TestVideoConcat:
         monkeypatch.setattr(shutil, "which", lambda x: "/usr/bin/ffmpeg")
         with patch.object(subprocess, "run") as mock_run:
             mock_run.return_value = MagicMock(returncode=0)
-            with patch.object(self.mod, "_get_duration", return_value=5.0):
+            with patch.object(self.mod, "_get_duration", return_value=5.0), \
+                 patch.object(self.mod, "_has_audio", return_value=False):
                 self.mod.concat_with_crossfade(
                     ["a.mp4", "b.mp4", "c.mp4", "d.mp4"], "out.mp4",
                     transition_duration=0.3,
