@@ -73,8 +73,10 @@ def run_product_demo(
         結果のdict（video_path, cost, duration等）
     """
     from ugc import generate_ugc_script, generate_speech, composite_video
-    from ugc.engines import get_engine
+    from ugc.engines import get_engine, generate_with_fallback
     from ugc.audio_post import mux_audio, mix_bgm
+    from ugc.video_qa import validate_video_output
+    from ugc.narration_qa import qa_and_retry
 
     # 出力ディレクトリ
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -130,9 +132,9 @@ def run_product_demo(
     audio_path = None
 
     if engine.requires_tts:
-        print(f"\nStep 3/6: TTS音声生成 (ElevenLabs)")
+        print(f"\nStep 3/6: TTS音声生成 (ElevenLabs + narration-qa)")
         audio_path = str(out / "speech.mp3")
-        generate_speech(text=script, output_path=audio_path, voice=voice)
+        audio_path = qa_and_retry(text=script, output_path=audio_path, voice=voice)
         steps_log.append({"step": "tts", "path": audio_path})
         print(f"  -> {audio_path}")
     else:
@@ -142,25 +144,37 @@ def run_product_demo(
     print(f"\nStep 4/6: 動画生成 ({engine_name})")
     raw_video = str(out / "raw_video.mp4")
 
-    kwargs = {
-        "avatar_image": current_avatar,
-        "script": script,
-        "output_path": raw_video,
-    }
-    if audio_path:
-        kwargs["audio_file"] = audio_path
+    gen_kwargs = {}
     if engine_name == "kling":
-        kwargs["duration"] = min(duration, 10)
+        gen_kwargs["duration"] = min(duration, 10)
     elif engine_name == "veo":
-        kwargs["duration"] = min(duration, 8)
-        kwargs["resolution"] = resolution
+        gen_kwargs["duration"] = min(duration, 8)
+        gen_kwargs["resolution"] = resolution
     else:
-        kwargs["resolution"] = resolution
+        gen_kwargs["resolution"] = resolution
 
-    result = engine.generate(**kwargs)
+    result = generate_with_fallback(
+        engine_name=engine_name,
+        avatar_image=current_avatar,
+        script=script,
+        audio_file=audio_path,
+        output_path=raw_video,
+        **gen_kwargs,
+    )
     total_cost += result.cost
-    steps_log.append({"step": "video", "path": result.video_path, "cost": result.cost})
-    print(f"  -> {result.video_path} (${result.cost:.2f})")
+    steps_log.append({"step": "video", "path": result.video_path, "cost": result.cost, "engine_used": result.engine})
+    print(f"  -> {result.video_path} (${result.cost:.2f}, engine={result.engine})")
+
+    # ----- Step 4.5: TTS音声をmux（エンジンが音声を無視する場合） -----
+    if audio_path and result.engine in ("kling", "veo"):
+        print(f"\n  TTS音声をmux中（{result.engine}は音声未対応）...")
+        muxed_video = str(out / "raw_video_muxed.mp4")
+        try:
+            mux_audio(result.video_path, audio_path, muxed_video)
+            result.video_path = muxed_video
+            print(f"  -> mux完了: {muxed_video}")
+        except Exception as e:
+            print(f"  -> muxスキップ: {e}")
 
     # ----- Step 5: グリーンスクリーン合成 -----
     print(f"\nStep 5/6: グリーンスクリーン合成")
@@ -198,6 +212,11 @@ def run_product_demo(
         current_video = final_path
 
     steps_log.append({"step": "final", "path": current_video})
+
+    # ----- QA検証 -----
+    print(f"\nQA検証:")
+    qa_result = validate_video_output(current_video, expect_audio=bool(audio_path))
+    steps_log.append({"step": "qa", "result": qa_result})
 
     # ----- Result -----
     summary = {
