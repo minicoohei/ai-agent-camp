@@ -1,0 +1,15 @@
+# Capítulo 14: Fundamentos de Git
+id: "ch14-git-basics"
+order: 14
+name: "Fundamentos de Git"
+description: "Aprende los fundamentos del control de versiones y cómo usar Git/GitHub."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+objectives:
+  - "Comprender qué es Git y por qué es necesario"
+  - "Entender el flujo básico de Git (add/commit/push/pull)"
+  - "Comprender los conceptos de ramas, merge y rebase"
+  - "Entender el papel de los Pull Requests"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-7?slideId=git-intro"

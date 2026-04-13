@@ -1,8 +1,8 @@
 # Chapter 9: Notion Integration
 id: "module12-notion"
 order: 9
-name: "Notion Integration"
-description: "Integrate Notion databases with AI."
+name: "Notion CLI (ncli)"
+description: "Learn how to use the Notion CLI (@sakasegawa/ncli) from the terminal and build agent-friendly workflows."
 type: "manual"
 estimatedMinutes: 60
 objectives:

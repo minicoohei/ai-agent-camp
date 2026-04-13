@@ -1,8 +1,8 @@
 # Chapter 8: GAS Automation
 id: "module10-gas"
 order: 8
-name: "GAS Automation"
-description: "Auto-deploy and execute Google Apps Scripts."
+name: "GAS Automation & Practical Automation"
+description: "Experience practical business automation including Google Apps Script (GAS) service integration, PDF invoice processing, email-to-TODO extraction, and Google Slides auto-generation with GAS."
 type: "manual"
 estimatedMinutes: 90
 objectives:
