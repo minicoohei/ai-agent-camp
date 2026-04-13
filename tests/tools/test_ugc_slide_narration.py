@@ -34,6 +34,7 @@ def _engine_generate(**kwargs):
     r = MagicMock()
     r.cost = 0.10
     r.video_path = out
+    r.engine = "fabric"
     return r
 
 
@@ -65,10 +66,15 @@ def _base_mods(client=None):
         "nanobanana": MagicMock(generate_image=MagicMock()),
         "ugc": MagicMock(),
         "ugc.tts": MagicMock(generate_speech=MagicMock()),
-        "ugc.engines": MagicMock(get_engine=MagicMock(return_value=engine)),
+        "ugc.engines": MagicMock(
+            get_engine=MagicMock(return_value=engine),
+            generate_with_fallback=MagicMock(side_effect=lambda **kw: _engine_generate(**kw)),
+        ),
         "ugc.video_concat": concat_mod,
         "ugc.ken_burns": MagicMock(generate_broll=MagicMock(side_effect=_touch_output)),
-        "ugc.audio_post": MagicMock(mix_bgm=MagicMock(side_effect=_touch_output)),
+        "ugc.audio_post": MagicMock(mix_bgm=MagicMock(side_effect=_touch_output), mux_audio=MagicMock()),
+        "ugc.narration_qa": MagicMock(qa_and_retry=MagicMock(return_value="/tmp/audio.mp3")),
+        "ugc.video_qa": MagicMock(validate_video_output=MagicMock(return_value={"status": "PASS", "issues": []})),
         "html_parser": MagicMock(),
         "script_generator": MagicMock(),
     }, client, engine

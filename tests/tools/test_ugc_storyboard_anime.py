@@ -30,7 +30,7 @@ def _engine_generate(**kwargs):
     if out:
         Path(out).parent.mkdir(parents=True, exist_ok=True)
         Path(out).write_bytes(b"\x00")
-    r = MagicMock(); r.cost = 0.08; r.video_path = out
+    r = MagicMock(); r.cost = 0.08; r.video_path = out; r.engine = "kling"
     return r
 
 
@@ -63,10 +63,14 @@ def _base_mods(client=None, engine_side_effect=None):
         "bootcamp_utils": MagicMock(get_client=MagicMock(return_value=client)),
         "nanobanana": MagicMock(generate_image=MagicMock()),
         "ugc": MagicMock(),
-        "ugc.engines": MagicMock(get_engine=MagicMock(return_value=engine)),
+        "ugc.engines": MagicMock(
+            get_engine=MagicMock(return_value=engine),
+            generate_with_fallback=MagicMock(side_effect=lambda **kw: _engine_generate(**kw)),
+        ),
         "ugc.video_concat": vc,
         "ugc.audio_post": MagicMock(mix_bgm=MagicMock(), mix_bgm_no_audio=MagicMock(side_effect=_touch_output)),
         "ugc.ken_burns": MagicMock(generate_broll=MagicMock(side_effect=_touch_output)),
+        "ugc.video_qa": MagicMock(validate_video_output=MagicMock(return_value={"status": "PASS", "issues": []})),
     }
 
 
