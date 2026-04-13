@@ -447,6 +447,7 @@
   lesson: 7
 
 # === Module 15: Video ===
+# 順序: 無料/ローカル → 低コスト → 有料API（再現度の高い順に並べ替え）
 - lessonId: start-15-1
   title: "動画からキーフレームを抽出して分析"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
@@ -454,46 +455,52 @@
   lesson: 1
 
 - lessonId: start-15-2
-  title: "動画AIエンジンの全体像を理解し、fal.aiの使い方を学ぶ"
+  title: "Remotion アニメーション基礎 — スライドシュート風テキストアニメ"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 2
 
 - lessonId: start-15-3
-  title: "プロダクト紹介動画を作成する（グリーンスクリーンアバター + スクショ合成）"
+  title: "YouTube Clipper で動画ハイライト抽出 + テロップ・無音修正"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 3
 
 - lessonId: start-15-4
-  title: "絵コンテからアニメ動画を生成する（Gemini画像 + Kling/Veo I2V + FFmpeg結合）"
+  title: "Clipper × Remotion でマーケ素材を自動生成"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 4
 
 - lessonId: start-15-5
-  title: "スライド解説動画を作成する（HTML解析 + TTS + プレゼンター合成）"
+  title: "動画AIエンジンの全体像を理解し、fal.aiの使い方を学ぶ"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 5
 
 - lessonId: start-15-6
-  title: "AIでミュージックビデオを作成する（Suno + ビート同期 + シーン動画化）"
+  title: "絵コンテからアニメ動画を生成する（Gemini画像 + Kling/Veo I2V + FFmpeg結合）"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 6
 
 - lessonId: start-15-7
-  title: "YouTube Clipper で動画ハイライト抽出"
+  title: "AIでミュージックビデオを作成する（Suno + ビート同期 + シーン動画化）"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 7
 
 - lessonId: start-15-8
-  title: "Clipper × Remotion でマーケ素材を自動生成"
+  title: "スライド解説動画を作成する（HTML解析 + TTS + プレゼンター合成）"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 8
+
+- lessonId: start-15-9
+  title: "プロダクト紹介動画を作成する（グリーンスクリーンアバター + スクショ合成）"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 9
 
 # === Module 16: Email ===
 - lessonId: start-16-1

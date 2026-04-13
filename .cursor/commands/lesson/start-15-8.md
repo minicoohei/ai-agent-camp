@@ -1,170 +1,317 @@
 ---
-description: "When the user says /start-15-8 — Module 15 Lesson 15-8: Clipper × Remotion でマーケ素材を自動生成"
-chapter: "courses/aiagent/lesson03-core/module15-video/chapter.yaml"
-duration: 45分
-prerequisites: ["start-15-7"]
-level: intermediate
-tags: ["video", "remotion", "marketing", "sns"]
+description: "When the user says /start-15-8 — Module 15 Lesson 15-8: スライド解説動画を作成する（HTML解析 + TTS + プレゼンター合成）"
+chapter: "courses/aiagent/lesson03-core/module15-video"
+duration: "約35分"
+prerequisites: ["start-15-5"]
+level: "advanced"
+tags: ["video", "slides", "narration", "tts"]
 ---
 
-# Lesson 15-8: Clipper × Remotion — マーケ素材自動生成
+# Lesson 15-8: Slide Narration Video
 
-## 学習目標
+## このセッションでやること
 
-Lesson 15-7 で抽出したクリップを、Remotion を使って
-SNS用マーケティング素材に変換する方法を学びます。
+**Lesson 15-8: スライド解説動画** へようこそ！
 
-1. Remotion の基本概念（React + 動画 = プログラマブル動画）
-2. テンプレートの理解（ShortClip, QuoteClip, SummaryVideo）
-3. クリップ → SNS投稿用動画への変換
-4. 複数フォーマットの同時出力
-5. CursorBootcampブランドのカスタマイズ
+| 項目 | 内容 |
+|------|------|
+| ゴール | HTML教材やスライド画像から、プレゼンターが解説する動画を自動生成する |
+| 所要時間 | 約35分 |
+| 使うツール | slide_narration_pipeline (Gemini + ElevenLabs + Fabric/Kling + FFmpeg) |
+| 前提条件 | FAL_KEY、GEMINI_API_KEY、ELEVEN_API_KEY 設定済み |
+| コストガイド | [動画AIコスト戦略ガイド](https://ai-agent.camp/ja/course/module-15) を先に確認推奨 |
+| 教材ページ | [Module 15: 動画生成](https://ai-agent.camp/ja/course/module-15) を並行参照 |
 
----
+**コスト目安**: 5セグメント × Fabric 720p で約 **$12/本**、台本のみなら **$0.03**
 
-## Remotionとは？
+**このセッションの流れ:**
+1. 環境確認 & 素材準備
+2. 台本の自動生成と確認
+3. プレゼンター動画生成
+4. スライド + プレゼンター合成
+5. BGM追加（オプション）
+6. 完成動画の確認
 
-Remotion は **React でプログラマブルに動画を作る** フレームワークです。
+セッション終了時には、スライド解説動画が `output/ugc/slide_narration/` に保存されています。
 
-- HTMLとCSSで動画のレイアウトを定義
-- React コンポーネントでアニメーションを制御
-- FFmpeg でローカルレンダリング（API不要、コスト$0）
-- テンプレートを一度作れば、データを変えるだけで量産可能
-
----
-
-## Step 1: 統合パイプラインの実行
-
-Lesson 15-7 のClipperと組み合わせて、一気通貫で実行:
-
-```bash
-uv run python tools/ugc/clipper_marketing_pipeline.py \
-  --url "https://www.youtube.com/watch?v=YOUR_VIDEO_ID" \
-  --auto-select "score>0.8" \
-  --batch-render short,quote
-```
-
-これにより:
-1. 動画DL → AI分析 → ハイライト抽出
-2. 各クリップを「ショート(9:16)」「引用(16:9)」でレンダリング
-3. SNS投稿ドラフト（テキスト + ハッシュタグ）を自動生成
+> **ヒント**: AIの応答が途中で止まった場合は「続きを表示して」と入力すると再開します。
 
 ---
 
-## Step 2: テンプレートの種類を理解する
+## 準備チェック
 
-利用可能なテンプレート一覧:
-
-```bash
-uv run python tools/ugc/remotion_render.py --list-templates
-```
-
-| テンプレート | サイズ | 用途 |
-|-------------|--------|------|
-| `short` | 1080x1920 (9:16) | TikTok / Reels / Shorts |
-| `quote` | 1920x1080 (16:9) | Twitter/X / LinkedIn |
-| `summary` | 1920x1080 (16:9) | YouTube / ブログ |
-| `blog` | 1920x1080 (16:9) | ブログ埋め込み |
-| `training` | 1920x1080 (16:9) | 研修素材 |
-| `square` | 1080x1080 (1:1) | Instagram Feed |
-
----
-
-## Step 3: 個別レンダリング
-
-特定のクリップを特定のテンプレートでレンダリング:
-
-```bash
-# Lesson 15-7 で生成されたremotion_input.jsonを指定
-uv run python tools/ugc/remotion_render.py \
-  --input output/clips/SESSION_DIR/remotion_input.json \
-  --template short \
-  --clip-id clip_01
+**AskQuestionの設定:**
+```json
+{
+  "title": "セッション開始前の確認",
+  "questions": [{
+    "id": "readiness",
+    "prompt": "準備はできていますか？",
+    "options": [
+      {"id": "ready", "label": "準備OK！始めましょう"},
+      {"id": "check_prereq", "label": "前提条件を確認したい"},
+      {"id": "cost_guide", "label": "先にコストガイドを見たい"},
+      {"id": "different_lesson", "label": "別のレッスンに移動したい"}
+    ]
+  }]
+}
 ```
 
 ---
 
-## Step 4: バッチレンダリング
+## Step 1: 環境確認 & 素材準備
 
-1つのクリップから全フォーマットを一括生成:
+**AskQuestionの設定例:**
+```json
+{
+  "title": "Step 1: 素材の選択",
+  "questions": [{
+    "id": "source_choice",
+    "prompt": "どの素材からスライド動画を作りますか？",
+    "options": [
+      {"id": "html", "label": "HTML教材から（このコースの教材を使う）"},
+      {"id": "slides", "label": "スライド画像から（PNG/JPGフォルダ指定）"},
+      {"id": "script_only", "label": "まず台本だけ生成して確認したい"}
+    ]
+  }]
+}
+```
 
+**HTML教材から生成する場合:**
 ```bash
-uv run python tools/ugc/remotion_render.py \
-  --input output/clips/SESSION_DIR/remotion_input.json \
-  --batch short,quote,summary,square
+cd ~/ai-agent-camp
+# 例: Module 1 のバナー生成教材を解説動画にする
+python -m ugc.slide_narration_pipeline \
+  --html https://ai-agent.camp/ja/course/module-1 \
+  --engine fabric --resolution 720p
+```
+
+**スライド画像から生成する場合:**
+```bash
+cd ~/ai-agent-camp
+python -m ugc.slide_narration_pipeline \
+  --slides ./my_slides/ \
+  --topic "AIエージェント入門" \
+  --engine fabric
+```
+
+**台本のみ生成:**
+```bash
+cd ~/ai-agent-camp
+python -m ugc.slide_narration_pipeline \
+  --html https://ai-agent.camp/ja/course/module-1 \
+  --script-only
 ```
 
 ---
 
-## Step 5: SNS投稿ドラフトの確認
+## Step 2: 台本の確認・調整
 
-パイプライン実行後に生成される `post_drafts.json` を確認:
-
-```bash
-cat output/clips/SESSION_DIR/post_drafts.json | python3 -m json.tool
+**AskQuestionの設定例:**
+```json
+{
+  "title": "Step 2: 台本の確認",
+  "questions": [{
+    "id": "step_action",
+    "prompt": "生成された台本を確認しますか？",
+    "options": [
+      {"id": "check", "label": "台本を確認して必要なら修正"},
+      {"id": "change_style", "label": "別のスタイルで再生成"},
+      {"id": "skip", "label": "そのまま進める"}
+    ]
+  }]
+}
 ```
 
-各プラットフォーム向けのテキスト、ハッシュタグ、動画パスが含まれています。
+**台本スタイル:**
+- `friendly` - 親しみやすい話し言葉（デフォルト）
+- `formal` - フォーマルなプレゼン風
+- `casual` - カジュアルな雑談風
+
+**確認ポイント:**
+- 各セグメントの長さは適切か（30-60秒/セグメント推奨）
+- 話し言葉として自然か
+- 専門用語に説明が入っているか
 
 ---
 
-## 演習課題
+## Step 3: プレゼンター動画の生成
 
-1. **基本**: 好きな動画のハイライトを3つ選び、ショート動画(9:16)を生成してください
-2. **応用**: 同じクリップから3種類（short, quote, square）を同時生成してください
-3. **発展**: 生成されたpost_drafts.jsonを元に、実際にSNS投稿文を完成させてください
+**AskQuestionの設定例:**
+```json
+{
+  "title": "Step 3: エンジン選択",
+  "questions": [{
+    "id": "engine_choice",
+    "prompt": "プレゼンター動画のエンジンを選んでください",
+    "options": [
+      {"id": "fabric", "label": "Fabric 1.0（リップシンク付き $2.50/30秒）"},
+      {"id": "kling", "label": "Kling 2.6 Pro（自然な動き $2.80/30秒）"},
+      {"id": "skip_presenter", "label": "プレゼンターなし（スライドのみ）"}
+    ]
+  }]
+}
+```
+
+**パイプラインが実行するステップ:**
+1. アバター画像生成（Gemini Image）
+2. セグメントごとにTTS音声生成（ElevenLabs）
+3. セグメントごとにプレゼンター動画生成（選択したエンジン）
+4. スライド画像からKen Burns背景動画を生成
+5. プレゼンターを右下にオーバーレイ合成
 
 ---
 
-## コスト参考
+## Step 4: 合成結果の確認
 
-| 処理 | コスト |
-|------|--------|
-| Clipper（DL + 分析 + 翻訳） | ~$0.035/動画 |
-| Remotion レンダリング | $0（ローカル） |
-| **合計** | **~$0.035/動画** |
+**AskQuestionの設定例:**
+```json
+{
+  "title": "Step 4: 合成結果",
+  "questions": [{
+    "id": "step_action",
+    "prompt": "合成結果を確認しますか？",
+    "options": [
+      {"id": "check", "label": "動画を確認する"},
+      {"id": "change_position", "label": "プレゼンターの位置を変更"},
+      {"id": "skip", "label": "次に進む"}
+    ]
+  }]
+}
+```
+
+**プレゼンター位置オプション:**
+- `right` - 右下（デフォルト）
+- `left` - 左下
+- `bottom` - 下部中央
 
 ---
 
-## まとめ
+## Step 5: BGM追加（オプション）
 
-- YouTube Clipper でAIが動画の「おいしいところ」を自動検出
-- Remotion でテンプレートに流し込み → SNS素材を量産
-- 1本の動画から複数プラットフォーム用の素材を同時生成
-- コストはほぼゼロ（Gemini API ~$0.035 + ローカルレンダリング）
-
+**AskQuestionの設定例:**
+```json
+{
+  "title": "Step 5: BGM追加",
+  "questions": [{
+    "id": "bgm_choice",
+    "prompt": "BGMを追加しますか？",
+    "options": [
+      {"id": "add_bgm", "label": "BGMを追加（ファイル指定、音量12%推奨）"},
+      {"id": "no_bgm", "label": "BGMなしで完成"},
+      {"id": "generate", "label": "Lesson 15-7（MV）でBGM生成を学ぶ"}
+    ]
+  }]
+}
+```
 
 ---
 
-## 📋 成果物プレビュー
+## Step 6: 完成動画の確認
 
-### 期待される出力
+**実行内容:**
 ```text
-📁 output/ugc/
-├── *.mp4           (動画ファイル)
-├── metadata.json   (メタデータ)
-└── thumbnails/     (サムネイル)
-```
+output/ugc/slide_narration/<timestamp>/ 内の summary.json を確認（タイムスタンプ付きサブディレクトリに出力されます）。
 
-### 確認コマンド
-```bash
-# 出力ファイルの一覧とサイズ
-ls -lh output/ugc/
+確認項目:
+- 最終動画のパス
+- セグメント数
+- 使用エンジン
+- 生成コスト
 
-# メタデータを確認
-cat output/ugc/*metadata*.json 2>/dev/null | head -20
-
-# 動画を再生（macOS: open / Linux: xdg-open）
-open output/ugc/*.mp4
+コスト最適化のヒント:
+- 480pにするとFabricコストは半額
+- --script-only で台本だけ先に確認（$0.03）
+- プレゼンターなしならスライドKen Burns + TTS音声のみ（$0.05）
 ```
 
 ---
 
-## ➡️ 次のステップ
+## よくあるトラブルと解決方法
 
-これでModule 15（動画制作）は完了です。
+**AskQuestionの設定例:**
+```json
+{
+  "title": "トラブル内容を選択",
+  "questions": [{
+    "id": "trouble",
+    "prompt": "当てはまる内容を1つ選んでください",
+    "options": [
+      {"id": "trouble_1", "label": "HTML解析でセクションが取れない"},
+      {"id": "trouble_2", "label": "TTS音声が不自然"},
+      {"id": "trouble_3", "label": "プレゼンター動画がタイムアウト"},
+      {"id": "trouble_4", "label": "オーバーレイ合成がずれる"}
+    ]
+  }]
+}
+```
 
-Codex では通常チャットで選択肢を提示しながらで選べます。
+### トラブル1: 「HTML解析でセクションが取れない」
+**原因**: HTMLの構造が想定と異なる
+**解決**: --slides オプションでスライド画像を直接指定
+
+### トラブル2: 「TTS音声が不自然」
+**原因**: 台本のテキストが読み上げに適していない
+**解決**: --script-only で台本を先に生成→手動修正→再実行
+
+### トラブル3: 「プレゼンター動画がタイムアウト」
+**原因**: fal.aiの処理遅延
+**解決**: エンジンを変更（fabric → kling）、セグメントを短くする
+
+### トラブル4: 「オーバーレイ合成がずれる」
+**原因**: プレゼンターとスライドの長さ不一致
+**解決**: FFmpegの -shortest オプションで自動調整（デフォルト有効）
+
+---
+
+## QA: /narration-qa でナレーション品質チェック
+
+TTS 生成後、必ず発音品質を検証します。
+
+入力内容:
+```
+/narration-qa
+
+生成したナレーション音声の品質をチェックしてください。
+
+■ チェック対象: 生成された音声ファイル（MP3/WAV）
+■ 重点項目:
+- 漢字の誤読がないか（税理士→ぜいりし 等）
+- 数字の読み上げが正確か
+- テンポが自然か（atempo 1.35x 以内か）
+- BGM とのバランス（ナレーション 1.0-1.2 / BGM 0.18-0.25）
+```
+
+/narration-qa は Gemini Flash で全クリップを書き起こし、期待テキストと自動比較します。
+不一致があれば再生成を提案します（最大3回まで）。
+
+---
+
+## QA: /motion-review で合成動画チェック
+
+ナレーション合格後、動画全体の品質もチェック:
+
+入力内容:
+```
+/motion-review
+
+スライド解説動画の合成品質をチェックしてください。
+■ 特に: プレゼンター合成の位置・サイズ、スライド遷移のタイミング
+```
+
+---
+
+## チェックポイント
+- [ ] APIキーが正しく設定されている
+- [ ] HTML解析またはスライド画像の準備ができた
+- [ ] 台本が自然な話し言葉で生成された
+- [ ] プレゼンター動画が生成できた
+- [ ] スライドとプレゼンターが合成された
+- [ ] 最終動画を確認できた
+
+---
+
+## 次のステップ
 
 **AskQuestionの設定例:**
 ```json
@@ -174,15 +321,10 @@ Codex では通常チャットで選択肢を提示しながらで選べます�
     "id": "next_step",
     "prompt": "次に進む操作を選んでください",
     "options": [
-      {"id": "next_auto", "label": "次のセクションを開始（/next_lesson）"},
-      {"id": "next_window", "label": "新しいウィンドウで開始（/start-16-1）"},
+      {"id": "next_auto", "label": "次のセクション（/start-15-9 プロダクト紹介動画）"},
+      {"id": "retry", "label": "別の教材で再生成"},
       {"id": "finish", "label": "ここで終了する"}
     ]
   }]
 }
 ```
-
-**選択後の案内（例）**:
-- next_auto → /next_lesson
-- next_window → 新しいウィンドウで /start-16-1
-- finish → 終了

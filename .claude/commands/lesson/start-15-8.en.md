@@ -1,168 +1,280 @@
 ---
-description: "When the user says /start-15-8 — Module 15 Lesson 15-8: Auto-generate marketing materials with Clipper x Remotion"
-chapter: "courses/aiagent/lesson03-core/module15-video/chapter.yaml"
-duration: "~45 min"
-prerequisites: ["start-15-7"]
-level: intermediate
-tags: ["video", "remotion", "marketing", "sns"]
+description: "When the user says /start-15-8 — Module 15 Lesson 15-8: Create a slide narration video (HTML parsing + TTS + presenter compositing)"
+chapter: "courses/aiagent/lesson03-core/module15-video"
+duration: "~35 min"
+prerequisites: ["start-15-5"]
+level: "advanced"
+tags: ["video", "slides", "narration", "tts"]
 ---
 
-# Lesson 15-8: Clipper x Remotion -- Auto-Generate Marketing Materials
+# Lesson 15-8: Slide Narration Video
 
-## Learning Objectives
+## What You Will Do in This Session
 
-Learn how to convert clips extracted in Lesson 15-7 into social media marketing materials using Remotion.
+Welcome to **Lesson 15-8: Slide Narration Video**!
 
-1. Basic Remotion concepts (React + video = programmable video)
-2. Understanding templates (ShortClip, QuoteClip, SummaryVideo)
-3. Converting clips to social media post videos
-4. Simultaneous multi-format output
-5. CursorBootcamp brand customization
+| Item | Details |
+|------|---------|
+| Goal | Automatically generate a video where a presenter narrates HTML materials or slide images |
+| Duration | ~35 min |
+| Tools used | slide_narration_pipeline (Gemini + ElevenLabs + Fabric/Kling + FFmpeg) |
+| Prerequisites | FAL_KEY, GEMINI_API_KEY, ELEVEN_API_KEY configured |
+| Cost guide | Review the [Video AI Cost Strategy Guide](https://ai-agent.camp/en/course/module-15) first (recommended) |
+| Course page | Refer to [Module 15: Video Generation](https://ai-agent.camp/en/course/module-15) in parallel |
 
----
+**Cost estimate**: 5 segments x Fabric 720p approx. **$12/video**; script only **$0.03**
 
-## What is Remotion?
+**Session flow:**
+1. Verify environment & prepare materials
+2. Auto-generate and review the script
+3. Generate presenter video
+4. Composite slides + presenter
+5. Add BGM (optional)
+6. Review completed video
 
-Remotion is a framework for **creating programmable videos with React**.
+By the end of this session, a slide narration video will be saved in `output/ugc/slide_narration/`.
 
-- Define video layout with HTML and CSS
-- Control animations with React components
-- Local rendering with FFmpeg (no API required, $0 cost)
-- Once a template is created, mass-produce by just changing the data
-
----
-
-## Step 1: Run the Integrated Pipeline
-
-Combine with Lesson 15-7's Clipper for end-to-end execution:
-
-```bash
-uv run python tools/ugc/clipper_marketing_pipeline.py \
-  --url "https://www.youtube.com/watch?v=YOUR_VIDEO_ID" \
-  --auto-select "score>0.8" \
-  --batch-render short,quote
-```
-
-This performs:
-1. Video DL -> AI analysis -> highlight extraction
-2. Render each clip as "short (9:16)" and "quote (16:9)"
-3. Auto-generate social media post drafts (text + hashtags)
+> **Tip**: If the AI response stops midway, type "please continue" to resume.
 
 ---
 
-## Step 2: Understand Template Types
+## Readiness Check
 
-List available templates:
-
-```bash
-uv run python tools/ugc/remotion_render.py --list-templates
-```
-
-| Template | Size | Use case |
-|----------|------|----------|
-| `short` | 1080x1920 (9:16) | TikTok / Reels / Shorts |
-| `quote` | 1920x1080 (16:9) | Twitter/X / LinkedIn |
-| `summary` | 1920x1080 (16:9) | YouTube / Blog |
-| `blog` | 1920x1080 (16:9) | Blog embed |
-| `training` | 1920x1080 (16:9) | Training materials |
-| `square` | 1080x1080 (1:1) | Instagram Feed |
-
----
-
-## Step 3: Individual Rendering
-
-Render a specific clip with a specific template:
-
-```bash
-# Specify the remotion_input.json generated in Lesson 15-7
-uv run python tools/ugc/remotion_render.py \
-  --input output/clips/SESSION_DIR/remotion_input.json \
-  --template short \
-  --clip-id clip_01
+**AskQuestion configuration:**
+```json
+{
+  "title": "Pre-session check",
+  "questions": [{
+    "id": "readiness",
+    "prompt": "Are you ready?",
+    "options": [
+      {"id": "ready", "label": "Ready! Let's start"},
+      {"id": "check_prereq", "label": "I want to check the prerequisites"},
+      {"id": "cost_guide", "label": "I want to see the cost guide first"},
+      {"id": "different_lesson", "label": "I want to go to a different lesson"}
+    ]
+  }]
+}
 ```
 
 ---
 
-## Step 4: Batch Rendering
+## Step 1: Verify Environment & Prepare Materials
 
-Generate all formats from a single clip at once:
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 1: Select materials",
+  "questions": [{
+    "id": "source_choice",
+    "prompt": "What materials do you want to create a slide video from?",
+    "options": [
+      {"id": "html", "label": "From HTML materials (use this course's materials)"},
+      {"id": "slides", "label": "From slide images (specify PNG/JPG folder)"},
+      {"id": "script_only", "label": "Generate script only first to review"}
+    ]
+  }]
+}
+```
 
+**From HTML materials:**
 ```bash
-uv run python tools/ugc/remotion_render.py \
-  --input output/clips/SESSION_DIR/remotion_input.json \
-  --batch short,quote,summary,square
+cd ~/ai-agent-camp
+# Example: turn Module 1 banner creation materials into a narration video
+python -m ugc.slide_narration_pipeline \
+  --html https://ai-agent.camp/en/course/module-1 \
+  --engine fabric --resolution 720p
+```
+
+**From slide images:**
+```bash
+cd ~/ai-agent-camp
+python -m ugc.slide_narration_pipeline \
+  --slides ./my_slides/ \
+  --topic "Introduction to AI Agents" \
+  --engine fabric
+```
+
+**Script only:**
+```bash
+cd ~/ai-agent-camp
+python -m ugc.slide_narration_pipeline \
+  --html https://ai-agent.camp/en/course/module-1 \
+  --script-only
 ```
 
 ---
 
-## Step 5: Review Social Media Post Drafts
+## Step 2: Review and Adjust Script
 
-Check the `post_drafts.json` generated after pipeline execution:
-
-```bash
-cat output/clips/SESSION_DIR/post_drafts.json | python3 -m json.tool
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 2: Script review",
+  "questions": [{
+    "id": "step_action",
+    "prompt": "Do you want to review the generated script?",
+    "options": [
+      {"id": "check", "label": "Review and edit if needed"},
+      {"id": "change_style", "label": "Regenerate with a different style"},
+      {"id": "skip", "label": "Proceed as is"}
+    ]
+  }]
+}
 ```
 
-It contains text, hashtags, and video paths for each platform.
+**Script styles:**
+- `friendly` - Friendly conversational tone (default)
+- `formal` - Formal presentation style
+- `casual` - Casual chat style
+
+**Check points:**
+- Is each segment the right length (30-60 seconds/segment recommended)?
+- Does it sound natural as spoken language?
+- Are technical terms explained?
 
 ---
 
-## Exercises
+## Step 3: Generate Presenter Video
 
-1. **Basic**: Select 3 highlights from a video of your choice and generate short videos (9:16)
-2. **Intermediate**: Generate 3 formats (short, quote, square) simultaneously from the same clips
-3. **Advanced**: Based on the generated post_drafts.json, finalize actual social media post text
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 3: Select engine",
+  "questions": [{
+    "id": "engine_choice",
+    "prompt": "Select the presenter video engine",
+    "options": [
+      {"id": "fabric", "label": "Fabric 1.0 (with lip sync $2.50/30s)"},
+      {"id": "kling", "label": "Kling 2.6 Pro (natural motion $2.80/30s)"},
+      {"id": "skip_presenter", "label": "No presenter (slides only)"}
+    ]
+  }]
+}
+```
+
+**Steps the pipeline executes:**
+1. Generate avatar image (Gemini Image)
+2. Generate TTS audio per segment (ElevenLabs)
+3. Generate presenter video per segment (selected engine)
+4. Generate Ken Burns background video from slide images
+5. Overlay presenter in bottom-right corner
 
 ---
 
-## Cost Reference
+## Step 4: Review Compositing Result
 
-| Process | Cost |
-|---------|------|
-| Clipper (DL + analysis + translation) | ~$0.035/video |
-| Remotion rendering | $0 (local) |
-| **Total** | **~$0.035/video** |
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 4: Compositing result",
+  "questions": [{
+    "id": "step_action",
+    "prompt": "Do you want to review the compositing result?",
+    "options": [
+      {"id": "check", "label": "Review the video"},
+      {"id": "change_position", "label": "Change presenter position"},
+      {"id": "skip", "label": "Proceed"}
+    ]
+  }]
+}
+```
+
+**Presenter position options:**
+- `right` - Bottom right (default)
+- `left` - Bottom left
+- `bottom` - Bottom center
 
 ---
 
-## Summary
+## Step 5: Add BGM (Optional)
 
-- YouTube Clipper auto-detects the "best parts" of a video with AI
-- Remotion pours them into templates -> mass-produce social media materials
-- Generate materials for multiple platforms simultaneously from a single video
-- Cost is nearly zero (Gemini API ~$0.035 + local rendering)
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 5: Add BGM",
+  "questions": [{
+    "id": "bgm_choice",
+    "prompt": "Do you want to add BGM?",
+    "options": [
+      {"id": "add_bgm", "label": "Add BGM (specify file, 12% volume recommended)"},
+      {"id": "no_bgm", "label": "Complete without BGM"},
+      {"id": "generate", "label": "Learn BGM generation in Lesson 15-7 (MV)"}
+    ]
+  }]
+}
+```
 
 ---
 
-## Deliverables Preview
+## Step 6: Review Completed Video
 
-### Expected output
+**Content:**
 ```text
-output/ugc/
-  *.mp4           (video files)
-  metadata.json   (metadata)
-  thumbnails/     (thumbnails)
+Check summary.json in output/ugc/slide_narration/<timestamp>/ (output is in a timestamped subdirectory).
+
+Check items:
+- Final video path
+- Number of segments
+- Engine used
+- Generation cost
+
+Cost optimization tips:
+- Using 480p cuts Fabric cost in half
+- --script-only to review script first ($0.03)
+- Without presenter, slides Ken Burns + TTS audio only ($0.05)
 ```
 
-### Verification commands
-```bash
-# List and size of output files
-ls -lh output/ugc/
+---
 
-# Check metadata
-cat output/ugc/*metadata*.json 2>/dev/null | head -20
+## Common Issues and Solutions
 
-# Play video (macOS: open / Linux: xdg-open)
-open output/ugc/*.mp4
+**AskQuestion configuration:**
+```json
+{
+  "title": "Select your issue",
+  "questions": [{
+    "id": "trouble",
+    "prompt": "Select the issue that applies",
+    "options": [
+      {"id": "trouble_1", "label": "HTML parsing cannot extract sections"},
+      {"id": "trouble_2", "label": "TTS audio sounds unnatural"},
+      {"id": "trouble_3", "label": "Presenter video timed out"},
+      {"id": "trouble_4", "label": "Overlay compositing is misaligned"}
+    ]
+  }]
+}
 ```
+
+### Issue 1: "HTML parsing cannot extract sections"
+**Cause**: The HTML structure differs from expected
+**Solution**: Use the --slides option to specify slide images directly
+
+### Issue 2: "TTS audio sounds unnatural"
+**Cause**: The script text is not suited for reading aloud
+**Solution**: Use --script-only to generate the script first -> manually edit -> re-run
+
+### Issue 3: "Presenter video timed out"
+**Cause**: fal.ai processing delay
+**Solution**: Switch engine (fabric -> kling), shorten segments
+
+### Issue 4: "Overlay compositing is misaligned"
+**Cause**: Length mismatch between presenter and slides
+**Solution**: FFmpeg's -shortest option auto-adjusts (enabled by default)
+
+---
+
+## Checkpoint
+- [ ] API keys are correctly configured
+- [ ] HTML parsing or slide images are prepared
+- [ ] Script was generated with natural spoken language
+- [ ] Presenter video was generated
+- [ ] Slides and presenter were composited
+- [ ] The final video was reviewed
 
 ---
 
 ## Next Steps
-
-This completes Module 15 (Video Production).
-
-In Codex, you can typically choose from options in the chat.
 
 **AskQuestion configuration:**
 ```json
@@ -172,15 +284,10 @@ In Codex, you can typically choose from options in the chat.
     "id": "next_step",
     "prompt": "Select the next action",
     "options": [
-      {"id": "next_auto", "label": "Start the next section (/next_lesson)"},
-      {"id": "next_window", "label": "Open in new window (/start-16-1)"},
+      {"id": "next_auto", "label": "Next section (/start-15-9 Product demo video)"},
+      {"id": "retry", "label": "Regenerate with different materials"},
       {"id": "finish", "label": "Finish here"}
     ]
   }]
 }
 ```
-
-**Post-selection guide (example)**:
-- next_auto -> /next_lesson
-- next_window -> Open /start-16-1 in a new window
-- finish -> End

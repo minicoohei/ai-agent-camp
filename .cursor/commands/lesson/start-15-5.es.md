@@ -1,40 +1,43 @@
 ---
-description: "When the user says /start-15-5 — Module 15 Lesson 15-5: Crear video de narración de diapositivas (análisis HTML + TTS + composición de presentador)"
+description: "When the user says /start-15-5 — Module 15 Lesson 15-5: Comprender el panorama de motores de IA de video y aprender a usar fal.ai"
 chapter: "courses/aiagent/lesson03-core/module15-video"
-duration: "~35 min"
-prerequisites: ["start-15-2"]
-level: "advanced"
-tags: ["video", "slides", "narration", "tts"]
+duration: "~20 min"
+prerequisites: ["start-15-1"]
+level: "intermediate"
+tags: ["video", "ai-engine", "fal"]
 ---
 
-# Lección 15-5: Video de Narración de Diapositivas
+# 15-5: Panorama de Motores de IA de Video
 
 ## Lo Que Hará en Esta Sesión
 
-Bienvenido a **Lección 15-5: Video de Narración de Diapositivas**!
+Bienvenido a **Lección 15-5: Panorama de Motores de IA de Video**!
 
 | Elemento | Detalles |
 |----------|----------|
-| Objetivo | Generar automáticamente un video donde un presentador narra materiales HTML o imagenes de diapositivas |
-| Duración | ~35 min |
-| Herramientas utilizadas | slide_narration_pipeline (Gemini + ElevenLabs + Fabric/Kling + FFmpeg) |
-| Requisitos previos | FAL_KEY, GEMINI_API_KEY, ELEVEN_API_KEY configurados |
-| Guía de costos | Revise la [Guía de Estrategia de Costos de IA de Video](https://ai-agent.camp/es/course/module-15) primero (recomendado) |
+| Objetivo | Comprender los motores de IA de video más recientes y aprender el uso básico de fal.ai |
+| Duración | ~20 min |
+| Herramientas utilizadas | fal.ai (FAL_KEY) |
+| Requisitos previos | FAL_KEY configurado, Python 3.10 o superior recomendado |
+| Guía de costos | * La guía de costos esta en preparación |
 | Página del curso | Consulte [Module 15: Generación de Video](https://ai-agent.camp/es/course/module-15) en paralelo |
 
-**Estimación de costos**: 5 segmentos x Fabric 720p aprox. **$12/video**; solo guion **$0.03**
+**Importante**: En esta lección no se realizará una comparación práctica de todos los motores (debido al alto costo).
+Comprenderá las características y precios de cada motor, y solo practicará los patrones básicos de fal.ai.
+Las llamadas reales a la API se realizarán solo según sea necesario en las lecciones de proyecto a partir de 15-6.
+
+**Requisito previo: Configuración de FAL_KEY**
+
+Se requiere la configuración previa de la clave API para usar la API de fal.ai.
+Si no está configurada, ejecute `/setup-fal` para realizar la configuración.
+
+> **Nota**: fal-client recomienda Python 3.10 o superior. Verifique con `python3 --version`.
 
 **Flujo de la sesión:**
-1. Verificar entorno y preparar materiales
-2. Generar y revisar el guion automáticamente
-3. Generar video del presentador
-4. Componer diapositivas + presentador
-5. Agregar música de fondo (opcional)
-6. Revisar video completado
-
-Al finalizar esta sesión, un video de narración de diapositivas estará guardado en `output/ugc/slide_narration/`.
-
-> **Consejo**: Si la respuesta de la IA se detiene a mitad, escriba "por favor continue" para reanudar.
+1. Panorama de motores de IA de video
+2. Uso diferenciado: API de pago por uso vs servicios de tarifa plana
+3. Uso básico de fal.ai (práctica)
+4. Criterios para seleccionar el motor adecuado
 
 ---
 
@@ -49,7 +52,7 @@ Al finalizar esta sesión, un video de narración de diapositivas estará guarda
     "prompt": "Esta listo?",
     "options": [
       {"id": "ready", "label": "Listo! Comencemos"},
-      {"id": "check_prereq", "label": "Quiero verificar los requisitos previos"},
+      {"id": "check_prereq", "label": "Quiero verificar la configuracion de FAL_KEY"},
       {"id": "cost_guide", "label": "Quiero ver la guia de costos primero"},
       {"id": "different_lesson", "label": "Quiero ir a otra leccion"}
     ]
@@ -59,192 +62,186 @@ Al finalizar esta sesión, un video de narración de diapositivas estará guarda
 
 ---
 
-## Paso 1: Verificar Entorno y Preparar Materiales
+## Paso 1: Panorama de Motores de IA de Video
 
 **Configuración de AskQuestion:**
 ```json
 {
-  "title": "Paso 1: Seleccionar materiales",
-  "questions": [{
-    "id": "source_choice",
-    "prompt": "De que materiales desea crear un video de diapositivas?",
-    "options": [
-      {"id": "html", "label": "Desde materiales HTML (usar los materiales de este curso)"},
-      {"id": "slides", "label": "Desde imagenes de diapositivas (especificar carpeta PNG/JPG)"},
-      {"id": "script_only", "label": "Generar solo el guion primero para revisar"}
-    ]
-  }]
-}
-```
-
-**Desde materiales HTML:**
-```bash
-cd ~/ai-agent-camp
-python -m ugc.slide_narration_pipeline \
-  --html https://ai-agent.camp/es/course/module-1 \
-  --engine fabric --resolution 720p
-```
-
-**Solo guion:**
-```bash
-cd ~/ai-agent-camp
-python -m ugc.slide_narration_pipeline \
-  --html https://ai-agent.camp/es/course/module-1 \
-  --script-only
-```
-
----
-
-## Paso 2: Revisar y Ajustar el Guion
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Paso 2: Revision del guion",
+  "title": "Paso 1: Panorama de motores",
   "questions": [{
     "id": "step_action",
-    "prompt": "Desea revisar el guion generado?",
+    "prompt": "Que desea hacer con este paso?",
     "options": [
-      {"id": "check", "label": "Revisar y editar si es necesario"},
-      {"id": "change_style", "label": "Regenerar con un estilo diferente"},
-      {"id": "skip", "label": "Continuar tal cual"}
+      {"id": "practice", "label": "Investigar juntos"},
+      {"id": "review", "label": "Solo ver el resumen"},
+      {"id": "skip", "label": "Omitir"}
     ]
   }]
 }
 ```
 
-**Estilos de guion:**
-- `friendly` - Tono conversacional amigable (predeterminado)
-- `formal` - Estilo de presentación formal
-- `casual` - Estilo de charla casual
+**Contenido explicativo:**
+
+Presentación de los principales motores de IA de video actuales (2025-2026).
+
+### Motores Image-to-Video (Imagen a Video)
+
+| Motor | Proveedor | Precio | Características |
+|-------|-----------|--------|-----------------|
+| **Kling 2.6 Pro** | fal.ai | $0.07/s | Movimiento natural, estilo UGC, compatible con pantalla verde |
+| **Veo 3.1** | fal.ai | $0.50-1.00/s | Máxima calidad, audio nativo, compatible con Text-to-Video |
+| **Runway Gen-3** | Runway | Tarifa plana $15-76/mes | Alta calidad, interfaz web fácil de usar |
+| **Pika 2.0** | Pika | Tarifa plana $8-58/mes | Texto/imagen a video, efectos variados |
+| **Minimax** | fal.ai | Verificar | Fuerte en videos largos |
+| **LTX Video** | fal.ai | Bajo costo | Basado en código abierto |
+
+### Motores de Lip-sync (Sincronización Labial)
+
+| Motor | Proveedor | Precio | Características |
+|-------|-----------|--------|-----------------|
+| **Fabric 1.0** | fal.ai | $0.08-0.15/s | Sincronización labial de alta precisión |
+| **LongCat** | fal.ai | $0.10/s | Movimiento de cuerpo completo + sincronización labial |
+| **HeyGen** | API directa | $0.05/s | Avatares integrados, multiidioma |
+| **MuseTalk** | fal.ai | Verificar | Sincronización labial via fal.ai |
+
+### Otros
+
+| Herramienta | Tipo | Precio | Uso |
+|-------------|------|--------|-----|
+| **Suno** | Generación musical | Via fal.ai | Composición con IA |
+| **Remotion** | Video programático | $0 (local) | Videos con plantillas, diapositivas |
+| **FFmpeg** | Edición | $0 (local) | Transiciones, composición, Ken Burns |
+
+### Servicios de Tarifa Plana (para generación masiva)
+
+| Servicio | Mensual | Características |
+|----------|---------|-----------------|
+| **GenSpark** | $19/mes | Video + imagenes + búsqueda con IA |
+| **Runway** | $15-76/mes | Gen-3 Alpha, alta calidad |
+| **Pika** | $8-58/mes | Fácil, efectos variados |
+| **CapCut Pro** | $10/mes | Edición + plantillas |
+
+**Punto clave**: Las APIs son ideales para automatización pero de alto costo. Los servicios de tarifa plana son manuales pero adecuados para producción en masa.
 
 ---
 
-## Paso 3: Generar Video del Presentador
+## Paso 2: API vs Servicios de Tarifa Plana
 
 **Configuración de AskQuestion:**
 ```json
 {
-  "title": "Paso 3: Seleccionar motor",
-  "questions": [{
-    "id": "engine_choice",
-    "prompt": "Seleccione el motor de video del presentador",
-    "options": [
-      {"id": "fabric", "label": "Fabric 1.0 (con sincronizacion labial $2.50/30s)"},
-      {"id": "kling", "label": "Kling 2.6 Pro (movimiento natural $2.80/30s)"},
-      {"id": "skip_presenter", "label": "Sin presentador (solo diapositivas)"}
-    ]
-  }]
-}
-```
-
----
-
-## Paso 4: Revisar Resultado de Composición
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Paso 4: Resultado de composicion",
+  "title": "Paso 2: Estrategia de costos",
   "questions": [{
     "id": "step_action",
-    "prompt": "Desea revisar el resultado de la composicion?",
+    "prompt": "Que desea hacer con este paso?",
     "options": [
-      {"id": "check", "label": "Revisar el video"},
-      {"id": "change_position", "label": "Cambiar posicion del presentador"},
-      {"id": "skip", "label": "Continuar"}
+      {"id": "practice", "label": "Pensar juntos"},
+      {"id": "review", "label": "Solo ver el resumen"},
+      {"id": "skip", "label": "Omitir"}
     ]
   }]
 }
 ```
-
-**Opciones de posición del presentador:**
-- `right` - Inferior derecha (predeterminado)
-- `left` - Inferior izquierda
-- `bottom` - Inferior centro
-
----
-
-## Paso 5: Agregar Música de Fondo (Opcional)
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Paso 5: Agregar musica de fondo",
-  "questions": [{
-    "id": "bgm_choice",
-    "prompt": "Desea agregar musica de fondo?",
-    "options": [
-      {"id": "add_bgm", "label": "Agregar musica de fondo (especificar archivo, volumen 12% recomendado)"},
-      {"id": "no_bgm", "label": "Completar sin musica de fondo"},
-      {"id": "generate", "label": "Aprender generacion de musica de fondo en la proxima leccion (15-6 Video musical)"}
-    ]
-  }]
-}
-```
-
----
-
-## Paso 6: Revisar Video Completado
 
 **Contenido:**
+
 ```text
-Revise summary.json en output/ugc/slide_narration/<timestamp>/.
+Diagrama de flujo de decision:
 
-Elementos a verificar:
-- Ruta del video final
-- Numero de segmentos
-- Motor utilizado
-- Costo de generacion
+Necesita automatizacion?
+  SI -> API (fal.ai)
+    Mas de 10 videos/mes?
+      SI -> Considerar tambien servicios de tarifa plana
+      NO -> API es suficiente (fase de aprendizaje)
+  NO -> Servicio de tarifa plana (operacion manual OK)
 
-Consejos de optimizacion de costos:
-- Usar 480p reduce el costo de Fabric a la mitad
-- --script-only para revisar el guion primero ($0.03)
-- Sin presentador, solo diapositivas Ken Burns + audio TTS ($0.05)
+Hay escenas que se pueden reemplazar con B-roll?
+  SI -> A-roll(API) + B-roll(Ken Burns/Remotion) = Costo optimo
+  NO -> Todas las escenas I2V (costo alto previsto)
 ```
 
 ---
 
-## Problemas Comunes y Soluciones
+## Paso 3: Básicos de fal.ai (Práctica)
 
 **Configuración de AskQuestion:**
 ```json
 {
-  "title": "Seleccione su problema",
+  "title": "Paso 3: Practica con fal.ai",
   "questions": [{
-    "id": "trouble",
-    "prompt": "Seleccione el problema que corresponda",
+    "id": "step_action",
+    "prompt": "Que desea hacer con este paso?",
     "options": [
-      {"id": "trouble_1", "label": "El analisis HTML no puede extraer secciones"},
-      {"id": "trouble_2", "label": "El audio TTS suena poco natural"},
-      {"id": "trouble_3", "label": "El video del presentador expiro"},
-      {"id": "trouble_4", "label": "La composicion de superposicion esta desalineada"}
+      {"id": "practice", "label": "Ejecutar realmente"},
+      {"id": "review", "label": "Solo revisar el codigo"},
+      {"id": "skip", "label": "Omitir"}
     ]
   }]
 }
 ```
 
-### Problema 1: "El análisis HTML no puede extraer secciones"
-**Solución**: Use la opción --slides para especificar imagenes de diapositivas directamente
+**Contenido de ejecución:**
 
-### Problema 2: "El audio TTS suena poco natural"
-**Solución**: Use --script-only para generar el guion primero -> editar manualmente -> re-ejecutar
+Verificar los patrones básicos del cliente fal.ai.
+Las llamadas reales a la API se mantienen al mínimo.
 
-### Problema 3: "El video del presentador expiro"
-**Solución**: Cambie de motor (fabric -> kling), acorte los segmentos
+```python
+# Patron basico de fal.ai
+import fal_client
 
-### Problema 4: "La composición de superposición esta desalineada"
-**Solución**: La opción -shortest de FFmpeg se ajusta automáticamente (habilitada por defecto)
+# 1. Subir archivo
+url = fal_client.upload_file("image.png")
+
+# 2. Patron subscribe (esperar resultado)
+result = fal_client.subscribe(
+    "fal-ai/kling-video/v2.6/pro/image-to-video",
+    arguments={
+        "image_url": url,
+        "prompt": "A person talking naturally",
+        "duration": "5",
+        "aspect_ratio": "9:16",
+    },
+    with_logs=True,
+    on_queue_update=lambda update: print(f"Status: {update}"),
+)
+
+# 3. Obtener resultado
+video_url = result["video"]["url"]
+```
+
+```text
+Puntos a verificar:
+1. FAL_KEY esta configurado?
+   echo $FAL_KEY
+2. fal-client esta instalado?
+   pip show fal-client
+3. Comprenda la estructura del codigo (subscribe + arguments + callback)
+```
+
+---
+
+## Paso 4: Criterios de Selección de Motor
+
+**Resumen:**
+
+| Caso de uso | Motor recomendado | Razon |
+|-------------|-------------------|-------|
+| Presentación de producto (estilo UGC) | Fabric / Kling | Sincronización labial + relación costo-rendimiento |
+| Anime/Historia | Kling | Buena calidad I2V |
+| Demo de máxima calidad | Veo 3.1 | Máxima calidad (cuidado con los costos) |
+| Diapositivas/Plantillas | Remotion | $0, personalización libre |
+| Video musical | Suno + Kling | Generación musical + generación de video |
+| Generación masiva | GenSpark/Runway | Tarifa plana para gestión de presupuesto |
+| Complemento B-roll | Ken Burns (FFmpeg) | $0, pseudo-video desde imagenes fijas |
 
 ---
 
 ## Punto de Control
-- [ ] Las claves API están correctamente configuradas
-- [ ] El análisis HTML o las imagenes de diapositivas están preparados
-- [ ] El guion fue generado con lenguaje hablado natural
-- [ ] El video del presentador fue generado
-- [ ] Las diapositivas y el presentador fueron compuestos
-- [ ] El video final fue revisado
+- [ ] Comprendio los tipos principales de motores de IA de video
+- [ ] Comprendio la diferencia entre API de pago por uso y servicios de tarifa plana
+- [ ] Comprendio el patron subscribe de fal.ai
+- [ ] Reviso la guía de estrategia de costos
+- [ ] Puede seleccionar el motor adecuado para su caso de uso
 
 ---
 
@@ -258,8 +255,9 @@ Consejos de optimizacion de costos:
     "id": "next_step",
     "prompt": "Seleccione la siguiente accion",
     "options": [
-      {"id": "next_auto", "label": "Siguiente seccion (/start-15-6 Video musical)"},
-      {"id": "retry", "label": "Regenerar con materiales diferentes"},
+      {"id": "next_76", "label": "15-6: Video anime con storyboard (/start-15-6)"},
+      {"id": "next_77", "label": "15-7: Video musical (/start-15-7)"},
+      {"id": "next_78", "label": "15-8: Video de narracion de diapositivas (/start-15-8)"},
       {"id": "finish", "label": "Terminar aqui"}
     ]
   }]

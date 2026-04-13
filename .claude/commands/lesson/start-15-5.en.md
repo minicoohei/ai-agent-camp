@@ -1,40 +1,43 @@
 ---
-description: "When the user says /start-15-5 — Module 15 Lesson 15-5: Create a slide narration video (HTML parsing + TTS + presenter compositing)"
+description: "When the user says /start-15-5 — Module 15 Lesson 15-5: Understand the video AI engine landscape and learn how to use fal.ai"
 chapter: "courses/aiagent/lesson03-core/module15-video"
-duration: "~35 min"
-prerequisites: ["start-15-2"]
-level: "advanced"
-tags: ["video", "slides", "narration", "tts"]
+duration: "~20 min"
+prerequisites: ["start-15-1"]
+level: "intermediate"
+tags: ["video", "ai-engine", "fal"]
 ---
 
-# Lesson 15-5: Slide Narration Video
+# 15-5: Video AI Engine Overview
 
 ## What You Will Do in This Session
 
-Welcome to **Lesson 15-5: Slide Narration Video**!
+Welcome to **Lesson 15-5: Video AI Engine Overview**!
 
 | Item | Details |
 |------|---------|
-| Goal | Automatically generate a video where a presenter narrates HTML materials or slide images |
-| Duration | ~35 min |
-| Tools used | slide_narration_pipeline (Gemini + ElevenLabs + Fabric/Kling + FFmpeg) |
-| Prerequisites | FAL_KEY, GEMINI_API_KEY, ELEVEN_API_KEY configured |
-| Cost guide | Review the [Video AI Cost Strategy Guide](https://ai-agent.camp/en/course/module-15) first (recommended) |
+| Goal | Understand the latest video AI engines and learn the basics of fal.ai |
+| Duration | ~20 min |
+| Tools used | fal.ai (FAL_KEY) |
+| Prerequisites | FAL_KEY configured, Python 3.10+ recommended |
+| Cost guide | * Cost guide is in preparation |
 | Course page | Refer to [Module 15: Video Generation](https://ai-agent.camp/en/course/module-15) in parallel |
 
-**Cost estimate**: 5 segments x Fabric 720p approx. **$12/video**; script only **$0.03**
+**Important**: This lesson does not run a hands-on comparison of all engines (due to high cost).
+You will understand each engine's features and pricing, and only do a hands-on exercise with the basic fal.ai pattern.
+Actual API calls will be made as needed starting from Lesson 15-6's project lessons.
+
+**Prerequisite: FAL_KEY configuration**
+
+An API key must be configured in advance to use the fal.ai API.
+If not configured, run `/setup-fal` to set it up.
+
+> **Note**: fal-client recommends Python 3.10+. Check with `python3 --version`.
 
 **Session flow:**
-1. Verify environment & prepare materials
-2. Auto-generate and review the script
-3. Generate presenter video
-4. Composite slides + presenter
-5. Add BGM (optional)
-6. Review completed video
-
-By the end of this session, a slide narration video will be saved in `output/ugc/slide_narration/`.
-
-> **Tip**: If the AI response stops midway, type "please continue" to resume.
+1. Video AI engine landscape
+2. API pay-per-use vs flat-rate services
+3. Basic fal.ai usage (hands-on)
+4. Engine selection criteria
 
 ---
 
@@ -49,7 +52,7 @@ By the end of this session, a slide narration video will be saved in `output/ugc
     "prompt": "Are you ready?",
     "options": [
       {"id": "ready", "label": "Ready! Let's start"},
-      {"id": "check_prereq", "label": "I want to check the prerequisites"},
+      {"id": "check_prereq", "label": "I want to check FAL_KEY setup"},
       {"id": "cost_guide", "label": "I want to see the cost guide first"},
       {"id": "different_lesson", "label": "I want to go to a different lesson"}
     ]
@@ -59,218 +62,187 @@ By the end of this session, a slide narration video will be saved in `output/ugc
 
 ---
 
-## Step 1: Verify Environment & Prepare Materials
+## Step 1: Video AI Engine Landscape
 
 **AskQuestion configuration:**
 ```json
 {
-  "title": "Step 1: Select materials",
-  "questions": [{
-    "id": "source_choice",
-    "prompt": "What materials do you want to create a slide video from?",
-    "options": [
-      {"id": "html", "label": "From HTML materials (use this course's materials)"},
-      {"id": "slides", "label": "From slide images (specify PNG/JPG folder)"},
-      {"id": "script_only", "label": "Generate script only first to review"}
-    ]
-  }]
-}
-```
-
-**From HTML materials:**
-```bash
-cd ~/ai-agent-camp
-# Example: turn Module 1 banner creation materials into a narration video
-python -m ugc.slide_narration_pipeline \
-  --html https://ai-agent.camp/en/course/module-1 \
-  --engine fabric --resolution 720p
-```
-
-**From slide images:**
-```bash
-cd ~/ai-agent-camp
-python -m ugc.slide_narration_pipeline \
-  --slides ./my_slides/ \
-  --topic "Introduction to AI Agents" \
-  --engine fabric
-```
-
-**Script only:**
-```bash
-cd ~/ai-agent-camp
-python -m ugc.slide_narration_pipeline \
-  --html https://ai-agent.camp/en/course/module-1 \
-  --script-only
-```
-
----
-
-## Step 2: Review and Adjust Script
-
-**AskQuestion configuration:**
-```json
-{
-  "title": "Step 2: Script review",
+  "title": "Step 1: Engine overview",
   "questions": [{
     "id": "step_action",
-    "prompt": "Do you want to review the generated script?",
+    "prompt": "What do you want to do with this step?",
     "options": [
-      {"id": "check", "label": "Review and edit if needed"},
-      {"id": "change_style", "label": "Regenerate with a different style"},
-      {"id": "skip", "label": "Proceed as is"}
+      {"id": "practice", "label": "Explore together"},
+      {"id": "review", "label": "Just review the summary"},
+      {"id": "skip", "label": "Skip"}
     ]
   }]
 }
 ```
-
-**Script styles:**
-- `friendly` - Friendly conversational tone (default)
-- `formal` - Formal presentation style
-- `casual` - Casual chat style
-
-**Check points:**
-- Is each segment the right length (30-60 seconds/segment recommended)?
-- Does it sound natural as spoken language?
-- Are technical terms explained?
-
----
-
-## Step 3: Generate Presenter Video
-
-**AskQuestion configuration:**
-```json
-{
-  "title": "Step 3: Select engine",
-  "questions": [{
-    "id": "engine_choice",
-    "prompt": "Select the presenter video engine",
-    "options": [
-      {"id": "fabric", "label": "Fabric 1.0 (with lip sync $2.50/30s)"},
-      {"id": "kling", "label": "Kling 2.6 Pro (natural motion $2.80/30s)"},
-      {"id": "skip_presenter", "label": "No presenter (slides only)"}
-    ]
-  }]
-}
-```
-
-**Steps the pipeline executes:**
-1. Generate avatar image (Gemini Image)
-2. Generate TTS audio per segment (ElevenLabs)
-3. Generate presenter video per segment (selected engine)
-4. Generate Ken Burns background video from slide images
-5. Overlay presenter in bottom-right corner
-
----
-
-## Step 4: Review Compositing Result
-
-**AskQuestion configuration:**
-```json
-{
-  "title": "Step 4: Compositing result",
-  "questions": [{
-    "id": "step_action",
-    "prompt": "Do you want to review the compositing result?",
-    "options": [
-      {"id": "check", "label": "Review the video"},
-      {"id": "change_position", "label": "Change presenter position"},
-      {"id": "skip", "label": "Proceed"}
-    ]
-  }]
-}
-```
-
-**Presenter position options:**
-- `right` - Bottom right (default)
-- `left` - Bottom left
-- `bottom` - Bottom center
-
----
-
-## Step 5: Add BGM (Optional)
-
-**AskQuestion configuration:**
-```json
-{
-  "title": "Step 5: Add BGM",
-  "questions": [{
-    "id": "bgm_choice",
-    "prompt": "Do you want to add BGM?",
-    "options": [
-      {"id": "add_bgm", "label": "Add BGM (specify file, 12% volume recommended)"},
-      {"id": "no_bgm", "label": "Complete without BGM"},
-      {"id": "generate", "label": "Learn BGM generation in next lesson (15-6 MV)"}
-    ]
-  }]
-}
-```
-
----
-
-## Step 6: Review Completed Video
 
 **Content:**
-```text
-Check summary.json in output/ugc/slide_narration/<timestamp>/ (output is in a timestamped subdirectory).
 
-Check items:
-- Final video path
-- Number of segments
-- Engine used
-- Generation cost
+Here is an introduction to the major video AI engines as of 2025-2026.
 
-Cost optimization tips:
-- Using 480p cuts Fabric cost in half
-- --script-only to review script first ($0.03)
-- Without presenter, slides Ken Burns + TTS audio only ($0.05)
-```
+### Image-to-Video Engines
+
+| Engine | Provider | Price | Features |
+|--------|----------|-------|----------|
+| **Kling 2.6 Pro** | fal.ai | $0.07/s | Natural motion, UGC style, green screen support |
+| **Veo 3.1** | fal.ai | $0.50-1.00/s | Highest quality, native audio, Text-to-Video support |
+| **Runway Gen-3** | Runway | Flat $15-76/mo | High quality, easy-to-use Web UI |
+| **Pika 2.0** | Pika | Flat $8-58/mo | Text/image to video, rich effects |
+| **Minimax** | fal.ai | Check pricing | Strong for long videos |
+| **LTX Video** | fal.ai | Low cost | Open source based |
+
+### Lip-sync Engines
+
+| Engine | Provider | Price | Features |
+|--------|----------|-------|----------|
+| **Fabric 1.0** | fal.ai | $0.08-0.15/s | High-precision lip sync |
+| **LongCat** | fal.ai | $0.10/s | Full-body motion + lip sync |
+| **HeyGen** | Direct API | $0.05/s | Built-in avatars, multilingual |
+| **MuseTalk** | fal.ai | Check pricing | Lip sync via fal.ai |
+
+### Other
+
+| Tool | Type | Price | Use case |
+|------|------|-------|----------|
+| **Suno** | Music generation | Via fal.ai | AI composition |
+| **Remotion** | Code video | $0 (local) | Template video, slides |
+| **FFmpeg** | Editing | $0 (local) | Transitions, compositing, Ken Burns |
+
+### Flat-rate Services (for bulk generation)
+
+| Service | Monthly | Features |
+|---------|---------|----------|
+| **GenSpark** | $19/mo | AI video + images + search |
+| **Runway** | $15-76/mo | Gen-3 Alpha, high quality |
+| **Pika** | $8-58/mo | Easy, rich effects |
+| **CapCut Pro** | $10/mo | Editing + templates |
+
+**Key point**: APIs are suited for automation but expensive. Flat-rate services are manual but suited for mass production.
+See the cost strategy guide (in preparation) for details.
 
 ---
 
-## Common Issues and Solutions
+## Step 2: API vs Flat-rate Services
 
 **AskQuestion configuration:**
 ```json
 {
-  "title": "Select your issue",
+  "title": "Step 2: Cost strategy",
   "questions": [{
-    "id": "trouble",
-    "prompt": "Select the issue that applies",
+    "id": "step_action",
+    "prompt": "What do you want to do with this step?",
     "options": [
-      {"id": "trouble_1", "label": "HTML parsing cannot extract sections"},
-      {"id": "trouble_2", "label": "TTS audio sounds unnatural"},
-      {"id": "trouble_3", "label": "Presenter video timed out"},
-      {"id": "trouble_4", "label": "Overlay compositing is misaligned"}
+      {"id": "practice", "label": "Think through together"},
+      {"id": "review", "label": "Just review the summary"},
+      {"id": "skip", "label": "Skip"}
     ]
   }]
 }
 ```
 
-### Issue 1: "HTML parsing cannot extract sections"
-**Cause**: The HTML structure differs from expected
-**Solution**: Use the --slides option to specify slide images directly
+**Content:**
 
-### Issue 2: "TTS audio sounds unnatural"
-**Cause**: The script text is not suited for reading aloud
-**Solution**: Use --script-only to generate the script first -> manually edit -> re-run
+```text
+Decision flowchart:
 
-### Issue 3: "Presenter video timed out"
-**Cause**: fal.ai processing delay
-**Solution**: Switch engine (fabric -> kling), shorten segments
+Need automation?
+  YES -> API (fal.ai)
+    More than 10 videos/month?
+      YES -> Also consider flat-rate services
+      NO  -> API is sufficient (learning phase)
+  NO  -> Flat-rate service (manual operation OK)
 
-### Issue 4: "Overlay compositing is misaligned"
-**Cause**: Length mismatch between presenter and slides
-**Solution**: FFmpeg's -shortest option auto-adjusts (enabled by default)
+Are there scenes that can be replaced with B-roll?
+  YES -> A-roll (API) + B-roll (Ken Burns/Remotion) = cost optimal
+  NO  -> All scenes I2V (be prepared for cost)
+```
+
+---
+
+## Step 3: fal.ai Basics (Hands-on)
+
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 3: fal.ai hands-on",
+  "questions": [{
+    "id": "step_action",
+    "prompt": "What do you want to do with this step?",
+    "options": [
+      {"id": "practice", "label": "Actually run it"},
+      {"id": "review", "label": "Just review the code"},
+      {"id": "skip", "label": "Skip"}
+    ]
+  }]
+}
+```
+
+**Content:**
+
+Review the basic fal.ai client pattern.
+Keep actual API calls to a minimum (text generation level only).
+
+```python
+# Basic fal.ai pattern
+import fal_client
+
+# 1. File upload
+url = fal_client.upload_file("image.png")
+
+# 2. Subscribe pattern (wait for result)
+result = fal_client.subscribe(
+    "fal-ai/kling-video/v2.6/pro/image-to-video",
+    arguments={
+        "image_url": url,
+        "prompt": "A person talking naturally",
+        "duration": "5",
+        "aspect_ratio": "9:16",
+    },
+    with_logs=True,
+    on_queue_update=lambda update: print(f"Status: {update}"),
+)
+
+# 3. Get result
+video_url = result["video"]["url"]
+```
+
+```text
+Verification items:
+1. Is FAL_KEY configured?
+   echo $FAL_KEY
+2. Is fal-client installed?
+   pip show fal-client
+3. Understand the code structure above (subscribe + arguments + callback)
+```
+
+---
+
+## Step 4: Engine Selection Criteria
+
+**Summary:**
+
+| Use case | Recommended engine | Reason |
+|----------|-------------------|--------|
+| Product intro (UGC style) | Fabric / Kling | Lip sync + cost performance |
+| Anime / story | Kling | Good I2V quality |
+| Highest quality demo | Veo 3.1 | Best quality (watch cost) |
+| Slides / templates | Remotion | $0, freely customizable |
+| MV / music | Suno + Kling | Music generation + video generation |
+| Bulk generation | GenSpark/Runway | Flat rate for budget management |
+| B-roll filler | Ken Burns (FFmpeg) | $0, pseudo-video from stills |
 
 ---
 
 ## Checkpoint
-- [ ] API keys are correctly configured
-- [ ] HTML parsing or slide images are prepared
-- [ ] Script was generated with natural spoken language
-- [ ] Presenter video was generated
-- [ ] Slides and presenter were composited
-- [ ] The final video was reviewed
+- [ ] Understood the major types of video AI engines
+- [ ] Understood the difference between API pay-per-use and flat-rate services
+- [ ] Understood the fal.ai subscribe pattern
+- [ ] Reviewed the cost strategy guide
+- [ ] Can select an engine for your use case
 
 ---
 
@@ -284,8 +256,9 @@ Cost optimization tips:
     "id": "next_step",
     "prompt": "Select the next action",
     "options": [
-      {"id": "next_auto", "label": "Next section (/start-15-6 Music video)"},
-      {"id": "retry", "label": "Regenerate with different materials"},
+      {"id": "next_76", "label": "15-6: Storyboard anime video (/start-15-6)"},
+      {"id": "next_77", "label": "15-7: Music video (/start-15-7)"},
+      {"id": "next_78", "label": "15-8: Slide narration video (/start-15-8)"},
       {"id": "finish", "label": "Finish here"}
     ]
   }]
