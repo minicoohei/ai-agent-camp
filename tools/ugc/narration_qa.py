@@ -219,13 +219,12 @@ def verify_narration(
     status = "PASS"
 
     # 簡易照合: 意味の大きな乖離を検出
+    from difflib import SequenceMatcher
     orig_clean = re.sub(r"[\s、。,.\n]", "", original_text)
     trans_clean = re.sub(r"[\s、。,.\n]", "", transcript)
 
-    # 文字レベルの一致率
-    common = sum(1 for a, b in zip(orig_clean, trans_clean) if a == b)
-    max_len = max(len(orig_clean), len(trans_clean), 1)
-    similarity = common / max_len
+    # SequenceMatcher で長さの異なるテキストも正確に照合
+    similarity = SequenceMatcher(None, orig_clean, trans_clean).ratio()
 
     if similarity < 0.5:
         status = "CRITICAL"
@@ -286,6 +285,7 @@ def qa_and_retry(
         print(f"  narration-qa: テキスト前処理適用")
 
     current_text = processed_text
+    audio_path = output_path  # フォールバック値（generate_speech が例外を投げた場合に備える）
 
     for attempt in range(max_retries):
         # Step 2: 音声生成

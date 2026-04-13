@@ -59,7 +59,7 @@ def validate_video_output(
         "-of", "json",
         video_path,
     ]
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
     if result.returncode != 0:
         raise VideoQAError(f"ffprobe 失敗: {result.stderr[:200]}")
 
@@ -150,8 +150,11 @@ def extract_qa_frames(
         "-of", "csv=p=0",
         video_path,
     ]
-    probe_result = subprocess.run(probe_cmd, capture_output=True, text=True, check=True)
-    duration = float(probe_result.stdout.strip())
+    probe_result = subprocess.run(probe_cmd, capture_output=True, text=True, check=True, timeout=30)
+    duration_str = probe_result.stdout.strip()
+    if not duration_str:
+        raise FileNotFoundError(f"動画の尺を取得できません: {video_path}")
+    duration = float(duration_str)
 
     frames = []
     for i in range(count):
@@ -165,7 +168,7 @@ def extract_qa_frames(
             "-q:v", "2",
             frame_path,
         ]
-        subprocess.run(cmd, capture_output=True, check=True)
+        subprocess.run(cmd, capture_output=True, check=True, timeout=30)
         frames.append(frame_path)
 
     print(f"  QA フレーム {count}枚抽出: {out_dir}")

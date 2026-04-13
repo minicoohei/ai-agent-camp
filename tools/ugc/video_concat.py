@@ -27,7 +27,7 @@ def _get_duration(video_path: str) -> float:
         "-of", "csv=p=0",
         video_path,
     ]
-    result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+    result = subprocess.run(cmd, capture_output=True, text=True, check=True, timeout=30)
     return float(result.stdout.strip())
 
 
@@ -40,8 +40,29 @@ def _has_audio(video_path: str) -> bool:
         "-of", "csv=p=0",
         video_path,
     ]
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
     return bool(result.stdout.strip())
+
+
+def _pad_silent_audio(clips: list[str], audio_flags: list[bool]) -> list[str]:
+    """音声がないクリップにサイレント音声トラックを追加する"""
+    result = []
+    for clip, has_audio in zip(clips, audio_flags):
+        if has_audio:
+            result.append(clip)
+        else:
+            # サイレント音声を追加した一時ファイルを生成
+            padded = clip.replace(".mp4", "_padded.mp4")
+            cmd = [
+                "ffmpeg", "-y",
+                "-i", clip,
+                "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
+                "-c:v", "copy", "-c:a", "aac", "-shortest",
+                padded,
+            ]
+            subprocess.run(cmd, capture_output=True, check=True, timeout=60)
+            result.append(padded)
+    return result
 
 
 def concat_simple(clips: list[str], output_path: str) -> None:
@@ -60,7 +81,7 @@ def concat_simple(clips: list[str], output_path: str) -> None:
             "-c", "copy",
             output_path,
         ]
-        subprocess.run(cmd, check=True)
+        subprocess.run(cmd, capture_output=True, check=True, timeout=300)
     finally:
         os.unlink(list_path)
 
@@ -92,12 +113,29 @@ def concat_with_crossfade(
             return
         raise ValueError("クリップが1本もありません")
 
-    # 音声の有無を検出（全クリップに音声がある場合のみ音声を結合）
-    has_all_audio = all(_has_audio(c) for c in clips)
+    # 音声の有無を検出
+    audio_flags = [_has_audio(c) for c in clips]
+    has_any_audio = any(audio_flags)
+    has_all_audio = all(audio_flags)
 
     if has_all_audio:
-        # 音声ありの場合は concat_with_audio に委譲
+        # 全クリップに音声あり → concat_with_audio に委譲
         concat_with_audio(clips, output_path, transition, transition_duration)
+        return
+
+    if has_any_audio:
+        # 音声混在: 無音クリップにサイレント音声を追加してから concat_with_audio
+        padded_clips = _pad_silent_audio(clips, audio_flags)
+        try:
+            concat_with_audio(padded_clips, output_path, transition, transition_duration)
+        finally:
+            # パディングで生成した一時ファイルを削除
+            for orig, padded in zip(clips, padded_clips):
+                if orig != padded:
+                    try:
+                        os.unlink(padded)
+                    except OSError:
+                        pass
         return
 
     # 音声なし: 映像のみ結合（従来のロジック）
@@ -116,7 +154,7 @@ def concat_with_crossfade(
             "-c:v", "libx264", "-preset", "fast",
             output_path,
         ]
-        subprocess.run(cmd, check=True)
+        subprocess.run(cmd, capture_output=True, check=True, timeout=300)
         return
 
     # 3本以上: 逐次xfadeチェーン
@@ -134,7 +172,8 @@ def concat_with_crossfade(
     for i in range(2, len(clips)):
         prev_label = f"v{i-1}"
         out_label = f"v{i}" if i < len(clips) - 1 else "vout"
-        offset = sum(durations[:i+1]) - (i * transition_duration) - durations[i]
+        # 正しい offset: 前チェーンの実尺末尾 - transition_duration
+        offset = sum(durations[:i]) - (i - 1) * transition_duration
         filters.append(
             f"[{prev_label}][{i}:v]xfade=transition={transition}:duration={transition_duration}:offset={offset}[{out_label}]"
         )
@@ -150,7 +189,7 @@ def concat_with_crossfade(
         "-c:v", "libx264", "-preset", "fast",
         output_path,
     ]
-    subprocess.run(cmd, check=True)
+    subprocess.run(cmd, capture_output=True, check=True, timeout=300)
 
 
 def concat_with_audio(
