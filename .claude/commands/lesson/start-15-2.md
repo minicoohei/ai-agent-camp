@@ -187,7 +187,7 @@ npx remotion render src/index.ts SlideShoot-Scale out/slide-shoot-scale.mp4
 
 ---
 
-## Step 5.5: /motion-review で品質チェック
+## Step 6: /motion-review で品質チェック
 
 **レンダリング後、必ず品質レビューを実行してください。**
 
@@ -215,7 +215,7 @@ P1（致命的）/ P2（重要）/ P3（改善推奨）の3段階で問題を報
 
 ---
 
-## Step 6（発展）: 自分のテーマでテキストアニメを作る
+## Step 7（発展）: 自分のテーマでテキストアニメを作る
 
 入力内容:
 ```

@@ -121,7 +121,7 @@ npx remotion render src/index.ts SlideShoot-Scale out/slide-shoot-scale.mp4
 
 ---
 
-## Step 5.5: Quality Check with /motion-review
+## Step 6: Quality Check with /motion-review
 
 **After rendering, always run a quality review.**
 
@@ -147,7 +147,7 @@ Review the quality of the rendered SlideShootText component.
 
 ---
 
-## Step 6 (Advanced): Create Your Own Theme
+## Step 7 (Advanced): Create Your Own Theme
 
 Try making an original slide-shoot video with your own content:
 - Self-introduction (Name → Title → Message)

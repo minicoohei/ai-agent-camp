@@ -314,7 +314,7 @@ apply_musetalk(video, audio, output)
 ■ 対象: 生成された音声ファイル
 ```
 
-```
+```text
 /motion-review
 
 プロダクト紹介動画の合成品質をチェックしてください。

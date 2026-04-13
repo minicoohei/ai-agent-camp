@@ -114,7 +114,7 @@ npx remotion render src/index.ts SlideShoot-Scale out/slide-shoot-scale.mp4
 
 ---
 
-## Paso 5.5: Control de Calidad con /motion-review
+## Paso 6: Control de Calidad con /motion-review
 
 **Después de renderizar, siempre ejecuta una revisión de calidad.**
 
@@ -140,7 +140,7 @@ Revisa la calidad del componente SlideShootText renderizado.
 
 ---
 
-## Paso 6 (Avanzado): Crea Tu Propio Tema
+## Paso 7 (Avanzado): Crea Tu Propio Tema
 
 Prueba crear un video slide-shoot original:
 - Presentación personal (Nombre → Título → Mensaje)
