@@ -225,7 +225,10 @@ def ffmpeg_fallback(
     ]
 
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+        except subprocess.TimeoutExpired as e:
+            raise RuntimeError(f"FFmpegフォールバックがタイムアウトしました（300秒）: {e}") from e
     finally:
         # textfile 一時ファイルを削除
         if textfile_path:

@@ -10,6 +10,7 @@ UGC動画生成エンジン
 """
 
 import time
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
 from typing import Optional
 
 from .base import BaseEngine, VideoResult
@@ -91,17 +92,27 @@ def generate_with_fallback(
         try:
             print(f"  エンジン: {name} で生成開始...")
             engine = get_engine(name)
-            result = engine.generate(
-                avatar_image=avatar_image,
-                script=script,
-                audio_file=audio_file,
-                output_path=output_path,
-                **kwargs,
-            )
+            # timeout を強制するため ThreadPoolExecutor 経由で呼び出す
+            # （stalled な engine.generate() が fallback chain をブロックしないように）
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(
+                    engine.generate,
+                    avatar_image=avatar_image,
+                    script=script,
+                    audio_file=audio_file,
+                    output_path=output_path,
+                    **kwargs,
+                )
+                result = future.result(timeout=timeout)
             result.engine = name
             if name != engine_name:
                 print(f"  フォールバック成功: {engine_name} → {name}")
             return result
+        except FuturesTimeoutError:
+            last_error = RuntimeError(f"{name} timeout after {timeout}s")
+            print(f"  エンジン {name} タイムアウト: {timeout}秒")
+            time.sleep(2)
+            continue
         except Exception as e:
             last_error = e
             print(f"  エンジン {name} 失敗: {e}")

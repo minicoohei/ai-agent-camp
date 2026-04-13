@@ -173,7 +173,9 @@ def concat_with_crossfade(
         prev_label = f"v{i-1}"
         out_label = f"v{i}" if i < len(clips) - 1 else "vout"
         # 正しい offset: 前チェーンの実尺末尾 - transition_duration
-        offset = sum(durations[:i]) - (i - 1) * transition_duration
+        # 前のチェーン v{i-1} の実尺 = sum(durations[:i]) - (i-1)*t（i-1回オーバーラップ消費）
+        # その末尾 t 秒で xfade するため offset = sum(durations[:i]) - i*t
+        offset = sum(durations[:i]) - i * transition_duration
         filters.append(
             f"[{prev_label}][{i}:v]xfade=transition={transition}:duration={transition_duration}:offset={offset}[{out_label}]"
         )
