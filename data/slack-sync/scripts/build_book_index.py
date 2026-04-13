@@ -49,7 +49,6 @@ CATEGORY_RULES = [
     (r"^ext-", "external"),
     (r"^shared-", "external"),
     (r"_partner$", "partner"),
-    (r"^x2y2", "x2y2"),
     (r"^sentry", "notify"),
     (r"^ap-", "accounting"),
     (r"^all-", "general"),
