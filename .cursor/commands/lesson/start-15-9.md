@@ -307,7 +307,7 @@ apply_musetalk(video, audio, output)
 グリーンスクリーン合成後、音声と映像の両方を検証します。
 
 入力内容:
-```
+```text
 /narration-qa
 
 プロダクト紹介動画のナレーション品質をチェックしてください。
