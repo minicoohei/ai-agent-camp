@@ -137,7 +137,7 @@ python skills/youtube-clipper/scripts/clipper.py \
 クリップ抽出後、品質を確認します。
 
 入力内容:
-```
+```text
 /video-frame-reader
 
 抽出したクリップ動画のキーフレームを確認してください。

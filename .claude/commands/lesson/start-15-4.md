@@ -141,7 +141,7 @@ cat output/clips/SESSION_DIR/post_drafts.json | python3 -m json.tool
 Remotion レンダリング後、品質を自動レビューします。
 
 入力内容:
-```
+```text
 /motion-review
 
 Clipper × Remotion で生成したマーケ素材の品質をチェックしてください。
