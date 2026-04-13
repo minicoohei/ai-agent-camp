@@ -1,47 +1,49 @@
 ---
-description: "When the user says /start-15-6 — Module 15 Lesson 15-6: Create a music video with AI (Suno + beat sync + scene video conversion)"
+description: "When the user says /start-15-6 — Module 15 Lesson 15-6: Generate anime video from storyboard (Gemini Image + Kling/Veo I2V + FFmpeg join)"
 chapter: "courses/aiagent/lesson03-core/module15-video"
-duration: "~45 min"
-prerequisites: ["start-15-2"]
+duration: "~40 min"
+prerequisites: ["start-15-5"]
 level: "advanced"
-tags: ["video", "music-video", "suno", "beat-sync"]
+tags: ["video", "storyboard", "anime", "kling"]
 ---
 
-# Lesson 15-6: Music Video
+# 15-6: Storyboard Anime Video
 
 ## What You Will Do in This Session
 
-Welcome to **Lesson 15-6: Music Video**!
+Welcome to **Lesson 15-6: Storyboard Anime Video**!
 
 | Item | Details |
 |------|---------|
-| Goal | Generate an AI music track, combine beat-synced scene videos to create a music video |
-| Duration | ~45 min |
-| Tools used | mv_pipeline (Suno/fal.ai + librosa + Gemini + Kling + FFmpeg) |
-| Prerequisites | FAL_KEY, GEMINI_API_KEY configured. pip install librosa recommended |
+| Goal | Generate storyboard images from a text scenario, turn them into video with AI engines, and combine into a single work |
+| Duration | ~40 min |
+| Tools used | storyboard_anime_pipeline (Gemini + Kling/Veo + FFmpeg) |
+| Prerequisites | FAL_KEY, GEMINI_API_KEY configured |
 | Cost guide | Review the [Video AI Cost Strategy Guide](https://ai-agent.camp/en/course/module-15) first (recommended) |
 | Course page | Refer to [Module 15: Video Generation](https://ai-agent.camp/en/course/module-15) in parallel |
 
 **Cost estimate**:
-- Full I2V (Kling x8) + AI music: approx. **$6-12**
-- Cost-optimized (A-roll x3 + B-roll x5): approx. **$3-5**
-- Existing music + Ken Burns only: approx. **$0.10** (image generation only)
+- Full frame I2V (Kling x8): approx. **$5.60**
+- Cost-optimized mode (A-roll x4 + B-roll x4): approx. **$2.80**
+- Ken Burns B-roll only (for testing): **$0** (local processing)
 
 **Session flow:**
-1. Verify environment & prepare music
-2. AI music generation or load existing music
-3. Beat analysis & scene timeline
-4. Scene image + video clip generation
-5. Beat-synced joining & music mixing
-6. Review completed MV
+1. Verify environment & prepare scenario
+2. Scene decomposition & frame image generation
+3. A-roll / B-roll classification and video conversion
+4. Crossfade joining with transitions
+5. Add BGM (optional)
+6. Review completed video & cost summary
 
-By the end of this session, a music video will be saved in `output/ugc/mv/`.
+By the end of this session, a storyboard anime video will be saved in `output/ugc/storyboard_anime/`.
 
 > **Tip**: If the AI response stops midway, type "please continue" to resume.
 
 ---
 
 ## Readiness Check
+
+First, confirm that everything is ready.
 
 **AskQuestion configuration:**
 ```json
@@ -53,174 +55,222 @@ By the end of this session, a music video will be saved in `output/ugc/mv/`.
     "options": [
       {"id": "ready", "label": "Ready! Let's start"},
       {"id": "check_prereq", "label": "I want to check the prerequisites"},
-      {"id": "install_librosa", "label": "I want to install librosa"},
-      {"id": "cost_guide", "label": "I want to see the cost guide first"}
+      {"id": "cost_guide", "label": "I want to see the cost guide first"},
+      {"id": "different_lesson", "label": "I want to go to a different lesson"}
     ]
   }]
 }
 ```
 
-(install_librosa -> Run `pip install librosa`)
+(ready -> Go to Step 1)
+(check_prereq -> Run FAL_KEY / GEMINI_API_KEY existence check)
+(cost_guide -> Guide to https://ai-agent.camp/en/course/module-15)
+(different_lesson -> Show module list)
 
 ---
 
-## Step 1: Verify Environment & Prepare Music
+## Step 1: Verify Environment & Prepare Scenario
 
 **AskQuestion configuration:**
 ```json
 {
-  "title": "Step 1: Prepare music",
-  "questions": [{
-    "id": "music_source",
-    "prompt": "How do you want to prepare the music?",
-    "options": [
-      {"id": "generate", "label": "Generate music with AI (fal.ai Suno)"},
-      {"id": "existing", "label": "Use an existing music file"},
-      {"id": "explain", "label": "Explain how AI music generation works"}
-    ]
-  }]
-}
-```
-
-**Environment check:**
-```text
-Verify the following:
-1. API keys
-   - echo $FAL_KEY
-   - echo $GEMINI_API_KEY
-2. FFmpeg
-   - ffmpeg -version
-3. librosa (for beat analysis, optional)
-   - python -c "import librosa; print(librosa.__version__)"
-   - Install: pip install librosa
-```
-
----
-
-## Step 2: Run Pipeline
-
-**AI music generation + MV creation:**
-```bash
-cd ~/ai-agent-camp
-python -m ugc.mv_pipeline \
-  --prompt "Bright pop song, positive lyrics, tempo 120BPM" \
-  --style anime \
-  --engine kling \
-  --num-scenes 8 \
-  --cost-optimize --aroll-count 3
-```
-
-**Existing music + MV creation:**
-```bash
-cd ~/ai-agent-camp
-python -m ugc.mv_pipeline \
-  --music ./my_song.mp3 \
-  --style cinematic_live \
-  --engine kling \
-  --num-scenes 8
-```
-
-**7 steps the pipeline auto-executes:**
-1. **Music preparation** -> AI generation or existing file copy
-2. **Beat analysis** (librosa) -> `beat_analysis.json` (tempo, beat positions, sections)
-3. **Scene prompt generation** (Gemini) -> `scenes.json` (lyrics/mood -> visual prompt conversion)
-4. **Frame image generation** (Gemini Image) -> 8 scene images
-5. **Video clip generation** (Kling I2V + Ken Burns) -> 8 clips
-6. **Beat-synced joining** (FFmpeg xfade) -> `joined.mp4`
-7. **Music mixing** (FFmpeg) -> `final.mp4`
-
----
-
-## Step 3: Review Beat Analysis
-
-**AskQuestion configuration:**
-```json
-{
-  "title": "Step 3: Beat analysis results",
+  "title": "Step 1: Verify environment",
   "questions": [{
     "id": "step_action",
-    "prompt": "Do you want to review the beat analysis results?",
+    "prompt": "What do you want to do with this step?",
     "options": [
-      {"id": "check", "label": "Review analysis results"},
-      {"id": "explain_beat", "label": "Explain beat sync mechanics"},
-      {"id": "skip", "label": "Proceed"}
+      {"id": "practice", "label": "Proceed"},
+      {"id": "review", "label": "Just review examples"},
+      {"id": "skip", "label": "Skip"}
     ]
   }]
 }
 ```
-
-**Check points:**
-- Does the tempo (BPM) match the music?
-- Are sections (verse/chorus) correctly detected?
-- Does each scene length align with beats?
-
-**Beat sync mechanics:**
-```text
-Detect beat positions in the music
-    |
-Split at downbeats (strong beats)
-    |
-chorus sections -> A-roll (dynamic I2V)
-verse sections -> B-roll (calm Ken Burns footage)
-    |
-Cut transitions at beat positions
-```
-
----
-
-## Step 4: Review Scene Images and Video Clips
-
-**AskQuestion configuration:**
-```json
-{
-  "title": "Step 4: Review clips",
-  "questions": [{
-    "id": "step_action",
-    "prompt": "Select review method",
-    "options": [
-      {"id": "check_frames", "label": "Review frame images"},
-      {"id": "check_clips", "label": "Review video clips"},
-      {"id": "regenerate", "label": "Regenerate specific scenes"},
-      {"id": "skip", "label": "Proceed"}
-    ]
-  }]
-}
-```
-
-**Available visual styles:**
-- `anime` - Anime style
-- `cinematic_live` - Cinematic live-action style
-- `abstract` - Abstract/artistic style
-- `watercolor` - Watercolor style
-- `pixel_art` - Pixel art style
-- `vibrant_ugc` - Vibrant social media style
-
-**Scene prompt tips:**
-```text
-verse (A/B section) -> narrative or landscape
-chorus -> performance or abstract
-bridge -> abstract or landscape
-```
-
----
-
-## Step 5: Review Completed MV & Cost Summary
 
 **Content:**
 ```text
-Check summary.json in output/ugc/mv/.
+Verify the following:
+1. Required API keys are set as environment variables
+   - echo $FAL_KEY
+   - echo $GEMINI_API_KEY
+2. FFmpeg is installed
+   - ffmpeg -version
+3. Have a scenario (story) in mind
+   - Example: "An adventure story about a girl meeting mysterious creatures in a magical forest"
+   - Example: "A slice-of-life depicting a day at a cafe"
+   - Example: "An astronaut exploring an unknown planet"
+```
+
+**Expected result**: API keys are confirmed and a scenario idea is ready.
+
+---
+
+## Step 2: Fully Automated Pipeline Execution
+
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 2: Select execution mode",
+  "questions": [{
+    "id": "mode_choice",
+    "prompt": "Which mode do you want to run?",
+    "options": [
+      {"id": "cost_optimize", "label": "Cost-optimized mode (A-roll x4 + B-roll Ken Burns, ~$2.80)"},
+      {"id": "full_i2v", "label": "Full I2V mode (all scenes as video, ~$5.60)"},
+      {"id": "broll_only", "label": "Ken Burns only (for testing, $0)"},
+      {"id": "explain", "label": "Explain the difference between A-roll / B-roll"}
+    ]
+  }]
+}
+```
+
+**Cost-optimized mode:**
+```bash
+cd ~/ai-agent-camp
+python -m ugc.storyboard_anime_pipeline \
+  --scenario "(user-specified scenario)" \
+  --style anime --engine kling --num-scenes 8 \
+  --cost-optimize --aroll-count 4
+```
+
+**Full I2V mode:**
+```bash
+cd ~/ai-agent-camp
+python -m ugc.storyboard_anime_pipeline \
+  --scenario "(user-specified scenario)" \
+  --style anime --engine kling --num-scenes 8
+```
+
+**5 steps the pipeline auto-executes:**
+1. **Scene decomposition** (Gemini Flash) -> `scenes.json` (scenario split into 8 scenes)
+2. **Frame image generation** (Gemini Image) -> `frames/frame_000.png` ~ `frame_007.png`
+3. **Video clip generation** (Kling I2V or Ken Burns) -> `clips/clip_000.mp4` ~
+4. **Crossfade joining** (FFmpeg xfade) -> `joined.mp4`
+5. **Final output** -> `final.mp4`
+
+**Expected result**: Frame images and video are generated in `output/ugc/storyboard_anime/`.
+
+---
+
+## Step 3: Review Frame Images
+
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 3: Review frame images",
+  "questions": [{
+    "id": "step_action",
+    "prompt": "Do you want to review the generated frame images?",
+    "options": [
+      {"id": "check", "label": "Review frame images"},
+      {"id": "regenerate", "label": "Regenerate specific frames"},
+      {"id": "change_style", "label": "Regenerate with a different style"},
+      {"id": "skip", "label": "Proceed"}
+    ]
+  }]
+}
+```
+
+**Available styles:**
+- `anime` - Anime style (default)
+- `modern_clean` - Modern clean
+- `vibrant_ugc` - Vibrant UGC style
+- `animal_crossing` - Animal Crossing style
+- `watercolor` - Watercolor style
+- `pixel_art` - Pixel art style
+- `cinematic_live` - Cinematic live-action style
+
+---
+
+## Step 4: Review A-roll / B-roll and Video Clips
+
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 4: Review video clips",
+  "questions": [{
+    "id": "step_action",
+    "prompt": "Select how to review video clips",
+    "options": [
+      {"id": "check_all", "label": "Review all clips"},
+      {"id": "check_aroll", "label": "Review A-roll clips only"},
+      {"id": "explain_aroll", "label": "Explain A-roll / B-roll mechanics"},
+      {"id": "skip", "label": "Proceed"}
+    ]
+  }]
+}
+```
+
+**A-roll / B-roll explanation:**
+```text
+[A-roll (main footage)]
+- Converted to video by I2V (Image-to-Video) engine
+- Character movement, important action scenes
+- Cost: Kling $0.70/clip, Veo $8/clip
+
+[B-roll (supplementary footage)]
+- Pseudo-video using Ken Burns effect (FFmpeg zoompan)
+- Scenery, backgrounds, transitions
+- Cost: $0 (local processing)
+
+[Effect types (Ken Burns)]
+zoom_in, zoom_out, pan_left, pan_right, slow_zoom, pan_down, pan_up
+```
+
+**Check points:**
+- A-roll clips: Is the motion natural?
+- B-roll clips: Is the Ken Burns effect appropriate?
+- Is `is_key_scene` in scenes.json correctly determined?
+
+---
+
+## Step 5: Add BGM (Optional)
+
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 5: Add BGM",
+  "questions": [{
+    "id": "bgm_choice",
+    "prompt": "Do you want to add BGM?",
+    "options": [
+      {"id": "add_bgm", "label": "Add BGM (specify file)"},
+      {"id": "no_bgm", "label": "Complete without BGM"},
+      {"id": "generate", "label": "Generate BGM with Suno AI (covered in a later lesson)"}
+    ]
+  }]
+}
+```
+
+**BGM addition:**
+```bash
+cd ~/ai-agent-camp
+python -m ugc.storyboard_anime_pipeline \
+  --scenario "(same scenario)" \
+  --style anime --engine kling \
+  --cost-optimize --aroll-count 4 \
+  --bgm ./my_bgm.mp3 --bgm-volume 0.20
+```
+
+---
+
+## Step 6: Review Completed Video & Cost Summary
+
+**Content:**
+```text
+Read summary.json in output/ugc/storyboard_anime/ and review the results.
 
 Check items:
-- Music path & length
-- Visual style
+- Final video path
 - Number of scenes (A-roll / B-roll breakdown)
-- Generation cost
+- Generation cost ($)
+- Success/failure of each step
 
-Cost optimization techniques:
-- Use A-roll (I2V) only for chorus sections to concentrate impact
-- Use Ken Burns B-roll for verse sections with calm footage
-- This yields A-roll x3 + B-roll x5 = $2.10 + $0 = $2.10 (video only)
-- Details: https://ai-agent.camp/en/course/module-15
+Cost optimization tips:
+- Limiting to 4 A-roll clips is 1/4 the normal cost
+- Ken Burns effects are $0 so B-roll can be freely added
+- For bulk generation, consider flat-rate services like GenSpark
+  -> Details: https://ai-agent.camp/en/course/module-15
 ```
 
 ---
@@ -235,52 +285,48 @@ Cost optimization techniques:
     "id": "trouble",
     "prompt": "Select the issue that applies",
     "options": [
-      {"id": "trouble_1", "label": "AI music generation fails"},
-      {"id": "trouble_2", "label": "Error installing librosa"},
-      {"id": "trouble_3", "label": "Beats and scene transitions are out of sync"},
-      {"id": "trouble_4", "label": "Video and music mood don't match"}
+      {"id": "trouble_1", "label": "API key error"},
+      {"id": "trouble_2", "label": "Frame image styles are inconsistent"},
+      {"id": "trouble_3", "label": "I2V video conversion timed out"},
+      {"id": "trouble_4", "label": "Crossfade joining failed"}
     ]
   }]
 }
 ```
 
-### Issue 1: "AI music generation fails"
-**Cause**: Change in fal.ai music generation endpoint
-**Solution**: Use the --music option with an existing music file
-
-### Issue 2: "Error installing librosa"
-**Cause**: Dependency library issues
+### Issue 1: "API key error"
+**Cause**: Environment variables are not set
 **Solution**:
 ```bash
-pip install librosa soundfile
-# If that doesn't work:
-pip install librosa --no-deps
-pip install soundfile numba
+cat .env | grep -E "FAL_KEY|GEMINI"
 ```
-It also works with equal-interval splitting without librosa.
 
-### Issue 3: "Beats and scene transitions are out of sync"
-**Cause**: Beat detection precision
-**Solution**: Reduce `--num-scenes` (8 -> 6) to better align with beats
+### Issue 2: "Frame image styles are inconsistent"
+**Cause**: Variation in Gemini image generation
+**Solution**: Fix the character description with the `--character` option
+```bash
+python -m ugc.storyboard_anime_pipeline \
+  --scenario "..." --style anime --engine kling \
+  --character "A girl with short brown hair, white dress, large eyes"
+```
 
-### Issue 4: "Video and music mood don't match"
-**Cause**: Style selection mismatch
-**Solution**: Change the style to match the music genre
-- Pop -> `anime` or `vibrant_ugc`
-- Rock -> `cinematic_live`
-- Electronic -> `abstract`
-- Classical -> `watercolor`
+### Issue 3: "I2V video conversion timed out"
+**Cause**: fal.ai processing is slow
+**Solution**: Reduce I2V count with `--cost-optimize`, or switch Kling -> Veo
+
+### Issue 4: "Crossfade joining failed"
+**Cause**: Video format mismatch
+**Solution**: The pipeline automatically falls back to simple concat
 
 ---
 
 ## Checkpoint
 - [ ] API keys are correctly configured
-- [ ] Music was prepared (AI generated or existing)
-- [ ] Beat analysis was executed
-- [ ] Scene images were generated
-- [ ] A-roll / B-roll video clips were generated
-- [ ] MV was completed with beat sync
-- [ ] Music mixing succeeded
+- [ ] Scene decomposition from scenario completed
+- [ ] Frame images were generated
+- [ ] Understood the A-roll / B-roll difference
+- [ ] The final video was reviewed
+- [ ] Understood the cost strategy guide
 
 ---
 
@@ -294,9 +340,8 @@ It also works with equal-interval splitting without librosa.
     "id": "next_step",
     "prompt": "Select the next action",
     "options": [
-      {"id": "next_module", "label": "Next module (/start-16-1 Email/LINE automation)"},
-      {"id": "retry", "label": "Regenerate with different music/style"},
-      {"id": "review_all", "label": "Review Module 15"},
+      {"id": "next_auto", "label": "Next section (/start-15-7 Music video)"},
+      {"id": "retry", "label": "Regenerate with a different scenario/style"},
       {"id": "finish", "label": "Finish here"}
     ]
   }]

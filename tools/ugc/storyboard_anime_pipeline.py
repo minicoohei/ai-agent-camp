@@ -80,10 +80,11 @@ def run_storyboard_anime(
         結果dict
     """
     from bootcamp_utils import get_client
-    from ugc.engines import get_engine
+    from ugc.engines import get_engine, generate_with_fallback
     from ugc.video_concat import concat_simple, concat_with_crossfade
     from ugc.audio_post import mix_bgm, mix_bgm_no_audio
     from ugc.ken_burns import generate_broll
+    from ugc.video_qa import validate_video_output
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out = Path(output_dir) / timestamp
@@ -186,7 +187,6 @@ JSONのみを返してください（```json等は不要）。"""
         aroll_indices = set(range(len(scenes)))
         print(f"  Full mode: 全{len(scenes)}本をI2V")
 
-    engine = get_engine(engine_name)
     clip_paths = []
     ken_burns_effects = ["zoom_in", "zoom_out", "pan_left", "pan_right", "slow_zoom", "pan_down"]
 
@@ -194,10 +194,11 @@ JSONのみを返してください（```json等は不要）。"""
         clip_path = str(clips_dir / f"clip_{i:03d}.mp4")
 
         if i in aroll_indices:
-            # A-roll: I2V
+            # A-roll: I2V (with fallback)
             print(f"  [A-roll] Clip {i+1}: {engine_name} I2V...")
             try:
-                result = engine.generate(
+                result = generate_with_fallback(
+                    engine_name=engine_name,
                     avatar_image=frame_paths[i],
                     script=scenes[i].get("description", ""),
                     output_path=clip_path,
@@ -205,7 +206,7 @@ JSONのみを返してください（```json等は不要）。"""
                 )
                 total_cost += result.cost
                 clip_paths.append(clip_path)
-                print(f"    -> ${result.cost:.2f}")
+                print(f"    -> ${result.cost:.2f} (engine={result.engine})")
             except Exception as e:
                 print(f"    -> I2V failed, fallback to Ken Burns: {e}")
                 effect = ken_burns_effects[i % len(ken_burns_effects)]
@@ -257,6 +258,12 @@ JSONのみを返してください（```json等は不要）。"""
             print(f"\nStep 5: BGMスキップ（ファイルなし: {bgm_path}）")
 
     steps.append({"step": "final", "path": final_path})
+
+    # ----- QA検証 -----
+    print(f"\nQA検証:")
+    expect_audio = bool(bgm_path and Path(bgm_path).exists())
+    qa_result = validate_video_output(final_path, expect_audio=expect_audio)
+    steps.append({"step": "qa", "result": qa_result})
 
     # ----- Summary -----
     summary = {

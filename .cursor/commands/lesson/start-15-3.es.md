@@ -1,329 +1,119 @@
 ---
-description: "When the user says /start-15-3 — Module 15 Lesson 15-3: Crear un video de demostración de producto (avatar con pantalla verde + composición de capturas)"
-chapter: "courses/aiagent/lesson03-core/module15-video"
-duration: "~30 min"
+description: "When the user says /start-15-3 — Module 15 Lesson 15-3: YouTube Clipper para extracción de momentos destacados de video"
+chapter: "courses/aiagent/lesson03-core/module15-video/chapter.yaml"
+duration: 40 min
 prerequisites: ["start-15-2"]
-level: "advanced"
-tags: ["video", "product-demo", "avatar", "kling"]
+level: intermediate
+tags: ["video", "clipper", "subtitles", "ai-analysis"]
 ---
 
-# 15-3: Video de Demostración de Producto
+# Lección 15-3: YouTube Clipper -- Extracción de Momentos Destacados
 
-## Lo Que Hará en Esta Sesión
+## Objetivos de Aprendizaje
 
-Bienvenido a **Lección 15-3: Video de Demostración de Producto**!
+En esta lección, aprendera a extraer automáticamente momentos destacados de videos de YouTube (u otras plataformas) usando IA.
 
-| Elemento | Detalles |
-|----------|----------|
-| Objetivo | Generar un video donde un avatar con pantalla verde presenta una aplicación en la pantalla de un telefono |
-| Duración | ~30 min |
-| Herramientas utilizadas | product_demo_pipeline (Gemini + ElevenLabs + Fabric/Kling + FFmpeg) |
-| Requisitos previos | FAL_KEY, GEMINI_API_KEY, ELEVEN_API_KEY configurados |
-| Guía de costos | Revise la [Guía de Estrategia de Costos de IA de Video](https://ai-agent.camp/es/course/module-15) primero (recomendado) |
-| Página del curso | Consulte [Module 15: Generación de Video](https://ai-agent.camp/es/course/module-15) en paralelo |
-
-**Estimación de costos**: Motor Fabric 480p aprox. **$2.50/video**, Kling aprox. **$2.80/video**
-
-**Flujo de la sesión:**
-1. Verificar entorno y preparar capturas de pantalla
-2. Seleccionar motor y ejecutar pipeline
-3. Revisar y ajustar el guion
-4. Revisar la composición con pantalla verde
-5. Agregar música de fondo (opcional)
-6. Revisar video completado y resumen de costos
-
-Al finalizar esta sesión, un video de demostración de producto estará guardado en `output/ugc/product_demo/`.
-
-> **Consejo**: Si la respuesta de la IA se detiene a mitad, escriba "por favor continue" para reanudar.
+1. Descarga de video y obtención de subtítulos
+2. División semántica de capítulos con IA
+3. Selección de momentos destacados con lenguaje natural
+4. Extracción de clips + generación de subtítulos bilingües
+5. Reconocimiento de voz con Gemini para videos sin subtítulos
 
 ---
 
-## Verificación de Preparación
+## Paso 1: Verificación del Entorno
 
-Primero, confirme que todo está listo.
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Verificacion previa a la sesion",
-  "questions": [{
-    "id": "readiness",
-    "prompt": "Esta listo?",
-    "options": [
-      {"id": "ready", "label": "Listo! Comencemos"},
-      {"id": "check_prereq", "label": "Quiero verificar los requisitos previos"},
-      {"id": "cost_guide", "label": "Quiero ver la guia de costos primero"},
-      {"id": "different_lesson", "label": "Quiero ir a otra leccion"}
-    ]
-  }]
-}
-```
-
-(ready -> Ir al Paso 1)
-(check_prereq -> Ejecutar verificación de FAL_KEY / GEMINI_API_KEY / ELEVEN_API_KEY)
-(cost_guide -> Guiar a https://ai-agent.camp/es/course/module-15)
-(different_lesson -> Mostrar lista de modulos)
-
----
-
-## Paso 1: Verificar Entorno y Preparar Capturas
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Paso 1: Verificar entorno",
-  "questions": [{
-    "id": "step_action",
-    "prompt": "Que desea hacer con este paso?",
-    "options": [
-      {"id": "practice", "label": "Continuar"},
-      {"id": "review", "label": "Solo revisar ejemplos"},
-      {"id": "skip", "label": "Omitir"}
-    ]
-  }]
-}
-```
-
-**Contenido:**
-```text
-Verifique lo siguiente:
-1. Las claves API requeridas estan configuradas como variables de entorno
-   - echo $FAL_KEY
-   - echo $GEMINI_API_KEY
-   - echo $ELEVEN_API_KEY (o $ELEVENLABS_API_KEY)
-2. FFmpeg esta instalado
-   - ffmpeg -version
-3. Prepare una captura de pantalla de la aplicacion/servicio que desea presentar
-   - Tamano de pantalla de telefono (vertical) recomendado
-   - Si no tiene una disponible, se creara una muestra
-```
-
-**Resultado esperado**: Las claves API están confirmadas y las capturas de pantalla están listas.
-
----
-
-## Paso 2: Ejecución Automatizada Completa del Pipeline
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Paso 2: Seleccionar motor de generacion de video",
-  "questions": [{
-    "id": "engine_choice",
-    "prompt": "Que motor desea usar?",
-    "options": [
-      {"id": "fabric", "label": "Fabric 1.0 (buena relacion calidad-precio $2.50, con lip sync)"},
-      {"id": "kling", "label": "Kling 2.6 Pro (movimiento natural $2.80, estilo UGC)"},
-      {"id": "veo", "label": "Veo 3.1 (maxima calidad $15+, cuidado con el costo)"},
-      {"id": "longcat", "label": "LongCat (animacion de cuerpo completo $3.00)"}
-    ]
-  }]
-}
-```
-
-**Ejecución posterior a la selección:**
+Primero verifique que las herramientas necesarias están instaladas.
 
 ```bash
-cd ~/ai-agent-camp
-python -m ugc.product_demo_pipeline \
-  --product "(nombre del producto especificado por el usuario)" \
-  --screenshot ./(captura del usuario) \
-  --engine fabric \
-  --platform tiktok \
-  --resolution 480p
+yt-dlp --version
+ffmpeg -version | head -1
+python3 -c "import pysrt; print('pysrt OK')"    # En Windows reemplace python3 por python
 ```
 
-**6 pasos que el pipeline ejecuta automáticamente:**
-1. **Generación de guion** (Gemini Flash) -> `script.txt`
-2. **Generación de imagen de avatar** (Gemini Image) -> `avatar.png` (persona sosteniendo telefono en pantalla verde)
-3. **Generación de audio TTS** (ElevenLabs) -> `speech.mp3`
-4. **Generación de video** (Fabric/Kling/Veo) -> `raw_video.mp4`
-5. **Composición con pantalla verde** (FFmpeg) -> `composited.mp4` (captura compuesta en pantalla del telefono)
-6. **Salida final** -> `final.mp4`
-
-**Resultado esperado**: Un video se genera en `output/ugc/product_demo/`.
-
----
-
-## Paso 3: Revisar y Ajustar el Guion Generado
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Paso 3: Revision del guion",
-  "questions": [{
-    "id": "step_action",
-    "prompt": "Desea revisar el guion generado?",
-    "options": [
-      {"id": "check", "label": "Revisar y editar si es necesario"},
-      {"id": "regenerate", "label": "Regenerar un guion diferente"},
-      {"id": "skip", "label": "Continuar tal cual"}
-    ]
-  }]
-}
-```
-
-**Contenido:**
-```text
-Lea script.txt en output/ugc/product_demo/ y revise el contenido.
-
-Puntos a verificar:
-- El gancho (primeros 2 segundos) capta la atencion?
-- Transmite el atractivo del producto?
-- Suena natural como lenguaje hablado?
-- Es demasiado largo (30 segundos = aprox. 90 caracteres objetivo)?
-```
-
----
-
-## Paso 4: Revisar la Composición con Pantalla Verde
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Paso 4: Revisar resultado de composicion",
-  "questions": [{
-    "id": "step_action",
-    "prompt": "Desea revisar el resultado de la composicion?",
-    "options": [
-      {"id": "check", "label": "Revisar el video"},
-      {"id": "retry_opencv", "label": "Recomponer con backend OpenCV"},
-      {"id": "skip", "label": "Continuar"}
-    ]
-  }]
-}
-```
-
-**Puntos a verificar:**
-- La captura de pantalla está correctamente compuesta en la pantalla del telefono?
-- Hay algún residuo verde?
-- El balance entre el avatar y la captura es bueno?
-
----
-
-## Paso 5: Agregar Música de Fondo (Opcional)
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Paso 5: Agregar musica de fondo",
-  "questions": [{
-    "id": "bgm_choice",
-    "prompt": "Desea agregar musica de fondo?",
-    "options": [
-      {"id": "add_bgm", "label": "Agregar musica de fondo (especificar archivo)"},
-      {"id": "no_bgm", "label": "Completar sin musica de fondo"},
-      {"id": "generate", "label": "Generar musica de fondo con Suno AI (fal.ai, cubierto en una leccion posterior)"}
-    ]
-  }]
-}
-```
-
-**Agregar música de fondo:**
-```python
-from tools.ugc.audio_post import mix_bgm
-mix_bgm(
-    video_path="output/ugc/product_demo/.../composited.mp4",
-    bgm_path="./my_bgm.mp3",
-    output_path="output/ugc/product_demo/.../final_with_bgm.mp4",
-    bgm_volume=0.15,
-)
-```
-
----
-
-## Paso 6: Revisar Video Completado y Resumen de Costos
-
-**Contenido:**
-```text
-Lea summary.json en output/ugc/product_demo/ y revise los resultados.
-
-Elementos a verificar:
-- Ruta del video final
-- Motor utilizado
-- Costo de generacion ($)
-- Exito/fallo de cada paso
-
-Consejos de optimizacion de costos:
-- Usar 480p reduce el costo de Fabric a la mitad
-- Reutilizar la imagen del avatar ahorra $0.02 cada vez
-- Para generacion masiva, considere servicios de tarifa plana como GenSpark
-  -> Detalles: https://ai-agent.camp/es/course/module-15
-```
-
----
-
-## Problemas Comunes y Soluciones
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Seleccione su problema",
-  "questions": [{
-    "id": "trouble",
-    "prompt": "Seleccione el problema que corresponda",
-    "options": [
-      {"id": "trouble_1", "label": "Error de clave API"},
-      {"id": "trouble_2", "label": "La composicion con pantalla verde fallo"},
-      {"id": "trouble_3", "label": "La generacion de video expiro"},
-      {"id": "trouble_4", "label": "El audio y el movimiento de labios estan desincronizados"}
-    ]
-  }]
-}
-```
-
-### Problema 1: "Error de clave API"
-**Causa**: Las variables de entorno no están configuradas
-**Solución**:
+Si no están instaladas:
 ```bash
-cat .env | grep -E "FAL_KEY|GEMINI|ELEVEN"    # Mac/Linux
-```
-
-### Problema 2: "La composición con pantalla verde falló"
-**Causa**: Dificultad para detectar el verde en la imagen
-**Solución**: Pruebe el backend OpenCV
-```python
-from ugc import composite_video
-composite_video(video, screenshot, output, backend="opencv")
-```
-
-### Problema 3: "La generación de video expiro"
-**Causa**: El procesamiento de fal.ai es lento
-**Solución**: Cambie a Fabric o reintente
-
-### Problema 4: "El audio y el movimiento de labios están desincronizados"
-**Solución**: Aplique corrección de sincronización labial con MuseTalk
-```python
-from ugc.audio_post import apply_musetalk
-apply_musetalk(video, audio, output)
+pip install yt-dlp pysrt
+apt-get install ffmpeg    # Ubuntu/Debian
+# macOS: brew install ffmpeg
+# Windows: winget install ffmpeg o descargue de https://ffmpeg.org/download.html
 ```
 
 ---
 
-## Punto de Control
-- [ ] Las claves API están correctamente configuradas
-- [ ] Las capturas de pantalla fueron preparadas
-- [ ] El pipeline se completó correctamente
-- [ ] La composición con pantalla verde fue exitosa
-- [ ] El video final fue revisado
-- [ ] Comprendio la guía de estrategia de costos
+## Paso 2: Verificar Información del Video
+
+Prepare la URL de un video de YouTube de su elección.
+Primero verifique la información del video:
+
+```bash
+python skills/youtube-clipper/scripts/downloader.py \
+  "https://www.youtube.com/watch?v=YOUR_VIDEO_ID" \
+  --subs-only
+```
+
+Verifique en la salida:
+- `subtitles_available`: Idiomas de subtítulos manuales
+- `auto_subtitles_available`: Idiomas de subtítulos automáticos
+- `duration`: Duración del video
+
+---
+
+## Paso 3: Análisis de Capítulos con Clipper
+
+Ejecute solo el análisis de capítulos:
+
+```bash
+python skills/youtube-clipper/scripts/clipper.py \
+  --url "https://www.youtube.com/watch?v=YOUR_VIDEO_ID" \
+  --chapters-only
+```
+
+La IA dividirá el video en capítulos semanticos, asignando a cada uno un título, resumen y highlight_score.
+
+---
+
+## Paso 4: Extracción de Clips de Momentos Destacados
+
+Extraiga como clips los capítulos con puntuaciones altas:
+
+```bash
+python skills/youtube-clipper/scripts/clipper.py \
+  --url "https://www.youtube.com/watch?v=YOUR_VIDEO_ID" \
+  --auto-select "score>0.7" \
+  --burn-subtitles
+```
+
+En el directorio `output/clips/` se generan:
+- MP4 de cada clip
+- Subtítulos originales + subtítulos traducidos
+- SRT bilingüe
+- Resumen para publicación en redes sociales (JSON)
+
+---
+
+## Paso 5: Transcripción de Videos sin Subtítulos (Avanzado)
+
+Incluso para videos sin subtítulos, puede usar el reconocimiento de voz de Gemini:
+
+```bash
+# Probar con un archivo de video local
+python skills/youtube-clipper/scripts/clipper.py \
+  --file /path/to/video_without_subs.mp4
+```
+
+Internamente, se extrae el audio con FFmpeg y se transcribe con Gemini 3.0 Flash Preview.
+
+---
+
+## Ejercicios
+
+1. **Básico**: Seleccione un video de YouTube de su elección (5-15 minutos) y extraiga al menos 3 clips
+2. **Aplicado**: Grabe subtítulos bilingües en los clips de un video en inglés
+3. **Avanzado**: Pruebe el reconocimiento de voz de Gemini con un video sin subtítulos y verifique la precisión
 
 ---
 
 ## Siguientes Pasos
 
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Seleccione el siguiente paso",
-  "questions": [{
-    "id": "next_step",
-    "prompt": "Seleccione la siguiente accion",
-    "options": [
-      {"id": "next_auto", "label": "Siguiente seccion (/start-15-4 Video anime con storyboard)"},
-      {"id": "retry", "label": "Regenerar el mismo video con un motor diferente"},
-      {"id": "finish", "label": "Terminar aqui"}
-    ]
-  }]
-}
-```
+En la Lección 15-4, aprendera a convertir los clips extraidos en materiales de marketing para redes sociales con Remotion.

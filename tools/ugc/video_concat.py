@@ -3,6 +3,7 @@
 
 FFmpegのxfadeフィルターを使ったクロスフェード付き連結と、
 シンプルなconcat demuxerによる連結をサポート。
+音声ストリームがある場合は acrossfade で自動結合する。
 """
 
 import os
@@ -28,6 +29,19 @@ def _get_duration(video_path: str) -> float:
     ]
     result = subprocess.run(cmd, capture_output=True, text=True, check=True)
     return float(result.stdout.strip())
+
+
+def _has_audio(video_path: str) -> bool:
+    """動画に音声ストリームがあるか判定"""
+    cmd = [
+        "ffprobe", "-v", "error",
+        "-select_streams", "a",
+        "-show_entries", "stream=index",
+        "-of", "csv=p=0",
+        video_path,
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    return bool(result.stdout.strip())
 
 
 def concat_simple(clips: list[str], output_path: str) -> None:
@@ -57,7 +71,10 @@ def concat_with_crossfade(
     transition: str = "fade",
     transition_duration: float = 0.5,
 ) -> None:
-    """xfadeフィルターによるクロスフェード付き連結
+    """xfadeフィルターによるクロスフェード付き連結（音声自動検出）
+
+    入力クリップに音声がある場合は acrossfade で音声も結合する。
+    音声がない場合は映像のみ結合する。
 
     Args:
         clips: 動画ファイルパスのリスト（2本以上）
@@ -75,7 +92,15 @@ def concat_with_crossfade(
             return
         raise ValueError("クリップが1本もありません")
 
-    # 各クリップの長さを取得
+    # 音声の有無を検出（全クリップに音声がある場合のみ音声を結合）
+    has_all_audio = all(_has_audio(c) for c in clips)
+
+    if has_all_audio:
+        # 音声ありの場合は concat_with_audio に委譲
+        concat_with_audio(clips, output_path, transition, transition_duration)
+        return
+
+    # 音声なし: 映像のみ結合（従来のロジック）
     durations = [_get_duration(c) for c in clips]
 
     # 2本の場合はシンプルなxfade
@@ -109,16 +134,13 @@ def concat_with_crossfade(
     for i in range(2, len(clips)):
         prev_label = f"v{i-1}"
         out_label = f"v{i}" if i < len(clips) - 1 else "vout"
-        # 累積offset = これまでの合計長さ - transition重複分
         offset = sum(durations[:i+1]) - (i * transition_duration) - durations[i]
         filters.append(
             f"[{prev_label}][{i}:v]xfade=transition={transition}:duration={transition_duration}:offset={offset}[{out_label}]"
         )
 
     filter_complex = ";".join(filters)
-    final_label = f"v{len(clips)-1}" if len(clips) > 2 else "vout"
-    if len(clips) > 2:
-        final_label = "vout"
+    final_label = "vout" if len(clips) > 2 else f"v{len(clips)-1}"
 
     cmd = [
         "ffmpeg", "-y",

@@ -1,40 +1,43 @@
 ---
-description: "When the user says /start-15-5 — Module 15 Lesson 15-5: スライド解説動画を作成する（HTML解析 + TTS + プレゼンター合成）"
+description: "When the user says /start-15-5 — Module 15 Lesson 15-5: 動画AIエンジンの全体像を理解し、fal.aiの使い方を学ぶ"
 chapter: "courses/aiagent/lesson03-core/module15-video"
-duration: "約35分"
-prerequisites: ["start-15-2"]
-level: "advanced"
-tags: ["video", "slides", "narration", "tts"]
+duration: "約20分"
+prerequisites: ["start-15-1"]
+level: "intermediate"
+tags: ["video", "ai-engine", "fal"]
 ---
 
-# Lesson 15-5: Slide Narration Video
+# 15-5: 動画AIエンジン概要
 
 ## このセッションでやること
 
-**Lesson 15-5: スライド解説動画** へようこそ！
+**Lesson 15-5: 動画AIエンジン概要** へようこそ！
 
 | 項目 | 内容 |
 |------|------|
-| ゴール | HTML教材やスライド画像から、プレゼンターが解説する動画を自動生成する |
-| 所要時間 | 約35分 |
-| 使うツール | slide_narration_pipeline (Gemini + ElevenLabs + Fabric/Kling + FFmpeg) |
-| 前提条件 | FAL_KEY、GEMINI_API_KEY、ELEVEN_API_KEY 設定済み |
-| コストガイド | [動画AIコスト戦略ガイド](https://ai-agent.camp/ja/course/module-15) を先に確認推奨 |
+| ゴール | 最新の動画AIエンジンを理解し、fal.aiの基本的な使い方を習得する |
+| 所要時間 | 約20分 |
+| 使うツール | fal.ai (FAL_KEY) |
+| 前提条件 | FAL_KEY 設定済み、Python 3.10 以上推奨 |
+| コストガイド | ※ コストガイドは準備中です |
 | 教材ページ | [Module 15: 動画生成](https://ai-agent.camp/ja/course/module-15) を並行参照 |
 
-**コスト目安**: 5セグメント × Fabric 720p で約 **$12/本**、台本のみなら **$0.03**
+**重要**: このレッスンでは全エンジンを実際に叩く比較は行いません（高コストのため）。
+各エンジンの特徴・価格を理解し、fal.aiの基本パターンだけハンズオンします。
+実際のAPI呼び出しは 15-6 以降のプロジェクトレッスンで必要な分だけ行います。
+
+**前提条件: FAL_KEY の設定**
+
+fal.ai のAPIを使用するため、事前にAPIキーの設定が必要です。
+未設定の場合は `/setup-fal` を実行してセットアップしてください。
+
+> **注意**: fal-client は Python 3.10 以上を推奨します。`python3 --version` で確認してください。
 
 **このセッションの流れ:**
-1. 環境確認 & 素材準備
-2. 台本の自動生成と確認
-3. プレゼンター動画生成
-4. スライド + プレゼンター合成
-5. BGM追加（オプション）
-6. 完成動画の確認
-
-セッション終了時には、スライド解説動画が `output/ugc/slide_narration/` に保存されています。
-
-> **ヒント**: AIの応答が途中で止まった場合は「続きを表示して」と入力すると再開します。
+1. 動画AIエンジンの全体像
+2. API従量課金 vs 定額サービスの使い分け
+3. fal.ai の基本的な使い方（ハンズオン）
+4. エンジン選択の判断基準
 
 ---
 
@@ -49,7 +52,7 @@ tags: ["video", "slides", "narration", "tts"]
     "prompt": "準備はできていますか？",
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
-      {"id": "check_prereq", "label": "前提条件を確認したい"},
+      {"id": "check_prereq", "label": "FAL_KEYの設定を確認したい"},
       {"id": "cost_guide", "label": "先にコストガイドを見たい"},
       {"id": "different_lesson", "label": "別のレッスンに移動したい"}
     ]
@@ -59,218 +62,187 @@ tags: ["video", "slides", "narration", "tts"]
 
 ---
 
-## Step 1: 環境確認 & 素材準備
+## Step 1: 動画AIエンジンの全体像
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "Step 1: 素材の選択",
-  "questions": [{
-    "id": "source_choice",
-    "prompt": "どの素材からスライド動画を作りますか？",
-    "options": [
-      {"id": "html", "label": "HTML教材から（このコースの教材を使う）"},
-      {"id": "slides", "label": "スライド画像から（PNG/JPGフォルダ指定）"},
-      {"id": "script_only", "label": "まず台本だけ生成して確認したい"}
-    ]
-  }]
-}
-```
-
-**HTML教材から生成する場合:**
-```bash
-cd ~/ai-agent-camp
-# 例: Module 1 のバナー生成教材を解説動画にする
-python -m ugc.slide_narration_pipeline \
-  --html https://ai-agent.camp/ja/course/module-1 \
-  --engine fabric --resolution 720p
-```
-
-**スライド画像から生成する場合:**
-```bash
-cd ~/ai-agent-camp
-python -m ugc.slide_narration_pipeline \
-  --slides ./my_slides/ \
-  --topic "AIエージェント入門" \
-  --engine fabric
-```
-
-**台本のみ生成:**
-```bash
-cd ~/ai-agent-camp
-python -m ugc.slide_narration_pipeline \
-  --html https://ai-agent.camp/ja/course/module-1 \
-  --script-only
-```
-
----
-
-## Step 2: 台本の確認・調整
-
-**AskQuestionの設定例:**
-```json
-{
-  "title": "Step 2: 台本の確認",
+  "title": "Step 1: エンジン概要",
   "questions": [{
     "id": "step_action",
-    "prompt": "生成された台本を確認しますか？",
+    "prompt": "このステップをどうしますか？",
     "options": [
-      {"id": "check", "label": "台本を確認して必要なら修正"},
-      {"id": "change_style", "label": "別のスタイルで再生成"},
-      {"id": "skip", "label": "そのまま進める"}
+      {"id": "practice", "label": "一緒に調べながら進める"},
+      {"id": "review", "label": "まとめだけ確認する"},
+      {"id": "skip", "label": "スキップする"}
     ]
   }]
 }
 ```
 
-**台本スタイル:**
-- `friendly` - 親しみやすい話し言葉（デフォルト）
-- `formal` - フォーマルなプレゼン風
-- `casual` - カジュアルな雑談風
+**解説内容:**
 
-**確認ポイント:**
-- 各セグメントの長さは適切か（30-60秒/セグメント推奨）
-- 話し言葉として自然か
-- 専門用語に説明が入っているか
+2025-2026年現在の主要な動画AIエンジンを紹介します。
+
+### Image-to-Video（画像→動画）エンジン
+
+| エンジン | Provider | 価格 | 特徴 |
+|---------|----------|------|------|
+| **Kling 2.6 Pro** | fal.ai | $0.07/s | 自然な動き、UGCスタイル、グリーンスクリーン対応 |
+| **Veo 3.1** | fal.ai | $0.50-1.00/s | 最高品質、ネイティブ音声、Text-to-Video対応 |
+| **Runway Gen-3** | Runway | 定額$15-76/月 | 高品質、Web UIが使いやすい |
+| **Pika 2.0** | Pika | 定額$8-58/月 | テキスト/画像から動画、効果が豊富 |
+| **Minimax** | fal.ai | 要確認 | 長尺動画に強い |
+| **LTX Video** | fal.ai | 低コスト | オープンソースベース |
+
+### Lip-sync（リップシンク）エンジン
+
+| エンジン | Provider | 価格 | 特徴 |
+|---------|----------|------|------|
+| **Fabric 1.0** | fal.ai | $0.08-0.15/s | 高精度リップシンク |
+| **LongCat** | fal.ai | $0.10/s | 全身モーション + リップシンク |
+| **HeyGen** | 直接API | $0.05/s | アバター内蔵、多言語 |
+| **MuseTalk** | fal.ai | 要確認 | fal.ai経由のリップシンク |
+
+### その他
+
+| ツール | 種類 | 価格 | 用途 |
+|--------|------|------|------|
+| **Suno** | 音楽生成 | fal.ai経由 | AI作曲 |
+| **Remotion** | コード動画 | $0（ローカル） | テンプレート動画、スライド |
+| **FFmpeg** | 編集 | $0（ローカル） | トランジション、合成、Ken Burns |
+
+### 定額サービス（大量生成向け）
+
+| サービス | 月額 | 特徴 |
+|---------|------|------|
+| **GenSpark** | $19/月 | AI動画+画像+検索 |
+| **Runway** | $15-76/月 | Gen-3 Alpha、高品質 |
+| **Pika** | $8-58/月 | 手軽、エフェクト豊富 |
+| **CapCut Pro** | $10/月 | 編集+テンプレート |
+
+**ポイント**: APIは自動化に向いているが高コスト。定額サービスは手動だが量産に向いている。
+詳しくはコスト戦略ガイド（準備中）を参照。
 
 ---
 
-## Step 3: プレゼンター動画の生成
+## Step 2: API vs 定額サービスの使い分け
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "Step 3: エンジン選択",
-  "questions": [{
-    "id": "engine_choice",
-    "prompt": "プレゼンター動画のエンジンを選んでください",
-    "options": [
-      {"id": "fabric", "label": "Fabric 1.0（リップシンク付き $2.50/30秒）"},
-      {"id": "kling", "label": "Kling 2.6 Pro（自然な動き $2.80/30秒）"},
-      {"id": "skip_presenter", "label": "プレゼンターなし（スライドのみ）"}
-    ]
-  }]
-}
-```
-
-**パイプラインが実行するステップ:**
-1. アバター画像生成（Gemini Image）
-2. セグメントごとにTTS音声生成（ElevenLabs）
-3. セグメントごとにプレゼンター動画生成（選択したエンジン）
-4. スライド画像からKen Burns背景動画を生成
-5. プレゼンターを右下にオーバーレイ合成
-
----
-
-## Step 4: 合成結果の確認
-
-**AskQuestionの設定例:**
-```json
-{
-  "title": "Step 4: 合成結果",
+  "title": "Step 2: コスト戦略",
   "questions": [{
     "id": "step_action",
-    "prompt": "合成結果を確認しますか？",
+    "prompt": "このステップをどうしますか？",
     "options": [
-      {"id": "check", "label": "動画を確認する"},
-      {"id": "change_position", "label": "プレゼンターの位置を変更"},
-      {"id": "skip", "label": "次に進む"}
+      {"id": "practice", "label": "一緒に考えながら進める"},
+      {"id": "review", "label": "まとめだけ確認する"},
+      {"id": "skip", "label": "スキップする"}
     ]
   }]
 }
 ```
 
-**プレゼンター位置オプション:**
-- `right` - 右下（デフォルト）
-- `left` - 左下
-- `bottom` - 下部中央
+**解説内容:**
+
+```text
+判断フローチャート:
+
+自動化が必要？
+  YES → API（fal.ai）
+    月10本以上？
+      YES → 定額サービスも検討
+      NO  → APIで十分（学習フェーズ）
+  NO  → 定額サービス（手動操作OK）
+
+B-rollで代替できるシーンがある？
+  YES → A-roll(API) + B-roll(Ken Burns/Remotion) = コスト最適
+  NO  → 全シーンI2V（コスト覚悟）
+```
 
 ---
 
-## Step 5: BGM追加（オプション）
+## Step 3: fal.ai の基本（ハンズオン）
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "Step 5: BGM追加",
+  "title": "Step 3: fal.ai ハンズオン",
   "questions": [{
-    "id": "bgm_choice",
-    "prompt": "BGMを追加しますか？",
+    "id": "step_action",
+    "prompt": "このステップをどうしますか？",
     "options": [
-      {"id": "add_bgm", "label": "BGMを追加（ファイル指定、音量12%推奨）"},
-      {"id": "no_bgm", "label": "BGMなしで完成"},
-      {"id": "generate", "label": "次のレッスン（15-6 MV）でBGM生成を学ぶ"}
+      {"id": "practice", "label": "実際に実行する"},
+      {"id": "review", "label": "コードだけ確認する"},
+      {"id": "skip", "label": "スキップする"}
     ]
   }]
 }
 ```
-
----
-
-## Step 6: 完成動画の確認
 
 **実行内容:**
+
+fal.aiクライアントの基本パターンを確認します。
+実際のAPI呼び出しは最低限（テキスト生成程度）に留めます。
+
+```python
+# fal.ai の基本パターン
+import fal_client
+
+# 1. ファイルアップロード
+url = fal_client.upload_file("image.png")
+
+# 2. subscribe パターン（結果を待つ）
+result = fal_client.subscribe(
+    "fal-ai/kling-video/v2.6/pro/image-to-video",
+    arguments={
+        "image_url": url,
+        "prompt": "A person talking naturally",
+        "duration": "5",
+        "aspect_ratio": "9:16",
+    },
+    with_logs=True,
+    on_queue_update=lambda update: print(f"Status: {update}"),
+)
+
+# 3. 結果取得
+video_url = result["video"]["url"]
+```
+
 ```text
-output/ugc/slide_narration/<timestamp>/ 内の summary.json を確認（タイムスタンプ付きサブディレクトリに出力されます）。
-
-確認項目:
-- 最終動画のパス
-- セグメント数
-- 使用エンジン
-- 生成コスト
-
-コスト最適化のヒント:
-- 480pにするとFabricコストは半額
-- --script-only で台本だけ先に確認（$0.03）
-- プレゼンターなしならスライドKen Burns + TTS音声のみ（$0.05）
+確認事項:
+1. FAL_KEY が設定されているか
+   echo $FAL_KEY
+2. fal-client がインストールされているか
+   pip show fal-client
+3. 上記コードの構造を理解（subscribe + arguments + callback）
 ```
 
 ---
 
-## よくあるトラブルと解決方法
+## Step 4: エンジン選択の判断基準
 
-**AskQuestionの設定例:**
-```json
-{
-  "title": "トラブル内容を選択",
-  "questions": [{
-    "id": "trouble",
-    "prompt": "当てはまる内容を1つ選んでください",
-    "options": [
-      {"id": "trouble_1", "label": "HTML解析でセクションが取れない"},
-      {"id": "trouble_2", "label": "TTS音声が不自然"},
-      {"id": "trouble_3", "label": "プレゼンター動画がタイムアウト"},
-      {"id": "trouble_4", "label": "オーバーレイ合成がずれる"}
-    ]
-  }]
-}
-```
+**まとめ:**
 
-### トラブル1: 「HTML解析でセクションが取れない」
-**原因**: HTMLの構造が想定と異なる
-**解決**: --slides オプションでスライド画像を直接指定
-
-### トラブル2: 「TTS音声が不自然」
-**原因**: 台本のテキストが読み上げに適していない
-**解決**: --script-only で台本を先に生成→手動修正→再実行
-
-### トラブル3: 「プレゼンター動画がタイムアウト」
-**原因**: fal.aiの処理遅延
-**解決**: エンジンを変更（fabric → kling）、セグメントを短くする
-
-### トラブル4: 「オーバーレイ合成がずれる」
-**原因**: プレゼンターとスライドの長さ不一致
-**解決**: FFmpegの -shortest オプションで自動調整（デフォルト有効）
+| ユースケース | 推奨エンジン | 理由 |
+|-------------|-------------|------|
+| プロダクト紹介（UGC風） | Fabric / Kling | リップシンク + コスパ |
+| アニメ/ストーリー | Kling | I2V品質が良い |
+| 最高品質デモ | Veo 3.1 | 品質最高（コスト注意） |
+| スライド/テンプレート | Remotion | $0、カスタマイズ自由 |
+| MV/音楽 | Suno + Kling | 音楽生成 + 映像生成 |
+| 大量生成 | GenSpark/Runway | 定額で予算管理 |
+| B-roll補助 | Ken Burns (FFmpeg) | $0、静止画から擬似動画 |
 
 ---
 
 ## チェックポイント
-- [ ] APIキーが正しく設定されている
-- [ ] HTML解析またはスライド画像の準備ができた
-- [ ] 台本が自然な話し言葉で生成された
-- [ ] プレゼンター動画が生成できた
-- [ ] スライドとプレゼンターが合成された
-- [ ] 最終動画を確認できた
+- [ ] 主要な動画AIエンジンの種類を理解した
+- [ ] API従量課金と定額サービスの違いを理解した
+- [ ] fal.ai の subscribe パターンを理解した
+- [ ] コスト戦略ガイドを確認した
+- [ ] 自分のユースケースに合ったエンジンが選べる
 
 ---
 
@@ -284,8 +256,9 @@ output/ugc/slide_narration/<timestamp>/ 内の summary.json を確認（タイ�
     "id": "next_step",
     "prompt": "次に進む操作を選んでください",
     "options": [
-      {"id": "next_auto", "label": "次のセクション（/start-15-6 ミュージックビデオ）"},
-      {"id": "retry", "label": "別の教材で再生成"},
+      {"id": "next_76", "label": "15-6: 絵コンテアニメ動画（/start-15-6）"},
+      {"id": "next_77", "label": "15-7: ミュージックビデオ（/start-15-7）"},
+      {"id": "next_78", "label": "15-8: スライド解説動画（/start-15-8）"},
       {"id": "finish", "label": "ここで終了する"}
     ]
   }]

@@ -17,7 +17,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-REMOTION_DIR = Path(__file__).resolve().parent / "remotion"
+REMOTION_DIR = Path(__file__).resolve().parent / "remotion" / "remotion-project"
 ROOT_DIR = Path(__file__).resolve().parents[2]
 
 TEMPLATES = {
@@ -134,10 +134,15 @@ def render_video(
         print(f"  警告: Remotionレンダリング失敗 ({template})")
         print(f"  stderr: {result.stderr[:300]}")
         # フォールバック: FFmpegでシンプルなオーバーレイ
-        return ffmpeg_fallback(data, template, output_path, tmpl)
+        final = ffmpeg_fallback(data, template, output_path, tmpl)
+        _run_motion_review(final)
+        return final
 
     # props一時ファイル削除
     props_path.unlink(missing_ok=True)
+
+    # motion-review でレンダー結果を自動チェック
+    _run_motion_review(output_path)
 
     return output_path
 
@@ -151,6 +156,7 @@ def ffmpeg_fallback(
     """Remotion未初期化時のFFmpegフォールバック
 
     クリップに字幕とテキストオーバーレイを追加するシンプル版。
+    日本語テキストは textfile= 方式 + CJK フォント指定で描画する。
     """
     clips = data.get("clips", [])
     if not clips:
@@ -172,12 +178,31 @@ def ffmpeg_fallback(
     filters = [f"scale={width}:{height}:force_original_aspect_ratio=decrease",
                f"pad={width}:{height}:(ow-iw)/2:(oh-ih)/2:black"]
 
-    # テキストオーバーレイ（タイトル）
+    # テキストオーバーレイ（タイトル）— textfile 方式で日本語対応
+    textfile_path = None
     if title:
-        import re
-        safe_title = re.sub(r"['\";:\\]", "", title)
+        import tempfile
+        # テキストを一時ファイルに書き出し（FFmpeg drawtext の textfile= で読む）
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".txt", delete=False, encoding="utf-8"
+        ) as tf:
+            tf.write(title)
+            textfile_path = tf.name
+
+        # macOS の CJK フォント候補
+        cjk_fonts = [
+            "/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc",
+            "/System/Library/Fonts/HiraginoSans-W6.ttc",
+            "/System/Library/Fonts/AppleSDGothicNeo.ttc",
+        ]
+        font_opt = ""
+        for fp in cjk_fonts:
+            if Path(fp).exists():
+                font_opt = f":fontfile='{fp}'"
+                break
+
         filters.append(
-            f"drawtext=text='{safe_title}':fontsize=36:fontcolor=white:"
+            f"drawtext=textfile='{textfile_path}'{font_opt}:fontsize=36:fontcolor=white:"
             f"x=(w-text_w)/2:y=h-100:box=1:boxcolor=black@0.6:boxborderw=10"
         )
 
@@ -194,13 +219,26 @@ def ffmpeg_fallback(
 
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
-    except subprocess.TimeoutExpired:
-        raise RuntimeError("FFmpegフォールバックがタイムアウトしました（300秒）")
+    finally:
+        # textfile 一時ファイルを削除
+        if textfile_path:
+            import os
+            os.unlink(textfile_path)
+
     if result.returncode != 0:
         raise RuntimeError(f"FFmpegフォールバック失敗: {result.stderr[:300]}")
 
     print(f"  FFmpegフォールバック完了: {output_path}")
     return output_path
+
+
+def _run_motion_review(video_path: Path) -> None:
+    """レンダー後の motion-review を実行（失敗しても処理を止めない）"""
+    try:
+        from ugc.motion_review import review_and_report
+        review_and_report(str(video_path), expect_audio=False)
+    except Exception as e:
+        print(f"  motion-review スキップ: {e}")
 
 
 def batch_render(

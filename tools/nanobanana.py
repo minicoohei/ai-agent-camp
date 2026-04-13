@@ -60,10 +60,11 @@ def generate_image(client, prompt, output_path, aspect_ratio="16:9"):
     """
     Nano Banana Pro を使用してテキストから画像を生成する（text-to-image）
     """
+    output_path = Path(output_path)
     print(f"Generating image with Nano Banana Pro...")
     print(f"Prompt: {prompt}")
     print(f"Aspect ratio: {aspect_ratio}")
-    
+
     try:
         response = client.models.generate_content(
             model=get_image_model(),
@@ -76,7 +77,7 @@ def generate_image(client, prompt, output_path, aspect_ratio="16:9"):
                 )
             )
         )
-        
+
         # response.candidates[0].content.parts からアクセス
         for candidate in response.candidates:
             for part in candidate.content.parts:
@@ -98,10 +99,11 @@ def generate_image(client, prompt, output_path, aspect_ratio="16:9"):
 def edit_image(client, input_image_paths, prompt, output_path, aspect_ratio="16:9", force_aspect_ratio=False):
     """
     Nano Banana Pro を使用して画像を編集する（複数画像入力対応）
-    
+
     Args:
         force_aspect_ratio: Trueの場合、入力画像のアスペクト比を無視して指定値を使用
     """
+    output_path = Path(output_path)
     input_images = []
     ar_str = aspect_ratio
     

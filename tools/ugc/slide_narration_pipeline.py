@@ -203,16 +203,16 @@ JSONのみを返してください（```json等は不要）。"""
         print(f"\n台本のみ生成完了: {script_path}")
         return summary
 
-    # ----- Step 3: TTS音声生成 -----
-    print(f"\nStep 3: TTS音声生成 (ElevenLabs)")
+    # ----- Step 3: TTS音声生成 (narration-qa 統合) -----
+    print(f"\nStep 3: TTS音声生成 (ElevenLabs + narration-qa)")
 
-    from ugc.tts import generate_speech
+    from ugc.narration_qa import qa_and_retry
 
     audio_paths = []
     for i, seg in enumerate(script_segments):
         audio_path = str(out / f"audio_{i:03d}.mp3")
         try:
-            generate_speech(
+            audio_path = qa_and_retry(
                 text=seg["narration"],
                 output_path=audio_path,
                 voice=voice,
@@ -227,7 +227,8 @@ JSONのみを返してください（```json等は不要）。"""
     # ----- Step 4: プレゼンター動画生成 -----
     print(f"\nStep 4: プレゼンター動画生成 ({engine_name})")
 
-    from ugc.engines import get_engine
+    from ugc.engines import get_engine, generate_with_fallback
+    from ugc.video_qa import validate_video_output
     from nanobanana import generate_image as gen_img
 
     # アバター画像生成
@@ -244,13 +245,13 @@ JSONのみを返してください（```json等は不要）。"""
         print(f"  -> Avatar generation failed: {e}")
         avatar_path = None
 
-    engine = get_engine(engine_name)
     presenter_clips = []
     for i, audio_path in enumerate(audio_paths):
         clip_path = str(out / f"presenter_{i:03d}.mp4")
         if avatar_path:
             try:
-                result = engine.generate(
+                result = generate_with_fallback(
+                    engine_name=engine_name,
                     avatar_image=avatar_path,
                     script=script_segments[i]["narration"] if i < len(script_segments) else "",
                     audio_file=audio_path,
@@ -258,7 +259,7 @@ JSONのみを返してください（```json等は不要）。"""
                 )
                 total_cost += result.cost
                 presenter_clips.append(clip_path)
-                print(f"  -> Presenter {i+1}: ${result.cost:.2f}")
+                print(f"  -> Presenter {i+1}: ${result.cost:.2f} (engine={result.engine})")
             except Exception as e:
                 print(f"  -> Presenter {i+1} failed: {e}")
         else:
@@ -384,6 +385,11 @@ JSONのみを返してください（```json等は不要）。"""
             print(f"  -> BGMスキップ: {e}")
 
     steps.append({"step": "final", "path": final_path})
+
+    # ----- QA検証 -----
+    print(f"\nQA検証:")
+    qa_result = validate_video_output(final_path, expect_audio=bool(audio_paths))
+    steps.append({"step": "qa", "result": qa_result})
 
     # ----- Summary -----
     summary = {

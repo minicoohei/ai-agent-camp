@@ -69,6 +69,7 @@ def run_mv_pipeline(
         結果dict
     """
     from bootcamp_utils import get_client
+    from ugc.video_qa import validate_video_output
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out = Path(output_dir) / timestamp
@@ -220,7 +221,7 @@ JSONのみを返してください。"""
     # ----- Step 5: 動画クリップ生成 -----
     print(f"\nStep 5: 動画クリップ生成")
 
-    from ugc.engines import get_engine
+    from ugc.engines import get_engine, generate_with_fallback
     from ugc.ken_burns import generate_broll
 
     clips_dir = out / "clips"
@@ -244,7 +245,6 @@ JSONのみを返してください。"""
     else:
         aroll_indices = set(range(len(scenes)))
 
-    engine = get_engine(engine_name)
     clip_paths = []
     ken_burns_effects = ["zoom_in", "zoom_out", "pan_left", "pan_right", "slow_zoom", "pan_down"]
 
@@ -258,7 +258,8 @@ JSONのみを返してください。"""
         if i in aroll_indices:
             print(f"  [A-roll] Clip {i+1}: {engine_name} I2V ({dur:.1f}s)...")
             try:
-                result = engine.generate(
+                result = generate_with_fallback(
+                    engine_name=engine_name,
                     avatar_image=frame_paths[i],
                     script=scenes[i].get("description", ""),
                     output_path=clip_path,
@@ -266,6 +267,7 @@ JSONのみを返してください。"""
                 )
                 total_cost += result.cost
                 clip_paths.append(clip_path)
+                print(f"    -> ${result.cost:.2f} (engine={result.engine})")
             except Exception as e:
                 print(f"    -> I2V failed, Ken Burns fallback: {e}")
                 effect = ken_burns_effects[i % len(ken_burns_effects)]
@@ -313,6 +315,11 @@ JSONのみを返してください。"""
         shutil.copy2(joined_path, final_path)
 
     steps.append({"step": "final", "path": final_path})
+
+    # ----- QA検証 -----
+    print(f"\nQA検証:")
+    qa_result = validate_video_output(final_path, expect_audio=bool(final_music))
+    steps.append({"step": "qa", "result": qa_result})
 
     # ----- Summary -----
     summary = {

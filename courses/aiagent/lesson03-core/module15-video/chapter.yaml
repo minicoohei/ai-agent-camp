@@ -2,13 +2,15 @@
 id: "module15-video"
 order: 7
 name: "動画生成"
-description: "AI UGC動画の絵コンテ作成と動画生成を行います。"
+description: "Remotionローカルレンダリングから有料AIエンジンまで、段階的に動画制作を学びます。"
 type: "manual"
-estimatedMinutes: 90
+estimatedMinutes: 120
 objectives:
-  - "絵コンテ（ストーリーボード）を生成できる"
-  - "キャラクター一貫性を維持できる"
-  - "Kling APIで動画生成できる"
+  - "Remotionでテキストアニメーション動画を作成できる"
+  - "YouTube動画からハイライトを抽出しテロップを付けられる"
+  - "Clipper × Remotion でSNSマーケ素材を量産できる"
+  - "絵コンテ（ストーリーボード）からI2V動画を生成できる"
+  - "ナレーション・グリーンスクリーン合成ができる"
 thumbnail: "thumbnail.png"
 externalContent:
   manual: "https://ai-agent.camp/ja/course/module-15"

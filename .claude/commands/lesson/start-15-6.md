@@ -1,47 +1,49 @@
 ---
-description: "When the user says /start-15-6 — Module 15 Lesson 15-6: AIでミュージックビデオを作成する（Suno + ビート同期 + シーン動画化）"
+description: "When the user says /start-15-6 — Module 15 Lesson 15-6: 絵コンテからアニメ動画を生成する（Gemini画像 + Kling/Veo I2V + FFmpeg結合）"
 chapter: "courses/aiagent/lesson03-core/module15-video"
-duration: "約45分"
-prerequisites: ["start-15-2"]
+duration: "約40分"
+prerequisites: ["start-15-5"]
 level: "advanced"
-tags: ["video", "music-video", "suno", "beat-sync"]
+tags: ["video", "storyboard", "anime", "kling"]
 ---
 
-# Lesson 15-6: Music Video
+# 15-6: Storyboard Anime Video
 
 ## このセッションでやること
 
-**Lesson 15-6: ミュージックビデオ** へようこそ！
+**Lesson 15-6: 絵コンテアニメ動画** へようこそ！
 
 | 項目 | 内容 |
 |------|------|
-| ゴール | AI楽曲を生成し、ビートに同期したシーン動画を組み合わせてMVを作る |
-| 所要時間 | 約45分 |
-| 使うツール | mv_pipeline (Suno/fal.ai + librosa + Gemini + Kling + FFmpeg) |
-| 前提条件 | FAL_KEY、GEMINI_API_KEY 設定済み。pip install librosa 推奨 |
+| ゴール | テキストシナリオから絵コンテ画像を生成し、AI動画エンジンで動画化して1本の作品にする |
+| 所要時間 | 約40分 |
+| 使うツール | storyboard_anime_pipeline (Gemini + Kling/Veo + FFmpeg) |
+| 前提条件 | FAL_KEY、GEMINI_API_KEY 設定済み |
 | コストガイド | [動画AIコスト戦略ガイド](https://ai-agent.camp/ja/course/module-15) を先に確認推奨 |
 | 教材ページ | [Module 15: 動画生成](https://ai-agent.camp/ja/course/module-15) を並行参照 |
 
 **コスト目安**:
-- フルI2V（Kling 8本）+ AI楽曲: 約 **$6-12**
-- コスト最適化（A-roll 3本 + B-roll 5本）: 約 **$3-5**
-- 既存楽曲 + Ken Burnsのみ: 約 **$0.10**（画像生成のみ）
+- 全フレームI2V（Kling 8本）: 約 **$5.60**
+- コスト最適化モード（A-roll 4本 + B-roll 4本）: 約 **$2.80**
+- Ken Burns B-rollのみ（テスト用）: **$0**（ローカル処理）
 
 **このセッションの流れ:**
-1. 環境確認 & 楽曲の準備
-2. AI楽曲生成 or 既存楽曲の読み込み
-3. ビート解析 & シーンタイムライン
-4. シーン画像 + 動画クリップ生成
-5. ビート同期結合 & 音楽ミックス
-6. 完成MVの確認
+1. 環境確認 & シナリオ準備
+2. シーン分解 & フレーム画像生成
+3. A-roll / B-roll 分類と動画化
+4. トランジション付き結合
+5. BGM追加（オプション）
+6. 完成動画の確認 & コスト振り返り
 
-セッション終了時には、ミュージックビデオが `output/ugc/mv/` に保存されています。
+セッション終了時には、絵コンテアニメ動画が `output/ugc/storyboard_anime/` に保存されています。
 
 > **ヒント**: AIの応答が途中で止まった場合は「続きを表示して」と入力すると再開します。
 
 ---
 
 ## 準備チェック
+
+まずは準備が整っているか確認しましょう。
 
 **AskQuestionの設定:**
 ```json
@@ -53,174 +55,230 @@ tags: ["video", "music-video", "suno", "beat-sync"]
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
       {"id": "check_prereq", "label": "前提条件を確認したい"},
-      {"id": "install_librosa", "label": "librosaをインストールしたい"},
-      {"id": "cost_guide", "label": "先にコストガイドを見たい"}
+      {"id": "cost_guide", "label": "先にコストガイドを見たい"},
+      {"id": "different_lesson", "label": "別のレッスンに移動したい"}
     ]
   }]
 }
 ```
 
-(install_librosa → `pip install librosa` を実行)
+(ready → Step 1へ)
+(check_prereq → FAL_KEY / GEMINI_API_KEY の存在確認を実行)
+(cost_guide → https://ai-agent.camp/ja/course/module-15 のパスを案内)
+(different_lesson → モジュール一覧を表示)
 
 ---
 
-## Step 1: 環境確認 & 楽曲の準備
+## Step 1: 環境確認 & シナリオ準備
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "Step 1: 楽曲の準備",
+  "title": "Step 1: 環境確認",
   "questions": [{
-    "id": "music_source",
-    "prompt": "楽曲をどう準備しますか？",
+    "id": "step_action",
+    "prompt": "このステップをどうしますか？",
     "options": [
-      {"id": "generate", "label": "AIで楽曲を生成する（fal.ai Suno）"},
-      {"id": "existing", "label": "手持ちの音楽ファイルを使う"},
-      {"id": "explain", "label": "AI楽曲生成の仕組みを説明して"}
+      {"id": "practice", "label": "このまま進める"},
+      {"id": "review", "label": "例だけ確認する"},
+      {"id": "skip", "label": "スキップする"}
     ]
   }]
 }
 ```
 
-**環境確認:**
+**実行内容:**
 ```text
 以下を確認してください：
-1. APIキー
+1. 必要なAPIキーが環境変数に設定されているか
    - echo $FAL_KEY
    - echo $GEMINI_API_KEY
-2. FFmpeg
+2. FFmpegがインストールされているか
    - ffmpeg -version
-3. librosa（ビート解析用、オプション）
-   - python -c "import librosa; print(librosa.__version__)"
-   - インストール: pip install librosa
+3. シナリオ（ストーリー）を考えておく
+   - 例: 「少女が魔法の森で不思議な生き物と出会う冒険物語」
+   - 例: 「カフェの一日を描いたスライスオブライフ」
+   - 例: 「宇宙飛行士が未知の惑星を探索する物語」
 ```
+
+**期待される結果**: APIキーが確認でき、シナリオのアイデアがある状態。
 
 ---
 
-## Step 2: パイプラインの実行
+## Step 2: パイプラインの全自動実行
 
-**AI楽曲生成 + MV作成:**
+**AskQuestionの設定例:**
+```json
+{
+  "title": "Step 2: 実行モードの選択",
+  "questions": [{
+    "id": "mode_choice",
+    "prompt": "どのモードで実行しますか？",
+    "options": [
+      {"id": "cost_optimize", "label": "コスト最適化モード（A-roll 4本 + B-roll Ken Burns, 約$2.80）"},
+      {"id": "full_i2v", "label": "フルI2Vモード（全シーン動画化, 約$5.60）"},
+      {"id": "broll_only", "label": "Ken Burnsのみ（テスト用, $0）"},
+      {"id": "explain", "label": "A-roll / B-rollの違いを説明して"}
+    ]
+  }]
+}
+```
+
+**コスト最適化モードの実行:**
+
 ```bash
 cd ~/ai-agent-camp
-python -m ugc.mv_pipeline \
-  --prompt "明るいポップソング、前向きな歌詞、テンポ120BPM" \
+python -m ugc.storyboard_anime_pipeline \
+  --scenario "（ユーザーが指定したシナリオ）" \
   --style anime \
   --engine kling \
   --num-scenes 8 \
-  --cost-optimize --aroll-count 3
+  --cost-optimize \
+  --aroll-count 4
 ```
 
-**既存楽曲 + MV作成:**
+**フルI2Vモードの実行:**
+
 ```bash
 cd ~/ai-agent-camp
-python -m ugc.mv_pipeline \
-  --music ./my_song.mp3 \
-  --style cinematic_live \
+python -m ugc.storyboard_anime_pipeline \
+  --scenario "（ユーザーが指定したシナリオ）" \
+  --style anime \
   --engine kling \
   --num-scenes 8
 ```
 
-**パイプラインが自動で実行する7ステップ:**
-1. **楽曲準備** → AI生成 or 既存ファイルコピー
-2. **ビート解析** (librosa) → `beat_analysis.json`（テンポ、ビート位置、セクション）
-3. **シーンプロンプト生成** (Gemini) → `scenes.json`（歌詞・雰囲気→映像プロンプト変換）
-4. **フレーム画像生成** (Gemini Image) → 8枚のシーン画像
-5. **動画クリップ生成** (Kling I2V + Ken Burns) → 8本のクリップ
-6. **ビート同期結合** (FFmpeg xfade) → `joined.mp4`
-7. **音楽ミックス** (FFmpeg) → `final.mp4`
+**パイプラインが自動で実行する5ステップ:**
+1. **シーン分解** (Gemini Flash) → `scenes.json`（シナリオを8シーンに分割）
+2. **フレーム画像生成** (Gemini Image) → `frames/frame_000.png` ~ `frame_007.png`
+3. **動画クリップ生成** (Kling I2V or Ken Burns) → `clips/clip_000.mp4` ~
+4. **クロスフェード結合** (FFmpeg xfade) → `joined.mp4`
+5. **最終出力** → `final.mp4`
+
+**期待される結果**: `output/ugc/storyboard_anime/` にフレーム画像と動画が生成される。
 
 ---
 
-## Step 3: ビート解析の確認
+## Step 3: フレーム画像の確認
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "Step 3: ビート解析結果",
+  "title": "Step 3: フレーム画像の確認",
   "questions": [{
     "id": "step_action",
-    "prompt": "ビート解析結果を確認しますか？",
+    "prompt": "生成されたフレーム画像を確認しますか？",
     "options": [
-      {"id": "check", "label": "解析結果を確認する"},
-      {"id": "explain_beat", "label": "ビート同期の仕組みを解説"},
+      {"id": "check", "label": "フレーム画像を確認する"},
+      {"id": "regenerate", "label": "特定のフレームを再生成"},
+      {"id": "change_style", "label": "別のスタイルで再生成"},
       {"id": "skip", "label": "次に進む"}
     ]
   }]
 }
+```
+
+**利用可能なスタイル:**
+- `anime` - アニメ調（デフォルト）
+- `modern_clean` - モダンクリーン
+- `vibrant_ugc` - 鮮やかなUGC風
+- `animal_crossing` - どうぶつの森風
+- `watercolor` - 水彩画風
+- `pixel_art` - ドット絵風
+- `cinematic_live` - 実写映画風
+
+---
+
+## Step 4: A-roll / B-roll と動画クリップの確認
+
+**AskQuestionの設定例:**
+```json
+{
+  "title": "Step 4: 動画クリップの確認",
+  "questions": [{
+    "id": "step_action",
+    "prompt": "動画クリップの確認方法を選んでください",
+    "options": [
+      {"id": "check_all", "label": "全クリップを確認"},
+      {"id": "check_aroll", "label": "A-rollクリップだけ確認"},
+      {"id": "explain_aroll", "label": "A-roll/B-rollの仕組みを解説"},
+      {"id": "skip", "label": "次に進む"}
+    ]
+  }]
+}
+```
+
+**A-roll / B-roll の解説:**
+
+```text
+【A-roll（メイン映像）】
+- I2V（Image-to-Video）エンジンで動画化
+- キャラクターの動き、重要なアクションシーン
+- コスト: Kling $0.70/本、Veo $8/本
+
+【B-roll（補助映像）】
+- Ken Burns効果（FFmpeg zoompan）で擬似動画化
+- 風景、背景、トランジション用
+- コスト: $0（ローカル処理）
+
+【効果の種類（Ken Burns）】
+zoom_in, zoom_out, pan_left, pan_right, slow_zoom, pan_down, pan_up
 ```
 
 **確認ポイント:**
-- テンポ（BPM）が楽曲に合っているか
-- セクション（verse/chorus）が正しく検出されているか
-- 各シーンの長さがビートに合っているか
-
-**ビート同期の仕組み:**
-```text
-楽曲のビート位置を検出
-    ↓
-ダウンビート（強拍）でシーン分割
-    ↓
-chorus部分 → A-roll（I2Vでダイナミックに）
-verse部分 → B-roll（Ken Burnsで落ち着いた映像）
-    ↓
-ビート位置でカット切替
-```
+- A-rollクリップ: 動きが自然か
+- B-rollクリップ: Ken Burns効果が適切か
+- scenes.json の `is_key_scene` が正しく判定されているか
 
 ---
 
-## Step 4: シーン画像と動画クリップの確認
+## Step 5: BGM追加（オプション）
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "Step 4: クリップの確認",
+  "title": "Step 5: BGM追加",
   "questions": [{
-    "id": "step_action",
-    "prompt": "確認方法を選んでください",
+    "id": "bgm_choice",
+    "prompt": "BGMを追加しますか？",
     "options": [
-      {"id": "check_frames", "label": "フレーム画像を確認"},
-      {"id": "check_clips", "label": "動画クリップを確認"},
-      {"id": "regenerate", "label": "特定シーンを再生成"},
-      {"id": "skip", "label": "次に進む"}
+      {"id": "add_bgm", "label": "BGMを追加する（ファイルを指定）"},
+      {"id": "no_bgm", "label": "BGMなしで完成"},
+      {"id": "generate", "label": "Suno AIでBGMを生成（後のレッスンで学習）"}
     ]
   }]
 }
 ```
 
-**利用可能なビジュアルスタイル:**
-- `anime` - アニメ調
-- `cinematic_live` - 実写映画風
-- `abstract` - 抽象的・アート風
-- `watercolor` - 水彩画風
-- `pixel_art` - ドット絵風
-- `vibrant_ugc` - 鮮やかなSNS風
-
-**シーンプロンプトの工夫:**
-```text
-verse（Aメロ/Bメロ）→ narrative（物語的）or landscape（風景）
-chorus（サビ）→ performance（パフォーマンス）or abstract（抽象的）
-bridge（ブリッジ）→ abstract（抽象的）or landscape（風景）
+**BGM追加の実行:**
+```bash
+cd ~/ai-agent-camp
+python -m ugc.storyboard_anime_pipeline \
+  --scenario "（同じシナリオ）" \
+  --style anime --engine kling \
+  --cost-optimize --aroll-count 4 \
+  --bgm ./my_bgm.mp3 --bgm-volume 0.20
 ```
 
 ---
 
-## Step 5: 完成MVの確認 & コスト振り返り
+## Step 6: 完成動画の確認 & コスト振り返り
 
 **実行内容:**
 ```text
-output/ugc/mv/ 内の summary.json を確認。
+output/ugc/storyboard_anime/ 内の summary.json を読んで結果を確認。
 
 確認項目:
-- 楽曲パス & 長さ
-- ビジュアルスタイル
-- シーン数（A-roll / B-roll 内訳）
-- 生成コスト
+- 最終動画のパス
+- シーン数（A-roll / B-roll の内訳）
+- 生成コスト（$）
+- 各ステップの成否
 
-コスト最適化テクニック:
-- chorus部分だけA-roll（I2V）にしてインパクトを集中
-- verse部分はKen Burns B-rollで落ち着いた映像に
-- これにより A-roll 3本 + B-roll 5本 = $2.10 + $0 = $2.10（映像のみ）
-- 詳細: https://ai-agent.camp/ja/course/module-15
+コスト最適化のヒント:
+- A-rollを4本に絞れば通常の1/4のコスト
+- Ken Burns効果は$0なのでB-rollは気軽に増やせる
+- 大量生成する場合はGenSpark等の定額サービスも検討
+  → 詳細: https://ai-agent.camp/ja/course/module-15
 ```
 
 ---
@@ -235,52 +293,75 @@ output/ugc/mv/ 内の summary.json を確認。
     "id": "trouble",
     "prompt": "当てはまる内容を1つ選んでください",
     "options": [
-      {"id": "trouble_1", "label": "AI楽曲生成が失敗する"},
-      {"id": "trouble_2", "label": "librosaのインストールでエラー"},
-      {"id": "trouble_3", "label": "ビートとシーン切替がずれる"},
-      {"id": "trouble_4", "label": "映像と音楽の雰囲気が合わない"}
+      {"id": "trouble_1", "label": "APIキーエラー"},
+      {"id": "trouble_2", "label": "フレーム画像のスタイルが統一されない"},
+      {"id": "trouble_3", "label": "I2V動画化がタイムアウト"},
+      {"id": "trouble_4", "label": "クロスフェード結合が失敗"}
     ]
   }]
 }
 ```
 
-### トラブル1: 「AI楽曲生成が失敗する」
-**原因**: fal.aiの音楽生成エンドポイントの変更
-**解決**: --music オプションで手持ちの音楽ファイルを使う
-
-### トラブル2: 「librosaのインストールでエラー」
-**原因**: 依存ライブラリの問題
+### トラブル1: 「APIキーエラー」
+**原因**: 環境変数が未設定
 **解決**:
 ```bash
-pip install librosa soundfile
-# それでもダメなら:
-pip install librosa --no-deps
-pip install soundfile numba
+cat .env | grep -E "FAL_KEY|GEMINI"
 ```
-librosaなしでも均等分割で動作します。
 
-### トラブル3: 「ビートとシーン切替がずれる」
-**原因**: ビート検出の精度
-**解決**: `--num-scenes` を減らす（8→6）とビートに合いやすくなる
+### トラブル2: 「フレーム画像のスタイルが統一されない」
+**原因**: Gemini画像生成のバリエーション
+**解決**: `--character` オプションでキャラクター説明を固定
+```bash
+python -m ugc.storyboard_anime_pipeline \
+  --scenario "..." --style anime --engine kling \
+  --character "茶色い髪のショートカットの少女、白いワンピース、大きな瞳"
+```
 
-### トラブル4: 「映像と音楽の雰囲気が合わない」
-**原因**: スタイル選択のミスマッチ
-**解決**: 楽曲のジャンルに合わせてスタイルを変更
-- ポップ → `anime` or `vibrant_ugc`
-- ロック → `cinematic_live`
-- エレクトロニック → `abstract`
-- クラシック → `watercolor`
+### トラブル3: 「I2V動画化がタイムアウト」
+**原因**: fal.aiの処理が遅い
+**解決**: `--cost-optimize` でI2V本数を減らすか、Kling → Veoに切替
+
+### トラブル4: 「クロスフェード結合が失敗」
+**原因**: 動画のフォーマットが不一致
+**解決**: パイプライン内で自動的にsimple concat にフォールバックします
+
+---
+
+## QA: /motion-review + /remotion-trace で品質検証
+
+I2V生成後、品質レビューと参考動画との比較を行います。
+
+入力内容:
+```
+/motion-review
+
+絵コンテアニメ動画の品質をチェックしてください。
+
+■ チェック対象: 生成された動画ファイル
+■ 重点項目:
+- シーン間のクロスフェード遷移が自然か
+- Ken Burns B-roll とI2V A-roll のテンポバランス
+- テロップの表示タイミングと読み取り時間
+```
+
+さらに品質を上げたい場合:
+```
+/remotion-trace
+
+参考動画のモーションパターンをトレースして、品質を向上させたい。
+現在の出力と比較してください。
+```
 
 ---
 
 ## チェックポイント
 - [ ] APIキーが正しく設定されている
-- [ ] 楽曲を準備できた（AI生成 or 手持ち）
-- [ ] ビート解析が実行できた
-- [ ] シーン画像が生成された
-- [ ] A-roll / B-roll の動画クリップが生成された
-- [ ] ビート同期でMVが完成した
-- [ ] 音楽とのミックスが成功した
+- [ ] シナリオからシーン分解ができた
+- [ ] フレーム画像が生成された
+- [ ] A-roll / B-rollの違いを理解した
+- [ ] 最終動画を確認できた
+- [ ] コスト戦略ガイドの内容を理解した
 
 ---
 
@@ -294,9 +375,8 @@ librosaなしでも均等分割で動作します。
     "id": "next_step",
     "prompt": "次に進む操作を選んでください",
     "options": [
-      {"id": "next_module", "label": "次のモジュール（/start-16-1 メール/LINE自動化）"},
-      {"id": "retry", "label": "別の楽曲・スタイルで再生成"},
-      {"id": "review_all", "label": "Module 15 の振り返り"},
+      {"id": "next_auto", "label": "次のセクション（/start-15-7 ミュージックビデオ）"},
+      {"id": "retry", "label": "別のシナリオ・スタイルで再生成"},
       {"id": "finish", "label": "ここで終了する"}
     ]
   }]
