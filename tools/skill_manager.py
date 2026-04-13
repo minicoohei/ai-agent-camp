@@ -31,7 +31,7 @@ logger = setup_logger("skill_manager")
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PROJECT_SKILLS_DIR = PROJECT_ROOT / "skills"
 GLOBAL_SKILLS_DIR = Path.home() / ".claude" / "skills"
-UPSTREAM_URL = "https://github.com/minicoohei/aiagent-base.git"
+UPSTREAM_URL = "https://github.com/minicoohei/ai-agent-camp.git/"
 REGISTRY_FILE = PROJECT_ROOT / "external-plugins.yaml"
 CACHE_DIR = Path.home() / ".cache" / "aiagent-base" / "plugins"
 

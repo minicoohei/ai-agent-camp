@@ -76,17 +76,20 @@ class TestCursorBashGuard:
     def test_ls_is_allowed(self):
         code, stdout, _ = run_cursor_bash_guard("ls -la")
         assert code == 0
-        assert stdout.strip() == ""
+        output = json.loads(stdout)
+        assert output["permission"] == "allow"
 
     def test_git_push_is_allowed(self):
         code, stdout, _ = run_cursor_bash_guard("git push origin main")
         assert code == 0
-        assert stdout.strip() == ""
+        output = json.loads(stdout)
+        assert output["permission"] == "allow"
 
     def test_gomi_is_allowed(self):
         code, stdout, _ = run_cursor_bash_guard("gomi test.txt")
         assert code == 0
-        assert stdout.strip() == ""
+        output = json.loads(stdout)
+        assert output["permission"] == "allow"
 
 
 class TestCursorWriteGuard:

@@ -71,9 +71,15 @@ BLOCK_PATTERNS: list[tuple[re.Pattern[str], str]] = [
 RM_PATTERN = re.compile(r'(?:^|[;&|]\s*)rm\s')
 
 
+def _allow_response() -> int:
+    """Cursor hook 向けの許可レスポンスを返す。"""
+    json.dump({"permission": "allow"}, sys.stdout)
+    return 0
+
+
 def main() -> int:
     if os.environ.get("CLAUDE_GUARDRAILS_SKIP") == "1":
-        return 0
+        return _allow_response()
 
     try:
         raw = sys.stdin.read()
@@ -81,12 +87,12 @@ def main() -> int:
     except (json.JSONDecodeError, OSError):
         # パース失敗時は fail-open（許可）。
         # Cursor Automation 等の非標準環境でコマンドが全拒否される問題を防ぐ。
-        return 0
+        return _allow_response()
 
     # Cursor 形式: {command: "...", cwd: "...", hook_event_name: "beforeShellExecution"}
     command = data.get("command", "")
     if not command:
-        return 0
+        return _allow_response()
 
     # --- ブロックパターンチェック ---
     for pattern, message in BLOCK_PATTERNS:
@@ -120,7 +126,7 @@ def main() -> int:
         json.dump(output, sys.stdout)
         return 0
 
-    return 0
+    return _allow_response()
 
 
 if __name__ == "__main__":
