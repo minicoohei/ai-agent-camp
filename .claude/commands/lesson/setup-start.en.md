@@ -1,5 +1,5 @@
 ---
-description: "Training environment setup (run first)"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["Codex Desktop or Cursor installed"]
 level: "beginner"

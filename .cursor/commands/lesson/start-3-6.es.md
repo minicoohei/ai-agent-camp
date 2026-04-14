@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-3-6 — Module 3 Lesson 3-6: Ejercicio resumen de analisis de capturas de pantalla"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module03-screenshot"
 prerequisites: ["start-3-1", "start-3-2", "start-3-3", "start-3-4", "start-3-5"]
 duration: "~40 min"

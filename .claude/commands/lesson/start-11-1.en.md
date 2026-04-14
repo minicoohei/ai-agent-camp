@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-11-1 — Module 11 Lesson 11-1: GitHub Actions Basics and CI/CD Setup"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module11-github-actions"
 prerequisites: ["start-0-1"]
 duration: "~35 min"

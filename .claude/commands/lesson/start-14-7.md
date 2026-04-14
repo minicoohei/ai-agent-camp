@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-14-7 — Module 14 Lesson 14-7: 並列実行と仕上げ - 複数記事の同時処理"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module14-article-writing/chapter.yaml"
 category: "lesson"
 duration: "40分"

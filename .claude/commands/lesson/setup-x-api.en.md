@@ -1,5 +1,5 @@
 ---
-description: "X (Twitter) API Setup (with complete guide)"
+description: "Lesson command"
 duration: "~15 min"
 prerequisites: ["Have an X account", "Browser available"]
 level: "beginner"

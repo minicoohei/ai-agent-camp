@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-16-7 — Module 16 Lesson 16-7: Creación de clave API y primer envío de correo con Resend CLI"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "25 min"

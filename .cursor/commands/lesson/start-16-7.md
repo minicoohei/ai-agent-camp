@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-16-7 — Module 16 Lesson 16-7: APIキー作成 & Resend CLI で初回メール送信"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "25分"

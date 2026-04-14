@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-12-2 — Module 12 Lesson 12-2: Database Operations (CRUD)"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module12-notion"
 prerequisites: ["start-12-1"]
 duration: "~30 min"

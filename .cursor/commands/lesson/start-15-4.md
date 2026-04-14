@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-4 — Module 15 Lesson 15-4: Clipper × Remotion でマーケ素材を自動生成"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video/chapter.yaml"
 duration: 45分
 prerequisites: ["start-15-3"]

@@ -1,5 +1,5 @@
 ---
-description: "セキュリティ設定の自動セットアップ"
+description: "Lesson command"
 duration: "約5分"
 prerequisites: ["ai-agent-camp フォルダを Cursor で開いている"]
 level: "beginner"

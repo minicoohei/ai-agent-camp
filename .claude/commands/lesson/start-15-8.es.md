@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-8 — Module 15 Lesson 15-8: Crear video de narración de diapositivas (análisis HTML + TTS + composición de presentador)"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "~35 min"
 prerequisites: ["start-15-5"]

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-2 — Module 15 Lesson 15-2: Create slide-shoot style text animations with Remotion"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "~40 min"
 prerequisites: ["setup-remotion"]

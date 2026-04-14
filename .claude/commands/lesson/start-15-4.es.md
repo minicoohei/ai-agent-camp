@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-4 — Module 15 Lesson 15-4: Clipper x Remotion para generación automática de materiales de marketing"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video/chapter.yaml"
 duration: 45 min
 prerequisites: ["start-15-3"]

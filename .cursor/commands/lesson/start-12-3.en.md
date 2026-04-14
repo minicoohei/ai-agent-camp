@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-12-3 — Module 12 Lesson 12-3: Page Creation and Content Management"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module12-notion"
 duration: "~30 min"
 prerequisites: ["start-0-1"]

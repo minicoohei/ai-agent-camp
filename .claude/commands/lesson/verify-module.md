@@ -1,5 +1,5 @@
 ---
-description: "モジュール完了チェック（AI評価付き）"
+description: "Lesson command"
 ---
 
 # /verify-module [モジュール番号]

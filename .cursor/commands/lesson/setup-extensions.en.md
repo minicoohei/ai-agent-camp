@@ -1,5 +1,5 @@
 ---
-description: "Automatic Extension Setup"
+description: "Lesson command"
 duration: "~5 min"
 prerequisites: ["Cursor is running"]
 level: "beginner"

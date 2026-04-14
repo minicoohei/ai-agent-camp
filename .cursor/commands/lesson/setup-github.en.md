@@ -1,5 +1,5 @@
 ---
-description: "GitHub Account Setup and Repository Creation"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["/setup-start completed"]
 level: "beginner"

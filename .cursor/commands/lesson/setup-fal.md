@@ -1,5 +1,5 @@
 ---
-description: "fal.ai API セットアップ（完全ガイド付き）"
+description: "Lesson command"
 duration: "約10分"
 prerequisites: ["ブラウザが使える", "GitHub または Google アカウントを持っている"]
 level: "beginner"

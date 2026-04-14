@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-7-1 — Module 7 Lesson 7-1: スキル設計の基礎（Anthropicベストプラクティス）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module07-skill-commands"
 prerequisites: ["start-6-2"]
 duration: "約20分"

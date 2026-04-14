@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-0-1 — Module 0 Lesson 0-1: 環境セットアップ確認"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson02-setup/ch01-environment"
 duration: "約15分"
 prerequisites: ["Codex Desktop または Cursor をインストール済み", "ai-agent-camp フォルダを開いている"]

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-3 — Module 15 Lesson 15-3: YouTube Clipper で動画ハイライト抽出"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video/chapter.yaml"
 duration: 40分
 prerequisites: ["start-15-2"]

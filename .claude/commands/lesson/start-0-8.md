@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-0-8 — Module 0 Lesson 0-8: ツール選択ガイド（Cursor / Claude Code / Codex）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson02-setup/ch01-environment"
 duration: "約10分"
 prerequisites: []

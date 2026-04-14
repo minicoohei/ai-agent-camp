@@ -1,5 +1,5 @@
 ---
-description: "Configuración automática de seguridad"
+description: "Lesson command"
 duration: "~5 min"
 prerequisites: ["La carpeta ai-agent-camp está abierta en Cursor"]
 level: "beginner"

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-9-1 — Module 9 Lesson 9-1: Slack Message Keyword Extended Search"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module09-slack"
 prerequisites: ["start-0-4"]
 duration: "~25 min"

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-7-3 — Module 7 Lesson 7-3: Pruebas e iteración (Mejora de calidad de skills)"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module07-skill-commands"
 prerequisites: ["start-7-2"]
 duration: "~25 min"

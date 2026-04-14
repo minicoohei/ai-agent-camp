@@ -1,5 +1,5 @@
 ---
-description: "Gemini API セットアップ（完全ガイド付き）"
+description: "Lesson command"
 duration: "約10分"
 prerequisites: ["Googleアカウントを持っている", "ブラウザが使える"]
 level: "beginner"

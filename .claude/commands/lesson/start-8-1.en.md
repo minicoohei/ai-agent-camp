@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-8-1 — Module 8 Lesson 8-1: BigQuery Connection and Authentication Setup"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module08-data-analysis"
 duration: "~25 min"
 prerequisites: ["start-0-3"]

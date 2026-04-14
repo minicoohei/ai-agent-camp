@@ -1,5 +1,5 @@
 ---
-description: "Automatic Security Settings Setup"
+description: "Lesson command"
 duration: "~5 min"
 prerequisites: ["ai-agent-camp folder is open in Cursor"]
 level: "beginner"

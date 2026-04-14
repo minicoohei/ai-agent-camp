@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-8-4 — Module 8 Lesson 8-4: データ可視化とダッシュボード作成"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module08-data-analysis"
 prerequisites: ["start-8-1", "start-8-2", "start-8-3"]
 duration: "約35分"

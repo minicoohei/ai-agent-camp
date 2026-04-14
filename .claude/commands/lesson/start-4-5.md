@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-4-5 — Module 4 Lesson 4-5: Google Drive操作"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module04-google-workspace/chapter.yaml"
 duration: "約25分"
 prerequisites: ["start-4-1"]

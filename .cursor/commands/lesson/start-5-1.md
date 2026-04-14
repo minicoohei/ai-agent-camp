@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-5-1 — Module 5 Lesson 5-1: PPTX解析（構造分析、テンプレート抽出）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module05-pptx"
 duration: "約25分"
 prerequisites: ["start-0-1"]

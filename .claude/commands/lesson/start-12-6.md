@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-12-6 — Module 12 Lesson 12-6: Notion への書き込み・更新と安全な確認フロー"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module12-notion"
 prerequisites: ["start-12-5"]
 duration: "約35分"

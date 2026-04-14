@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-0-2 — Module 0 Lesson 0-2: 拡張機能インストール"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson02-setup/ch02-extensions"
 duration: "約5分"
 prerequisites: ["Lesson 0-1 完了"]

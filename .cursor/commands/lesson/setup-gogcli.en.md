@@ -1,5 +1,5 @@
 ---
-description: "gogcli (Google Workspace CLI) Setup (Complete Guide)"
+description: "Lesson command"
 duration: "~15 min"
 prerequisites: ["Have a Google account", "Browser available"]
 level: "beginner"

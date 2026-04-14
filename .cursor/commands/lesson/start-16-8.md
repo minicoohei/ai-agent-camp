@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-16-8 — Module 16 Lesson 16-8: Resend Sequence & CLI でドリップキャンペーン自動化"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "30分"

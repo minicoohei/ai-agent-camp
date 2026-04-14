@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-1 — Module 15 Lesson 15-1: 動画からキーフレームを抽出して分析"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "約30分"
 prerequisites: ["start-0-3"]

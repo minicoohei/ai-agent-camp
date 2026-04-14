@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-16-3 — Module 16 Lesson 16-3: Send email with gogcli - new, reply, and attachments"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "~35 min"

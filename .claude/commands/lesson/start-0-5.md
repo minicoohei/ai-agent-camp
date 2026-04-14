@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-0-5 — Module 0 Lesson 0-5: セキュリティ設定確認"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson02-setup/ch03-api-settings"
 duration: "約5分"
 prerequisites: ["start-0-1", "start-0-2", "start-0-3", "start-0-4"]

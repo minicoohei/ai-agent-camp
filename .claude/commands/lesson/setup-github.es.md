@@ -1,5 +1,5 @@
 ---
-description: "Configuración de cuenta de GitHub y creación de repositorio"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["/setup-start completado"]
 level: "beginner"

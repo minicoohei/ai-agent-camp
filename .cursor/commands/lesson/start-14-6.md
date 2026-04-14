@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-14-6 — Module 14 Lesson 14-6: ファクトチェック - 事実検証エージェント"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module14-article-writing/chapter.yaml"
 category: "lesson"
 duration: "30分"

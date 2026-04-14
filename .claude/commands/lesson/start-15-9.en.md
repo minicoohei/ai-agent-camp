@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-9 — Module 15 Lesson 15-9: Create a product demo video (green screen avatar + screenshot compositing)"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "~30 min"
 prerequisites: ["start-15-5"]

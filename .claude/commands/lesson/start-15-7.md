@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-7 — Module 15 Lesson 15-7: AIでミュージックビデオを作成する（Suno + ビート同期 + シーン動画化）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "約45分"
 prerequisites: ["start-15-5"]

@@ -1,5 +1,5 @@
 ---
-description: "Remotion Setup (npm install + operation verification guide)"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["Node.js 18 or higher installed"]
 level: "beginner"

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-14-3 — Module 14 Lesson 14-3: Article Writing - Style-Applied Draft Creation"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module14-article-writing/chapter.yaml"
 category: "lesson"
 duration: "~35 min"

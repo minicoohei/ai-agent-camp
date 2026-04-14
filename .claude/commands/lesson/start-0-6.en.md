@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-0-6 — Module 0 Lesson 0-6: Codex CLI Setup"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson02-setup/ch01-environment"
 duration: "~15 min"
 prerequisites: ["Node.js 18 or higher is installed", "OpenAI API key obtained"]

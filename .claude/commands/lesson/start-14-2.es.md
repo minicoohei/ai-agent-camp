@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-14-2 — Module 14 Lesson 14-2: Redacción de artículos - Aprendizaje de estilo y creación de perfil de estilo"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module14-article-writing/chapter.yaml"
 category: "lesson"
 duration: "~30 min"

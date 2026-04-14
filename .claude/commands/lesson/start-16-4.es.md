@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-16-4 — Module 16 Lesson 16-4: Diseño de secuencia de correos - Campaña de goteo"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "30 min"

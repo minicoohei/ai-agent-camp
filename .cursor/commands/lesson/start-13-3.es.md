@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-13-3 — Module 13 Lesson 13-3: Diseño de Landing Page - Creación de archivo de diseño con Pencil"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module13-lp/chapter.yaml"
 prerequisites: ["start-13-2", "setup-pencil"]
 duration: "~30 min"

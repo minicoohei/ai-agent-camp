@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-16-6 — Module 16 Lesson 16-6: Resend registration & domain setup - Vercel DNS auto-configuration"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "~30 min"

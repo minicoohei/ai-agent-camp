@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-5-2 — Module 5 Lesson 5-2: PPTX Editing and Auto-generation"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module05-pptx"
 prerequisites: ["start-5-1"]
 duration: "~30 min"

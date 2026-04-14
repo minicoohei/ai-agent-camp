@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-18-4 — Module 18 Lesson 18-4: PM - Three Reviews (Devil's Advocate / Security / Business Planning)"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "~40 min"
 category: "lesson"

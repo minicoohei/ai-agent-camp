@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-7-8 — Module 7 Lesson 7-8: テスト・デバッグ・イテレーション"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module07-skill-commands/chapter.yaml"
 duration: "約30分"
 prerequisites: ["start-7-6", "start-7-7"]

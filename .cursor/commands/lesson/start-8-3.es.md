@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-8-3 — Module 8 Lesson 8-3: Analisis interactivo con Marimo Notebooks"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module08-data-analysis"
 prerequisites: ["start-8-1", "start-8-2"]
 duration: "~40 min"

@@ -1,5 +1,5 @@
 ---
-description: "Configuración del entorno de capacitación (ejecutar primero)"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["Codex Desktop o Cursor instalado"]
 level: "beginner"

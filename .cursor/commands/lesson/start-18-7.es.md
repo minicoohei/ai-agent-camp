@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-18-7 — Module 18 Lesson 18-7: PM - Diagrama de transición de pantallas y wireframes"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "~25 min"
 category: "lesson"

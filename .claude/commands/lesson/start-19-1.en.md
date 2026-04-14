@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-19-1 — Module 19 Lesson 19-1: Microsoft Office Integration (Outlook) Introduction"
+description: "Lesson command"
 category: "lesson"
 chapter: "courses/aiagent/lesson03-core/module19-outlook-windows"
 duration: "~30 min"

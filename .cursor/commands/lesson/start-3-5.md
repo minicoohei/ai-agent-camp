@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-3-5 — Module 3 Lesson 3-5: 複数スクリーンショットの一括分析"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module03-screenshot"
 prerequisites: ["start-3-1", "start-3-2", "start-3-3", "start-3-4"]
 duration: "約30分"

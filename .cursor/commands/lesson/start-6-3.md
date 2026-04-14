@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-6-3 — Module 6 Lesson 6-3: Rules設定（Cursor Rules）とAI行動制御"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module06-agent-development"
 prerequisites: ["start-6-1"]
 duration: "約25分"

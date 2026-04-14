@@ -1,5 +1,5 @@
 ---
-description: "GitHub アカウント設定とリポジトリ作成"
+description: "Lesson command"
 duration: "約10分"
 prerequisites: ["/setup-start 完了"]
 level: "beginner"

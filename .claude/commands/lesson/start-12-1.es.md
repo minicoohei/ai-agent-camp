@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-12-1 — Module 12 Lesson 12-1: Conexion y autenticacion de la API de Notion"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module12-notion"
 duration: "~30 min"
 prerequisites: ["start-0-1"]

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-16-8 — Module 16 Lesson 16-8: Automate drip campaigns with Resend Sequence & CLI"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "~30 min"

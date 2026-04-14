@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-12-4 — Module 12 Lesson 12-4: 1回の取得で触れる範囲を要約して返す"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module12-notion"
 prerequisites: ["start-12-3"]
 duration: "約35分"

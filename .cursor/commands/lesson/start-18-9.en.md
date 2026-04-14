@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-18-9 — Module 18 Lesson 18-9: PM - System Architecture & API Design"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "~30 min"
 category: "lesson"

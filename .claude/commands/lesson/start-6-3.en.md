@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-6-3 — Module 6 Lesson 6-3: Cursor Rules Configuration"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module06-agent-development"
 prerequisites: ["start-6-1"]
 duration: "~25 min"

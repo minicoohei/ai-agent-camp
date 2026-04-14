@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-13-4 — Module 13 Lesson 13-4: Diseño de Landing Page - Crear una Landing Page funcional"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module13-lp/chapter.yaml"
 prerequisites: ["start-13-3"]
 duration: "~30 min"

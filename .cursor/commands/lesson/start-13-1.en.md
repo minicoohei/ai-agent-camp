@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-13-1 — Module 13 Lesson 13-1: Landing Page Design - Organizing Your Value Proposition"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module13-lp/chapter.yaml"
 duration: "~20 min"
 prerequisites: ["start-0-1"]

@@ -1,5 +1,5 @@
 ---
-description: Review and improvement feedback for practical exercises
+description: "Lesson command"
 ---
 
 # Exercise Review

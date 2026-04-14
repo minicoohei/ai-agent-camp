@@ -1,5 +1,5 @@
 ---
-description: "Configuración de la API de fal.ai (Guía completa)"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["Navegador disponible", "Tener cuenta de GitHub o Google"]
 level: "beginner"

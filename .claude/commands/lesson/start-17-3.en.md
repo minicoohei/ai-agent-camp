@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-17-3 — Module 17 Lesson 17-3: Copywriting"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module17-marketing"
 duration: "~35 min"
 prerequisites: ["start-0-3"]

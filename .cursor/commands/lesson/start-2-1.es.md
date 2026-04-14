@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-2-1 — Module 2 Lesson 2-1: Generación de diagramas de flujo"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module02-diagram"
 duration: "~25 min"
 prerequisites: ["start-0-3"]

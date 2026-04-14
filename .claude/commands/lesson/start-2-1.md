@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-2-1 — Module 2 Lesson 2-1: フロー図生成"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module02-diagram"
 duration: "約25分"
 prerequisites: ["start-0-3"]

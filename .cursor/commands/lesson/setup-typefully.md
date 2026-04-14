@@ -1,5 +1,5 @@
 ---
-description: "Typefully API セットアップ（完全ガイド付き）"
+description: "Lesson command"
 duration: "約10分"
 prerequisites: ["X (Twitter) アカウントを持っている", "ブラウザが使える"]
 level: "beginner"

@@ -1,5 +1,5 @@
 ---
-description: "Configuración automática de extensiones"
+description: "Lesson command"
 duration: "~5 min"
 prerequisites: ["Cursor está en ejecución"]
 level: "beginner"

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-18-20 — Module 18 Lesson 18-20: PM - 総合演習（カプストーン）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "30分"
 category: "lesson"

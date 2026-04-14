@@ -1,5 +1,5 @@
 ---
-description: "BigQuery / GCP 認証セットアップ（gcloud CLI 完全ガイド）"
+description: "Lesson command"
 duration: "約15分"
 prerequisites: ["Googleアカウントを持っている", "ブラウザが使える"]
 level: "beginner"

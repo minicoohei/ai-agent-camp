@@ -1,5 +1,5 @@
 ---
-description: "X (Twitter) API セットアップ（完全ガイド付き）"
+description: "Lesson command"
 duration: "約15分"
 prerequisites: ["Xアカウントを持っている", "ブラウザが使える"]
 level: "beginner"

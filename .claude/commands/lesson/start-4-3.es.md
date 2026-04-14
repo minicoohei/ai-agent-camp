@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-4-3 — Module 4 Lesson 4-3: Operaciones de Google Calendar"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module04-google-workspace/chapter.yaml"
 duration: "~25 min"
 prerequisites: ["start-4-1"]

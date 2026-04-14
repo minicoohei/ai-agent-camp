@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-17-2 — Module 17 Lesson 17-2: SEO調査 & キーワード戦略"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module17-marketing"
 duration: "約40分"
 prerequisites: ["start-0-3"]

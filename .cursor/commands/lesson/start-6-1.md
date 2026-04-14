@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-6-1 — Module 6 Lesson 6-1: カスタムCommand作成基本"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module06-agent-development"
 duration: "約30分"
 prerequisites: ["start-0-1"]

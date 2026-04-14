@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-17-4 — Module 17 Lesson 17-4: Pencil MCPでデザインモックアップ"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module17-marketing"
 duration: "約35分"
 prerequisites: ["start-17-3"]

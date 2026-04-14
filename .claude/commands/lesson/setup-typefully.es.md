@@ -1,5 +1,5 @@
 ---
-description: "Configuración de Typefully API (con guía completa)"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["Tener cuenta de X (Twitter)", "Navegador disponible"]
 level: "beginner"

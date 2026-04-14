@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-18-8 — Module 18 Lesson 18-8: PM - DB設計（ER図 & エンティティ仕様書）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "25分"
 category: "lesson"

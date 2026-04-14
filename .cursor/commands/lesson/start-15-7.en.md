@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-7 — Module 15 Lesson 15-7: Create a music video with AI (Suno + beat sync + scene video conversion)"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "~45 min"
 prerequisites: ["start-15-5"]

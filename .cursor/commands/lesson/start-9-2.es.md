@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-9-2 — Module 9 Lesson 9-2: Resumen y reporte de canales de Slack"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module09-slack"
 prerequisites: ["start-9-1"]
 duration: "~25 min"

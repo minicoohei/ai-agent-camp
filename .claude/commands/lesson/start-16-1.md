@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-16-1 — Module 16 Lesson 16-1: Gmail セットアップ - gogcli 認証とメール同期"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "25分"

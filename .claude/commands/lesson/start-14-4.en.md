@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-14-4 — Module 14 Lesson 14-4: Article Writing - Illustration Planning and Generation with nanobanana + PlantUML"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module14-article-writing/chapter.yaml"
 category: "lesson"
 duration: "~40 min"

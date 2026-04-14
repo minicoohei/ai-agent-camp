@@ -1,5 +1,5 @@
 ---
-description: "Configuración de la API de ElevenLabs (Guía completa)"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["Navegador disponible", "Tener correo electrónico o cuenta de Google/GitHub"]
 level: "beginner"

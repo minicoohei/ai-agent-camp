@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-7-5 — Module 7 Lesson 7-5: 既存Skill/Commandの構造理解と分析"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module07-skill-commands/chapter.yaml"
 duration: "約30分"
 prerequisites: ["start-6-1", "start-6-2"]

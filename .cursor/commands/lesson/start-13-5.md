@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-13-5 — Module 13 Lesson 13-5: LP制作 - Vercelデプロイ"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module13-lp/chapter.yaml"
 prerequisites: ["start-13-4"]
 duration: "約15分"

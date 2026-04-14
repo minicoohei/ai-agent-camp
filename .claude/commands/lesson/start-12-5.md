@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-12-5 — Module 12 Lesson 12-5: Notion のファイル・添付を取得しエージェント側で確認する"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module12-notion"
 prerequisites: ["start-12-4"]
 duration: "約30分"

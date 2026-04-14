@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-18-3 — Module 18 Lesson 18-3: PM - PRD作成（Working Backwards方式）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module18-pm-sysdef/chapter.yaml"
 duration: "30分"
 category: "lesson"

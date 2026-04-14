@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-16-2 — Module 16 Lesson 16-2: Incoming email analysis & task extraction - check-inbox"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "~30 min"

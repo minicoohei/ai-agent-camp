@@ -1,5 +1,5 @@
 ---
-description: "Module completion check (with AI evaluation)"
+description: "Lesson command"
 ---
 
 # /verify-module [module number]

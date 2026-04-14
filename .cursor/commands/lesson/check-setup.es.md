@@ -1,5 +1,5 @@
 ---
-description: "Verificación automática del estado de configuración del entorno"
+description: "Lesson command"
 duration: "~2 min"
 prerequisites: ["La carpeta ai-agent-camp esta abierta en Codex o Cursor"]
 level: "beginner"

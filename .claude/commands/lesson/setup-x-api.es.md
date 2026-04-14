@@ -1,5 +1,5 @@
 ---
-description: "Configuración de X (Twitter) API (con guía completa)"
+description: "Lesson command"
 duration: "~15 min"
 prerequisites: ["Tener una cuenta de X", "Navegador disponible"]
 level: "beginner"

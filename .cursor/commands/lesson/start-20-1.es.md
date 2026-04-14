@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-20-1 — Module 20 Lesson 20-1: Integración con Freee/MoneyForward - Introducción"
+description: "Lesson command"
 category: "lesson"
 chapter: "courses/aiagent/lesson03-core/module20-freee-mf"
 duration: "~30 min"

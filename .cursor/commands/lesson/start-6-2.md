@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-6-2 — Module 6 Lesson 6-2: Skill作成基本（共通 skills/ ディレクトリ）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module06-agent-development"
 prerequisites: ["start-6-1"]
 duration: "約35分"

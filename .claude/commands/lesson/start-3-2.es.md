@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-3-2 — Module 3 Lesson 3-2: Diagnostico avanzado de errores"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module03-screenshot"
 prerequisites: ["start-3-1"]
 duration: "~25 min"

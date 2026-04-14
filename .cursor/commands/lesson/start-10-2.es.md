@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-10-2 — Module 10 Lesson 10-2: Automatizacion de hojas de calculo con GAS"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module10-gas"
 prerequisites: ["start-10-1"]
 duration: "~30 min"

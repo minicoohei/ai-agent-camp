@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-2-3 — Module 2 Lesson 2-3: Diagrams for Presentation Materials"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module02-diagram"
 prerequisites: ["start-2-1"]
 duration: "~30 min"

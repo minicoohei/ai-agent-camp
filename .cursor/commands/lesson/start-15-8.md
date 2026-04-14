@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-8 — Module 15 Lesson 15-8: スライド解説動画を作成する（HTML解析 + TTS + プレゼンター合成）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "約35分"
 prerequisites: ["start-15-5"]

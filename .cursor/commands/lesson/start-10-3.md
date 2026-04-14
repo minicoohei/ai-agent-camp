@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-10-3 — Module 10 Lesson 10-3: Google Sheets自動化・データ処理レポート"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module10-gas"
 prerequisites: ["start-10-1", "start-10-2"]
 duration: "約30分"

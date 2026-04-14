@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-3-1 — Module 3 Lesson 3-1: スクリーンショット分析基礎"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module03-screenshot"
 duration: "約25分"
 prerequisites: ["start-0-3"]

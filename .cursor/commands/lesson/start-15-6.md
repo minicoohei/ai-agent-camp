@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-6 — Module 15 Lesson 15-6: 絵コンテからアニメ動画を生成する（Gemini画像 + Kling/Veo I2V + FFmpeg結合）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "約40分"
 prerequisites: ["start-15-5"]

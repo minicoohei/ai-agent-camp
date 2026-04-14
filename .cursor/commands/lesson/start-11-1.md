@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-11-1 — Module 11 Lesson 11-1: GitHub Actions Workflow基本・自動化"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module11-github-actions"
 prerequisites: ["start-0-1"]
 duration: "約35分"

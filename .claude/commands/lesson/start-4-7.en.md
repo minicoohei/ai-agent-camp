@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-4-7 — Module 4 Lesson 4-7: AI Secretary Workflow Integration"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module04-google-workspace/chapter.yaml"
 duration: "~30 min"
 prerequisites: ["start-4-1", "start-4-2", "start-4-3", "start-4-4", "start-4-5", "start-4-6"]

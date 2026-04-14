@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-2 — Module 15 Lesson 15-2: Remotion でスライドシュート風テキストアニメーションを作る"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "約40分"
 prerequisites: ["setup-remotion"]

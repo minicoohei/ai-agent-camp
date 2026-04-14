@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-10-1 — Module 10 Lesson 10-1: Clasp基本・GASプロジェクト管理"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module10-gas"
 duration: "約25分"
 prerequisites: ["start-0-1"]

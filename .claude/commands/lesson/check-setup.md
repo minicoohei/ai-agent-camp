@@ -1,5 +1,5 @@
 ---
-description: "環境セットアップ状態の自動チェック"
+description: "Lesson command"
 duration: "約2分"
 prerequisites: ["ai-agent-camp フォルダを Codex または Cursor で開いている"]
 level: "beginner"

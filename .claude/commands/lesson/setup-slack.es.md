@@ -1,5 +1,5 @@
 ---
-description: "Configuración de Slack API (con guía completa)"
+description: "Lesson command"
 duration: "~15 min"
 prerequisites: ["Acceso de administrador a un espacio de trabajo de Slack"]
 level: "beginner"

@@ -1,5 +1,5 @@
 ---
-description: "Configuración de la API de Gemini (Guía completa)"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["Tener una cuenta de Google", "Navegador disponible"]
 level: "beginner"

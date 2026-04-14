@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-13-2 — Module 13 Lesson 13-2: Landing Page Design - Wireframe Creation"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module13-lp/chapter.yaml"
 prerequisites: ["start-13-1"]
 duration: "~25 min"

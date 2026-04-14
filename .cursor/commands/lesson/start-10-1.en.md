@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-10-1 — Module 10 Lesson 10-1: GAS Environment Setup with Clasp"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module10-gas"
 duration: "~25 min"
 prerequisites: ["start-0-1"]

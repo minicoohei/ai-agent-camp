@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-3-4 — Module 3 Lesson 3-4: Configuracion de monitoreo de panel de control"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module03-screenshot"
 prerequisites: ["start-3-1"]
 duration: "~25 min"

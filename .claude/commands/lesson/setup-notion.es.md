@@ -1,5 +1,5 @@
 ---
-description: "Configuración de Notion CLI (ncli) + MCP (Guía completa)"
+description: "Lesson command"
 duration: "~15 min"
 prerequisites: ["Tener cuenta de Notion (plan gratuito OK)", "Navegador disponible", "Node.js 18+"]
 level: "beginner"

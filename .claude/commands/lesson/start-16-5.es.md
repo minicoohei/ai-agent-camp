@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-16-5 — Module 16 Lesson 16-5: Flujo de trabajo de automatización de correo - GitHub Actions y ejercicio integral"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module16-email-automation/chapter.yaml"
 category: "lesson"
 duration: "30 min"

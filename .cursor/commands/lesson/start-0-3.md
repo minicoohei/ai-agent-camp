@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-0-3 — Module 0 Lesson 0-3: Gemini API設定"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson02-setup/ch03-api-settings"
 duration: "約10分"
 prerequisites: ["start-0-1", "start-0-2"]

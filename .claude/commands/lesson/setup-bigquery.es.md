@@ -1,5 +1,5 @@
 ---
-description: "Configuración de autenticación BigQuery / GCP (guía completa de gcloud CLI)"
+description: "Lesson command"
 duration: "~15 min"
 prerequisites: ["Tener una cuenta de Google", "Navegador disponible"]
 level: "beginner"

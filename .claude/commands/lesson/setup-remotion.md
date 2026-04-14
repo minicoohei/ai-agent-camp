@@ -1,5 +1,5 @@
 ---
-description: "Remotion セットアップ（npm install + 動作確認ガイド付き）"
+description: "Lesson command"
 duration: "約10分"
 prerequisites: ["Node.js 18以上がインストール済み"]
 level: "beginner"

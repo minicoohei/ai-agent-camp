@@ -1,5 +1,5 @@
 ---
-description: "Configuración de Pencil MCP (guía de descarga y configuración)"
+description: "Lesson command"
 duration: "~15 min"
 prerequisites: ["Navegador disponible", "Claude Code o Cursor instalado"]
 level: "beginner"

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-3-6 — Module 3 Lesson 3-6: 総合演習: 操作マニュアル生成"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module03-screenshot"
 prerequisites: ["start-3-1", "start-3-2", "start-3-3", "start-3-4", "start-3-5"]
 duration: "約40分"

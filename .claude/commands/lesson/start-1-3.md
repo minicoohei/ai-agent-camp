@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-1-3 — Module 1 Lesson 1-3: nanobanana画像編集"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module01-banner"
 prerequisites: ["start-1-1"]
 duration: "約30分"

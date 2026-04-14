@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-11-2 — Module 11 Lesson 11-2: GitHub Actions Secrets設定・Google連携"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module11-github-actions"
 prerequisites: ["start-11-1"]
 duration: "約35分"

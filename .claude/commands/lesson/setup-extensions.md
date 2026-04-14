@@ -1,5 +1,5 @@
 ---
-description: "拡張機能の自動セットアップ"
+description: "Lesson command"
 duration: "約5分"
 prerequisites: ["Cursor が起動している"]
 level: "beginner"

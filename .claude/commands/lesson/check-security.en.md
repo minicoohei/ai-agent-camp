@@ -1,5 +1,5 @@
 ---
-description: Security settings verification and best practices check
+description: "Lesson command"
 ---
 
 # Security Settings Verification

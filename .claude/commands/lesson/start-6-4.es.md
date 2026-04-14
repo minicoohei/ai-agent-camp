@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-6-4 — Module 6 Lesson 6-4: Integracion de SubAgents"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module06-agent-development"
 prerequisites: ["start-6-1", "start-6-2", "start-6-3"]
 duration: "~40 min"

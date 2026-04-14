@@ -1,5 +1,5 @@
 ---
-description: "Verificación de finalización del módulo (con evaluación de IA)"
+description: "Lesson command"
 ---
 
 # /verify-module [número de módulo]

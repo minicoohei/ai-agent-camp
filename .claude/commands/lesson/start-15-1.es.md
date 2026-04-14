@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-1 — Module 15 Lesson 15-1: Extraer y analizar fotogramas clave de video"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "~30 min"
 prerequisites: ["start-0-3"]

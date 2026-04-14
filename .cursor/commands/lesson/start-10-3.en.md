@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-10-3 — Module 10 Lesson 10-3: Scheduled Execution and Trigger Setup"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module10-gas"
 prerequisites: ["start-10-1", "start-10-2"]
 duration: "~30 min"

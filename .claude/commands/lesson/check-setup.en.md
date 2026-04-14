@@ -1,5 +1,5 @@
 ---
-description: "Automatic check of environment setup status"
+description: "Lesson command"
 duration: "~2 min"
 prerequisites: ["ai-agent-camp folder is open in Codex or Cursor"]
 level: "beginner"

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-1-2 — Module 1 Lesson 1-2: 応用バナー（Instagram, Facebook）"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module01-banner"
 prerequisites: ["start-1-1"]
 duration: "約30分"

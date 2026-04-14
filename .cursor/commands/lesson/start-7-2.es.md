@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-7-2 — Module 7 Lesson 7-2: Implementación de SKILL.md (Desarrollo del skill de actas de reunion)"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module07-skill-commands"
 prerequisites: ["start-7-1"]
 duration: "~30 min"

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-14-1 — Module 14 Lesson 14-1: Article Writing - Topic Selection and Outline Generation"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module14-article-writing/chapter.yaml"
 category: "lesson"
 duration: "~25 min"

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-6 — Module 15 Lesson 15-6: Generate anime video from storyboard (Gemini Image + Kling/Veo I2V + FFmpeg join)"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "~40 min"
 prerequisites: ["start-15-5"]

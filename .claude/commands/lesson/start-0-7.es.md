@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-0-7 — Módulo 0 Lección 0-7: Configuración de Claude Code"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson02-setup/ch01-environment"
 duration: "~15 min"
 prerequisites: ["Node.js 18 o superior instalado", "Familiarizado con operaciones de terminal"]

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-7-2 — Module 7 Lesson 7-2: Implementing SKILL.md (Meeting-Notes Skill Development)"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module07-skill-commands"
 prerequisites: ["start-7-1"]
 duration: "~30 min"

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-6-5 — Module 6 Lesson 6-5: Ejercicio integral - Integracion de desarrollo de agentes de IA"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module06-agent-development"
 prerequisites: ["start-6-1", "start-6-2", "start-6-3", "start-6-4"]
 duration: "~50 min"

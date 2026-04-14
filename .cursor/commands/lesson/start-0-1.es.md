@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-0-1 — Módulo 0 Lección 0-1: Verificación de configuración del entorno"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson02-setup/ch01-environment"
 duration: "~15 min"
 prerequisites: ["Codex Desktop o Cursor instalado", "La carpeta ai-agent-camp esta abierta"]

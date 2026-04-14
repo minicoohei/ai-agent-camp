@@ -1,5 +1,5 @@
 ---
-description: Revisión y retroalimentación de mejora para ejercicios prácticos
+description: "Lesson command"
 ---
 
 # Revisión de ejercicios

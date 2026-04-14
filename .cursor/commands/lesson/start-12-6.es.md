@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-12-6 — Module 12 Lesson 12-6: Automatizacion de flujos de trabajo con Notion"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module12-notion"
 prerequisites: ["start-12-5"]
 duration: "~35 min"

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-13-4 — Module 13 Lesson 13-4: LP制作 - 実際に動くLP作成"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module13-lp/chapter.yaml"
 prerequisites: ["start-13-3"]
 duration: "約30分"

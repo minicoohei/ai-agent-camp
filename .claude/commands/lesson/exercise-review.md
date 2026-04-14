@@ -1,5 +1,5 @@
 ---
-description: 応用演習のレビューと改善フィードバック
+description: "Lesson command"
 ---
 
 # 応用演習レビュー

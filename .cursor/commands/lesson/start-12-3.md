@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-12-3 — Module 12 Lesson 12-3: Notion MCP接続とセットアップ"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module12-notion"
 duration: "約30分"
 prerequisites: ["start-0-1"]

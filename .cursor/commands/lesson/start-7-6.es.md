@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-7-6 — Module 7 Lesson 7-6: Creación de Commands para su propio flujo de trabajo"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module07-skill-commands/chapter.yaml"
 duration: "~35 min"
 prerequisites: ["start-7-5"]

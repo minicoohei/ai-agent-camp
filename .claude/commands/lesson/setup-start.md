@@ -1,5 +1,5 @@
 ---
-description: "研修環境セットアップ（最初に実行）"
+description: "Lesson command"
 duration: "約10分"
 prerequisites: ["Codex Desktop または Cursor をインストール済み"]
 level: "beginner"

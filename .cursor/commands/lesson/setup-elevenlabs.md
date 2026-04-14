@@ -1,5 +1,5 @@
 ---
-description: "ElevenLabs API セットアップ（完全ガイド付き）"
+description: "Lesson command"
 duration: "約10分"
 prerequisites: ["ブラウザが使える", "メールアドレスまたはGoogle/GitHubアカウントを持っている"]
 level: "beginner"

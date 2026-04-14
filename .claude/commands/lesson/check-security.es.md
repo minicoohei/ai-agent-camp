@@ -1,5 +1,5 @@
 ---
-description: Verificación de configuración de seguridad y revisión de mejores prácticas
+description: "Lesson command"
 ---
 
 # Verificación de configuración de seguridad

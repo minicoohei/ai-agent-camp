@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-17-1 — Module 17 Lesson 17-1: X post & banner creation"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module17-marketing"
 duration: "~30 min"
 prerequisites: ["start-0-3"]

@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-15-5 — Module 15 Lesson 15-5: Understand the video AI engine landscape and learn how to use fal.ai"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module15-video"
 duration: "~20 min"
 prerequisites: ["start-15-1"]

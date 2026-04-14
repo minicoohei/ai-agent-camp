@@ -1,5 +1,5 @@
 ---
-description: "Slack API セットアップ（完全ガイド付き）"
+description: "Lesson command"
 duration: "約15分"
 prerequisites: ["Slack ワークスペースの管理者権限"]
 level: "beginner"

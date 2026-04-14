@@ -1,5 +1,5 @@
 ---
-description: セキュリティ設定の確認とベストプラクティスチェック
+description: "Lesson command"
 ---
 
 # セキュリティ設定確認

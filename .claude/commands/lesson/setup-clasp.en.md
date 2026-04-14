@@ -1,5 +1,5 @@
 ---
-description: "Google Apps Script CLI (clasp) Setup (Complete Guide)"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["Node.js 18 or higher installed", "Have a Google account", "Browser available"]
 level: "beginner"

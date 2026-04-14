@@ -1,5 +1,5 @@
 ---
-description: "Vercel CLI Setup (with complete guide)"
+description: "Lesson command"
 duration: "~10 min"
 prerequisites: ["Node.js 18 or higher installed", "Browser available"]
 level: "beginner"

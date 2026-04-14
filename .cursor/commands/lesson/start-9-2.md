@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-9-2 — Module 9 Lesson 9-2: SlackメッセージからTODOとタスクを抽出"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module09-slack"
 prerequisites: ["start-9-1"]
 duration: "約25分"

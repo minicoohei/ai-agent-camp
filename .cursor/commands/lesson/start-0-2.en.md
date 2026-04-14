@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-0-2 — Module 0 Lesson 0-2: Extension Installation"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson02-setup/ch02-extensions"
 duration: "~5 min"
 prerequisites: ["Lesson 0-1 completed"]

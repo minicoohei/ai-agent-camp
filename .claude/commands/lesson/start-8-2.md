@@ -1,5 +1,5 @@
 ---
-description: "When the user says /start-8-2 — Module 8 Lesson 8-2: EDA（探索的データ分析）の実行"
+description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module08-data-analysis"
 prerequisites: ["start-8-1"]
 duration: "約30分"
