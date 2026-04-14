@@ -1,6 +1,6 @@
-# Chapter 15: 記事作成
+# Chapter 14: 記事作成
 id: "module14-article-writing"
-order: 15
+order: 14
 name: "記事作成"
 description: "AI エージェントを使って、テーマ設計、構成作成、文体調整、挿絵、校閲、ファクトチェックまでを通しで学びます。"
 type: "manual"

@@ -1,6 +1,6 @@
-# Chapter 8: GAS自動化
+# Chapter 10: GAS自動化
 id: "module10-gas"
-order: 8
+order: 10
 name: "GAS自動化 & 実践オートメーション"
 description: "Google Apps Script (GAS) によるサービス連携に加え、PDF請求書の自動処理、メールからのTODO抽出、GASでのGoogle Slides自動生成まで、実践的な業務自動化を体験します。"
 type: "manual"

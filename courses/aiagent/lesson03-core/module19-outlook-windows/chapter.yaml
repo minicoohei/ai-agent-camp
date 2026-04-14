@@ -1,6 +1,6 @@
-# Chapter 17: Windows Outlook
+# Chapter 19: Windows Outlook
 id: "module19-outlook-windows"
-order: 17
+order: 19
 name: "Windows Outlook（デスクトップ）"
 description: "Outlook for Windows の画面、検索、フォルダ、ルール設計を整理し、Microsoft 365 CLI と使い分ける基本を学びます。"
 type: "manual"

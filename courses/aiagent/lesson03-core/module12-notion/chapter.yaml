@@ -1,6 +1,6 @@
-# Chapter 9: Notion連携
+# Chapter 12: Notion連携
 id: "module12-notion"
-order: 9
+order: 12
 name: "Notion CLI（ncli）"
 description: "ターミナルからNotionを操作するCLI（@sakasegawa/ncli）の導入とエージェント向けワークフローを学びます。"
 type: "manual"

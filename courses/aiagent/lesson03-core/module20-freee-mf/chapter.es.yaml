@@ -1,6 +1,6 @@
-# Capítulo 18: Integración con Freee / MoneyForward
+# Capítulo 20: Integración con Freee / MoneyForward
 id: "module20-freee-mf"
-order: 18
+order: 20
 name: "Integración con Freee / MoneyForward"
 description: "Aprende la base de las integraciones con SaaS contables: autenticación, revisión de transacciones y operaciones básicas con cuentas e invoices."
 type: "manual"

@@ -1,6 +1,6 @@
-# Chapter 16: Google Workspace Integration
+# Chapter 4: Google Workspace Integration
 id: "module04-google-workspace"
-order: 16
+order: 4
 name: "AI Secretary — Google Workspace Integration"
 description: "Get your own AI secretary. From Calendar free slot search, email reply detection, Drive file management, to Sheets data integration — operate Google Workspace with AI agents."
 type: "manual"

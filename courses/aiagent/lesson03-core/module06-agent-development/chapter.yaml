@@ -1,6 +1,6 @@
-# Chapter 10: エージェント開発
+# Chapter 6: エージェント開発
 id: "module06-agent-development"
-order: 10
+order: 6
 name: "エージェント開発"
 description: "カスタムAIエージェントの開発方法を学びます。"
 type: "manual"

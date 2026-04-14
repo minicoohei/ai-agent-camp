@@ -1,6 +1,6 @@
-# Capítulo 17: Outlook para Windows
+# Capítulo 19: Outlook para Windows
 id: "module19-outlook-windows"
-order: 17
+order: 19
 name: "Outlook para Windows"
 description: "Aprende los conceptos básicos de Outlook para Windows: vistas, búsqueda, carpetas, reglas y cuándo pasar a la automatización con Microsoft 365 CLI."
 type: "manual"

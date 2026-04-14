@@ -1,6 +1,6 @@
-# Chapter 6: Slack Search & Analysis
+# Chapter 9: Slack Search & Analysis
 id: "module09-slack"
-order: 6
+order: 9
 name: "Slack Search & Analysis"
 description: "Semantic search and analysis of Slack data."
 type: "manual"
