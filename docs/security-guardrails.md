@@ -59,7 +59,7 @@ Codex では sandbox と approval が安全の基本で、Claude Code と Cursor
 - `git reset --hard`
 - `git clean -fd`
 - `git push --force`
-- 意図が不明な `sudo`
+- 意図が不明な `sudo`（`sudo` の意味がわからない場合は [ターミナル入門ガイド](terminal-guide.md#sudo-とは) を参照）
 
 ### 推奨
 
@@ -129,4 +129,5 @@ Cursor 固有の実行フローはありますが、安全原則そのものは 
 - [CLAUDE.md](../CLAUDE.md)
 - [docs/codex-mcp.md](codex-mcp.md)
 - [docs/troubleshoot.md](troubleshoot.md)
+- [docs/terminal-guide.md](terminal-guide.md)
 - [docs/commands-reference.md](commands-reference.md)

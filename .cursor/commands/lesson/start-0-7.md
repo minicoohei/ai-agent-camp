@@ -2,7 +2,7 @@
 description: "Lesson command"
 chapter: "courses/aiagent/lesson02-setup/ch01-environment"
 duration: "約15分"
-prerequisites: ["Node.js 18以上がインストール済み", "ターミナル操作に慣れている"]
+prerequisites: ["Node.js 18以上がインストール済み", "[ターミナル操作に慣れている](../../../docs/terminal-guide.md)"]
 level: "beginner"
 tags: ["setup", "claude-code", "cli"]
 ---

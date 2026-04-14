@@ -30,7 +30,7 @@ tags: ["setup", "codex", "cli"]
 
 ## Step 1: Codex CLI のインストール
 
-Codex CLI は npm でインストールします。ターミナルで以下を実行してください:
+Codex CLI は npm でインストールします。ターミナルで以下を実行してください（ターミナルの開き方がわからない場合は [ターミナル入門ガイド](../../../docs/terminal-guide.md) を参照）:
 
 **推奨: npx で直接実行（インストール不要）**
 
