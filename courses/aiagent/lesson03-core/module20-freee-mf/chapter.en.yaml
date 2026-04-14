@@ -1,6 +1,6 @@
-# Chapter 18: Freee / MoneyForward Integration
+# Chapter 20: Freee / MoneyForward Integration
 id: "module20-freee-mf"
-order: 18
+order: 20
 name: "Freee / MoneyForward Integration"
 description: "Learn the entry point for accounting SaaS integrations: authentication setup, transaction review, and basic operations around accounts and invoices."
 type: "manual"

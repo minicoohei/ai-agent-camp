@@ -1,6 +1,6 @@
-# Chapter 4: Data Analysis
+# Chapter 8: Data Analysis
 id: "module08-data-analysis"
-order: 4
+order: 8
 name: "Data Analysis"
 description: "Connect to BigQuery/Snowflake and perform data analysis."
 type: "manual"

@@ -1,6 +1,6 @@
-# Chapter 4: データ分析
+# Chapter 8: データ分析
 id: "module08-data-analysis"
-order: 4
+order: 8
 name: "データ分析"
 description: "BigQuery/Snowflakeに接続してデータ分析を行います。"
 type: "manual"

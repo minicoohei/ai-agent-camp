@@ -1,6 +1,6 @@
-# Chapter 8: GAS Automation
+# Chapter 10: GAS Automation
 id: "module10-gas"
-order: 8
+order: 10
 name: "GAS Automation & Practical Automation"
 description: "Experience practical business automation including Google Apps Script (GAS) service integration, PDF invoice processing, email-to-TODO extraction, and Google Slides auto-generation with GAS."
 type: "manual"

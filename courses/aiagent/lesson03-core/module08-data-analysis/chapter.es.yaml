@@ -1,6 +1,6 @@
-# Capítulo 4: Análisis de Datos
+# Capítulo 8: Análisis de Datos
 id: "module08-data-analysis"
-order: 4
+order: 8
 name: "Análisis de Datos"
 description: "Conecta con BigQuery/Snowflake y realiza análisis de datos."
 type: "manual"

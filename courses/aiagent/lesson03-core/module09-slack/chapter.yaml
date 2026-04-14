@@ -1,6 +1,6 @@
-# Chapter 6: Slack検索・分析
+# Chapter 9: Slack検索・分析
 id: "module09-slack"
-order: 6
+order: 9
 name: "Slack検索・分析"
 description: "Slackデータのセマンティック検索と分析を行います。"
 type: "manual"

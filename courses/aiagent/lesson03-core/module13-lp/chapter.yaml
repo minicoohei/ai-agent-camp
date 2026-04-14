@@ -1,6 +1,6 @@
-# Chapter 14: LP/HP制作
+# Chapter 13: LP/HP制作
 id: "module13-lp"
-order: 14
+order: 13
 name: "LP/HP制作"
 description: "AI エージェントを使って、訴求整理、ワイヤーフレーム設計、Pencil デザイン、HTML 実装、Vercel デプロイまでを通しで学びます。"
 type: "manual"
