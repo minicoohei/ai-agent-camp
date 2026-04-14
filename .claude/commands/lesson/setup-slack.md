@@ -14,7 +14,7 @@ tags: ["setup", "slack", "api"]
 1. `uv run python tools/setup_progress.py show --current setup-slack` を実行して進捗を表示
 2. **このステップは任意です。** Slack連携を使わない場合はスキップできます
 3. 既存トークンを自動検出:
-   - `.env` や credential store に `SLACK_BOT_TOKEN` が存在するか確認
+   - `.env` や credential store に `SLACK_USER_TOKEN` が存在するか確認
    - 存在する場合、Slack API `auth.test` で有効性を確認。有効なら「Slack設定は完了しています。スキップしますか？」と確認
 4. スキップする場合: `uv run python tools/setup_progress.py skip setup-slack --reason 'ユーザーがスキップ'` を実行
 
@@ -22,7 +22,7 @@ tags: ["setup", "slack", "api"]
 
 | 項目 | 内容 |
 |------|------|
-| ゴール | Slack Appを作成し、Bot Tokenを取得して安全に保存し、Slack検索・メッセージ取得機能を使えるようにする |
+| ゴール | Slack Appを作成し、User Tokenを取得して安全に保存し、Slack検索・メッセージ取得機能を使えるようにする |
 | 所要時間 | 約15分 |
 | 前提条件 | Slackワークスペースの管理者権限（またはApp追加の許可）、ブラウザが使えること |
 | 操作レベル | CLIコマンド入力なし（すべてAIが自動実行 + GUI操作のみ） |
@@ -30,9 +30,9 @@ tags: ["setup", "slack", "api"]
 **このセッションの流れ:**
 1. Slack App管理画面を開く（AIが自動でブラウザを起動）
 2. 新しいSlack Appを作成する（画面上のボタンをクリック）
-3. Bot Token Scopesを設定する（必要な権限を追加）
+3. User Token Scopesを設定する（必要な権限を追加）
 4. ワークスペースにインストールする（許可ボタンをクリック）
-5. Bot Tokenを安全に保存する（credential_managerを使用）
+5. User Tokenを安全に保存する（credential_managerを使用）
 6. 動作テスト（AIが自動実行）
 
 > **ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。
@@ -122,10 +122,10 @@ xdg-open https://api.slack.com/apps
    - 「Pick a workspace」でワークスペースを選択
    - 「Create App」をクリック
    - 左メニューの「OAuth & Permissions」をクリック
-   - 「Bot Token Scopes」セクションで「Add an OAuth Scope」をクリックし、以下の4つを1つずつ追加: channels:history, channels:read, chat:write, users:read
+   - 「User Token Scopes」セクションで「Add an OAuth Scope」をクリックし、以下の4つを1つずつ追加: channels:history, channels:read, chat:write, users:read
    - ページ上部の「Install to Workspace」をクリック
    - 権限確認画面で「Allow」をクリック
-3. Bot User OAuth Token（xoxb-...）が表示されたことを確認したら、ユーザーに「トークンの横のCopyボタンをクリックしてコピーしてください」と案内する
+3. User OAuth Token（xoxp-...）が表示されたことを確認したら、ユーザーに「トークンの横のCopyボタンをクリックしてコピーしてください」と案内する
 4. Step 4 に進む
 
 **注意:** トークンの値はブラウザ画面から読み取らないこと。ユーザーが手動でコピーする。
@@ -134,19 +134,19 @@ Chrome 統合が利用できない場合は、以下の Step 2〜3 の手順を�
 
 ---
 
-## Step 2: Bot Token Scopes を設定する
+## Step 2: User Token Scopes を設定する
 
 **AskQuestionの設定:**
 ```json
 {
-  "title": "Step 2: Bot Token Scopes を設定する",
+  "title": "Step 2: User Token Scopes を設定する",
   "questions": [{
     "id": "scope_setup",
-    "prompt": "Appの設定画面が表示されています。以下の手順でBot Token Scopesを設定してください:\n\n1. 左メニューの「OAuth & Permissions」をクリック\n2. 下にスクロールして「Scopes」セクションを見つける\n3. 「Bot Token Scopes」の「Add an OAuth Scope」をクリック\n4. 以下の4つのスコープを1つずつ追加する:\n\n   - channels:history（チャンネルのメッセージを読み取る）\n   - channels:read（チャンネル情報を読み取る）\n   - chat:write（メッセージを送信する）\n   - users:read（ユーザー情報を読み取る）\n\n4つのスコープを追加できましたか？",
+    "prompt": "Appの設定画面が表示されています。以下の手順でUser Token Scopesを設定してください:\n\n1. 左メニューの「OAuth & Permissions」をクリック\n2. 下にスクロールして「Scopes」セクションを見つける\n3. 「User Token Scopes」の「Add an OAuth Scope」をクリック\n4. 以下の4つのスコープを1つずつ追加する:\n\n   - channels:history（チャンネルのメッセージを読み取る）\n   - channels:read（チャンネル情報を読み取る）\n   - chat:write（メッセージを送信する）\n   - users:read（ユーザー情報を読み取る）\n\n4つのスコープを追加できましたか？",
     "options": [
       {"id": "scopes_added", "label": "4つのスコープを追加しました！"},
       {"id": "cant_find_oauth", "label": "「OAuth & Permissions」が見つからない"},
-      {"id": "cant_find_scopes", "label": "「Bot Token Scopes」が見つからない"},
+      {"id": "cant_find_scopes", "label": "「User Token Scopes」が見つからない"},
       {"id": "scope_not_found", "label": "追加したいスコープが候補に出てこない"},
       {"id": "what_are_scopes", "label": "スコープって何？"}
     ]
@@ -156,7 +156,7 @@ Chrome 統合が利用できない場合は、以下の Step 2〜3 の手順を�
 
 (scopes_added → Step 3へ)
 (cant_find_oauth → 「左側のサイドバーメニューを確認してください。「Features」セクションの下に「OAuth & Permissions」があります。サイドバーが見えない場合は、ブラウザの画面を横に広げてみてください」と案内)
-(cant_find_scopes → 「ページを下にスクロールしてください。「OAuth Tokens for Your Workspace」セクションの下に「Scopes」セクションがあります。その中の「Bot Token Scopes」が対象です。※「User Token Scopes」ではないので注意してください」と案内)
+(cant_find_scopes → 「ページを下にスクロールしてください。「OAuth Tokens for Your Workspace」セクションの下に「Scopes」セクションがあります。その中の「User Token Scopes」が対象です。※「Bot Token Scopes」ではないので注意してください」と案内)
 (scope_not_found → 「スコープ名を正確に入力してください。入力欄にテキストを打つと候補がフィルタされます。例えば 'channels' と入力すると channels:history や channels:read が候補に表示されます」と案内)
 (what_are_scopes → 「スコープとは、Appに許可する操作範囲のことです。今回追加する4つは:\n- channels:history = チャンネルの過去メッセージを読む権限\n- channels:read = チャンネル一覧を見る権限\n- chat:write = Appとしてメッセージを投稿する権限\n- users:read = ワークスペースのメンバー情報を見る権限\nこれらはSlack検索やタスク管理機能に必要な最小限の権限です」と説明)
 
@@ -170,7 +170,7 @@ Chrome 統合が利用できない場合は、以下の Step 2〜3 の手順を�
   "title": "Step 3: ワークスペースにインストール",
   "questions": [{
     "id": "install_app",
-    "prompt": "スコープの設定が完了したら、Appをワークスペースにインストールします:\n\n1. ページを上にスクロールして「OAuth Tokens for Your Workspace」セクションを見つける\n2. 「Install to Workspace」ボタンをクリック\n   （ボタンが「Reinstall to Workspace」の場合もクリックしてOK）\n3. 権限の確認画面で「Allow」（許可）をクリック\n4. 「Bot User OAuth Token」が表示される（xoxb- で始まる文字列）\n5. トークンの右にある「Copy」ボタンをクリックしてコピー\n\nBot User OAuth Token をコピーできましたか？",
+    "prompt": "スコープの設定が完了したら、Appをワークスペースにインストールします:\n\n1. ページを上にスクロールして「OAuth Tokens for Your Workspace」セクションを見つける\n2. 「Install to Workspace」ボタンをクリック\n   （ボタンが「Reinstall to Workspace」の場合もクリックしてOK）\n3. 権限の確認画面で「Allow」（許可）をクリック\n4. 「User OAuth Token」が表示される（xoxp- で始まる文字列）\n5. トークンの右にある「Copy」ボタンをクリックしてコピー\n\nUser OAuth Token をコピーできましたか？",
     "options": [
       {"id": "token_copied", "label": "トークンをコピーしました！"},
       {"id": "no_install_button", "label": "「Install to Workspace」ボタンがない"},
@@ -182,9 +182,9 @@ Chrome 統合が利用できない場合は、以下の Step 2〜3 の手順を�
 ```
 
 (token_copied → Step 4へ)
-(no_install_button → 「Bot Token Scopes が1つも追加されていないと Install ボタンが表示されません。Step 2 に戻って、少なくとも1つのスコープを追加してください」と案内)
+(no_install_button → 「User Token Scopes が1つも追加されていないと Install ボタンが表示されません。Step 2 に戻って、少なくとも1つのスコープを追加してください」と案内)
 (allow_denied → 「ワークスペースの管理者がApp追加を制限している可能性があります。管理者に承認を依頼するか、テスト用の自分専用ワークスペースを作成してください」と案内)
-(no_token → 「インストールが正常に完了していれば、『OAuth & Permissions』ページの上部に『Bot User OAuth Token』が表示されます。ページを再読み込みして、上部を確認してください」と案内)
+(no_token → 「インストールが正常に完了していれば、『OAuth & Permissions』ページの上部に『User OAuth Token』が表示されます。ページを再読み込みして、上部を確認してください」と案内)
 
 ---
 
@@ -209,12 +209,12 @@ Chrome 統合が利用できない場合は、以下の Step 2〜3 の手順を�
 │ Cursor: Ctrl+` (バッククォート) で新しいターミナルを開く    │
 │ Claude Code: 別のターミナルウィンドウを開く                 │
 │                                                             │
-│ uv run python tools/credential_manager.py store SLACK_BOT_TOKEN    │
+│ uv run python tools/credential_manager.py store SLACK_USER_TOKEN    │
 │                                                             │
-│ → 「Enter value for SLACK_BOT_TOKEN:」と表示されます        │
-│ → コピーしたBot Tokenを貼り付けてEnterを押してください      │
+│ → 「Enter value for SLACK_USER_TOKEN:」と表示されます        │
+│ → コピーしたUser Tokenを貼り付けてEnterを押してください      │
 │   （入力した文字は画面に表示されません。これは正常です）    │
-│ → 「Stored SLACK_BOT_TOKEN」と表示されたら保存完了です      │
+│ → 「Stored SLACK_USER_TOKEN」と表示されたら保存完了です      │
 └─────────────────────────────────────────────────────────────┘
 
 保存が完了したら、こちらのチャットに戻って「完了」と教えてください。
@@ -256,8 +256,8 @@ AIのチャットでトークンを扱うと、会話ログに値が残ってし
 
 **AIが自動で実行すること:**
 
-1. まず `credential_manager.py status` を実行して、`SLACK_BOT_TOKEN` が Credential Store に保存されているか確認する:
-   - **注意**: トークンの値そのものをチャットに表示しないこと。「トークンが設定されていることを確認しました（xoxb-****...）」のようにマスク表示のみ
+1. まず `credential_manager.py status` を実行して、`SLACK_USER_TOKEN` が Credential Store に保存されているか確認する:
+   - **注意**: トークンの値そのものをチャットに表示しないこと。「トークンが設定されていることを確認しました（xoxp-****...）」のようにマスク表示のみ
    - ステータス確認コマンド: `uv run python tools/credential_manager.py status`
 
 2. 簡易チェックに通ったら、実際にSlack APIにテストリクエストを送信する:
@@ -270,9 +270,9 @@ AIのチャットでトークンを扱うと、会話ログに値が残ってし
          inject_to_environ()
      except ImportError:
          pass
-     token = os.getenv("SLACK_BOT_TOKEN")
-     if not token or token == "xoxb-your-bot-token":
-         print("エラー: SLACK_BOT_TOKEN が設定されていません。")
+     token = os.getenv("SLACK_USER_TOKEN")
+     if not token or token == "xoxp-your-user-token":
+         print("エラー: SLACK_USER_TOKEN が設定されていません。")
          sys.exit(1)
      resp = requests.post(
          "https://slack.com/api/auth.test",
@@ -362,15 +362,15 @@ Slack Appがメッセージを読み取るには、対象チャンネルにBot�
 ```
 
 ### トラブル1: 「invalid_auth」エラー
-**原因**: Bot Tokenが正しくコピーされていない、または無効
+**原因**: User Tokenが正しくコピーされていない、または無効
 **AIが行うこと**:
-1. `uv run python tools/credential_manager.py status` で Credential Store の状態を確認（値は表示せず、`xoxb-` で始まっているかのみ報告）
+1. `uv run python tools/credential_manager.py status` で Credential Store の状態を確認（値は表示せず、`xoxp-` で始まっているかのみ報告）
 2. 余分なスペース・改行・クォーテーションが含まれていないか自動チェック
 3. 問題が見つかれば再保存を提案。見つからなければ「Slack App設定画面でトークンを再生成してください」と案内
 
 ### トラブル2: 「missing_scope」エラー
-**原因**: 必要なBot Token Scopeが追加されていない
-**AIの案内**: 「Slack App設定画面の『OAuth & Permissions』→『Bot Token Scopes』で、以下のスコープが全て追加されているか確認してください: channels:history, channels:read, chat:write, users:read。スコープを追加したら『Reinstall to Workspace』をクリックして再インストールが必要です」
+**原因**: 必要なUser Token Scopeが追加されていない
+**AIの案内**: 「Slack App設定画面の『OAuth & Permissions』→『User Token Scopes』で、以下のスコープが全て追加されているか確認してください: channels:history, channels:read, chat:write, users:read。スコープを追加したら『Reinstall to Workspace』をクリックして再インストールが必要です」
 
 ### トラブル3: 「not_in_channel」エラー
 **原因**: Botが対象チャンネルに招待されていない
@@ -387,9 +387,9 @@ Slack Appがメッセージを読み取るには、対象チャンネルにBot�
 
 ## チェックポイント
 - [ ] Slack App「AIAgent Bootcamp」を作成した
-- [ ] Bot Token Scopes に4つのスコープ（channels:history, channels:read, chat:write, users:read）を追加した
+- [ ] User Token Scopes に4つのスコープ（channels:history, channels:read, chat:write, users:read）を追加した
 - [ ] ワークスペースにAppをインストールした
-- [ ] SLACK_BOT_TOKEN が Credential Store に保存されている（`uv run python tools/credential_manager.py status` で確認）
+- [ ] SLACK_USER_TOKEN が Credential Store に保存されている（`uv run python tools/credential_manager.py status` で確認）
 - [ ] APIテストが成功した（ワークスペース名とBot名が表示された）
 
 ---

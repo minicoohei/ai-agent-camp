@@ -63,27 +63,29 @@ tags: ["setup", "gogcli", "google", "gmail", "calendar", "oauth"]
 ## Step 1: Install gogcli
 
 **What the AI does:**
-1. Auto-detect the OS (Mac / Linux)
-2. Check if already installed: `which gog`
+1. Auto-detect the OS (Mac / Windows / Linux)
+2. Check if already installed: `which gog` (Mac/Linux) or `where gog` (Windows)
 3. If not installed, run the following commands:
 
 ```bash
-# Mac (Homebrew recommended):
-brew install nicholasgasior/tools/gog
+# Mac / Linux (Homebrew recommended):
+brew install gogcli
 
-# Mac alternative (if Go is installed):
-go install github.com/nicholasgasior/gog@latest
+# Windows:
+# Download the ZIP from GitHub Releases, extract gog.exe, and add it to your PATH
+# https://github.com/steipete/gogcli/releases
 
-# Linux (Go required):
-go install github.com/nicholasgasior/gog@latest
+# Linux alternative (if Homebrew is not installed):
+# Download the binary directly from GitHub Releases
+# https://github.com/steipete/gogcli/releases
 ```
 
 4. After installation, verify with `gog --version`
 
 **Installation method decision logic:**
+- On Windows -> Download from GitHub Releases (https://github.com/steipete/gogcli/releases)
 - `which brew` succeeds -> Install via Homebrew
-- `which go` succeeds -> Install via `go install`
-- Neither available -> Guide through Homebrew installation first
+- Homebrew not available -> Guide through Homebrew installation first (https://brew.sh)
 
 **AskQuestion configuration:**
 ```json
@@ -95,8 +97,8 @@ go install github.com/nicholasgasior/gog@latest
     "options": [
       {"id": "installed", "label": "Installed successfully!"},
       {"id": "brew_error", "label": "I got an error with brew install"},
-      {"id": "go_error", "label": "I got an error with go install"},
-      {"id": "no_brew_no_go", "label": "Neither Homebrew nor Go is installed"},
+      {"id": "no_brew", "label": "Homebrew is not installed"},
+      {"id": "windows", "label": "I'm using Windows"},
       {"id": "command_not_found", "label": "The gog command is not found"}
     ]
   }]
@@ -104,18 +106,19 @@ go install github.com/nicholasgasior/gog@latest
 ```
 
 (installed -> Proceed to Step 2)
-(brew_error -> Run `brew update && brew tap nicholasgasior/tools` then retry. If it still fails, guide to `go install`)
-(go_error -> Check Go version with `go version`. Go 1.21 or higher is required. If not installed, guide to `brew install go`)
-(no_brew_no_go -> Guide: "Let's install Homebrew first. Open https://brew.sh in your browser and copy/run the installation command.")
-(command_not_found -> Guide through adding `export PATH=$PATH:$(go env GOPATH)/bin` to shell configuration. For Homebrew, run `brew link gog`)
+(brew_error -> Run `brew update && brew install gogcli` then retry)
+(no_brew -> Guide: "Let's install Homebrew first. Open https://brew.sh in your browser and copy/run the installation command.")
+(windows -> Guide: "Download the ZIP from https://github.com/steipete/gogcli/releases, extract gog.exe, and place it in a folder that is in your PATH. Then restart your terminal and verify with `gog --version`.")
+(command_not_found -> Mac/Linux: Run `brew link gogcli`. Windows: Check that gog.exe has been added to your PATH. If not resolved, guide to restart the terminal)
 
 ---
 
 ## Step 2: Google OAuth Authentication
 
 **What the AI does:**
-1. Run `gog auth add`
-2. The browser opens automatically and displays the Google OAuth authentication screen
+1. Ask the user which Google account email to use for authentication
+2. Run `gog auth add <email>`
+3. The browser opens automatically and displays the Google OAuth authentication screen
 
 **Message to display to the user:**
 
@@ -131,7 +134,9 @@ Starting Google OAuth authentication.
 | 3. When "Authorization successful" appears, auth is complete |
 | 4. Return to the terminal                                    |
 |                                                              |
-| * Credentials are securely stored in ~/.config/gogcli/       |
+| * Credentials are securely stored by gogcli                  |
+|   (macOS: ~/Library/Application Support/gogcli/              |
+|    Linux: ~/.config/gogcli/)                                 |
 | * No manual API key entry needed (managed via OAuth)         |
 +-------------------------------------------------------------+
 ```
@@ -156,7 +161,7 @@ Starting Google OAuth authentication.
 
 (authenticated -> Proceed to Step 3)
 (browser_not_open -> Guide: "Copy the URL displayed in the terminal and paste it manually into your browser.")
-(auth_error -> Re-run `gog auth add`. Check the error message to identify the cause)
+(auth_error -> Re-run `gog auth add <email>`. Check the error message to identify the cause)
 (account_help -> Guide: "Select the Google account you normally use with Gmail. A company Google Workspace account or a personal Gmail account both work. You can add another account later.")
 (access_denied -> Guide: "Your organization's Google Workspace may restrict access to external apps. Check with your IT administrator, or try using a personal Gmail account.")
 
@@ -185,7 +190,7 @@ Starting Google OAuth authentication.
 ```
 
 (correct -> Proceed to Step 4)
-(wrong_account -> Guide through adding a different account with `gog auth add`)
+(wrong_account -> Guide through adding a different account with `gog auth add <email>`)
 (no_account -> Go back to Step 2 and redo OAuth authentication)
 
 ---
@@ -261,36 +266,35 @@ You can now access Gmail/Calendar/Drive/Sheets from the CLI.
 ```
 
 ### Trouble 1: Error with brew install
-**Cause**: The Homebrew tap is not registered, or Homebrew is outdated
+**Cause**: Homebrew is outdated, or cache issues
 **What the AI does**:
 1. Run `brew update`
-2. Run `brew tap nicholasgasior/tools`
-3. Retry `brew install nicholasgasior/tools/gog`
-4. If it still fails, guide to the `go install` alternative
+2. Retry `brew install gogcli`
+3. If it still fails, guide to download a binary directly from GitHub Releases (https://github.com/steipete/gogcli/releases)
 
 ### Trouble 2: OAuth Authentication Fails
 **Cause**: Browser popup blocker, or network issues
 **What the AI does**:
 1. Guide on manually pasting the URL displayed in the terminal into the browser
-2. Re-run `gog auth add`
+2. Re-run `gog auth add <email>`
 3. Guide on checking browser popup blocker settings
 
 ### Trouble 3: Organization's Google Account Has Restrictions
 **Cause**: The Google Workspace admin has restricted access to external apps
-**AI guidance**: "Check with your organization's IT administrator about permission to use gogcli. If that's not possible, try authenticating with a personal Gmail account (@gmail.com). You can add another account with `gog auth add`."
+**AI guidance**: "Check with your organization's IT administrator about permission to use gogcli. If that's not possible, try authenticating with a personal Gmail account (@gmail.com). You can add another account with `gog auth add <email>`."
 
 ### Trouble 4: "access denied" Error
 **Cause**: Insufficient OAuth scope permissions, or account security settings
 **What the AI does**:
 1. Check authentication status with `gog auth list`
-2. Guide to remove and re-authenticate: `gog auth remove <email>` then `gog auth add`
+2. Guide to remove and re-authenticate: `gog auth remove <email>` then `gog auth add <email>`
 3. Guide on checking Google account security settings (https://myaccount.google.com/security)
 
 ### Trouble 5: gog Command Not Found
 **Cause**: PATH is not configured
 **What the AI does**:
-1. If installed via Homebrew: run `brew link gog`
-2. If installed via `go install`: guide through adding `export PATH=$PATH:$(go env GOPATH)/bin` to `.zshrc` / `.bashrc`
+1. Mac/Linux via Homebrew: run `brew link gogcli` (https://brew.sh)
+2. Windows: check that gog.exe has been added to PATH; guide to add the folder containing gog.exe to the system PATH environment variable (https://github.com/steipete/gogcli/releases)
 3. Guide to run `source ~/.zshrc` or open a new terminal
 
 ### Trouble 6: Other Errors

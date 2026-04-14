@@ -52,7 +52,7 @@ CI/CDパイプラインやGitHub Actionsで安全にシークレット情報を�
 1. 「**New repository secret**」をクリック
 2. Secret の名前を入力
    - 例: `GEMINI_API_KEY`
-   - 例: `SLACK_BOT_TOKEN`
+   - 例: `SLACK_USER_TOKEN`
    - 命名規則: すべて大文字、アンダースコア区切り
 
 3. Secret の値を貼り付け
@@ -66,8 +66,8 @@ CI/CDパイプラインやGitHub Actionsで安全にシークレット情報を�
 
 ```
 GEMINI_API_KEY           → Google Gemini APIキー
-SLACK_BOT_TOKEN          → Slack Bot Token
-SLACK_USER_TOKEN         → Slack User Token
+SLACK_USER_TOKEN         → Slack User Token（推奨）
+SLACK_BOT_TOKEN          → Slack Bot Token（レガシー・オプション）
 GOOGLE_CREDENTIALS_JSON  → Google OAuth credentials (Base64)
 BIGQUERY_PROJECT_ID      → BigQuery Project ID
 GITHUB_TOKEN             → GitHub Personal Access Token
@@ -139,7 +139,7 @@ jobs:
       # 複数の Secret を使用
       - name: Run analysis
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_USER_TOKEN: ${{ secrets.SLACK_USER_TOKEN }}
           BIGQUERY_PROJECT: ${{ secrets.BIGQUERY_PROJECT_ID }}
         run: |
           python analyze.py
@@ -353,8 +353,8 @@ Error: Secret not found
 | Secret名 | 値の例 | 用途 | 有効期限 |
 |---------|--------|------|---------|
 | `GEMINI_API_KEY` | `AIzaSy...` | Gemini API | 無期限 |
-| `SLACK_BOT_TOKEN` | `xoxb-...` | Slack Bot | 無期限 |
-| `SLACK_USER_TOKEN` | `xoxp-...` | Slack ユーザー | 90日 |
+| `SLACK_USER_TOKEN` | `xoxp-...` | Slack User Token（推奨） | 無期限 |
+| `SLACK_BOT_TOKEN` | `xoxb-...` | Slack Bot Token（レガシー） | 無期限 |
 | `GOOGLE_CREDENTIALS_BASE64` | Base64エンコード値 | OAuth認証 | 無期限 |
 | `BIGQUERY_PROJECT_ID` | `my-gcp-project` | BigQuery | 無期限 |
 | `GITHUB_TOKEN` | `ghp_...` | GitHub API | 設定可能 |
@@ -387,7 +387,7 @@ jobs:
       - name: Run analysis with APIs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_USER_TOKEN: ${{ secrets.SLACK_USER_TOKEN }}
           BIGQUERY_PROJECT: ${{ secrets.BIGQUERY_PROJECT_ID }}
         run: |
           python scripts/analyze.py

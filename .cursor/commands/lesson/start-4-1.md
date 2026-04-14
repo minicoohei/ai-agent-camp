@@ -86,9 +86,9 @@ gogcliがインストールされているか確認します。以下のコマ�
 gog --version
 
 # インストールされていない場合
-go install github.com/nicholasgasior/gog@latest
-# または Homebrew（macOS）
 brew install gogcli
+# Homebrew がない場合は GitHub Releases からダウンロード:
+# https://github.com/steipete/gogcli/releases
 ```
 
 **期待される結果**: gogcliのバージョン番号が表示されます（例: `gog version 0.x.x`）。
@@ -207,12 +207,12 @@ gog drive ls --account your-email@gmail.com --max 5
 ```
 
 ### トラブル1: gogcliがインストールできない
-**原因**: Go言語がインストールされていない、またはPATHが通っていない
+**原因**: Homebrewが未インストール、またはPATHが通っていない
 **解決プロンプト**:
 ```text
 gogcliのインストール方法を確認してください。
 Homebrewが使える場合は brew install gogcli を試してください。
-Goがインストール済みなら go install github.com/nicholasgasior/gog@latest を試してください。
+Homebrewがない場合は https://github.com/steipete/gogcli/releases からバイナリをダウンロードしてください。
 ```
 
 ### トラブル2: ブラウザが開かない

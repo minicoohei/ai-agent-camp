@@ -86,9 +86,9 @@ Verifique que gogcli esta instalado. Ejecute los siguientes comandos:
 gog --version
 
 # Si no esta instalado
-go install github.com/nicholasgasior/gog@latest
-# O Homebrew (macOS)
 brew install gogcli
+# Si Homebrew no esta disponible, descargue de GitHub Releases:
+# https://github.com/steipete/gogcli/releases
 ```
 
 **Resultado esperado**: Se muestra el numero de version de gogcli (por ejemplo, `gog version 0.x.x`).
@@ -207,12 +207,12 @@ gog drive ls --account your-email@gmail.com --max 5
 ```
 
 ### Problema 1: "No se puede instalar gogcli"
-**Causa**: El lenguaje Go no esta instalado, o el PATH no esta configurado
+**Causa**: Homebrew no esta instalado o PATH no esta configurado
 **Prompt de solucion**:
 ```text
 Verifique el metodo de instalacion de gogcli.
 Si Homebrew esta disponible, intente brew install gogcli.
-Si Go ya esta instalado, intente go install github.com/nicholasgasior/gog@latest.
+Si Homebrew no esta disponible, descargue el binario de https://github.com/steipete/gogcli/releases.
 ```
 
 ### Problema 2: "El navegador no se abre"

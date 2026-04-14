@@ -73,7 +73,7 @@ gog --version
 
 **期待される結果:**
 - バージョン番号が表示されればOK（v0.9.0 以上を推奨）
-- コマンドが見つからない場合は `go install github.com/nicholasgasior/gog@latest` でインストール
+- コマンドが見つからない場合は `brew install gogcli` でインストール（または `/setup-gogcli` を実行）
 
 > **📌 注意**: 以降のコマンドでは、すべての Gmail API 呼び出しに `--account <your-email@gmail.com>` が必要です。複数アカウントを登録している場合は明示的に指定してください。
 
@@ -199,7 +199,7 @@ ls data/google-sync/data/*/gmail/ 2>/dev/null || echo "同期データなし"
 
 | トラブル | 解決策 |
 |---------|--------|
-| `gog` コマンドが見つからない | `go install github.com/nicholasgasior/gog@latest` を実行 |
+| `gog` コマンドが見つからない | `brew install gogcli` を実行（または `/setup-gogcli`） |
 | 認証でブラウザが開かない | `gog auth add --no-browser <email>` でURLを手動コピー（非対話環境では必須） |
 | OAuth スコープ不足 | `gog auth remove <email>` → 再度 `gog auth add <email>` |
 | 検索結果が空 | クエリを `is:inbox` に変更して再試行 |

@@ -18,11 +18,9 @@ Una habilidad para operaciones por lotes en proyectos de Google Apps Script a tr
 ## Prerrequisitos
 
 ```bash
-# Instalar clasp (si no está instalado)
-npm install -g @google/clasp
-
+# clasp se ejecuta via npx (no requiere instalación)
 # Iniciar sesión con su cuenta de Google (solo la primera vez)
-clasp login
+npx -y @google/clasp login
 ```
 
 ## Inicio Rápido
@@ -102,7 +100,7 @@ python skills/gas-clasp-ops/scripts/clasp_ops.py run \
 
 | Error | Causa | Solución |
 |-------|-------|----------|
-| `Not logged in` | clasp no ha iniciado sesión | Ejecute `clasp login` |
+| `Not logged in` | clasp no ha iniciado sesión | Ejecute `npx -y @google/clasp login` |
 | `Script API disabled` | API de GAS deshabilitada | Habilite en [API de GAS](https://script.google.com/home/usersettings) |
 | `Permission denied` | Alcance de OAuth insuficiente | Añada los alcances necesarios a `appsscript.json` |
 | `Function not found` | Nombre de función inválido | Verifique el nombre de la función en el editor de GAS |

@@ -14,7 +14,7 @@ tags: ["setup", "slack", "api"]
 1. Run `uv run python tools/setup_progress.py show --current setup-slack` to display progress
 2. **This step is optional.** You can skip it if you won't be using Slack integration
 3. Auto-detect existing token:
-   - Check whether `SLACK_BOT_TOKEN` exists in `.env` or credential store
+   - Check whether `SLACK_USER_TOKEN` exists in `.env` or credential store
    - If it exists, verify validity with Slack API `auth.test`. If valid, ask "Slack is already configured. Would you like to skip?"
 4. If skipping: Run `uv run python tools/setup_progress.py skip setup-slack --reason 'User skipped'`
 
@@ -22,7 +22,7 @@ tags: ["setup", "slack", "api"]
 
 | Item | Details |
 |------|---------|
-| Goal | Create a Slack App, obtain a Bot Token, save it securely, and enable Slack search and message retrieval features |
+| Goal | Create a Slack App, obtain a User Token, save it securely, and enable Slack search and message retrieval features |
 | Duration | ~15 minutes |
 | Prerequisites | Admin access to a Slack workspace (or permission to add Apps), browser available |
 | Skill Level | No CLI commands needed (all auto-run by AI + GUI-only operations) |
@@ -30,9 +30,9 @@ tags: ["setup", "slack", "api"]
 **Session flow:**
 1. Open the Slack App management page (AI auto-launches browser)
 2. Create a new Slack App (click buttons on screen)
-3. Set up Bot Token Scopes (add required permissions)
+3. Set up User Token Scopes (add required permissions)
 4. Install to workspace (click the allow button)
-5. Save the Bot Token securely (using credential_manager)
+5. Save the User Token securely (using credential_manager)
 6. Operation test (AI auto-runs)
 
 > **Hint**: If the AI stops responding midway, type "please continue" or "it stopped" to resume.
@@ -122,10 +122,10 @@ xdg-open https://api.slack.com/apps
    - Select a workspace under "Pick a workspace"
    - Click "Create App"
    - Click "OAuth & Permissions" in the left menu
-   - In the "Bot Token Scopes" section, click "Add an OAuth Scope" and add these 4 scopes one by one: channels:history, channels:read, chat:write, users:read
+   - In the "User Token Scopes" section, click "Add an OAuth Scope" and add these 4 scopes one by one: channels:history, channels:read, chat:write, users:read
    - Click "Install to Workspace" at the top of the page
    - Click "Allow" on the permission confirmation screen
-3. Once the Bot User OAuth Token (xoxb-...) appears, prompt the user: "Click the Copy button next to the token to copy it"
+3. Once the User OAuth Token (xoxp-...) appears, prompt the user: "Click the Copy button next to the token to copy it"
 4. Proceed to Step 4
 
 **Note:** Do not read the token value from the browser screen. The user copies it manually.
@@ -134,19 +134,19 @@ If Chrome integration is not available, follow the manual steps in Steps 2-3 bel
 
 ---
 
-## Step 2: Set Up Bot Token Scopes
+## Step 2: Set Up User Token Scopes
 
 **AskQuestion configuration:**
 ```json
 {
-  "title": "Step 2: Set Up Bot Token Scopes",
+  "title": "Step 2: Set Up User Token Scopes",
   "questions": [{
     "id": "scope_setup",
-    "prompt": "The App settings page is displayed. Follow these steps to set up Bot Token Scopes:\n\n1. Click 'OAuth & Permissions' in the left menu\n2. Scroll down to find the 'Scopes' section\n3. Click 'Add an OAuth Scope' under 'Bot Token Scopes'\n4. Add the following 4 scopes one by one:\n\n   - channels:history (read channel messages)\n   - channels:read (read channel information)\n   - chat:write (send messages)\n   - users:read (read user information)\n\nHave you added all 4 scopes?",
+    "prompt": "The App settings page is displayed. Follow these steps to set up User Token Scopes:\n\n1. Click 'OAuth & Permissions' in the left menu\n2. Scroll down to find the 'Scopes' section\n3. Click 'Add an OAuth Scope' under 'User Token Scopes'\n4. Add the following 4 scopes one by one:\n\n   - channels:history (read channel messages)\n   - channels:read (read channel information)\n   - chat:write (send messages)\n   - users:read (read user information)\n\nHave you added all 4 scopes?",
     "options": [
       {"id": "scopes_added", "label": "Added all 4 scopes!"},
       {"id": "cant_find_oauth", "label": "Can't find 'OAuth & Permissions'"},
-      {"id": "cant_find_scopes", "label": "Can't find 'Bot Token Scopes'"},
+      {"id": "cant_find_scopes", "label": "Can't find 'User Token Scopes'"},
       {"id": "scope_not_found", "label": "The scope I want to add doesn't appear as an option"},
       {"id": "what_are_scopes", "label": "What are scopes?"}
     ]
@@ -156,7 +156,7 @@ If Chrome integration is not available, follow the manual steps in Steps 2-3 bel
 
 (scopes_added -> Proceed to Step 3)
 (cant_find_oauth -> Guide: "Check the left sidebar menu. 'OAuth & Permissions' is under the 'Features' section. If you can't see the sidebar, try widening your browser window")
-(cant_find_scopes -> Guide: "Scroll down the page. The 'Scopes' section is below the 'OAuth Tokens for Your Workspace' section. Look for 'Bot Token Scopes' within it. Note: this is NOT 'User Token Scopes'")
+(cant_find_scopes -> Guide: "Scroll down the page. The 'Scopes' section is below the 'OAuth Tokens for Your Workspace' section. Look for 'User Token Scopes' within it. Note: this is NOT 'Bot Token Scopes'")
 (scope_not_found -> Guide: "Enter the scope name exactly. Typing in the input field filters the suggestions. For example, typing 'channels' will show channels:history and channels:read as options")
 (what_are_scopes -> Explain: "Scopes define the range of operations your App is allowed to perform. The 4 we're adding are:\n- channels:history = Permission to read past messages in channels\n- channels:read = Permission to view the channel list\n- chat:write = Permission to post messages as the App\n- users:read = Permission to view workspace member information\nThese are the minimum permissions needed for Slack search and task management features")
 
@@ -170,7 +170,7 @@ If Chrome integration is not available, follow the manual steps in Steps 2-3 bel
   "title": "Step 3: Install to Workspace",
   "questions": [{
     "id": "install_app",
-    "prompt": "Once scope setup is complete, install the App to your workspace:\n\n1. Scroll up to find the 'OAuth Tokens for Your Workspace' section\n2. Click the 'Install to Workspace' button\n   (It's also OK if the button says 'Reinstall to Workspace')\n3. Click 'Allow' on the permission confirmation screen\n4. The 'Bot User OAuth Token' will appear (a string starting with xoxb-)\n5. Click the 'Copy' button to the right of the token\n\nWere you able to copy the Bot User OAuth Token?",
+    "prompt": "Once scope setup is complete, install the App to your workspace:\n\n1. Scroll up to find the 'OAuth Tokens for Your Workspace' section\n2. Click the 'Install to Workspace' button\n   (It's also OK if the button says 'Reinstall to Workspace')\n3. Click 'Allow' on the permission confirmation screen\n4. The 'User OAuth Token' will appear (a string starting with xoxp-)\n5. Click the 'Copy' button to the right of the token\n\nWere you able to copy the User OAuth Token?",
     "options": [
       {"id": "token_copied", "label": "Token copied!"},
       {"id": "no_install_button", "label": "There's no 'Install to Workspace' button"},
@@ -182,9 +182,9 @@ If Chrome integration is not available, follow the manual steps in Steps 2-3 bel
 ```
 
 (token_copied -> Proceed to Step 4)
-(no_install_button -> Guide: "The Install button won't appear if no Bot Token Scopes have been added. Go back to Step 2 and add at least one scope")
+(no_install_button -> Guide: "The Install button won't appear if no User Token Scopes have been added. Go back to Step 2 and add at least one scope")
 (allow_denied -> Guide: "Your workspace admin may have restricted App additions. Ask the admin for approval, or create a test workspace of your own")
-(no_token -> Guide: "If installation completed successfully, the 'Bot User OAuth Token' should appear at the top of the 'OAuth & Permissions' page. Reload the page and check the top section")
+(no_token -> Guide: "If installation completed successfully, the 'User OAuth Token' should appear at the top of the 'OAuth & Permissions' page. Reload the page and check the top section")
 
 ---
 
@@ -209,13 +209,13 @@ After copying the token, follow these steps to save it securely:
 │ Cursor: Ctrl+` (backtick) to open a new terminal           │
 │ Claude Code: Open a separate terminal window                │
 │                                                             │
-│ uv run python tools/credential_manager.py store SLACK_BOT_TOKEN    │
+│ uv run python tools/credential_manager.py store SLACK_USER_TOKEN    │
 │                                                             │
-│ -> "Enter value for SLACK_BOT_TOKEN:" will appear           │
-│ -> Paste the copied Bot Token and press Enter               │
+│ -> "Enter value for SLACK_USER_TOKEN:" will appear           │
+│ -> Paste the copied User Token and press Enter               │
 │   (The text you type won't be shown on screen. This is      │
 │    normal)                                                  │
-│ -> "Stored SLACK_BOT_TOKEN" means it's saved!               │
+│ -> "Stored SLACK_USER_TOKEN" means it's saved!               │
 └─────────────────────────────────────────────────────────────┘
 
 Once saved, come back to this chat and let me know you're "done".
@@ -257,8 +257,8 @@ and never appears in plaintext files or chat logs.
 
 **What the AI auto-runs:**
 
-1. First run `credential_manager.py status` to check if `SLACK_BOT_TOKEN` is saved in the Credential Store:
-   - **Note**: Do not display the token value itself in chat. Only show masked output like "Confirmed token is set (xoxb-****...)"
+1. First run `credential_manager.py status` to check if `SLACK_USER_TOKEN` is saved in the Credential Store:
+   - **Note**: Do not display the token value itself in chat. Only show masked output like "Confirmed token is set (xoxp-****...)"
    - Status check command: `uv run python tools/credential_manager.py status`
 
 2. If the basic check passes, send an actual test request to the Slack API:
@@ -271,9 +271,9 @@ and never appears in plaintext files or chat logs.
          inject_to_environ()
      except ImportError:
          pass
-     token = os.getenv("SLACK_BOT_TOKEN")
-     if not token or token == "xoxb-your-bot-token":
-         print("Error: SLACK_BOT_TOKEN is not set.")
+     token = os.getenv("SLACK_USER_TOKEN")
+     if not token or token == "xoxp-your-user-token":
+         print("Error: SLACK_USER_TOKEN is not set.")
          sys.exit(1)
      resp = requests.post(
          "https://slack.com/api/auth.test",
@@ -363,15 +363,15 @@ Alternatively, you can also send the message `/invite @AIAgent Bootcamp` in the 
 ```
 
 ### Issue 1: "invalid_auth" error
-**Cause**: Bot Token was not copied correctly, or is invalid
+**Cause**: User Token was not copied correctly, or is invalid
 **What the AI does**:
-1. Check Credential Store state with `uv run python tools/credential_manager.py status` (only report whether it starts with `xoxb-`, do not display the value)
+1. Check Credential Store state with `uv run python tools/credential_manager.py status` (only report whether it starts with `xoxp-`, do not display the value)
 2. Auto-check for extra spaces, newlines, or quotation marks
 3. If an issue is found, suggest re-saving. If not, guide: "Please regenerate the token from the Slack App settings page"
 
 ### Issue 2: "missing_scope" error
-**Cause**: Required Bot Token Scope has not been added
-**AI guidance**: "In the Slack App settings page, go to 'OAuth & Permissions' -> 'Bot Token Scopes' and verify all these scopes are added: channels:history, channels:read, chat:write, users:read. After adding scopes, you need to click 'Reinstall to Workspace' to reinstall"
+**Cause**: Required User Token Scope has not been added
+**AI guidance**: "In the Slack App settings page, go to 'OAuth & Permissions' -> 'User Token Scopes' and verify all these scopes are added: channels:history, channels:read, chat:write, users:read. After adding scopes, you need to click 'Reinstall to Workspace' to reinstall"
 
 ### Issue 3: "not_in_channel" error
 **Cause**: Bot has not been invited to the target channel
@@ -388,9 +388,9 @@ Alternatively, you can also send the message `/invite @AIAgent Bootcamp` in the 
 
 ## Checkpoint
 - [ ] Created the "AIAgent Bootcamp" Slack App
-- [ ] Added 4 scopes to Bot Token Scopes (channels:history, channels:read, chat:write, users:read)
+- [ ] Added 4 scopes to User Token Scopes (channels:history, channels:read, chat:write, users:read)
 - [ ] Installed the App to the workspace
-- [ ] SLACK_BOT_TOKEN is saved in the Credential Store (check with `uv run python tools/credential_manager.py status`)
+- [ ] SLACK_USER_TOKEN is saved in the Credential Store (check with `uv run python tools/credential_manager.py status`)
 - [ ] API test succeeded (workspace name and bot name displayed)
 
 ---

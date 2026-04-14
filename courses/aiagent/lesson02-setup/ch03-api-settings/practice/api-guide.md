@@ -92,7 +92,7 @@ uv run python tools/credential_manager.py import-dotenv FAL_KEY --delete
 
 ---
 
-## 5. Slack Bot Token（Slack連携用・オプション）
+## 5. Slack User Token（Slack連携用・オプション）
 
 ### 取得手順
 1. https://api.slack.com/apps にアクセス
@@ -100,13 +100,13 @@ uv run python tools/credential_manager.py import-dotenv FAL_KEY --delete
 3. アプリ名とワークスペースを入力
 4. 「OAuth & Permissions」→ 必要なスコープを追加
 5. 「Install to Workspace」でインストール
-6. 「Bot User OAuth Token」（`xoxb-...`）をコピー
+6. 「User OAuth Token」（`xoxp-...`）をコピー
 
 ### 設定
 ```bash
-uv run python tools/credential_manager.py prepare-dotenv SLACK_BOT_TOKEN
+uv run python tools/credential_manager.py prepare-dotenv SLACK_USER_TOKEN
 # 保存後:
-uv run python tools/credential_manager.py import-dotenv SLACK_BOT_TOKEN --delete
+uv run python tools/credential_manager.py import-dotenv SLACK_USER_TOKEN --delete
 ```
 
 ---

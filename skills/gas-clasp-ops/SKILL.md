@@ -18,11 +18,9 @@ Google Apps Script プロジェクトを clasp CLI で一括操作するため�
 ## 前提条件
 
 ```bash
-# clasp のインストール（未インストールの場合）
-npm install -g @google/clasp
-
+# clasp は npx 経由で実行（インストール不要）
 # Google アカウントでログイン（初回のみ）
-clasp login
+npx -y @google/clasp login
 ```
 
 ## クイックスタート
@@ -102,7 +100,7 @@ python skills/gas-clasp-ops/scripts/clasp_ops.py run \
 
 | エラー | 原因 | 対処法 |
 |--------|------|--------|
-| `Not logged in` | clasp 未ログイン | `clasp login` を実行 |
+| `Not logged in` | clasp 未ログイン | `npx -y @google/clasp login` を実行 |
 | `Script API disabled` | GAS API 無効 | [GAS API](https://script.google.com/home/usersettings) で有効化 |
 | `Permission denied` | OAuth スコープ不足 | `appsscript.json` に必要なスコープを追加 |
 | `Function not found` | 関数名が不正 | GAS エディタで関数名を確認 |

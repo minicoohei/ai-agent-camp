@@ -1,37 +1,39 @@
 ---
-description: "Notion MCP Setup (Complete Guide)"
+description: "Notion CLI (ncli) + MCP Setup (Complete Guide)"
 duration: "~15 min"
-prerequisites: ["Have a Notion account (free plan OK)", "Browser available"]
+prerequisites: ["Have a Notion account (free plan OK)", "Browser available", "Node.js 18 or higher"]
 level: "beginner"
-tags: ["setup", "notion", "mcp", "api"]
+tags: ["setup", "notion", "ncli", "mcp", "api"]
 ---
 
-# Notion MCP Setup
+# Notion CLI (ncli) + MCP Setup
 
 ## Step 0: Check Setup Progress
 
 **What the AI auto-runs:**
 1. Run `uv run python tools/setup_progress.py show --current setup-notion` to display progress
 2. Auto-detect existing configuration:
+   - Run `which ncli` to check if ncli is already installed
    - For Claude Code: check if a `notion` server is defined in `~/.claude/mcp_settings.json`
    - For Cursor: check if a `notion` server is defined in `.cursor/mcp.json`
-   - If already configured, you can just run Step 5 (connection test) and mark it as complete
+   - If ncli is installed and MCP is configured, you can just run Step 6 (connection test) and mark it as complete
 
 ## What You'll Do in This Session
 
 | Item | Details |
 |------|---------|
-| Goal | Create a Notion integration and enable Claude Code/Cursor to operate Notion pages and databases via the MCP server |
+| Goal | Install ncli (Notion CLI), create a Notion integration, and enable operating Notion pages and databases via the terminal + MCP |
 | Duration | ~15 minutes |
-| Prerequisites | Have a Notion account (free plan OK), browser available |
+| Prerequisites | Notion account (free plan OK), Node.js 18 or higher, browser available |
 | Skill Level | No CLI commands needed (everything is auto-run by AI + GUI operations only) |
 
 **Session flow:**
-1. Open the Notion Integrations page in the browser (AI opens the browser automatically)
-2. Create an integration and get the API key (just click buttons on screen)
-3. Create the MCP configuration file (AI creates it automatically)
-4. Share the integration with Notion pages
-5. MCP connection test
+1. Install ncli (@sakasegawa/ncli) (AI auto-runs)
+2. Open the Notion Integrations page in the browser (AI opens the browser automatically)
+3. Create an integration and get the API key (just click buttons on screen)
+4. Create the MCP configuration file (AI creates it automatically)
+5. Share the integration with Notion pages
+6. ncli + MCP connection test
 
 > **Hint**: If the AI's response stops midway, type "please continue" or "it stopped" to resume.
 
@@ -58,14 +60,51 @@ tags: ["setup", "notion", "mcp", "api"]
 ```
 
 (ready -> Proceed to Step 1)
-(chrome -> After opening the browser in Step 1, follow the "Automating with Chrome Integration" section for automatic execution)
+(chrome -> After opening the browser in Step 2, follow the "Automating with Chrome Integration" section for automatic execution)
 (check_prereq -> Guide: "You're ready if you have a Notion account (free plan OK) and can log in via your browser.")
-(which_tool -> Explain: "The configuration file location differs between Claude Code and Cursor. Step 3 will guide you through the steps for each.")
+(which_tool -> Explain: "The configuration file location differs between Claude Code and Cursor. Step 4 will guide you through the steps for each.")
 (different_lesson -> Display module list)
 
 ---
 
-## Step 1: Open the Notion Integrations Page in the Browser
+## Step 1: Install ncli (Notion CLI)
+
+**What the AI does:**
+1. Check Node.js version: `node --version` (18 or higher required)
+2. Check if ncli is already installed: `which ncli`
+3. If not installed, run the following command:
+
+```bash
+npm install -g @sakasegawa/ncli
+```
+
+4. After installation, verify with `ncli --version`
+
+**AskQuestion configuration:**
+```json
+{
+  "title": "Step 1: Install ncli",
+  "questions": [{
+    "id": "ncli_status",
+    "prompt": "ncli installation has been executed. Please check the result.",
+    "options": [
+      {"id": "installed", "label": "Installed successfully!"},
+      {"id": "npm_error", "label": "Got an error with npm install"},
+      {"id": "no_node", "label": "Node.js is not installed"},
+      {"id": "command_not_found", "label": "ncli command not found"}
+    ]
+  }]
+}
+```
+
+(installed -> Proceed to Step 2)
+(npm_error -> Run `npm cache clean --force` and retry. If it's a permissions error, guide to `sudo npm install -g @sakasegawa/ncli`)
+(no_node -> Guide: "Please install the LTS version (18 or higher) from https://nodejs.org/")
+(command_not_found -> Check installation with `npm list -g @sakasegawa/ncli`. If it's a PATH issue, check with `npm bin -g` and guide on adding it to PATH)
+
+---
+
+## Step 2: Open the Notion Integrations Page in the Browser
 
 **What the AI does:**
 1. Auto-detect the OS (Mac / Windows / Linux)
@@ -84,7 +123,7 @@ xdg-open https://www.notion.so/my-integrations
 
 ```json
 {
-  "title": "Step 1: Create an integration",
+  "title": "Step 2: Create an integration",
   "questions": [{
     "id": "browser_status",
     "prompt": "Did the browser open? Follow these steps to create an integration:\n\n1. Log in to Notion\n2. Click the 'New integration' button\n3. Set the name to 'AIAgent Bootcamp'\n4. Select 'Internal' for the type\n5. Under Capabilities, check 'Read content', 'Update content', and 'Insert content'\n6. Click 'Submit'\n\nDid you create the integration?",
@@ -98,7 +137,7 @@ xdg-open https://www.notion.so/my-integrations
 }
 ```
 
-(created -> Proceed to Step 2)
+(created -> Proceed to Step 3)
 (browser_not_open -> Guide: "Open this URL directly in your browser: https://www.notion.so/my-integrations")
 (no_button -> Guide: "Wait for the page to fully load. When you visit https://www.notion.so/my-integrations while logged in to Notion, you'll see the 'New integration' button near the top right.")
 (login_issue -> Guide: "If you don't have a Notion account, you can create one for free at https://www.notion.so/signup. If you already have an account, log in with your email address or Google account.")
@@ -119,7 +158,7 @@ xdg-open https://www.notion.so/my-integrations
    - Check Read content, Update content, and Insert content under Capabilities
    - Click "Submit"
 3. Once the Internal Integration Secret appears, tell the user "Click the Copy button next to the secret to copy it"
-4. Proceed to Step 3
+4. Proceed to Step 4
 
 **Note:** Do not read the secret value from the browser screen. The user copies it manually.
 
@@ -127,7 +166,7 @@ If Chrome integration is not available, follow the instructions below manually.
 
 ---
 
-## Step 2: Copy the API Key
+## Step 3: Copy the API Key
 
 **Message to display to the user:**
 
@@ -146,7 +185,7 @@ In the next step, the AI will securely write it to the configuration file.
 **AskQuestion configuration:**
 ```json
 {
-  "title": "Step 2: Copy the API key",
+  "title": "Step 3: Copy the API key",
   "questions": [{
     "id": "copy_status",
     "prompt": "Did you copy the Internal Integration Secret (the string starting with secret_xxx)?",
@@ -159,13 +198,13 @@ In the next step, the AI will securely write it to the configuration file.
 }
 ```
 
-(copied -> Proceed to Step 3)
+(copied -> Proceed to Step 4)
 (no_secret -> Guide: "Click on the name of the integration you created from the integration list (https://www.notion.so/my-integrations) to go to its settings page. You'll find a token starting with secret_ in the 'Internal Integration Secret' section.")
 (help_capabilities -> Guide: "On the integration settings page, go to the 'Capabilities' tab and check 'Read content', 'Update content', and 'Insert content'. This enables reading and writing pages via the API.")
 
 ---
 
-## Step 3: Create the MCP Configuration File
+## Step 4: Create the MCP Configuration File
 
 **What the AI auto-runs:**
 
@@ -186,7 +225,7 @@ Configuration content (if `mcpServers` already exists, add the `notion` entry):
       "command": "npx",
       "args": ["-y", "@notionhq/notion-mcp-server"],
       "env": {
-        "NOTION_API_KEY": "YOUR_NOTION_API_KEY_HERE"
+        "NOTION_TOKEN": "YOUR_NOTION_TOKEN_HERE"
       }
     }
   }
@@ -204,7 +243,7 @@ The MCP configuration file has been created. Please set the API key:
 | Claude Code: ~/.claude/mcp_settings.json                     |
 | Cursor:      ~/.cursor/mcp.json                              |
 |                                                              |
-| Replace YOUR_NOTION_API_KEY_HERE in the file with            |
+| Replace YOUR_NOTION_TOKEN_HERE in the file with              |
 | the API key you copied (secret_xxx...).                      |
 | After saving, come back to this chat.                        |
 +-------------------------------------------------------------+
@@ -216,7 +255,7 @@ Editing the file directly in an editor keeps it out of chat logs.
 **AskQuestion configuration:**
 ```json
 {
-  "title": "Step 3: Create the MCP configuration file",
+  "title": "Step 4: Create the MCP configuration file",
   "questions": [{
     "id": "config_status",
     "prompt": "Did you replace the API key in the MCP configuration file?",
@@ -230,14 +269,14 @@ Editing the file directly in an editor keeps it out of chat logs.
 }
 ```
 
-(done -> AI reads the config file and checks that `YOUR_NOTION_API_KEY_HERE` is no longer present (without displaying the key value). If OK, proceed to Step 4)
+(done -> AI reads the config file and checks that `YOUR_NOTION_TOKEN_HERE` is no longer present (without displaying the key value). If OK, proceed to Step 5)
 (editor_help -> Guide: "Run the following in your terminal to open it in an editor: Mac: `open ~/.claude/mcp_settings.json` / Cursor: `code ~/.cursor/mcp.json`. Or show hidden files in Finder/Explorer and open the file.")
 (existing_config -> Read the existing file content and guide on adding the `notion` entry to `mcpServers`. Preserve other existing MCP server configurations)
 (security_question -> Explain: "The MCP configuration file is in your home directory and is not included in the Git repository. The API key is stored only in this file and is passed as an environment variable when the MCP server starts.")
 
 ---
 
-## Step 4: Share the Integration with Pages
+## Step 5: Share the Integration with Pages
 
 **Important: If you skip this step, the MCP will not be able to access your Notion pages.**
 
@@ -264,7 +303,7 @@ Follow these steps to share the integration with the pages you want to access:
 **AskQuestion configuration:**
 ```json
 {
-  "title": "Step 4: Share the integration with pages",
+  "title": "Step 5: Share the integration with pages",
   "questions": [{
     "id": "share_status",
     "prompt": "Did you share the integration with your Notion page?",
@@ -278,14 +317,14 @@ Follow these steps to share the integration with the pages you want to access:
 }
 ```
 
-(shared -> Proceed to Step 5)
+(shared -> Proceed to Step 6)
 (no_connection -> Guide: "Open the '...' menu at the top right of the page, and you'll find 'Add connections' near the bottom. If you can't find it, check that you have owner permissions for the page. It doesn't appear with guest permissions.")
 (no_integration -> Guide: "It may take a moment for the integration to appear right after creation. Reload the page and try again. If it still doesn't appear, check that the integration was correctly created at https://www.notion.so/my-integrations.")
-(skip_share -> Guide: "You can set this up later. This setting is needed when accessing pages via MCP. Please configure it before using Notion in /start-12-1." then proceed to Step 5)
+(skip_share -> Guide: "You can set this up later. This setting is needed when accessing pages via MCP. Please configure it before using Notion in /start-12-1." then proceed to Step 6)
 
 ---
 
-## Step 5: MCP Connection Test
+## Step 6: MCP Connection Test
 
 **What the AI does:**
 
@@ -305,7 +344,7 @@ For Cursor:
 **AskQuestion configuration:**
 ```json
 {
-  "title": "Step 5: MCP Connection Test",
+  "title": "Step 6: MCP Connection Test",
   "questions": [{
     "id": "restart_status",
     "prompt": "Did you restart the tool?",
@@ -343,7 +382,7 @@ You can now operate Notion pages and databases directly from Claude Code/Cursor.
     "options": [
       {"id": "retry", "label": "Run the test again"},
       {"id": "check_config", "label": "Check the MCP configuration file"},
-      {"id": "recheck_key", "label": "Recheck the API key (go back to Step 1)"},
+      {"id": "recheck_key", "label": "Recheck the API key (go back to Step 2)"},
       {"id": "show_error", "label": "I want to see the error details"},
       {"id": "skip_test", "label": "Skip the test and move on"}
     ]
@@ -352,8 +391,8 @@ You can now operate Notion pages and databases directly from Claude Code/Cursor.
 ```
 
 (retry -> Re-run the test)
-(check_config -> Check the MCP configuration file content. Verify that NOTION_API_KEY is not still the placeholder and that the JSON syntax is correct)
-(recheck_key -> Go back to Step 1)
+(check_config -> Check the MCP configuration file content. Verify that NOTION_TOKEN is not still the placeholder and that the JSON syntax is correct)
+(recheck_key -> Go back to Step 2)
 (show_error -> Display the error message and guide on the cause and solution)
 (skip_test -> Guide: "The test was skipped. You can check later with /check-setup.")
 
@@ -400,11 +439,11 @@ You can now operate Notion pages and databases directly from Claude Code/Cursor.
 **Cause**: Integration Capabilities settings are insufficient, or the page is not shared
 **What the AI does**:
 1. Guide: "Check the integration's Capabilities at https://www.notion.so/my-integrations. Are Read content / Update content / Insert content checked?"
-2. Guide: "Is the integration shared with the target Notion page? Please re-check the Step 4 instructions."
+2. Guide: "Is the integration shared with the target Notion page? Please re-check the Step 5 instructions."
 
 ### Trouble 4: "object_not_found" Error
 **Cause**: The target page does not have the integration shared
-**AI guidance**: "The integration is not shared with the Notion page you want to access via the API. Follow the Step 4 instructions to add the integration from the page's 'Add connections'. Adding it to a parent page also applies to child pages."
+**AI guidance**: "The integration is not shared with the Notion page you want to access via the API. Follow the Step 5 instructions to add the integration from the page's 'Add connections'. Adding it to a parent page also applies to child pages."
 
 ### Trouble 5: npx Command Not Found
 **Cause**: Node.js is not installed, or PATH is not configured
@@ -421,6 +460,7 @@ You can now operate Notion pages and databases directly from Claude Code/Cursor.
 ---
 
 ## Checkpoint
+- [ ] ncli (@sakasegawa/ncli) is installed
 - [ ] Created an integration (AIAgent Bootcamp) on the Notion Integrations page
 - [ ] Copied the Internal Integration Secret (secret_xxx)
 - [ ] Added the Notion server configuration to the MCP configuration file

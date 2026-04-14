@@ -1,37 +1,39 @@
 ---
-description: "Notion MCP セットアップ（完全ガイド付き）"
+description: "Notion CLI (ncli) + MCP セットアップ（完全ガイド付き）"
 duration: "約15分"
-prerequisites: ["Notionアカウントを持っている（無料プランでOK）", "ブラウザが使える"]
+prerequisites: ["Notionアカウントを持っている（無料プランでOK）", "ブラウザが使える", "Node.js 18以上"]
 level: "beginner"
-tags: ["setup", "notion", "mcp", "api"]
+tags: ["setup", "notion", "ncli", "mcp", "api"]
 ---
 
-# Notion MCP セットアップ
+# Notion CLI (ncli) + MCP セットアップ
 
 ## Step 0: セットアップ進捗の確認
 
 **AIが自動実行する内容:**
 1. `uv run python tools/setup_progress.py show --current setup-notion` を実行して進捗を表示
 2. 既存の設定を自動検出:
+   - `which ncli` で ncli がインストール済みか確認
    - Claude Code の場合: `~/.claude/mcp_settings.json` に `notion` サーバーが定義されているか確認
    - Cursor の場合: `.cursor/mcp.json` に `notion` サーバーが定義されているか確認
-   - 設定済みの場合、Step 5（接続テスト）のみ実行して完了にできる
+   - ncli インストール済み＆MCP設定済みの場合、Step 6（接続テスト）のみ実行して完了にできる
 
 ## このセッションでやること
 
 | 項目 | 内容 |
 |------|------|
-| ゴール | Notion インテグレーションを作成し、MCP サーバー経由で Claude Code/Cursor から Notion のページ・データベースを操作できるようにする |
+| ゴール | ncli（Notion CLI）をインストールし、Notion インテグレーションを作成して、ターミナル＋MCP 経由で Notion を操作できるようにする |
 | 所要時間 | 約15分 |
-| 前提条件 | Notionアカウントを持っていること（無料プランでOK）、ブラウザが使えること |
+| 前提条件 | Notionアカウント（無料プランでOK）、Node.js 18以上、ブラウザ |
 | 操作レベル | CLIコマンド入力なし（すべてAIが自動実行 + GUI操作のみ） |
 
 **このセッションの流れ:**
-1. ブラウザでNotion Integrationsページを開く（AIが自動でブラウザを起動）
-2. インテグレーションを作成してAPIキーを取得する（画面上のボタンをクリックするだけ）
-3. MCP設定ファイルを作成する（AIが自動作成）
-4. Notionページへのインテグレーション共有設定
-5. MCP接続テスト
+1. ncli（@sakasegawa/ncli）をインストールする（AIが自動実行）
+2. ブラウザでNotion Integrationsページを開く（AIが自動でブラウザを起動）
+3. インテグレーションを作成してAPIキーを取得する（画面上のボタンをクリックするだけ）
+4. MCP設定ファイルを作成する（AIが自動作成）
+5. Notionページへのインテグレーション共有設定
+6. ncli + MCP 接続テスト
 
 > **ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。
 
@@ -60,12 +62,49 @@ tags: ["setup", "notion", "mcp", "api"]
 (ready → Step 1へ)
 (chrome → Step 1 でブラウザを開いた後、「Chrome 統合で自動化する場合」セクションの手順で自動実行する)
 (check_prereq → 「Notionアカウント（無料プランでOK）があり、ブラウザでログインできれば準備OKです」と案内)
-(which_tool → 「Claude Code を使っている場合と Cursor を使っている場合で設定ファイルの場所が異なります。Step 3 でそれぞれの手順を案内します」と説明)
+(which_tool → 「Claude Code を使っている場合と Cursor を使っている場合で設定ファイルの場所が異なります。Step 4 でそれぞれの手順を案内します」と説明)
 (different_lesson → モジュール一覧を表示)
 
 ---
 
-## Step 1: ブラウザでNotion Integrationsページを開く
+## Step 1: ncli（Notion CLI）のインストール
+
+**AIが実行すること:**
+1. Node.js のバージョンを確認: `node --version`（18以上が必要）
+2. ncli がインストール済みか確認: `which ncli`
+3. 未インストールの場合、以下のコマンドを実行:
+
+```bash
+npm install -g @sakasegawa/ncli
+```
+
+4. インストール後、`ncli --version` で確認する
+
+**AskQuestionの設定:**
+```json
+{
+  "title": "Step 1: ncli のインストール",
+  "questions": [{
+    "id": "ncli_status",
+    "prompt": "ncli のインストールを実行しました。結果を確認してください。",
+    "options": [
+      {"id": "installed", "label": "インストールできました！"},
+      {"id": "npm_error", "label": "npm install でエラーが出た"},
+      {"id": "no_node", "label": "Node.js がインストールされていない"},
+      {"id": "command_not_found", "label": "ncli コマンドが見つからない"}
+    ]
+  }]
+}
+```
+
+(installed → Step 2へ)
+(npm_error → `npm cache clean --force` を実行後リトライ。権限エラーの場合は `sudo npm install -g @sakasegawa/ncli` を案内)
+(no_node → 「https://nodejs.org/ から LTS 版（18以上）をインストールしてください」と案内)
+(command_not_found → `npm list -g @sakasegawa/ncli` でインストール確認。PATH の問題なら `npm bin -g` で確認してPATHに追加する手順を案内)
+
+---
+
+## Step 2: ブラウザでNotion Integrationsページを開く
 
 **AIが実行すること:**
 1. OSを自動判定する（Mac / Windows / Linux）
@@ -84,7 +123,7 @@ xdg-open https://www.notion.so/my-integrations
 
 ```json
 {
-  "title": "Step 1: インテグレーションを作成",
+  "title": "Step 2: インテグレーションを作成",
   "questions": [{
     "id": "browser_status",
     "prompt": "ブラウザが開きましたか？以下の手順でインテグレーションを作成してください:\n\n1. Notionにログインする\n2. 「New integration」（新しいインテグレーション）ボタンをクリック\n3. 名前を「AIAgent Bootcamp」にする\n4. タイプは「Internal」を選択\n5. Capabilities で「Read content」「Update content」「Insert content」にチェック\n6. 「Submit」（送信）をクリック\n\nインテグレーションを作成できましたか？",
@@ -98,7 +137,7 @@ xdg-open https://www.notion.so/my-integrations
 }
 ```
 
-(created → Step 2へ)
+(created → Step 3へ)
 (browser_not_open → 「ブラウザで直接このURLを開いてください: https://www.notion.so/my-integrations」と案内)
 (no_button → 「ページが完全に読み込まれるまで待ってください。Notionにログインした状態で https://www.notion.so/my-integrations にアクセスすると、右上付近に「New integration」ボタンが表示されます」と案内)
 (login_issue → 「Notionアカウントをお持ちでない場合は https://www.notion.so/signup から無料で作成できます。既にアカウントがある場合は、メールアドレスまたはGoogleアカウントでログインしてください」と案内)
@@ -127,7 +166,7 @@ Chrome 統合が利用できない場合は、以下の手順を手動で実行�
 
 ---
 
-## Step 2: APIキーをコピーする
+## Step 3: APIキーをコピーする
 
 **ユーザーに案内するメッセージ:**
 
@@ -146,7 +185,7 @@ Chrome 統合が利用できない場合は、以下の手順を手動で実行�
 **AskQuestionの設定:**
 ```json
 {
-  "title": "Step 2: APIキーのコピー",
+  "title": "Step 3: APIキーのコピー",
   "questions": [{
     "id": "copy_status",
     "prompt": "Internal Integration Secret（secret_xxx で始まる文字列）をコピーできましたか？",
@@ -159,13 +198,13 @@ Chrome 統合が利用できない場合は、以下の手順を手動で実行�
 }
 ```
 
-(copied → Step 3へ)
+(copied → Step 4へ)
 (no_secret → 「インテグレーション一覧（https://www.notion.so/my-integrations）から作成したインテグレーション名をクリックすると、設定ページに移動できます。「Internal Integration Secret」セクションに secret_ で始まるトークンが表示されます」と案内)
 (help_capabilities → 「インテグレーション設定ページの「Capabilities」タブで、「Read content」「Update content」「Insert content」にチェックを入れてください。これでAPIからページの読み書きが可能になります」と案内)
 
 ---
 
-## Step 3: MCP設定ファイルを作成する
+## Step 4: MCP設定ファイルを作成する
 
 **AIが自動で実行すること:**
 
@@ -186,7 +225,7 @@ Chrome 統合が利用できない場合は、以下の手順を手動で実行�
       "command": "npx",
       "args": ["-y", "@notionhq/notion-mcp-server"],
       "env": {
-        "NOTION_API_KEY": "YOUR_NOTION_API_KEY_HERE"
+        "NOTION_TOKEN": "YOUR_NOTION_TOKEN_HERE"
       }
     }
   }
@@ -204,7 +243,7 @@ MCP設定ファイルを作成しました。APIキーを設定してくださ�
 │ Claude Code: ~/.claude/mcp_settings.json                    │
 │ Cursor:      ~/.cursor/mcp.json                             │
 │                                                             │
-│ ファイル内の YOUR_NOTION_API_KEY_HERE を                     │
+│ ファイル内の YOUR_NOTION_TOKEN_HERE を                       │
 │ コピーしたAPIキー（secret_xxx...）で置き換えてください。     │
 │ 保存したら、こちらのチャットに戻ってください。              │
 └─────────────────────────────────────────────────────────────┘
@@ -216,7 +255,7 @@ MCP設定ファイルを作成しました。APIキーを設定してくださ�
 **AskQuestionの設定:**
 ```json
 {
-  "title": "Step 3: MCP設定ファイルの作成",
+  "title": "Step 4: MCP設定ファイルの作成",
   "questions": [{
     "id": "config_status",
     "prompt": "MCP設定ファイルのAPIキーを置換できましたか？",
@@ -230,14 +269,14 @@ MCP設定ファイルを作成しました。APIキーを設定してくださ�
 }
 ```
 
-(done → AIが設定ファイルを読み取り、`YOUR_NOTION_API_KEY_HERE` が残っていないか確認（キーの値は表示しない）。OKなら Step 4 へ)
+(done → AIが設定ファイルを読み取り、`YOUR_NOTION_TOKEN_HERE` が残っていないか確認（キーの値は表示しない）。OKなら Step 5 へ)
 (editor_help → 「ターミナルで以下を実行するとエディタで開けます: Mac: `open ~/.claude/mcp_settings.json` / Cursor: `code ~/.cursor/mcp.json`。または Finder/エクスプローラーで隠しファイルを表示してファイルを開いてください」と案内)
 (existing_config → 既存ファイルの内容を読み取り、`mcpServers` に `notion` エントリを追記する方法を案内。既存の他のMCPサーバー設定は保持する)
 (security_question → 「MCP設定ファイルはホームディレクトリ内にあり、Gitリポジトリには含まれません。APIキーはこのファイルにのみ保存され、MCPサーバー起動時に環境変数として渡されます」と説明)
 
 ---
 
-## Step 4: ページへのインテグレーション共有
+## Step 5: ページへのインテグレーション共有
 
 **重要: この手順を行わないと、MCPからNotionのページにアクセスできません。**
 
@@ -264,7 +303,7 @@ Notion APIでは、インテグレーションがアクセスできるページ�
 **AskQuestionの設定:**
 ```json
 {
-  "title": "Step 4: ページへのインテグレーション共有",
+  "title": "Step 5: ページへのインテグレーション共有",
   "questions": [{
     "id": "share_status",
     "prompt": "Notionページにインテグレーションを共有できましたか？",
@@ -278,14 +317,14 @@ Notion APIでは、インテグレーションがアクセスできるページ�
 }
 ```
 
-(shared → Step 5へ)
+(shared → Step 6へ)
 (no_connection → 「ページ右上の「...」メニューを開くと、下の方に「Add connections」があります。見つからない場合は、ページのオーナー権限があるか確認してください。ゲスト権限では表示されません」と案内)
 (no_integration → 「インテグレーション作成直後は表示に少し時間がかかる場合があります。ページをリロードしてから再度お試しください。それでも表示されない場合は、https://www.notion.so/my-integrations でインテグレーションが正しく作成されているか確認してください」と案内)
-(skip_share → 「後で設定できます。MCPからページにアクセスする際にこの設定が必要になります。/start-12-1 で Notion を使う前に設定してください」と案内してStep 5へ)
+(skip_share → 「後で設定できます。MCPからページにアクセスする際にこの設定が必要になります。/start-12-1 で Notion を使う前に設定してください」と案内してStep 6へ)
 
 ---
 
-## Step 5: MCP接続テスト
+## Step 6: MCP接続テスト
 
 **AIが実行すること:**
 
@@ -305,7 +344,7 @@ Cursor の場合:
 **AskQuestionの設定:**
 ```json
 {
-  "title": "Step 5: MCP接続テスト",
+  "title": "Step 6: MCP接続テスト",
   "questions": [{
     "id": "restart_status",
     "prompt": "ツールを再起動しましたか？",
@@ -343,7 +382,7 @@ Notion MCP の設定が完了しました！
     "options": [
       {"id": "retry", "label": "もう一度テストする"},
       {"id": "check_config", "label": "MCP設定ファイルを確認する"},
-      {"id": "recheck_key", "label": "APIキーを確認し直す（Step 1に戻る）"},
+      {"id": "recheck_key", "label": "APIキーを確認し直す（Step 2に戻る）"},
       {"id": "show_error", "label": "エラーの詳細を見たい"},
       {"id": "skip_test", "label": "テストをスキップして先に進む"}
     ]
@@ -352,8 +391,8 @@ Notion MCP の設定が完了しました！
 ```
 
 (retry → テストを再実行)
-(check_config → MCP設定ファイルの内容を確認。NOTION_API_KEY がプレースホルダーのままでないか、JSONの構文が正しいか確認)
-(recheck_key → Step 1に戻る)
+(check_config → MCP設定ファイルの内容を確認。NOTION_TOKEN がプレースホルダーのままでないか、JSONの構文が正しいか確認)
+(recheck_key → Step 2に戻る)
 (show_error → エラーメッセージを表示して原因と解決方法を案内)
 (skip_test → 「テストはスキップしました。後で /check-setup で確認できます」と案内)
 
@@ -400,11 +439,11 @@ Notion MCP の設定が完了しました！
 **原因**: インテグレーションのCapabilities設定が不足、またはページに共有されていない
 **AIが行うこと**:
 1. 「https://www.notion.so/my-integrations でインテグレーションの Capabilities を確認してください。Read content / Update content / Insert content にチェックが入っていますか？」と案内
-2. 「対象のNotionページにインテグレーションが共有されていますか？ Step 4の手順を再確認してください」と案内
+2. 「対象のNotionページにインテグレーションが共有されていますか？ Step 5の手順を再確認してください」と案内
 
 ### トラブル4: 「object_not_found」エラー
 **原因**: 対象のページにインテグレーションが共有されていない
-**AIの案内**: 「APIからアクセスしたいNotionページに、インテグレーションが共有されていません。Step 4の手順でページの「Add connections」からインテグレーションを追加してください。親ページに追加すると子ページにも適用されます」
+**AIの案内**: 「APIからアクセスしたいNotionページに、インテグレーションが共有されていません。Step 5の手順でページの「Add connections」からインテグレーションを追加してください。親ページに追加すると子ページにも適用されます」
 
 ### トラブル5: npx コマンドが見つからない
 **原因**: Node.js がインストールされていない、または PATH が通っていない
@@ -421,6 +460,7 @@ Notion MCP の設定が完了しました！
 ---
 
 ## チェックポイント
+- [ ] ncli（@sakasegawa/ncli）がインストールされている
 - [ ] Notion Integrationsページでインテグレーション（AIAgent Bootcamp）を作成した
 - [ ] Internal Integration Secret（secret_xxx）をコピーした
 - [ ] MCP設定ファイルにNotionサーバーの設定を追加した

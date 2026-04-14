@@ -17,11 +17,9 @@ Analice la estructura de una presentación de Google Slides a través de GAS y g
 ## Prerrequisitos
 
 ```bash
-# Instalar clasp (si no está instalado)
-npm install -g @google/clasp
-
+# clasp se ejecuta via npx (no requiere instalación)
 # Iniciar sesión con cuenta de Google
-clasp login
+npx -y @google/clasp login
 
 # Habilitar la API de Google Apps Script
 # https://script.google.com/home/usersettings

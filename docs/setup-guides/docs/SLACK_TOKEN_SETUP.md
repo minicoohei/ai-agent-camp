@@ -19,10 +19,10 @@ Slack APIを使用して、チャンネル検索、メッセージ取得、TODO�
 
 | トークン | 用途 | 有効期限 | 推奨 |
 |---------|------|---------|:----:|
-| Bot Token | ボット用アクセス | 無期限 | O |
-| User Token | ユーザー代理アクセス | 90日 | - |
+| Bot Token | ボット用アクセス | 無期限 | - |
+| User Token | ユーザー代理アクセス | 無期限 | O |
 
-> **推奨**: Bot Token を使用してください。User Token は90日で期限切れになります。
+> **推奨**: User Token を使用してください。Bot Token はボット用途に限定されます。
 
 ---
 
@@ -40,11 +40,11 @@ Slack APIを使用して、チャンネル検索、メッセージ取得、TODO�
 
 ## ステップ2: スコープの設定
 
-### Bot Token Scopes（推奨）
+### User Token Scopes（推奨）
 
 1. 左メニューの「**OAuth & Permissions**」をクリック
 2. 「**Scopes**」セクションまでスクロール
-3. 「**Bot Token Scopes**」で「**Add an OAuth Scope**」をクリック
+3. 「**User Token Scopes**」で「**Add an OAuth Scope**」をクリック
 4. 以下のスコープを追加：
 
 | スコープ | 用途 |
@@ -78,8 +78,8 @@ Slack APIを使用して、チャンネル検索、メッセージ取得、TODO�
 4. 表示されるトークンをコピー
 
 ```
-Bot Token: xoxb-...（約50文字）
 User Token: xoxp-...（約100文字）
+Bot Token: xoxb-...（約50文字・オプション）
 ```
 
 ---
@@ -94,11 +94,11 @@ OSの暗号化ストレージに安全に保存します。
 # keyring パッケージのインストール（初回のみ）
 pip install keyring
 
-# Bot Token を保存（入力は画面に表示されません）
-uv run python tools/credential_manager.py store SLACK_BOT_TOKEN
-
-# User Token を保存（オプション）
+# User Token を保存（入力は画面に表示されません）
 uv run python tools/credential_manager.py store SLACK_USER_TOKEN
+
+# Bot Token を保存（オプション）
+uv run python tools/credential_manager.py store SLACK_BOT_TOKEN
 ```
 
 > **なぜ推奨？** Slack Token はワークスペースのデータにアクセスできる認証情報です。Credential Store はOSレベルで暗号化され、平文ファイルに保存されるリスクがありません。
@@ -109,8 +109,8 @@ Credential Store が使えない環境では `.env` を使用できます。
 
 ```bash
 # .env
-SLACK_BOT_TOKEN=xoxb-your-bot-token-here
-SLACK_USER_TOKEN=xoxp-your-user-token-here  # オプション
+SLACK_USER_TOKEN=xoxp-your-user-token-here
+SLACK_BOT_TOKEN=xoxb-your-bot-token-here  # オプション
 ```
 
 > **注意**: `.env` ファイルは `.gitignore` に含まれていることを必ず確認してください。
@@ -118,7 +118,7 @@ SLACK_USER_TOKEN=xoxp-your-user-token-here  # オプション
 ### 方法3: シェル環境変数
 
 ```bash
-export SLACK_BOT_TOKEN=xoxb-your-bot-token-here
+export SLACK_USER_TOKEN=xoxp-your-user-token-here
 ```
 
 ---
@@ -144,7 +144,7 @@ import os
 from slack_sdk import WebClient
 
 # クライアント作成
-client = WebClient(token=os.getenv("SLACK_BOT_TOKEN"))
+client = WebClient(token=os.getenv("SLACK_USER_TOKEN"))
 
 # 認証テスト
 response = client.auth_test()
@@ -161,7 +161,7 @@ for channel in channels['channels'][:5]:
 
 ```bash
 curl -X POST https://slack.com/api/auth.test \
-  -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Authorization: Bearer $SLACK_USER_TOKEN" \
   -H "Content-Type: application/json"
 ```
 
@@ -218,13 +218,13 @@ missing_scope: need xxx
 1. 必要なスコープを追加
 2. アプリを再インストール（OAuth & Permissions > Reinstall）
 
-### User Token の期限切れ
+### Bot Token の制限
 
-**症状**: 90日後にトークンが無効になる
+**症状**: Bot Token ではユーザー操作（検索等）が制限される
 
 **解決策**:
-- Bot Token を使用する（推奨）
-- 定期的にトークンを更新する仕組みを構築
+- User Token を使用する（推奨）
+- Bot Token はボット専用機能にのみ使用
 
 ---
 

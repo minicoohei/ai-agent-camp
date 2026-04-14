@@ -93,8 +93,8 @@ Utilice AskQuestion para elegir "Continuar / Solo ver el ejemplo / Omitir".
 **Indicaciones tras la seleccion:**
 Entrada:
 ```
-Por favor, instale Clasp globalmente y verifique la versión.
-Ejecute npm install -g @google/clasp y verifique con clasp --version.
+Por favor, verifique que Clasp funciona correctamente.
+Ejecute npx -y @google/clasp --version para verificar.
 ```
 
 **Resultado esperado:** Se muestra el numero de version de Clasp (por ejemplo, 2.4.2)
@@ -129,7 +129,7 @@ Utilice AskQuestion para elegir "Continuar / Solo ver el ejemplo / Omitir".
 **Indicaciones tras la seleccion:**
 Entrada:
 ```
-Por favor, ejecute clasp login para iniciar sesión con su cuenta de Google.
+Por favor, ejecute npx -y @google/clasp login para iniciar sesión con su cuenta de Google.
 Se abrirá un navegador, complete la autenticación.
 Después de la autenticación, verifique que se haya creado ~/.clasprc.json.
 
@@ -167,7 +167,7 @@ Entrada:
 Por favor, cree el siguiente directorio y proyecto GAS:
 
 1. Crear el directorio ~/ai-agent-camp/gas-example
-2. Ejecutar clasp create --type standalone en ese directorio
+2. Ejecutar npx -y @google/clasp create --type standalone en ese directorio
 3. Mostrar el contenido de los archivos .clasp.json y appsscript.json creados
 ```
 
@@ -215,7 +215,7 @@ function getExecutionInfo() {
   return info;
 }
 
-Luego sincronice con clasp push.
+Luego sincronice con npx -y @google/clasp push.
 ```
 
 **Resultado esperado:** Se muestra "Pushed X files." y los cambios se reflejan en Google Drive.
@@ -245,7 +245,7 @@ Utilice AskQuestion para elegir "Continuar / Solo ver el ejemplo / Omitir".
 **Indicaciones tras la seleccion:**
 Entrada:
 ```
-Por favor, ejecute clasp open para abrir el editor de Google Apps Script en el navegador.
+Por favor, ejecute npx -y @google/clasp open para abrir el editor de Google Apps Script en el navegador.
 Ejecute la función helloWorld en el editor y verifique los registros.
 ```
 
@@ -280,15 +280,14 @@ Utilice AskQuestion para seleccionar el problema y luego siga las indicaciones.
 **Causa:** Clasp no esta instalado o no se ha agregado al PATH
 **Prompt de solucion:**
 ```
-Por favor, vuelva a ejecutar npm install -g @google/clasp y verifique la ruta con which clasp.
-También muestre cómo solucionarlo si la ruta no está configurada.
+Por favor, vuelva a ejecutar npx -y @google/clasp --version y revise el error. Asegúrese de que Node.js y npm estén instalados correctamente.
 ```
 
 ### Problema 2: "Permission denied"
 **Causa:** La autenticacion de Google no esta completa
 **Prompt de solucion:**
 ```
-Por favor, ejecute clasp logout y luego ejecute clasp login nuevamente.
+Por favor, ejecute npx -y @google/clasp logout y luego ejecute npx -y @google/clasp login nuevamente.
 Proporcione los detalles del error de autenticación.
 ```
 
@@ -303,7 +302,7 @@ Por favor, verifique los nombres de archivo en el directorio gas-example y corri
 **Causa:** .clasp.json no existe o esta corrupto
 **Prompt de solucion:**
 ```
-Por favor, elimine el archivo .clasp.json y vuelva a ejecutar clasp create --type standalone.
+Por favor, elimine el archivo .clasp.json y vuelva a ejecutar npx -y @google/clasp create --type standalone.
 ```
 
 ### Problema 5: "Apps Script API has not been used in project / User has not enabled the Apps Script API"
@@ -318,11 +317,11 @@ Por favor, elimine el archivo .clasp.json y vuelva a ejecutar clasp create --typ
 ---
 
 ## ✅ Punto de control
-- [ ] Clasp está instalado (verificar con clasp --version)
+- [ ] Clasp está disponible (verificar con npx -y @google/clasp --version)
 - [ ] La autenticación de Google está completa (~/.clasp.json existe)
 - [ ] El proyecto GAS está inicializado
 - [ ] Code.gs ha sido creado
-- [ ] clasp push tiene éxito
+- [ ] npx -y @google/clasp push tiene éxito
 - [ ] Se puede ejecutar en el editor de GAS
 
 
@@ -345,7 +344,7 @@ ls -la output/gas/
 head -30 output/gas/Code.gs
 
 # Verificar en el editor de GAS
-clasp open
+npx -y @google/clasp open
 ```
 
 ---
@@ -355,11 +354,11 @@ Pegue lo siguiente en el chat para verificar la finalizacion:
 
 ```
 # Verificación de finalización: Verifique lo siguiente.
-# 1. clasp --version muestra la versión
+# 1. npx -y @google/clasp --version muestra la versión
 # 2. gas-example/.clasp.json existe
 # 3. gas-example/Code.gs existe
-# 4. clasp push tiene éxito (ejecutar en el directorio gas-example)
-# 5. clasp open abre el editor de GAS
+# 4. npx -y @google/clasp push tiene éxito (ejecutar en el directorio gas-example)
+# 5. npx -y @google/clasp open abre el editor de GAS
 ```
 
 **Resultado esperado:** Todos los elementos pasan y el proyecto GAS se puede gestionar y desplegar desde local.

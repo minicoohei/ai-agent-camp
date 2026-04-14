@@ -93,8 +93,8 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 **選択後の案内（例）**:
 入力内容:
 ```
-Claspをグローバルインストールして、バージョンを確認してください。
-npm install -g @google/clasp を実行し、clasp --version で確認してください。
+Claspの動作を確認してください。
+npx -y @google/clasp --version を実行して確認してください。
 ```
 
 **期待される結果**: Claspのバージョン番号が表示されます（例: 2.4.2）
@@ -129,7 +129,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 **選択後の案内（例）**:
 入力内容:
 ```
-clasp login を実行して、Googleアカウントでログインしてください。
+npx -y @google/clasp login を実行して、Googleアカウントでログインしてください。
 ブラウザが開くので認証を完了させてください。
 認証完了後、~/.clasprc.json が作成されていることを確認してください。
 
@@ -167,7 +167,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 以下のディレクトリとGASプロジェクトを作成してください：
 
 1. ~/ai-agent-camp/gas-example ディレクトリを作成
-2. そのディレクトリで clasp create --type standalone を実行
+2. そのディレクトリで npx -y @google/clasp create --type standalone を実行
 3. 作成された .clasp.json と appsscript.json の内容を表示
 ```
 
@@ -215,7 +215,7 @@ function getExecutionInfo() {
   return info;
 }
 
-その後、clasp push で同期してください。
+その後、npx -y @google/clasp push で同期してください。
 ```
 
 **期待される結果**: 「Pushed X files.」と表示され、Googleドライブに反映されます。
@@ -245,7 +245,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 **選択後の案内（例）**:
 入力内容:
 ```
-clasp open を実行して、ブラウザでGoogle Apps Scriptエディタを開いてください。
+npx -y @google/clasp open を実行して、ブラウザでGoogle Apps Scriptエディタを開いてください。
 エディタで helloWorld 関数を実行し、ログを確認してください。
 ```
 
@@ -280,15 +280,14 @@ AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押
 **原因**: Claspがインストールされていない、またはPATHに追加されていない
 **解決プロンプト**:
 ```
-npm install -g @google/clasp を再実行して、which clasp でパスを確認してください。
-パスが通っていない場合の対処法も教えてください。
+npx -y @google/clasp --version を再実行してエラーを確認してください。Node.jsとnpmが正しくインストールされているか確認してください。
 ```
 
 ### トラブル2: 「Permission denied」
 **原因**: Google認証が完了していない
 **解決プロンプト**:
 ```
-clasp logout を実行してから clasp login を再度実行してください。
+npx -y @google/clasp logout を実行してから npx -y @google/clasp login を再度実行してください。
 認証エラーの詳細を教えてください。
 ```
 
@@ -303,7 +302,7 @@ gas-example ディレクトリ内のファイル名を確認して、英数字�
 **原因**: .clasp.json が存在しない、または破損している
 **解決プロンプト**:
 ```
-.clasp.json ファイルを削除して、clasp create --type standalone を再実行してください。
+.clasp.json ファイルを削除して、npx -y @google/clasp create --type standalone を再実行してください。
 ```
 
 ### トラブル5: 「Apps Script API has not been used in project / User has not enabled the Apps Script API」
@@ -318,11 +317,11 @@ gas-example ディレクトリ内のファイル名を確認して、英数字�
 ---
 
 ## ✅ チェックポイント
-- [ ] Claspがインストールされている（clasp --version で確認）
+- [ ] Claspが利用可能（npx -y @google/clasp --version で確認）
 - [ ] Google認証が完了している（~/.clasp.json が存在）
 - [ ] GASプロジェクトが初期化されている
 - [ ] Code.gs が作成されている
-- [ ] clasp push が成功する
+- [ ] npx -y @google/clasp push が成功する
 - [ ] GASエディタで実行できる
 
 
@@ -345,7 +344,7 @@ ls -la output/gas/
 head -30 output/gas/Code.gs
 
 # GASエディタで確認
-clasp open
+npx -y @google/clasp open
 ```
 
 ---
@@ -355,11 +354,11 @@ clasp open
 
 ```
 # 完了確認: 以下を確認してください。
-# 1. clasp --version でバージョンが表示されるか
+# 1. npx -y @google/clasp --version でバージョンが表示されるか
 # 2. gas-example/.clasp.json が存在するか
 # 3. gas-example/Code.gs が存在するか
-# 4. clasp push が成功するか（gas-example ディレクトリで実行）
-# 5. clasp open でGASエディタが開けるか
+# 4. npx -y @google/clasp push が成功するか（gas-example ディレクトリで実行）
+# 5. npx -y @google/clasp open でGASエディタが開けるか
 ```
 
 **期待される結果**: すべてのチェック項目がパスし、GASプロジェクトがローカルから管理・デプロイできる状態です。

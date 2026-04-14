@@ -86,9 +86,9 @@ Verify that gogcli is installed. Run the following commands:
 gog --version
 
 # If not installed
-go install github.com/nicholasgasior/gog@latest
-# Or Homebrew (macOS)
 brew install gogcli
+# If Homebrew is not available, download from GitHub Releases:
+# https://github.com/steipete/gogcli/releases
 ```
 
 **Expected result**: The gogcli version number is displayed (e.g., `gog version 0.x.x`).
@@ -207,12 +207,12 @@ gog drive ls --account your-email@gmail.com --max 5
 ```
 
 ### Issue 1: "Cannot install gogcli"
-**Cause**: Go language is not installed, or PATH is not configured
+**Cause**: Homebrew is not installed or PATH is not set
 **Solution prompt**:
 ```text
 Check the installation method for gogcli.
 If Homebrew is available, try brew install gogcli.
-If Go is already installed, try go install github.com/nicholasgasior/gog@latest.
+If Homebrew is not available, download the binary from https://github.com/steipete/gogcli/releases.
 ```
 
 ### Issue 2: "Browser does not open"

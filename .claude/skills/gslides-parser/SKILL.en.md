@@ -17,11 +17,9 @@ Parse the structure of a Google Slides presentation via GAS and output pptx-conv
 ## Prerequisites
 
 ```bash
-# Install clasp (if not already installed)
-npm install -g @google/clasp
-
+# clasp runs via npx (no installation required)
 # Log in with Google account
-clasp login
+npx -y @google/clasp login
 
 # Enable Google Apps Script API
 # https://script.google.com/home/usersettings

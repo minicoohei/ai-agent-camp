@@ -63,27 +63,29 @@ tags: ["setup", "gogcli", "google", "gmail", "calendar", "oauth"]
 ## Step 1: gogcli のインストール
 
 **AIが実行すること:**
-1. OSを自動判定する（Mac / Linux）
-2. 既にインストール済みか確認する: `which gog`
+1. OSを自動判定する（Mac / Windows / Linux）
+2. 既にインストール済みか確認する: `which gog`（Mac/Linux）または `where gog`（Windows）
 3. 未インストールの場合、以下のコマンドを実行:
 
 ```bash
-# Mac (Homebrew推奨):
-brew install nicholasgasior/tools/gog
+# Mac / Linux (Homebrew推奨):
+brew install gogcli
 
-# Mac代替 (Goがインストール済みの場合):
-go install github.com/nicholasgasior/gog@latest
+# Windows:
+# GitHub Releases から ZIP をダウンロードして gog.exe を展開し、PATH に追加
+# https://github.com/steipete/gogcli/releases
 
-# Linux (Goが必要):
-go install github.com/nicholasgasior/gog@latest
+# Linux代替 (Homebrew未導入の場合):
+# GitHub Releases からバイナリを直接ダウンロード
+# https://github.com/steipete/gogcli/releases
 ```
 
 4. インストール後、`gog --version` で確認する
 
 **インストール方法の判定ロジック:**
+- Windows を使用している → GitHub Releases からダウンロード（https://github.com/steipete/gogcli/releases）
 - `which brew` が成功 → Homebrew でインストール
-- `which go` が成功 → `go install` でインストール
-- 両方ない場合 → Homebrew のインストールから案内
+- Homebrew がない場合 → Homebrew のインストールから案内（https://brew.sh）
 
 **AskQuestionの設定:**
 ```json
@@ -95,8 +97,8 @@ go install github.com/nicholasgasior/gog@latest
     "options": [
       {"id": "installed", "label": "インストールできました！"},
       {"id": "brew_error", "label": "brew install でエラーが出た"},
-      {"id": "go_error", "label": "go install でエラーが出た"},
-      {"id": "no_brew_no_go", "label": "Homebrew も Go もインストールされていない"},
+      {"id": "no_brew", "label": "Homebrew がインストールされていない"},
+      {"id": "windows", "label": "Windowsを使っている"},
       {"id": "command_not_found", "label": "gog コマンドが見つからない"}
     ]
   }]
@@ -104,18 +106,19 @@ go install github.com/nicholasgasior/gog@latest
 ```
 
 (installed → Step 2へ)
-(brew_error → `brew update && brew tap nicholasgasior/tools` を実行後リトライ。それでも失敗する場合は `go install` を案内)
-(go_error → Goのバージョン確認 `go version`。Go 1.21以上が必要。未インストールの場合は `brew install go` を案内)
-(no_brew_no_go → 「まずHomebrewをインストールしましょう。ブラウザで https://brew.sh を開いてインストールコマンドをコピー・実行してください」と案内)
-(command_not_found → `export PATH=$PATH:$(go env GOPATH)/bin` をシェル設定に追加する手順を案内。Homebrew の場合は `brew link gog` を実行)
+(brew_error → `brew update && brew install gogcli` を実行後リトライ)
+(no_brew → 「まずHomebrewをインストールしましょう。ブラウザで https://brew.sh を開いてインストールコマンドをコピー・実行してください」と案内)
+(windows → 「https://github.com/steipete/gogcli/releases からZIPをダウンロードし、gog.exe を展開してPATHの通ったフォルダに配置してください。その後ターミナルを再起動して `gog --version` を確認してください」と案内)
+(command_not_found → Mac/Linuxの場合: `brew link gogcli` を実行。Windowsの場合: gog.exe がPATHに追加されているか確認。それでも解決しない場合はターミナルを再起動する手順を案内)
 
 ---
 
 ## Step 2: Google OAuth 認証
 
 **AIが実行すること:**
-1. `gog auth add` を実行する
-2. ブラウザが自動で開き、Google OAuth 認証画面が表示される
+1. ユーザーに認証に使用するGoogleアカウントのメールアドレスを確認する
+2. `gog auth add <メールアドレス>` を実行する
+3. ブラウザが自動で開き、Google OAuth 認証画面が表示される
 
 **ユーザーに案内するメッセージ:**
 
@@ -130,7 +133,9 @@ Google OAuth 認証を開始します。
 │ 3. 「Authorization successful」と表示されたら認証完了       │
 │ 4. ターミナルに戻ってください                               │
 │                                                             │
-│ ※ 認証情報は ~/.config/gogcli/ に安全に保存されます        │
+│ ※ 認証情報は gogcli により安全に保存されます               │
+│   (macOS: ~/Library/Application Support/gogcli/             │
+│    Linux: ~/.config/gogcli/)                                │
 │ ※ APIキーの手動入力は不要です（OAuth認証で自動管理）       │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -155,7 +160,7 @@ Google OAuth 認証を開始します。
 
 (authenticated → Step 3へ)
 (browser_not_open → 「ターミナルに表示されたURLをコピーして、手動でブラウザに貼り付けてください」と案内)
-(auth_error → `gog auth add` を再実行。エラーメッセージを確認して原因を特定)
+(auth_error → `gog auth add <メールアドレス>` を再実行。エラーメッセージを確認して原因を特定)
 (account_help → 「普段Gmailで使用しているGoogleアカウントを選択してください。会社のGoogle Workspaceアカウントでも個人のGmailアカウントでもOKです。後から別のアカウントを追加することもできます」と案内)
 (access_denied → 「組織のGoogle Workspaceで外部アプリへのアクセスが制限されている可能性があります。IT管理者に確認するか、個人のGmailアカウントでお試しください」と案内)
 
@@ -184,7 +189,7 @@ Google OAuth 認証を開始します。
 ```
 
 (correct → Step 4へ)
-(wrong_account → `gog auth add` で別のアカウントを追加する手順を案内)
+(wrong_account → `gog auth add <メールアドレス>` で別のアカウントを追加する手順を案内)
 (no_account → Step 2に戻り、OAuth認証をやり直す)
 
 ---
@@ -260,36 +265,35 @@ gogcli のセットアップが完了しました！
 ```
 
 ### トラブル1: brew install でエラーが出る
-**原因**: Homebrew のtapが登録されていない、またはHomebrewが古い
+**原因**: Homebrewが古い、またはキャッシュの問題
 **AIが行うこと**:
 1. `brew update` を実行
-2. `brew tap nicholasgasior/tools` を実行
-3. 再度 `brew install nicholasgasior/tools/gog` を実行
-4. それでも失敗する場合は `go install` での代替手順を案内
+2. 再度 `brew install gogcli` を実行
+3. それでも失敗する場合は GitHub Releases（https://github.com/steipete/gogcli/releases）からバイナリを直接ダウンロードする手順を案内
 
 ### トラブル2: OAuth認証が失敗する
 **原因**: ブラウザのポップアップブロック、またはネットワーク問題
 **AIが行うこと**:
 1. ターミナルに表示されたURLを手動でブラウザに貼り付ける方法を案内
-2. `gog auth add` を再実行
+2. `gog auth add <メールアドレス>` を再実行
 3. ブラウザのポップアップブロック設定の確認を案内
 
 ### トラブル3: 組織のGoogleアカウントで制限がかかる
 **原因**: Google Workspace 管理者が外部アプリへのアクセスを制限している
-**AIの案内**: 「組織のIT管理者にgogcliの利用許可を確認してください。それが難しい場合は、個人のGmailアカウント（@gmail.com）で認証をお試しください。`gog auth add` で別のアカウントを追加できます」
+**AIの案内**: 「組織のIT管理者にgogcliの利用許可を確認してください。それが難しい場合は、個人のGmailアカウント（@gmail.com）で認証をお試しください。`gog auth add <メールアドレス>` で別のアカウントを追加できます」
 
 ### トラブル4: 「access denied」エラー
 **原因**: OAuth スコープの権限不足、またはアカウントのセキュリティ設定
 **AIが行うこと**:
 1. `gog auth list` で認証状態を確認
-2. 認証を削除して再認証を案内: `gog auth remove <email>` → `gog auth add`
+2. 認証を削除して再認証を案内: `gog auth remove <email>` → `gog auth add <メールアドレス>`
 3. Google アカウントのセキュリティ設定（https://myaccount.google.com/security）を確認する手順を案内
 
 ### トラブル5: gog コマンドが見つからない
 **原因**: PATH が通っていない
 **AIが行うこと**:
-1. Homebrew でインストールした場合: `brew link gog` を実行
-2. `go install` でインストールした場合: `export PATH=$PATH:$(go env GOPATH)/bin` を `.zshrc` / `.bashrc` に追加する手順を案内
+1. Mac/Linux で Homebrew でインストールした場合: `brew link gogcli` を実行（https://brew.sh）
+2. Windows の場合: gog.exe が PATH に追加されているか確認し、環境変数のPATHに gog.exe の場所を追加する手順を案内（https://github.com/steipete/gogcli/releases）
 3. `source ~/.zshrc` または新しいターミナルを開く手順を案内
 
 ### トラブル6: その他のエラー

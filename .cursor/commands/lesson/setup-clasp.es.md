@@ -13,8 +13,8 @@ tags: ["setup", "gas", "clasp", "google"]
 **Lo que la IA ejecuta automáticamente:**
 1. Ejecutar `uv run python tools/setup_progress.py show --current setup-clasp` para mostrar el progreso
 2. Detectar automáticamente el estado de instalación existente:
-   - Ejecutar `clasp --version`
-   - Si clasp ya está instalado y `clasp list` funciona, puede ejecutar solo el Step 5 (prueba) y marcarlo como completado
+   - Ejecutar `npx -y @google/clasp --version`
+   - Si clasp ya está disponible y `npx -y @google/clasp list` funciona, puede ejecutar solo el Step 5 (prueba) y marcarlo como completado
    - Si no está instalado, comenzar desde el Step 1
 
 ## Lo que hará en esta sesión
@@ -24,12 +24,12 @@ tags: ["setup", "gas", "clasp", "google"]
 | Objetivo | Instalar clasp (Google Apps Script CLI), completar la autenticación OAuth y poder crear, editar y desplegar proyectos GAS desde su máquina local |
 | Duración | ~10 minutos |
 | Requisitos previos | Node.js 18+ instalado, una cuenta de Google y un navegador disponible |
-| Nivel de operación | Requiere entrada de comandos CLI (npm install + clasp login) |
+| Nivel de operación | Requiere entrada de comandos CLI (npx para clasp + clasp login) |
 | Costo | Gratuito |
 
 **Flujo de la sesión:**
 1. Verificar la versión de Node.js
-2. Instalar clasp globalmente vía npm (la IA lo ejecuta automáticamente)
+2. Verificar que clasp esté disponible vía npx (sin instalación global, la IA lo verifica automáticamente)
 3. Habilitar la API de Apps Script en el navegador (la IA abre el navegador automáticamente)
 4. Realizar la autenticación OAuth con clasp login
 5. Prueba de funcionalidad (la IA lo ejecuta automáticamente)
@@ -96,35 +96,37 @@ Mostrar "Confirmado Node.js v{versión}. Pasando al Step 2." e ir al Step 2
 
 ---
 
-## Step 2: Instalar clasp
+## Step 2: Verificar la disponibilidad de clasp
 
 **Lo que la IA ejecuta automáticamente:**
-1. Ejecutar `npm install -g @google/clasp` para instalar clasp globalmente
-2. Verificar el resultado de la instalación
+1. Ejecutar `npx -y @google/clasp --version` para verificar que clasp está disponible vía npx
+2. Verificar el resultado
 
-**Si la instalación es exitosa:**
-Mostrar "La instalación de clasp se completó. Pasando al Step 3." e ir al Step 3
+> **Nota**: No se necesita instalación global (`npm install -g`). Usando `npx @google/clasp` siempre se ejecuta la última versión de clasp sin instalación.
 
-**Si ocurre un error de permisos (EACCES) — AskQuestion:**
+**Si es exitoso:**
+Mostrar "clasp está disponible vía npx. Pasando al Step 3." e ir al Step 3
+
+**Si ocurre un error con npx — AskQuestion:**
 
 ```json
 {
-  "title": "Step 2: Error de permisos de npm",
+  "title": "Step 2: Error de ejecución de npx",
   "questions": [{
-    "id": "npm_permission",
-    "prompt": "Ocurrió un error de permisos durante la instalación global de npm. Puede resolverlo con uno de estos métodos:\n\n[Método 1] Usar sudo (Mac/Linux):\nsudo npm install -g @google/clasp\n→ Se le pedirá su contraseña\n\n[Método 2] Usar npx como alternativa (sin instalación):\nnpx @google/clasp login\n→ Necesita agregar npx cada vez, pero evita el problema de permisos",
+    "id": "npx_error",
+    "prompt": "Ocurrió un error al ejecutar npx @google/clasp. Verifique lo siguiente:\n\n1. Node.js y npm están correctamente instalados\n2. La conexión de red está activa (npx descarga el paquete en la primera ejecución)",
     "options": [
-      {"id": "sudo", "label": "Reintentar con sudo"},
-      {"id": "npx", "label": "Usar npx como alternativa"},
+      {"id": "retry", "label": "Intentar de nuevo"},
+      {"id": "check_node", "label": "Volver a la verificación de Node.js (Step 1)"},
       {"id": "help", "label": "Quiero conocer otros métodos"}
     ]
   }]
 }
 ```
 
-(sudo -> Ejecutar `sudo npm install -g @google/clasp`. Si es exitoso, ir al Step 3)
-(npx -> Indicar: "En los siguientes pasos, use `npx @google/clasp` en lugar de `clasp`." e ir al Step 3)
-(help -> Indicar: "Puede cambiar los permisos del directorio predeterminado de npm: https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally")
+(retry -> Volver a ejecutar `npx -y @google/clasp --version`. Si es exitoso, ir al Step 3)
+(check_node -> Volver al Step 1)
+(help -> Indicar: "Verifique su conexión de red. Si está detrás de un proxy, puede que necesite configurar los ajustes de proxy de npm.")
 
 ---
 
@@ -186,7 +188,7 @@ Si la integración Chrome no está disponible, siga las instrucciones del Step 3
 ## Step 4: clasp login (Autenticación OAuth)
 
 **Lo que la IA ejecuta automáticamente:**
-1. Ejecutar `clasp login`
+1. Ejecutar `npx -y @google/clasp login`
 2. El navegador se abre automáticamente mostrando la pantalla de autenticación de la cuenta de Google
 
 **Configuración de AskQuestion:**
@@ -208,9 +210,9 @@ Si la integración Chrome no está disponible, siga las instrucciones del Step 3
 ```
 
 (done -> Ir al Step 5)
-(browser_not_open -> Indicar: "Si se muestra una URL en la terminal, cópiela y péguela en su navegador. Si está en un entorno remoto como SSH, intente `clasp login --no-localhost`.")
+(browser_not_open -> Indicar: "Si se muestra una URL en la terminal, cópiela y péguela en su navegador. Si está en un entorno remoto como SSH, intente `npx -y @google/clasp login --no-localhost`.")
 (permission_denied -> Indicar: "La política de su organización de Google Workspace puede estar bloqueando aplicaciones de terceros. Intente iniciar sesión con una cuenta personal de Gmail (xxx@gmail.com).")
-(timeout -> Indicar: "Si 'Logged in!' se muestra en el navegador después de la autenticación, regrese a la terminal y verifique. Si no hay respuesta, presione Ctrl+C para cancelar y vuelva a ejecutar `clasp login`.")
+(timeout -> Indicar: "Si 'Logged in!' se muestra en el navegador después de la autenticación, regrese a la terminal y verifique. Si no hay respuesta, presione Ctrl+C para cancelar y vuelva a ejecutar `npx -y @google/clasp login`.")
 
 ---
 
@@ -218,8 +220,8 @@ Si la integración Chrome no está disponible, siga las instrucciones del Step 3
 
 **Lo que la IA ejecuta automáticamente:**
 
-1. Ejecutar `clasp --version` para verificar la versión
-2. Ejecutar `clasp list` para obtener la lista de proyectos
+1. Ejecutar `npx -y @google/clasp --version` para verificar la versión
+2. Ejecutar `npx -y @google/clasp list` para obtener la lista de proyectos
    - En el primer uso, "No script files found." o una lista vacía está bien. Si no hay errores, la autenticación fue exitosa
 
 3. Mostrar una AskQuestion según el resultado de la prueba:
@@ -271,7 +273,7 @@ Esto se puede usar para automatizar Google Sheets, Forms y Docs.
     "id": "trouble",
     "prompt": "Seleccione el que corresponda a su situación",
     "options": [
-      {"id": "trouble_npm", "label": "Obtengo un error de permisos (EACCES) con npm install"},
+      {"id": "trouble_npm", "label": "Obtengo un error al ejecutar npx @google/clasp"},
       {"id": "trouble_api_disabled", "label": "Obtengo un error 'Apps Script API has not been used'"},
       {"id": "trouble_browser", "label": "El navegador no se abre con clasp login"},
       {"id": "trouble_org", "label": "Estoy restringido con una cuenta de Google de organización"},
@@ -281,26 +283,26 @@ Esto se puede usar para automatizar Google Sheets, Forms y Docs.
 }
 ```
 
-### Problema 1: Error de permisos (EACCES) con npm install
-**Causa**: No tiene permisos de escritura en el directorio de instalación global
+### Problema 1: Error al ejecutar npx @google/clasp
+**Causa**: Problema de conexión de red, o problema de instalación de Node.js/npm
 **Lo que hace la IA**:
-1. Sugerir reintentar con `sudo npm install -g @google/clasp`
-2. Si aún no se resuelve, dirigir al cambio del directorio predeterminado de npm: https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
+1. Ejecutar `node --version` y `npm --version` para verificar el entorno
+2. Indicar la verificación de la conexión de red. Para entornos con proxy, indicar la configuración del proxy de npm
 
 ### Problema 2: Error "Apps Script API has not been used"
 **Causa**: La API de Apps Script no está habilitada
 **Lo que hace la IA**:
 1. Abrir https://script.google.com/home/usersettings en el navegador
 2. Indicar al usuario que verifique si el interruptor de "Google Apps Script API" está activado
-3. Después de activarlo, volver a ejecutar `clasp list` para verificar
+3. Después de activarlo, volver a ejecutar `npx -y @google/clasp list` para verificar
 
 ### Problema 3: El navegador no se abre con clasp login
 **Causa**: Entorno remoto, conexión SSH, WSL, etc. donde no se puede abrir un navegador
-**Indicación de la IA**: "Intente `clasp login --no-localhost`. Copie la URL que aparece en la terminal y péguela en su navegador manualmente para autenticarse."
+**Indicación de la IA**: "Intente `npx -y @google/clasp login --no-localhost`. Copie la URL que aparece en la terminal y péguela en su navegador manualmente para autenticarse."
 
 ### Problema 4: Restringido con cuenta de Google de organización
 **Causa**: El administrador de Google Workspace ha restringido aplicaciones de terceros o la API de Apps Script
-**Indicación de la IA**: "Intente `clasp login` con una cuenta personal de Gmail (xxx@gmail.com). Si necesita usar una cuenta de organización, solicite a su administrador de TI: (1) Habilitar la API de Apps Script, (2) Permitir clasp (cliente OAuth)."
+**Indicación de la IA**: "Intente `npx -y @google/clasp login` con una cuenta personal de Gmail (xxx@gmail.com). Si necesita usar una cuenta de organización, solicite a su administrador de TI: (1) Habilitar la API de Apps Script, (2) Permitir clasp (cliente OAuth)."
 
 ### Problema 5: Otros errores
 **Lo que hace la IA**: Verificar el contenido del mensaje de error, identificar la causa e indicar al usuario la solución
@@ -309,11 +311,11 @@ Esto se puede usar para automatizar Google Sheets, Forms y Docs.
 
 ## Punto de control
 - [ ] Node.js 18 o superior está instalado
-- [ ] clasp fue instalado con `npm install -g @google/clasp`
+- [ ] `npx -y @google/clasp --version` confirma que clasp está disponible
 - [ ] La API de Apps Script fue habilitada (https://script.google.com/home/usersettings)
-- [ ] La autenticación OAuth se completó con `clasp login` (se mostró "Authorization successful.")
-- [ ] `clasp --version` muestra la versión
-- [ ] `clasp list` se ejecuta sin errores
+- [ ] La autenticación OAuth se completó con `npx -y @google/clasp login` (se mostró "Authorization successful.")
+- [ ] `npx -y @google/clasp --version` muestra la versión
+- [ ] `npx -y @google/clasp list` se ejecuta sin errores
 
 ---
 

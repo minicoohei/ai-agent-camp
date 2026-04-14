@@ -64,7 +64,7 @@ gog --version
 
 **Resultado esperado:**
 - Si se muestra el número de versión, está correcto (se recomienda v0.9.0 o superior)
-- Si el comando no se encuentra, instale con `go install github.com/nicholasgasior/gog@latest`
+- Si el comando no se encuentra, instale con `brew install gogcli` (o ejecute `/setup-gogcli`)
 
 > **Nota**: En los comandos siguientes, todas las llamadas a la API de Gmail requieren `--account <su-email@gmail.com>`. Especifiquelo explicitamente si tiene varias cuentas registradas.
 
@@ -124,7 +124,7 @@ ls data/google-sync/data/*/gmail/ 2>/dev/null || echo "No hay datos de sincroniz
 
 | Problema | Solución |
 |----------|----------|
-| Comando `gog` no encontrado | Ejecute `go install github.com/nicholasgasior/gog@latest` |
+| Comando `gog` no encontrado | Ejecute `brew install gogcli` (o `/setup-gogcli`) |
 | El navegador no se abre en la autenticación | Use `gog auth add --no-browser <email>` para copiar la URL manualmente |
 | Scope de OAuth insuficiente | `gog auth remove <email>` -> vuelva a ejecutar `gog auth add <email>` |
 | La búsqueda devuelve resultados vacios | Cambie la consulta a `is:inbox` y reintente |

@@ -73,7 +73,7 @@ gog --version
 
 **Expected result:**
 - If a version number is displayed, you're good (v0.9.0 or later recommended)
-- If the command is not found, install with `go install github.com/nicholasgasior/gog@latest`
+- If the command is not found, install with `brew install gogcli` (or run `/setup-gogcli`)
 
 > **Note**: All Gmail API calls in the following commands require `--account <your-email@gmail.com>`. Specify explicitly if you have multiple accounts registered.
 
@@ -199,7 +199,7 @@ If there is no sync data, it will be configured when using check-inbox in 13-2.
 
 | Issue | Solution |
 |-------|----------|
-| `gog` command not found | Run `go install github.com/nicholasgasior/gog@latest` |
+| `gog` command not found | Run `brew install gogcli` (or `/setup-gogcli`) |
 | Browser doesn't open for auth | Use `gog auth add --no-browser <email>` to manually copy the URL (required in non-interactive environments) |
 | OAuth scope insufficient | `gog auth remove <email>` -> re-run `gog auth add <email>` |
 | Search results are empty | Change query to `is:inbox` and retry |

@@ -18,11 +18,9 @@ A skill for batch operations on Google Apps Script projects via the clasp CLI.
 ## Prerequisites
 
 ```bash
-# Install clasp (if not already installed)
-npm install -g @google/clasp
-
+# clasp runs via npx (no installation required)
 # Log in with your Google account (first time only)
-clasp login
+npx -y @google/clasp login
 ```
 
 ## Quick Start
@@ -102,7 +100,7 @@ python skills/gas-clasp-ops/scripts/clasp_ops.py run \
 
 | Error | Cause | Solution |
 |-------|-------|----------|
-| `Not logged in` | clasp not logged in | Run `clasp login` |
+| `Not logged in` | clasp not logged in | Run `npx -y @google/clasp login` |
 | `Script API disabled` | GAS API disabled | Enable at [GAS API](https://script.google.com/home/usersettings) |
 | `Permission denied` | Insufficient OAuth scope | Add required scopes to `appsscript.json` |
 | `Function not found` | Invalid function name | Check function name in GAS editor |

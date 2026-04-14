@@ -42,28 +42,28 @@ Google Apps Script（GAS）によるGoogle Workspace自動化の例です。
 
 ## Claspセットアップ
 
-### 1. Claspインストール
+### 1. Claspセットアップ
 ```bash
-npm install -g @google/clasp
-clasp login
+# clasp は npx 経由で実行（インストール不要）
+npx -y @google/clasp login
 ```
 
 ### 2. プロジェクト作成
 ```bash
 # 新規作成
-clasp create --title "MyAutomation" --type standalone
+npx -y @google/clasp create --title "MyAutomation" --type standalone
 
 # 既存プロジェクトをクローン
-clasp clone <script_id>
+npx -y @google/clasp clone <script_id>
 ```
 
 ### 3. デプロイ
 ```bash
 # コードをプッシュ
-clasp push
+npx -y @google/clasp push
 
 # ブラウザで開く
-clasp open
+npx -y @google/clasp open
 ```
 
 ## Code.gs サンプル
@@ -289,7 +289,7 @@ function testRun() {
 
 ## チェックリスト
 
-- [ ] Claspがインストールされている
+- [ ] Claspが利用可能である（`npx -y @google/clasp` で実行）
 - [ ] GASプロジェクトが作成されている
 - [ ] 必要なOAuthスコープが設定されている
 - [ ] スクリプトプロパティが設定されている

@@ -93,8 +93,8 @@ Use AskQuestion to choose "Proceed / Just review the example / Skip".
 **Guidance after selection:**
 Input:
 ```
-Please install Clasp globally and verify the version.
-Run npm install -g @google/clasp and verify with clasp --version.
+Please verify Clasp is working.
+Run npx -y @google/clasp --version to verify.
 ```
 
 **Expected result:** The Clasp version number is displayed (e.g., 2.4.2).
@@ -129,7 +129,7 @@ Use AskQuestion to choose "Proceed / Just review the example / Skip".
 **Guidance after selection:**
 Input:
 ```
-Please run clasp login to log in with your Google account.
+Please run npx -y @google/clasp login to log in with your Google account.
 A browser will open, so complete the authentication.
 After authentication, verify that ~/.clasprc.json has been created.
 
@@ -167,7 +167,7 @@ Input:
 Please create the following directory and GAS project:
 
 1. Create the ~/ai-agent-camp/gas-example directory
-2. Run clasp create --type standalone in that directory
+2. Run npx -y @google/clasp create --type standalone in that directory
 3. Display the contents of the created .clasp.json and appsscript.json
 ```
 
@@ -215,7 +215,7 @@ function getExecutionInfo() {
   return info;
 }
 
-Then sync with clasp push.
+Then sync with npx -y @google/clasp push.
 ```
 
 **Expected result:** "Pushed X files." is displayed and reflected in Google Drive.
@@ -245,7 +245,7 @@ Use AskQuestion to choose "Proceed / Just review the example / Skip".
 **Guidance after selection:**
 Input:
 ```
-Please run clasp open to open the Google Apps Script editor in the browser.
+Please run npx -y @google/clasp open to open the Google Apps Script editor in the browser.
 Run the helloWorld function in the editor and check the logs.
 ```
 
@@ -280,15 +280,14 @@ Use AskQuestion to select the issue, then follow the guidance.
 **Cause:** Clasp is not installed or not added to PATH
 **Solution prompt:**
 ```
-Please re-run npm install -g @google/clasp and check the path with which clasp.
-Also show how to fix it if the path is not set.
+Please re-run npx -y @google/clasp --version and check the error. Make sure Node.js and npm are correctly installed.
 ```
 
 ### Issue 2: "Permission denied"
 **Cause:** Google authentication is not complete
 **Solution prompt:**
 ```
-Please run clasp logout and then run clasp login again.
+Please run npx -y @google/clasp logout and then run npx -y @google/clasp login again.
 Please provide details of the authentication error.
 ```
 
@@ -303,7 +302,7 @@ Please check file names in the gas-example directory and fix them to use only al
 **Cause:** .clasp.json does not exist or is corrupted
 **Solution prompt:**
 ```
-Please delete the .clasp.json file and re-run clasp create --type standalone.
+Please delete the .clasp.json file and re-run npx -y @google/clasp create --type standalone.
 ```
 
 ### Issue 5: "Apps Script API has not been used in project / User has not enabled the Apps Script API"
@@ -318,11 +317,11 @@ Please delete the .clasp.json file and re-run clasp create --type standalone.
 ---
 
 ## ✅ Checkpoint
-- [ ] Clasp is installed (verify with clasp --version)
+- [ ] Clasp is available (verify with npx -y @google/clasp --version)
 - [ ] Google authentication is complete (~/.clasp.json exists)
 - [ ] GAS project is initialized
 - [ ] Code.gs has been created
-- [ ] clasp push succeeds
+- [ ] npx -y @google/clasp push succeeds
 - [ ] Can execute in the GAS editor
 
 
@@ -345,7 +344,7 @@ ls -la output/gas/
 head -30 output/gas/Code.gs
 
 # Verify in GAS editor
-clasp open
+npx -y @google/clasp open
 ```
 
 ---
@@ -355,11 +354,11 @@ Paste the following into chat to verify completion:
 
 ```
 # Completion check: Please verify the following.
-# 1. clasp --version displays the version
+# 1. npx -y @google/clasp --version displays the version
 # 2. gas-example/.clasp.json exists
 # 3. gas-example/Code.gs exists
-# 4. clasp push succeeds (run in gas-example directory)
-# 5. clasp open opens the GAS editor
+# 4. npx -y @google/clasp push succeeds (run in gas-example directory)
+# 5. npx -y @google/clasp open opens the GAS editor
 ```
 
 **Expected result:** All checklist items pass, and you can manage and deploy GAS projects from your local machine.

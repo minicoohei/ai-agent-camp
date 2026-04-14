@@ -17,11 +17,9 @@ Google Slides プレゼンテーションの構造を GAS 経由でパースし�
 ## 前提条件
 
 ```bash
-# clasp のインストール（未インストールの場合）
-npm install -g @google/clasp
-
+# clasp は npx 経由で実行（インストール不要）
 # Google アカウントでログイン
-clasp login
+npx -y @google/clasp login
 
 # Google Apps Script API を有効化
 # https://script.google.com/home/usersettings

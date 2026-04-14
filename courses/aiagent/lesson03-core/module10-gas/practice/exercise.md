@@ -9,7 +9,7 @@ Google Sheets と Google Calendar を GAS で自動化する方法を学びま�
 ## 前提条件
 
 - Google アカウントがあること
-- clasp CLI がインストール済み（`npm install -g @google/clasp`）
+- clasp CLI が利用可能（`npx -y @google/clasp` で実行、インストール不要）
 - Google Apps Script API が有効化されていること
 - Slack Webhook URL（通知テスト用、なくても開発は可能）
 
@@ -28,13 +28,13 @@ Google Sheets と Google Calendar を GAS で自動化する方法を学びま�
 
 ```bash
 # clasp でプロジェクト作成
-clasp create --type sheets --title "勤怠管理"
+npx -y @google/clasp create --type sheets --title "勤怠管理"
 
 # スクリプトをプッシュ
-clasp push
+npx -y @google/clasp push
 
 # ログ確認
-clasp logs
+npx -y @google/clasp logs
 ```
 
 ### タスク 2: Google Calendar 連携スクリプト
@@ -50,10 +50,10 @@ clasp logs
 
 ```bash
 # 既存の GAS プロジェクトにファイル追加
-clasp push
+npx -y @google/clasp push
 
 # ブラウザでエディタを開く
-clasp open
+npx -y @google/clasp open
 ```
 
 ## 完了条件

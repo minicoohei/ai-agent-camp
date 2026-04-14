@@ -2,37 +2,35 @@
 
 ## clasp CLI の基本操作
 
-### インストールとログイン
+### ログイン
 ```bash
-# インストール
-npm install -g @google/clasp
-
+# clasp は npx 経由で実行（インストール不要）
 # Google アカウントでログイン
-clasp login
+npx -y @google/clasp login
 
 # ログイン確認
-clasp login --status
+npx -y @google/clasp login --status
 ```
 
 ### プロジェクト操作
 ```bash
 # 新規プロジェクト作成（Sheets紐付き）
-clasp create --type sheets --title "勤怠管理"
+npx -y @google/clasp create --type sheets --title "勤怠管理"
 
 # 既存プロジェクトをクローン
-clasp clone <scriptId>
+npx -y @google/clasp clone <scriptId>
 
 # ローカル → GAS にプッシュ
-clasp push
+npx -y @google/clasp push
 
 # GAS → ローカルにプル
-clasp pull
+npx -y @google/clasp pull
 
 # ブラウザでエディタを開く
-clasp open
+npx -y @google/clasp open
 
 # ログ確認
-clasp logs
+npx -y @google/clasp logs
 ```
 
 ### .clasp.json の構成
@@ -67,7 +65,7 @@ function debug2() {
 
 ### 実行ログの確認方法
 1. GAS エディタ → 「実行」メニュー → 実行ログ
-2. clasp logs で確認
+2. `npx -y @google/clasp logs` で確認
 3. Google Cloud Console → Logging
 
 ## Google Sheets 操作のコツ
@@ -160,7 +158,7 @@ function sendSlackMessage(webhookUrl, text) {
 
 | エラー | 原因 | 対処 |
 |--------|------|------|
-| `clasp: command not found` | clasp未インストール | `npm install -g @google/clasp` |
+| `clasp: command not found` | clasp未インストール | `npx -y @google/clasp` で実行（インストール不要） |
 | `Script API disabled` | API未有効化 | https://script.google.com/home/usersettings で有効化 |
 | `Authorization required` | 権限未承認 | GASエディタで一度手動実行して権限を承認 |
 | `Cannot read property of null` | シート名が一致しない | `SHEET_NAME` 定数を実際のシート名に合わせる |
