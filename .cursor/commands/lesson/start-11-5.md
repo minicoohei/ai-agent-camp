@@ -76,7 +76,7 @@ tags: ["github-actions", "deploy", "artifact", "release", "vercel", "github-page
 
 **選択後の案内（例）**:
 
-`scripts/build_site.py` を作成（簡単な静的サイトジェネレーター）:
+`tools/build_site.py` を作成（簡単な静的サイトジェネレーター）:
 
 ```python
 #!/usr/bin/env python3
@@ -125,7 +125,7 @@ if __name__ == "__main__":
 ```
 
 ```bash
-python scripts/build_site.py && ls -la dist/
+python tools/build_site.py && ls -la dist/
 ```
 
 **期待される結果**: `dist/` ディレクトリに `index.html` と `build-info.json` が生成される。
@@ -171,7 +171,7 @@ jobs:
           python-version: '3.11'
 
       - name: Build site
-        run: python scripts/build_site.py
+        run: python tools/build_site.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -239,7 +239,7 @@ jobs:
           python-version: '3.11'
 
       - name: Build site
-        run: python scripts/build_site.py
+        run: python tools/build_site.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -301,7 +301,7 @@ jobs:
           python-version: '3.11'
 
       - name: Build
-        run: python scripts/build_site.py
+        run: python tools/build_site.py
 
       - name: Install Vercel CLI
         run: npm install -g vercel
@@ -368,7 +368,7 @@ jobs:
           python-version: '3.11'
 
       - name: Build
-        run: python scripts/build_site.py
+        run: python tools/build_site.py
 
       - name: Create release archive
         run: |
@@ -458,7 +458,7 @@ git tag の形式が v1.0.0 のように v で始まるか確認してくださ�
 
 ## ✅ チェックポイント
 
-- [ ] `scripts/build_site.py` で `dist/` にファイルが生成される
+- [ ] `tools/build_site.py` で `dist/` にファイルが生成される
 - [ ] artifact として成果物がアップロードされる
 - [ ] GitHub Pages または Vercel にデプロイできる
 - [ ] タグ push でリリースが自動作成される
@@ -470,7 +470,7 @@ git tag の形式が v1.0.0 のように v で始まるか確認してくださ�
 
 **作成されるファイル:**
 ```text
-scripts/
+tools/
 └── build_site.py              # 静的サイトジェネレーター
 
 .github/workflows/

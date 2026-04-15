@@ -76,7 +76,7 @@ tags: ["github-actions", "news", "email", "slack", "webhook", "cron"]
 
 **選択後の案内（例）**:
 
-`scripts/fetch_news.py` を作成:
+`tools/fetch_news.py` を作成:
 
 ```python
 #!/usr/bin/env python3
@@ -131,7 +131,7 @@ if __name__ == "__main__":
 ```
 
 ```bash
-mkdir -p output && python scripts/fetch_news.py
+mkdir -p output && python tools/fetch_news.py
 ```
 
 **期待される結果**: `output/news_digest.json` にニュースデータが保存される。
@@ -157,7 +157,7 @@ mkdir -p output && python scripts/fetch_news.py
 
 **選択後の案内（例）**:
 
-`scripts/fetch_news.py` に送信関数を追加:
+`tools/fetch_news.py` に送信関数を追加:
 
 ```python
 import smtplib
@@ -300,7 +300,7 @@ jobs:
       - name: Fetch news
         run: |
           mkdir -p output
-          python scripts/fetch_news.py
+          python tools/fetch_news.py
 
       - name: Send email notification
         if: ${{ !inputs.skip_email }}
@@ -419,7 +419,7 @@ Gmail のアプリパスワードを生成してください（Google アカウ�
 
 ## ✅ チェックポイント
 
-- [ ] `scripts/fetch_news.py` でニュースが取得できる
+- [ ] `tools/fetch_news.py` でニュースが取得できる
 - [ ] `output/news_digest.json` にデータが保存される
 - [ ] Slack Webhook で通知が送信できる（設定済みの場合）
 - [ ] `.github/workflows/news-digest.yml` が作成されている
@@ -431,7 +431,7 @@ Gmail のアプリパスワードを生成してください（Google アカウ�
 
 **作成されるファイル:**
 ```text
-scripts/
+tools/
 └── fetch_news.py          # ニュース取得・配信スクリプト
 
 .github/workflows/
