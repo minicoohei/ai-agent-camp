@@ -79,17 +79,16 @@ AIが以下を裏側で実行してOSを判定する:
 uname -s
 ```
 
-Mac なら `Darwin`、Linux なら `Linux` が返る。失敗した場合は以下を試す:
+Mac なら `Darwin`、Linux/WSL なら `Linux` が返る。`Linux` の場合は WSL かどうかを追加判定する:
 
-```powershell
-echo $env:OS
+```bash
+grep -qi microsoft /proc/version 2>/dev/null && echo "WSL" || echo "Native Linux"
 ```
-
-Windows なら `Windows_NT` が返る。
 
 **判定結果の表示:**
 - Mac の場合: 「お使いのパソコンは **Mac** です。Mac 向けの手順で進めます。」
-- Windows の場合: 「お使いのパソコンは **Windows** です。Windows 向けの手順で進めます。」
+- WSL の場合: 「お使いのパソコンは **Windows (WSL)** です。Linux 向けの手順で進めます。」
+- Linux の場合: 「お使いのパソコンは **Linux** です。Linux 向けの手順で進めます。」
 
 **判定した OS 情報は以降の全ステップで使用する。**
 

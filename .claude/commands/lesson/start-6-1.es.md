@@ -214,9 +214,9 @@ git config user.email
 npm list -g --depth=0
 ```
 
-### 5. Verificar paquetes pip
+### 5. Verificar paquetes uv
 ```bash
-pip list | head -20
+uv pip list | head -20
 ```
 
 ## Solucion de problemas

@@ -975,7 +975,7 @@ python skills/スキル名/scripts/main.py --output result.json
 
 ### インストール関連エラー
 
-#### "pip: command not found"
+#### "uv: command not found"
 
 ```bash
 # Python 3 を確認

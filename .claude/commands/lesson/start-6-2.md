@@ -450,7 +450,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 **原因**: 依存パッケージ未インストール
 **解決プロンプト**:
 ```
-uv add -r requirements.txt を実行してください。
+uv sync を実行してください。
 仮想環境を使用している場合は、正しい環境がアクティブか確認してください。
 ```
 

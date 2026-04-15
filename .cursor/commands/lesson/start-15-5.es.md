@@ -214,7 +214,7 @@ Puntos a verificar:
 1. FAL_KEY esta configurado?
    echo $FAL_KEY
 2. fal-client esta instalado?
-   pip show fal-client
+   uv pip show fal-client
 3. Comprenda la estructura del codigo (subscribe + arguments + callback)
 ```
 

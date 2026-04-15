@@ -172,13 +172,13 @@ service-account.json
 ### 4. 依存関係の管理
 ```bash
 # 定期的な更新
-# uv は自動で最新のパッケージを管理します
+uv sync
 pip-audit
 npm audit
 npm update
 
 # ロックファイルの使用
-pip freeze > requirements.txt
+uv lock
 npm ci  # package-lock.json を使用
 ```
 

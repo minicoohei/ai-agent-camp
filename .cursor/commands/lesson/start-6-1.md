@@ -214,9 +214,9 @@ git config user.email
 npm list -g --depth=0
 ```
 
-### 5. pip パッケージ確認
+### 5. uv パッケージ確認
 ```bash
-pip list | head -20
+uv pip list | head -20
 ```
 
 ## トラブルシューティング

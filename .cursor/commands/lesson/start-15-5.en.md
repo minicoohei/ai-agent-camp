@@ -215,7 +215,7 @@ Verification items:
 1. Is FAL_KEY configured?
    echo $FAL_KEY
 2. Is fal-client installed?
-   pip show fal-client
+   uv pip show fal-client
 3. Understand the code structure above (subscribe + arguments + callback)
 ```
 

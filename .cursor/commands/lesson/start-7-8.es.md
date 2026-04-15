@@ -426,7 +426,7 @@ Utilice AskQuestion para seleccionar el problema y luego siga las indicaciones.
 ```
 Paste the full error message. We'll isolate the cause in this order:
 1. What is the Python version? (python3 --version)
-2. Are all required packages installed? (pip list)
+2. Are all required packages installed? (uv pip list)
 3. Is the file path correct? (verify with ls -la)
 4. Are environment variables set? (echo $VARIABLE_NAME)
 ```

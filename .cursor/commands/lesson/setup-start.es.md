@@ -79,17 +79,16 @@ La IA ejecuta lo siguiente en segundo plano para detectar el sistema operativo:
 uname -s
 ```
 
-Mac devuelve `Darwin`, Linux devuelve `Linux`. Si falla, intentar:
+Mac devuelve `Darwin`, Linux/WSL devuelve `Linux`. Si devuelve `Linux`, verificar adicionalmente si es WSL:
 
-```powershell
-echo $env:OS
+```bash
+grep -qi microsoft /proc/version 2>/dev/null && echo "WSL" || echo "Native Linux"
 ```
-
-Windows devuelve `Windows_NT`.
 
 **Mostrar el resultado de la detección:**
 - Mac: "Su computadora es un **Mac**. Procederemos con los pasos específicos para Mac."
-- Windows: "Su computadora ejecuta **Windows**. Procederemos con los pasos específicos para Windows."
+- WSL: "Su computadora ejecuta **Windows (WSL)**. Procederemos con los pasos basados en Linux."
+- Linux: "Su computadora ejecuta **Linux**. Procederemos con los pasos específicos para Linux."
 
 **La información del sistema operativo detectado se usa en todos los pasos siguientes.**
 

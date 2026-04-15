@@ -215,7 +215,7 @@ video_url = result["video"]["url"]
 1. FAL_KEY が設定されているか
    echo $FAL_KEY
 2. fal-client がインストールされているか
-   pip show fal-client
+   uv pip show fal-client
 3. 上記コードの構造を理解（subscribe + arguments + callback）
 ```
 

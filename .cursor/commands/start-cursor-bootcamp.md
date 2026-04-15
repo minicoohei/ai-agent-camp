@@ -16,8 +16,7 @@ description: "研修スタート - コース教材を自動で開く"
 ## Step 1: HTTPサーバーを起動
 
 1. ポート8000が使用中か確認する
-   - macOS / Linux: `lsof -i :8000`
-   - Windows: `netstat -ano | findstr :8000`
+   - macOS / Linux / WSL: `lsof -i :8000`
    - どのOSでも使える方法: `node -e "require('net').createServer().listen(8000).on('error', () => process.exit(1)).on('listening', function() { this.close(); process.exit(0); })"`
 2. **使用中の場合**: 既存のサーバーをそのまま利用する（何もしない）
 3. **空いている場合**: 以下のコマンドをバックグラウンドで実行する:
