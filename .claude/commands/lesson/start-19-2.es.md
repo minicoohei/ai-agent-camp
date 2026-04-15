@@ -434,7 +434,7 @@ AskUserQuestion (AskQuestion) te permite elegir.
     "id": "next_step",
     "prompt": "Elige tu próxima acción",
     "options": [
-      {"id": "next_lesson", "label": "Iniciar siguiente lección (/start-19-3)"},
+      {"id": "next_module", "label": "Avanzar al Módulo 20 (/start-20-1)"},
       {"id": "review_module", "label": "Revisar Módulo 19"},
       {"id": "finish", "label": "Terminar aquí"}
     ]
@@ -443,6 +443,6 @@ AskUserQuestion (AskQuestion) te permite elegir.
 ```
 
 **Guía después de la selección:**
-- next_lesson → /start-19-3 para la siguiente lección
+- next_module → /start-20-1 para el Módulo 20
 - review_module → Revisar cada lección del Módulo 19
 - finish → Finalizar sesión

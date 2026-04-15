@@ -434,7 +434,7 @@ AskUserQuestion（AskQuestion）で選べます。
     "id": "next_step",
     "prompt": "次に進む操作を選んでください",
     "options": [
-      {"id": "next_lesson", "label": "次のレッスンを開始（/start-19-3）"},
+      {"id": "next_module", "label": "Module 20 に進む（/start-20-1）"},
       {"id": "review_module", "label": "Module 19を復習する"},
       {"id": "finish", "label": "ここで終了する"}
     ]
@@ -443,6 +443,6 @@ AskUserQuestion（AskQuestion）で選べます。
 ```
 
 **選択後の案内（例）**:
-- next_lesson → /start-19-3 で次のレッスンへ
+- next_module → /start-20-1 で Module 20 へ
 - review_module → Module 19の各レッスンを振り返る
 - finish → 終了
