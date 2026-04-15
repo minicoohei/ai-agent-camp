@@ -44,7 +44,7 @@ La IA ejecuta los siguientes comandos **en segundo plano** para verificar cada h
 
 | Objetivo de verificación | Comando a ejecutar | Criterio de aprobación |
 |--------------------------|--------------------|-----------------------|
-| Tipo de SO | `uname -s` (Mac/Linux), PowerShell `$env:OS` (Windows) | Solo mostrar |
+| Tipo de SO | `uname -s` (Mac/Linux/WSL) | Solo mostrar |
 | Python | `python3 --version 2>/dev/null \|\| python --version 2>/dev/null` | Aprobado si versión 3.9+ |
 | Node.js | `node --version 2>/dev/null` | Aprobado si versión 18+ |
 | Git | `git --version 2>/dev/null` | Aprobado si está presente |

@@ -288,7 +288,7 @@ AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押
 **解決プロンプト**:
 ```
 Marimoを再インストールしてください。
-pip install --upgrade marimo
+uv add --upgrade marimo
 
 インストール後、marimo --version で確認してください。
 ```

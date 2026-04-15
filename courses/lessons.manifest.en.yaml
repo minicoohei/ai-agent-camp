@@ -599,6 +599,12 @@
   module: 17
   lesson: 4
 
+- lessonId: start-17-5
+  title: "Automate X/Threads Posting with Typefully"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 5
+
 # === Module 18: PM ===
 - lessonId: start-18-1
   title: "PM - Customer interviews and needs gathering"
@@ -726,6 +732,12 @@
   chapterRef: "courses/aiagent/lesson03-core/module19-outlook-windows"
   module: 19
   lesson: 1
+
+- lessonId: start-19-2
+  title: "Folders, Rules & Categories"
+  chapterRef: "courses/aiagent/lesson03-core/module19-outlook-windows"
+  module: 19
+  lesson: 2
 
 # === Module 20: Freee / MoneyForward ===
 - lessonId: start-20-1

@@ -689,8 +689,8 @@ ModuleNotFoundError: No module named 'pillow'
 
 **対処方法**:
 ```bash
-pip install pillow requests beautifulsoup4 playwright
-pip install -r requirements.txt
+uv add pillow requests beautifulsoup4 playwright
+uv sync
 playwright install chromium
 ```
 

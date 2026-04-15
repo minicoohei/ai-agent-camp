@@ -276,9 +276,7 @@ output/ugc/product_demo/ 内の summary.json を読んで結果を確認。
 **原因**: 環境変数が未設定
 **解決**:
 ```bash
-cat .env | grep -E "FAL_KEY|GEMINI|ELEVEN"    # Mac/Linux
-# Windows (cmd): findstr "FAL_KEY GEMINI ELEVEN" .env
-# Windows (PowerShell): Select-String -Path .env -Pattern "FAL_KEY|GEMINI|ELEVEN"
+cat .env | grep -E "FAL_KEY|GEMINI|ELEVEN"    # Mac/Linux/WSL
 ```
 
 ### トラブル2: 「グリーンスクリーン合成が失敗」

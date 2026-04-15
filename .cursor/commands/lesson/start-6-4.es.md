@@ -552,7 +552,7 @@ Use AskUserQuestion (AskQuestion) para seleccionar su problema y recibir asisten
 **Prompt de solucion**:
 ```
 Instale pytest-asyncio:
-pip install pytest-asyncio
+uv add pytest-asyncio
 
 Configure en pytest.ini o pyproject.toml:
 [pytest]

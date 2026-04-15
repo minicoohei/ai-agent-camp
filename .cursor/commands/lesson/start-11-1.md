@@ -198,9 +198,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install pytest
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # uv は自動で最新のパッケージを管理します
+          uv add pytest
+          if [ -f pyproject.toml ]; then uv sync; fi
 
       - name: Run simple test
         run: |

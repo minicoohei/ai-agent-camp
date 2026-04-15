@@ -171,7 +171,7 @@ Do not paste the API key in this chat. We'll save it securely in a separate term
 
 **What the AI auto-runs:**
 1. Check if the `keyring` package is installed
-   - If not installed: auto-run `pip install keyring`
+   - If not installed: auto-run `uv add keyring`
 2. Run `uv run python tools/credential_manager.py status` to check the current state
 
 **Message to display to the user:**
@@ -221,8 +221,8 @@ and never stored in plaintext files or chat logs.
 ```
 
 (done -> Proceed to Step 4)
-(terminal_help -> Guide: "For Cursor: Menu at the top > Terminal > New Terminal, or press Ctrl+` (Cmd+` on Mac). For Claude Code: Open a separate terminal window/tab. Mac: Cmd+T (new tab) or Cmd+N (new window). Windows: Open PowerShell or Windows Terminal from the Start menu, or press Ctrl+Shift+T for a new tab. Then cd to the project directory.")
-(command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `pip install keyring`)
+(terminal_help -> Guide: "For Cursor: Menu at the top > Terminal > New Terminal, or press Ctrl+` (Cmd+` on Mac). For Claude Code: Open a separate terminal window/tab. Mac: Cmd+T (new tab) or Cmd+N (new window). Windows: Open your WSL terminal (Ubuntu), or add an Ubuntu tab in Windows Terminal. Then cd to the project directory.")
+(command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `uv add keyring`)
 (security_question -> Explain: "This tool uses the OS's standard encrypted storage. On macOS it uses Keychain, on Windows it uses Credential Locker, and on Linux it uses SecretService (GNOME Keyring, etc.). No plaintext files (.env) are created. The storage is also locked when the screen is locked, providing protection from physical access.")
 
 ---
@@ -236,7 +236,7 @@ and never stored in plaintext files or chat logs.
    - Status check command: `uv run python tools/credential_manager.py status`
 
 2. Check if the `fal-client` package is installed:
-   - If not installed: auto-run `pip install fal-client`
+   - If not installed: auto-run `uv add fal-client`
 
 3. Run a package import and FAL_KEY configuration check test:
    - **Note**: Actual fal.ai API calls incur costs, so only check the package import and key configuration
@@ -259,7 +259,7 @@ and never stored in plaintext files or chat logs.
          print(f"FAL_KEY set (first 8 characters: {key[:8]}...)")
          print("fal.ai API setup is complete!")
      except ImportError:
-         print("fal-client is not installed. Please run pip install fal-client.")
+         print("fal-client is not installed. Please run uv add fal-client.")
      ```
 
 4. Display an AskQuestion based on the test result:
@@ -335,9 +335,9 @@ lip sync (Fabric), music generation (Suno), and more.
 ### Trouble 3: Error Installing fal-client
 **Cause**: pip issues or dependency conflicts
 **What the AI does**:
-1. Re-run `pip install fal-client`
-2. If errors persist, run `pip install --upgrade pip` and retry
-3. If the venv is broken, recreate it with `bash tools/scripts/setup.sh`
+1. Re-run `uv add fal-client`
+2. If errors persist, run `uv sync` and retry
+3. If the environment is broken, recreate it with `bash tools/scripts/setup.sh`
 
 ### Trouble 4: Python Version Issue
 **Cause**: fal-client requires Python 3.10 or higher

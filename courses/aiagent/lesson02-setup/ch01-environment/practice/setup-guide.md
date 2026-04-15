@@ -68,55 +68,59 @@ ffmpeg -version
 
 ---
 
-## Windows
+## Windows (WSL2 / Ubuntu)
 
-### 1. Git のインストール
-1. https://git-scm.com/download/win にアクセス
-2. インストーラーをダウンロードして実行
-3. 「Git Bash Here」オプションを有効にする
-4. ターミナル設定は「Use Windows' default console window」を選択
-
+### 0. WSL2 のセットアップ
+PowerShell を**管理者として**開き、以下を実行:
 ```powershell
-# 設定
+wsl --install
+```
+再起動後、スタートメニューから **Ubuntu** を起動し、ユーザー名とパスワードを設定してください。
+以降の手順はすべて **WSL2 の Ubuntu ターミナル内** で実行します。
+
+### 1. Git のインストール・設定
+```bash
+sudo apt update && sudo apt install -y git
+
 git config --global user.name "あなたの名前"
 git config --global user.email "your.email@example.com"
 ```
 
 ### 2. Node.js のインストール
-1. https://nodejs.org にアクセス
-2. LTS 版をダウンロードして実行
-3. 「Add to PATH」にチェックが入っていることを確認
+```bash
+# nvm でインストール
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+source ~/.bashrc
+nvm install --lts
 
-```powershell
 node --version
 npm --version
 ```
 
 ### 3. Python のインストール
-1. https://www.python.org/downloads/ にアクセス
-2. 最新版をダウンロード
-3. **「Add Python to PATH」に必ずチェック**を入れてインストール
+```bash
+sudo apt install -y python3 python3-pip python3-venv
 
-```powershell
-python --version
-pip --version
+python3 --version
+pip3 --version
 ```
 
 ### 4. Cursor のインストール
-1. https://cursor.sh にアクセス
-2. 「Download for Windows」をクリック
-3. インストーラーを実行
+1. https://cursor.sh にアクセス（Windows側ブラウザ）
+2. 「Download for Windows」をクリックしてインストール
+3. Cursor の設定で WSL 拡張を有効にする
 
 ### 5. Claude Code のインストール
-```powershell
+```bash
 npm install -g @anthropic-ai/claude-code
 claude --version
 ```
 
 ### 6. FFmpeg のインストール
-1. https://ffmpeg.org/download.html にアクセス
-2. Windows builds をダウンロード
-3. 展開して `bin/` フォルダを PATH に追加
+```bash
+sudo apt install -y ffmpeg
+ffmpeg -version
+```
 
 ---
 
@@ -128,7 +132,7 @@ git clone https://github.com/<organization>/aiagent-base.git
 cd aiagent-base
 
 # Python 依存関係をインストール
-pip install -r requirements.txt
+uv sync
 
 # Node.js 依存関係をインストール
 npm install

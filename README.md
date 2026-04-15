@@ -182,14 +182,8 @@ uv run python tools/credential_manager.py prepare-dotenv GEMINI_API_KEY
 #### 3. Install Python Dependencies
 
 ```bash
-# Recommended: use venv
-python3 -m venv venv
-source venv/bin/activate  # macOS/Linux
-# or
-venv\Scripts\activate  # Windows
-
-# Install packages
-pip install -r requirements.txt
+# Install dependencies with uv
+uv sync
 ```
 
 #### 4. Start the Course

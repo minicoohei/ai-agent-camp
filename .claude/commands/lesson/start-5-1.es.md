@@ -84,7 +84,7 @@ Use AskUserQuestion (AskQuestion) para elegir "Continuar / Solo revisar ejemplos
 Entrada:
 ```
 Verifique si python-pptx está instalado.
-Si no está instalado, ejecute pip install python-pptx.
+Si no está instalado, ejecute uv add python-pptx.
 ```
 
 **Resultado esperado**: python-pptx esta instalado y se muestra la version.

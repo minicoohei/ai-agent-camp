@@ -288,7 +288,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          uv sync
 
       - name: Run tests
         run: |
@@ -394,7 +394,7 @@ def test_list_tasks():
     assert isinstance(data, list)
 
 Ejecute las pruebas:
-cd ai-content-agent && pip install -r requirements.txt && pytest tests/ -v
+cd ai-content-agent && uv sync && pytest tests/ -v
 ```
 
 **Resultado esperado**: Todas las pruebas de API pasan.
@@ -449,10 +449,8 @@ Un sistema de generacion y gestion de contenido impulsado por IA.
 git clone <repository-url>
 cd ai-content-agent
 
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-pip install -r requirements.txt
+# Instalar dependencias con uv
+uv sync
 ```
 
 ### Ejecucion
@@ -544,7 +542,7 @@ Verifique lo siguiente:
 Cambie el puerto:
 uvicorn.run(app, host="0.0.0.0", port=8001)
 O termine el proceso existente:
-lsof -i :8000 && kill <PID>          # Mac/Linux
+lsof -i :8000 && kill <PID>          # Mac/Linux/WSL
 # Windows: Encuentre el PID con netstat -ano | findstr :8000, luego termine con taskkill /PID <PID> /F
 ```
 

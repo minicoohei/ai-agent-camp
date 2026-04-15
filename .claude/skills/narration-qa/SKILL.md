@@ -296,7 +296,7 @@ ffmpeg -y \
 - **ElevenLabs API**: `ELEVENLABS_API_KEY` in `.env`
 - **Gemini API**: `GEMINI_API_KEY` in `.env`
 - **ffmpeg**: 音声処理用
-- **pip**: `google-generativeai` パッケージ（`pip install --user --break-system-packages google-generativeai`）
+- **pip**: `google-generativeai` パッケージ（`uv add --user --break-system-packages google-generativeai`）
 
 ## ファイル構成
 

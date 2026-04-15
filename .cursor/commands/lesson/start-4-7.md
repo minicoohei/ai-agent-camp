@@ -84,7 +84,7 @@ google-syncスクリプトを使って、Gmail・Calendar・Driveのデータを
 
 ```bash
 # google-syncの依存パッケージをインストール
-pip install -r data/google-sync/requirements.txt
+uv sync
 
 # データ同期を実行
 python data/google-sync/scripts/sync_google.py --account your-email@gmail.com

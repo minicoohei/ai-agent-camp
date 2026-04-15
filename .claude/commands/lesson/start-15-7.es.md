@@ -18,7 +18,7 @@ Bienvenido a **Lección 15-7: Video Musical**!
 | Objetivo | Generar una pista musical con IA, combinar videos de escenas sincronizados con el ritmo para crear un video musical |
 | Duración | ~45 min |
 | Herramientas utilizadas | mv_pipeline (Suno/fal.ai + librosa + Gemini + Kling + FFmpeg) |
-| Requisitos previos | FAL_KEY, GEMINI_API_KEY configurados. pip install librosa recomendado |
+| Requisitos previos | FAL_KEY, GEMINI_API_KEY configurados. uv add librosa recomendado |
 | Guía de costos | Revise la [Guía de Estrategia de Costos de IA de Video](https://ai-agent.camp/es/course/module-15) primero (recomendado) |
 | Página del curso | Consulte [Module 15: Generación de Video](https://ai-agent.camp/es/course/module-15) en paralelo |
 
@@ -60,7 +60,7 @@ Al finalizar esta sesión, un video musical estará guardado en `output/ugc/mv/`
 }
 ```
 
-(install_librosa -> Ejecutar `pip install librosa`)
+(install_librosa -> Ejecutar `uv add librosa`)
 
 ---
 
@@ -214,10 +214,10 @@ Tecnicas de optimizacion de costos:
 ### Problema 2: "Error al instalar librosa"
 **Solución**:
 ```bash
-pip install librosa soundfile
+uv add librosa soundfile
 # Si eso no funciona:
-pip install librosa --no-deps
-pip install soundfile numba
+uv add librosa --no-deps
+uv add soundfile numba
 ```
 
 ### Problema 3: "Ritmos y transiciones desincronizados"

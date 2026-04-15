@@ -141,7 +141,7 @@ Sheet1
 Se requiere la biblioteca openpyxl:
 
 ```bash
-pip install openpyxl
+uv add openpyxl
 ```
 
 ## Comandos relacionados

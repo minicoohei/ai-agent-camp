@@ -276,7 +276,7 @@ Consejos de optimizacion de costos:
 **Causa**: Las variables de entorno no están configuradas
 **Solución**:
 ```bash
-cat .env | grep -E "FAL_KEY|GEMINI|ELEVEN"    # Mac/Linux
+cat .env | grep -E "FAL_KEY|GEMINI|ELEVEN"    # Mac/Linux/WSL
 ```
 
 ### Problema 2: "La composición con pantalla verde falló"

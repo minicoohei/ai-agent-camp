@@ -45,7 +45,7 @@ marimo は Python 上で構築されたリアクティブノートブック環�
 python3 --version    # Windowsでは python --version
 
 # marimoのインストール
-pip install marimo pandas plotly numpy
+uv add marimo pandas plotly numpy
 
 # インストール確認
 marimo --version
@@ -524,9 +524,9 @@ marimo edit output/pm/dashboard.py
 
 | 問題 | 解決策 |
 |------|--------|
-| marimoがインストールできない | Python 3.10+ を確認。`pip install --upgrade pip` 後に再試行 |
+| marimoがインストールできない | Python 3.10+ を確認。`uv sync` 後に再試行 |
 | データが不足している | レッスン内の埋め込みダミーデータ構造を参照して定義を補完 |
-| Plotly グラフが表示されない | `pip install plotly` で最新版をインストール |
+| Plotly グラフが表示されない | `uv add plotly` で最新版をインストール |
 | marimo runが起動しない | `marimo edit` で構文エラーを確認 |
 
 

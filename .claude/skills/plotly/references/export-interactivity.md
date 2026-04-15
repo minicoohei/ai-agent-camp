@@ -7,7 +7,7 @@
 Static image export requires Kaleido:
 
 ```bash
-uv pip install kaleido
+uv add kaleido
 ```
 
 Kaleido v1+ requires Chrome/Chromium on your system.

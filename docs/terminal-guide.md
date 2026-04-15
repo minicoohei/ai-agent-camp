@@ -31,20 +31,25 @@ AI エージェント（Cursor / Claude Code / Codex）は内部的にターミ�
 
 > 詳しくは [Apple公式: Macでターミナルを開く](https://support.apple.com/ja-jp/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac) を参照してください。
 
-### Windows の場合
+### Windows の場合（WSL2 + Ubuntu）
 
-**方法1: スタートメニューから検索**
+> **前提**: WSL2 がインストール済みであること。未導入の場合は PowerShell（管理者）で `wsl --install` を実行してください（[Microsoft公式ガイド](https://learn.microsoft.com/ja-jp/windows/wsl/install)）。
+
+**方法1: Windows Terminal から WSL を開く**
 
 1. スタートボタンをクリック（または `Win` キーを押す）
-2. 「PowerShell」または「ターミナル」と入力する
-3. 「Windows PowerShell」または「Windows Terminal」をクリックする
+2. 「Windows Terminal」と入力して起動する
+3. タブバーの「v」ボタンから「Ubuntu」を選択する
 
-**方法2: 右クリックメニュー**
+**方法2: WSL を直接起動**
 
-1. デスクトップや任意のフォルダで右クリック
-2. 「ターミナルで開く」を選択する
+1. スタートメニューから「Ubuntu」を検索してクリックする
 
-> 詳しくは [Microsoft公式: Windows ターミナルの概要](https://learn.microsoft.com/ja-jp/windows/terminal/) を参照してください。
+> **ヒント**: Windows Terminal の「設定」→「既定のプロファイル」を「Ubuntu」に変更すると、毎回選ぶ手間が省けます。
+
+> **注意**: プロジェクトは WSL ファイルシステム上（`/home/ユーザー名/...`）に配置してください。`/mnt/c/Users/...` では権限や改行コードの問題が起きることがあります。
+
+> 詳しくは [Microsoft公式: WSL のインストール](https://learn.microsoft.com/ja-jp/windows/wsl/install) を参照してください。
 
 ---
 
@@ -62,7 +67,7 @@ AI エージェント（Cursor / Claude Code / Codex）は内部的にターミ�
 | OS | コピー | ペースト |
 |----|--------|----------|
 | macOS | `Cmd + C` | `Cmd + V` |
-| Windows | `Ctrl + Shift + C` | 右クリック、または `Ctrl + Shift + V` |
+| Windows (WSL) | `Ctrl + Shift + C` | 右クリック、または `Ctrl + Shift + V` |
 
 ### 実行を中断する
 
@@ -113,6 +118,6 @@ AI エージェント（Cursor / Claude Code / Codex）は内部的にターミ�
 ## 参考リンク
 
 - [Apple: Macでターミナルを開く](https://support.apple.com/ja-jp/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac)
-- [Microsoft: Windows ターミナルの概要](https://learn.microsoft.com/ja-jp/windows/terminal/)
+- [Microsoft: WSL のインストール](https://learn.microsoft.com/ja-jp/windows/wsl/install)
 - [トラブルシューティング](troubleshoot.md) — エラーが出た場合
 - [セキュリティガイド](security-guardrails.md) — セキュリティの基本

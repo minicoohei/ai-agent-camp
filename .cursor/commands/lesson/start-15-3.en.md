@@ -33,7 +33,7 @@ python3 -c "import pysrt; print('pysrt OK')"    # On Windows, replace python3 wi
 
 If not installed:
 ```bash
-pip install yt-dlp pysrt
+uv add yt-dlp pysrt
 apt-get install ffmpeg    # Ubuntu/Debian
 # macOS: brew install ffmpeg
 # Windows: winget install ffmpeg or download from https://ffmpeg.org/download.html

@@ -316,7 +316,7 @@ def api_call():
 ### notion-client パッケージ
 
 ```bash
-pip install notion-client
+uv add notion-client
 ```
 
 ```python

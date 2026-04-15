@@ -109,7 +109,7 @@ gcloud --version
 
 (installed -> Verify with `gcloud --version`, then proceed to Step 2)
 (homebrew_issue -> Guide: "Open https://cloud.google.com/sdk/docs/install in your browser and download the macOS installer. Extract the downloaded file and run ./install.sh to install.")
-(windows_help -> Guide: "Open https://cloud.google.com/sdk/docs/install in your browser and download the Windows installer (.exe). Double-click the downloaded file and follow the on-screen instructions. After installation, open a new terminal (Command Prompt or PowerShell).")
+(windows_help -> Guide: "Open https://cloud.google.com/sdk/docs/install in your browser and download the Windows installer (.exe). Double-click the downloaded file and follow the on-screen instructions. After installation, open a new WSL terminal (Ubuntu).")
 (install_error -> Check the error message and identify the cause. If PATH is not configured, guide user to run `source ~/.zshrc` or open a new terminal)
 
 ---
@@ -230,7 +230,7 @@ gcloud services enable bigquery.googleapis.com
 
 1. Check that required packages are installed:
 ```bash
-pip install google-cloud-bigquery
+uv add google-cloud-bigquery
 ```
 
 2. Run the BigQuery connection test:
@@ -336,7 +336,7 @@ You can now use BigQuery for SQL execution, data analysis, and EDA.
 
 ### Trouble 6: google-cloud-bigquery Package Error
 **Cause**: Package not installed, version mismatch
-**What the AI does**: Auto-run `pip install google-cloud-bigquery`. If the venv is broken, guide user to recreate it with `bash tools/scripts/setup.sh`
+**What the AI does**: Auto-run `uv add google-cloud-bigquery`. If the environment is broken, guide user to recreate it with `bash tools/scripts/setup.sh`
 
 ### Trouble 7: Cost Concerns
 **AI guidance**: "BigQuery offers up to 1 TB of free queries per month. Access to public datasets used in the training is also free. Google will notify you before exceeding the free tier. For training-level usage, the free tier is more than sufficient."

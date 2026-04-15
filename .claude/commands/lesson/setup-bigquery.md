@@ -109,7 +109,7 @@ gcloud --version
 
 (installed -> `gcloud --version` で確認後、Step 2 へ)
 (homebrew_issue -> 「ブラウザで https://cloud.google.com/sdk/docs/install を開いて、macOS用のインストーラーをダウンロードしてください。ダウンロードしたファイルを展開して、./install.sh を実行すればインストールできます」と案内)
-(windows_help -> 「ブラウザで https://cloud.google.com/sdk/docs/install を開いて、Windows用のインストーラー（.exe）をダウンロードしてください。ダウンロードしたファイルをダブルクリックして、画面の指示に従ってインストールしてください。インストール後、新しいターミナル（コマンドプロンプト or PowerShell）を開いてください」と案内)
+(windows_help -> 「ブラウザで https://cloud.google.com/sdk/docs/install を開いて、Windows用のインストーラー（.exe）をダウンロードしてください。ダウンロードしたファイルをダブルクリックして、画面の指示に従ってインストールしてください。インストール後、新しいターミナル（WSL Ubuntu）を開いてください」と案内)
 (install_error -> エラーメッセージを確認して原因を特定。PATH が通っていない場合は `source ~/.zshrc` や新しいターミナルを開くよう案内)
 
 ---
@@ -230,7 +230,7 @@ gcloud services enable bigquery.googleapis.com
 
 1. 必要パッケージのインストール確認:
 ```bash
-pip install google-cloud-bigquery
+uv add google-cloud-bigquery
 ```
 
 2. BigQuery 接続テストを実行:
@@ -336,7 +336,7 @@ BigQuery の接続テストが成功しました！
 
 ### トラブル6: google-cloud-bigquery パッケージのエラー
 **原因**: パッケージ未インストール、バージョン不一致
-**AIが行うこと**: `pip install google-cloud-bigquery` を自動実行。venv が壊れている場合は `bash tools/scripts/setup.sh` で再作成を案内
+**AIが行うこと**: `uv add google-cloud-bigquery` を自動実行。環境が壊れている場合は `bash tools/scripts/setup.sh` で再作成を案内
 
 ### トラブル7: 料金が心配
 **AIの案内**: 「BigQueryは月1TBまでのクエリが無料です。研修で使う公開データセットへのアクセスも無料です。無料枠を超える前にGoogleから通知が届きます。研修レベルの利用であれば無料枠で十分です」

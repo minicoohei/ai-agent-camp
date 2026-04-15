@@ -156,8 +156,8 @@ PDF/PPTX/Excelファイルの読み取り・編集・分析を専用コンテキ
 
 | エラー | 解決方法 |
 |--------|---------|
-| python-pptx not installed | `pip install python-pptx` でインストール |
-| PDF parsing error | PyMuPDF がインストールされているか確認: `pip install PyMuPDF` |
+| python-pptx not installed | `uv add python-pptx` でインストール |
+| PDF parsing error | PyMuPDF がインストールされているか確認: `uv add PyMuPDF` |
 | File too large (>50MB) | 処理に時間がかかる場合あり。PDF圧縮スキルで事前に軽量化を検討 |
 
 ## Success Criteria

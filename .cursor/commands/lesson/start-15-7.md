@@ -18,7 +18,7 @@ tags: ["video", "music-video", "suno", "beat-sync"]
 | ゴール | AI楽曲を生成し、ビートに同期したシーン動画を組み合わせてMVを作る |
 | 所要時間 | 約45分 |
 | 使うツール | mv_pipeline (Suno/fal.ai + librosa + Gemini + Kling + FFmpeg) |
-| 前提条件 | FAL_KEY、GEMINI_API_KEY 設定済み。pip install librosa 推奨 |
+| 前提条件 | FAL_KEY、GEMINI_API_KEY 設定済み。uv add librosa 推奨 |
 | コストガイド | [動画AIコスト戦略ガイド](https://ai-agent.camp/ja/course/module-15) を先に確認推奨 |
 | 教材ページ | [Module 15: 動画生成](https://ai-agent.camp/ja/course/module-15) を並行参照 |
 
@@ -60,7 +60,7 @@ tags: ["video", "music-video", "suno", "beat-sync"]
 }
 ```
 
-(install_librosa → `pip install librosa` を実行)
+(install_librosa → `uv add librosa` を実行)
 
 ---
 
@@ -92,7 +92,7 @@ tags: ["video", "music-video", "suno", "beat-sync"]
    - ffmpeg -version
 3. librosa（ビート解析用、オプション）
    - python -c "import librosa; print(librosa.__version__)"
-   - インストール: pip install librosa
+   - インストール: uv add librosa
 ```
 
 ---
@@ -252,10 +252,10 @@ output/ugc/mv/ 内の summary.json を確認。
 **原因**: 依存ライブラリの問題
 **解決**:
 ```bash
-pip install librosa soundfile
+uv add librosa soundfile
 # それでもダメなら:
-pip install librosa --no-deps
-pip install soundfile numba
+uv add librosa --no-deps
+uv add soundfile numba
 ```
 librosaなしでも均等分割で動作します。
 

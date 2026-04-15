@@ -606,6 +606,12 @@
   module: 17
   lesson: 4
 
+- lessonId: start-17-5
+  title: "Typefully で X/Threads 投稿自動化"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 5
+
 # === Module 18: PM ===
 - lessonId: start-18-1
   title: "PM - 顧客インタビュー & ニーズ収集"
@@ -733,6 +739,12 @@
   chapterRef: "courses/aiagent/lesson03-core/module19-outlook-windows"
   module: 19
   lesson: 1
+
+- lessonId: start-19-2
+  title: "フォルダ・ルール・カテゴリ"
+  chapterRef: "courses/aiagent/lesson03-core/module19-outlook-windows"
+  module: 19
+  lesson: 2
 
 # === Module 20: Freee / MoneyForward ===
 - lessonId: start-20-1

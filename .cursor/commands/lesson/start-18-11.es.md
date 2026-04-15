@@ -414,9 +414,7 @@ Causa: La variable de entorno no esta configurada
 Solucion:
 1. Obtener clave de API de Notion (https://www.notion.so/settings/integrations)
 2. Ejecute lo siguiente:
-   export NOTION_API_KEY="YOUR_NOTION_SECRET_HERE"          # Mac/Linux
-   # Windows (cmd): set NOTION_API_KEY=YOUR_NOTION_SECRET_HERE
-   # Windows (PowerShell): $env:NOTION_API_KEY = "YOUR_NOTION_SECRET_HERE"
+   export NOTION_API_KEY="YOUR_NOTION_SECRET_HERE"          # Mac/Linux/WSL
 3. Ejecutar nuevamente
 ```
 

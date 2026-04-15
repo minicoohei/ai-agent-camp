@@ -84,7 +84,7 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 入力内容:
 ```
 python-pptxがインストールされているか確認してください。
-インストールされていなければ、pip install python-pptx を実行してください。
+インストールされていなければ、uv add python-pptx を実行してください。
 ```
 
 **期待される結果**: python-pptxがインストールされ、バージョンが表示されます。

@@ -34,7 +34,7 @@ python3 -c "import pysrt; print('pysrt OK')"    # Windowsでは python3 を pyth
 
 もし未インストールの場合:
 ```bash
-pip install yt-dlp pysrt
+uv add yt-dlp pysrt
 sudo apt-get install ffmpeg    # Ubuntu/Debian
 # macOS: brew install ffmpeg
 # Windows: winget install ffmpeg または https://ffmpeg.org/download.html からダウンロード

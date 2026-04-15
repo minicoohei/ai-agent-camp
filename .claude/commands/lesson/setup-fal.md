@@ -171,7 +171,7 @@ APIキーはこのチャットに貼り付けないでください。別のタ�
 
 **AIが自動で実行すること:**
 1. `keyring` パッケージがインストール済みか確認する
-   - 未インストールの場合: `pip install keyring` を自動実行する
+   - 未インストールの場合: `uv add keyring` を自動実行する
 2. `uv run python tools/credential_manager.py status` を実行して現在の状態を確認する
 
 **ユーザーに案内するメッセージ:**
@@ -220,8 +220,8 @@ AIのチャットでAPIキーを扱うと、会話ログに値が残ってしま
 ```
 
 (done → Step 4へ)
-(terminal_help → 「Cursorの場合: 画面上部のメニュー > Terminal > New Terminal、またはキーボードの Ctrl+` (Macの場合は ⌘+`) を押してください。Claude Codeの場合: 別のターミナルウィンドウ/タブを開いてください。Mac: Cmd+T (新しいタブ) または Cmd+N (新しいウィンドウ)。Windows: PowerShell や Windows Terminal を スタートメニュー から開くか、Ctrl+Shift+T で新しいタブを追加してください。開いたら cd でプロジェクトのディレクトリに移動してください」と案内)
-(command_error → AIが `uv run python tools/credential_manager.py status` を実行して状況を確認し、原因を特定。keyring 未インストールの場合は `pip install keyring` を自動実行)
+(terminal_help → 「Cursorの場合: 画面上部のメニュー > Terminal > New Terminal、またはキーボードの Ctrl+` (Macの場合は ⌘+`) を押してください。Claude Codeの場合: 別のターミナルウィンドウ/タブを開いてください。Mac: Cmd+T (新しいタブ) または Cmd+N (新しいウィンドウ)。Windows: WSL ターミナル（Ubuntu）を開くか、Windows Terminal で Ubuntu タブを追加してください。開いたら cd でプロジェクトのディレクトリに移動してください」と案内)
+(command_error → AIが `uv run python tools/credential_manager.py status` を実行して状況を確認し、原因を特定。keyring 未インストールの場合は `uv add keyring` を自動実行)
 (security_question → 「このツールはOS標準の暗号化ストレージを使います。macOSではKeychain、WindowsではCredential Locker、LinuxではSecretService (GNOME Keyring等) に保存されます。平文のファイル(.env)は一切作成しません。画面ロック中はストレージもロックされるため、物理的なアクセスからも保護されます」と説明)
 
 ---
@@ -235,7 +235,7 @@ AIのチャットでAPIキーを扱うと、会話ログに値が残ってしま
    - ステータス確認コマンド: `uv run python tools/credential_manager.py status`
 
 2. `fal-client` パッケージがインストールされているか確認する:
-   - 未インストールの場合: `pip install fal-client` を自動実行する
+   - 未インストールの場合: `uv add fal-client` を自動実行する
 
 3. パッケージのインポートと FAL_KEY の設定確認テストを実行する:
    - **注意**: fal.ai の実際のAPI呼び出しはコストがかかるため、パッケージのインポートとキーの設定確認のみ行う
@@ -258,7 +258,7 @@ AIのチャットでAPIキーを扱うと、会話ログに値が残ってしま
          print(f"FAL_KEY 設定済み（先頭8文字: {key[:8]}...）")
          print("fal.ai APIの設定が完了しました！")
      except ImportError:
-         print("fal-client が未インストールです。pip install fal-client を実行してください。")
+         print("fal-client が未インストールです。uv add fal-client を実行してください。")
      ```
 
 4. テスト結果に応じてAskQuestionを表示:
@@ -334,9 +334,9 @@ AIエンジンが利用可能です。
 ### トラブル3: fal-client のインストールでエラーが出る
 **原因**: pip の問題、または依存パッケージの競合
 **AIが行うこと**:
-1. `pip install fal-client` を再実行する
-2. エラーが続く場合は `pip install --upgrade pip` を実行してから再試行
-3. venv が壊れている場合は `bash tools/scripts/setup.sh` で venv を再作成する
+1. `uv add fal-client` を再実行する
+2. エラーが続く場合は `uv sync` を実行してから再試行
+3. 環境が壊れている場合は `bash tools/scripts/setup.sh` で環境を再セットアップする
 
 ### トラブル4: Python バージョンの問題
 **原因**: fal-client は Python 3.10 以上が必要

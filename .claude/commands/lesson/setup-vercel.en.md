@@ -274,8 +274,8 @@ Once saved, come back to this chat and let me know you're "done".
 ```
 
 (done -> Proceed to Step 4)
-(terminal_help -> Guide: "For Cursor: Menu > Terminal > New Terminal, or press Ctrl+` (Mac: Cmd+`). For Claude Code: Open a separate terminal window/tab. Mac: Cmd+T (new tab) or Cmd+N (new window). Windows: Open PowerShell or Windows Terminal from the Start Menu, or Ctrl+Shift+T for a new tab. Then cd to the project directory")
-(command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `pip install keyring`)
+(terminal_help -> Guide: "For Cursor: Menu > Terminal > New Terminal, or press Ctrl+` (Mac: Cmd+`). For Claude Code: Open a separate terminal window/tab. Mac: Cmd+T (new tab) or Cmd+N (new window). Windows: Open your WSL terminal (Ubuntu), or add an Ubuntu tab in Windows Terminal. Then cd to the project directory")
+(command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `uv add keyring`)
 
 ---
 

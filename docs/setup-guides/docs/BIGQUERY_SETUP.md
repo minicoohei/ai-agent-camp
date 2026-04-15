@@ -303,7 +303,7 @@ gcloud config set project correct-project-id
 ### 必要なパッケージ
 
 ```bash
-pip install google-cloud-bigquery pandas db-dtypes
+uv add google-cloud-bigquery pandas db-dtypes
 ```
 
 ### 基本的な使用方法

@@ -84,7 +84,7 @@ Use the google-sync script to batch sync Gmail, Calendar, and Drive data:
 
 ```bash
 # Install google-sync dependencies
-pip install -r data/google-sync/requirements.txt
+uv sync
 
 # Execute data sync
 python data/google-sync/scripts/sync_google.py --account your-email@gmail.com

@@ -382,7 +382,7 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: uv add -r requirements.txt
 
       - name: Run analysis with APIs
         env:

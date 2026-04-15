@@ -14,9 +14,13 @@ which node
 echo $PATH
 ```
 
-**対処（Windows）**:
-- Node.js インストーラーを再実行し、「Add to PATH」にチェック
-- ターミナルを再起動
+**対処（WSL/Ubuntu）**:
+```bash
+# nvm で再インストール
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+source ~/.bashrc
+nvm install --lts
+```
 
 ---
 
@@ -29,26 +33,25 @@ echo $PATH
 brew install python
 ```
 
-**対処（Windows）**:
-- Python インストーラーで「Add Python to PATH」にチェックして再インストール
-- `python` コマンド（`python3` ではなく）で試す
+**対処（WSL/Ubuntu）**:
+```bash
+sudo apt install -y python3 python3-pip python3-venv
+```
 
 ---
 
-## 3. `pip install` で Permission denied
+## 3. `uv add` で Permission denied
 
 **原因**: システム Python に書き込み権限がない
 
 **対処**:
 ```bash
 # ユーザーインストール
-pip3 install --user <package>
+uv add --user <package>
 
 # または仮想環境を使用
-python3 -m venv venv
-source venv/bin/activate  # macOS/Linux
-# venv\Scripts\activate   # Windows
-pip install <package>
+# uv で依存関係をインストール
+uv add <package>
 ```
 
 ---
@@ -100,7 +103,7 @@ which codex
 rm -rf ~/Library/Application\ Support/Cursor/Cache
 rm -rf ~/Library/Application\ Support/Cursor/CachedData
 
-# Windows: %APPDATA%\Cursor\Cache を削除
+# WSL: Windows側の %APPDATA%\Cursor\Cache を削除
 ```
 
 ---
@@ -118,15 +121,15 @@ brew install <package>
 
 ---
 
-## 8. FFmpeg のインストールエラー（Windows）
+## 8. FFmpeg のインストールエラー（WSL/Ubuntu）
 
-**原因**: PATH の設定が正しくない
+**原因**: パッケージが未インストール
 
 **対処**:
-1. FFmpeg を C:\ffmpeg に展開
-2. 「システム環境変数」→「Path」に `C:\ffmpeg\bin` を追加
-3. ターミナルを再起動
-4. `ffmpeg -version` で確認
+```bash
+sudo apt update && sudo apt install -y ffmpeg
+ffmpeg -version
+```
 
 ---
 

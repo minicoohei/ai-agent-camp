@@ -22,7 +22,7 @@ Python graphing library for creating interactive, publication-quality visualizat
 
 Install Plotly:
 ```bash
-uv pip install plotly
+uv add plotly
 ```
 
 Basic usage with Plotly Express (high-level API):
@@ -151,7 +151,7 @@ fig.write_html('chart.html', include_plotlyjs='cdn')  # Smaller file
 
 **Static Images (requires kaleido):**
 ```bash
-uv pip install kaleido
+uv add kaleido
 ```
 
 ```python
@@ -237,7 +237,7 @@ fig.update_layout(height=800, showlegend=False)
 For interactive web applications, use Dash (Plotly's web app framework):
 
 ```bash
-uv pip install dash
+uv add dash
 ```
 
 ```python

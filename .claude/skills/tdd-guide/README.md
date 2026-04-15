@@ -632,7 +632,7 @@ git clone https://github.com/your-org/tdd-guide-skill.git
 cd tdd-guide-skill
 
 # Install development dependencies
-pip install -r requirements-dev.txt
+uv sync --dev
 
 # Run tests
 pytest tests/ -v

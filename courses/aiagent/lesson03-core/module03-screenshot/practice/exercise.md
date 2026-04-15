@@ -14,7 +14,7 @@ UI分析、注釈追加、チュートリアル生成の3つのスキルを実�
 - Pillow パッケージがインストール済み
 
 ```bash
-pip install google-genai Pillow python-dotenv
+uv add google-genai Pillow python-dotenv
 ```
 
 ## タスク

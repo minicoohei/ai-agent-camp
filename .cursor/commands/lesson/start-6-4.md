@@ -552,7 +552,7 @@ AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押
 **解決プロンプト**:
 ```
 pytest-asyncio をインストールしてください：
-pip install pytest-asyncio
+uv add pytest-asyncio
 
 pytest.iniまたはpyproject.tomlで設定：
 [pytest]

@@ -195,7 +195,7 @@ No pegue el token en este chat. Lo guardaremos de forma segura en una ventana de
 
 **Lo que la IA ejecuta automáticamente:**
 1. Verificar si el paquete `keyring` está instalado
-   - Si no está instalado: Ejecutar automáticamente `pip install keyring`
+   - Si no está instalado: Ejecutar automáticamente `uv add keyring`
 2. Ejecutar `uv run python tools/credential_manager.py status` para verificar el estado actual
 
 **Mensaje para mostrar al usuario:**
@@ -247,8 +247,8 @@ y nunca aparece en archivos de texto plano ni en registros del chat.
 ```
 
 (done -> Ir al Step 5)
-(terminal_help -> Indicar: "Para Cursor: Menú > Terminal > New Terminal, o presione Ctrl+` (Mac: Cmd+`). Para Claude Code: Abra una ventana/pestaña de terminal separada. Mac: Cmd+T (nueva pestaña) o Cmd+N (nueva ventana). Windows: Abra PowerShell o Windows Terminal desde el menú Inicio, o Ctrl+Shift+T para una nueva pestaña. Luego navegue con cd al directorio del proyecto")
-(command_error -> La IA ejecuta `uv run python tools/credential_manager.py status` para verificar la situación e identificar la causa. Si keyring no está instalado, ejecutar automáticamente `pip install keyring`)
+(terminal_help -> Indicar: "Para Cursor: Menú > Terminal > New Terminal, o presione Ctrl+` (Mac: Cmd+`). Para Claude Code: Abra una ventana/pestaña de terminal separada. Mac: Cmd+T (nueva pestaña) o Cmd+N (nueva ventana). Windows: Abra su terminal WSL (Ubuntu), o agregue una pestaña Ubuntu en Windows Terminal. Luego navegue con cd al directorio del proyecto")
+(command_error -> La IA ejecuta `uv run python tools/credential_manager.py status` para verificar la situación e identificar la causa. Si keyring no está instalado, ejecutar automáticamente `uv add keyring`)
 (credential_store_unavailable -> Indicar: "Primero, verifiquemos el estado del almacén con `uv run python tools/credential_manager.py status`". Si realmente no está disponible, proporcionar el respaldo con .env como excepción: guiar para ingresar el token directamente en el archivo .env en un terminal separado, con la nota: "Asegúrese de que .env esté incluido en .gitignore. Cuando el Credential Store esté disponible, migre con `uv run python tools/credential_manager.py migrate` y limpie con `uv run python tools/credential_manager.py cleanup` para eliminar el token en texto plano de .env")
 (security_question -> Explicar: "Esta herramienta usa el almacenamiento cifrado integrado del sistema operativo. En macOS usa Keychain, en Windows usa Credential Locker y en Linux usa SecretService (GNOME Keyring, etc.). No se crean archivos de texto plano (.env). El almacenamiento también se bloquea cuando la pantalla está bloqueada, proporcionando protección contra el acceso físico")
 

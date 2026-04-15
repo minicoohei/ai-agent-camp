@@ -17,7 +17,7 @@
 # 環境確認
 echo $GEMINI_API_KEY
 python --version
-pip install google-genai Pillow python-dotenv requests
+uv add google-genai Pillow python-dotenv requests
 ```
 
 ## タスク

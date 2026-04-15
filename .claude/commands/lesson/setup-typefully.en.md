@@ -176,7 +176,7 @@ Do not paste the API key in this chat. We'll save it securely in a separate term
 
 **What the AI auto-runs:**
 1. Check whether the `keyring` package is installed
-   - If not installed: Auto-run `pip install keyring`
+   - If not installed: Auto-run `uv add keyring`
 2. Run `uv run python tools/credential_manager.py status` to check the current state
 
 **Message to show the user:**
@@ -226,8 +226,8 @@ and never appears in plaintext files or chat logs.
 ```
 
 (done -> Proceed to Step 4)
-(terminal_help -> Guide: "For Cursor: Menu > Terminal > New Terminal, or press Ctrl+` (Mac: Cmd+`). For Claude Code: Open a separate terminal window/tab. Mac: Cmd+T (new tab) or Cmd+N (new window). Windows: Open PowerShell or Windows Terminal from the Start Menu, or Ctrl+Shift+T for a new tab. Then cd to the project directory")
-(command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `pip install keyring`)
+(terminal_help -> Guide: "For Cursor: Menu > Terminal > New Terminal, or press Ctrl+` (Mac: Cmd+`). For Claude Code: Open a separate terminal window/tab. Mac: Cmd+T (new tab) or Cmd+N (new window). Windows: Open your WSL terminal (Ubuntu), or add an Ubuntu tab in Windows Terminal. Then cd to the project directory")
+(command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `uv add keyring`)
 (security_question -> Explain: "This tool uses your OS's built-in encrypted storage. On macOS it uses Keychain, on Windows it uses Credential Locker, and on Linux it uses SecretService (GNOME Keyring, etc.). No plaintext files (.env) are created. The storage is also locked when your screen is locked, providing protection against physical access")
 
 ---

@@ -48,7 +48,7 @@ Slackのメッセージを自動的にGitHubリポジトリにMarkdown形式で�
 
 ```bash
 # 依存関係のインストール
-pip install requests python-dotenv
+uv add requests python-dotenv
 
 # 環境変数を設定（または .env ファイルに記載）
 export SLACK_CLIENT_ID="あなたのClient ID"

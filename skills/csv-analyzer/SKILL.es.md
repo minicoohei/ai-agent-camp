@@ -60,5 +60,5 @@ print(result)
 
 ## Instalación
 ```bash
-pip install -r skills/csv-analyzer/requirements.txt
+uv sync
 ```

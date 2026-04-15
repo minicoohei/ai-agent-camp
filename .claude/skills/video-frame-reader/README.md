@@ -23,12 +23,11 @@ A Claude Code skill that extracts keyframes from video files and analyzes their 
 git clone https://github.com/YOUR_USERNAME/video-frame-reader.git ~/skills/video-frame-reader
 ```
 
-2. Create Python virtual environment and install dependencies:
+2. Install Python dependencies:
 
 ```bash
-python3 -m venv skills/video-frame-reader/scripts/venv
-source skills/video-frame-reader/scripts/venv/bin/activate
-pip install Pillow numpy
+# uv で依存関係をインストール
+uv add Pillow numpy
 ```
 
 ## Usage

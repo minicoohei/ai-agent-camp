@@ -288,7 +288,7 @@ Utilice AskQuestion para seleccionar el problema y luego siga las indicaciones.
 **Prompt de solucion:**
 ```
 Por favor, reinstale Marimo.
-pip install --upgrade marimo
+uv add --upgrade marimo
 
 Después de la instalación, verifique con marimo --version.
 ```

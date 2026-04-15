@@ -15,7 +15,7 @@ PlantUML と Draw.io を使い、営業フロー、システムシーケンス�
 - PlantUML の基本記法を理解している（テンプレート参照可）
 
 ```bash
-pip install google-genai Pillow python-dotenv
+uv add google-genai Pillow python-dotenv
 ```
 
 ## タスク

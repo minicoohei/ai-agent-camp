@@ -45,7 +45,7 @@ Based on your selection, prepare the environment with the following commands:
 python3 --version    # On Windows: python --version
 
 # Install marimo
-pip install marimo pandas plotly numpy
+uv add marimo pandas plotly numpy
 
 # Check installation
 marimo --version
@@ -524,9 +524,9 @@ If everything displays correctly, this lesson is complete.
 
 | Problem | Solution |
 |------|--------|
-| Cannot install marimo | Verify Python 3.10+. Retry after `pip install --upgrade pip` |
+| Cannot install marimo | Verify Python 3.10+. Retry after `uv sync` |
 | Data is missing | Refer to the embedded dummy data structure within the lesson to supplement definitions |
-| Plotly charts not displaying | Install the latest version with `pip install plotly` |
+| Plotly charts not displaying | Install the latest version with `uv add plotly` |
 | marimo run does not start | Check for syntax errors with `marimo edit` |
 
 
