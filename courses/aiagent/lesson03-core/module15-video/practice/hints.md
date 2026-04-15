@@ -94,6 +94,6 @@ export FAL_KEY="your-fal-api-key"
 | `ffmpeg: command not found` | FFmpeg未インストール | `brew install ffmpeg` |
 | `GEMINI_API_KEY not set` | 環境変数未設定 | `.env` に追加 |
 | `FAL_KEY not set` | fal.ai キー未設定 | `export FAL_KEY=...` |
-| `Pillow not found` | パッケージ未インストール | `pip install Pillow` |
+| `Pillow not found` | パッケージ未インストール | `uv add Pillow` |
 | 絵コンテが真っ白 | プロンプトが不適切 | シナリオをより具体的に |
 | 動画が生成されない | API 制限超過 | しばらく待って再実行 |

@@ -486,7 +486,7 @@ Use AskQuestion to select the issue, then follow the guidance.
 ```
 Check the following:
 1. Is python3 --version 3.9 or higher
-2. Are required packages installed (pip install [package-name])
+2. Are required packages installed (uv add [package-name])
 3. Does the script have execution permissions (chmod +x scripts/main.py)
 4. Is the file encoding UTF-8
 ```

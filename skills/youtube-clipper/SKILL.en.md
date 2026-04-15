@@ -132,7 +132,7 @@ How to get cookie file:
 ### yt-dlp Not Found
 
 ```bash
-uv pip install yt-dlp
+uv add yt-dlp
 ```
 
 ### FFmpeg Not Found

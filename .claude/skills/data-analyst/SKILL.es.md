@@ -106,7 +106,7 @@ plt.rcParams['font.family'] = 'Hiragino Sans'
 
 1. **Use Marimo**: No use Jupyter Notebook
 2. **Documente el propósito del análisis**: Incluya en la primera celda
-3. **Use entornos virtuales**: Use uv o venv
+3. **Use entornos virtuales**: Use uv
 4. **Manejo de errores**: Añada la causa y medidas de prevención al Notebook
 
 ## Visualización de Progreso (tqdm)

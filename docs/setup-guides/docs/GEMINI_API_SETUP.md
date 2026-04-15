@@ -49,7 +49,7 @@ OSの暗号化ストレージ（macOS Keychain / Windows Credential Locker / Lin
 
 ```bash
 # keyring パッケージのインストール（初回のみ）
-pip install keyring
+uv add keyring
 
 # APIキーを保存（入力は画面に表示されません）
 uv run python tools/credential_manager.py store GEMINI_API_KEY
@@ -173,7 +173,7 @@ Error: GEMINI_API_KEY not found
 1. `.env` ファイルの存在を確認
 2. `python-dotenv` をインストール
    ```bash
-   pip install python-dotenv
+   uv add python-dotenv
    ```
 3. コードで明示的に読み込み
    ```python

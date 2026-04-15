@@ -156,8 +156,8 @@ Una habilidad de sub-agente que lee, edita y analiza archivos PDF/PPTX/Excel en 
 
 | Error | Solución |
 |-------|----------|
-| python-pptx no instalado | Instale con `pip install python-pptx` |
-| Error de análisis de PDF | Verifique que PyMuPDF esté instalado: `pip install PyMuPDF` |
+| python-pptx no instalado | Instale con `uv add python-pptx` |
+| Error de análisis de PDF | Verifique que PyMuPDF esté instalado: `uv add PyMuPDF` |
 | Archivo demasiado grande (>50MB) | El procesamiento puede tardar. Considere pre-comprimir con la habilidad de compresión de PDF |
 
 ## Criterios de Éxito

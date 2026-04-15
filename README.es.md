@@ -182,12 +182,8 @@ uv run python tools/credential_manager.py prepare-dotenv GEMINI_API_KEY
 #### 3. Instalar paquetes de dependencias de Python
 
 ```bash
-# Recomendado: usar venv
-python3 -m venv venv
-source venv/bin/activate  # macOS/Linux/WSL
-
-# Instalar paquetes
-pip install -r requirements.txt
+# Instalar dependencias con uv
+uv sync
 ```
 
 #### 4. Iniciar el curso

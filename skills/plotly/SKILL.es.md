@@ -22,7 +22,7 @@ Biblioteca de gráficos en Python para crear visualizaciones interactivas de cal
 
 Instalar Plotly:
 ```bash
-uv pip install plotly
+uv add plotly
 ```
 
 Uso básico con Plotly Express (API de alto nivel):
@@ -151,7 +151,7 @@ fig.write_html('chart.html', include_plotlyjs='cdn')  # Archivo más pequeño
 
 **Imágenes Estáticas (requiere kaleido):**
 ```bash
-uv pip install kaleido
+uv add kaleido
 ```
 
 ```python
@@ -237,7 +237,7 @@ fig.update_layout(height=800, showlegend=False)
 Para aplicaciones web interactivas, use Dash (framework de apps web de Plotly):
 
 ```bash
-uv pip install dash
+uv add dash
 ```
 
 ```python

@@ -141,7 +141,7 @@ Sheet1
 The openpyxl library is required:
 
 ```bash
-pip install openpyxl
+uv add openpyxl
 ```
 
 ## Related Commands

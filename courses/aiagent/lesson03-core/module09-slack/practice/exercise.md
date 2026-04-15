@@ -14,7 +14,7 @@ Slack のメッセージデータを検索・分析し、タスクの抽出や�
 - チャネル情報: `data/channels-list.json`
 
 ```bash
-pip install python-dotenv
+uv add python-dotenv
 ```
 
 ## タスク

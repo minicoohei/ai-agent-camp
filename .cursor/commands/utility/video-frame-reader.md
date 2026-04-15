@@ -19,12 +19,11 @@
    - **intent**（任意、解析観点）
    - **max-frames**（任意、解析最大フレーム数。デフォルト: 12）
 
-2. **初回のみ venv 準備**（未実施の場合）:
+2. **初回のみ依存関係準備**（未実施の場合）:
    ```bash
    cd .cursor/skills/video-frame-reader
-   python3 -m venv venv          
-   source venv/bin/activate      # macOS/Linux/WSL
-   pip install Pillow numpy --quiet
+   # uv で依存関係をインストール
+      uv add Pillow numpy --quiet
    ```
 
 3. **抽出 + 解析**:

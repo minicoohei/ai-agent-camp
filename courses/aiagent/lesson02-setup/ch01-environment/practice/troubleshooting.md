@@ -40,19 +40,18 @@ sudo apt install -y python3 python3-pip python3-venv
 
 ---
 
-## 3. `pip install` で Permission denied
+## 3. `uv add` で Permission denied
 
 **原因**: システム Python に書き込み権限がない
 
 **対処**:
 ```bash
 # ユーザーインストール
-pip3 install --user <package>
+uv add --user <package>
 
 # または仮想環境を使用
-python3 -m venv venv
-source venv/bin/activate  # macOS/Linux/WSL
-pip install <package>
+# uv で依存関係をインストール
+uv add <package>
 ```
 
 ---

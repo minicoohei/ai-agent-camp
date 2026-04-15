@@ -290,12 +290,8 @@ Segun el metodo seleccionado, se ejecuta lo siguiente:
 
 1. **Preparar el entorno de ejecucion de pruebas**
    ```bash
-   # Verificar entorno virtual
-   python3 -m venv venv          
-   source venv/bin/activate      # macOS/Linux/WSL
-
-   # Instalar paquetes de dependencia
-   pip install pytest pytest-cov pytest-html pydantic
+   # Instalar dependencias con uv
+   uv add pytest pytest-cov pytest-html pydantic
    ```
 
 2. **Ejecutar pruebas y capturar resultados**

@@ -112,7 +112,7 @@ LINE_USER_ID=your_line_user_id
 ### 依存パッケージ
 
 ```bash
-pip install google-generativeai python-dateutil
+uv add google-generativeai python-dateutil
 ```
 
 ## データディレクトリ

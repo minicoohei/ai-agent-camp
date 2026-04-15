@@ -179,7 +179,7 @@ Do not paste the Bearer Token in this chat. We'll save it securely in a separate
 
 **What the AI auto-runs:**
 1. Check whether the `keyring` package is installed
-   - If not installed: Auto-run `pip install keyring`
+   - If not installed: Auto-run `uv add keyring`
 2. Run `uv run python tools/credential_manager.py status` to check the current state
 
 **Message to show the user:**
@@ -230,7 +230,7 @@ and never appears in plaintext files or chat logs.
 
 (done -> Proceed to Step 4)
 (terminal_help -> Guide: "For Cursor: Menu > Terminal > New Terminal, or press Ctrl+` (Mac: Cmd+`). For Claude Code: Open a separate terminal window/tab. Mac: Cmd+T (new tab) or Cmd+N (new window). Windows: Open your WSL terminal (Ubuntu), or add an Ubuntu tab in Windows Terminal. Then cd to the project directory")
-(command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `pip install keyring`)
+(command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `uv add keyring`)
 (security_question -> Explain: "This tool uses your OS's built-in encrypted storage. On macOS it uses Keychain, on Windows it uses Credential Locker, and on Linux it uses SecretService (GNOME Keyring, etc.). No plaintext files (.env) are created. The storage is also locked when your screen is locked, providing protection against physical access")
 
 ---
@@ -348,7 +348,7 @@ You can now use X (Twitter) real-time search and trend analysis features.
 
 ### Issue 5: Python package errors
 **Cause**: Required packages are not installed
-**What the AI does**: Auto-install missing packages (`pip install requests keyring`)
+**What the AI does**: Auto-install missing packages (`uv add requests keyring`)
 
 ### Issue 6: Concerned about pricing
 **AI guidance**: "X API pricing is as follows: Free ($0) = post only, no search API. Basic ($100/month) = Recent Search API (past 7 days) available. Pro ($5,000/month) = Full-Archive Search (entire history) available. Basic is sufficient for training. Lessons that don't use X API (banner creation, chart generation, etc.) are unaffected. If the cost doesn't justify it, feel free to skip"

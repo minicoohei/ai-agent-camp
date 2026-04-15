@@ -138,12 +138,12 @@ Se requiere lo siguiente para la generación automática de capturas de pantalla
 ```bash
 # macOS
 brew install poppler
-pip install pdf2image
+uv add pdf2image
 brew install --cask libreoffice
 
 # Windows
 # poppler: Descargue de https://github.com/oschwartz10612/poppler-windows y agréguelo al PATH
-pip install pdf2image
+uv add pdf2image
 # LibreOffice: winget install --id TheDocumentFoundation.LibreOffice
 ```
 
@@ -192,7 +192,7 @@ Utilice la opción `--no-generate-screenshot` para usar capturas de pantalla exi
 - Opcional: LibreOffice (para conversión a PDF)
 
 ```bash
-pip install python-pptx pyyaml pdf2image Pillow
+uv add python-pptx pyyaml pdf2image Pillow
 ```
 
 ## Notas

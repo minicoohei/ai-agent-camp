@@ -31,19 +31,17 @@ Clearly understand why the user wants the video analyzed:
 
 This intent becomes important context for the analysis.
 
-### 2. Create venv (First Time Only)
+### 2. Install Dependencies (First Time Only)
 
 ```bash
-python3 -m venv skills/video-frame-reader/scripts/venv
-source skills/video-frame-reader/scripts/venv/bin/activate    # Mac/Linux/WSL
-pip install Pillow numpy --quiet
+# uv で依存関係をインストール
+uv add Pillow numpy --quiet
 ```
 
 ### 3. Extract Keyframes
 
 ```bash
-source skills/video-frame-reader/scripts/venv/bin/activate    # Mac/Linux/WSL
-python3 skills/video-frame-reader/scripts/extract_keyframes.py "<video_path>"
+uv run python skills/video-frame-reader/scripts/extract_keyframes.py "<video_path>"
 ```
 
 Output example (JSON):

@@ -175,7 +175,7 @@ No pegue la clave de API en este chat. La guardaremos de forma segura en una ven
 
 **Lo que la IA ejecuta automáticamente:**
 1. Verificar si el paquete `keyring` está instalado
-   - Si no está instalado: ejecutar automáticamente `pip install keyring`
+   - Si no está instalado: ejecutar automáticamente `uv add keyring`
 2. Ejecutar `uv run python tools/credential_manager.py status` para verificar el estado actual
 
 **Mensaje para mostrar al usuario:**
@@ -242,7 +242,7 @@ cualquier código que haga referencia a cualquiera de los nombres funcionará co
 (done -> Ir al Step 4)
 (one_done -> Indicar: "Ejecute también el segundo: `uv run python tools/credential_manager.py store ELEVEN_API_KEY` -> Pegue la misma clave de API.")
 (terminal_help -> Indicar: "Para Cursor: Menú en la parte superior > Terminal > New Terminal, o presione Ctrl+acento grave (Cmd+acento grave en Mac). Para Claude Code: Abra una ventana/pestaña de terminal separada. Mac: Cmd+T (nueva pestaña) o Cmd+N (nueva ventana). Windows: Abra su terminal WSL (Ubuntu), o agregue una pestaña Ubuntu en Windows Terminal. Luego navegue con cd al directorio del proyecto.")
-(command_error -> La IA ejecuta `uv run python tools/credential_manager.py status` para verificar la situación e identificar la causa. Si keyring no está instalado, ejecutar automáticamente `pip install keyring`)
+(command_error -> La IA ejecuta `uv run python tools/credential_manager.py status` para verificar la situación e identificar la causa. Si keyring no está instalado, ejecutar automáticamente `uv add keyring`)
 (security_question -> Explicar: "Esta herramienta usa el almacenamiento cifrado estándar del SO. En macOS usa Keychain, en Windows usa Credential Locker y en Linux usa SecretService (GNOME Keyring, etc.). No se crean archivos de texto plano (.env). El almacenamiento también se bloquea cuando la pantalla está bloqueada, proporcionando protección contra acceso físico.")
 
 ---
@@ -350,7 +350,7 @@ Ahora puede usar texto a voz (TTS), síntesis de voz, generación de narración 
 
 ### Problema 3: Error de paquete de Python
 **Causa**: Los paquetes necesarios no están instalados
-**Lo que hace la IA**: Instalar automáticamente los paquetes faltantes (`pip install requests keyring`)
+**Lo que hace la IA**: Instalar automáticamente los paquetes faltantes (`uv add requests keyring`)
 
 ### Problema 4: Elegir voces en japonés
 **Indicación de la IA**: "ElevenLabs ofrece voces multilingües. Para encontrar voces que admitan japonés, filtre por 'Japanese' en https://elevenlabs.io/app/voice-library. Usando el modelo Multilingual v2, la mayoría de las voces pueden leer texto en japonés de forma natural."

@@ -898,7 +898,7 @@ Codex / Claude Code ともに、まず `skills/スキル名/SKILL.md` を読み�
 cd skills/スキル名
 
 # 依存関係インストール
-pip install -r requirements.txt
+uv sync
 
 # (オプション) セットアップスクリプト実行
 python scripts/install.py
@@ -982,7 +982,7 @@ python skills/スキル名/scripts/main.py --output result.json
 python3 --version
 
 # pip3 を使用
-pip3 install -r requirements.txt
+uv add -r requirements.txt
 
 # または poetry
 poetry install
@@ -994,13 +994,13 @@ poetry install
 
 ```bash
 # 依存関係確認
-pip list | grep モジュール名
+uv pip list | grep モジュール名
 
 # インストール
-pip install モジュール名
+uv add モジュール名
 
 # 要件ファイルから一括インストール
-pip install -r skills/スキル名/requirements.txt
+uv sync
 ```
 
 ---

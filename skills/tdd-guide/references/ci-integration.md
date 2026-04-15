@@ -84,7 +84,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - run: pip install pytest pytest-cov
+      - run: uv add pytest pytest-cov
       - run: pytest --cov=src --cov-report=xml --cov-fail-under=80
 
       - uses: codecov/codecov-action@v4

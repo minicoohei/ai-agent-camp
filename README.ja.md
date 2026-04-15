@@ -182,12 +182,8 @@ uv run python tools/credential_manager.py prepare-dotenv GEMINI_API_KEY
 #### 3. Python 依存パッケージをインストール
 
 ```bash
-# 推奨: venv を使用
-python3 -m venv venv
-source venv/bin/activate  # macOS/Linux/WSL
-
-# パッケージのインストール
-pip install -r requirements.txt
+# uv で依存パッケージをインストール
+uv sync
 ```
 
 #### 4. コースを開始

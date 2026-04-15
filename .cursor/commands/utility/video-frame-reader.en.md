@@ -19,12 +19,11 @@ This command extracts keyframes from videos, optionally performs frame analysis 
    - **intent** (optional, analysis perspective)
    - **max-frames** (optional, maximum frames for analysis; default: 12)
 
-2. **First-time venv setup** (if not already done):
+2. **First-time dependency setup** (if not already done):
    ```bash
    cd .cursor/skills/video-frame-reader
-   python3 -m venv venv          
-   source venv/bin/activate      # macOS/Linux/WSL
-   pip install Pillow numpy --quiet
+   # uv で依存関係をインストール
+      uv add Pillow numpy --quiet
    ```
 
 3. **Extraction + Analysis**:

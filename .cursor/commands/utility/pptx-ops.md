@@ -216,7 +216,7 @@ Slides overview:
 python-pptxライブラリが必要です：
 
 ```bash
-pip install python-pptx
+uv add python-pptx
 ```
 
 ## 関連コマンド

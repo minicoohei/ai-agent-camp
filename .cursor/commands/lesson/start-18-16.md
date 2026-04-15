@@ -290,12 +290,8 @@ pytest では、複数のテストコード作成スタイルがあります：
 
 1. **テスト実行環境の準備**
    ```bash
-   # 仮想環境の確認
-   python3 -m venv venv          
-   source venv/bin/activate      # macOS/Linux/WSL
-
-   # 依存パッケージのインストール
-   pip install pytest pytest-cov pytest-html pydantic
+   # uv で依存関係をインストール
+   uv add pytest pytest-cov pytest-html pydantic
    ```
 
 2. **テスト実行と結果キャプチャ**

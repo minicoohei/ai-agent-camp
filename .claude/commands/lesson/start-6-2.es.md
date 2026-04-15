@@ -180,7 +180,7 @@ print(result)
 
 ## Instalacion
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 ```
 
@@ -408,7 +408,7 @@ def test_file_not_found():
         CSVAnalyzer('nonexistent.csv')
 
 Luego, ejecute las pruebas con el siguiente comando:
-cd skills/csv-analyzer && pip install -r requirements.txt && pytest tests/ -v
+cd skills/csv-analyzer && uv sync && pytest tests/ -v
 ```
 
 **Resultado esperado**: Se crean pruebas y todas las pruebas pasan.
@@ -450,7 +450,7 @@ O configure la variable de entorno PYTHONPATH.
 **Causa**: Paquetes de dependencia no instalados
 **Prompt de solucion**:
 ```
-Ejecute pip install -r requirements.txt.
+Ejecute `uv add -r requirements`.txt.
 Si usa un entorno virtual, verifique que el entorno correcto esté activo.
 ```
 

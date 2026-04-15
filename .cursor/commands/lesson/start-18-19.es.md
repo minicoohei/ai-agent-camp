@@ -45,7 +45,7 @@ Según su selección, prepare el entorno con los siguientes comandos:
 python3 --version    # En Windows: python --version
 
 # Instalar marimo
-pip install marimo pandas plotly numpy
+uv add marimo pandas plotly numpy
 
 # Verificar instalacion
 marimo --version
@@ -524,9 +524,9 @@ Si todo se muestra correctamente, esta lección esta completa.
 
 | Problema | Solución |
 |------|--------|
-| No se puede instalar marimo | Verifique Python 3.10+. Reintente después de `pip install --upgrade pip` |
+| No se puede instalar marimo | Verifique Python 3.10+. Reintente después de `uv sync` |
 | Faltan datos | Consulte la estructura de datos de prueba integrada en la lección para complementar las definiciones |
-| Los gráficos Plotly no se muestran | Instale la versión más reciente con `pip install plotly` |
+| Los gráficos Plotly no se muestran | Instale la versión más reciente con `uv add plotly` |
 | marimo run no se inicia | Verifique errores de sintaxis con `marimo edit` |
 
 

@@ -132,7 +132,7 @@ git clone https://github.com/<organization>/aiagent-base.git
 cd aiagent-base
 
 # Python 依存関係をインストール
-pip install -r requirements.txt
+uv sync
 
 # Node.js 依存関係をインストール
 npm install

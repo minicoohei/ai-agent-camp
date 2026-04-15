@@ -175,7 +175,7 @@ APIキーはこのチャットに貼り付けないでください。別のタ�
 
 **AIが自動で実行すること:**
 1. `keyring` パッケージがインストール済みか確認する
-   - 未インストールの場合: `pip install keyring` を自動実行する
+   - 未インストールの場合: `uv add keyring` を自動実行する
 2. `uv run python tools/credential_manager.py status` を実行して現在の状態を確認する
 
 **ユーザーに案内するメッセージ:**
@@ -239,7 +239,7 @@ ElevenLabs の公式SDKやサンプルコードでは `ELEVEN_API_KEY` が使わ
 (done → Step 4へ)
 (one_done → 「2つ目も同様に実行してください: `uv run python tools/credential_manager.py store ELEVEN_API_KEY` → 同じAPIキーを貼り付けてください」と案内)
 (terminal_help → 「Cursorの場合: 画面上部のメニュー > Terminal > New Terminal、またはキーボードの Ctrl+バッククォート (Macの場合は Cmd+バッククォート) を押してください。Claude Codeの場合: 別のターミナルウィンドウ/タブを開いてください。Mac: Cmd+T (新しいタブ) または Cmd+N (新しいウィンドウ)。Windows: WSL ターミナル（Ubuntu）を開くか、Windows Terminal で Ubuntu タブを追加してください。開いたら cd でプロジェクトのディレクトリに移動してください」と案内)
-(command_error → AIが `uv run python tools/credential_manager.py status` を実行して状況を確認し、原因を特定。keyring 未インストールの場合は `pip install keyring` を自動実行)
+(command_error → AIが `uv run python tools/credential_manager.py status` を実行して状況を確認し、原因を特定。keyring 未インストールの場合は `uv add keyring` を自動実行)
 (security_question → 「このツールはOS標準の暗号化ストレージを使います。macOSではKeychain、WindowsではCredential Locker、LinuxではSecretService (GNOME Keyring等) に保存されます。平文のファイル(.env)は一切作成しません。画面ロック中はストレージもロックされるため、物理的なアクセスからも保護されます」と説明)
 
 ---
@@ -347,7 +347,7 @@ ElevenLabs APIの設定が完了しました！
 
 ### トラブル3: Pythonパッケージのエラー
 **原因**: 必要なパッケージがインストールされていない
-**AIが行うこと**: 不足パッケージを自動でインストールする（`pip install requests keyring`）
+**AIが行うこと**: 不足パッケージを自動でインストールする（`uv add requests keyring`）
 
 ### トラブル4: 日本語ボイスの選び方
 **AIの案内**: 「ElevenLabsでは多言語対応ボイスが利用可能です。日本語に対応しているボイスを探すには、https://elevenlabs.io/app/voice-library で 'Japanese' でフィルタリングしてください。Multilingual v2 モデルを使用すると、ほとんどのボイスで日本語テキストを自然に読み上げられます」

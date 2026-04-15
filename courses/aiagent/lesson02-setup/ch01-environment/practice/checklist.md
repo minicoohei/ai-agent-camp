@@ -81,10 +81,10 @@
 
 - [ ] **クローン完了**: `ls aiagent-base/` → ファイル一覧が表示される
 
-- [ ] **Python 依存関係**: `pip list | grep Pillow` → Pillow が表示される
+- [ ] **Python 依存関係**: `uv pip list | grep Pillow` → Pillow が表示される
   ```bash
-  pip3 install -r requirements.txt
-  pip3 list | grep Pillow
+  uv sync
+  uv pip list | grep Pillow
   ```
 
 - [ ] **Node.js 依存関係**: `ls node_modules/` → ディレクトリが存在する

@@ -84,7 +84,7 @@ Use el script google-sync para sincronizar por lotes los datos de Gmail, Calenda
 
 ```bash
 # Instalar dependencias de google-sync
-pip install -r data/google-sync/requirements.txt
+uv sync
 
 # Ejecutar sincronizacion de datos
 python data/google-sync/scripts/sync_google.py --account your-email@gmail.com

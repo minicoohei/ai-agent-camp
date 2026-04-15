@@ -138,9 +138,9 @@ Genera un notebook marimo (.py):
 ## Requisitos
 
 - Python 3.10+
-- marimo (`pip install marimo`)
-- pandas (`pip install pandas`)
-- plotly (`pip install plotly`)
+- marimo (`uv add marimo`)
+- pandas (`uv add pandas`)
+- plotly (`uv add plotly`)
 
 ## Ejemplo
 

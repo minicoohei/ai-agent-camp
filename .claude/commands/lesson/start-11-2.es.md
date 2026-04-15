@@ -153,7 +153,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install google-auth google-auth-oauthlib google-api-python-client
+          uv add google-auth google-auth-oauthlib google-api-python-client
 
       - name: Create credentials file
         run: |
@@ -232,7 +232,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pandas requests
+          uv add pandas requests
 
       - name: Step 1 - Fetch data
         run: |

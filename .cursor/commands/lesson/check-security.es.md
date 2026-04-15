@@ -172,7 +172,7 @@ service-account.json
 ### 4. Gestión de dependencias
 ```bash
 # Actualizaciones regulares
-pip install --upgrade pip
+# uv は自動で最新のパッケージを管理します
 pip-audit
 npm audit
 npm update
@@ -201,7 +201,7 @@ bfg --delete-files "*.env"
 ```bash
 # 1. Evaluar el alcance del impacto
 # 2. Aplicar parches
-pip install package==X.X.X  # Version corregida
+uv add package==X.X.X  # Version corregida
 npm update package
 
 # 3. Verificar

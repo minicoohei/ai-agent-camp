@@ -114,7 +114,7 @@ LINE_USER_ID=su_id_de_usuario_line
 ### Dependencias
 
 ```bash
-pip install google-generativeai python-dateutil
+uv add google-generativeai python-dateutil
 ```
 
 ## Directorios de Datos

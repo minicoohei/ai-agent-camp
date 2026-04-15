@@ -187,7 +187,7 @@ Use AskUserQuestion (AskQuestion) to select your issue and get guided assistance
 **Solution prompt**:
 ```
 Install the packages required to run banner-creator.
-Run pip install pillow requests.
+Run `uv add pillow requests`.
 ```
 
 ### Issue 2: "Image is not generated"

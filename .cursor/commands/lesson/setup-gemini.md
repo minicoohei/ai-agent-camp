@@ -130,7 +130,7 @@ APIキーはこのチャットに貼り付けないでください。別のタ�
 
 **AIが自動で実行すること:**
 1. `keyring` パッケージがインストール済みか確認する
-   - 未インストールの場合: `pip install keyring` を自動実行する
+   - 未インストールの場合: `uv add keyring` を自動実行する
 2. `uv run python tools/credential_manager.py status` を実行して現在の状態を確認する
 
 **ユーザーに案内するメッセージ:**
@@ -180,7 +180,7 @@ AIのチャットでAPIキーを扱うと、会話ログに値が残ってしま
 
 (done → Step 3へ)
 (terminal_help → 「Cursorの場合: 画面上部のメニュー > Terminal > New Terminal、またはキーボードの Ctrl+` (Macの場合は ⌘+`) を押してください。Claude Codeの場合: 別のターミナルウィンドウ/タブを開いてください。Mac: Cmd+T (新しいタブ) または Cmd+N (新しいウィンドウ)。Windows: WSL ターミナル（Ubuntu）を開くか、Windows Terminal で Ubuntu タブを追加してください。開いたら cd でプロジェクトのディレクトリに移動してください」と案内)
-(command_error → AIが `uv run python tools/credential_manager.py status` を実行して状況を確認し、原因を特定。keyring 未インストールの場合は `pip install keyring` を自動実行)
+(command_error → AIが `uv run python tools/credential_manager.py status` を実行して状況を確認し、原因を特定。keyring 未インストールの場合は `uv add keyring` を自動実行)
 (security_question → 「このツールはOS標準の暗号化ストレージを使います。macOSではKeychain、WindowsではCredential Locker、LinuxではSecretService (GNOME Keyring等) に保存されます。平文のファイル(.env)は一切作成しません。画面ロック中はストレージもロックされるため、物理的なアクセスからも保護されます」と説明)
 
 ---
@@ -282,7 +282,7 @@ Gemini APIの設定が完了しました！
 
 ### トラブル3: Pythonパッケージのエラー
 **原因**: 必要なパッケージがインストールされていない
-**AIが行うこと**: 不足パッケージを自動でインストールする（`pip install google-genai python-dotenv`）
+**AIが行うこと**: 不足パッケージを自動でインストールする（`uv add google-genai python-dotenv`）
 
 ### トラブル4: 料金が心配
 **AIの案内**: 「Gemini APIには無料枠があります。無料枠の範囲内であれば費用は一切かかりません。研修レベルの利用（1日数十回の生成）であれば無料枠で十分です。有料になる前にGoogleから通知が届きます」

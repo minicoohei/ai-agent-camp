@@ -138,12 +138,12 @@ cell_0_1: "表のセル値"
 ```bash
 # macOS
 brew install poppler
-pip install pdf2image
+uv add pdf2image
 brew install --cask libreoffice
 
 # Windows
 # poppler: https://github.com/oschwartz10612/poppler-windows からダウンロードしPATHに追加
-pip install pdf2image
+uv add pdf2image
 # LibreOffice: winget install --id TheDocumentFoundation.LibreOffice
 ```
 
@@ -192,7 +192,7 @@ pip install pdf2image
 - オプション: LibreOffice（PDF変換用）
 
 ```bash
-pip install python-pptx pyyaml pdf2image Pillow
+uv add python-pptx pyyaml pdf2image Pillow
 ```
 
 ## 注意事項

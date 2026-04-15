@@ -106,7 +106,7 @@ plt.rcParams['font.family'] = 'Hiragino Sans'
 
 1. **Marimoを使用**: Jupyter Notebookは使用しない
 2. **分析目的を明記**: 最初のセルに記載
-3. **仮想環境の使用**: uv または venv を使用
+3. **仮想環境の使用**: uv を使用
 4. **エラー対応**: 原因と再発防止策をNotebookに追記
 
 ## 進捗表示（tqdm）

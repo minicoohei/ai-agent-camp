@@ -231,7 +231,7 @@ gcloud services enable bigquery.googleapis.com
 
 1. Verificar que los paquetes necesarios estén instalados:
 ```bash
-pip install google-cloud-bigquery
+uv add google-cloud-bigquery
 ```
 
 2. Ejecutar la prueba de conexión con BigQuery:
@@ -337,7 +337,7 @@ Ahora puede usar BigQuery para ejecución de SQL, análisis de datos y EDA.
 
 ### Problema 6: Error con el paquete google-cloud-bigquery
 **Causa**: Paquete no instalado, incompatibilidad de versiones
-**Lo que hace la IA**: Ejecutar automáticamente `pip install google-cloud-bigquery`. Si el venv está dañado, indicar al usuario que lo recree con `bash tools/scripts/setup.sh`
+**Lo que hace la IA**: Ejecutar automáticamente `uv add google-cloud-bigquery`. Si el entorno está dañado, indicar al usuario que lo recree con `bash tools/scripts/setup.sh`
 
 ### Problema 7: Preocupación por los costos
 **Indicación de la IA**: "BigQuery ofrece hasta 1 TB de consultas gratuitas al mes. El acceso a los conjuntos de datos públicos utilizados en el curso también es gratuito. Google le notificará antes de superar el nivel gratuito. Para el uso a nivel de curso, el nivel gratuito es más que suficiente."

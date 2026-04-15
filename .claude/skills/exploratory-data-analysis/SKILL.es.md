@@ -221,7 +221,7 @@ Muchos formatos científicos requieren bibliotecas especializadas:
 try:
     from Bio import SeqIO
 except ImportError:
-    print("Instale Biopython: uv pip install biopython")
+    print("Instale Biopython: uv add biopython")
 ```
 
 Requisitos comunes por categoría:

@@ -92,7 +92,7 @@ OSの暗号化ストレージに安全に保存します。
 
 ```bash
 # keyring パッケージのインストール（初回のみ）
-pip install keyring
+uv add keyring
 
 # User Token を保存（入力は画面に表示されません）
 uv run python tools/credential_manager.py store SLACK_USER_TOKEN

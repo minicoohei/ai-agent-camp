@@ -187,7 +187,7 @@ Use AskUserQuestion (AskQuestion) para seleccionar su problema y recibir asisten
 **Prompt de solución**:
 ```
 Instale los paquetes necesarios para ejecutar banner-creator.
-Ejecute pip install pillow requests.
+Ejecute `uv add pillow requests`.
 ```
 
 ### Problema 2: "La imagen no se genera"

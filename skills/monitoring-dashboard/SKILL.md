@@ -138,9 +138,9 @@ marimo ノートブック（.py）を生成:
 ## Requirements
 
 - Python 3.10+
-- marimo (`pip install marimo`)
-- pandas (`pip install pandas`)
-- plotly (`pip install plotly`)
+- marimo (`uv add marimo`)
+- pandas (`uv add pandas`)
+- plotly (`uv add plotly`)
 
 ## Example
 

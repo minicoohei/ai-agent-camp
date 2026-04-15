@@ -180,7 +180,7 @@ print(result)
 
 ## インストール
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 ```
 
@@ -408,7 +408,7 @@ def test_file_not_found():
         CSVAnalyzer('nonexistent.csv')
 
 その後、以下のコマンドでテストを実行してください：
-cd skills/csv-analyzer && pip install -r requirements.txt && pytest tests/ -v
+cd skills/csv-analyzer && uv sync && pytest tests/ -v
 ```
 
 **期待される結果**: テストが作成され、全テストがパスします。
@@ -450,7 +450,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 **原因**: 依存パッケージ未インストール
 **解決プロンプト**:
 ```
-pip install -r requirements.txt を実行してください。
+uv add -r requirements.txt を実行してください。
 仮想環境を使用している場合は、正しい環境がアクティブか確認してください。
 ```
 

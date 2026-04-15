@@ -141,7 +141,7 @@ Estimated cells: 600
 openpyxlライブラリが必要です：
 
 ```bash
-pip install openpyxl
+uv add openpyxl
 ```
 
 ## 関連コマンド

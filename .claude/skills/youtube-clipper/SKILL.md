@@ -132,7 +132,7 @@ cookieファイルの取得方法:
 ### yt-dlpが見つからない
 
 ```bash
-uv pip install yt-dlp
+uv add yt-dlp
 ```
 
 ### FFmpegが見つからない

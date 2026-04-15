@@ -132,7 +132,7 @@ Cómo obtener el archivo de cookies:
 ### yt-dlp No Encontrado
 
 ```bash
-uv pip install yt-dlp
+uv add yt-dlp
 ```
 
 ### FFmpeg No Encontrado

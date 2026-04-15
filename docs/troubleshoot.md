@@ -425,42 +425,29 @@ ImportError: No module named 'requests'
 
 ```bash
 # 単一パッケージのインストール
-pip install pillow
-pip install google-genai
-pip install requests
-
-# または pip3
-pip3 install pillow
+uv add pillow
+uv add google-genai
+uv add requests
 ```
 
-#### Step 2: 要件ファイルから一括インストール
+#### Step 2: プロジェクト全体の依存関係を一括インストール
 
 ```bash
-# プロジェクト全体の依存関係
-pip install -r requirements.txt
-
-# スキル単位の依存関係
-pip install -r skills/banner-creator/requirements.txt
-
-# 複数スキルの依存関係
-for skill in skills/*/; do
-  if [ -f "$skill/requirements.txt" ]; then
-    pip install -r "$skill/requirements.txt"
-  fi
-done
+# pyproject.toml の依存関係をすべてインストール
+uv sync
 ```
 
 #### Step 3: 特定のバージョンで問題がないか確認
 
 ```bash
 # インストール済みパッケージを確認
-pip list | grep module名
+uv pip list | grep module名
 
 # 特定バージョンをインストール
-pip install pillow==10.0.0
+uv add pillow==10.0.0
 
 # 互換性確認
-pip check
+uv pip check
 ```
 
 **よくあるモジュール**:
@@ -535,7 +522,7 @@ ls -la skills/banner-creator/scripts/
 python skills/banner-creator/scripts/install.py
 
 # または
-cd skills/banner-creator && pip install -r requirements.txt
+cd skills/banner-creator && uv sync
 
 # すべてのスキルをインストール
 python scripts/setup.py --install skills

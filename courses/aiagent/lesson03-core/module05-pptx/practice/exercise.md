@@ -13,7 +13,7 @@ python-pptx を使い、既存スライドの解析とテンプレートから�
 - python-pptx パッケージ
 
 ```bash
-pip install python-pptx
+uv add python-pptx
 ```
 
 ## タスク

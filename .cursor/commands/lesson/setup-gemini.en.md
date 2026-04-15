@@ -130,7 +130,7 @@ Do not paste the API key in this chat. We'll save it securely in a separate term
 
 **What the AI auto-runs:**
 1. Check if the `keyring` package is installed
-   - If not installed: auto-run `pip install keyring`
+   - If not installed: auto-run `uv add keyring`
 2. Run `uv run python tools/credential_manager.py status` to check the current state
 
 **Message to display to the user:**
@@ -181,7 +181,7 @@ and never stored in plaintext files or chat logs.
 
 (done -> Proceed to Step 3)
 (terminal_help -> Guide: "For Cursor: Menu at the top > Terminal > New Terminal, or press Ctrl+` (Cmd+` on Mac). For Claude Code: Open a separate terminal window/tab. Mac: Cmd+T (new tab) or Cmd+N (new window). Windows: Open your WSL terminal (Ubuntu), or add an Ubuntu tab in Windows Terminal. Then cd to the project directory.")
-(command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `pip install keyring`)
+(command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `uv add keyring`)
 (security_question -> Explain: "This tool uses the OS's standard encrypted storage. On macOS it uses Keychain, on Windows it uses Credential Locker, and on Linux it uses SecretService (GNOME Keyring, etc.). No plaintext files (.env) are created. The storage is also locked when the screen is locked, providing protection from physical access.")
 
 ---
@@ -283,7 +283,7 @@ You can now use AI features like image generation (/banner), diagram creation (/
 
 ### Trouble 3: Python Package Error
 **Cause**: Required packages are not installed
-**What the AI does**: Auto-install missing packages (`pip install google-genai python-dotenv`)
+**What the AI does**: Auto-install missing packages (`uv add google-genai python-dotenv`)
 
 ### Trouble 4: Cost Concerns
 **AI guidance**: "The Gemini API has a free tier. There is no cost within the free tier limits. For training-level usage (a few dozen generations per day), the free tier is more than sufficient. Google will notify you before any charges would apply."

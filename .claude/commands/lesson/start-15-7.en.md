@@ -18,7 +18,7 @@ Welcome to **Lesson 15-7: Music Video**!
 | Goal | Generate an AI music track, combine beat-synced scene videos to create a music video |
 | Duration | ~45 min |
 | Tools used | mv_pipeline (Suno/fal.ai + librosa + Gemini + Kling + FFmpeg) |
-| Prerequisites | FAL_KEY, GEMINI_API_KEY configured. pip install librosa recommended |
+| Prerequisites | FAL_KEY, GEMINI_API_KEY configured. uv add librosa recommended |
 | Cost guide | Review the [Video AI Cost Strategy Guide](https://ai-agent.camp/en/course/module-15) first (recommended) |
 | Course page | Refer to [Module 15: Video Generation](https://ai-agent.camp/en/course/module-15) in parallel |
 
@@ -60,7 +60,7 @@ By the end of this session, a music video will be saved in `output/ugc/mv/`.
 }
 ```
 
-(install_librosa -> Run `pip install librosa`)
+(install_librosa -> Run `uv add librosa`)
 
 ---
 
@@ -92,7 +92,7 @@ Verify the following:
    - ffmpeg -version
 3. librosa (for beat analysis, optional)
    - python -c "import librosa; print(librosa.__version__)"
-   - Install: pip install librosa
+   - Install: uv add librosa
 ```
 
 ---
@@ -252,10 +252,10 @@ Cost optimization techniques:
 **Cause**: Dependency library issues
 **Solution**:
 ```bash
-pip install librosa soundfile
+uv add librosa soundfile
 # If that doesn't work:
-pip install librosa --no-deps
-pip install soundfile numba
+uv add librosa --no-deps
+uv add soundfile numba
 ```
 It also works with equal-interval splitting without librosa.
 

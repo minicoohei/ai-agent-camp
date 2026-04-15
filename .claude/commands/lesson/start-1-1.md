@@ -187,7 +187,7 @@ AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押
 **解決プロンプト**:
 ```
 banner-creatorの実行に必要なパッケージをインストールしてください。
-pip install pillow requests を実行してください。
+uv add pillow requests を実行してください。
 ```
 
 ### トラブル2: 「画像が生成されない」

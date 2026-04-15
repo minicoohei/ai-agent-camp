@@ -13,7 +13,7 @@ pandas、matplotlib、seaborn を使ってデータの傾向を読み解き、�
 - 必要パッケージ:
 
 ```bash
-pip install pandas matplotlib seaborn
+uv add pandas matplotlib seaborn
 ```
 
 ## データセット

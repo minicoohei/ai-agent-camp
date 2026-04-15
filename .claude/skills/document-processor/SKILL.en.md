@@ -156,8 +156,8 @@ A sub-agent skill that reads, edits, and analyzes PDF/PPTX/Excel files in a dedi
 
 | Error | Solution |
 |-------|----------|
-| python-pptx not installed | Install with `pip install python-pptx` |
-| PDF parsing error | Verify PyMuPDF is installed: `pip install PyMuPDF` |
+| python-pptx not installed | Install with `uv add python-pptx` |
+| PDF parsing error | Verify PyMuPDF is installed: `uv add PyMuPDF` |
 | File too large (>50MB) | Processing may take time. Consider pre-compressing with the PDF compression skill |
 
 ## Success Criteria

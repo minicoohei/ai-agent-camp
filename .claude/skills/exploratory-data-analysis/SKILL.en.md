@@ -362,7 +362,7 @@ Many scientific formats require specialized libraries:
 try:
     from Bio import SeqIO
 except ImportError:
-    print("Install Biopython: uv pip install biopython")
+    print("Install Biopython: uv add biopython")
 ```
 
 Common requirements by category:

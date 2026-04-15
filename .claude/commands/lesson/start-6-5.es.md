@@ -288,7 +288,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          uv sync
 
       - name: Run tests
         run: |
@@ -394,7 +394,7 @@ def test_list_tasks():
     assert isinstance(data, list)
 
 Ejecute las pruebas:
-cd ai-content-agent && pip install -r requirements.txt && pytest tests/ -v
+cd ai-content-agent && uv sync && pytest tests/ -v
 ```
 
 **Resultado esperado**: Todas las pruebas de API pasan.
@@ -449,10 +449,8 @@ Un sistema de generacion y gestion de contenido impulsado por IA.
 git clone <repository-url>
 cd ai-content-agent
 
-python -m venv venv
-source venv/bin/activate  # macOS/Linux/WSL
-
-pip install -r requirements.txt
+# uv で依存関係をインストール
+uv sync
 ```
 
 ### Ejecucion

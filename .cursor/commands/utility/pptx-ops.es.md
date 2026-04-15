@@ -216,7 +216,7 @@ Slides overview:
 Se requiere la biblioteca python-pptx:
 
 ```bash
-pip install python-pptx
+uv add python-pptx
 ```
 
 ## Comandos relacionados

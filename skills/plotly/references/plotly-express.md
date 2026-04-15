@@ -5,7 +5,7 @@ Plotly Express (px) is a high-level interface for creating data visualizations w
 ## Installation
 
 ```bash
-uv pip install plotly
+uv add plotly
 ```
 
 ## Key Advantages

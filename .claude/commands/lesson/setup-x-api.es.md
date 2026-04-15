@@ -179,7 +179,7 @@ No pegue el Bearer Token en este chat. Lo guardaremos de forma segura en una ven
 
 **Lo que la IA ejecuta automáticamente:**
 1. Verificar si el paquete `keyring` está instalado
-   - Si no está instalado: Ejecutar automáticamente `pip install keyring`
+   - Si no está instalado: Ejecutar automáticamente `uv add keyring`
 2. Ejecutar `uv run python tools/credential_manager.py status` para verificar el estado actual
 
 **Mensaje para mostrar al usuario:**
@@ -231,7 +231,7 @@ y nunca aparece en archivos de texto plano ni en registros del chat.
 
 (done -> Ir al Step 4)
 (terminal_help -> Indicar: "Para Cursor: Menú > Terminal > New Terminal, o presione Ctrl+` (Mac: Cmd+`). Para Claude Code: Abra una ventana/pestaña de terminal separada. Mac: Cmd+T (nueva pestaña) o Cmd+N (nueva ventana). Windows: Abra su terminal WSL (Ubuntu), o agregue una pestaña Ubuntu en Windows Terminal. Luego navegue con cd al directorio del proyecto")
-(command_error -> La IA ejecuta `uv run python tools/credential_manager.py status` para verificar la situación e identificar la causa. Si keyring no está instalado, ejecutar automáticamente `pip install keyring`)
+(command_error -> La IA ejecuta `uv run python tools/credential_manager.py status` para verificar la situación e identificar la causa. Si keyring no está instalado, ejecutar automáticamente `uv add keyring`)
 (security_question -> Explicar: "Esta herramienta usa el almacenamiento cifrado integrado del sistema operativo. En macOS usa Keychain, en Windows usa Credential Locker y en Linux usa SecretService (GNOME Keyring, etc.). No se crean archivos de texto plano (.env). El almacenamiento también se bloquea cuando la pantalla está bloqueada, proporcionando protección contra el acceso físico")
 
 ---
@@ -349,7 +349,7 @@ Ahora puede usar las funciones de búsqueda en tiempo real y análisis de tenden
 
 ### Problema 5: Errores de paquetes de Python
 **Causa**: Los paquetes necesarios no están instalados
-**Lo que hace la IA**: Instalar automáticamente los paquetes faltantes (`pip install requests keyring`)
+**Lo que hace la IA**: Instalar automáticamente los paquetes faltantes (`uv add requests keyring`)
 
 ### Problema 6: Preocupación por el precio
 **Indicación de la IA**: "Los precios de la API de X son los siguientes: Gratuito ($0) = solo publicar, sin API de búsqueda. Basic ($100/mes) = API de Recent Search (últimos 7 días) disponible. Pro ($5,000/mes) = Full-Archive Search (todo el historial) disponible. Basic es suficiente para la capacitación. Las lecciones que no usan la API de X (creación de banners, generación de gráficos, etc.) no se ven afectadas. Si el costo no lo justifica, no dude en omitirlo"

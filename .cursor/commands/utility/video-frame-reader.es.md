@@ -19,12 +19,11 @@ Este comando extrae fotogramas clave de videos, opcionalmente realiza análisis 
    - **intent** (opcional, perspectiva del análisis)
    - **max-frames** (opcional, fotogramas máximos para el análisis; por defecto: 12)
 
-2. **Configuración inicial del venv** (si no se ha realizado):
+2. **Configuración inicial de dependencias** (si no se ha realizado):
    ```bash
    cd .cursor/skills/video-frame-reader
-   python3 -m venv venv          
-   source venv/bin/activate      # macOS/Linux/WSL
-   pip install Pillow numpy --quiet
+   # uv で依存関係をインストール
+      uv add Pillow numpy --quiet
    ```
 
 3. **Extracción + Análisis**:

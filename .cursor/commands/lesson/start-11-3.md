@@ -295,7 +295,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests
+        run: uv add requests
 
       - name: Fetch news
         run: |

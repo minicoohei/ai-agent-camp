@@ -552,7 +552,7 @@ Use AskUserQuestion (AskQuestion) to select your issue and get guided assistance
 **Solution prompt**:
 ```
 Install pytest-asyncio:
-pip install pytest-asyncio
+uv add pytest-asyncio
 
 Configure in pytest.ini or pyproject.toml:
 [pytest]
