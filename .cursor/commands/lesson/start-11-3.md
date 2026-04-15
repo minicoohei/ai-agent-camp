@@ -308,12 +308,12 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
-        run: python -c "from scripts.fetch_news import *; send_email(main())"
+        run: python -c "from tools.fetch_news import *; send_email(main())"
 
       - name: Send Slack notification
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        run: python -c "from scripts.fetch_news import *; send_slack(main())"
+        run: python -c "from tools.fetch_news import *; send_slack(main())"
 
       - uses: actions/upload-artifact@v4
         with:

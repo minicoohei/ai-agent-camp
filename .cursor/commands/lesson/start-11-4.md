@@ -281,7 +281,7 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          if [ -n "$(git diff --name-only)" ]; then
+          if [ -n "$(git status --porcelain)" ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
 
@@ -365,7 +365,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -n "$(git diff --name-only)" ]; then
+          if [ -n "$(git status --porcelain)" ]; then
             BRANCH="ai/issue-${{ github.event.issue.number }}"
             git checkout -b "$BRANCH"
             git add -A
