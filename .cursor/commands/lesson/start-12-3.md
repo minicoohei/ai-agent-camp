@@ -1,55 +1,35 @@
 ---
 description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module12-notion"
-duration: "約30分"
-prerequisites: ["start-0-1"]
+duration: "約25分"
+prerequisites: ["start-12-2"]
 level: "intermediate"
-tags: ["notion", "mcp", "api"]
+tags: ["notion", "ncli", "file", "fetch"]
 ---
 
-# 🎓 Lesson 12-3: Notion MCP接続とセットアップ
+# 🎓 Lesson 12-3: ファイル取得
 
 ## 📍 このセッションでやること
 
-**Lesson 12-3** へようこそ！
+**Lesson 12-3: ファイル取得** へようこそ！
 
 | 項目 | 内容 |
 |------|------|
-| ゴール | MCP/Notion APIでClaude CodeからNotionのページ・データベースを操作する |
-| 所要時間 | 約30分 |
-| 使うスキル | Notion API, MCP（Model Context Protocol） |
-| 前提条件 | Notion アカウント、インテグレーション作成権限 |
-| 教材ページ | [Module 12: Notion](https://ai-agent.camp/ja/course/module-12) を並行参照 |
+| ゴール | Notionページ内のブロック構造を理解し、ファイル・画像ブロックを特定してローカルにダウンロードする |
+| 所要時間 | 約25分 |
+| 使うスキル | ncli (Notion CLI) |
+| 前提条件 | Lesson 12-2 完了（DBクエリが実行できる状態） |
 
 **このセッションの流れ:**
-1. Notionインテグレーション作成
-2. APIキーとデータベースIDの取得
-3. ページ・データベースの読み書き
+1. ページ内のブロック構造を確認
+2. ファイルブロック・画像ブロックの特定
+3. ファイル情報の取得
+4. ローカルへのダウンロード
+5. 取得結果の整理
 
-セッション終了時には、Claude CodeからNotionを操作できるようになっています。
+セッション終了時には、Notionページ内の添付ファイルや画像を特定し、ローカルにダウンロードできるようになっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
-
----
-
-## レッスン開始時のブラウザ認証（Notion MCP）
-
-`/start-12-3` を進めると、Notion 側の **「Connect with Notion MCP」** 画面がブラウザに開くことがあります。ローカルで動く MCP が `127.0.0.1` のコールバック URL でトークンを受け取る方式のときに表示されます。
-
-**画面の操作ポイント:**
-
-1. **タイトル**: 「Connect with Notion MCP」「Grant 127.0.0.1 access to Notion」のように、ローカルアプリへの接続であることが書かれます。
-2. **Select workspace**: 接続するワークスペースをプルダウンで選びます。
-3. **権限の説明**: ページ・データベースのアクセス尊重、あなたの権限に基づく操作、検索（プランによる）、ユーザー情報の表示などが列挙されます。
-4. **黄色の注意枠**: リダイレクト先として **`http://127.0.0.1:<ポート>/callback`** のような URL が表示されます。**ポート番号は起動のたびに変わる**ことがあります。
-5. **「I recognize and trust this URL。」**: このチェックを**入れないと** **Continue** が有効にならない／進めないことがあります。内容がローカルのコールバックであることを確認してからチェックします。
-6. **Continue** で認証を完了し、エディタや MCP クライアント側に戻ります。
-
-参考画面:
-
-![Notion MCP Connect with Notion MCP（ローカルコールバック確認）](../../../docs/images/notion-mcp-connect-oauth.png)
-
-> **注意**: UI の文言や項目は Notion 側のアップデートで変わることがあります。表示内容が大きく異なる場合は、公式ヘルプやクラス最新手順を確認してください。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。
 
 ---
 
@@ -67,7 +47,6 @@ tags: ["notion", "mcp", "api"]
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
       {"id": "check_prereq", "label": "前提条件を確認したい"},
-      {"id": "view_html", "label": "先に教材ページを見たい"},
       {"id": "different_lesson", "label": "別のレッスンに移動したい"}
     ]
   }]
@@ -75,54 +54,17 @@ tags: ["notion", "mcp", "api"]
 ```
 
 (ready → Step 1へ)
-(check_prereq → 前提条件の確認を実行)
-(view_html → 教材ページのパスを案内)
+(check_prereq → `ncli whoami` を実行して認証状態を確認)
 (different_lesson → モジュール一覧を表示)
 
 ---
 
-## 🚀 Step 1: Notionインテグレーション作成
-
-**前提条件:** Notion MCP サーバーが設定済みである必要があります。
-未設定の場合は `/setup-notion` を先に実行してください。
-
-**AIが自動で確認すること:**
-1. MCP設定ファイルに `notion` サーバーが定義されているか確認:
-   - Claude Code: `~/.claude/mcp_settings.json` を読み取り、`mcpServers.notion` の存在を確認
-   - Cursor: `.cursor/mcp.json` を読み取り、`mcpServers.notion` の存在を確認
-2. 設定済みの場合 → Step 2（MCP設定ファイル作成）へ進む
-3. 未設定の場合 → `/setup-notion` の実行を案内
+## 🚀 Step 1: ページ内のブロック構造を確認
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 1: Notionインテグレーション確認",
-  "questions": [{
-    "id": "step_action",
-    "prompt": "NOTION_API_KEY の設定状況を確認します。",
-    "options": [
-      {"id": "check", "label": "設定状況を確認する"},
-      {"id": "setup_notion", "label": "/setup-notion でセットアップする"},
-      {"id": "skip", "label": "スキップする（設定済みの場合）"}
-    ]
-  }]
-}
-```
-
-(check → MCP設定ファイルで notion エントリを確認。設定済みなら Step 2 へ)
-(setup_notion → /setup-notion を案内)
-(skip → Step 2 へ)
-
----
-
-## 🚀 Step 2: MCP設定ファイル作成
-
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
-
-**AskQuestionの設定例:**
-```json
-{
-  "title": "🚀 Step 2: MCP設定ファイル作成",
+  "title": "🚀 Step 1: ブロック構造の確認",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -135,46 +77,41 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Claude Code用のMCP設定ファイルを作成してください。
+**AIが実行すること:**
 
-ファイル: ~/.claude/mcp_settings.json
+1. 受講者にファイルが含まれるNotionページのURLを教えてもらう:
+   - 「画像やファイルが添付されているNotionページのURLを教えてください」と案内
+   - ファイルがない場合は、テスト用にNotionで画像を1枚貼り付けてもらう
 
-内容（NOTION_API_KEYは実際のトークンに置き換え）:
-{
-  "mcpServers": {
-    "notion": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@notionhq/notion-mcp-server"
-      ],
-      "env": {
-        "NOTION_API_KEY": "secret_your_token_here"
-      }
-    }
-  }
-}
+2. ページの全ブロックを取得:
+   ```bash
+   ncli fetch <ページURL>
+   ```
 
-ファイルを作成してください。
-```
+3. ブロック構造を解説:
+   - Notionのページは「ブロック」の集まりで構成されている
+   - 各ブロックには型がある（paragraph, heading_1, image, file, code など）
+   - ブロックは入れ子にできる（子ブロックを持てる）
 
-**期待される結果**: MCP設定ファイルが作成されます。実際のトークンは手動で置き換えてください。
+4. 取得結果のブロック一覧を整理して表示:
+
+   | # | ブロック型 | 内容プレビュー |
+   |---|-----------|---------------|
+   | 1 | heading_1 | セクションタイトル |
+   | 2 | paragraph | テキスト内容... |
+   | 3 | image | 画像ファイル |
+   | 4 | file | 添付ファイル |
+
+**期待される結果**: ページ内のブロック一覧が型ごとに整理されて表示される。
 
 ---
 
-## 🚀 Step 3: ワークスペースへのアクセス許可
-
-ブラウザで **Connect with Notion MCP** が表示された場合は、このドキュメント冒頭の **「レッスン開始時のブラウザ認証（Notion MCP）」** に従い、リダイレクト URL の説明と **「I recognize and trust this URL。」** のチェックを済ませてから **Continue** してください。
-
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+## 🚀 Step 2: ファイルブロック・画像ブロックの特定
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 3: ワークスペースへのアクセス許可",
+  "title": "🚀 Step 2: ファイルブロックの特定",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -187,31 +124,44 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Notionでインテグレーションにアクセス許可を与える方法を教えてください。
+**AIが実行すること:**
 
-手順:
-1. Notionでページを開く
-2. 右上「...」メニュー > Connections
-3. 作成したインテグレーション「Claude MCP Integration」を追加
+1. JSON形式で詳細なブロックデータを取得:
+   ```bash
+   ncli fetch <ページURL> --json
+   ```
 
-注意: インテグレーションを追加したページ配下のみアクセス可能になります。
-```
+2. 取得結果からファイル関連ブロックをフィルタリング:
+   - `image` 型ブロック: 埋め込み画像
+   - `file` 型ブロック: 添付ファイル
+   - `pdf` 型ブロック: PDFファイル
+   - `video` 型ブロック: 動画ファイル
 
-**期待される結果**: Notionページへのアクセス許可設定の手順が説明されます。
+3. 各ファイルブロックの詳細を抽出:
+   - ブロックID
+   - ファイルの種類（external / file）
+   - URL
+   - キャプション（あれば）
+
+4. ファイル一覧を整理して表示:
+   ```
+   📎 ファイルブロック一覧
+   ========================
+   1. [image] スクリーンショット.png — Notion hosted
+   2. [file] レポート.pdf — External URL
+   3. [image] ロゴ.svg — External URL
+   ```
+
+**期待される結果**: ページ内のファイル・画像ブロックが特定され、一覧表示される。
 
 ---
 
-## 🚀 Step 4: 接続テスト
-
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+## 🚀 Step 3: ファイル情報取得（URL・タイプ・サイズ）
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 4: 接続テスト",
+  "title": "🚀 Step 3: ファイル情報取得",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -224,31 +174,41 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Notion MCPの接続テストを行います。
+**AIが実行すること:**
 
-以下のことを確認してください：
-1. MCP設定ファイル（~/.claude/mcp_settings.json）が存在するか
-2. NOTION_API_KEYが設定されているか
-3. Claude Codeを再起動してMCPが読み込まれるか
+1. 特定したファイルブロックのURLを取得:
+   - Notion hosted ファイル: 一時URL（有効期限あり）
+   - External ファイル: 外部URL（永続）
 
-接続テストとして、Notionに接続してアクセス可能なページを一覧表示してください。
-```
+2. ファイルの詳細情報を確認:
+   ```bash
+   curl -sI "<ファイルURL>" | head -20
+   ```
 
-**期待される結果**: MCPが正しく設定されていれば、Notionページの一覧が表示されます。
+3. 取得できる情報を整理:
+   - Content-Type（ファイル形式）
+   - Content-Length（ファイルサイズ）
+   - 有効期限（Notion hosted の場合）
+
+4. 情報をテーブル形式で出力:
+
+   | ファイル名 | 形式 | サイズ | ホスト | 備考 |
+   |-----------|------|--------|--------|------|
+   | screenshot.png | image/png | 245KB | Notion | 一時URL（1時間有効） |
+   | report.pdf | application/pdf | 1.2MB | External | 永続URL |
+
+**補足**: Notion hosted ファイルのURLには有効期限があります。ダウンロードする場合は取得後すぐに実行してください。
+
+**期待される結果**: 各ファイルの詳細情報（形式・サイズ・ホスト種別）が表示される。
 
 ---
 
-## 🚀 Step 5: 基本操作テスト
-
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+## 🚀 Step 4: ローカルへのダウンロード
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 5: 基本操作テスト",
+  "title": "🚀 Step 4: ファイルダウンロード",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -261,32 +221,81 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
+**AIが実行すること:**
+
+1. 出力ディレクトリを作成:
+   ```bash
+   mkdir -p output/notion_files
+   ```
+
+2. ファイルURLを使ってダウンロード:
+   ```bash
+   curl -sL "<ファイルURL>" -o output/notion_files/<ファイル名>
+   ```
+
+3. 複数ファイルがある場合はまとめてダウンロード:
+   ```bash
+   # 各ファイルを順にダウンロード
+   curl -sL "<URL1>" -o output/notion_files/file1.png
+   curl -sL "<URL2>" -o output/notion_files/file2.pdf
+   ```
+
+4. ダウンロード結果を確認:
+   ```bash
+   ls -la output/notion_files/
+   ```
+
+**補足**: Notion hosted ファイルの一時URLは通常1時間程度で失効します。失効した場合は `ncli fetch` を再実行してURLを再取得してください。
+
+**期待される結果**: ファイルが `output/notion_files/` ディレクトリにダウンロードされる。
+
+---
+
+## 🚀 Step 5: 取得結果の整理（Markdownで出力）
+
+**AskQuestionの設定例:**
+```json
+{
+  "title": "🚀 Step 5: 取得結果の整理",
+  "questions": [{
+    "id": "step_action",
+    "prompt": "このステップをどうしますか？",
+    "options": [
+      {"id": "practice", "label": "このまま進める"},
+      {"id": "review", "label": "例だけ確認する"},
+      {"id": "skip", "label": "スキップする"}
+    ]
+  }]
+}
 ```
-Notionで以下の操作をテストしてください：
 
-1. ページ作成テスト:
-   - 「MCP接続テスト」という名前のページを作成
-   - 内容に「Claude CodeからのMCP接続テスト成功！」と記載
-   - 現在時刻も追記
+**AIが実行すること:**
 
-2. ページ読み取りテスト:
-   - 作成したページの内容を読み取って表示
+1. ダウンロードしたファイルの一覧をMarkdown形式で整理:
+   ```markdown
+   # Notionファイル取得結果
 
-3. ページ更新テスト:
-   - ページに「更新日時: [現在時刻]」を追記
+   ## ページ情報
+   - ページ名: ○○○
+   - 取得日時: YYYY-MM-DD HH:MM
+   - ファイル数: X件
 
-それぞれの操作結果を報告してください。
-```
+   ## ファイル一覧
+   | # | ファイル名 | 形式 | サイズ | ローカルパス |
+   |---|-----------|------|--------|-------------|
+   | 1 | screenshot.png | PNG | 245KB | output/notion_files/screenshot.png |
+   | 2 | report.pdf | PDF | 1.2MB | output/notion_files/report.pdf |
+   ```
 
-**期待される結果**: Notionページの作成、読み取り、更新がClaude Codeから実行できます。
+2. この一覧を `output/notion_files_inventory.md` に保存する。
+
+3. 受講者に結果を共有し、ファイルが正しくダウンロードされたか確認する。
+
+**期待される結果**: ファイル一覧がMarkdown形式で `output/notion_files_inventory.md` に保存される。
 
 ---
 
 ## ⚠️ よくあるトラブルと解決方法
-
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -296,81 +305,81 @@ AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押
     "id": "trouble",
     "prompt": "当てはまる内容を1つ選んでください",
     "options": [
-      {"id": "trouble_1", "label": "Could not connect to Notion"},
-      {"id": "trouble_2", "label": "Insufficient permissions"},
-      {"id": "trouble_3", "label": "MCPサーバーが起動しない"},
-      {"id": "trouble_4", "label": "ページが見つからない"}
+      {"id": "trouble_1", "label": "ファイルURLが取得できない"},
+      {"id": "trouble_2", "label": "ダウンロードしたファイルが壊れている"},
+      {"id": "trouble_3", "label": "一時URLが失効した"},
+      {"id": "trouble_4", "label": "ページにファイルが見つからない"}
     ]
   }]
 }
 ```
 
-
-### トラブル1: 「Could not connect to Notion」
-**原因**: APIキーが間違っている、またはMCP設定ファイルのパスが違う
-**解決プロンプト**:
-```
+### トラブル1: ファイルURLが取得できない
+**原因**: ブロックのJSON構造が想定と異なる
+**解決方法**:
+```text
 以下を確認してください：
-1. ~/.claude/mcp_settings.json のパスが正しいか
-2. NOTION_API_KEY の値が「secret_」で始まっているか
-3. JSONの構文が正しいか（カンマ、括弧など）
+1. ncli fetch <ページURL> --json でJSON全体を確認
+2. ファイルブロックの型を確認（image / file / pdf / video）
+3. file.url または external.url のパスを正確に辿る
 ```
 
-### トラブル2: 「Insufficient permissions」
-**原因**: インテグレーションがページに追加されていない
-**解決プロンプト**:
-```
-Notionで対象ページを開き、右上「...」> Connections から
-「Claude MCP Integration」が追加されているか確認してください。
-親ページにインテグレーションを追加すると、子ページにもアクセスできます。
+### トラブル2: ダウンロードしたファイルが壊れている
+**原因**: URLリダイレクトが正しく処理されていない
+**解決方法**:
+```text
+以下を試してください：
+1. curl に -L オプション（リダイレクト追従）を付ける
+2. curl -sL "<URL>" -o file.png のように実行
+3. ファイルサイズが0でないか確認（ls -la で確認）
 ```
 
-### トラブル3: MCPサーバーが起動しない
-**原因**: Node.jsのバージョンが古い、またはnpxが使えない
-**解決プロンプト**:
+### トラブル3: 一時URLが失効した
+**原因**: Notion hosted ファイルのURLは約1時間で失効する
+**解決方法**:
+```text
+以下を実行してください：
+1. ncli fetch <ページURL> --json を再実行
+2. 新しいURLを取得する
+3. すぐにダウンロードを実行する
 ```
+
+### トラブル4: ページにファイルが見つからない
+**原因**: ページにファイルブロックが含まれていない
+**解決方法**:
+```text
 以下を確認してください：
-1. node --version で v18以上か確認
-2. npx --version でnpxが使えるか確認
-3. npm install -g npx でnpxをインストール
-```
-
-### トラブル4: ページが見つからない
-**原因**: インテグレーションにアクセス権限がない
-**解決プロンプト**:
-```
-Notionワークスペースで、アクセスしたいページまたは親ページに
-インテグレーションを追加してください。
-ワークスペース全体にアクセスさせる場合は、トップレベルのページに追加します。
+1. Notionブラウザでページを開き、ファイルが添付されているか確認
+2. ファイルが子ページ内にある場合は、そのページのURLを使う
+3. テスト用に画像を1枚Notionにドラッグ&ドロップしてから再試行
 ```
 
 ---
 
 ## ✅ チェックポイント
-- [ ] Notionインテグレーションが作成されている
-- [ ] シークレットトークンを取得している
-- [ ] MCP設定ファイルが作成されている
-- [ ] Notionページにインテグレーションが追加されている
-- [ ] ページの作成・読み取り・更新ができる
+- [ ] `ncli fetch` でページのブロック構造が確認できる
+- [ ] ファイル・画像ブロックを特定できる
+- [ ] ファイルのURL・タイプ・サイズ情報が取得できる
+- [ ] `curl` でファイルをローカルにダウンロードできる
+- [ ] 取得結果がMarkdown形式で整理されている
 
 ---
 
-## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+## 📋 成果物プレビュー
 
-```
-# 完了確認: output/ フォルダに期待される出力ファイルが生成されているか確認してください。
-```
+このレッスンで得られる成果物:
 
-**期待される結果**: 完了/未完の判定と不足項目が表示されます。
+| 成果物 | 説明 |
+|--------|------|
+| `output/notion_files/` | ダウンロードしたファイル群 |
+| `output/notion_files_inventory.md` | ファイル一覧（Markdown形式） |
+| ブロック構造の理解 | ページ内のブロック型と階層構造の知識 |
 
 ---
 
 ## ➡️ 次のステップ
 
-これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
-
-AskUserQuestion（AskQuestion）で選べます。
+これでファイル取得は完了です。次のレッスンでは、ページやDBの作成を学びます。
 
 **AskQuestionの設定例:**
 ```json
@@ -388,7 +397,7 @@ AskUserQuestion（AskQuestion）で選べます。
 }
 ```
 
-**選択後の案内（例）**:
+**選択後の案内:**
 - next_auto → /next_lesson
 - next_window → 新しいウィンドウで /start-12-4
 - finish → 終了

@@ -1,32 +1,34 @@
 ---
 description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module09-slack"
-prerequisites: ["start-0-4"]
 duration: "約25分"
-level: "intermediate"
-tags: ["slack", "search", "bookrag"]
+prerequisites: ["start-0-4"]
+level: "beginner"
+tags: ["slack", "api", "token", "channel"]
 ---
 
-# 🎓 Lesson 9-1: Slack検索
+# 🎓 Lesson 9-1: User Access Token設定・チャネル取得
 
 ## 📍 このセッションでやること
 
-**Lesson 9-1: Slackキーワード拡張検索** へようこそ！
+**Lesson 9-1: Slack API — トークン確認とチャネル取得** へようこそ！
 
 | 項目 | 内容 |
 |------|------|
-| ゴール | slack-searchでチャンネル・メッセージをキーワード拡張検索する |
+| ゴール | User Access Tokenの動作確認、conversations.list / conversations.info でチャネル情報を取得する |
 | 所要時間 | 約25分 |
-| 使うスキル | slack-search (BookRAG) |
-| 前提条件 | Slack API設定済み（Lesson 0-4）、data/slack-sync にデータがあるとよい |
-| 教材ページ | [Module 9: Slack検索](https://ai-agent.camp/ja/course/module-9) を並行参照 |
+| 使うスキル | curl, Slack Web API, credential_manager |
+| 前提条件 | Slack API設定済み（Lesson 0-4: setup-slack） |
+| 教材ページ | [Module 9: Slack](https://ai-agent.camp/ja/course/module-9) を並行参照 |
 
 **このセッションの流れ:**
-1. Slack検索の基本とインデックス確認
-2. キーワード・意味検索の実行
-3. 検索結果の活用
+1. User Access Token の確認と接続テスト
+2. `conversations.list` で公開チャネル一覧を取得
+3. プライベートチャネル・DM・グループDMを含めた全種類取得
+4. `conversations.info` で特定チャネルの詳細を取得
+5. 複数ワークスペース管理パターンの紹介
 
-セッション終了時には、Slackの会話をキーワード拡張検索（SequenceMatcherベースの類似度検索）で検索できるようになっています。
+セッション終了時には、Slack APIを直接呼び出してチャネル情報を自在に取得できるようになっています。
 
 > **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
 
@@ -54,20 +56,20 @@ tags: ["slack", "search", "bookrag"]
 ```
 
 (ready → Step 1へ)
-(check_prereq → 前提条件の確認を実行)
+(check_prereq → `uv run python tools/credential_manager.py status` を実行して SLACK_USER_TOKEN の有無を確認。未設定なら `/setup-slack` を案内)
 (view_html → 教材ページのパスを案内)
 (different_lesson → モジュール一覧を表示)
 
 ---
 
-## 🚀 Step 1: Slack同期データの確認
+## 🚀 Step 1: User Access Token の確認と接続テスト
 
 AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 1: Slack同期データの確認",
+  "title": "🚀 Step 1: User Access Token の確認と接続テスト",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -80,28 +82,44 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-~/ai-agent-camp/data/slack-sync/data/ フォルダを確認してください。
-以下の情報を教えてください：
-- 同期済みのチャンネル一覧
-- 総メッセージファイル数
-- 最終同期日時
+**practice の場合 — AIが実行する内容:**
+
+1. credential_manager からトークンを取得して環境変数にセット:
+```bash
+export SLACK_USER_TOKEN=$(uv run python tools/credential_manager.py get SLACK_USER_TOKEN)
 ```
 
-**期待される結果**: Slackデータの同期状況が表示されます。もし同期されていなければ、セットアップが必要です。
+2. `auth.test` で接続テスト:
+```bash
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/auth.test" \
+  | python3 -m json.tool
+```
+
+**期待される結果**:
+```json
+{
+    "ok": true,
+    "url": "https://your-workspace.slack.com/",
+    "team": "Your Workspace",
+    "user": "your.name",
+    "team_id": "T0XXXXXXX",
+    "user_id": "U0XXXXXXX"
+}
+```
+
+**ポイント**: `ok: true` が返れば接続成功。`user` と `team` で正しいアカウントか確認する。
 
 ---
 
-## 🚀 Step 2: キーワード検索の実行
+## 🚀 Step 2: conversations.list で公開チャネル一覧を取得
 
 AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 2: キーワード検索の実行",
+  "title": "🚀 Step 2: 公開チャネル一覧の取得",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -114,29 +132,38 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Slackで「プロジェクト進捗」というキーワードを含むメッセージを検索してください。
-直近1週間以内のものを、以下の形式で表示してください：
-- チャンネル名
-- 日時
-- 発言者
-- メッセージ内容（100文字まで）
+**practice の場合 — AIが実行する内容:**
+
+公開チャネル一覧を取得:
+```bash
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.list?types=public_channel&limit=20" \
+  | python3 -m json.tool
 ```
 
-**期待される結果**: 該当するメッセージの一覧が表示されます。
+**期待される結果**: `channels` 配列にチャネル情報が返る。
+
+主要なフィールド:
+| フィールド | 説明 |
+|-----------|------|
+| `id` | チャネルID（C0XXXXXXXの形式） |
+| `name` | チャネル名 |
+| `is_channel` | 公開チャネルかどうか |
+| `num_members` | メンバー数 |
+| `purpose.value` | チャネルの説明 |
+
+**必要なOAuthスコープ**: `channels:read`
 
 ---
 
-## 🚀 Step 3: チャンネル指定検索
+## 🚀 Step 3: 全種類のチャネルを取得（private_channel, mpim, im）
 
 AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 3: チャンネル指定検索",
+  "title": "🚀 Step 3: 全種類のチャネル取得",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -149,29 +176,35 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Slackの特定チャンネルを検索してください：
-- チャンネル: #general（または存在するチャンネル名）
-- キーワード: ミーティング OR 会議
-- 期間: 直近2週間
+**practice の場合 — AIが実行する内容:**
 
-見つかったメッセージを時系列で整理してください。
+`types` パラメータにカンマ区切りで全種類を指定:
+```bash
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.list?types=public_channel,private_channel,mpim,im&limit=50" \
+  | python3 -m json.tool
 ```
 
-**期待される結果**: 指定チャンネルからの検索結果が表示されます。
+**チャネル種別の見分け方:**
+| types値 | 判定フィールド | 必要なスコープ |
+|---------|--------------|---------------|
+| `public_channel` | `is_channel: true` | `channels:read` |
+| `private_channel` | `is_group: true` | `groups:read` |
+| `mpim` | `is_mpim: true` | `mpim:read` |
+| `im` | `is_im: true` | `im:read` |
+
+**ポイント**: DMチャネル（`im`）は `user` フィールドに相手のユーザーIDが入る。名前は表示されないので、`users.info` で名前解決が必要になる（Lesson 9-3 で扱う）。
 
 ---
 
-## 🚀 Step 4: ユーザー別検索
+## 🚀 Step 4: conversations.info で特定チャネルの詳細を取得
 
 AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 4: ユーザー別検索",
+  "title": "🚀 Step 4: 特定チャネルの詳細取得",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -184,29 +217,40 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Slackで特定ユーザーの発言を検索してください：
-- 対象ユーザー: @YourName（自分のユーザー名に置き換え）
-- 検索キーワード: レビュー OR 確認
-- 期間: 直近1ヶ月
+**practice の場合 — AIが実行する内容:**
 
-結果を重要度順にソートしてください。
+Step 2/3 で取得したチャネルIDを使って詳細を取得:
+```bash
+# CHANNEL_ID を実際のIDに置き換える
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.info?channel=CHANNEL_ID" \
+  | python3 -m json.tool
 ```
 
-**期待される結果**: 特定ユーザーの発言が抽出されます。
+**期待される結果**: `channel` オブジェクトに詳細情報が返る。
+
+追加で得られるフィールド:
+| フィールド | 説明 |
+|-----------|------|
+| `topic.value` | チャネルのトピック |
+| `purpose.value` | チャネルの目的 |
+| `created` | 作成日時（Unixタイムスタンプ） |
+| `creator` | 作成者のユーザーID |
+| `is_member` | 自分がメンバーかどうか |
+| `num_members` | メンバー数 |
+
+**ポイント**: `is_member: false` のチャネルは `conversations.history` でメッセージを取得できない。先に `conversations.join` で参加する必要がある。
 
 ---
 
-## 🚀 Step 5: キーワード拡張検索の活用
+## 🚀 Step 5: 複数ワークスペース管理
 
 AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 5: キーワード拡張検索の活用",
+  "title": "🚀 Step 5: 複数ワークスペース管理",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -219,72 +263,29 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Slackで「顧客からのフィードバック」に関連するメッセージをキーワード拡張検索してください。
+**practice / review の場合 — 複数ワークスペースの管理方法:**
 
-以下の類義語も含めて検索してください：
-- フィードバック、意見、要望、苦情、感想
-- お客様、クライアント、顧客
+複数のSlackワークスペースを使い分ける場合、トークンを `SLACK_USER_TOKEN_チーム名` の命名規則で管理する:
 
-検索結果をカテゴリ別（ポジティブ/ネガティブ/ニュートラル）に分類してください。
-```
+```bash
+# チームごとにトークンを保存
+uv run python tools/credential_manager.py store SLACK_USER_TOKEN_MYCOMPANY
+uv run python tools/credential_manager.py store SLACK_USER_TOKEN_SIDEJOB
 
-**期待される結果**: 意味的に関連するメッセージが分類されて表示されます。
+# 使いたいワークスペースのトークンを取得
+export SLACK_USER_TOKEN=$(uv run python tools/credential_manager.py get SLACK_USER_TOKEN_MYCOMPANY)
 
----
-
-## 🚀 Step 6: 検索結果のレポート化
-
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
-
-**AskQuestionの設定例:**
-```json
-{
-  "title": "🚀 Step 6: 検索結果のレポート化",
-  "questions": [{
-    "id": "step_action",
-    "prompt": "このステップをどうしますか？",
-    "options": [
-      {"id": "practice", "label": "このまま進める"},
-      {"id": "review", "label": "例だけ確認する"},
-      {"id": "skip", "label": "スキップする"}
-    ]
-  }]
-}
+# 接続テスト（どのワークスペースに繋がっているか確認）
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/auth.test" \
+  | python3 -c "import sys,json; d=json.load(sys.stdin); print(f'Team: {d[\"team\"]} / User: {d[\"user\"]}')"
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-先ほどの検索結果をMarkdownレポートにまとめてください。
-
-以下の形式でお願いします：
-# Slack検索レポート
-生成日時: (現在日時)
-
-## 検索条件
-- キーワード: ...
-- 期間: ...
-
-## 検索結果サマリー
-- 総件数: ...
-- チャンネル別内訳: ...
-
-## 詳細
-(メッセージ一覧)
-
-出力: ~/ai-agent-camp/output/slack_search_report.md
-```
-
-**期待される結果**: 検索結果がMarkdown形式でレポート化されます。
+**ポイント**: ワークスペースを切り替えるときは `auth.test` で接続先を必ず確認する。誤ったワークスペースにメッセージを送信する事故を防げる。
 
 ---
 
 ## ⚠️ よくあるトラブルと解決方法
-
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -294,63 +295,63 @@ AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押
     "id": "trouble",
     "prompt": "当てはまる内容を1つ選んでください",
     "options": [
-      {"id": "trouble_1", "label": "同期データが見つからない"},
-      {"id": "trouble_2", "label": "検索結果が少ない"},
-      {"id": "trouble_3", "label": "日本語検索がうまくいかない"},
-      {"id": "trouble_4", "label": "特定ユーザーのIDがわからない"}
+      {"id": "trouble_1", "label": "auth.test で not_authed / invalid_auth が返る"},
+      {"id": "trouble_2", "label": "conversations.list で missing_scope エラー"},
+      {"id": "trouble_3", "label": "プライベートチャネルが取得できない"},
+      {"id": "trouble_4", "label": "ページネーションで全件取得したい"}
     ]
   }]
 }
 ```
 
+### トラブル1: 「not_authed / invalid_auth」
+**原因**: トークンが未設定、または無効
+**解決方法**:
+```bash
+# トークンの存在確認
+uv run python tools/credential_manager.py status | grep SLACK
 
-### トラブル1: 「同期データが見つからない」
-**原因**: slack-syncのセットアップが未完了
-**解決プロンプト**:
-```
-slack-syncのセットアップ状況を確認してください。
-~/ai-agent-camp/data/slack-sync/ フォルダの構造と必要なファイルを教えてください。
-```
-
-### トラブル2: 「検索結果が少ない」
-**原因**: 検索条件が厳しすぎる
-**解決プロンプト**:
-```
-検索結果を増やすために、以下を試してください：
-- 検索期間を1ヶ月に拡大
-- キーワードをより一般的なものに変更
-- チャンネル指定を外す
+# トークンが無い場合は再設定
+uv run python tools/credential_manager.py store SLACK_USER_TOKEN
+# プロンプトに xoxp- で始まるトークンを貼り付ける
 ```
 
-### トラブル3: 「日本語検索がうまくいかない」
-**原因**: エンコーディングまたはトークン化の問題
-**解決プロンプト**:
-```
-日本語キーワードで検索がうまくいきません。
-以下を試してください：
-- ひらがな/カタカナ両方で検索
-- キーワードを短く分割
-- 部分一致検索を使用
+### トラブル2: 「missing_scope」
+**原因**: Slack Appに必要なOAuth Scopeが設定されていない
+**解決方法**:
+1. https://api.slack.com/apps でアプリを開く
+2. OAuth & Permissions → User Token Scopes に不足スコープを追加
+3. ワークスペースに再インストール（トークンが再発行される）
+4. 新しいトークンを `credential_manager.py store SLACK_USER_TOKEN` で再保存
+
+### トラブル3: 「プライベートチャネルが取得できない」
+**原因**: `groups:read` スコープ未設定、またはチャネルに参加していない
+**解決方法**:
+```bash
+# private_channel で呼んでエラー内容を確認
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.list?types=private_channel&limit=5" \
+  | python3 -m json.tool
 ```
 
-### トラブル4: 「特定ユーザーのIDがわからない」
-**原因**: Slack User IDの特定が必要
-**解決プロンプト**:
-```
-Slack User IDを確認する方法を教えてください。
-users.jsonファイルから自分のUser IDを検索してください。
+### トラブル4: 「ページネーションで全件取得したい」
+**原因**: `limit` のデフォルトは100件、ワークスペースにそれ以上のチャネルがある
+**解決方法**:
+```bash
+# レスポンスの response_metadata.next_cursor を使って次ページを取得
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.list?types=public_channel&limit=100&cursor=NEXT_CURSOR_VALUE" \
+  | python3 -m json.tool
 ```
 
 ---
 
 ## ✅ チェックポイント
-- [ ] Slack同期データの場所を確認できた
-- [ ] キーワード検索が実行できた
-- [ ] チャンネル指定検索ができた
-- [ ] ユーザー別検索ができた
-- [ ] キーワード拡張検索を活用できた
-- [ ] 検索結果をレポート化できた
-
+- [ ] `auth.test` でトークンの動作を確認できた
+- [ ] `conversations.list` で公開チャネル一覧を取得できた
+- [ ] `types` パラメータで全種類のチャネルを取得できた
+- [ ] `conversations.info` で特定チャネルの詳細を取得できた
+- [ ] 複数ワークスペース管理の方法を理解した
 
 ---
 
@@ -359,34 +360,22 @@ users.jsonファイルから自分のUser IDを検索してください。
 このレッスンの成果物はターミナル出力です。
 
 ### 期待される出力例
+```text
+# auth.test の結果
+Team: MyCompany / User: taro.yamada
+
+# conversations.list の結果（チャネル名一覧）
+- #general (52 members)
+- #random (48 members)
+- #project-alpha (12 members)
+- #dev-team (8 members, private)
 ```
-┌─────────────────────────────────────┐
-│  コマンド実行結果                      │
-│  ステータス: ✅ 成功                   │
-│  処理件数: N件                        │
-└─────────────────────────────────────┘
-```
-
-> 💡 出力をファイルに保存するには、コマンド末尾に ` > output/result.txt` を追加
-
----
-
-## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
-
-```
-# 完了確認: output/ フォルダに期待される出力ファイルが生成されているか確認してください。
-```
-
-**期待される結果**: 完了/未完の判定と不足項目が表示されます。
 
 ---
 
 ## ➡️ 次のステップ
 
-これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
-
-AskUserQuestion（AskQuestion）で選べます。
+これでSlack APIへの接続とチャネル取得ができるようになりました。次のレッスンではメッセージとスレッドの取得を学びます。
 
 **AskQuestionの設定例:**
 ```json

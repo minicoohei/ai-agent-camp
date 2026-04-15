@@ -292,16 +292,22 @@
 
 # === Module 9: Slack ===
 - lessonId: start-9-1
-  title: "Semantic search of Slack messages"
+  title: "User Access Token setup and channel retrieval"
   chapterRef: "courses/aiagent/lesson03-core/module09-slack"
   module: 9
   lesson: 1
 
 - lessonId: start-9-2
-  title: "Extract TODOs and tasks from Slack messages"
+  title: "Retrieve messages and threads (history / replies / mpim / im)"
   chapterRef: "courses/aiagent/lesson03-core/module09-slack"
   module: 9
   lesson: 2
+
+- lessonId: start-9-3
+  title: "Send replies (chat.postMessage)"
+  chapterRef: "courses/aiagent/lesson03-core/module09-slack"
+  module: 9
+  lesson: 3
 
 # === Module 10: GAS ===
 - lessonId: start-10-1
@@ -322,6 +328,12 @@
   module: 10
   lesson: 3
 
+- lessonId: start-10-4
+  title: "GmailApp email search and extraction to sheet organization"
+  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
+  module: 10
+  lesson: 4
+
 # === Module 11: GitHub Actions ===
 - lessonId: start-11-1
   title: "GitHub Actions workflow basics and automation"
@@ -335,39 +347,57 @@
   module: 11
   lesson: 2
 
+- lessonId: start-11-3
+  title: "News retrieval to email/Slack delivery workflow"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 3
+
+- lessonId: start-11-4
+  title: "Run Claude Code / Codex / Cursor in GitHub Actions"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 4
+
+- lessonId: start-11-5
+  title: "Deploy and generate files with GitHub Actions"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 5
+
 # === Module 12: Notion ===
 - lessonId: start-12-1
-  title: "Notion MCP connection and setup"
+  title: "ncli setup and browser authentication"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 1
 
 - lessonId: start-12-2
-  title: "Notion database steps"
+  title: "Database retrieval and query"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 2
 
 - lessonId: start-12-3
-  title: "Notion MCP connection and setup"
+  title: "File retrieval"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 3
 
 - lessonId: start-12-4
-  title: "Summarize and return the scope covered in a single fetch"
+  title: "File creation and page creation"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 4
 
 - lessonId: start-12-5
-  title: "Retrieve Notion files and attachments for Agent-side verification"
+  title: "Writing and updating"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 5
 
 - lessonId: start-12-6
-  title: "Write and update Notion with a safe confirmation flow"
+  title: "Create summaries and reply to comments"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 6

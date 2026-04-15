@@ -1,32 +1,34 @@
 ---
 description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module09-slack"
-prerequisites: ["start-9-1"]
 duration: "約25分"
-level: "intermediate"
-tags: ["slack", "task", "todo", "extraction"]
+prerequisites: ["start-9-1"]
+level: "beginner"
+tags: ["slack", "api", "message", "thread", "history"]
 ---
 
-# 🎓 Lesson 9-2: TODO抽出
+# 🎓 Lesson 9-2: メッセージ・スレッド取得
 
 ## 📍 このセッションでやること
 
-**Lesson 9-2: Slackタスク抽出** へようこそ！
+**Lesson 9-2: Slack API — メッセージとスレッドの取得** へようこそ！
 
 | 項目 | 内容 |
 |------|------|
-| ゴール | SlackからTODO・タスクを抽出し、優先度を判定してタスクレポートを生成する |
+| ゴール | conversations.history / conversations.replies でメッセージとスレッドを取得し、AIで要約・タスク抽出する |
 | 所要時間 | 約25分 |
-| 使うスキル | slack-task-manager, check-inbox |
-| 前提条件 | Lesson 9-1 完了、Slack API設定済み |
-| 教材ページ | [Module 9: Slack検索](https://ai-agent.camp/ja/course/module-9) を並行参照 |
+| 使うスキル | curl, Slack Web API, AIによるテキスト分析 |
+| 前提条件 | Lesson 9-1 完了（トークン設定・チャネル取得ができる状態） |
+| 教材ページ | [Module 9: Slack](https://ai-agent.camp/ja/course/module-9) を並行参照 |
 
 **このセッションの流れ:**
-1. メンション・アクションアイテムの検出
-2. 優先度の判定とタスク一覧の生成
-3. タスクレポートの出力と活用
+1. `conversations.history` でチャネルメッセージを取得
+2. メッセージ構造の理解（ts, user, text, thread_ts）
+3. `conversations.replies` でスレッド返信を展開
+4. DM・グループDMのメッセージ取得
+5. 取得結果をAIに渡して要約・タスク抽出
 
-セッション終了時には、Slackの返信待ち・TODOを自動で把握できるようになっています。
+セッション終了時には、任意のチャネルからメッセージを取得し、スレッドを展開して内容を分析できるようになっています。
 
 > **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
 
@@ -53,21 +55,28 @@ tags: ["slack", "task", "todo", "extraction"]
 }
 ```
 
-(ready → Step 1へ)
-(check_prereq → 前提条件の確認を実行)
+(ready → トークンを環境変数にセットして Step 1へ)
+(check_prereq → `auth.test` を実行して接続確認。失敗なら Lesson 9-1 を案内)
 (view_html → 教材ページのパスを案内)
 (different_lesson → モジュール一覧を表示)
 
+**セッション開始時にAIが自動実行する内容:**
+```bash
+export SLACK_USER_TOKEN=$(uv run python tools/credential_manager.py get SLACK_USER_TOKEN)
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" "https://slack.com/api/auth.test" \
+  | python3 -c "import sys,json; d=json.load(sys.stdin); print(f'接続OK: {d[\"team\"]} / {d[\"user\"]}')" 2>/dev/null || echo "接続失敗: Lesson 9-1 を先に完了してください"
+```
+
 ---
 
-## 🚀 Step 1: 自分へのメンションを確認
+## 🚀 Step 1: conversations.history でチャネルメッセージを取得
 
 AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 1: 自分へのメンションを確認",
+  "title": "🚀 Step 1: チャネルメッセージの取得",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -80,29 +89,47 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Slackで自分宛てのメンションを検索してください。
-以下のユーザー名パターンで検索してください：
-- @YourName（自分のユーザー名に置き換え）
-- @あなたの表示名
+**practice の場合 — AIが実行する内容:**
 
-直近1週間のメンションを、チャンネル別にまとめてください。
+まずチャネル一覧からIDを取得し、そのチャネルのメッセージを取得:
+```bash
+# チャネル一覧を取得（IDとnameの対応を確認）
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.list?types=public_channel&limit=10" \
+  | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+for ch in data.get('channels', []):
+    print(f'{ch[\"id\"]} : #{ch[\"name\"]}')"
 ```
 
-**期待される結果**: 自分宛てのメンション一覧が表示されます。
+```bash
+# 特定チャネルのメッセージを取得（CHANNEL_ID を置き換え）
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.history?channel=CHANNEL_ID&limit=10" \
+  | python3 -m json.tool
+```
+
+**主要パラメータ:**
+| パラメータ | 説明 | 例 |
+|-----------|------|-----|
+| `channel` | チャネルID（必須） | `C0XXXXXXX` |
+| `limit` | 取得件数（デフォルト100、最大1000） | `20` |
+| `oldest` | この時刻以降のメッセージを取得（Unixタイムスタンプ） | `1700000000` |
+| `latest` | この時刻以前のメッセージを取得（Unixタイムスタンプ） | `1700100000` |
+
+**必要なOAuthスコープ**: `channels:history`（公開チャネル）、`groups:history`（プライベート）
 
 ---
 
-## 🚀 Step 2: アクションアイテムの抽出
+## 🚀 Step 2: メッセージ構造の理解
 
 AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 2: アクションアイテムの抽出",
+  "title": "🚀 Step 2: メッセージ構造の理解",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -115,32 +142,49 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
+**practice の場合 — AIが実行する内容:**
+
+取得したメッセージを見やすく整形:
+```bash
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.history?channel=CHANNEL_ID&limit=5" \
+  | python3 -c "
+import sys, json, datetime
+data = json.load(sys.stdin)
+for msg in data.get('messages', []):
+    ts = datetime.datetime.fromtimestamp(float(msg['ts']))
+    thread = ' [スレッドあり]' if 'thread_ts' in msg and msg.get('reply_count', 0) > 0 else ''
+    print(f'--- {ts.strftime(\"%Y-%m-%d %H:%M\")} ---')
+    print(f'User: {msg.get(\"user\", \"不明\")}')
+    print(f'Text: {msg.get(\"text\", \"\")}')
+    print(f'ts: {msg[\"ts\"]}{thread}')
+    if msg.get('reply_count'):
+        print(f'返信数: {msg[\"reply_count\"]}')
+    print()"
 ```
-Slackメッセージから以下のパターンでTODOを抽出してください：
 
-検索パターン:
-- 「〜してください」「〜お願いします」
-- 「確認お願いします」「レビューお願いします」
-- 「対応をお願いします」「至急」
-- 自分へのメンション付きの依頼メッセージ
+**メッセージの主要フィールド:**
+| フィールド | 説明 |
+|-----------|------|
+| `ts` | メッセージのタイムスタンプ（一意識別子としても使用） |
+| `user` | 送信者のユーザーID |
+| `text` | メッセージ本文 |
+| `thread_ts` | スレッドの親メッセージのts（スレッド返信の場合に存在） |
+| `reply_count` | スレッド返信の数（親メッセージにのみ存在） |
+| `reactions` | リアクション一覧 |
 
-直近2週間以内のものを対象にしてください。
-```
-
-**期待される結果**: アクションアイテムを含むメッセージが抽出されます。
+**ポイント**: `ts` はメッセージの一意識別子であり、タイムスタンプでもある。`thread_ts` と同じ値なら親メッセージ、異なる値なら返信メッセージ。
 
 ---
 
-## 🚀 Step 3: 優先度の判定
+## 🚀 Step 3: conversations.replies でスレッド返信を展開
 
 AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 3: 優先度の判定",
+  "title": "🚀 Step 3: スレッド返信の展開",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -153,38 +197,43 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
+**practice の場合 — AIが実行する内容:**
+
+Step 2 でスレッドがあるメッセージの `ts` を使ってスレッド全体を取得:
+```bash
+# THREAD_TS を親メッセージの ts に置き換える
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.replies?channel=CHANNEL_ID&ts=THREAD_TS" \
+  | python3 -c "
+import sys, json, datetime
+data = json.load(sys.stdin)
+msgs = data.get('messages', [])
+print(f'スレッド内メッセージ数: {len(msgs)}')
+print('=' * 50)
+for i, msg in enumerate(msgs):
+    ts = datetime.datetime.fromtimestamp(float(msg['ts']))
+    role = '親メッセージ' if i == 0 else f'返信 {i}'
+    print(f'[{role}] {ts.strftime(\"%Y-%m-%d %H:%M\")}')
+    print(f'User: {msg.get(\"user\", \"不明\")}')
+    print(f'{msg.get(\"text\", \"\")}')
+    print('-' * 50)"
 ```
-抽出したTODOを以下の基準で優先度判定してください：
 
-高優先度:
-- 「至急」「今日中」「ASAP」「緊急」を含む
-- 経営層・上司からのメンション
-
-中優先度:
-- 期限が明示されている
-- 「今週中」「来週まで」を含む
-
-低優先度:
-- 期限なし
-- 情報共有のみ
-
-優先度ごとに件数と内容を表示してください。
-```
-
-**期待される結果**: TODOが優先度別に分類されます。
+**ポイント**:
+- `conversations.replies` のレスポンスには親メッセージも含まれる（配列の先頭）
+- `ts` パラメータには親メッセージの `ts`（= `thread_ts`）を指定する
+- ページネーションが必要な場合は `cursor` パラメータを使用する
 
 ---
 
-## 🚀 Step 4: スレッド返信の確認
+## 🚀 Step 4: DM・グループDMのメッセージ取得
 
 AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 4: スレッド返信の確認",
+  "title": "🚀 Step 4: DM・グループDMのメッセージ取得",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -197,34 +246,45 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-抽出した各TODOについて、スレッドを確認してください：
+**practice の場合 — AIが実行する内容:**
 
-確認項目:
-- 対応済みかどうか（返信で「完了」「対応しました」等）
-- 追加の依頼があるかどうか
-- 未返信のまま放置されているか
-
-対応ステータス別にTODOを分類してください：
-- 対応済み
-- 対応中
-- 未対応
+DM（im）とグループDM（mpim）もチャネルIDさえ分かれば同じAPIで取得できる:
+```bash
+# DM一覧を取得
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.list?types=im&limit=10" \
+  | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+for ch in data.get('channels', []):
+    print(f'{ch[\"id\"]} : DM with user {ch.get(\"user\", \"不明\")}')"
 ```
 
-**期待される結果**: TODOのステータスが判定されます。
+```bash
+# DMのメッセージを取得（DM_CHANNEL_ID を置き換え）
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.history?channel=DM_CHANNEL_ID&limit=10" \
+  | python3 -m json.tool
+```
+
+**必要なOAuthスコープ:**
+| チャネル種別 | 読み取りスコープ | 履歴スコープ |
+|-------------|-----------------|-------------|
+| DM（im） | `im:read` | `im:history` |
+| グループDM（mpim） | `mpim:read` | `mpim:history` |
+
+**ポイント**: DMのチャネルIDは `D0XXXXXXX` の形式。`conversations.list` で `types=im` を指定すると取得できる。相手のユーザー名は `users.info` で解決する（Lesson 9-3 で扱う）。
 
 ---
 
-## 🚀 Step 5: タスクレポートの生成
+## 🚀 Step 5: 取得結果をAIに渡して要約・タスク抽出
 
 AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 5: タスクレポートの生成",
+  "title": "🚀 Step 5: AIによる要約・タスク抽出",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -237,79 +297,37 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-抽出したTODOを以下の形式でMarkdownレポートにまとめてください：
+**practice の場合 — AIが実行する内容:**
 
-# Slack TODO レポート
-生成日時: (現在日時)
-
-## サマリー
-- 高優先度: X件
-- 中優先度: X件
-- 低優先度: X件
-- 未対応: X件
-
-## 高優先度 (詳細)
-### 1. (タスク名)
-- チャンネル: #...
-- 依頼者: @...
-- 日時: ...
-- 内容: ...
-- ステータス: 未対応/対応中/完了
-
-(以下続く)
-
-出力: ~/ai-agent-camp/output/slack_todo_report.md
+チャネルのメッセージを取得し、AIに分析を依頼:
+```bash
+# メッセージを取得してファイルに保存
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.history?channel=CHANNEL_ID&limit=30" \
+  | python3 -c "
+import sys, json, datetime
+data = json.load(sys.stdin)
+for msg in data.get('messages', []):
+    ts = datetime.datetime.fromtimestamp(float(msg['ts']))
+    print(f'[{ts.strftime(\"%Y-%m-%d %H:%M\")}] {msg.get(\"user\",\"?\")} : {msg.get(\"text\",\"\")}')" \
+  > ~/ai-agent-camp/data/slack_messages_latest.txt
 ```
 
-**期待される結果**: TODO一覧がMarkdownレポートとして保存されます。
+保存後、AIに以下の分析を依頼:
+```text
+~/ai-agent-camp/data/slack_messages_latest.txt を読んで、以下を教えてください:
 
----
-
-## 🚀 Step 6: 定期レポートの自動化
-
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
-
-**AskQuestionの設定例:**
-```json
-{
-  "title": "🚀 Step 6: 定期レポートの自動化",
-  "questions": [{
-    "id": "step_action",
-    "prompt": "このステップをどうしますか？",
-    "options": [
-      {"id": "practice", "label": "このまま進める"},
-      {"id": "review", "label": "例だけ確認する"},
-      {"id": "skip", "label": "スキップする"}
-    ]
-  }]
-}
+1. 話題のサマリー（箇条書き3-5個）
+2. アクションアイテム（誰が何をすべきか）
+3. 未解決の質問
+4. 重要な決定事項
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-今後、毎週月曜日にTODOレポートを自動生成するための
-Pythonスクリプトを作成してください。
-
-機能:
-- Slack同期データからTODOを抽出
-- 優先度判定とステータス確認
-- Markdownレポート生成
-- 過去のレポートとの差分表示
-
-出力: ~/ai-agent-camp/tools/slack_todo_extractor.py
-```
-
-**期待される結果**: 自動化用のPythonスクリプトが作成されます。
+**期待される結果**: メッセージの内容がカテゴリ別に整理されて表示される。
 
 ---
 
 ## ⚠️ よくあるトラブルと解決方法
-
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -319,98 +337,96 @@ AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押
     "id": "trouble",
     "prompt": "当てはまる内容を1つ選んでください",
     "options": [
-      {"id": "trouble_1", "label": "メンションが検出されない"},
-      {"id": "trouble_2", "label": "日本語パターンが動かない"},
-      {"id": "trouble_3", "label": "スレッド情報が取得できない"},
-      {"id": "trouble_4", "label": "大量のTODOがある"}
+      {"id": "trouble_1", "label": "channel_not_found エラーが出る"},
+      {"id": "trouble_2", "label": "not_in_channel エラーが出る"},
+      {"id": "trouble_3", "label": "メッセージが空で返ってくる"},
+      {"id": "trouble_4", "label": "ユーザーIDを名前に変換したい"}
     ]
   }]
 }
 ```
 
-
-### トラブル1: 「メンションが検出されない」
-**原因**: Slack User IDの形式が異なる
-**解決プロンプト**:
-```
-Slackのメンション形式を確認してください。
-<@U12345678> のようなUser ID形式と、
-@表示名 形式の両方を検索する方法を教えてください。
-```
-
-### トラブル2: 「日本語パターンが動かない」
-**原因**: 正規表現のエンコーディング問題
-**解決プロンプト**:
-```
-日本語の正規表現パターンが動作しません。
-re.UNICODE フラグを使った検索方法を教えてください。
+### トラブル1: 「channel_not_found」
+**原因**: チャネルIDが間違っている、またはチャネルが削除されている
+**解決方法**:
+```bash
+# チャネル一覧を再取得してIDを確認
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.list?types=public_channel,private_channel&limit=50" \
+  | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+for ch in data.get('channels', []):
+    print(f'{ch[\"id\"]} : #{ch[\"name\"]}')"
 ```
 
-### トラブル3: 「スレッド情報が取得できない」
-**原因**: スレッド同期が無効になっている
-**解決プロンプト**:
-```
-Slackスレッドの情報を取得する方法を教えてください。
-slack-syncの設定で threads を有効にする方法も教えてください。
+### トラブル2: 「not_in_channel」
+**原因**: そのチャネルに参加していない
+**解決方法**: Slackアプリ上でチャネルに参加するか、APIで `conversations.join` を呼ぶ。User Tokenの場合はユーザー自身がチャネルメンバーである必要がある。
+
+### トラブル3: 「メッセージが空で返ってくる」
+**原因**: `oldest` / `latest` の期間指定が狭すぎる、またはチャネルにメッセージがない
+**解決方法**:
+```bash
+# パラメータなしで最新メッセージを取得してみる
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/conversations.history?channel=CHANNEL_ID&limit=5" \
+  | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+print(f'ok: {data.get(\"ok\")}')
+print(f'メッセージ数: {len(data.get(\"messages\", []))}')"
 ```
 
-### トラブル4: 「大量のTODOがある」
-**原因**: フィルタリングが不十分
-**解決プロンプト**:
-```
-TODOが多すぎて管理できません。
-以下のフィルタを追加してください：
-- 日付範囲を狭める（直近3日）
-- 高優先度のみ表示
-- 特定チャンネルのみ対象
+### トラブル4: 「ユーザーIDを名前に変換したい」
+**原因**: `conversations.history` のレスポンスにはユーザーIDのみ含まれる
+**解決方法**: Lesson 9-3 の `users.info` で名前解決する。急ぎの場合は以下で確認:
+```bash
+curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
+  "https://slack.com/api/users.info?user=U0XXXXXXX" \
+  | python3 -c "import sys,json; u=json.load(sys.stdin)['user']; print(f'{u[\"real_name\"]} (@{u[\"name\"]})')"
 ```
 
 ---
 
 ## ✅ チェックポイント
-- [ ] 自分へのメンションを検出できた
-- [ ] TODOパターンでメッセージを抽出できた
-- [ ] 優先度を判定できた
-- [ ] スレッド返信の有無を確認できた
-- [ ] Markdownレポートを生成できた
-- [ ] 未対応タスクを特定できた
-
+- [ ] `conversations.history` でチャネルメッセージを取得できた
+- [ ] メッセージの構造（ts, user, text, thread_ts）を理解した
+- [ ] `conversations.replies` でスレッド返信を展開できた
+- [ ] DM / グループDMのメッセージを取得できた
+- [ ] 取得したメッセージをAIで要約できた
 
 ---
 
 ## 📋 成果物プレビュー
 
-このレッスンの成果物はターミナル出力です。
+このレッスンの成果物はターミナル出力とテキストファイルです。
 
 ### 期待される出力例
+```text
+# conversations.history の整形結果
+--- 2025-04-14 10:30 ---
+User: U0ABC1234
+Text: 来週のリリース日程について確認です
+ts: 1713075000.123456 [スレッドあり]
+返信数: 3
+
+# スレッド展開
+[親メッセージ] 2025-04-14 10:30
+User: U0ABC1234
+来週のリリース日程について確認です
+--------------------------------------------------
+[返信 1] 2025-04-14 10:35
+User: U0DEF5678
+木曜日で調整中です
+--------------------------------------------------
 ```
-┌─────────────────────────────────────┐
-│  コマンド実行結果                      │
-│  ステータス: ✅ 成功                   │
-│  処理件数: N件                        │
-└─────────────────────────────────────┘
-```
-
-> 💡 出力をファイルに保存するには、コマンド末尾に ` > output/result.txt` を追加
-
----
-
-## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
-
-```
-# 完了確認: output/ フォルダに期待される出力ファイルが生成されているか確認してください。
-```
-
-**期待される結果**: 完了/未完の判定と不足項目が表示されます。
 
 ---
 
 ## ➡️ 次のステップ
 
-これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
-
-AskUserQuestion（AskQuestion）で選べます。
+これでメッセージとスレッドの取得ができるようになりました。次のレッスンではメッセージの送信とユーザー情報の取得を学びます。
 
 **AskQuestionの設定例:**
 ```json
@@ -421,7 +437,7 @@ AskUserQuestion（AskQuestion）で選べます。
     "prompt": "次に進む操作を選んでください",
     "options": [
       {"id": "next_auto", "label": "次のセクションを開始（/next_lesson）"},
-      {"id": "next_window", "label": "新しいウィンドウで開始（/start-10-1）"},
+      {"id": "next_window", "label": "新しいウィンドウで開始（/start-9-3）"},
       {"id": "finish", "label": "ここで終了する"}
     ]
   }]
@@ -430,5 +446,5 @@ AskUserQuestion（AskQuestion）で選べます。
 
 **選択後の案内（例）**:
 - next_auto → /next_lesson
-- next_window → 新しいウィンドウで /start-10-1
+- next_window → 新しいウィンドウで /start-9-3
 - finish → 終了
