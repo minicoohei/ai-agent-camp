@@ -292,16 +292,22 @@
 
 # === Module 9: Slack ===
 - lessonId: start-9-1
-  title: "Slackメッセージのセマンティック検索"
+  title: "User Access Token設定・チャネル取得"
   chapterRef: "courses/aiagent/lesson03-core/module09-slack"
   module: 9
   lesson: 1
 
 - lessonId: start-9-2
-  title: "SlackメッセージからTODOとタスクを抽出"
+  title: "メッセージ・スレッド取得（history / replies / mpim / im）"
   chapterRef: "courses/aiagent/lesson03-core/module09-slack"
   module: 9
   lesson: 2
+
+- lessonId: start-9-3
+  title: "返信の送信（chat.postMessage）"
+  chapterRef: "courses/aiagent/lesson03-core/module09-slack"
+  module: 9
+  lesson: 3
 
 # === Module 10: GAS ===
 - lessonId: start-10-1
@@ -322,6 +328,12 @@
   module: 10
   lesson: 3
 
+- lessonId: start-10-4
+  title: "GmailAppメール検索・抽出→シート整理"
+  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
+  module: 10
+  lesson: 4
+
 # === Module 11: GitHub Actions ===
 - lessonId: start-11-1
   title: "GitHub Actions Workflow基本・自動化"
@@ -335,39 +347,57 @@
   module: 11
   lesson: 2
 
+- lessonId: start-11-3
+  title: "ニュース取得→メール/Slack配信ワークフロー"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 3
+
+- lessonId: start-11-4
+  title: "Claude Code / Codex / CursorをGitHub Actionsで呼ぶ"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 4
+
+- lessonId: start-11-5
+  title: "GitHub Actionsでデプロイ・ファイル生成"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 5
+
 # === Module 12: Notion ===
 - lessonId: start-12-1
-  title: "Notion MCP接続とセットアップ"
+  title: "ncliセットアップ・ブラウザ認証"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 1
 
 - lessonId: start-12-2
-  title: "Notionデータベース操作"
+  title: "データベース取得・クエリ"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 2
 
 - lessonId: start-12-3
-  title: "Notion MCP接続とセットアップ"
+  title: "ファイル取得"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 3
 
 - lessonId: start-12-4
-  title: "1回の取得で触れる範囲を要約して返す"
+  title: "ファイル作成・ページ作成"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 4
 
 - lessonId: start-12-5
-  title: "Notion のファイル・添付を取得しエージェント側で確認する"
+  title: "書き込みと更新"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 5
 
 - lessonId: start-12-6
-  title: "Notion への書き込み・更新と安全な確認フロー"
+  title: "要約の作成とコメントの返信"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 6

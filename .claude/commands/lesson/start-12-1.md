@@ -1,34 +1,35 @@
 ---
 description: "Lesson command"
 chapter: "courses/aiagent/lesson03-core/module12-notion"
-duration: "約30分"
+duration: "約25分"
 prerequisites: ["start-0-1"]
-level: "intermediate"
-tags: ["notion", "mcp", "api"]
+level: "beginner"
+tags: ["notion", "ncli", "auth", "oauth"]
 ---
 
-# 🎓 Lesson 12-1: Notion MCP接続とセットアップ
+# 🎓 Lesson 12-1: ncliセットアップ・ブラウザ認証
 
 ## 📍 このセッションでやること
 
-**Lesson 12-1: Notion API基礎** へようこそ！
+**Lesson 12-1: ncliセットアップ・ブラウザ認証** へようこそ！
 
 | 項目 | 内容 |
 |------|------|
-| ゴール | MCP/Notion APIでClaude CodeからNotionのページ・データベースを操作する |
-| 所要時間 | 約30分 |
-| 使うスキル | Notion API, MCP（Model Context Protocol） |
-| 前提条件 | Notion アカウント、インテグレーション作成権限 |
-| 教材ページ | [Module 12: Notion](https://ai-agent.camp/ja/course/module-12) を並行参照 |
+| ゴール | ncli（Notion CLI）をインストールし、OAuthブラウザ認証でNotionワークスペースに接続する |
+| 所要時間 | 約25分 |
+| 使うスキル | ncli (Notion CLI) |
+| 前提条件 | Node.js 18以上、Notionアカウント |
 
 **このセッションの流れ:**
-1. Notionインテグレーション作成
-2. APIキーとデータベースIDの取得
-3. ページ・データベースの読み書き
+1. ncli のインストール確認
+2. `ncli login` でブラウザ認証
+3. `ncli whoami` で認証確認
+4. `ncli search` で接続テスト
+5. `ncli fetch` で基本取得テスト
 
-セッション終了時には、Claude CodeからNotionを操作できるようになっています。
+セッション終了時には、ターミナルからNotionワークスペースにアクセスできる状態になっています。
 
-> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。これはCursorの仕様で、故障ではありません。
+> **💡 ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。
 
 ---
 
@@ -46,7 +47,6 @@ tags: ["notion", "mcp", "api"]
     "options": [
       {"id": "ready", "label": "準備OK！始めましょう"},
       {"id": "check_prereq", "label": "前提条件を確認したい"},
-      {"id": "view_html", "label": "先に教材ページを見たい"},
       {"id": "different_lesson", "label": "別のレッスンに移動したい"}
     ]
   }]
@@ -54,54 +54,95 @@ tags: ["notion", "mcp", "api"]
 ```
 
 (ready → Step 1へ)
-(check_prereq → 前提条件の確認を実行)
-(view_html → 教材ページのパスを案内)
+(check_prereq → Node.jsバージョン確認: `node --version` を実行し v18以上か確認)
 (different_lesson → モジュール一覧を表示)
 
 ---
 
-## 🚀 Step 1: Notionインテグレーション作成
-
-**前提条件:** Notion MCP サーバーが設定済みである必要があります。
-未設定の場合は `/setup-notion` を先に実行してください。
-
-**AIが自動で確認すること:**
-1. MCP設定ファイルに `notion` サーバーが定義されているか確認:
-   - Claude Code: `~/.claude/mcp_settings.json` を読み取り、`mcpServers.notion` の存在を確認
-   - Cursor: `.cursor/mcp.json` を読み取り、`mcpServers.notion` の存在を確認
-2. 設定済みの場合 → Step 2（MCP設定ファイル作成）へ進む
-3. 未設定の場合 → `/setup-notion` の実行を案内
+## 🚀 Step 1: ncli インストール確認
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 1: Notionインテグレーション確認",
+  "title": "🚀 Step 1: ncli インストール確認",
   "questions": [{
     "id": "step_action",
-    "prompt": "NOTION_API_KEY の設定状況を確認します。",
+    "prompt": "このステップをどうしますか？",
     "options": [
-      {"id": "check", "label": "設定状況を確認する"},
-      {"id": "setup_notion", "label": "/setup-notion でセットアップする"},
-      {"id": "skip", "label": "スキップする（設定済みの場合）"}
+      {"id": "practice", "label": "このまま進める"},
+      {"id": "review", "label": "例だけ確認する"},
+      {"id": "skip", "label": "スキップする（インストール済みの場合）"}
     ]
   }]
 }
 ```
 
-(check → MCP設定ファイルで notion エントリを確認。設定済みなら Step 2 へ)
-(setup_notion → /setup-notion を案内)
-(skip → Step 2 へ)
+**AIが実行すること:**
+
+1. ncli がインストール済みか確認:
+   ```bash
+   npx @sakasegawa/ncli --version
+   ```
+
+2. インストールされていない場合、グローバルインストールを実行:
+   ```bash
+   npm install -g @sakasegawa/ncli
+   ```
+
+3. インストール後、バージョンを確認:
+   ```bash
+   ncli --version
+   ```
+
+**補足:** グローバルインストールせずに `npx @sakasegawa/ncli` で毎回実行することも可能です。以降のレッスンでは `ncli` コマンドを直接使用しますが、`npx @sakasegawa/ncli` に読み替えても構いません。
+
+**期待される結果**: ncli のバージョン番号が表示される。
 
 ---
 
-## 🚀 Step 2: MCP設定ファイル作成
-
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+## 🚀 Step 2: ブラウザ認証（ncli login）
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 2: MCP設定ファイル作成",
+  "title": "🚀 Step 2: ブラウザ認証",
+  "questions": [{
+    "id": "step_action",
+    "prompt": "このステップをどうしますか？",
+    "options": [
+      {"id": "practice", "label": "このまま進める"},
+      {"id": "review", "label": "例だけ確認する"},
+      {"id": "skip", "label": "スキップする（認証済みの場合）"}
+    ]
+  }]
+}
+```
+
+**AIが実行すること:**
+
+1. ログインコマンドを実行:
+   ```bash
+   ncli login
+   ```
+
+2. ブラウザが自動で開き、Notion の OAuth 認証画面が表示されます。
+
+3. **受講者への案内**:
+   - ブラウザでNotionの認証画面が表示されます
+   - 「Allow access」をクリックしてワークスペースへのアクセスを許可してください
+   - **スクリーンショット撮影**: 認証画面が表示されたらスクリーンショットを撮影し `output/notion_auth_screenshot.png` に保存してください
+   - 認証が完了すると、ターミナルに成功メッセージが表示されます
+
+**期待される結果**: OAuth認証が完了し、ncli がNotionワークスペースにアクセスできるようになる。
+
+---
+
+## 🚀 Step 3: 認証確認（ncli whoami）
+
+**AskQuestionの設定例:**
+```json
+{
+  "title": "🚀 Step 3: 認証確認",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -114,76 +155,25 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Claude Code用のMCP設定ファイルを作成してください。
+**AIが実行すること:**
 
-ファイル: ~/.claude/mcp_settings.json
+1. 認証状態を確認:
+   ```bash
+   ncli whoami
+   ```
 
-内容（NOTION_API_KEYは実際のトークンに置き換え）:
-{
-  "mcpServers": {
-    "notion": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@notionhq/notion-mcp-server"
-      ],
-      "env": {
-        "NOTION_API_KEY": "secret_your_token_here"
-      }
-    }
-  }
-}
+2. 結果を確認し、以下の情報が表示されることを受講者に説明:
+   - ユーザー名
+   - ワークスペース名
+   - 認証の有効期限
 
-ファイルを作成してください。
-```
+3. 表示された情報をユーザーに共有し、正しいワークスペースに接続されているか確認する。
 
-**期待される結果**: MCP設定ファイルが作成されます。実際のトークンは手動で置き換えてください。
+**期待される結果**: ユーザー名とワークスペース名が正しく表示される。
 
 ---
 
-## 🚀 Step 3: ワークスペースへのアクセス許可
-
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
-
-**AskQuestionの設定例:**
-```json
-{
-  "title": "🚀 Step 3: ワークスペースへのアクセス許可",
-  "questions": [{
-    "id": "step_action",
-    "prompt": "このステップをどうしますか？",
-    "options": [
-      {"id": "practice", "label": "このまま進める"},
-      {"id": "review", "label": "例だけ確認する"},
-      {"id": "skip", "label": "スキップする"}
-    ]
-  }]
-}
-```
-
-**選択後の案内（例）**:
-入力内容:
-```
-Notionでインテグレーションにアクセス許可を与える方法を教えてください。
-
-手順:
-1. Notionでページを開く
-2. 右上「...」メニュー > Connections
-3. 作成したインテグレーション「Claude MCP Integration」を追加
-
-注意: インテグレーションを追加したページ配下のみアクセス可能になります。
-```
-
-**期待される結果**: Notionページへのアクセス許可設定の手順が説明されます。
-
----
-
-## 🚀 Step 4: 接続テスト
-
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+## 🚀 Step 4: 接続テスト（ncli search）
 
 **AskQuestionの設定例:**
 ```json
@@ -201,31 +191,34 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Notion MCPの接続テストを行います。
+**AIが実行すること:**
 
-以下のことを確認してください：
-1. MCP設定ファイル（~/.claude/mcp_settings.json）が存在するか
-2. NOTION_API_KEYが設定されているか
-3. Claude Codeを再起動してMCPが読み込まれるか
+1. ワークスペース内を検索:
+   ```bash
+   ncli search "test"
+   ```
 
-接続テストとして、Notionに接続してアクセス可能なページを一覧表示してください。
-```
+2. 検索結果を確認し、ページやデータベースが表示されることを確認する。
 
-**期待される結果**: MCPが正しく設定されていれば、Notionページの一覧が表示されます。
+3. 別のキーワードでも試す:
+   ```bash
+   ncli search "タスク"
+   ```
+
+4. 結果をユーザーに見やすい形式で共有する。
+
+**補足**: 検索結果が0件の場合でもエラーが出なければ接続は成功しています。ワークスペースにまだコンテンツが少ない場合は正常です。
+
+**期待される結果**: 検索が正常に実行され、結果（0件を含む）が返ってくる。
 
 ---
 
-## 🚀 Step 5: 基本操作テスト
-
-AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / スキップ」を選べます。
+## 🚀 Step 5: 基本取得テスト（ncli fetch）
 
 **AskQuestionの設定例:**
 ```json
 {
-  "title": "🚀 Step 5: 基本操作テスト",
+  "title": "🚀 Step 5: 基本取得テスト",
   "questions": [{
     "id": "step_action",
     "prompt": "このステップをどうしますか？",
@@ -238,32 +231,31 @@ AskUserQuestion（AskQuestion）で「このまま進める / 例だけ確認 / 
 }
 ```
 
-**選択後の案内（例）**:
-入力内容:
-```
-Notionで以下の操作をテストしてください：
+**AIが実行すること:**
 
-1. ページ作成テスト:
-   - 「MCP接続テスト」という名前のページを作成
-   - 内容に「Claude CodeからのMCP接続テスト成功！」と記載
-   - 現在時刻も追記
+1. 受講者にNotionページのURLを教えてもらう:
+   - 「取得テストに使いたいNotionページのURLを教えてください」と案内
 
-2. ページ読み取りテスト:
-   - 作成したページの内容を読み取って表示
+2. ページ内容を取得:
+   ```bash
+   ncli fetch <ページURL>
+   ```
 
-3. ページ更新テスト:
-   - ページに「更新日時: [現在時刻]」を追記
+3. JSON形式でも取得してみる:
+   ```bash
+   ncli fetch <ページURL> --json
+   ```
 
-それぞれの操作結果を報告してください。
-```
+4. 取得結果の構造を解説:
+   - ページタイトル
+   - ブロックの種類（見出し、段落、リストなど）
+   - プロパティ情報
 
-**期待される結果**: Notionページの作成、読み取り、更新がClaude Codeから実行できます。
+**期待される結果**: Notionページの内容がターミナルに表示され、ページ構造が確認できる。
 
 ---
 
 ## ⚠️ よくあるトラブルと解決方法
-
-AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押すだけで案内します。
 
 **AskQuestionの設定例:**
 ```json
@@ -273,81 +265,84 @@ AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押
     "id": "trouble",
     "prompt": "当てはまる内容を1つ選んでください",
     "options": [
-      {"id": "trouble_1", "label": "Could not connect to Notion"},
-      {"id": "trouble_2", "label": "Insufficient permissions"},
-      {"id": "trouble_3", "label": "MCPサーバーが起動しない"},
-      {"id": "trouble_4", "label": "ページが見つからない"}
+      {"id": "trouble_1", "label": "ncli login でブラウザが開かない"},
+      {"id": "trouble_2", "label": "認証後に Permission denied エラー"},
+      {"id": "trouble_3", "label": "ncli コマンドが見つからない"},
+      {"id": "trouble_4", "label": "ncli fetch でページが取得できない"}
     ]
   }]
 }
 ```
 
-
-### トラブル1: 「Could not connect to Notion」
-**原因**: APIキーが間違っている、またはMCP設定ファイルのパスが違う
-**解決プロンプト**:
+### トラブル1: ncli login でブラウザが開かない
+**原因**: ターミナル環境からブラウザを起動できない設定になっている
+**解決方法**:
 ```
 以下を確認してください：
-1. ~/.claude/mcp_settings.json のパスが正しいか
-2. NOTION_API_KEY の値が「secret_」で始まっているか
-3. JSONの構文が正しいか（カンマ、括弧など）
+1. デフォルトブラウザが設定されているか
+2. ターミナルからブラウザを開けるか（open https://notion.so で確認）
+3. WSL環境の場合は BROWSER 環境変数を設定してください
 ```
 
-### トラブル2: 「Insufficient permissions」
-**原因**: インテグレーションがページに追加されていない
-**解決プロンプト**:
-```
-Notionで対象ページを開き、右上「...」> Connections から
-「Claude MCP Integration」が追加されているか確認してください。
-親ページにインテグレーションを追加すると、子ページにもアクセスできます。
-```
-
-### トラブル3: MCPサーバーが起動しない
-**原因**: Node.jsのバージョンが古い、またはnpxが使えない
-**解決プロンプト**:
+### トラブル2: 認証後に Permission denied エラー
+**原因**: ワークスペースへのアクセス権限が不足している
+**解決方法**:
 ```
 以下を確認してください：
-1. node --version で v18以上か確認
-2. npx --version でnpxが使えるか確認
-3. npm install -g npx でnpxをインストール
+1. ncli login 時に正しいワークスペースを選択したか
+2. ワークスペースの管理者権限があるか
+3. 再度 ncli login を実行して認証し直してください
 ```
 
-### トラブル4: ページが見つからない
-**原因**: インテグレーションにアクセス権限がない
-**解決プロンプト**:
+### トラブル3: ncli コマンドが見つからない
+**原因**: グローバルインストールされていない、またはPATHが通っていない
+**解決方法**:
 ```
-Notionワークスペースで、アクセスしたいページまたは親ページに
-インテグレーションを追加してください。
-ワークスペース全体にアクセスさせる場合は、トップレベルのページに追加します。
+以下を試してください：
+1. npm install -g @sakasegawa/ncli を再実行
+2. npx @sakasegawa/ncli whoami でnpx経由の実行を試す
+3. npm root -g でグローバルパッケージのパスを確認
+4. シェルを再起動してPATHを更新
+```
+
+### トラブル4: ncli fetch でページが取得できない
+**原因**: ページURLの形式が正しくない、またはアクセス権限がない
+**解決方法**:
+```
+以下を確認してください：
+1. URLが https://www.notion.so/... の形式か
+2. ページIDを直接指定する場合は32文字のIDを使う
+3. ncli search でページが検索できるか確認
+4. ページがワークスペース内に存在するか確認
 ```
 
 ---
 
 ## ✅ チェックポイント
-- [ ] Notionインテグレーションが作成されている
-- [ ] シークレットトークンを取得している
-- [ ] MCP設定ファイルが作成されている
-- [ ] Notionページにインテグレーションが追加されている
-- [ ] ページの作成・読み取り・更新ができる
+- [ ] ncli がインストールされている（バージョン番号が表示される）
+- [ ] `ncli login` でOAuth認証が完了している
+- [ ] `ncli whoami` でユーザー名・ワークスペース名が表示される
+- [ ] `ncli search` で検索が実行できる
+- [ ] `ncli fetch` でページ内容が取得できる
 
 ---
 
-## ✅ 完了チェック
-以下をCursorのチャットに貼り付けて、完了状況を確認してください:
+## 📋 成果物プレビュー
 
-```
-# 完了確認: output/ フォルダに期待される出力ファイルが生成されているか確認してください。
-```
+このレッスンで得られる成果物:
 
-**期待される結果**: 完了/未完の判定と不足項目が表示されます。
+| 成果物 | 説明 |
+|--------|------|
+| ncli インストール済み環境 | ターミナルから `ncli` コマンドが実行可能 |
+| OAuth認証完了 | Notionワークスペースへのアクセスが有効 |
+| `output/notion_auth_screenshot.png` | 認証画面のスクリーンショット |
+| 接続テスト結果 | search / fetch が正常に動作することを確認 |
 
 ---
 
 ## ➡️ 次のステップ
 
-これでこのセクションは完了です。次のセクションを始めるか、新しいウィンドウを開いて、新しいセクションを開始してください。
-
-AskUserQuestion（AskQuestion）で選べます。
+これでncliのセットアップは完了です。次のレッスンでは、データベースの取得とクエリを学びます。
 
 **AskQuestionの設定例:**
 ```json
@@ -365,7 +360,7 @@ AskUserQuestion（AskQuestion）で選べます。
 }
 ```
 
-**選択後の案内（例）**:
+**選択後の案内:**
 - next_auto → /next_lesson
 - next_window → 新しいウィンドウで /start-12-2
 - finish → 終了
