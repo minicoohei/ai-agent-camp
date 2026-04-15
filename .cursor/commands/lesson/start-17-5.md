@@ -310,7 +310,7 @@ AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押
 **解決プロンプト**:
 ```
 環境変数 TYPEFULLY_API_KEY が正しく設定されているか確認してください。
-echo $TYPEFULLY_API_KEY で値が表示されるか確認し、
+[[ -n "$TYPEFULLY_API_KEY" ]] && echo "設定済み" || echo "未設定" で存在を確認し、
 Typefully の Settings → API & Integrations で有効なキーか照合してください。
 ```
 

@@ -310,7 +310,7 @@ AskUserQuestion (AskQuestion) lets you select the issue for guidance.
 **Solution prompt**:
 ```
 Verify the TYPEFULLY_API_KEY environment variable is set correctly.
-Run echo $TYPEFULLY_API_KEY to check the value,
+Run [[ -n "$TYPEFULLY_API_KEY" ]] && echo "set" || echo "not set" to check existence,
 and verify the key is valid in Typefully Settings → API & Integrations.
 ```
 

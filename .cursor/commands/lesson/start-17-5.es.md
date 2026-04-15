@@ -310,7 +310,7 @@ AskUserQuestion (AskQuestion) te permite seleccionar el problema para recibir or
 **Prompt de solución**:
 ```
 Verifica que la variable de entorno TYPEFULLY_API_KEY esté configurada correctamente.
-Ejecuta echo $TYPEFULLY_API_KEY para verificar el valor,
+Ejecuta [[ -n "$TYPEFULLY_API_KEY" ]] && echo "configurado" || echo "no configurado" para verificar la existencia,
 y verifica que la clave sea válida en Typefully Settings → API & Integrations.
 ```
 
