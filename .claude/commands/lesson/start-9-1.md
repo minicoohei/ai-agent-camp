@@ -360,7 +360,7 @@ curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
 このレッスンの成果物はターミナル出力です。
 
 ### 期待される出力例
-```
+```text
 # auth.test の結果
 Team: MyCompany / User: taro.yamada
 

@@ -408,28 +408,28 @@ jobs:
 ### トラブル1: 「API キーのエラー」
 **原因**: Secrets に API キーが設定されていない、またはキーが無効。
 **解決プロンプト**:
-```
+```text
 GitHub リポジトリの Settings → Secrets and variables → Actions で ANTHROPIC_API_KEY が設定されているか確認してください。キーは sk-ant- で始まる文字列です。
 ```
 
 ### トラブル2: 「claude / codex コマンドが見つからない」
 **原因**: npm install が失敗している。
 **解決プロンプト**:
-```
+```text
 ワークフローのログで npm install ステップのエラーを確認してください。Node.js バージョンが 18 以上であることを確認してください。
 ```
 
 ### トラブル3: 「PR 作成の権限エラー」
 **原因**: `permissions` の設定が不足。
 **解決プロンプト**:
-```
+```text
 ワークフローの permissions に contents: write と pull-requests: write が含まれているか確認してください。リポジトリの Settings → Actions → General → Workflow permissions で「Read and write permissions」が有効か確認してください。
 ```
 
 ### トラブル4: 「レビューコメントが投稿されない」
 **原因**: `actions/github-script` のスクリプトにエラーがある、または pull-requests: write 権限がない。
 **解決プロンプト**:
-```
+```text
 ワークフローのログで actions/github-script ステップのエラーを確認してください。review_result.txt が空の場合はClaude Codeの実行結果を確認してください。
 ```
 
@@ -448,7 +448,7 @@ GitHub リポジトリの Settings → Secrets and variables → Actions で ANT
 ## 📋 成果物プレビュー
 
 **作成されるワークフロー:**
-```
+```text
 .github/workflows/
 ├── claude-review.yml      # PR 自動レビュー
 ├── codex-task.yml         # Codex タスク実行

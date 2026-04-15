@@ -277,7 +277,7 @@ tags: ["notion", "ncli", "auth", "oauth"]
 ### トラブル1: ncli login でブラウザが開かない
 **原因**: ターミナル環境からブラウザを起動できない設定になっている
 **解決方法**:
-```
+```text
 以下を確認してください：
 1. デフォルトブラウザが設定されているか
 2. ターミナルからブラウザを開けるか（open https://notion.so で確認）
@@ -287,7 +287,7 @@ tags: ["notion", "ncli", "auth", "oauth"]
 ### トラブル2: 認証後に Permission denied エラー
 **原因**: ワークスペースへのアクセス権限が不足している
 **解決方法**:
-```
+```text
 以下を確認してください：
 1. ncli login 時に正しいワークスペースを選択したか
 2. ワークスペースの管理者権限があるか
@@ -297,7 +297,7 @@ tags: ["notion", "ncli", "auth", "oauth"]
 ### トラブル3: ncli コマンドが見つからない
 **原因**: グローバルインストールされていない、またはPATHが通っていない
 **解決方法**:
-```
+```text
 以下を試してください：
 1. npm install -g @sakasegawa/ncli を再実行
 2. npx @sakasegawa/ncli whoami でnpx経由の実行を試す
@@ -308,7 +308,7 @@ tags: ["notion", "ncli", "auth", "oauth"]
 ### トラブル4: ncli fetch でページが取得できない
 **原因**: ページURLの形式が正しくない、またはアクセス権限がない
 **解決方法**:
-```
+```text
 以下を確認してください：
 1. URLが https://www.notion.so/... の形式か
 2. ページIDを直接指定する場合は32文字のIDを使う

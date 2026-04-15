@@ -429,28 +429,28 @@ gh release list
 ### トラブル1: 「GitHub Pages のデプロイに失敗」
 **原因**: Pages の Source が「GitHub Actions」に設定されていない、または permissions が不足。
 **解決プロンプト**:
-```
+```text
 リポジトリの Settings → Pages → Source で「GitHub Actions」が選択されているか確認してください。ワークフローに pages: write と id-token: write の permissions があるか確認してください。
 ```
 
 ### トラブル2: 「Vercel デプロイのエラー」
 **原因**: `VERCEL_TOKEN` が無効、またはプロジェクトが未リンク。
 **解決プロンプト**:
-```
+```text
 ローカルで vercel link を実行してプロジェクトをリンクしてください。.vercel/project.json から ORG_ID と PROJECT_ID を取得して Secrets に設定してください。
 ```
 
 ### トラブル3: 「artifact がダウンロードできない」
 **原因**: `retention-days` の期限切れ、またはパスの指定ミス。
 **解決プロンプト**:
-```
+```text
 ワークフローのログで upload-artifact ステップの出力を確認してください。path で指定したディレクトリにファイルが存在するか確認してください。
 ```
 
 ### トラブル4: 「リリースが作成されない」
 **原因**: タグの形式が `v*` にマッチしていない、または permissions: contents: write がない。
 **解決プロンプト**:
-```
+```text
 git tag の形式が v1.0.0 のように v で始まるか確認してください。gh release create コマンドをローカルで試して、エラーメッセージを確認してください。
 ```
 
@@ -469,7 +469,7 @@ git tag の形式が v1.0.0 のように v で始まるか確認してくださ�
 ## 📋 成果物プレビュー
 
 **作成されるファイル:**
-```
+```text
 scripts/
 └── build_site.py              # 静的サイトジェネレーター
 

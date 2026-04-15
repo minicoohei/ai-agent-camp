@@ -336,28 +336,28 @@ function setEmailExtractTrigger() {
 ### トラブル1: 「Gmail の権限エラー」
 **原因**: `appsscript.json` に `gmail.readonly` スコープが追加されていない、または初回実行時の承認が完了していない。
 **解決プロンプト**:
-```
+```text
 appsscript.json の oauthScopes に "https://www.googleapis.com/auth/gmail.readonly" が含まれているか確認してください。含まれていなければ追加して clasp push してください。初回実行時はGASエディタで関数を実行し、権限の承認ダイアログを完了してください。
 ```
 
 ### トラブル2: 「スプレッドシートが作成されない」
 **原因**: `spreadsheets` スコープが不足、またはメール検索結果が0件。
 **解決プロンプト**:
-```
+```text
 oauthScopes に "https://www.googleapis.com/auth/spreadsheets" があるか確認してください。また searchEmails の検索クエリを "newer_than:30d" など範囲を広げて再実行してみてください。
 ```
 
 ### トラブル3: 「日本語が文字化けする」
 **原因**: `getPlainBody()` のエンコーディング問題。
 **解決プロンプト**:
-```
+```text
 getPlainBody() の代わりに getBody() を使い、HTML タグを除去するヘルパー関数を追加してみてください。
 ```
 
 ### トラブル4: 「トリガーが動作しない」
 **原因**: トリガーの権限が不足、またはスクリプトにエラーがある。
 **解決プロンプト**:
-```
+```text
 GAS エディタの「実行数」画面でエラーログを確認してください。また ScriptApp のスコープが appsscript.json に含まれているか確認してください。
 ```
 
@@ -376,7 +376,7 @@ GAS エディタの「実行数」画面でエラーログを確認してくだ�
 ## 📋 成果物プレビュー
 
 **作成されるファイル:**
-```
+```text
 gas-example/
 ├── appsscript.json   # Gmail スコープ追加済み
 ├── Calendar.gs       # Lesson 10-2 の成果物

@@ -314,7 +314,7 @@ for msg in data.get('messages', []):
 ```
 
 保存後、AIに以下の分析を依頼:
-```
+```text
 ~/ai-agent-camp/data/slack_messages_latest.txt を読んで、以下を教えてください:
 
 1. 話題のサマリー（箇条書き3-5個）
@@ -403,7 +403,7 @@ curl -s -H "Authorization: Bearer $SLACK_USER_TOKEN" \
 このレッスンの成果物はターミナル出力とテキストファイルです。
 
 ### 期待される出力例
-```
+```text
 # conversations.history の整形結果
 --- 2025-04-14 10:30 ---
 User: U0ABC1234

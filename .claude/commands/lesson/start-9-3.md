@@ -105,7 +105,7 @@ for ch in data.get('channels', []):
 ```
 
 2. **dry-run**: 送信内容をユーザーに確認:
-```
+```text
 以下の内容を送信します。問題なければ「送信OK」と入力してください。
 
 送信先: #チャネル名 (CHANNEL_ID)
@@ -349,7 +349,7 @@ for msg in data.get('messages', []):
   > ~/ai-agent-camp/data/slack_thread_for_summary.txt
 ```
 
-```
+```text
 # 2. AIに要約を依頼
 ~/ai-agent-camp/data/slack_thread_for_summary.txt を読んで、
 このスレッドの内容を3-5行で要約してください。
@@ -440,7 +440,7 @@ for u in data.get('members', []):
 このレッスンの成果物はターミナル出力とSlack上の投稿です。
 
 ### 期待される出力例
-```
+```text
 # chat.postMessage の結果
 ok: true
 channel: C0XXXXXXX

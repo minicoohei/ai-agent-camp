@@ -350,7 +350,7 @@ tags: ["notion", "ncli", "create", "page", "file", "database"]
 ### トラブル1: ページ作成時に Parent not found エラー
 **原因**: 親ページのURLまたはIDが間違っている
 **解決方法**:
-```
+```text
 以下を確認してください：
 1. 親ページのURLをブラウザから直接コピーする
 2. ncli fetch <親ページURL> で親ページにアクセスできるか確認
@@ -360,7 +360,7 @@ tags: ["notion", "ncli", "create", "page", "file", "database"]
 ### トラブル2: --body で本文が正しく反映されない
 **原因**: Markdown構文がNotionのブロックに変換されない場合がある
 **解決方法**:
-```
+```text
 以下を試してください：
 1. シンプルなテキストで試す（# 見出し、- リスト のみ）
 2. パイプ入力（echo "..." | ncli page create --body -）を試す
@@ -370,7 +370,7 @@ tags: ["notion", "ncli", "create", "page", "file", "database"]
 ### トラブル3: ファイルアップロードが失敗する
 **原因**: ファイルサイズが大きすぎる、またはファイルパスが間違っている
 **解決方法**:
-```
+```text
 以下を確認してください：
 1. ファイルパスが正しいか（ls でファイルの存在を確認）
 2. ファイルサイズが5MB以下か確認
@@ -380,7 +380,7 @@ tags: ["notion", "ncli", "create", "page", "file", "database"]
 ### トラブル4: DB作成時にプロパティがエラーになる
 **原因**: --prop の構文が間違っている
 **解決方法**:
-```
+```text
 --prop の正しい構文：
 - タイトル: --prop "Name:title"
 - セレクト: --prop "Status:select=Option1,Option2"
