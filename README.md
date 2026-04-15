@@ -184,9 +184,7 @@ uv run python tools/credential_manager.py prepare-dotenv GEMINI_API_KEY
 ```bash
 # Recommended: use venv
 python3 -m venv venv
-source venv/bin/activate  # macOS/Linux
-# or
-venv\Scripts\activate  # Windows
+source venv/bin/activate  # macOS/Linux/WSL
 
 # Install packages
 pip install -r requirements.txt

@@ -22,8 +22,8 @@ Este comando extrae fotogramas clave de videos, opcionalmente realiza análisis 
 2. **Configuración inicial del venv** (si no se ha realizado):
    ```bash
    cd .cursor/skills/video-frame-reader
-   python3 -m venv venv          # En Windows: python -m venv venv
-   source venv/bin/activate      # En Windows: venv\Scripts\activate
+   python3 -m venv venv          
+   source venv/bin/activate      # macOS/Linux/WSL
    pip install Pillow numpy --quiet
    ```
 

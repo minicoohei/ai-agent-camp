@@ -35,16 +35,14 @@ This intent becomes important context for the analysis.
 
 ```bash
 python3 -m venv skills/video-frame-reader/scripts/venv
-source skills/video-frame-reader/scripts/venv/bin/activate    # Mac/Linux
-# Windows: skills\video-frame-reader\scripts\venv\Scripts\activate
+source skills/video-frame-reader/scripts/venv/bin/activate    # Mac/Linux/WSL
 pip install Pillow numpy --quiet
 ```
 
 ### 3. Extract Keyframes
 
 ```bash
-source skills/video-frame-reader/scripts/venv/bin/activate    # Mac/Linux
-# Windows: skills\video-frame-reader\scripts\venv\Scripts\activate
+source skills/video-frame-reader/scripts/venv/bin/activate    # Mac/Linux/WSL
 python3 skills/video-frame-reader/scripts/extract_keyframes.py "<video_path>"
 ```
 

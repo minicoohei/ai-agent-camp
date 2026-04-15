@@ -22,8 +22,8 @@ This command extracts keyframes from videos, optionally performs frame analysis 
 2. **First-time venv setup** (if not already done):
    ```bash
    cd .cursor/skills/video-frame-reader
-   python3 -m venv venv          # On Windows: python -m venv venv
-   source venv/bin/activate      # On Windows: venv\Scripts\activate
+   python3 -m venv venv          
+   source venv/bin/activate      # macOS/Linux/WSL
    pip install Pillow numpy --quiet
    ```
 

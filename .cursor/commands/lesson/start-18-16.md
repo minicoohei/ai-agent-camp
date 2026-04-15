@@ -291,8 +291,8 @@ pytest では、複数のテストコード作成スタイルがあります：
 1. **テスト実行環境の準備**
    ```bash
    # 仮想環境の確認
-   python3 -m venv venv          # Windowsでは python -m venv venv
-   source venv/bin/activate      # Windowsでは venv\Scripts\activate
+   python3 -m venv venv          
+   source venv/bin/activate      # macOS/Linux/WSL
 
    # 依存パッケージのインストール
    pip install pytest pytest-cov pytest-html pydantic

@@ -275,7 +275,7 @@ Una vez guardado, vuelva a este chat y dígame que "terminó".
 ```
 
 (done -> Ir al Step 4)
-(terminal_help -> Indicar: "Para Cursor: Menú > Terminal > New Terminal, o presione Ctrl+` (Mac: Cmd+`). Para Claude Code: Abra una ventana/pestaña de terminal separada. Mac: Cmd+T (nueva pestaña) o Cmd+N (nueva ventana). Windows: Abra PowerShell o Windows Terminal desde el menú Inicio, o Ctrl+Shift+T para una nueva pestaña. Luego navegue con cd al directorio del proyecto")
+(terminal_help -> Indicar: "Para Cursor: Menú > Terminal > New Terminal, o presione Ctrl+` (Mac: Cmd+`). Para Claude Code: Abra una ventana/pestaña de terminal separada. Mac: Cmd+T (nueva pestaña) o Cmd+N (nueva ventana). Windows: Abra su terminal WSL (Ubuntu), o agregue una pestaña Ubuntu en Windows Terminal. Luego navegue con cd al directorio del proyecto")
 (command_error -> La IA ejecuta `uv run python tools/credential_manager.py status` para verificar la situación e identificar la causa. Si keyring no está instalado, ejecutar automáticamente `pip install keyring`)
 
 ---

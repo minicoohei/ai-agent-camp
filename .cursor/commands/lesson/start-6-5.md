@@ -450,7 +450,7 @@ git clone <repository-url>
 cd ai-content-agent
 
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate  # macOS/Linux/WSL
 
 pip install -r requirements.txt
 ```
@@ -544,8 +544,7 @@ AskUserQuestion（AskQuestion）でトラブル内容を選んでもらい、押
 ポートを変更してください：
 uvicorn.run(app, host="0.0.0.0", port=8001)
 または既存プロセスを終了：
-lsof -i :8000 && kill <PID>          # Mac/Linux
-# Windows: netstat -ano | findstr :8000 でPIDを確認し、taskkill /PID <PID> /F で終了
+lsof -i :8000 && kill <PID>          # Mac/Linux/WSL
 ```
 
 ### トラブル3: GitHub Actionsが失敗

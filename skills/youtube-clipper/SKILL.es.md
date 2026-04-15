@@ -118,14 +118,10 @@ Configure un archivo de cookies:
 
 ```bash
 # Método 1: Especificar archivo de cookies
-export YTDLP_COOKIES=/path/to/cookies.txt    # Mac/Linux
-# Windows (cmd): set YTDLP_COOKIES=C:\path\to\cookies.txt
-# Windows (PowerShell): $env:YTDLP_COOKIES = "C:\path\to\cookies.txt"
+export YTDLP_COOKIES=/path/to/cookies.txt    # Mac/Linux/WSL
 
 # Método 2: Obtener cookies del navegador (para PC local)
-export YTDLP_COOKIES_FROM_BROWSER=chrome    # Mac/Linux
-# Windows (cmd): set YTDLP_COOKIES_FROM_BROWSER=chrome
-# Windows (PowerShell): $env:YTDLP_COOKIES_FROM_BROWSER = "chrome"
+export YTDLP_COOKIES_FROM_BROWSER=chrome    # Mac/Linux/WSL
 ```
 
 Cómo obtener el archivo de cookies:
@@ -152,8 +148,6 @@ sudo apt-get install -y ffmpeg    # Ubuntu/Debian
 El extractor de YouTube de yt-dlp puede requerir el runtime JS deno:
 
 ```bash
-curl -fsSL https://deno.land/install.sh | sh    # Mac/Linux
-export PATH="$HOME/.deno/bin:$PATH"    # Mac/Linux
-# Windows (PowerShell): irm https://deno.land/install.ps1 | iex
-#                       (PATH se establece automáticamente)
+curl -fsSL https://deno.land/install.sh | sh    # Mac/Linux/WSL
+export PATH="$HOME/.deno/bin:$PATH"    # Mac/Linux/WSL
 ```

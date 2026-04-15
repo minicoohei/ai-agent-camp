@@ -414,9 +414,7 @@ Cause: Environment variable is not set
 Solution:
 1. Get Notion API key (https://www.notion.so/settings/integrations)
 2. Run the following:
-   export NOTION_API_KEY="YOUR_NOTION_SECRET_HERE"          # Mac/Linux
-   # Windows (cmd): set NOTION_API_KEY=YOUR_NOTION_SECRET_HERE
-   # Windows (PowerShell): $env:NOTION_API_KEY = "YOUR_NOTION_SECRET_HERE"
+   export NOTION_API_KEY="YOUR_NOTION_SECRET_HERE"          # Mac/Linux/WSL
 3. Run again
 ```
 

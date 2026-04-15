@@ -73,9 +73,7 @@ AskUserQuestion で各Issue候補を表示し、登録するか選択しても�
 
 ```bash
 # GH_TOKEN取得（git remote URLから抽出）
-export GH_TOKEN=$(git remote get-url origin | grep -oP '(?<=https://)[^@]+(?=@)' | sed 's/x-access-token://')    # Mac/Linux
-# Windows (cmd): for /f "tokens=*" %i in ('git remote get-url origin') do set GH_TOKEN=%i
-# Windows (PowerShell): $env:GH_TOKEN = (git remote get-url origin) -replace '.*https://([^@]+)@.*','$1' -replace 'x-access-token:',''
+export GH_TOKEN=$(git remote get-url origin | grep -oP '(?<=https://)[^@]+(?=@)' | sed 's/x-access-token://')    # Mac/Linux/WSL
 
 # Issue登録（--body-file を使用。heredoc だと Markdown のコードブロックでエスケープ問題が発生する）
 cat > /tmp/issue_body.md << 'EOF'

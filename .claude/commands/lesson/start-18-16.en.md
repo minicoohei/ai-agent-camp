@@ -291,8 +291,8 @@ Based on the selected method, the following is executed:
 1. **Prepare test execution environment**
    ```bash
    # Verify virtual environment
-   python3 -m venv venv          # On Windows: python -m venv venv
-   source venv/bin/activate      # On Windows: venv\Scripts\activate
+   python3 -m venv venv          
+   source venv/bin/activate      # macOS/Linux/WSL
 
    # Install dependency packages
    pip install pytest pytest-cov pytest-html pydantic

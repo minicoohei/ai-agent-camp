@@ -109,7 +109,7 @@ gcloud --version
 
 (installed -> Verificar con `gcloud --version`, luego ir al Step 2)
 (homebrew_issue -> Indicar: "Abra https://cloud.google.com/sdk/docs/install en su navegador y descargue el instalador para macOS. Extraiga el archivo descargado y ejecute ./install.sh para instalarlo.")
-(windows_help -> Indicar: "Abra https://cloud.google.com/sdk/docs/install en su navegador y descargue el instalador de Windows (.exe). Haga doble clic en el archivo descargado y siga las instrucciones en pantalla. Después de la instalación, abra una nueva terminal (Símbolo del sistema o PowerShell).")
+(windows_help -> Indicar: "Abra https://cloud.google.com/sdk/docs/install en su navegador y descargue el instalador de Windows (.exe). Haga doble clic en el archivo descargado y siga las instrucciones en pantalla. Después de la instalación, abra una nueva terminal WSL (Ubuntu).")
 (install_error -> Verificar el mensaje de error e identificar la causa. Si el PATH no está configurado, indicar al usuario que ejecute `source ~/.zshrc` o abra una nueva terminal)
 
 ---

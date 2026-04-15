@@ -44,7 +44,7 @@ The AI runs the following commands **behind the scenes** to check for each tool 
 
 | Check Target | Command to Run | Pass Criteria |
 |-------------|----------------|---------------|
-| OS Type | `uname -s` (Mac/Linux), PowerShell `$env:OS` (Windows) | Display only |
+| OS Type | `uname -s` (Mac/Linux/WSL) | Display only |
 | Python | `python3 --version 2>/dev/null \|\| python --version 2>/dev/null` | Pass if version 3.9+ |
 | Node.js | `node --version 2>/dev/null` | Pass if version 18+ |
 | Git | `git --version 2>/dev/null` | Pass if present |

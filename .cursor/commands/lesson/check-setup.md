@@ -44,7 +44,7 @@ tags: ["setup", "check"]
 
 | チェック対象 | 実行するコマンド | 判定基準 |
 |-------------|-----------------|---------|
-| OS種別 | `uname -s` (Mac/Linux), PowerShell `$env:OS` (Windows) | 表示のみ |
+| OS種別 | `uname -s` (Mac/Linux/WSL) | 表示のみ |
 | Python | `python3 --version 2>/dev/null \|\| python --version 2>/dev/null` | バージョン 3.9 以上で合格 |
 | Node.js | `node --version 2>/dev/null` | バージョン 18 以上で合格 |
 | Git | `git --version 2>/dev/null` | 存在すれば合格 |

@@ -276,9 +276,7 @@ Cost optimization tips:
 **Cause**: Environment variables are not set
 **Solution**:
 ```bash
-cat .env | grep -E "FAL_KEY|GEMINI|ELEVEN"    # Mac/Linux
-# Windows (cmd): findstr "FAL_KEY GEMINI ELEVEN" .env
-# Windows (PowerShell): Select-String -Path .env -Pattern "FAL_KEY|GEMINI|ELEVEN"
+cat .env | grep -E "FAL_KEY|GEMINI|ELEVEN"    # Mac/Linux/WSL
 ```
 
 ### Issue 2: "Green screen compositing failed"

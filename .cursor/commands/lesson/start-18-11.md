@@ -414,9 +414,7 @@ Notion DBの内容をマークダウン形式でエクスポートし、ドキ�
 解決策:
 1. Notion APIキーを取得（https://www.notion.so/settings/integrations）
 2. 以下を実行:
-   export NOTION_API_KEY="YOUR_NOTION_SECRET_HERE"          # Mac/Linux
-   # Windows (cmd): set NOTION_API_KEY=YOUR_NOTION_SECRET_HERE
-   # Windows (PowerShell): $env:NOTION_API_KEY = "YOUR_NOTION_SECRET_HERE"
+   export NOTION_API_KEY="YOUR_NOTION_SECRET_HERE"          # Mac/Linux/WSL
 3. 再度実行
 ```
 

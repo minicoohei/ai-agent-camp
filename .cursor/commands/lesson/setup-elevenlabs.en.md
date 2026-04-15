@@ -239,7 +239,7 @@ any code referencing either name will work correctly.
 
 (done -> Proceed to Step 4)
 (one_done -> Guide: "Please also run the second one: `uv run python tools/credential_manager.py store ELEVEN_API_KEY` -> Paste the same API key.")
-(terminal_help -> Guide: "For Cursor: Menu at the top > Terminal > New Terminal, or press Ctrl+backtick (Cmd+backtick on Mac). For Claude Code: Open a separate terminal window/tab. Mac: Cmd+T (new tab) or Cmd+N (new window). Windows: Open PowerShell or Windows Terminal from the Start menu, or press Ctrl+Shift+T for a new tab. Then cd to the project directory.")
+(terminal_help -> Guide: "For Cursor: Menu at the top > Terminal > New Terminal, or press Ctrl+backtick (Cmd+backtick on Mac). For Claude Code: Open a separate terminal window/tab. Mac: Cmd+T (new tab) or Cmd+N (new window). Windows: Open your WSL terminal (Ubuntu), or add an Ubuntu tab in Windows Terminal. Then cd to the project directory.")
 (command_error -> AI runs `uv run python tools/credential_manager.py status` to check the situation and identify the cause. If keyring is not installed, auto-run `pip install keyring`)
 (security_question -> Explain: "This tool uses the OS's standard encrypted storage. On macOS it uses Keychain, on Windows it uses Credential Locker, and on Linux it uses SecretService (GNOME Keyring, etc.). No plaintext files (.env) are created. The storage is also locked when the screen is locked, providing protection from physical access.")
 

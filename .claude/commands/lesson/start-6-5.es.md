@@ -450,7 +450,7 @@ git clone <repository-url>
 cd ai-content-agent
 
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate  # macOS/Linux/WSL
 
 pip install -r requirements.txt
 ```
@@ -544,7 +544,7 @@ Verifique lo siguiente:
 Cambie el puerto:
 uvicorn.run(app, host="0.0.0.0", port=8001)
 O termine el proceso existente:
-lsof -i :8000 && kill <PID>          # Mac/Linux
+lsof -i :8000 && kill <PID>          # Mac/Linux/WSL
 # Windows: Encuentre el PID con netstat -ano | findstr :8000, luego termine con taskkill /PID <PID> /F
 ```
 

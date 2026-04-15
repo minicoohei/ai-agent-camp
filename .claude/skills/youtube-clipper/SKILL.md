@@ -118,14 +118,10 @@ cookieファイルを設定してください:
 
 ```bash
 # 方法1: cookieファイルを指定
-export YTDLP_COOKIES=/path/to/cookies.txt    # Mac/Linux
-# Windows (cmd): set YTDLP_COOKIES=C:\path\to\cookies.txt
-# Windows (PowerShell): $env:YTDLP_COOKIES = "C:\path\to\cookies.txt"
+export YTDLP_COOKIES=/path/to/cookies.txt    # Mac/Linux/WSL
 
 # 方法2: ブラウザからcookieを取得（ローカルPC向け）
-export YTDLP_COOKIES_FROM_BROWSER=chrome    # Mac/Linux
-# Windows (cmd): set YTDLP_COOKIES_FROM_BROWSER=chrome
-# Windows (PowerShell): $env:YTDLP_COOKIES_FROM_BROWSER = "chrome"
+export YTDLP_COOKIES_FROM_BROWSER=chrome    # Mac/Linux/WSL
 ```
 
 cookieファイルの取得方法:
@@ -152,8 +148,6 @@ sudo apt-get install -y ffmpeg    # Ubuntu/Debian
 yt-dlpのYouTube抽出にdeno JSランタイムが必要な場合があります:
 
 ```bash
-curl -fsSL https://deno.land/install.sh | sh    # Mac/Linux
-export PATH="$HOME/.deno/bin:$PATH"    # Mac/Linux
-# Windows (PowerShell): irm https://deno.land/install.ps1 | iex
-#                       （PATHは自動で設定されます）
+curl -fsSL https://deno.land/install.sh | sh    # Mac/Linux/WSL
+export PATH="$HOME/.deno/bin:$PATH"    # Mac/Linux/WSL
 ```

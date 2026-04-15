@@ -109,7 +109,7 @@ gcloud --version
 
 (installed -> `gcloud --version` で確認後、Step 2 へ)
 (homebrew_issue -> 「ブラウザで https://cloud.google.com/sdk/docs/install を開いて、macOS用のインストーラーをダウンロードしてください。ダウンロードしたファイルを展開して、./install.sh を実行すればインストールできます」と案内)
-(windows_help -> 「ブラウザで https://cloud.google.com/sdk/docs/install を開いて、Windows用のインストーラー（.exe）をダウンロードしてください。ダウンロードしたファイルをダブルクリックして、画面の指示に従ってインストールしてください。インストール後、新しいターミナル（コマンドプロンプト or PowerShell）を開いてください」と案内)
+(windows_help -> 「ブラウザで https://cloud.google.com/sdk/docs/install を開いて、Windows用のインストーラー（.exe）をダウンロードしてください。ダウンロードしたファイルをダブルクリックして、画面の指示に従ってインストールしてください。インストール後、新しいターミナル（WSL Ubuntu）を開いてください」と案内)
 (install_error -> エラーメッセージを確認して原因を特定。PATH が通っていない場合は `source ~/.zshrc` や新しいターミナルを開くよう案内)
 
 ---

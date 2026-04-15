@@ -22,8 +22,8 @@
 2. **初回のみ venv 準備**（未実施の場合）:
    ```bash
    cd .cursor/skills/video-frame-reader
-   python3 -m venv venv          # Windowsでは python -m venv venv
-   source venv/bin/activate      # Windowsでは venv\Scripts\activate
+   python3 -m venv venv          
+   source venv/bin/activate      # macOS/Linux/WSL
    pip install Pillow numpy --quiet
    ```
 

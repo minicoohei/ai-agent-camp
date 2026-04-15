@@ -155,12 +155,8 @@ output/storyboard/
 ## Configuración del Entorno
 
 ```bash
-export GEMINI_API_KEY="your-key"    # Mac/Linux
-export PYTHONPATH="/path/to/.pip/local/local/lib/python3.11/dist-packages:$PYTHONPATH"    # Mac/Linux
-# Windows (cmd): set GEMINI_API_KEY=your-key
-#                set PYTHONPATH=C:\path\to\site-packages;%PYTHONPATH%
-# Windows (PowerShell): $env:GEMINI_API_KEY = "your-key"
-#                       $env:PYTHONPATH = "C:\path\to\site-packages;$env:PYTHONPATH"
+export GEMINI_API_KEY="your-key"    # Mac/Linux/WSL
+export PYTHONPATH="/path/to/.pip/local/local/lib/python3.11/dist-packages:$PYTHONPATH"    # Mac/Linux/WSL
 ```
 
 ## Frases de Activación
