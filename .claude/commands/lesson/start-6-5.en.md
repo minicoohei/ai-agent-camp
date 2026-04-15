@@ -449,7 +449,7 @@ An AI-powered content generation and management system.
 git clone <repository-url>
 cd ai-content-agent
 
-# uv で依存関係をインストール
+# Install dependencies with uv
 uv sync
 ```
 

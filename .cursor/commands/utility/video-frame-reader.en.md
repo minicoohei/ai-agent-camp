@@ -22,7 +22,7 @@ This command extracts keyframes from videos, optionally performs frame analysis 
 2. **First-time dependency setup** (if not already done):
    ```bash
    cd .cursor/skills/video-frame-reader
-   # uv で依存関係をインストール
+   # Install dependencies with uv
       uv add Pillow numpy --quiet
    ```
 

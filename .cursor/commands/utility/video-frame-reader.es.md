@@ -22,7 +22,7 @@ Este comando extrae fotogramas clave de videos, opcionalmente realiza análisis 
 2. **Configuración inicial de dependencias** (si no se ha realizado):
    ```bash
    cd .cursor/skills/video-frame-reader
-   # uv で依存関係をインストール
+   # Instalar dependencias con uv
       uv add Pillow numpy --quiet
    ```
 
