@@ -292,16 +292,22 @@
 
 # === Módulo 9: Slack ===
 - lessonId: start-9-1
-  title: "Búsqueda semántica de mensajes de Slack"
+  title: "Configuración de User Access Token y obtención de canales"
   chapterRef: "courses/aiagent/lesson03-core/module09-slack"
   module: 9
   lesson: 1
 
 - lessonId: start-9-2
-  title: "Extraer TODO y tareas de mensajes de Slack"
+  title: "Obtener mensajes e hilos (history / replies / mpim / im)"
   chapterRef: "courses/aiagent/lesson03-core/module09-slack"
   module: 9
   lesson: 2
+
+- lessonId: start-9-3
+  title: "Enviar respuestas (chat.postMessage)"
+  chapterRef: "courses/aiagent/lesson03-core/module09-slack"
+  module: 9
+  lesson: 3
 
 # === Módulo 10: GAS ===
 - lessonId: start-10-1
@@ -322,6 +328,12 @@
   module: 10
   lesson: 3
 
+- lessonId: start-10-4
+  title: "Búsqueda y extracción de correos con GmailApp y organización en hojas de cálculo"
+  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
+  module: 10
+  lesson: 4
+
 # === Módulo 11: GitHub Actions ===
 - lessonId: start-11-1
   title: "Fundamentos de GitHub Actions Workflow y automatización"
@@ -335,39 +347,57 @@
   module: 11
   lesson: 2
 
+- lessonId: start-11-3
+  title: "Flujo de trabajo de obtención de noticias y envío por email/Slack"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 3
+
+- lessonId: start-11-4
+  title: "Ejecutar Claude Code / Codex / Cursor en GitHub Actions"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 4
+
+- lessonId: start-11-5
+  title: "Despliegue y generación de archivos con GitHub Actions"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 5
+
 # === Módulo 12: Notion ===
 - lessonId: start-12-1
-  title: "Conexión y configuración de Notion MCP"
+  title: "Configuración de ncli y autenticación por navegador"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 1
 
 - lessonId: start-12-2
-  title: "Pasos de bases de datos de Notion"
+  title: "Obtención y consulta de bases de datos"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 2
 
 - lessonId: start-12-3
-  title: "Conexión y configuración de Notion MCP"
+  title: "Obtención de archivos"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 3
 
 - lessonId: start-12-4
-  title: "Resumir y devolver el alcance accesible en una sola consulta"
+  title: "Creación de archivos y páginas"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 4
 
 - lessonId: start-12-5
-  title: "Obtener archivos y adjuntos de Notion y verificar en el lado del Agente"
+  title: "Escritura y actualización"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 5
 
 - lessonId: start-12-6
-  title: "Escritura y actualización en Notion con flujo de verificación seguro"
+  title: "Creación de resúmenes y respuesta a comentarios"
   chapterRef: "courses/aiagent/lesson03-core/module12-notion"
   module: 12
   lesson: 6
