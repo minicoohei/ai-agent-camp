@@ -28,45 +28,70 @@ triggers:
 | Note | 手動 / API（要調査） | 🔧 計画中 |
 | Medium | Medium API | 🔧 計画中 |
 
-## Typefully API
+## Typefully API v2
 
 ### 認証
 環境変数: `TYPEFULLY_API_KEY`
+ヘッダー: `Authorization: Bearer $TYPEFULLY_API_KEY`
+
+### social_set_id の取得（必須）
+
+v2 では全エンドポイントに social_set_id が必要。先に取得しておく。
+
+```bash
+curl -X GET "https://api.typefully.com/v2/social-sets" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY"
+# レスポンスから id を取り、環境変数に保存
+export TYPEFULLY_SOCIAL_SET_ID="取得した値"
+```
 
 ### エンドポイント
 
-#### 下書き作成
+#### 下書き作成（X 単発）
 ```bash
-curl -X POST "https://api.typefully.com/v1/drafts/" \
-  -H "X-API-KEY: $TYPEFULLY_API_KEY" \
+curl -X POST "https://api.typefully.com/v2/social-sets/$TYPEFULLY_SOCIAL_SET_ID/drafts" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "content": "投稿テキスト",
-    "threadify": false,
-    "schedule-date": "2025-01-15T09:00:00Z",
-    "auto_retweet_enabled": false,
-    "auto_plug_enabled": false
+    "platforms": {
+      "x": {
+        "enabled": true,
+        "posts": [{"text": "投稿テキスト"}]
+      }
+    },
+    "publish_at": "2025-01-15T09:00:00Z"
   }'
 ```
 
 #### スレッド投稿
-`content` 内で `\n\n\n\n` （改行4つ）でツイートを区切る。
+`posts` 配列に複数エントリを並べる（v1 の `\n\n\n\n` + `threadify` は廃止）。
 ```json
 {
-  "content": "1/🧵 フック\n\n\n\n2/ 本題\n\n\n\n3/ CTA",
-  "threadify": true
+  "platforms": {
+    "x": {
+      "enabled": true,
+      "posts": [
+        {"text": "1/🧵 フック"},
+        {"text": "2/ 本題"},
+        {"text": "3/ CTA"}
+      ]
+    }
+  }
 }
 ```
 
 #### スケジュール投稿
-- `schedule-date`: ISO 8601形式（UTC）
-- `schedule-date: "next-free-slot"` で次の空きスロットに自動配置
+- `publish_at`: ISO 8601 形式（UTC）
+- `publish_at: "next-free-slot"` で次の空きスロットに自動配置
 
-#### 即時投稿（下書きなし）
+#### X と Threads 同時投稿
 ```json
 {
-  "content": "テキスト",
-  "schedule-date": "next-free-slot"
+  "platforms": {
+    "x":       {"enabled": true, "posts": [{"text": "テキスト"}]},
+    "threads": {"enabled": true, "posts": [{"text": "テキスト"}]}
+  },
+  "publish_at": "next-free-slot"
 }
 ```
 

@@ -28,45 +28,70 @@ Publique y programe contenido pre-elaborado en diversas plataformas.
 | Note | Manual / API (investigación necesaria) | 🔧 Planificado |
 | Medium | Medium API | 🔧 Planificado |
 
-## Typefully API
+## Typefully API v2
 
 ### Autenticación
 Variable de entorno: `TYPEFULLY_API_KEY`
+Encabezado: `Authorization: Bearer $TYPEFULLY_API_KEY`
+
+### Obtención de social_set_id (obligatorio)
+
+Todos los endpoints v2 requieren social_set_id. Obténlo primero.
+
+```bash
+curl -X GET "https://api.typefully.com/v2/social-sets" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY"
+# Copia el id de la respuesta y guárdalo en una variable de entorno
+export TYPEFULLY_SOCIAL_SET_ID="el-id-obtenido"
+```
 
 ### Endpoints
 
-#### Crear Borrador
+#### Crear Borrador (publicación X única)
 ```bash
-curl -X POST "https://api.typefully.com/v1/drafts/" \
-  -H "X-API-KEY: $TYPEFULLY_API_KEY" \
+curl -X POST "https://api.typefully.com/v2/social-sets/$TYPEFULLY_SOCIAL_SET_ID/drafts" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "content": "Texto de la publicación",
-    "threadify": false,
-    "schedule-date": "2025-01-15T09:00:00Z",
-    "auto_retweet_enabled": false,
-    "auto_plug_enabled": false
+    "platforms": {
+      "x": {
+        "enabled": true,
+        "posts": [{"text": "Texto de la publicación"}]
+      }
+    },
+    "publish_at": "2025-01-15T09:00:00Z"
   }'
 ```
 
 #### Publicación de Hilos
-Separe los tweets dentro de `content` usando `\n\n\n\n` (4 saltos de línea).
+Coloca múltiples entradas en el array `posts` (el `\n\n\n\n` + `threadify` de v1 están obsoletos).
 ```json
 {
-  "content": "1/🧵 Gancho\n\n\n\n2/ Punto principal\n\n\n\n3/ CTA",
-  "threadify": true
+  "platforms": {
+    "x": {
+      "enabled": true,
+      "posts": [
+        {"text": "1/🧵 Gancho"},
+        {"text": "2/ Punto principal"},
+        {"text": "3/ CTA"}
+      ]
+    }
+  }
 }
 ```
 
 #### Publicación Programada
-- `schedule-date`: formato ISO 8601 (UTC)
-- `schedule-date: "next-free-slot"` para colocar automáticamente en el siguiente espacio disponible
+- `publish_at`: formato ISO 8601 (UTC)
+- `publish_at: "next-free-slot"` para colocar automáticamente en el siguiente espacio disponible
 
-#### Publicación Inmediata (Sin Borrador)
+#### Publicación simultánea en X y Threads
 ```json
 {
-  "content": "Texto",
-  "schedule-date": "next-free-slot"
+  "platforms": {
+    "x":       {"enabled": true, "posts": [{"text": "Texto"}]},
+    "threads": {"enabled": true, "posts": [{"text": "Texto"}]}
+  },
+  "publish_at": "next-free-slot"
 }
 ```
 

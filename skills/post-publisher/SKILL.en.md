@@ -28,45 +28,70 @@ Publish and schedule pre-made content to various platforms.
 | Note | Manual / API (research needed) | 🔧 Planned |
 | Medium | Medium API | 🔧 Planned |
 
-## Typefully API
+## Typefully API v2
 
 ### Authentication
 Environment variable: `TYPEFULLY_API_KEY`
+Header: `Authorization: Bearer $TYPEFULLY_API_KEY`
+
+### Retrieving social_set_id (required)
+
+All v2 endpoints require a social_set_id. Fetch it first.
+
+```bash
+curl -X GET "https://api.typefully.com/v2/social-sets" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY"
+# Copy the id from the response and save to an env var
+export TYPEFULLY_SOCIAL_SET_ID="the-id-you-got"
+```
 
 ### Endpoints
 
-#### Create Draft
+#### Create Draft (single X post)
 ```bash
-curl -X POST "https://api.typefully.com/v1/drafts/" \
-  -H "X-API-KEY: $TYPEFULLY_API_KEY" \
+curl -X POST "https://api.typefully.com/v2/social-sets/$TYPEFULLY_SOCIAL_SET_ID/drafts" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "content": "Post text",
-    "threadify": false,
-    "schedule-date": "2025-01-15T09:00:00Z",
-    "auto_retweet_enabled": false,
-    "auto_plug_enabled": false
+    "platforms": {
+      "x": {
+        "enabled": true,
+        "posts": [{"text": "Post text"}]
+      }
+    },
+    "publish_at": "2025-01-15T09:00:00Z"
   }'
 ```
 
 #### Thread Posting
-Separate tweets within `content` using `\n\n\n\n` (4 newlines).
+Arrange multiple entries in the `posts` array (v1's `\n\n\n\n` + `threadify` are deprecated).
 ```json
 {
-  "content": "1/🧵 Hook\n\n\n\n2/ Main point\n\n\n\n3/ CTA",
-  "threadify": true
+  "platforms": {
+    "x": {
+      "enabled": true,
+      "posts": [
+        {"text": "1/🧵 Hook"},
+        {"text": "2/ Main point"},
+        {"text": "3/ CTA"}
+      ]
+    }
+  }
 }
 ```
 
 #### Scheduled Posting
-- `schedule-date`: ISO 8601 format (UTC)
-- `schedule-date: "next-free-slot"` to auto-place at the next available slot
+- `publish_at`: ISO 8601 format (UTC)
+- `publish_at: "next-free-slot"` to auto-place at the next available slot
 
-#### Immediate Posting (No Draft)
+#### X and Threads Simultaneous Posting
 ```json
 {
-  "content": "Text",
-  "schedule-date": "next-free-slot"
+  "platforms": {
+    "x":       {"enabled": true, "posts": [{"text": "Text"}]},
+    "threads": {"enabled": true, "posts": [{"text": "Text"}]}
+  },
+  "publish_at": "next-free-slot"
 }
 ```
 
