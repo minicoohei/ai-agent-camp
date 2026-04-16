@@ -253,8 +253,8 @@ AIのチャットでAPIキーを扱うと、会話ログに値が残ってしま
      if not key:
          print("エラー: TYPEFULLY_API_KEY が設定されていません。")
          sys.exit(1)
-     resp = requests.get("https://api.typefully.com/v1/drafts/recently-created",
-         headers={"X-API-KEY": key})
+     resp = requests.get("https://api.typefully.com/v2/me",
+         headers={"Authorization": f"Bearer {key}"})
      if resp.status_code == 200:
          print("接続成功！ Typefully APIにアクセスできました。")
      else:

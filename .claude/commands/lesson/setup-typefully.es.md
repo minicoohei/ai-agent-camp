@@ -255,8 +255,8 @@ y nunca aparece en archivos de texto plano ni en registros del chat.
      if not key:
          print("Error: TYPEFULLY_API_KEY no está configurada.")
          sys.exit(1)
-     resp = requests.get("https://api.typefully.com/v1/drafts/recently-created",
-         headers={"X-API-KEY": key})
+     resp = requests.get("https://api.typefully.com/v2/me",
+         headers={"Authorization": f"Bearer {key}"})
      if resp.status_code == 200:
          print("¡Conexión exitosa! Se puede acceder a la API de Typefully.")
      else:
