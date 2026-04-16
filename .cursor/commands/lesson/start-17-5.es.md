@@ -15,22 +15,24 @@ tags: ["marketing", "typefully", "x", "threads", "sns", "api"]
 
 | Elemento | Detalles |
 |----------|----------|
-| Objetivo | Automatizar publicaciones en X (Twitter) y Threads usando la API de Typefully |
+| Objetivo | Automatizar publicaciones en X (Twitter) y Threads usando la API de Typefully v2 |
 | Duración | Aprox. 30 min |
-| Habilidades | API de Typefully (creación de borradores, programación, hilos) |
+| Habilidades | API de Typefully v2 (obtención de social set, creación de borradores, programación, hilos) |
 | Requisitos previos | Cuenta de Typefully creada, clave API obtenida |
 | Página del curso | Consulta [Módulo 17: Marketing](https://ai-agent.camp/es/course/module-17) en paralelo |
 
-> **💡 Info de herramientas**: Esta lección usa la API de Typefully. Funciona con Cursor IDE y Claude Code (CLI/Escritorio). En algunos entornos como Codex CLI, puede aparecer el error `request_user_input is not supported`. En ese caso, consulta la sección "Flujo de trabajo alternativo".
+> **💡 Info de herramientas**: Esta lección usa la API de Typefully v2. Funciona con Cursor IDE y Claude Code (CLI/Escritorio). En algunos entornos como Codex CLI, puede aparecer el error `request_user_input is not supported`. En ese caso, consulta la sección "Flujo de trabajo alternativo".
+
+> **⚠️ Versión de API**: Desde 2025, la API de Typefully migró a v2. El encabezado `x-api-key` y el endpoint `/v1/drafts/` de v1 están obsoletos. Esta lección usa v2 (encabezado `Authorization: Bearer` + endpoint `/v2/social-sets/{id}/drafts`).
 
 **Flujo de la sesión:**
-1. Comprender la descripción general de la API de Typefully y configurar cuenta/clave API
+1. Comprender la descripción general de la API de Typefully y configurar cuenta/clave API/social_set_id
 2. Crear borradores y configurar publicaciones programadas
 3. Probar la publicación simultánea en X (Twitter) y Threads
 4. Automatizar publicaciones secuenciales en formato hilo
 5. Verificar resultados y guardar registros en output/typefully/
 
-Al final de esta sesión, podrás crear borradores, programar publicaciones y automatizar hilos a través de la API de Typefully.
+Al final de esta sesión, podrás crear borradores, programar publicaciones y automatizar hilos a través de la API de Typefully v2.
 
 > **💡 Consejo**: Si la respuesta de la IA se detiene a mitad, escribe "continúa" o "sigue" para reanudar. Este es un comportamiento de Cursor, no un error.
 
@@ -64,14 +66,14 @@ Primero confirmemos que todo está configurado.
 
 ---
 
-## 🚀 Step 1: Descripción general de la API de Typefully y configuración de cuenta
+## 🚀 Step 1: Descripción general de la API de Typefully v2 y configuración de cuenta
 
 AskUserQuestion (AskQuestion) te permite elegir "Continuar / Solo ver ejemplos / Saltar".
 
 **Configuración de AskQuestion:**
 ```json
 {
-  "title": "🚀 Step 1: Descripción general de la API y configuración de cuenta",
+  "title": "🚀 Step 1: Descripción general de la API v2 y configuración de cuenta",
   "questions": [{
     "id": "step_action",
     "prompt": "¿Qué quieres hacer con este paso?",
@@ -87,10 +89,10 @@ AskUserQuestion (AskQuestion) te permite elegir "Continuar / Solo ver ejemplos /
 **Guía después de la selección:**
 Entrada:
 ```
-Por favor, explica la descripción general de la API de Typefully. Cubre lo siguiente:
+Por favor, explica la descripción general de la API de Typefully v2. Cubre lo siguiente:
 
 1. Qué es Typefully — herramienta de gestión y programación de publicaciones para X (Twitter) / Threads
-2. Qué puede hacer la API — creación de borradores, programación, publicación en hilos
+2. Qué puede hacer la API v2 — obtención de social set, creación de borradores, programación, publicación en hilos, publicación por plataforma
 3. Pasos de configuración de cuenta:
    a. Crear una cuenta en https://typefully.com
    b. Conectar tu cuenta de X (Twitter)
@@ -100,9 +102,16 @@ Por favor, explica la descripción general de la API de Typefully. Cubre lo sigu
    b. Generar y copiar la clave API
 5. Configurar la clave API como variable de entorno:
    export TYPEFULLY_API_KEY="your-api-key-here"
+6. Obtener el social_set_id (obligatorio en v2):
+
+curl -X GET "https://api.typefully.com/v2/social-sets" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY"
+
+   Copia el id del social set que quieras usar de la respuesta:
+   export TYPEFULLY_SOCIAL_SET_ID="el-id-obtenido"
 ```
 
-**Resultado esperado**: Comprendes la descripción general de Typefully y has completado la configuración de la clave API.
+**Resultado esperado**: Comprendes la descripción general de Typefully y has completado la configuración de la clave API y el social_set_id.
 
 ---
 
@@ -129,22 +138,29 @@ AskUserQuestion (AskQuestion) te permite elegir "Continuar / Solo ver ejemplos /
 **Guía después de la selección:**
 Entrada:
 ```
-Usa la API de Typefully para crear un borrador y configurar una publicación programada.
+Usa la API de Typefully v2 para crear un borrador y configurar una publicación programada.
 
 Pasos:
 1. mkdir -p output/typefully
-2. Crear un borrador con el siguiente comando curl:
+2. Crear un borrador con el siguiente comando curl (endpoint v2):
 
-curl -X POST "https://api.typefully.com/v1/drafts/" \
-  -H "X-API-KEY: $TYPEFULLY_API_KEY" \
+curl -X POST "https://api.typefully.com/v2/social-sets/$TYPEFULLY_SOCIAL_SET_ID/drafts" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "content": "¡Los agentes de IA están cambiando drásticamente la eficiencia del trabajo!\n\nTécnicas prácticas que cualquiera puede usar, sin necesidad de ser ingeniero.\n\n#AIAgent #Productividad",
-    "schedule-date": "next-free-slot"
+    "platforms": {
+      "x": {
+        "enabled": true,
+        "posts": [
+          {"text": "¡Los agentes de IA están cambiando drásticamente la eficiencia del trabajo!\n\nTécnicas prácticas que cualquiera puede usar, sin necesidad de ser ingeniero.\n\n#AIAgent #Productividad"}
+        ]
+      }
+    },
+    "publish_at": "next-free-slot"
   }'
 
 3. Registrar el ID del borrador de la respuesta
-4. Verificar las opciones de programación (next-free-slot / fecha específica)
+4. Verificar las opciones de programación (publish_at: "next-free-slot" / fecha y hora en formato ISO8601)
 5. Guardar el resultado en output/typefully/draft-result.json
 ```
 
@@ -175,23 +191,35 @@ AskUserQuestion (AskQuestion) te permite elegir "Continuar / Solo ver ejemplos /
 **Guía después de la selección:**
 Entrada:
 ```
-Crea un borrador con la API de Typefully que publique simultáneamente en X (Twitter) y Threads.
+Crea un borrador con la API de Typefully v2 que publique simultáneamente en X (Twitter) y Threads.
 
 Pasos:
-1. Especificar los destinos de publicación con el parámetro share:
+1. Habilita ambas plataformas platforms.x y platforms.threads para especificar los destinos:
 
-curl -X POST "https://api.typefully.com/v1/drafts/" \
-  -H "X-API-KEY: $TYPEFULLY_API_KEY" \
+curl -X POST "https://api.typefully.com/v2/social-sets/$TYPEFULLY_SOCIAL_SET_ID/drafts" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "content": "¡Prueba de publicación automática desde la API de Typefully!\n\nDistribuyendo simultáneamente a X y Threads.\n\n#AutoPost #TypefullyAPI",
-    "schedule-date": "next-free-slot",
-    "share": true
+    "platforms": {
+      "x": {
+        "enabled": true,
+        "posts": [
+          {"text": "¡Prueba de publicación automática desde la API de Typefully v2!\n\nDistribuyendo simultáneamente a X y Threads.\n\n#AutoPost #TypefullyAPI"}
+        ]
+      },
+      "threads": {
+        "enabled": true,
+        "posts": [
+          {"text": "¡Prueba de publicación automática desde la API de Typefully v2!\n\nDistribuyendo simultáneamente a X y Threads.\n\n#AutoPost #TypefullyAPI"}
+        ]
+      }
+    },
+    "publish_at": "next-free-slot"
   }'
 
 2. Verificar los destinos de publicación (X / Threads) en el panel de Typefully
 3. Guardar resultados en output/typefully/multi-post-result.json
-4. Verificar los límites de caracteres y las diferencias de formato entre plataformas
+4. Verificar los límites de caracteres y diferencias de formato entre plataformas (X: 280 caracteres, Threads: 500 caracteres)
 ```
 
 **Resultado esperado**: Se crea un borrador para publicación simultánea en X y Threads.
@@ -221,21 +249,29 @@ AskUserQuestion (AskQuestion) te permite elegir "Continuar / Solo ver ejemplos /
 **Guía después de la selección:**
 Entrada:
 ```
-Crea una publicación secuencial en formato hilo usando la API de Typefully.
+Crea una publicación secuencial en formato hilo usando la API de Typefully v2.
 
 Pasos:
-1. Usa cuatro saltos de línea (\n\n\n\n) como separador de hilo en el campo content:
+1. En v2, los hilos se forman colocando múltiples entradas en el array posts (el enfoque de threadify + separador de cuatro saltos de línea de v1 está obsoleto):
 
-curl -X POST "https://api.typefully.com/v1/drafts/" \
-  -H "X-API-KEY: $TYPEFULLY_API_KEY" \
+curl -X POST "https://api.typefully.com/v2/social-sets/$TYPEFULLY_SOCIAL_SET_ID/drafts" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "content": "[Guía de Agentes IA 1/3]\n\nUn agente de IA es una IA que ejecuta tareas de forma autónoma basándose en instrucciones.\n\n\n\n[2/3]\n\nCasos de uso prácticos:\n- Respuestas automáticas de correo\n- Gestión de agenda\n- Generación de informes de análisis de datos\n\n\n\n[3/3]\n\n¡Empezar es fácil!\nPrueba automatizando una tarea primero.\n\nMás información en el enlace del bio 👇",
-    "schedule-date": "next-free-slot",
-    "threadify": true
+    "platforms": {
+      "x": {
+        "enabled": true,
+        "posts": [
+          {"text": "[Guía de Agentes IA 1/3]\n\nUn agente de IA es una IA que ejecuta tareas de forma autónoma basándose en instrucciones."},
+          {"text": "[2/3]\n\nCasos de uso prácticos:\n- Respuestas automáticas de correo\n- Gestión de agenda\n- Generación de informes de análisis de datos"},
+          {"text": "[3/3]\n\n¡Empezar es fácil!\nPrueba automatizando una tarea primero.\n\nMás información en el enlace del bio 👇"}
+        ]
+      }
+    },
+    "publish_at": "next-free-slot"
   }'
 
-2. Verificar que el hilo se divide correctamente en tweets individuales
+2. Verificar que el hilo se divide en orden basado en el array posts
 3. Guardar resultados en output/typefully/thread-result.json
 ```
 
@@ -273,9 +309,9 @@ Pasos:
 2. Verificar el estado de cada borrador (Borrador / Programado / Publicado)
 3. Crear un resumen en output/typefully/summary.md que cubra:
    - Número de borradores creados
-   - Detalles de programación
-   - Destinos de publicación (X / Threads)
-   - Estructura de publicaciones en hilo
+   - Detalles de programación (publish_at)
+   - Destinos de publicación (platforms.x / platforms.threads)
+   - Estructura de publicaciones en hilo (número de elementos en el array posts)
 4. Sugerir 3 puntos de mejora para futuras automatizaciones
 ```
 
@@ -296,9 +332,10 @@ AskUserQuestion (AskQuestion) te permite seleccionar el problema para recibir or
     "prompt": "Selecciona el problema que aplica",
     "options": [
       {"id": "trouble_1", "label": "Error de autenticación de clave API"},
-      {"id": "trouble_2", "label": "Error al crear borrador"},
-      {"id": "trouble_3", "label": "El hilo no se divide correctamente"},
-      {"id": "trouble_4", "label": "Las publicaciones no aparecen en Threads"}
+      {"id": "trouble_2", "label": "No conozco el social_set_id"},
+      {"id": "trouble_3", "label": "Error al crear borrador"},
+      {"id": "trouble_4", "label": "El hilo no se divide correctamente"},
+      {"id": "trouble_5", "label": "Las publicaciones no aparecen en Threads"}
     ]
   }]
 }
@@ -306,49 +343,66 @@ AskUserQuestion (AskQuestion) te permite seleccionar el problema para recibir or
 
 
 ### Problema 1: "Error de autenticación de clave API"
-**Causa**: Clave API inválida o variable de entorno no configurada correctamente
+**Causa**: Clave API inválida, o v2 requiere el encabezado `Authorization: Bearer` (el `x-api-key` de v1 está obsoleto)
 **Prompt de solución**:
 ```
 Verifica que la variable de entorno TYPEFULLY_API_KEY esté configurada correctamente.
 Ejecuta [[ -n "$TYPEFULLY_API_KEY" ]] && echo "configurado" || echo "no configurado" para verificar la existencia,
 y verifica que la clave sea válida en Typefully Settings → API & Integrations.
+Para v2, usa siempre el formato "Authorization: Bearer $TYPEFULLY_API_KEY".
 ```
 
-### Problema 2: "Error al crear borrador"
-**Causa**: Formato JSON inválido en el cuerpo de la solicitud o campos obligatorios faltantes
+### Problema 2: "No conozco el social_set_id"
+**Causa**: Los endpoints v2 requieren social_set_id en la ruta de la URL
+**Prompt de solución**:
+```
+Obtén la lista de social sets disponibles con:
+
+curl -X GET "https://api.typefully.com/v2/social-sets" \
+  -H "Authorization: Bearer $TYPEFULLY_API_KEY"
+
+Copia el id del social set que quieras de la respuesta y configura
+export TYPEFULLY_SOCIAL_SET_ID="el-id-obtenido" como variable de entorno.
+```
+
+### Problema 3: "Error al crear borrador"
+**Causa**: Formato JSON inválido en el cuerpo de la solicitud, o campos obligatorios v2 faltantes (platforms)
 **Prompt de solución**:
 ```
 Verifica el cuerpo JSON en tu comando curl.
-El campo content es obligatorio.
+En v2, platforms.{x|threads}.{enabled, posts} es obligatorio.
+El campo posts debe ser un array, y cada elemento necesita un campo text.
 Verifica que el encabezado Content-Type: application/json esté incluido.
 Usa jq para formatear la respuesta y facilitar la depuración.
 ```
 
-### Problema 3: "El hilo no se divide correctamente"
-**Causa**: Separador de hilo (cuatro saltos de línea) incorrecto
+### Problema 4: "El hilo no se divide correctamente"
+**Causa**: En v2 los hilos se dividen a través del array posts (el separador de cuatro saltos de línea / threadify de v1 están obsoletos)
 **Prompt de solución**:
 ```
-Los separadores de hilo usan \n\n\n\n (cuatro saltos de línea).
-Verifica que los saltos de línea sean correctos en el campo content.
-También verifica que el parámetro threadify esté configurado como true.
+En v2, los hilos se determinan por el número de elementos en el array posts.
+Organízalos como {"posts": [{"text": "primero"}, {"text": "segundo"}]}.
+El parámetro threadify y el separador de cuatro saltos de línea (\n\n\n\n) de v1 no funcionan en v2.
 ```
 
-### Problema 4: "Las publicaciones no aparecen en Threads"
-**Causa**: Cuenta de Threads no conectada a Typefully
+### Problema 5: "Las publicaciones no aparecen en Threads"
+**Causa**: Cuenta de Threads no conectada a Typefully, o platforms.threads.enabled es false
 **Prompt de solución**:
 ```
 Verifica si tu cuenta de Threads está conectada en
 Typefully Settings → Accounts.
+Verifica que platforms.threads.enabled: true esté configurado en el cuerpo de la solicitud
+y que platforms.threads.posts contenga al menos una publicación.
 También consulta la documentación más reciente de Typefully sobre el soporte de la API de Threads.
 ```
 
 ---
 
 ## ✅ Punto de control
-- [ ] Comprendida la descripción general de la API de Typefully y configurada la clave API
+- [ ] Comprendida la descripción general de la API de Typefully v2 y configurados la clave API y el social_set_id
 - [ ] Creado un borrador y configurada la publicación programada
 - [ ] Probada la publicación simultánea en X (Twitter) y Threads
-- [ ] Automatizada la publicación secuencial en formato hilo
+- [ ] Automatizada la publicación secuencial en formato hilo (array posts)
 - [ ] Resultados de publicación guardados en output/typefully/
 
 
