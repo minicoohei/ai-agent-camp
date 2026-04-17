@@ -75,6 +75,34 @@ AI エージェント（Cursor / Claude Code / Codex）は内部的にターミ�
 
 ---
 
+## ファイルを開くコマンド
+
+AI が「このファイルを開いてください」と案内することがあります。ファイルやフォルダ、URL を既定アプリで開くコマンドは OS によって違います。
+
+| OS | コマンド例 | 用途 |
+|----|-----------|------|
+| macOS | `open report.pdf` / `open https://example.com` | ファイル・URL 共通 |
+| Windows (WSL2) | `explorer.exe report.pdf` | ファイルを Windows の既定アプリで開く |
+| Windows (WSL2) | `wslview https://example.com` | URL を Windows 側ブラウザで開く（`sudo apt install wslu` で導入） |
+
+> AI の案内が macOS 前提の `open ...` になっている場合は、WSL2 では `explorer.exe`（ファイル）や `wslview`（URL）に読み替えて実行してください。
+
+---
+
+## Windows 側のファイルをプロジェクトに取り込む（WSL2）
+
+Windows 側のブラウザでダウンロードしたファイル（Google OAuth の JSON など）は、Windows 側の `C:\Users\<Windowsユーザー名>\Downloads\` に保存されます。WSL2 からは `/mnt/c/Users/<Windowsユーザー名>/Downloads/` として見えます。
+
+```bash
+# 例: ダウンロードした JSON を credentials/ に取り込む
+cp /mnt/c/Users/<Windowsユーザー名>/Downloads/client_secret_xxx.json \
+   ~/ai-agent-camp/credentials/credentials.json
+```
+
+> プロジェクト本体は WSL 側（`/home/<user>/...`）に置き、Windows 側（`/mnt/c/...`）には置かないでください。権限や改行コードの問題が出ます。Windows 側のファイルは「取り込む」だけにします。
+
+---
+
 ## sudo とは
 
 `sudo` は「管理者権限で実行する」という意味のコマンドです（主に macOS / Linux で使います）。

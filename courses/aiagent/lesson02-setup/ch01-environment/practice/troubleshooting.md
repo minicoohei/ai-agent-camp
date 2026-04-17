@@ -103,8 +103,11 @@ which codex
 rm -rf ~/Library/Application\ Support/Cursor/Cache
 rm -rf ~/Library/Application\ Support/Cursor/CachedData
 
-# WSL: Windows側の %APPDATA%\Cursor\Cache を削除
+# Windows (Cursor は Windows ネイティブ側で動作): %APPDATA%\Cursor\Cache を削除
+#   エクスプローラーで %APPDATA%\Cursor を開き、Cache / CachedData フォルダを削除する
 ```
+
+> WSL2 側の Cursor Server（`~/.cursor-server/`）が原因と思われる場合は、WSL ターミナル内で `rm -rf ~/.cursor-server/data/CachedData` を試してください。
 
 ---
 

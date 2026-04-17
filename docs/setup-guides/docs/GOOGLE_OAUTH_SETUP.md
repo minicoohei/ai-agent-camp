@@ -144,24 +144,31 @@ print("認証完了!")
 
 ### credentials.json の配置
 
+ダウンロードした JSON をプロジェクトの `credentials/` ディレクトリに置き、`credentials.json` という名前にします。
+
 ```bash
-# プロジェクトルートに配置
-cp ~/Downloads/client_secret_*.json credentials.json
+# macOS
+cp ~/Downloads/client_secret_*.json credentials/credentials.json
+
+# Windows (WSL2 + Ubuntu) — Windows 側のダウンロードから取り込む
+cp /mnt/c/Users/<Windowsユーザー名>/Downloads/client_secret_*.json credentials/credentials.json
 ```
+
+> WSL2 を使う場合、ブラウザが Windows 側にダウンロードするため `~/Downloads` ではなく `/mnt/c/Users/<Windowsユーザー名>/Downloads/` を参照します。
 
 ### .env ファイル（オプション）
 
 ```bash
 # .env
-GOOGLE_CREDENTIALS_PATH=./credentials.json
+GOOGLE_CREDENTIALS_PATH=./credentials/credentials.json
 GOOGLE_TOKEN_PATH=./token.pickle
 ```
 
 ### GitHub Secrets（CI/CD用）
 
-1. `credentials.json` をBase64エンコード
+1. `credentials/credentials.json` をBase64エンコード
    ```bash
-   base64 -i credentials.json | tr -d '\n'
+   base64 -i credentials/credentials.json | tr -d '\n'
    ```
 2. GitHubのSecrets に `GOOGLE_CREDENTIALS_BASE64` として保存
 

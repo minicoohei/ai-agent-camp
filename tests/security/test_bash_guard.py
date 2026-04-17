@@ -152,6 +152,14 @@ class TestGitGuard:
         code, _, _ = run_guard("git push origin main")
         assert code == 0
 
+    def test_git_push_force_with_lease_is_allowed(self):
+        code, _, _ = run_guard("git push --force-with-lease origin feat/x")
+        assert code == 0
+
+    def test_git_push_force_if_includes_is_allowed(self):
+        code, _, _ = run_guard("git push --force-if-includes origin feat/x")
+        assert code == 0
+
     def test_git_clean_fdx_is_blocked(self):
         code, _, stderr = run_guard("git clean -fdx")
         assert code == 2

@@ -84,6 +84,7 @@ Democratize AI agents from "tools for specialists" to "tools everyone can use," 
 - Python 3.9+
 - Internet connection
 - Cursor, Claude Code, or Codex available
+- **Windows users: WSL2 + Ubuntu is required.** Native Windows (PowerShell / cmd) is not supported. See [docs/terminal-guide.md](docs/terminal-guide.md) for WSL2 setup.
 
 > **Which tool should I choose?** Run `/start-0-8` (Tool Selection Guide) to compare Cursor / Claude Code / Codex and find the best fit.
 
@@ -190,7 +191,8 @@ uv sync
 
 ```bash
 # Open the course in a browser
-open https://ai-agent.camp
+# macOS: open https://ai-agent.camp
+# WSL2:  wslview https://ai-agent.camp   (or just open the URL in your Windows browser)
 
 # Open the workspace in Cursor
 cursor .

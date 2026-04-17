@@ -47,9 +47,9 @@ BLOCK_PATTERNS: list[tuple[re.Pattern[str], str]] = [
         re.compile(r'\bsudo\b'),
         "セキュリティ: sudo は使用禁止です。",
     ),
-    # git push --force / -f
+    # git push --force / -f （--force-with-lease / --force-if-includes は許可）
     (
-        re.compile(r'\bgit\s+push\s+.*(?:--force\b|-f\b)'),
+        re.compile(r'\bgit\s+push\s+.*(?:--force(?![-\w])|(?<!\w)-f(?![-\w]))'),
         "セキュリティ: git push --force は禁止です。--force-with-lease を検討してください。",
     ),
     # git clean with -x（.env も削除される）

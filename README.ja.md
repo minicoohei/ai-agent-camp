@@ -84,6 +84,7 @@ AIエージェントを「専門家向けのツール」から「すべての職
 - Python 3.9 以上
 - インターネット接続
 - Cursor、Claude Code、または Codex が利用可能
+- **Windows ユーザーは WSL2 + Ubuntu が必須です。** Windows ネイティブ（PowerShell / cmd）はサポート対象外です。WSL2 のセットアップは [docs/terminal-guide.md](docs/terminal-guide.md) を参照してください。
 
 > **どのツールを選べばいい？** `/start-0-8`（ツール選択ガイド）で Cursor / Claude Code / Codex の比較と選び方を確認できます。
 
@@ -190,7 +191,8 @@ uv sync
 
 ```bash
 # ブラウザで教材を開く
-open https://ai-agent.camp/ja/course/module-0
+# macOS: open https://ai-agent.camp/ja/course/module-0
+# WSL2:  wslview https://ai-agent.camp/ja/course/module-0   (または Windows 側ブラウザで直接開く)
 
 # Cursor でワークスペースを開く
 cursor .

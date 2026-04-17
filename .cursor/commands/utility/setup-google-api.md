@@ -127,7 +127,9 @@ browser_navigate: https://console.cloud.google.com/auth/clients?project={PROJECT
 5. 表示されたダイアログで「JSONをダウンロード」をクリック
 6. ダウンロードしたファイルを安全な場所に保存
 
-JSONファイルのパスを教えてください（例: ~/Downloads/client_secret_xxx.json）
+JSONファイルのパスを教えてください
+（macOS 例: ~/Downloads/client_secret_xxx.json）
+（Windows WSL2 例: /mnt/c/Users/<Windowsユーザー名>/Downloads/client_secret_xxx.json）
 ```
 
 ### Phase 3: OAuth認証フロー実行
