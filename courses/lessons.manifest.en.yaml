@@ -477,6 +477,7 @@
   lesson: 7
 
 # === Module 15: Video ===
+# Order: free/local → low-cost → paid APIs (reordered by reproducibility)
 - lessonId: start-15-1
   title: "Extract and analyze keyframes from video"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
@@ -484,46 +485,52 @@
   lesson: 1
 
 - lessonId: start-15-2
-  title: "Understand the video AI engine landscape and learn fal.ai"
+  title: "Remotion animation basics — slide-shoot text animation"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 2
 
 - lessonId: start-15-3
-  title: "Create a product intro video (green-screen avatar + screenshot compositing)"
+  title: "Extract video highlights with YouTube Clipper + captions & silence trimming"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 3
 
 - lessonId: start-15-4
-  title: "Generate animated video from storyboards (Gemini images + Kling/Veo I2V + FFmpeg concat)"
+  title: "Auto-generate marketing assets with Clipper × Remotion"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 4
 
 - lessonId: start-15-5
-  title: "Create a slide narration video (HTML parsing + TTS + presenter compositing)"
+  title: "Understand the video AI engine landscape and learn fal.ai"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 5
 
 - lessonId: start-15-6
-  title: "Create a music video with AI (Suno + beat sync + scene video generation)"
+  title: "Generate animated video from storyboards (Gemini images + Kling/Veo I2V + FFmpeg concat)"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 6
 
 - lessonId: start-15-7
-  title: "Extract video highlights with YouTube Clipper"
+  title: "Create a music video with AI (Suno + beat sync + scene video generation)"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 7
 
 - lessonId: start-15-8
-  title: "Auto-generate marketing assets with Clipper and Remotion"
+  title: "Create a slide narration video (HTML parsing + TTS + presenter compositing)"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 8
+
+- lessonId: start-15-9
+  title: "Create a product intro video (green-screen avatar + screenshot compositing)"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 9
 
 # === Module 16: Email ===
 - lessonId: start-16-1
@@ -772,6 +779,50 @@
 
 - lessonId: setup-security
   title: "Security setup"
+  type: utility
+
+- lessonId: setup-bigquery
+  title: "BigQuery / GCP authentication setup"
+  type: utility
+
+- lessonId: setup-clasp
+  title: "Google Apps Script CLI (clasp) setup"
+  type: utility
+
+- lessonId: setup-elevenlabs
+  title: "ElevenLabs API setup"
+  type: utility
+
+- lessonId: setup-fal
+  title: "fal.ai API setup"
+  type: utility
+
+- lessonId: setup-gogcli
+  title: "gogcli (Google Workspace CLI) setup"
+  type: utility
+
+- lessonId: setup-notion
+  title: "Notion CLI (ncli) + MCP setup"
+  type: utility
+
+- lessonId: setup-pencil
+  title: "Pencil MCP setup"
+  type: utility
+
+- lessonId: setup-remotion
+  title: "Remotion setup"
+  type: utility
+
+- lessonId: setup-typefully
+  title: "Typefully API setup"
+  type: utility
+
+- lessonId: setup-vercel
+  title: "Vercel CLI setup"
+  type: utility
+
+- lessonId: setup-x-api
+  title: "X (Twitter) API setup"
   type: utility
 
 - lessonId: check-setup

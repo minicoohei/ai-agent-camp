@@ -781,6 +781,50 @@
   title: "セキュリティセットアップ"
   type: utility
 
+- lessonId: setup-bigquery
+  title: "BigQuery / GCP 認証セットアップ"
+  type: utility
+
+- lessonId: setup-clasp
+  title: "Google Apps Script CLI (clasp) セットアップ"
+  type: utility
+
+- lessonId: setup-elevenlabs
+  title: "ElevenLabs API セットアップ"
+  type: utility
+
+- lessonId: setup-fal
+  title: "fal.ai API セットアップ"
+  type: utility
+
+- lessonId: setup-gogcli
+  title: "gogcli (Google Workspace CLI) セットアップ"
+  type: utility
+
+- lessonId: setup-notion
+  title: "Notion CLI (ncli) + MCP セットアップ"
+  type: utility
+
+- lessonId: setup-pencil
+  title: "Pencil MCP セットアップ"
+  type: utility
+
+- lessonId: setup-remotion
+  title: "Remotion セットアップ"
+  type: utility
+
+- lessonId: setup-typefully
+  title: "Typefully API セットアップ"
+  type: utility
+
+- lessonId: setup-vercel
+  title: "Vercel CLI セットアップ"
+  type: utility
+
+- lessonId: setup-x-api
+  title: "X (Twitter) API セットアップ"
+  type: utility
+
 - lessonId: check-setup
   title: "セットアップ確認"
   type: utility

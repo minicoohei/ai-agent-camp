@@ -477,6 +477,7 @@
   lesson: 7
 
 # === Módulo 15: Video ===
+# Orden: gratis/local → bajo costo → APIs de pago (reordenado por reproducibilidad)
 - lessonId: start-15-1
   title: "Extraer fotogramas clave de video y analizar"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
@@ -484,46 +485,52 @@
   lesson: 1
 
 - lessonId: start-15-2
-  title: "Comprender la visión general del motor de video con IA y aprender a usar fal.ai"
+  title: "Fundamentos de animación con Remotion — animación de texto slide-shoot"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 2
 
 - lessonId: start-15-3
-  title: "Crear video de presentación de producto (avatar en pantalla verde + composición de capturas)"
+  title: "Extraer highlights de video con YouTube Clipper + subtítulos y corte de silencios"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 3
 
 - lessonId: start-15-4
-  title: "Generar video animado a partir de storyboard (imágenes Gemini + Kling/Veo I2V + unión FFmpeg)"
+  title: "Generar materiales de marketing automáticamente con Clipper × Remotion"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 4
 
 - lessonId: start-15-5
-  title: "Crear video explicativo de diapositivas (análisis HTML + TTS + composición de presentador)"
+  title: "Comprender la visión general del motor de video con IA y aprender a usar fal.ai"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 5
 
 - lessonId: start-15-6
-  title: "Crear video musical con IA (Suno + sincronización de ritmo + escenas en video)"
+  title: "Generar video animado a partir de storyboard (imágenes Gemini + Kling/Veo I2V + unión FFmpeg)"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 6
 
 - lessonId: start-15-7
-  title: "Extraer highlights de video con YouTube Clipper"
+  title: "Crear video musical con IA (Suno + sincronización de ritmo + escenas en video)"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 7
 
 - lessonId: start-15-8
-  title: "Generar materiales de marketing automáticamente con Clipper x Remotion"
+  title: "Crear video explicativo de diapositivas (análisis HTML + TTS + composición de presentador)"
   chapterRef: "courses/aiagent/lesson03-core/module15-video"
   module: 15
   lesson: 8
+
+- lessonId: start-15-9
+  title: "Crear video de presentación de producto (avatar en pantalla verde + composición de capturas)"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 9
 
 # === Módulo 16: Email ===
 - lessonId: start-16-1
@@ -772,6 +779,50 @@
 
 - lessonId: setup-security
   title: "Configuración de seguridad"
+  type: utility
+
+- lessonId: setup-bigquery
+  title: "Configuración de autenticación BigQuery / GCP"
+  type: utility
+
+- lessonId: setup-clasp
+  title: "Configuración de Google Apps Script CLI (clasp)"
+  type: utility
+
+- lessonId: setup-elevenlabs
+  title: "Configuración de ElevenLabs API"
+  type: utility
+
+- lessonId: setup-fal
+  title: "Configuración de fal.ai API"
+  type: utility
+
+- lessonId: setup-gogcli
+  title: "Configuración de gogcli (Google Workspace CLI)"
+  type: utility
+
+- lessonId: setup-notion
+  title: "Configuración de Notion CLI (ncli) + MCP"
+  type: utility
+
+- lessonId: setup-pencil
+  title: "Configuración de Pencil MCP"
+  type: utility
+
+- lessonId: setup-remotion
+  title: "Configuración de Remotion"
+  type: utility
+
+- lessonId: setup-typefully
+  title: "Configuración de Typefully API"
+  type: utility
+
+- lessonId: setup-vercel
+  title: "Configuración de Vercel CLI"
+  type: utility
+
+- lessonId: setup-x-api
+  title: "Configuración de X (Twitter) API"
   type: utility
 
 - lessonId: check-setup
