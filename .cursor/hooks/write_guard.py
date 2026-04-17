@@ -42,10 +42,18 @@ PI_PATTERNS: list[re.Pattern[str]] = [
     re.compile(r'you\s+are\s+now\s+(?:a\s+)?(?:different|new|unrestricted)', re.IGNORECASE),
     re.compile(r'act\s+as\s+(?:if\s+)?(?:you\s+are\s+)?(?:an?\s+)?unrestricted', re.IGNORECASE),
     re.compile(r'system\s*prompt\s*:', re.IGNORECASE),
+    re.compile(r'<\s*\|?\s*im_(?:start|end)\s*\|?\s*>', re.IGNORECASE),
+    re.compile(r'<\s*\|?\s*(?:system|assistant|user)\s*\|?\s*>', re.IGNORECASE),
+    re.compile(r'<\s*EXTREMELY[-_\s]*IMPORTANT\s*>', re.IGNORECASE),
+    re.compile(r'</?\s*external_untrusted_content\s*/?\s*>', re.IGNORECASE),
     re.compile(r'新しい指示.*従[えい]'),
     re.compile(r'前の指示.*無視'),
+    re.compile(r'(?:これまで|以前)の(?:指示|ルール).*(?:無視|忘れ)'),
+    re.compile(r'指示.*上書き'),
+    re.compile(r'新しい役割'),
     re.compile(r'ルール.*無視'),
     re.compile(r'制限.*解除'),
+    re.compile(r'制限なく'),
 ]
 
 PI_DANGEROUS_PATTERNS: list[re.Pattern[str]] = [
@@ -71,8 +79,24 @@ def _check_pi(content: str) -> tuple[bool, bool]:
     return has_pi, has_dangerous
 
 
+def _emit_skip_warning(file_path: str) -> None:
+    print(
+        "[GUARDRAILS_SKIP] cursor write_guard をスキップしました "
+        f"(file={file_path or 'unknown'})。"
+        " 意図したテスト操作以外で本変数が立っている場合は環境を疑ってください。",
+        file=sys.stderr,
+    )
+
+
 def main() -> int:
     if os.environ.get("CLAUDE_GUARDRAILS_SKIP") == "1":
+        try:
+            raw = sys.stdin.read()
+            data = json.loads(raw) if raw.strip() else {}
+            fp = data.get("file_path", "")
+        except Exception:
+            fp = ""
+        _emit_skip_warning(fp)
         return 0
 
     try:
@@ -122,11 +146,18 @@ def main() -> int:
             json.dump(output, sys.stdout)
             return 0
         if has_pi:
-            print(
-                "[SECURITY WARNING] Prompt Injection パターンを検知しました。"
-                " 内容を確認してください。",
-                file=sys.stderr,
+            msg = (
+                "セキュリティ: Prompt Injection パターンを検知しました。"
+                " 編集をブロックします。"
+                " 正当な内容であれば CLAUDE_GUARDRAILS_SKIP=1 を付けて再実行してください。"
             )
+            output = {
+                "permission": "deny",
+                "userMessage": msg,
+                "agentMessage": msg,
+            }
+            json.dump(output, sys.stdout)
+            return 0
 
     return 0
 

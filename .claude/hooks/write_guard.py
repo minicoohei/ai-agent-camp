@@ -42,10 +42,20 @@ PI_PATTERNS: list[re.Pattern[str]] = [
     re.compile(r'you\s+are\s+now\s+(?:a\s+)?(?:different|new|unrestricted)', re.IGNORECASE),
     re.compile(r'act\s+as\s+(?:if\s+)?(?:you\s+are\s+)?(?:an?\s+)?unrestricted', re.IGNORECASE),
     re.compile(r'system\s*prompt\s*:', re.IGNORECASE),
+    # LLM 系メタタグ（チャットテンプレートや境界偽装）
+    re.compile(r'<\s*\|?\s*im_(?:start|end)\s*\|?\s*>', re.IGNORECASE),
+    re.compile(r'<\s*\|?\s*(?:system|assistant|user)\s*\|?\s*>', re.IGNORECASE),
+    re.compile(r'<\s*EXTREMELY[-_\s]*IMPORTANT\s*>', re.IGNORECASE),
+    re.compile(r'</?\s*external_untrusted_content\s*/?\s*>', re.IGNORECASE),
+    # 日本語パターン（拡充）
     re.compile(r'新しい指示.*従[えい]'),
     re.compile(r'前の指示.*無視'),
+    re.compile(r'(?:これまで|以前)の(?:指示|ルール).*(?:無視|忘れ)'),
+    re.compile(r'指示.*上書き'),
+    re.compile(r'新しい役割'),
     re.compile(r'ルール.*無視'),
     re.compile(r'制限.*解除'),
+    re.compile(r'制限なく'),
 ]
 
 # PI と組み合わせた場合に危険な操作パターン
@@ -82,9 +92,27 @@ def _check_pi(content: str) -> tuple[bool, bool]:
     return has_pi, has_dangerous
 
 
+def _emit_skip_warning(file_path: str) -> None:
+    """CLAUDE_GUARDRAILS_SKIP=1 でスキップした際の警告出力（H1）。"""
+    print(
+        "[GUARDRAILS_SKIP] write_guard をスキップしました "
+        f"(file={file_path or 'unknown'})。"
+        " 意図したテスト操作以外で本変数が立っている場合は環境を疑ってください。",
+        file=sys.stderr,
+    )
+
+
 def main() -> int:
     """メインエントリポイント。"""
     if os.environ.get("CLAUDE_GUARDRAILS_SKIP") == "1":
+        # H1: サイレントスキップを廃止し stderr に警告
+        try:
+            raw = sys.stdin.read()
+            data = json.loads(raw) if raw.strip() else {}
+            fp = data.get("tool_input", {}).get("file_path", "")
+        except Exception:
+            fp = ""
+        _emit_skip_warning(fp)
         return 0
 
     try:
@@ -121,13 +149,16 @@ def main() -> int:
             )
             return 2
         if has_pi:
+            # H2: PI 単独でも書き込みをブロックし、人間の確認を要求する。
+            # 正当な書き込みであれば CLAUDE_GUARDRAILS_SKIP=1 で再実行可能。
             print(
-                "[SECURITY WARNING] Prompt Injection パターンを検知しました。"
-                " 内容を確認してください。",
+                "セキュリティ: Prompt Injection パターンを検知しました。"
+                " 書き込みをブロックします。"
+                " 正当な内容（PI ペイロードのテストデータ等）であれば"
+                " CLAUDE_GUARDRAILS_SKIP=1 を付けて再実行してください。",
                 file=sys.stderr,
             )
-            # 警告のみ、ブロックしない
-            return 0
+            return 2
 
     return 0
 

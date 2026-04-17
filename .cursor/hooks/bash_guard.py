@@ -57,10 +57,38 @@ BLOCK_PATTERNS: list[tuple[re.Pattern[str], str]] = [
     ),
     (
         re.compile(
-            r'\b(?:curl|wget)\b.*\$\{?[A-Z_]*(?:API_KEY|TOKEN|SECRET|PASSWORD)[A-Z_]*\}?',
+            r'\b(?:curl|wget)\b.*\$\{?[A-Z_]*(?:API_KEY|TOKEN|SECRET|PASSWORD|CREDENTIAL)[A-Z_]*\}?',
             re.IGNORECASE,
         ),
         "セキュリティ: API キー等の環境変数を含む curl/wget は禁止です。",
+    ),
+    # H3: 認証ヘッダー（標準 + 一般的な独自ヘッダー）
+    (
+        re.compile(
+            r'\b(?:curl|wget)\b.*(?:-H[\s=]+|--header[\s=]+)["\']?'
+            r'(?:Authorization|X-Api-Key|X-Auth-Token|Api-Key|Auth-Token|'
+            r'X-[A-Za-z0-9_-]*-(?:Key|Token|Secret|Auth))\s*:\s*',
+            re.IGNORECASE,
+        ),
+        "セキュリティ: 認証ヘッダーを含む curl/wget は禁止です。",
+    ),
+    # H3: 機密ファイル添付アップロード
+    (
+        re.compile(
+            r'\b(?:curl|wget)\b.*(?:-F|--form)[\s=]+["\']?[A-Za-z0-9_-]+=@'
+            r'(?:~|\$HOME|\$\{HOME\})?/?(?:\.ssh|\.aws|\.gnupg|\.config/gh|\.npmrc|\.pypirc)',
+            re.IGNORECASE,
+        ),
+        "セキュリティ: 機密ファイル (.ssh / .aws / .gnupg 等) を curl で送信する操作は禁止です。",
+    ),
+    # H3: nc / /dev/tcp/ 経由の exfil
+    (
+        re.compile(r'\|\s*nc\s+(?:-[A-Za-z]+\s+)*[\w.-]+\s+\d+'),
+        "セキュリティ: netcat (`| nc host port`) によるデータ送信は禁止です。",
+    ),
+    (
+        re.compile(r'>\s*/dev/(?:tcp|udp)/'),
+        "セキュリティ: /dev/tcp/ 経由のネットワーク送信は禁止です。",
     ),
     (
         re.compile(r':\(\)\s*\{'),
@@ -70,6 +98,11 @@ BLOCK_PATTERNS: list[tuple[re.Pattern[str], str]] = [
 
 RM_PATTERN = re.compile(r'(?:^|[;&|]\s*)rm\s')
 
+NETWORK_TX_WITH_ENV: re.Pattern[str] = re.compile(
+    r'\b(?:curl|wget|http|httpie)\b.*\$\{?[A-Z_][A-Z0-9_]*\}?',
+    re.IGNORECASE,
+)
+
 
 def _allow_response() -> int:
     """Cursor hook 向けの許可レスポンスを返す。"""
@@ -77,8 +110,25 @@ def _allow_response() -> int:
     return 0
 
 
+def _emit_skip_warning(command: str) -> None:
+    preview = command if len(command) <= 120 else command[:117] + "..."
+    print(
+        "[GUARDRAILS_SKIP] cursor bash_guard をスキップしました。"
+        f" command={preview!r}"
+        " 意図したテスト操作以外で本変数が立っている場合は環境を疑ってください。",
+        file=sys.stderr,
+    )
+
+
 def main() -> int:
     if os.environ.get("CLAUDE_GUARDRAILS_SKIP") == "1":
+        try:
+            raw = sys.stdin.read()
+            data = json.loads(raw) if raw.strip() else {}
+            cmd = data.get("command", "")
+        except Exception:
+            cmd = ""
+        _emit_skip_warning(cmd)
         return _allow_response()
 
     try:
@@ -104,6 +154,14 @@ def main() -> int:
             }
             json.dump(output, sys.stdout)
             return 0
+
+    # --- H3: ネット転送系 + 環境変数展開を警告 ---
+    if NETWORK_TX_WITH_ENV.search(command):
+        print(
+            "[SECURITY WARNING] ネット転送コマンドに環境変数展開が含まれます。"
+            " 認証情報・秘密の漏洩経路になり得ます。",
+            file=sys.stderr,
+        )
 
     # --- rm → gomi 置換の案内 ---
     if RM_PATTERN.search(command):
