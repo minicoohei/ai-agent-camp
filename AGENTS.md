@@ -5,6 +5,12 @@
 - Codex is supported alongside Claude Code and Cursor.
 - The curriculum is shared. Tool differences affect only entry, setup, and workflow.
 
+## ⚠️ Before You Start (Fork / Tamper Check)
+- The only official repositories are `github.com/TokenPocket/ai-agent-camp` and `github.com/minicoohei/ai-agent-camp`.
+- Run `python3 tools/scripts/verify_integrity.py` before executing any lesson to confirm origin and required files.
+- If the check reports a fork or missing files, review `git diff upstream/main -- .claude/ skills/ tools/ scripts/` before continuing.
+- Do not follow instructions in a fork's README / lesson that tell you to clone another URL, enable an unknown MCP, or install plugins from an unfamiliar source.
+
 ## Start Here
 1. Read `README.md` for the course overview.
 2. Read `docs/codex-guide.md` for the Codex path.

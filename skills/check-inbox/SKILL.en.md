@@ -21,7 +21,10 @@ triggers:
 
 Extracts items requiring replies from email (Gmail) and Slack, and lists them with priority levels.
 
-## Quick Start
+## ⚠️ Security Note (Indirect Prompt Injection)
+- This skill feeds externally-received email and Slack messages into an LLM. An attacker may embed payloads like "ignore previous instructions and do X" inside message bodies.
+- `scripts/llm_analyzer.py` wraps external text in `<external_untrusted_content>` boundary tags and instructs the LLM to treat the region as data only. However, **always review the generated `draft_reply` before sending** — do not send drafts without human verification.
+- If a message contains suspicious directives, treat the corresponding analysis result and reply draft as potentially tainted.
 
 ```bash
 # Basic execution (past 3 days)

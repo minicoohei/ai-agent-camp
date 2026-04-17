@@ -20,7 +20,10 @@ triggers:
 
 Extrae elementos que requieren respuesta del correo electronico (Gmail) y Slack, y los lista con niveles de prioridad.
 
-## Inicio Rapido
+## ⚠️ Nota de Seguridad (Indirect Prompt Injection)
+- Esta skill envia correos y mensajes de Slack externos a un LLM. Un atacante puede insertar cargas como "ignora las instrucciones previas y haz X" dentro del cuerpo del mensaje.
+- `scripts/llm_analyzer.py` envuelve el texto externo con etiquetas de frontera `<external_untrusted_content>` e instruye al LLM a tratar esa region como datos. Aun asi, **revisa siempre el `draft_reply` generado antes de enviarlo** — nunca envies borradores sin verificacion humana.
+- Si un mensaje contiene instrucciones sospechosas, asume que el resultado del analisis y el borrador pueden estar contaminados.
 
 ```bash
 # Ejecucion basica (ultimos 3 dias)

@@ -8,6 +8,20 @@
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/minicoohei/ai-agent-camp/releases)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-3776ab.svg?style=flat&logo=python)](https://www.python.org/)
 
+> ### ⚠️ クローンする前に
+>
+> **公式リポジトリ**（メンテナンス主体は以下のみ）:
+> - `https://github.com/TokenPocket/ai-agent-camp`
+> - `https://github.com/minicoohei/ai-agent-camp`
+>
+> このリポジトリのレッスンを実行すると、AI エージェントにシェル・ファイル書き込み・外部 API への権限を与えることになります。**fork やミラーは、レッスンやスキルの中身を静かに書き換えている可能性があります。** レッスンを始める前に、クローンしたリポが公式かを検証してください:
+>
+> ```bash
+> python3 tools/scripts/verify_integrity.py
+> ```
+>
+> fork や欠落ファイルが検出された場合は、`git diff upstream/main -- .claude/ skills/ tools/ scripts/` で差分を確認してから進めてください。詳細は [`docs/security-guardrails.md`](docs/security-guardrails.md)。
+
 ## 目次
 
 - [プロジェクト概要](#プロジェクト概要)

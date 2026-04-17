@@ -8,6 +8,20 @@
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/minicoohei/ai-agent-camp/releases)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-3776ab.svg?style=flat&logo=python)](https://www.python.org/)
 
+> ### ⚠️ Antes de clonar
+>
+> **Repositorios oficiales** (solo estos son mantenidos por los autores):
+> - `https://github.com/TokenPocket/ai-agent-camp`
+> - `https://github.com/minicoohei/ai-agent-camp`
+>
+> Ejecutar agentes de IA desde este repo les otorga permisos de shell, escritura de archivos y APIs externas en tu maquina. **Los forks y mirrors pueden alterar silenciosamente las lecciones o skills.** Antes de ejecutar cualquier leccion, verifica tu clon:
+>
+> ```bash
+> python3 tools/scripts/verify_integrity.py
+> ```
+>
+> Si la verificacion reporta un fork o archivos faltantes, revisa `git diff upstream/main -- .claude/ skills/ tools/ scripts/` antes de continuar. Consulta [`docs/security-guardrails.md`](docs/security-guardrails.md).
+
 ## Tabla de Contenidos
 
 - [Descripcion del Proyecto](#descripcion-del-proyecto)
