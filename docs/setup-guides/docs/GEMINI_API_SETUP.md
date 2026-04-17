@@ -75,13 +75,27 @@ GOOGLE_API_KEY=AIzaSy...your_api_key_here
 
 > **注意**: `.env` ファイルは `.gitignore` に含まれていることを必ず確認してください。
 
-### 方法3: シェル環境変数
+### 方法3: シェル環境変数（⚠️ 非推奨）
+
+> ⚠️ **セキュリティ注意**: `export` コマンドはそのまま実行すると `~/.zsh_history` /
+> `~/.bash_history` に秘密情報が平文で残ります。また `~/.zshrc` / `~/.bashrc` に
+> 書き込むとファイル自体に API キーが残り、バックアップや誤コミット経由で漏洩する
+> リスクがあります。
+>
+> CI/CD 以外では **Credential Store (方法1) の利用を強く推奨** します:
+> ```bash
+> uv run python tools/credential_manager.py store gemini
+> ```
+>
+> どうしても `export` を使う場合は、コマンド先頭に**半角スペース**を入れると
+> 多くのシェルで履歴に残らなくなります (HISTCONTROL=ignorespace が必要)。
 
 ```bash
-# bash / zsh
-export GEMINI_API_KEY=AIzaSy...your_api_key_here
+# bash / zsh （履歴記録を避けるため先頭にスペース）
+ export GEMINI_API_KEY=AIzaSy...your_api_key_here
 
 # 永続化する場合は ~/.zshrc または ~/.bashrc に追加
+# ⚠️ ファイルに平文で残るため Credential Store を優先してください
 echo 'export GEMINI_API_KEY=AIzaSy...' >> ~/.zshrc
 source ~/.zshrc
 ```

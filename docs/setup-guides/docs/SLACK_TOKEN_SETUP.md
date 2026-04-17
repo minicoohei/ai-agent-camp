@@ -115,10 +115,21 @@ SLACK_BOT_TOKEN=xoxb-your-bot-token-here  # オプション
 
 > **注意**: `.env` ファイルは `.gitignore` に含まれていることを必ず確認してください。
 
-### 方法3: シェル環境変数
+### 方法3: シェル環境変数（⚠️ 非推奨）
+
+> ⚠️ **セキュリティ注意**: `export` はそのまま実行するとトークンが `~/.zsh_history` /
+> `~/.bash_history` に残ります。Slack の `xoxp-` / `xoxb-` トークンは DM 読み書きや
+> チャンネル投稿の権限を持つため、履歴経由の漏洩は実被害に直結します。
+>
+> 原則として **Credential Store (方法1) を使い**、`export` は CI/CD の一時設定や
+> デバッグ用途に限定してください:
+> ```bash
+> uv run python tools/credential_manager.py store slack
+> ```
 
 ```bash
-export SLACK_USER_TOKEN=xoxp-your-user-token-here
+# 履歴記録を避けるため先頭に半角スペース（要 HISTCONTROL=ignorespace）
+ export SLACK_USER_TOKEN=xoxp-your-user-token-here
 ```
 
 ---

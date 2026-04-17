@@ -33,8 +33,14 @@
 | 層 | 機構 | 役割 |
 |----|------|------|
 | 第 1 層 | `settings.json` deny リスト | 危険コマンドの即時拒否 |
-| 第 2 層 | `bash_guard.py` / `write_guard.py` | rm→gomi 置換・.env 保護・Prompt Injection 対策 |
+| 第 2 層 | `bash_guard.py` / `write_guard.py` | rm→ゴミ箱ツール置換・秘密情報ファイル保護・Prompt Injection 対策・認証ヘッダ exfil 検知 |
 | 第 3 層 | `pre-commit` フック | 機密ファイルのコミット防止 |
+
+加えて以下の観点で防御を入れています:
+
+- **Indirect Prompt Injection 対策**: `skills/check-inbox/` 等、外部メッセージを LLM に渡すスキルでは境界タグで囲み、既知の PI フレーズを除去
+- **Fork Supply Chain 検知**: `tools/scripts/verify_integrity.py` で origin URL と追跡ファイルのハッシュを公式と照合
+- **Guardrail Bypass 警告**: `CLAUDE_GUARDRAILS_SKIP=1` 使用時は stderr に明示警告を表示
 
 詳細は [`docs/security-guardrails.md`](docs/security-guardrails.md) を参照してください。
 

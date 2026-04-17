@@ -33,6 +33,21 @@ PROJECT_SKILLS_DIR = PROJECT_ROOT / "skills"
 GLOBAL_SKILLS_DIR = Path.home() / ".claude" / "skills"
 UPSTREAM_URL = "https://github.com/minicoohei/ai-agent-camp.git/"
 REGISTRY_FILE = PROJECT_ROOT / "external-plugins.yaml"
+
+# 外部プラグインからのスキル名として許容する形式。
+# `.` や `/` を含む名前は Path traversal (../../etc/passwd 等) の足がかりに
+# なりうるため拒否する。英数字とハイフン・アンダースコアのみ許可。
+_SAFE_NAME_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$")
+
+
+def _validate_safe_name(name: str, kind: str = "skill") -> str:
+    """外部レジストリ由来の名前を検証する。安全ならそのまま返し、不正なら例外。"""
+    if not isinstance(name, str) or not _SAFE_NAME_PATTERN.fullmatch(name):
+        raise ValueError(
+            f"不正な{kind}名です: {name!r} "
+            "(英数字・ハイフン・アンダースコアのみ許可、先頭は英数字、64文字以内)"
+        )
+    return name
 CACHE_DIR = Path.home() / ".cache" / "aiagent-base" / "plugins"
 
 
@@ -282,7 +297,16 @@ def resolve_skill_path(
     plugin: str = "",
     domain: str = "",
 ) -> str:
-    """skill_pattern のプレースホルダーを解決してリポジトリ内のスキルパスを返す。"""
+    """skill_pattern のプレースホルダーを解決してリポジトリ内のスキルパスを返す。
+
+    skill_name / plugin / domain は外部レジストリ由来で信頼できないため、
+    `../` などを含んだ場合に Path traversal を起こす前にここで拒否する。
+    """
+    _validate_safe_name(skill_name, kind="skill")
+    if plugin:
+        _validate_safe_name(plugin, kind="plugin")
+    if domain:
+        _validate_safe_name(domain, kind="domain")
     return (
         skill_pattern.replace("{skill}", skill_name)
         .replace("{plugin}", plugin)
@@ -414,8 +438,27 @@ def _copy_skill_from_cache(
     dest_name: str,
     force: bool = False,
 ) -> bool:
-    """キャッシュからスキルを .claude/skills/ にコピーする。成功時 True。"""
-    src = cache_repo_dir / skill_rel_path
+    """キャッシュからスキルを .claude/skills/ にコピーする。成功時 True。
+
+    dest_name と src/dest の実体パスは、外部レジストリ改ざんによる path traversal を
+    防ぐため `PROJECT_SKILLS_DIR` / `cache_repo_dir` 配下に収まるかを検証する。
+    """
+    try:
+        _validate_safe_name(dest_name, kind="skill")
+    except ValueError as exc:
+        logger.error("不正なスキル名のためコピーを拒否: %s", exc)
+        return False
+
+    cache_root = cache_repo_dir.resolve()
+    src = (cache_repo_dir / skill_rel_path).resolve()
+    try:
+        src.relative_to(cache_root)
+    except ValueError:
+        logger.error(
+            "スキルパスがキャッシュディレクトリ外を指しています (拒否): %s", skill_rel_path
+        )
+        return False
+
     if not src.is_dir():
         logger.warning("スキルパスが見つかりません: %s", skill_rel_path)
         return False
@@ -424,7 +467,16 @@ def _copy_skill_from_cache(
         logger.warning("SKILL.md がありません: %s", skill_rel_path)
         return False
 
-    dest = PROJECT_SKILLS_DIR / dest_name
+    project_root = PROJECT_SKILLS_DIR.resolve()
+    dest = (PROJECT_SKILLS_DIR / dest_name).resolve()
+    try:
+        dest.relative_to(project_root)
+    except ValueError:
+        logger.error(
+            "コピー先が skills/ 外に解決されました (拒否): dest_name=%s", dest_name
+        )
+        return False
+
     if dest.exists() and not force:
         print(f"  スキップ: {dest_name} (既存 — --force で上書き)")
         return False

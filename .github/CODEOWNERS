@@ -1,0 +1,36 @@
+# CODEOWNERS
+#
+# OSS 公開後、攻撃者が PR 経由で lesson / skill / hook / ガードレール設定を
+# 改ざんするリスク (T1 / T4) に対し、以下のパスは必ず owner レビューを挟む。
+#
+# 参考: docs/security-guardrails.md 脅威モデル T1 (Fork Supply Chain) / T4 (Guardrail Bypass)
+
+# ----- セキュリティ・ガードレール関連 (特に厳格にレビュー) -----
+.claude/hooks/             @minicoohei
+.cursor/hooks/             @minicoohei
+.claude/settings.json      @minicoohei
+.githooks/                 @minicoohei
+tools/scripts/verify_integrity.py  @minicoohei
+tests/security/            @minicoohei
+SECURITY.md                @minicoohei
+docs/security-guardrails.md @minicoohei
+
+# ----- GitHub Actions / CI (権限変更は慎重に) -----
+.github/workflows/         @minicoohei
+.github/CODEOWNERS         @minicoohei
+.github/dependabot.yml     @minicoohei
+
+# ----- レッスン・スキル (配布経路なので改ざん監視) -----
+.claude/commands/lesson/   @minicoohei
+.cursor/commands/lesson/   @minicoohei
+skills/                    @minicoohei
+.claude/skills/            @minicoohei
+
+# ----- マニフェスト・インデックス (整合性重視) -----
+courses/lessons.manifest.yaml     @minicoohei
+courses/lessons.manifest.en.yaml  @minicoohei
+courses/lessons.manifest.es.yaml  @minicoohei
+
+# ----- セットアップスクリプト (パイプ実行リスクあり) -----
+tools/scripts/setup.sh     @minicoohei
+tools/scripts/setup.py     @minicoohei

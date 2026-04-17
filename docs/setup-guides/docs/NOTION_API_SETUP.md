@@ -85,10 +85,17 @@ NOTION_API_KEY=secret_xxx...your_token_here
 NOTION_TOKEN=secret_xxx...your_token_here
 ```
 
-### シェル環境変数
+### シェル環境変数（⚠️ 非推奨）
+
+> ⚠️ **セキュリティ注意**: `export` はそのまま実行するとトークンが `~/.zsh_history` /
+> `~/.bash_history` に残ります。Credential Store の利用を推奨します:
+> ```bash
+> uv run python tools/credential_manager.py store notion
+> ```
 
 ```bash
-export NOTION_API_KEY=secret_xxx...your_token_here
+# 履歴記録を避けるため先頭に半角スペース（要 HISTCONTROL=ignorespace）
+ export NOTION_API_KEY=secret_xxx...your_token_here
 ```
 
 ---
