@@ -51,6 +51,29 @@ def check_uv():
         print(f"uv: {uv_ver.stdout.strip()} (インストール済み)")
         return
 
+    # SECURITY: パイプ実行（curl ... | sh / irm ... | iex）はリモートスクリプトを
+    # 無検証で実行するリスクがあります。可能なら公式パッケージマネージャを優先:
+    #   macOS:    brew install uv
+    #   Windows:  winget install --id=astral-sh.uv -e
+    #   公式: https://docs.astral.sh/uv/getting-started/installation/
+    print()
+    print("⚠️  これから uv のリモートインストーラを取得して実行します。")
+    print("    代替手順:")
+    print("      macOS:   brew install uv")
+    print("      Windows: winget install --id=astral-sh.uv -e")
+    print("      手動:    https://docs.astral.sh/uv/getting-started/installation/")
+    print()
+    if sys.stdin.isatty() and os.environ.get("CI") != "true":
+        try:
+            confirm = input("続行しますか? [y/N] ").strip().lower()
+        except EOFError:
+            confirm = ""
+        if confirm not in ("y", "yes"):
+            print("中断しました。手動で uv をインストールしてから再実行してください。")
+            sys.exit(1)
+    else:
+        print("(非対話環境または CI=true のため確認をスキップして続行します)")
+
     print(">>> uv をインストール中...")
     if IS_WINDOWS:
         # Windows: PowerShell 経由でインストール

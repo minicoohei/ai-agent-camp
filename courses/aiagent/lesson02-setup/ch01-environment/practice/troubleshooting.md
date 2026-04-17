@@ -15,8 +15,13 @@ echo $PATH
 ```
 
 **対処（WSL/Ubuntu）**:
+
+> ⚠️ **セキュリティ注意**: `curl ... | bash` はリモートスクリプトを無検証で実行します。
+> 可能なら `sudo apt install -y nodejs npm` か、[nvm 公式 README](https://github.com/nvm-sh/nvm) を
+> 開いてスクリプト内容を確認してから実行してください。
+
 ```bash
-# nvm で再インストール
+# nvm で再インストール（パイプ実行に同意した上で）
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 source ~/.bashrc
 nvm install --lts

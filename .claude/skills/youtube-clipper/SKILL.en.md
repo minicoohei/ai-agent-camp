@@ -145,9 +145,16 @@ sudo apt-get install -y ffmpeg    # Ubuntu/Debian
 
 ### deno (JS runtime) Required
 
-yt-dlp's YouTube extractor may require deno JS runtime:
+yt-dlp's YouTube extractor may require deno JS runtime.
+
+> ⚠️ **Security note**: `curl ... | sh` executes remote scripts without verification.
+> Prefer these alternatives:
+> - macOS: `brew install deno`
+> - Windows: `winget install DenoLand.Deno`
+> - Manual: review the [official Deno install docs](https://docs.deno.com/runtime/manual/getting_started/installation)
 
 ```bash
+# Only after acknowledging the pipe-to-shell risk
 curl -fsSL https://deno.land/install.sh | sh    # Mac/Linux/WSL
 export PATH="$HOME/.deno/bin:$PATH"    # Mac/Linux/WSL
 ```

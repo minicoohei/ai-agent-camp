@@ -145,9 +145,16 @@ sudo apt-get install -y ffmpeg    # Ubuntu/Debian
 
 ### deno（JSランタイム）が必要と言われる
 
-yt-dlpのYouTube抽出にdeno JSランタイムが必要な場合があります:
+yt-dlpのYouTube抽出にdeno JSランタイムが必要な場合があります。
+
+> ⚠️ **セキュリティ注意**: `curl ... | sh` はリモートスクリプトを無検証で実行します。
+> 可能なら次の代替を優先してください:
+> - macOS: `brew install deno`
+> - Windows: `winget install DenoLand.Deno`
+> - 手動: [Deno 公式インストール手順](https://docs.deno.com/runtime/manual/getting_started/installation) を確認
 
 ```bash
+# パイプ実行に同意した上で
 curl -fsSL https://deno.land/install.sh | sh    # Mac/Linux/WSL
 export PATH="$HOME/.deno/bin:$PATH"    # Mac/Linux/WSL
 ```

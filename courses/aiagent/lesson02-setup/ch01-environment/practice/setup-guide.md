@@ -87,8 +87,14 @@ git config --global user.email "your.email@example.com"
 ```
 
 ### 2. Node.js のインストール
+
+> ⚠️ **セキュリティ注意**: `curl ... | bash` はリモートスクリプトを無検証で実行します。
+> apt や apt-get の Node.js 公式パッケージ（`sudo apt install -y nodejs npm`）、
+> あるいは [`nvm` 公式 README](https://github.com/nvm-sh/nvm) のスクリプト内容を
+> 一度確認してから実行することを推奨します。
+
 ```bash
-# nvm でインストール
+# nvm でインストール（パイプ実行に同意した上で）
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 source ~/.bashrc
 nvm install --lts

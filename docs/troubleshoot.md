@@ -143,8 +143,14 @@ sudo yum install python3 python3-pip nodejs npm
 
 #### 代替方法: nvm・pyenv を使用
 
+> ⚠️ **セキュリティ注意**: 以下の `curl ... | bash` はリモートスクリプトを無検証で
+> 実行します。可能なら次の代替手順を優先してください:
+> - macOS: `brew install nvm`
+> - Windows: [`nvm-windows`](https://github.com/coreybutler/nvm-windows) の公式インストーラ
+> - 手動: [nvm 公式 README](https://github.com/nvm-sh/nvm) のスクリプト内容を確認してから実行
+
 ```bash
-# Node Version Manager インストール
+# Node Version Manager インストール（パイプ実行に同意した上で）
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 nvm install 18
 nvm use 18

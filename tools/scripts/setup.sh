@@ -27,6 +27,31 @@ fi
 
 # uv インストール
 if ! command -v uv &>/dev/null; then
+  # SECURITY: パイプ実行（curl ... | sh）はリモートスクリプトを無検証で実行するリスクがあります。
+  # 可能であれば公式パッケージマネージャ経由のインストールを優先してください:
+  #   macOS:    brew install uv
+  #   Windows:  winget install --id=astral-sh.uv -e
+  #   Linux他:  公式 standalone installer を手動 DL → SHA256 検証 → 実行
+  #   公式: https://docs.astral.sh/uv/getting-started/installation/
+  echo ""
+  echo "⚠️  これから https://astral.sh/uv/install.sh を取得し、シェルに直接パイプして実行します。"
+  echo "    リモートスクリプトを無検証で実行するため、以下の代替手順も検討してください:"
+  echo "      macOS:   brew install uv"
+  echo "      Windows: winget install --id=astral-sh.uv -e"
+  echo "      手動:    https://docs.astral.sh/uv/getting-started/installation/"
+  echo ""
+  if [ -t 0 ] && [ "${CI:-}" != "true" ]; then
+    read -p "続行しますか? [y/N] " _uv_confirm
+    case "${_uv_confirm}" in
+      y|Y|yes|YES) ;;
+      *)
+        echo "中断しました。手動で uv をインストールしてから再実行してください。"
+        exit 1
+        ;;
+    esac
+  else
+    echo "(非対話環境または CI=true のため確認をスキップして続行します)"
+  fi
   echo ">>> uv をインストール中..."
   if curl -LsSf https://astral.sh/uv/install.sh | sh; then
     # インストール直後はPATHに反映されていない場合がある
