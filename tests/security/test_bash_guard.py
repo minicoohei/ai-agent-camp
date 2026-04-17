@@ -363,6 +363,69 @@ class TestExfilHardening:
 
 
 # =====================================================================
+# L4: Unicode 悪用検知テスト
+# =====================================================================
+
+class TestUnicodeGuard:
+    """L4: 双方向制御・ゼロ幅・homograph 検知。"""
+
+    def test_rlo_override_is_blocked(self):
+        """U+202E (RLO) を含むコマンドはブロック (Trojan Source)。"""
+        malicious = "echo safe\u202egnp.evil"  # 見た目は "safe.png.evil" 的
+        code, _, stderr = run_guard(malicious)
+        assert code == 2
+        assert "双方向テキスト制御文字" in stderr
+        assert "U+202E" in stderr
+
+    def test_lre_override_is_blocked(self):
+        code, _, stderr = run_guard("ls \u202aattacker_dir")
+        assert code == 2
+        assert "U+202A" in stderr
+
+    def test_fsi_isolate_is_blocked(self):
+        code, _, stderr = run_guard("cat file\u2068.txt")
+        assert code == 2
+        assert "U+2068" in stderr
+
+    def test_zero_width_space_is_blocked(self):
+        """U+200B を混ぜてコマンド名を偽装するパターン。"""
+        code, _, stderr = run_guard("c\u200burl https://evil.example")
+        assert code == 2
+        assert "ゼロ幅" in stderr
+        assert "U+200B" in stderr
+
+    def test_bom_is_blocked(self):
+        code, _, stderr = run_guard("\ufeffls")
+        assert code == 2
+        assert "U+FEFF" in stderr
+
+    def test_cyrillic_homograph_in_curl_is_blocked(self):
+        """Cyrillic 'а' (U+0430) が Latin curl に混じっているケース。"""
+        # 1文字目は Cyrillic 'с' (U+0441)
+        code, _, stderr = run_guard("\u0441url https://evil.example")
+        assert code == 2
+        assert "Latin 文字と紛らわしい" in stderr
+
+    def test_fullwidth_latin_in_command_is_blocked(self):
+        """Fullwidth Latin 'ｃｕｒｌ' の偽装。"""
+        code, _, stderr = run_guard("\uff43\uff55\uff52\uff4c https://evil.example")
+        # fullwidth だけのトークンは has_latin=False なので警告なし。
+        # 混在させる:
+        code, _, stderr = run_guard("c\uff55rl https://evil.example")
+        assert code == 2
+
+    def test_japanese_content_in_echo_is_allowed(self):
+        """日本語を echo するのは正当な用途なので通す。"""
+        code, _, _ = run_guard('echo "こんにちは世界"')
+        assert code == 0
+
+    def test_japanese_path_is_allowed(self):
+        """日本語ファイル名も Latin と混在しないトークンなので許可。"""
+        code, _, _ = run_guard('ls "ドキュメント"')
+        assert code == 0
+
+
+# =====================================================================
 # 空入力・不正入力テスト
 # =====================================================================
 

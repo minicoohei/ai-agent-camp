@@ -103,6 +103,51 @@ NETWORK_TX_WITH_ENV: re.Pattern[str] = re.compile(
     re.IGNORECASE,
 )
 
+# L4: Unicode 悪用検知（.claude/hooks/bash_guard.py と同じ集合）
+BIDI_OVERRIDES: frozenset[str] = frozenset([
+    "\u202a", "\u202b", "\u202c", "\u202d", "\u202e",
+    "\u2066", "\u2067", "\u2068", "\u2069",
+])
+INVISIBLE_CHARS: frozenset[str] = frozenset([
+    "\u200b", "\u200c", "\u200d", "\u2060", "\ufeff",
+])
+_SUSPICIOUS_HOMOGLYPHS: frozenset[str] = frozenset([
+    "\u0430", "\u0435", "\u043e", "\u0440", "\u0441", "\u0443", "\u0445",
+    "\u0455", "\u0456", "\u0458", "\u0501", "\u051b", "\u051d",
+    "\u03bf", "\u03c1", "\u03c5", "\u03c7",
+    *(chr(cp) for cp in range(0xFF21, 0xFF5B)),
+])
+
+
+def _check_unicode_threats(command: str) -> tuple[bool, str | None]:
+    bidi_hit = [c for c in command if c in BIDI_OVERRIDES]
+    if bidi_hit:
+        points = ", ".join(f"U+{ord(c):04X}" for c in bidi_hit)
+        return True, (
+            f"セキュリティ: 双方向テキスト制御文字 ({points}) を検知しました。"
+            " 表示と実行が食い違う Trojan Source 系攻撃に使われる文字のため、"
+            " シェルコマンドでの使用は禁止です。"
+        )
+    invisible_hit = [c for c in command if c in INVISIBLE_CHARS]
+    if invisible_hit:
+        points = ", ".join(f"U+{ord(c):04X}" for c in invisible_hit)
+        return True, (
+            f"セキュリティ: ゼロ幅・不可視文字 ({points}) を検知しました。"
+            " コマンド名の偽装や監査ログ回避に使われる字のため、"
+            " シェルコマンドでの使用は禁止です。"
+        )
+    for token in command.split():
+        has_latin = any("a" <= c.lower() <= "z" for c in token)
+        homoglyph_hit = [c for c in token if c in _SUSPICIOUS_HOMOGLYPHS]
+        if has_latin and homoglyph_hit:
+            points = ", ".join(f"U+{ord(c):04X}" for c in homoglyph_hit[:3])
+            return True, (
+                f"セキュリティ: Latin 文字と紛らわしい Unicode 文字 ({points}) が"
+                f" 同一トークン {token!r} 内に混在しています。"
+                " コマンド名・URL 偽装の可能性があるため、ブロックします。"
+            )
+    return False, None
+
 
 def _allow_response() -> int:
     """Cursor hook 向けの許可レスポンスを返す。"""
@@ -143,6 +188,17 @@ def main() -> int:
     command = data.get("command", "")
     if not command:
         return _allow_response()
+
+    # --- L4: Unicode 悪用チェック ---
+    blocked, message = _check_unicode_threats(command)
+    if blocked:
+        output = {
+            "permission": "deny",
+            "userMessage": message,
+            "agentMessage": message,
+        }
+        json.dump(output, sys.stdout)
+        return 0
 
     # --- ブロックパターンチェック ---
     for pattern, message in BLOCK_PATTERNS:

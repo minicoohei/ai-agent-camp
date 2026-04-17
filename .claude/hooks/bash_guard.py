@@ -120,6 +120,89 @@ NETWORK_TX_WITH_ENV: re.Pattern[str] = re.compile(
 )
 
 # ---------------------------------------------------------------------------
+# L4: Unicode 悪用検知
+# ---------------------------------------------------------------------------
+# Bidirectional override (Trojan Source, CVE-2021-42574 系)。
+# 表示上は無害に見えるが実際の実行順序を変えられるため、シェルコマンドに
+# 現れた場合は常にブロックする。
+BIDI_OVERRIDES: frozenset[str] = frozenset([
+    "\u202a",  # LRE
+    "\u202b",  # RLE
+    "\u202c",  # PDF
+    "\u202d",  # LRO
+    "\u202e",  # RLO
+    "\u2066",  # LRI
+    "\u2067",  # RLI
+    "\u2068",  # FSI
+    "\u2069",  # PDI
+])
+
+# ゼロ幅・不可視文字。シェルで意図的に使う理由はまずなく、コマンド名の
+# 偽装 (c\u200burl → curl と同一視されうる環境) や、監査ログ回避の手口に
+# 使われうる。
+INVISIBLE_CHARS: frozenset[str] = frozenset([
+    "\u200b",  # ZERO WIDTH SPACE
+    "\u200c",  # ZERO WIDTH NON-JOINER
+    "\u200d",  # ZERO WIDTH JOINER
+    "\u2060",  # WORD JOINER
+    "\ufeff",  # ZERO WIDTH NO-BREAK SPACE (BOM)
+])
+
+# よくある homograph: Latin 文字として見えるが別コードポイントの字。
+# コマンド全体が非 ASCII なのは `echo "日本語"` 等で普通にあるので、
+# 「Latin アルファベットとこれらの字が同じトークンに混在した場合のみ」
+# 警告対象とする。
+_SUSPICIOUS_HOMOGLYPHS: frozenset[str] = frozenset([
+    # Cyrillic look-alikes
+    "\u0430", "\u0435", "\u043e", "\u0440", "\u0441", "\u0443", "\u0445",
+    "\u0455", "\u0456", "\u0458", "\u0501", "\u051b", "\u051d",
+    # Greek look-alikes
+    "\u03bf", "\u03c1", "\u03c5", "\u03c7",
+    # Fullwidth Latin
+    *(chr(cp) for cp in range(0xFF21, 0xFF5B)),
+])
+
+
+def _check_unicode_threats(command: str) -> tuple[bool, str | None]:
+    """Unicode ベースの攻撃ベクタを検知する。
+
+    Returns:
+        (blocked, message). blocked=True なら呼び出し側で exit 2 する。
+    """
+    bidi_hit = [c for c in command if c in BIDI_OVERRIDES]
+    if bidi_hit:
+        points = ", ".join(f"U+{ord(c):04X}" for c in bidi_hit)
+        return True, (
+            f"セキュリティ: 双方向テキスト制御文字 ({points}) を検知しました。"
+            " 表示と実行が食い違う Trojan Source 系攻撃に使われる文字のため、"
+            " シェルコマンドでの使用は禁止です。"
+        )
+
+    invisible_hit = [c for c in command if c in INVISIBLE_CHARS]
+    if invisible_hit:
+        points = ", ".join(f"U+{ord(c):04X}" for c in invisible_hit)
+        return True, (
+            f"セキュリティ: ゼロ幅・不可視文字 ({points}) を検知しました。"
+            " コマンド名の偽装や監査ログ回避に使われる字のため、"
+            " シェルコマンドでの使用は禁止です。"
+        )
+
+    # homograph は警告のみ（誤検知を避けるため、Latin と混在したトークンを
+    # 切り分けてから判定）。
+    for token in command.split():
+        has_latin = any("a" <= c.lower() <= "z" for c in token)
+        homoglyph_hit = [c for c in token if c in _SUSPICIOUS_HOMOGLYPHS]
+        if has_latin and homoglyph_hit:
+            points = ", ".join(f"U+{ord(c):04X}" for c in homoglyph_hit[:3])
+            return True, (
+                f"セキュリティ: Latin 文字と紛らわしい Unicode 文字 ({points}) が"
+                f" 同一トークン {token!r} 内に混在しています。"
+                " コマンド名・URL 偽装の可能性があるため、ブロックします。"
+            )
+
+    return False, None
+
+# ---------------------------------------------------------------------------
 # rm コマンドの検出パターン
 # ---------------------------------------------------------------------------
 RM_PATTERN = re.compile(r'(?:^|[;&|]\s*)rm\s')
@@ -191,6 +274,12 @@ def main() -> int:
 
     if not command:
         return 0
+
+    # --- L4: Unicode 悪用チェック（他のパターンより先に判定） ---
+    blocked, message = _check_unicode_threats(command)
+    if blocked:
+        print(message, file=sys.stderr)
+        return 2
 
     # --- ブロックパターンチェック ---
     for pattern, message in BLOCK_PATTERNS:
