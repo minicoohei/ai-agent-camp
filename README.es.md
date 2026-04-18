@@ -22,6 +22,63 @@
 >
 > Si la verificacion reporta un fork o archivos faltantes, revisa `git diff upstream/main -- .claude/ skills/ tools/ scripts/` antes de continuar. Consulta [`docs/security-guardrails.md`](docs/security-guardrails.md).
 
+<!-- AGENT-META v1
+schema: https://github.com/TokenPocket/ai-agent-camp/blob/main/docs/release-process.md#agent-meta-v1
+repo: TokenPocket/ai-agent-camp
+mirror: minicoohei/ai-agent-camp
+primary_branch: main
+languages: [ja, en, es]
+default_language: ja
+latest_tag_api: https://api.github.com/repos/TokenPocket/ai-agent-camp/releases/latest
+release_asset_pattern: https://github.com/TokenPocket/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
+manifest_raw_pattern: https://raw.githubusercontent.com/TokenPocket/ai-agent-camp/{ref}/courses/lessons.manifest{lang_suffix}.yaml
+lang_suffix: {ja: "", en: ".en", es: ".es"}
+integrity_cli: python3 tools/scripts/verify_integrity.py
+-->
+
+## Versiones y descargas
+
+Las versiones se publican desde `main` como tags que coinciden con `v*` (semver). Un solo tag produce tres archivos zip especificos por idioma, todos adjuntos a la misma GitHub Release.
+
+**Patron de URL de descarga** (fijo, no cambia una vez publicado):
+
+```
+https://github.com/TokenPocket/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
+```
+
+| Idioma | Asset | Checksum |
+|--------|-------|----------|
+| 日本語 | `ai-agent-camp-ja-{tag}.zip` | `ai-agent-camp-ja-{tag}.zip.sha256` |
+| English | `ai-agent-camp-en-{tag}.zip` | `ai-agent-camp-en-{tag}.zip.sha256` |
+| Español | `ai-agent-camp-es-{tag}.zip` | `ai-agent-camp-es-{tag}.zip.sha256` |
+
+Cada zip contiene `courses/`, `skills/`, `.claude/`, `.cursor/`, `docs/` ya con los sufijos de idioma eliminados, mas un `CHECKSUMS.txt` que cubre todos los archivos incluidos.
+
+### Para humanos
+
+```bash
+# Ultima version, cualquier idioma
+gh release download --repo TokenPocket/ai-agent-camp --pattern 'ai-agent-camp-es-*.zip'
+
+# Version especifica
+gh release download v0.1.0 --repo TokenPocket/ai-agent-camp \
+  --pattern 'ai-agent-camp-es-v0.1.0.zip'
+```
+
+### Para agentes de IA
+
+Parsea el bloque `<!-- AGENT-META v1 -->` de arriba, luego:
+
+1. (opcional) consulta `latest_tag_api` para resolver el tag actual
+2. rellena `release_asset_pattern` con `{tag}` y `{lang}`
+3. descarga, verifica contra el asset `.sha256` correspondiente y descomprime
+
+Si solo necesitas el manifest de lecciones, usa `manifest_raw_pattern` con el mapa `lang_suffix` para obtener `courses/lessons.manifest[.en|.es].yaml` directamente desde un ref (rama, tag o commit SHA).
+
+Consulta [`docs/release-process.md`](docs/release-process.md) para la especificacion completa, politica de versionado, procedimiento de rollback y un ejemplo de parsing en Python.
+
+> **Antes del primer tag**: aun no hay assets de Release, por lo que el patron de URL anterior devolvera 404 hasta que se publique `v0.1.0`. Hasta entonces, clona el repo directamente (`git clone https://github.com/TokenPocket/ai-agent-camp.git`) o obten archivos individuales via `raw.githubusercontent.com/.../main/...`.
+
 ## Tabla de Contenidos
 
 - [Descripcion del Proyecto](#descripcion-del-proyecto)
@@ -33,6 +90,7 @@
 - [Estructura del Directorio](#estructura-del-directorio)
 - [Matriz de Habilidades](#matriz-de-habilidades)
 - [APIs Necesarias](#apis-necesarias)
+- [Versiones y descargas](#versiones-y-descargas)
 - [Documentacion](#documentacion)
 - [Preguntas Frecuentes](#preguntas-frecuentes)
 - [Contribuciones](#contribuciones)

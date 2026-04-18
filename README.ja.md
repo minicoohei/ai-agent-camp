@@ -22,6 +22,63 @@
 >
 > fork や欠落ファイルが検出された場合は、`git diff upstream/main -- .claude/ skills/ tools/ scripts/` で差分を確認してから進めてください。詳細は [`docs/security-guardrails.md`](docs/security-guardrails.md)。
 
+<!-- AGENT-META v1
+schema: https://github.com/TokenPocket/ai-agent-camp/blob/main/docs/release-process.md#agent-meta-v1
+repo: TokenPocket/ai-agent-camp
+mirror: minicoohei/ai-agent-camp
+primary_branch: main
+languages: [ja, en, es]
+default_language: ja
+latest_tag_api: https://api.github.com/repos/TokenPocket/ai-agent-camp/releases/latest
+release_asset_pattern: https://github.com/TokenPocket/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
+manifest_raw_pattern: https://raw.githubusercontent.com/TokenPocket/ai-agent-camp/{ref}/courses/lessons.manifest{lang_suffix}.yaml
+lang_suffix: {ja: "", en: ".en", es: ".es"}
+integrity_cli: python3 tools/scripts/verify_integrity.py
+-->
+
+## リリースとダウンロード
+
+リリースは `main` が安定したタイミングでメンテナが `v*` タグ（semver）を切ることで発火します。1 つのタグから 3 言語分の zip が生成され、同一の GitHub Release に添付されます。
+
+**ダウンロード URL のパターン**（一度 publish されたら同じ内容を返す固定 URL）:
+
+```
+https://github.com/TokenPocket/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
+```
+
+| 言語 | アセット | チェックサム |
+|------|---------|-------------|
+| 日本語 | `ai-agent-camp-ja-{tag}.zip` | `ai-agent-camp-ja-{tag}.zip.sha256` |
+| English | `ai-agent-camp-en-{tag}.zip` | `ai-agent-camp-en-{tag}.zip.sha256` |
+| Español | `ai-agent-camp-es-{tag}.zip` | `ai-agent-camp-es-{tag}.zip.sha256` |
+
+各 zip には言語 suffix を除去済みの `courses/` / `skills/` / `.claude/` / `.cursor/` / `docs/` と、全ファイルの sha256 を記録した `CHECKSUMS.txt` が含まれます。
+
+### 人間向け
+
+```bash
+# 最新リリース・任意の言語
+gh release download --repo TokenPocket/ai-agent-camp --pattern 'ai-agent-camp-ja-*.zip'
+
+# 特定バージョン
+gh release download v0.1.0 --repo TokenPocket/ai-agent-camp \
+  --pattern 'ai-agent-camp-ja-v0.1.0.zip'
+```
+
+### AI エージェント向け
+
+上記の `<!-- AGENT-META v1 -->` ブロックを parse したうえで:
+
+1. （任意）`latest_tag_api` を叩いて現在のタグを取得
+2. `release_asset_pattern` の `{tag}` と `{lang}` を埋める
+3. ダウンロード後、対応する `.sha256` と照合してから unzip
+
+レッスンマニフェストだけが必要な場合は `manifest_raw_pattern` と `lang_suffix` を使って `courses/lessons.manifest[.en|.es].yaml` を任意の ref（ブランチ・タグ・commit SHA）から直接取得できます。
+
+仕様の全文・バージョニング方針・ロールバック手順・Python parse サンプルは [`docs/release-process.md`](docs/release-process.md) を参照してください。
+
+> **初回タグ前の注意**: まだ Release アセットが存在しないため、上記 URL パターンは `v0.1.0` がリリースされるまで 404 を返します。それまでは `git clone https://github.com/TokenPocket/ai-agent-camp.git` でリポを取得するか、`raw.githubusercontent.com/.../main/...` で個別ファイルを参照してください。
+
 ## 目次
 
 - [プロジェクト概要](#プロジェクト概要)
@@ -33,6 +90,7 @@
 - [ディレクトリ構造](#ディレクトリ構造)
 - [スキルマトリックス](#スキルマトリックス)
 - [必要なAPI](#必要なapi)
+- [リリースとダウンロード](#リリースとダウンロード)
 - [ドキュメント](#ドキュメント)
 - [よくある質問](#よくある質問)
 - [コントリビューション](#コントリビューション)

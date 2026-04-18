@@ -5,7 +5,7 @@ on:
     tags: ['v*']
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -32,9 +32,32 @@ jobs:
       - name: Build release (${{ matrix.lang }})
         run: python tools/build_release.py --lang ${{ matrix.lang }} --strict --output dist/${{ matrix.lang }}
 
-      - name: Upload release artifact
+      - name: Generate CHECKSUMS.txt
+        working-directory: dist/${{ matrix.lang }}
+        run: |
+          find . -type f -not -name CHECKSUMS.txt -print0 \
+            | sort -z \
+            | xargs -0 sha256sum > CHECKSUMS.txt
+
+      - name: Create zip archive
+        run: |
+          cd dist
+          zip -rq "ai-agent-camp-${{ matrix.lang }}-${GITHUB_REF_NAME}.zip" "${{ matrix.lang }}"
+          sha256sum "ai-agent-camp-${{ matrix.lang }}-${GITHUB_REF_NAME}.zip" \
+            > "ai-agent-camp-${{ matrix.lang }}-${GITHUB_REF_NAME}.zip.sha256"
+
+      - name: Upload release artifact (debug retention)
         uses: actions/upload-artifact@v4
         with:
           name: release-${{ matrix.lang }}
           path: dist/${{ matrix.lang }}/
           retention-days: 90
+
+      - name: Attach zip to GitHub Release
+        uses: softprops/action-gh-release@aec2ec56f94eb8180ceec724245f64ef008b89f5  # v2.4.0
+        with:
+          files: |
+            dist/ai-agent-camp-${{ matrix.lang }}-${{ github.ref_name }}.zip
+            dist/ai-agent-camp-${{ matrix.lang }}-${{ github.ref_name }}.zip.sha256
+          fail_on_unmatched_files: true
+          generate_release_notes: true
