@@ -34,7 +34,7 @@ google-api-python-client>=2.80.0,<3.0.0
 slack-sdk>=3.27.0,<4.0.0
 
 # Notion
-notion-client>=2.0.0,<3.0.0
+notion-client>=2.0.0,<4.0.0
 
 # Web
 requests>=2.31.0,<3.0.0
