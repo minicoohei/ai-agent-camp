@@ -1,0 +1,18 @@
+# Capítulo 16: Automatización de Correo y Marketing
+id: "module16-email-automation"
+order: 16
+name: "Automatización de Correo y Marketing"
+description: "Aprende el flujo completo desde el análisis de correo entrante y la gestión de respuestas hasta la automatización de envíos y campañas de marketing."
+type: "manual"
+estimatedMinutes: 180
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module06-agent-development"
+objectives:
+  - "Explicar el flujo básico de correo entrante y saliente"
+  - "Automatizar la revisión del inbox y la detección de respuestas pendientes"
+  - "Entender la diferencia entre correo transaccional y marketing"
+  - "Explicar los requisitos de autenticación y las precauciones operativas del envío"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-16"
+  slides: "https://ai-agent.camp/es/course/module-16"

@@ -1,0 +1,107 @@
+#!/bin/bash
+# セキュリティチェック pre-commit hook
+
+set -e
+
+echo "🔒 Running security checks..."
+
+# カラーコード
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+# 1. API Key/Token検出
+echo "🔍 Checking for API keys and tokens..."
+
+PATTERNS=(
+  'GEMINI_API_KEY\s*=\s*["\x27][A-Za-z0-9_-]{20,}'
+  'sk-[A-Za-z0-9]{48}'
+  'xoxb-[0-9]{10,}-[A-Za-z0-9]+'
+  'ghp_[A-Za-z0-9]{36}'
+  'AIza[A-Za-z0-9_-]{35}'
+  'GOOGLE_CLIENT_SECRET\s*=\s*["\x27][A-Za-z0-9_-]+'
+  'SLACK_BOT_TOKEN\s*=\s*["\x27]xoxb-'
+  'NOTION_API_KEY\s*=\s*["\x27]secret_'
+)
+
+for pattern in "${PATTERNS[@]}"; do
+  if git diff --cached --diff-filter=ACM | grep '^+' | grep -qE "$pattern"; then
+    echo -e "${RED}❌ ERROR: API key or token detected in staged files!${NC}"
+    echo -e "${YELLOW}Please remove API keys from your code and use .env file instead.${NC}"
+    exit 1
+  fi
+done
+
+# 1b. プロジェクト固有名の漏洩検出（OSS公開用）
+echo "🔍 Checking for project-specific identifiers..."
+PRIVATE_PATTERNS=(
+  # ── Customize: replace these examples with your actual org identifiers ──
+  # 'my-company-prod-project'
+  # '@my-company\.com'
+  # 'my-internal-app-[a-z0-9]+'
+
+  # ── Generic catch-all: common secret/credential filenames in diffs ──
+  'PRIVATE_KEY\s*=\s*["\x27]-----BEGIN'
+  'password\s*=\s*["\x27][^\x27"]{8,}'
+)
+
+for pattern in "${PRIVATE_PATTERNS[@]}"; do
+  if git diff --cached --diff-filter=ACM | grep '^+' | grep -qiE "$pattern"; then
+    echo -e "${RED}❌ ERROR: Project-specific identifier detected in staged files!${NC}"
+    echo -e "${YELLOW}Pattern: $pattern${NC}"
+    echo -e "${YELLOW}Please use generic placeholders for open-source readiness.${NC}"
+    exit 1
+  fi
+done
+
+# 2. .envファイルのコミット防止
+echo "🔍 Checking for .env files..."
+if git diff --cached --name-only | grep -qE '\.env$|\.env\.local$'; then
+  echo -e "${RED}❌ ERROR: .env file detected in staged files!${NC}"
+  echo -e "${YELLOW}Never commit .env files. Use credential_manager.py instead.${NC}"
+  echo -e "${YELLOW}  python tools/credential_manager.py migrate  # .env → Credential Store${NC}"
+  exit 1
+fi
+
+# 2b. .env ファイルの存在警告（平文ファイルがディスク上にある場合）
+if [ -f ".env" ]; then
+  echo -e "${YELLOW}⚠️  WARNING: .env file exists on disk (plaintext secrets).${NC}"
+  echo -e "${YELLOW}   Consider migrating to OS Credential Store:${NC}"
+  echo -e "${YELLOW}   python tools/credential_manager.py migrate${NC}"
+  echo -e "${YELLOW}   python tools/credential_manager.py cleanup${NC}"
+fi
+
+# 3. credentials系ファイルの検出
+echo "🔍 Checking for credential files..."
+if git diff --cached --name-only | grep -qE 'credentials|client_secret|token\.json'; then
+  echo -e "${RED}❌ ERROR: Credential file detected in staged files!${NC}"
+  echo -e "${YELLOW}Never commit credential files.${NC}"
+  exit 1
+fi
+
+# 4. 大きなファイル（100MB以上）のブロック
+echo "🔍 Checking for large files..."
+MAX_SIZE=104857600 # 100MB in bytes
+
+while IFS= read -r file; do
+  if [ -f "$file" ]; then
+    size=$(wc -c < "$file")
+    if [ "$size" -gt "$MAX_SIZE" ]; then
+      size_mb=$((size / 1048576))
+      echo -e "${RED}❌ ERROR: Large file detected: ${file} (${size_mb}MB)${NC}"
+      echo -e "${YELLOW}Files over 100MB should not be committed. Use Git LFS or external storage.${NC}"
+      exit 1
+    fi
+  fi
+done < <(git diff --cached --name-only --diff-filter=ACM)
+
+# 5. mainブランチへのforce pushを警告
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+if [ "$current_branch" = "main" ] || [ "$current_branch" = "master" ]; then
+  echo -e "${YELLOW}⚠️  WARNING: You are committing to $current_branch branch.${NC}"
+  echo -e "${YELLOW}Make sure you are not planning to force push.${NC}"
+fi
+
+echo -e "${GREEN}✅ All security checks passed!${NC}"
+exit 0

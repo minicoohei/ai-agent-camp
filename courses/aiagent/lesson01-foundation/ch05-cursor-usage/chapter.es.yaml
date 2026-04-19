@@ -1,0 +1,16 @@
+# Capítulo 5: Cómo Usar Herramientas de Programación con IA
+id: "ch05-cursor-usage"
+order: 5
+name: "Operación Básica de Herramientas"
+description: "Aprende los flujos básicos y el modelo de seguridad de Cursor / Claude Code / Codex."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch04-context-engineering"
+objectives:
+  - "Explicar las diferencias entre Cursor / Claude Code / Codex"
+  - "Conocer el flujo básico de cada herramienta"
+  - "Comprender la configuración de seguridad"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-5"

@@ -1,0 +1,49 @@
+name: Windows Compatibility Check
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'tools/**/*.py'
+      - 'skills/**/*.py'
+      - '.claude/skills/**/*.py'
+      - 'package.json'
+
+permissions:
+  contents: read
+
+jobs:
+  windows-python-compat:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install base dependencies
+        run: |
+          pip install pyyaml requests pillow 2>$null
+        shell: pwsh
+
+      - name: Run Windows compatibility checks
+        continue-on-error: true
+        run: python tools/test_windows_compat.py --report output/test-results/windows-compatibility-report.md
+
+      - name: Upload compatibility report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-compatibility-report
+          path: output/test-results/windows-compatibility-report.md
+
+      - name: Show report summary
+        if: always()
+        run: |
+          if (Test-Path output/test-results/windows-compatibility-report.md) {
+            Get-Content output/test-results/windows-compatibility-report.md | Select-Object -First 30
+          }
+        shell: pwsh

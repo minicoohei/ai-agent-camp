@@ -1,0 +1,3 @@
+interface:
+  display_name: "Document Processor"
+  short_description: "PDF/PPTX/Excelファイルの読み取り・編集・分析を行うサブエージェント。"

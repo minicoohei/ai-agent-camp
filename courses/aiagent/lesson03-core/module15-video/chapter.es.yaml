@@ -1,0 +1,15 @@
+# Capítulo 15: Generación de Video
+id: "module15-video"
+order: 15
+name: "Generación de Video"
+description: "Crea guiones gráficos y genera videos UGC con IA."
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "Generar guiones gráficos (storyboards)"
+  - "Mantener coherencia de personajes"
+  - "Generar videos con la API de Kling"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-15"
+  slides: "https://ai-agent.camp/es/course/module-15"

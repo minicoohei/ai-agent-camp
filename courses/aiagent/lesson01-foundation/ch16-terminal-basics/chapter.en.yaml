@@ -1,0 +1,14 @@
+# Chapter 16: Terminal Basics
+id: "ch16-terminal-basics"
+order: 16
+name: "Terminal Basics"
+description: "Learn the basics of using the terminal (command line)."
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand what a terminal is and how it differs from GUI"
+  - "Learn how to open the terminal and use basic commands"
+  - "Understand and avoid dangerous commands"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-8?slideId=what-is-terminal"

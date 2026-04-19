@@ -1,0 +1,3 @@
+interface:
+  display_name: "Mv Composer"
+  short_description: "Remotion + Kling i2v でプロモーションMV動画・バイラルショート動画を生成するスキル。"

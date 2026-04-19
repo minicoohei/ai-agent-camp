@@ -1,0 +1,9 @@
+node_modules/
+output/
+.git/
+.venv/
+.cookies/
+data/slack-sync/
+data/google-sync/
+tools/ugc/remotion/
+docs/bootcamp/

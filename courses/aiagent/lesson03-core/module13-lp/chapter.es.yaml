@@ -1,0 +1,17 @@
+# Chapter 13: Creacion de Landing Pages
+id: "module13-lp"
+order: 13
+name: "Produccion LP/HP"
+description: "Desde la entrevista hasta el diseno de atractivos, wireframes, diseno en Pencil, implementacion HTML y despliegue en Vercel. Experimenta el flujo completo de produccion LP/HP."
+type: "manual"
+estimatedMinutes: 180
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "Crear un brief de posicionamiento para una landing page o homepage"
+  - "Disenar la estructura de secciones y el wireframe"
+  - "Conectar el diseno en Pencil con la implementacion"
+  - "Entender la verificacion final y el despliegue en Vercel"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-13"
+  slides: "https://ai-agent.camp/es/course/module-13"

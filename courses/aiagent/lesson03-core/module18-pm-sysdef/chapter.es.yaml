@@ -1,0 +1,19 @@
+# Capítulo 18: Gestión de Producto y Definición de Requisitos del Sistema
+id: "module18-pm-sysdef"
+order: 18
+name: "Gestión de Producto y Definición de Requisitos del Sistema"
+description: "Usando una aplicación de gestión de tareas como ejemplo, experimenta el ciclo completo de desarrollo de producto—desde la planificación hasta diseño, implementación, pruebas y operación—con asistencia de IA."
+type: "manual"
+estimatedMinutes: 480
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module06-agent-development"
+objectives:
+  - "Crear un PRD (estilo Working Backwards)"
+  - "Crear un documento de definición de requisitos (conforme a IPA)"
+  - "Crear diversos diagramas de diseño con PlantUML"
+  - "Generar automáticamente planes de prueba"
+  - "Crear un panel de progreso con marimo"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-18"
+  slides: "https://ai-agent.camp/es/course/module-18"

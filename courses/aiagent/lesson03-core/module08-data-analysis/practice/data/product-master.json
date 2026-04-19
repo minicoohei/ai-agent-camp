@@ -1,0 +1,352 @@
+[
+  {
+    "product_id": "P001",
+    "name": "ワイヤレスイヤホン #1",
+    "category": "家電",
+    "unit_price": 7980,
+    "stock": 57
+  },
+  {
+    "product_id": "P002",
+    "name": "カジュアルTシャツ #2",
+    "category": "ファッション",
+    "unit_price": 980,
+    "stock": 379
+  },
+  {
+    "product_id": "P003",
+    "name": "有機コーヒー豆 #3",
+    "category": "食品",
+    "unit_price": 2480,
+    "stock": 125
+  },
+  {
+    "product_id": "P004",
+    "name": "AIの教科書 #4",
+    "category": "書籍",
+    "unit_price": 1980,
+    "stock": 71
+  },
+  {
+    "product_id": "P005",
+    "name": "ヨガマット #5",
+    "category": "スポーツ",
+    "unit_price": 9800,
+    "stock": 52
+  },
+  {
+    "product_id": "P006",
+    "name": "保湿クリーム #6",
+    "category": "美容",
+    "unit_price": 7980,
+    "stock": 379
+  },
+  {
+    "product_id": "P007",
+    "name": "アロマキャンドル #7",
+    "category": "雑貨",
+    "unit_price": 19800,
+    "stock": 279
+  },
+  {
+    "product_id": "P008",
+    "name": "USBハブ #8",
+    "category": "ガジェット",
+    "unit_price": 1280,
+    "stock": 302
+  },
+  {
+    "product_id": "P009",
+    "name": "モバイルバッテリー #9",
+    "category": "家電",
+    "unit_price": 3480,
+    "stock": 16
+  },
+  {
+    "product_id": "P010",
+    "name": "デニムパンツ #10",
+    "category": "ファッション",
+    "unit_price": 980,
+    "stock": 47
+  },
+  {
+    "product_id": "P011",
+    "name": "グラノーラ #11",
+    "category": "食品",
+    "unit_price": 1980,
+    "stock": 119
+  },
+  {
+    "product_id": "P012",
+    "name": "Python入門 #12",
+    "category": "書籍",
+    "unit_price": 4980,
+    "stock": 308
+  },
+  {
+    "product_id": "P013",
+    "name": "ダンベルセット #13",
+    "category": "スポーツ",
+    "unit_price": 980,
+    "stock": 287
+  },
+  {
+    "product_id": "P014",
+    "name": "日焼け止め #14",
+    "category": "美容",
+    "unit_price": 1980,
+    "stock": 366
+  },
+  {
+    "product_id": "P015",
+    "name": "マグカップ #15",
+    "category": "雑貨",
+    "unit_price": 7980,
+    "stock": 359
+  },
+  {
+    "product_id": "P016",
+    "name": "ワイヤレスマウス #16",
+    "category": "ガジェット",
+    "unit_price": 4980,
+    "stock": 214
+  },
+  {
+    "product_id": "P017",
+    "name": "スマートスピーカー #17",
+    "category": "家電",
+    "unit_price": 1980,
+    "stock": 229
+  },
+  {
+    "product_id": "P018",
+    "name": "スニーカー #18",
+    "category": "ファッション",
+    "unit_price": 5980,
+    "stock": 142
+  },
+  {
+    "product_id": "P019",
+    "name": "プロテインバー #19",
+    "category": "食品",
+    "unit_price": 12800,
+    "stock": 445
+  },
+  {
+    "product_id": "P020",
+    "name": "ビジネス戦略論 #20",
+    "category": "書籍",
+    "unit_price": 980,
+    "stock": 388
+  },
+  {
+    "product_id": "P021",
+    "name": "ランニングシューズ #21",
+    "category": "スポーツ",
+    "unit_price": 12800,
+    "stock": 81
+  },
+  {
+    "product_id": "P022",
+    "name": "フェイスマスク #22",
+    "category": "美容",
+    "unit_price": 9800,
+    "stock": 216
+  },
+  {
+    "product_id": "P023",
+    "name": "クッション #23",
+    "category": "雑貨",
+    "unit_price": 2980,
+    "stock": 142
+  },
+  {
+    "product_id": "P024",
+    "name": "キーボード #24",
+    "category": "ガジェット",
+    "unit_price": 1580,
+    "stock": 110
+  },
+  {
+    "product_id": "P025",
+    "name": "LEDデスクライト #25",
+    "category": "家電",
+    "unit_price": 12800,
+    "stock": 172
+  },
+  {
+    "product_id": "P026",
+    "name": "トートバッグ #26",
+    "category": "ファッション",
+    "unit_price": 1280,
+    "stock": 47
+  },
+  {
+    "product_id": "P027",
+    "name": "抹茶パウダー #27",
+    "category": "食品",
+    "unit_price": 3480,
+    "stock": 49
+  },
+  {
+    "product_id": "P028",
+    "name": "デザイン思考 #28",
+    "category": "書籍",
+    "unit_price": 2980,
+    "stock": 433
+  },
+  {
+    "product_id": "P029",
+    "name": "スポーツタオル #29",
+    "category": "スポーツ",
+    "unit_price": 2980,
+    "stock": 309
+  },
+  {
+    "product_id": "P030",
+    "name": "ヘアオイル #30",
+    "category": "美容",
+    "unit_price": 2480,
+    "stock": 413
+  },
+  {
+    "product_id": "P031",
+    "name": "ブランケット #31",
+    "category": "雑貨",
+    "unit_price": 980,
+    "stock": 373
+  },
+  {
+    "product_id": "P032",
+    "name": "Webカメラ #32",
+    "category": "ガジェット",
+    "unit_price": 3980,
+    "stock": 274
+  },
+  {
+    "product_id": "P033",
+    "name": "電動歯ブラシ #33",
+    "category": "家電",
+    "unit_price": 1280,
+    "stock": 498
+  },
+  {
+    "product_id": "P034",
+    "name": "サングラス #34",
+    "category": "ファッション",
+    "unit_price": 19800,
+    "stock": 193
+  },
+  {
+    "product_id": "P035",
+    "name": "オリーブオイル #35",
+    "category": "食品",
+    "unit_price": 1280,
+    "stock": 282
+  },
+  {
+    "product_id": "P036",
+    "name": "統計学入門 #36",
+    "category": "書籍",
+    "unit_price": 2480,
+    "stock": 424
+  },
+  {
+    "product_id": "P037",
+    "name": "水筒 #37",
+    "category": "スポーツ",
+    "unit_price": 7980,
+    "stock": 316
+  },
+  {
+    "product_id": "P038",
+    "name": "リップバーム #38",
+    "category": "美容",
+    "unit_price": 19800,
+    "stock": 441
+  },
+  {
+    "product_id": "P039",
+    "name": "フォトフレーム #39",
+    "category": "雑貨",
+    "unit_price": 2980,
+    "stock": 295
+  },
+  {
+    "product_id": "P040",
+    "name": "モニターアーム #40",
+    "category": "ガジェット",
+    "unit_price": 1980,
+    "stock": 360
+  },
+  {
+    "product_id": "P041",
+    "name": "加湿器 #41",
+    "category": "家電",
+    "unit_price": 1280,
+    "stock": 23
+  },
+  {
+    "product_id": "P042",
+    "name": "キャップ #42",
+    "category": "ファッション",
+    "unit_price": 7980,
+    "stock": 116
+  },
+  {
+    "product_id": "P043",
+    "name": "ナッツミックス #43",
+    "category": "食品",
+    "unit_price": 12800,
+    "stock": 148
+  },
+  {
+    "product_id": "P044",
+    "name": "マーケティング基礎 #44",
+    "category": "書籍",
+    "unit_price": 1280,
+    "stock": 437
+  },
+  {
+    "product_id": "P045",
+    "name": "リストバンド #45",
+    "category": "スポーツ",
+    "unit_price": 1980,
+    "stock": 443
+  },
+  {
+    "product_id": "P046",
+    "name": "ハンドクリーム #46",
+    "category": "美容",
+    "unit_price": 1280,
+    "stock": 194
+  },
+  {
+    "product_id": "P047",
+    "name": "ペンスタンド #47",
+    "category": "雑貨",
+    "unit_price": 2480,
+    "stock": 232
+  },
+  {
+    "product_id": "P048",
+    "name": "ケーブルクリップ #48",
+    "category": "ガジェット",
+    "unit_price": 7980,
+    "stock": 427
+  },
+  {
+    "product_id": "P049",
+    "name": "空気清浄機 #49",
+    "category": "家電",
+    "unit_price": 2980,
+    "stock": 83
+  },
+  {
+    "product_id": "P050",
+    "name": "ウォッチ #50",
+    "category": "ファッション",
+    "unit_price": 2980,
+    "stock": 181
+  }
+]

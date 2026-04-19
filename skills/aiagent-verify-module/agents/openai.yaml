@@ -1,0 +1,3 @@
+interface:
+  display_name: "Aiagent Verify Module"
+  short_description: "Verify module completion with AI evaluation. Use when the user wants to check if"

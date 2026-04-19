@@ -1,0 +1,17 @@
+# Capítulo 8: RAG
+id: "ch08-rag"
+order: 8
+name: "RAG"
+description: "Técnica para mejorar las respuestas de LLMs recuperando conocimiento externo."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch07-multimodal"
+objectives:
+  - "Explicar qué es RAG y por qué es necesario"
+  - "Entender el proceso de 4 pasos de RAG (Ingestion → Retrieval → Augmentation → Generation)"
+  - "Comprender el rol de las bases de datos vectoriales"
+  - "Decidir cuándo usar RAG vs. fine-tuning"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-2?slideId=rag-what-is"

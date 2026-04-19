@@ -1,0 +1,18 @@
+# Chapter 16: メール自動化 & マーケティング
+id: "module16-email-automation"
+order: 16
+name: "メール自動化 & マーケティング"
+description: "受信メールの分析、返信方針の整理、送信メールの自動化、マーケティング配信の基礎までを一気通貫で学びます。"
+type: "manual"
+estimatedMinutes: 180
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module06-agent-development"
+objectives:
+  - "メール送受信の基本フローを説明できる"
+  - "受信トレイ分析と返信漏れ確認を自動化できる"
+  - "トランザクショナルメールとマーケティングメールの違いを理解する"
+  - "メール送信の認証要件と運用上の注意点を説明できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-16"
+  slides: "https://ai-agent.camp/ja/course/module-16"

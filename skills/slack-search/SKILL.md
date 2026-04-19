@@ -1,0 +1,284 @@
+---
+name: slack-search
+description: "Slackチャンネルやメッセージをセマンティック検索するスキル。 「Slackで検索して」「チャンネルを探して」「発言を探して」等のリクエストで発動。"
+triggers:
+  - Slackで検索して
+  - チャンネルを探して
+  - 発言を探して
+  - 関連するチャンネル
+  - イベントを検索
+  - slack-search
+  - Slack search
+---
+
+# Slack Search Skill
+
+BookRAGに基づく階層的インデックスを活用したSlackセマンティック検索。
+
+## クイックスタート
+
+```python
+import sys
+from pathlib import Path
+# プロジェクトルートの tools/ ディレクトリをパスに追加
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "tools"))
+from slack_search import SlackSearch
+
+search = SlackSearch()
+
+# ワークスペース概要
+overview = search.get_workspace_overview()
+
+# チャンネル検索（セマンティック検索）
+results = search.find_channels("DX展示会")
+
+# チャンネル詳細
+detail = search.get_channel_detail("my-workspace/example-channel")
+
+# 関連チャンネル探索
+related = search.find_related_channels("my-workspace/example-channel")
+
+# 人物検索
+persons = search.find_person("清水")
+
+# イベント検索
+events = search.find_events("DX")
+
+# タイムライン検索
+timeline = search.get_timeline("2025-12-01", "2025-12-31")
+```
+
+## 利用可能な検索機能
+
+### 1. ワークスペース概要 (`get_workspace_overview`)
+
+全体の統計情報とカテゴリ構造を取得。
+
+```python
+# 全ワークスペース
+overview = search.get_workspace_overview()
+
+# 特定のワークスペース
+overview = search.get_workspace_overview("my-workspace")
+```
+
+**対応ワークスペース**: 設定されたワークスペース（`build_book_index.py` の `WORKSPACES` を参照）
+
+### 2. チャンネル検索 (`find_channels`)
+
+チャンネル名、トピック、概要からセマンティック検索。
+
+```python
+# 基本検索
+results = search.find_channels("展示会")
+
+# フィルタ付き検索
+results = search.find_channels(
+    query="プロジェクト",
+    workspace="my-workspace",
+    category="project",
+    limit=20
+)
+```
+
+**チャンネルカテゴリ**:
+- `cafe`: 個人チャンネル（cafe_*）
+- `project`: プロジェクト（pj_*）
+- `product`: プロダクト開発（product_*）
+- `sales`: 営業（sales_*）
+- `notify`: 通知（notify_*）
+- `partner`: 外部パートナー（*_partner）
+- `event`: イベント（日付パターン）
+- `external`: 外部連携（ex-*, ext-*）
+
+### 3. チャンネル詳細 (`get_channel_detail`)
+
+特定チャンネルの詳細情報を取得。
+
+```python
+# フルID指定
+detail = search.get_channel_detail("my-workspace/example-channel")
+
+# チャンネル名のみでも可
+detail = search.get_channel_detail("example-channel")
+```
+
+**返却情報**:
+- 概要（overview）
+- トピック（topics）
+- 参加者（participants）
+- 活動期間（first_activity, last_activity）
+- ファイルパス（data, summary, archive）
+- 関連チャンネル（related_channels）
+
+### 4. 関連チャンネル探索 (`find_related_channels`)
+
+グラフ構造に基づいて関連チャンネルを探索。
+
+```python
+# 直接関連
+related = search.find_related_channels("example-channel")
+
+# 間接関連まで（depth=2）
+related = search.find_related_channels("example-channel", depth=2)
+```
+
+### 5. 人物検索 (`find_person`)
+
+発言者やメンションから人物を検索。
+
+```python
+results = search.find_person("清水")
+# 返却: 名前、エイリアス、参加チャンネル数、チャンネルリスト
+```
+
+### 6. イベント検索 (`find_events`)
+
+展示会、会議などのイベントを検索。
+
+```python
+# 全イベント
+events = search.find_events()
+
+# キーワード検索
+events = search.find_events("DX")
+```
+
+### 7. カテゴリ別一覧 (`list_channels_by_category`)
+
+特定カテゴリのチャンネルを一覧。
+
+```python
+# 全ワークスペースのcafeチャンネル
+cafes = search.list_channels_by_category("cafe")
+
+# 特定ワークスペースのprojectチャンネルのみ
+projects = search.list_channels_by_category("project", workspace="my-workspace")
+```
+
+### 8. タイムライン検索 (`get_timeline`)
+
+期間指定でアクティビティを検索。
+
+```python
+timeline = search.get_timeline(
+    start_date="2025-12-01",
+    end_date="2025-12-31",
+    workspace="my-workspace"  # オプション
+)
+```
+
+### 9. 出力ソース情報 (`get_output_sources`)
+
+calendar, gmail, drive, voicememoの統計情報。
+
+```python
+sources = search.get_output_sources()
+```
+
+## データ構造
+
+### インデックスパス
+- メインインデックス: `slack-sync/index/book_index.json`
+- スキーマ定義: `slack-sync/index/schema.md`
+
+### データソース
+- 現在データ: `slack-sync/data/{workspace}/`
+- サマリー: `slack-sync/data/summary/{workspace}/`
+- アーカイブ: `slack-sync/data/archive/{workspace}/`
+- 出力: `output/` (calendar, gmail, drive, voicememo)
+
+## CLIコマンド
+
+```bash
+# ワークスペース概要
+uv run python tools/slack_search.py overview [workspace]
+
+# チャンネル検索
+uv run python tools/slack_search.py find "クエリ"
+
+# チャンネル詳細
+uv run python tools/slack_search.py detail "channel_id"
+
+# 関連チャンネル
+uv run python tools/slack_search.py related "channel_id"
+
+# 人物検索
+uv run python tools/slack_search.py person "名前"
+
+# イベント検索
+uv run python tools/slack_search.py events [クエリ]
+
+# カテゴリ別
+uv run python tools/slack_search.py category "カテゴリ名"
+
+# タイムライン
+uv run python tools/slack_search.py timeline "開始日" "終了日"
+```
+
+## インデックス更新
+
+インデックスはGitHub Actionsで毎日自動更新されます。
+手動更新:
+
+```bash
+python3 slack-sync/scripts/build_book_index.py
+```
+
+## ユースケース例
+
+### 「清水さんが参加しているプロジェクトを教えて」
+
+```python
+person = search.find_person("清水")[0]
+project_channels = [
+    ch for ch in person["channels"]
+    if search.get_channel_detail(ch).get("category") == "project"
+]
+```
+
+### 「最近のDX展示会イベントの成果を確認」
+
+```python
+events = search.find_events("DX")
+for event in events:
+    detail = search.get_channel_detail(event["channel"])
+    print(f"{event['name']}: {detail['overview']}")
+```
+
+### 「example-channelに関連する活動を調べる」
+
+```python
+detail = search.get_channel_detail("example-channel")
+related = search.find_related_channels("example-channel", depth=2)
+print(f"関連チャンネル数: {related['total_related']}")
+```
+
+## Overview
+
+BookRAGに基づく階層的インデックスを活用し、Slackチャンネル・メッセージをセマンティック検索するスキルです。チャンネル検索、人物検索、イベント検索、タイムライン検索に対応。
+
+## Troubleshooting
+
+| エラー | 解決方法 |
+|--------|---------|
+| Index file not found | `python3 slack-sync/scripts/build_book_index.py` でインデックスを再構築 |
+| No results found | クエリのキーワードを変えるか、`get_workspace_overview()` で利用可能なカテゴリを確認 |
+
+## Success Criteria
+
+- [ ] 検索クエリに対して関連するチャンネルまたはメッセージが返却されている
+- [ ] 検索結果にチャンネル名・概要・関連度が含まれている
+- [ ] エラーなく完了している
+
+## Usage
+
+上記「クイックスタート」および「CLIコマンド」セクションを参照。基本例:
+
+```bash
+# チャンネル検索
+uv run python tools/slack_search.py find "DX展示会"
+
+# 人物検索
+uv run python tools/slack_search.py person "清水"
+```

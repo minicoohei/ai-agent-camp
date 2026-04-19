@@ -1,0 +1,15 @@
+# Chapter 5: PPTX解析・編集
+id: "module05-pptx"
+order: 5
+name: "PPTX解析・変換・生成"
+description: "3つの専門ツールを使い分けて、PowerPointファイルの解析、テンプレート変換、ゼロからのプレゼン自動生成をマスターします"
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "スライド構造を解析できる"
+  - "テンプレートを抽出できる"
+  - "新規スライドを生成できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-5"
+  slides: "https://ai-agent.camp/ja/course/module-5"

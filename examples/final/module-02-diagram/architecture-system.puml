@@ -1,0 +1,59 @@
+@startuml architecture-system
+title システム構成図
+
+skinparam backgroundColor #FEFEFE
+skinparam componentStyle rectangle
+
+cloud "Internet" {
+    [User Browser] as browser
+    [Mobile App] as mobile
+}
+
+node "AWS Cloud" {
+    node "Edge" {
+        [CloudFront] as cf
+        [WAF] as waf
+    }
+    
+    node "Application Layer" {
+        [ALB] as alb
+        
+        frame "ECS Cluster" {
+            [Frontend Container] as fe
+            [Backend Container] as be
+            [Worker Container] as worker
+        }
+    }
+    
+    node "Data Layer" {
+        database "RDS\n(PostgreSQL)" as rds
+        database "ElastiCache\n(Redis)" as redis
+        storage "S3\n(Assets)" as s3
+    }
+    
+    node "Messaging" {
+        queue "SQS" as sqs
+    }
+}
+
+cloud "External Services" {
+    [Slack API] as slack
+    [Gmail API] as gmail
+}
+
+browser --> cf
+mobile --> cf
+cf --> waf
+waf --> alb
+alb --> fe
+alb --> be
+fe --> be
+be --> rds
+be --> redis
+be --> s3
+be --> sqs
+sqs --> worker
+worker --> slack
+worker --> gmail
+
+@enduml

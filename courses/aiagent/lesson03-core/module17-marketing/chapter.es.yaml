@@ -1,0 +1,17 @@
+# Capítulo 17: Marketing
+id: "module17-marketing"
+order: 17
+name: "Marketing"
+description: "Aprende a crear y gestionar contenido de marketing aprovechando habilidades de IA."
+type: "manual"
+estimatedMinutes: 120
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module01-banner"
+objectives:
+  - "Crear contenido para redes sociales eficientemente"
+  - "Realizar auditorías SEO y proponer mejoras"
+  - "Crear y refinar textos de marketing"
+  - "Crear maquetas de diseño con Pencil MCP"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-17"

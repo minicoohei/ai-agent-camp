@@ -1,0 +1,17 @@
+# Chapter 6: MCP (Model Context Protocol)
+id: "ch06-mcp"
+order: 6
+name: "MCP (Model Context Protocol)"
+description: "Understand the standard protocol connecting AI with external tools."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch05-cursor-usage"
+objectives:
+  - "Explain what MCP is and why it matters"
+  - "Understand the 4 core concepts (Tools, Resources, Prompts, Sampling)"
+  - "Know major MCP servers"
+  - "Understand how to use MCP with Claude Code / Cursor / Codex"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-6?slideId=mcp-intro"

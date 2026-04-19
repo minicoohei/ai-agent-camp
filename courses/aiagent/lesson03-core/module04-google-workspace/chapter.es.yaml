@@ -1,0 +1,18 @@
+# Capítulo 4: Integración con Google Workspace
+id: "module04-google-workspace"
+order: 4
+name: "Secretario IA — Integracion con Google Workspace"
+description: "Obten tu propio secretario IA. Desde busqueda de horarios libres en Calendar, deteccion de emails sin responder, gestion de archivos en Drive, hasta integracion de datos en Sheets."
+type: "manual"
+estimatedMinutes: 180
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "lesson02-setup"
+objectives:
+  - "Entender el rol de cada API de Google Workspace"
+  - "Operar Calendar, Gmail, Drive y Sheets desde agentes de IA"
+  - "Explicar el flujo de automatización programada con GAS"
+  - "Organizar entradas y salidas de un flujo integrado"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-4"
+  slides: "https://ai-agent.camp/es/course/module-4"

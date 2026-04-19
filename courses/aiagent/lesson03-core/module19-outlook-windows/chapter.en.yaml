@@ -1,0 +1,15 @@
+# Chapter 19: Windows Outlook
+id: "module19-outlook-windows"
+order: 19
+name: "Windows Outlook (desktop)"
+description: "Learn the basics of Outlook for Windows, including views, search, folders, rules, and when to switch to Microsoft 365 CLI automation."
+type: "manual"
+estimatedMinutes: 70
+thumbnail: "thumbnail.png"
+objectives:
+  - "Explain the role of desktop Outlook"
+  - "Design basic folders, categories, and rules"
+  - "Explain when to use GUI operations versus CLI automation"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-19"
+  slides: "https://ai-agent.camp/en/course/module-19"

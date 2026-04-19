@@ -1,0 +1,15 @@
+# Chapter 11: GitHub Actions
+id: "module11-github-actions"
+order: 11
+name: "GitHub Actions"
+description: "CI/CD automation and workflow creation."
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "Understand the basics of GitHub Actions"
+  - "Define workflows"
+  - "Manage Secrets"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-11"
+  slides: "https://ai-agent.camp/en/course/module-11"

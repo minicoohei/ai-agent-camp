@@ -1,0 +1,13 @@
+# Chapter 2: 拡張機能
+id: "ch02-extensions"
+order: 2
+name: "拡張機能"
+description: "必要な拡張機能をインストールして設定します。"
+type: "manual"
+estimatedMinutes: 15
+prerequisites:
+  - "ch01-environment"
+objectives:
+  - "推奨拡張機能をインストールできる"
+  - "拡張機能の設定を完了できる"
+thumbnail: "thumbnail.png"

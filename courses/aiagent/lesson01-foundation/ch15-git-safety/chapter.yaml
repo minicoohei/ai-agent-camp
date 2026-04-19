@@ -1,0 +1,16 @@
+# Chapter 15: Git安全運用
+id: "ch15-git-safety"
+order: 15
+name: "Git安全運用"
+description: "危険なGit操作を理解し、安全にバージョン管理を行う方法を学びます。"
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch14-git-basics"
+objectives:
+  - "危険なGit操作（force push, reset --hard 等）を理解する"
+  - "安全なGit運用のプラクティスを身につける"
+  - "AIエージェントとGitの安全な連携方法を理解する"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-7?slideId=dangerous-ops"

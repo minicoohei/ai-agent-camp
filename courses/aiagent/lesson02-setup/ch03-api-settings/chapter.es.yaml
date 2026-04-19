@@ -1,0 +1,13 @@
+# Capítulo 3: Configuración de API
+id: "ch03-api-settings"
+order: 3
+name: "Configuración de API"
+description: "Obtén y configura las claves API necesarias."
+type: "manual"
+estimatedMinutes: 45
+prerequisites:
+  - "ch02-extensions"
+objectives:
+  - "Obtener una clave de Gemini API"
+  - "Configurar todas las claves API necesarias"
+thumbnail: "thumbnail.png"

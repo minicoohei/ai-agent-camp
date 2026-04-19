@@ -1,0 +1,3 @@
+interface:
+  display_name: "Video Frame Reader"
+  short_description: "A skill that extracts keyframes from video files and analyzes their content."

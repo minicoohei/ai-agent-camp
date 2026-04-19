@@ -1,0 +1,3 @@
+interface:
+  display_name: "Youtube Uploader"
+  short_description: "YouTube Data API v3 を使用した動画アップロードスキル。"

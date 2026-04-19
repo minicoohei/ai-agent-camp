@@ -1,0 +1,151 @@
+# ターミナル入門ガイド
+
+**更新日**: 2026年4月15日
+
+> このガイドは、AIが「ターミナルで実行してください」と案内した時に参照するための入門資料です。
+
+---
+
+## ターミナルとは
+
+ターミナル（端末）は、文字を入力してパソコンに指示を出すためのアプリです。ふだんはボタンをクリックして操作しますが、ターミナルでは「コマンド」と呼ばれる短い文字列を入力して操作します。
+
+AI エージェント（Cursor / Claude Code / Codex）は内部的にターミナルを使っていますが、管理者権限が必要な操作などは AI が自動実行できないため、自分でターミナルを開いてコマンドを入力する場面があります。
+
+---
+
+## ターミナルの開き方
+
+### macOS の場合
+
+**方法1: Spotlight 検索（最も簡単）**
+
+1. `Cmd + Space` を押す
+2. 「ターミナル」と入力する
+3. 表示された「ターミナル.app」をクリックする
+
+**方法2: アプリケーションフォルダ**
+
+1. Finder を開く
+2. 「アプリケーション」→「ユーティリティ」→「ターミナル」をダブルクリック
+
+> 詳しくは [Apple公式: Macでターミナルを開く](https://support.apple.com/ja-jp/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac) を参照してください。
+
+### Windows の場合（WSL2 + Ubuntu）
+
+> **前提**: WSL2 がインストール済みであること。未導入の場合は PowerShell（管理者）で `wsl --install` を実行してください（[Microsoft公式ガイド](https://learn.microsoft.com/ja-jp/windows/wsl/install)）。
+
+**方法1: Windows Terminal から WSL を開く**
+
+1. スタートボタンをクリック（または `Win` キーを押す）
+2. 「Windows Terminal」と入力して起動する
+3. タブバーの「v」ボタンから「Ubuntu」を選択する
+
+**方法2: WSL を直接起動**
+
+1. スタートメニューから「Ubuntu」を検索してクリックする
+
+> **ヒント**: Windows Terminal の「設定」→「既定のプロファイル」を「Ubuntu」に変更すると、毎回選ぶ手間が省けます。
+
+> **注意**: プロジェクトは WSL ファイルシステム上（`/home/ユーザー名/...`）に配置してください。`/mnt/c/Users/...` では権限や改行コードの問題が起きることがあります。
+
+> 詳しくは [Microsoft公式: WSL のインストール](https://learn.microsoft.com/ja-jp/windows/wsl/install) を参照してください。
+
+---
+
+## 基本操作
+
+### コマンドを実行する
+
+1. ターミナルを開く
+2. AIが案内したコマンドを入力する（コピー＆ペーストでOK）
+3. `Enter` キーを押す
+4. 結果が画面に表示される
+
+### コピー＆ペースト
+
+| OS | コピー | ペースト |
+|----|--------|----------|
+| macOS | `Cmd + C` | `Cmd + V` |
+| Windows (WSL) | `Ctrl + Shift + C` | 右クリック、または `Ctrl + Shift + V` |
+
+### 実行を中断する
+
+コマンドの実行を途中で止めたい場合は `Ctrl + C` を押してください。
+
+---
+
+## ファイルを開くコマンド
+
+AI が「このファイルを開いてください」と案内することがあります。ファイルやフォルダ、URL を既定アプリで開くコマンドは OS によって違います。
+
+| OS | コマンド例 | 用途 |
+|----|-----------|------|
+| macOS | `open report.pdf` / `open https://example.com` | ファイル・URL 共通 |
+| Windows (WSL2) | `explorer.exe report.pdf` | ファイルを Windows の既定アプリで開く |
+| Windows (WSL2) | `wslview https://example.com` | URL を Windows 側ブラウザで開く（`sudo apt install wslu` で導入） |
+
+> AI の案内が macOS 前提の `open ...` になっている場合は、WSL2 では `explorer.exe`（ファイル）や `wslview`（URL）に読み替えて実行してください。
+
+---
+
+## Windows 側のファイルをプロジェクトに取り込む（WSL2）
+
+Windows 側のブラウザでダウンロードしたファイル（Google OAuth の JSON など）は、Windows 側の `C:\Users\<Windowsユーザー名>\Downloads\` に保存されます。WSL2 からは `/mnt/c/Users/<Windowsユーザー名>/Downloads/` として見えます。
+
+```bash
+# 例: ダウンロードした JSON を credentials/ に取り込む
+cp /mnt/c/Users/<Windowsユーザー名>/Downloads/client_secret_xxx.json \
+   ~/ai-agent-camp/credentials/credentials.json
+```
+
+> プロジェクト本体は WSL 側（`/home/<user>/...`）に置き、Windows 側（`/mnt/c/...`）には置かないでください。権限や改行コードの問題が出ます。Windows 側のファイルは「取り込む」だけにします。
+
+---
+
+## sudo とは
+
+`sudo` は「管理者権限で実行する」という意味のコマンドです（主に macOS / Linux で使います）。
+
+実行するとパソコンのログインパスワードを求められます。入力中は画面に文字が表示されませんが、正常な動作です。入力後に `Enter` を押してください。
+
+### いつ使うのか
+
+- ソフトウェアのインストールやアップデート時
+- ファイルやフォルダの権限変更時
+- 「Permission denied」（権限不足）エラーが出た時
+
+### このコースでの注意
+
+- `sudo` が必要な場面はほとんどありません
+- AIが `sudo` を使うよう案内した場合は、コマンドの内容を確認してから実行してください
+- 意味がわからない `sudo` コマンドは実行しないでください（[セキュリティガイド](security-guardrails.md) 参照）
+
+---
+
+## 安全のために
+
+- **知らないコマンドをむやみに実行しない** — 特に `rm`（削除）、`sudo`、`curl | bash` 形式は注意
+- **パスワードを求められたら慎重に** — 正当な理由があるか確認する
+- **困ったら `Ctrl + C`** — いつでもコマンドの実行を中断できます
+- **わからなければAIに聞く** — 「このコマンドは何をするの？」と質問すれば説明してくれます
+
+---
+
+## よくある場面と対処
+
+| AIの案内 | 意味 | やること |
+|---------|------|---------|
+| 「ターミナルで実行してください」 | AIが自動実行できない操作がある | このガイドの手順でターミナルを開き、コマンドを貼り付けて Enter |
+| 「別のターミナルウィンドウで」 | 今の画面とは別にもう1つ開く必要がある | ターミナルアプリをもう1つ起動する |
+| 「sudo で実行してください」 | 管理者権限が必要 | パスワードを入力して実行（上記「sudo とは」参照） |
+| 「Permission denied が出た」 | 権限不足 | [トラブルシューティング 問題4](troubleshoot.md#問題-4-権限不足エラー) を参照 |
+
+---
+
+## 参考リンク
+
+- [Apple: Macでターミナルを開く](https://support.apple.com/ja-jp/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac)
+- [Microsoft: WSL のインストール](https://learn.microsoft.com/ja-jp/windows/wsl/install)
+- [トラブルシューティング](troubleshoot.md) — エラーが出た場合
+- [セキュリティガイド](security-guardrails.md) — セキュリティの基本

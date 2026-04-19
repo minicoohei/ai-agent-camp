@@ -1,0 +1,17 @@
+# Chapter 9: Skill / SubAgent / Agent Team
+id: "ch09-subagent"
+order: 9
+name: "Skill / SubAgent"
+description: "Techniques to extend AI agent capabilities and coordinate them as a team."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch08-rag"
+objectives:
+  - "Understand how to extend AI knowledge and procedures using Skills"
+  - "Understand the pattern of delegating specialized tasks to SubAgents"
+  - "Understand how to coordinate multiple agents as an Agent Team"
+  - "Decide when to use Skills, SubAgents, or Agent Teams in practice"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-3?slideId=what-is-skill"

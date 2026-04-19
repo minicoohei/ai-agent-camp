@@ -1,0 +1,45 @@
+@startuml sequence-api-call
+title API呼び出しシーケンス
+
+skinparam backgroundColor #FEFEFE
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 10
+skinparam sequenceParticipant underline
+
+actor User as user
+participant "Frontend\n(React)" as fe
+participant "API Gateway\n(Kong)" as gw
+participant "Backend\n(FastAPI)" as be
+database "Database\n(PostgreSQL)" as db
+
+user -> fe: ログインボタンクリック
+activate fe
+
+fe -> gw: POST /api/auth/login
+activate gw
+
+gw -> be: 認証リクエスト
+activate be
+
+be -> db: ユーザー検索
+activate db
+db --> be: ユーザー情報
+deactivate db
+
+be -> be: パスワード検証
+
+alt 認証成功
+    be --> gw: JWT Token
+    gw --> fe: 200 OK + Token
+    fe --> user: ダッシュボード表示
+else 認証失敗
+    be --> gw: 401 Unauthorized
+    gw --> fe: 401 Error
+    fe --> user: エラーメッセージ表示
+end
+
+deactivate be
+deactivate gw
+deactivate fe
+
+@enduml

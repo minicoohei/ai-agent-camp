@@ -1,0 +1,15 @@
+# Chapter 6: エージェント開発
+id: "module06-agent-development"
+order: 6
+name: "エージェント開発"
+description: "カスタムAIエージェントの開発方法を学びます。"
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "Skillファイルを作成できる"
+  - "Commandを定義できる"
+  - "サブエージェントを設計できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-6"
+  slides: "https://ai-agent.camp/ja/course/module-6"

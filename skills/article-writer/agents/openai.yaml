@@ -1,0 +1,3 @@
+interface:
+  display_name: "Article Writer"
+  short_description: "テーマからアウトライン生成→文体プロファイル適用→Markdown記事出力を行う記事執筆スキル。挿絵マーカーの自動挿入、style-analyzerプロファイル"

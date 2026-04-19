@@ -1,0 +1,3 @@
+interface:
+  display_name: "Sql Queries"
+  short_description: "Write correct, performant SQL across all major data warehouse dialects (Snowflak"

@@ -1,0 +1,17 @@
+# Capítulo 6: MCP (Protocolo de Contexto de Modelo)
+id: "ch06-mcp"
+order: 6
+name: "MCP (Protocolo de Contexto de Modelo)"
+description: "Comprende el protocolo estándar que conecta la IA con herramientas externas."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch05-cursor-usage"
+objectives:
+  - "Explicar qué es MCP y por qué es importante"
+  - "Entender los 4 conceptos clave (Tools, Resources, Prompts, Sampling)"
+  - "Conocer los principales servidores MCP"
+  - "Entender cómo usar MCP con Claude Code / Cursor / Codex"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-6?slideId=mcp-intro"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Tmux Session Manager"
+  short_description: "Lightsail上のClaude Code tmuxセッションをSSH経由で管理"

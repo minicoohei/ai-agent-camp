@@ -1,0 +1,72 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~*)",
+      "Bash(rm -rf .*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f :*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean -f:*)",
+      "Bash(git clean -fdx:*)",
+      "Bash(sudo rm:*)",
+      "Bash(sudo:*)",
+      "Bash(chmod -R 777:*)",
+      "Bash(dd:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0; python3 \"$REPO_ROOT/.claude/hooks/bash_guard.py\""
+          },
+          {
+            "type": "command",
+            "command": "REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0; \"$REPO_ROOT/.claude/hooks/git-push-review.sh\""
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0; python3 \"$REPO_ROOT/.claude/hooks/write_guard.py\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0; \"$REPO_ROOT/.claude/hooks/console-log-guard.sh\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0; python3 \"$REPO_ROOT/.claude/hooks/pptx_quality_check.py\""
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "codex@openai-codex": true
+  },
+  "language": "日本語",
+  "showThinkingSummaries": true,
+  "effortLevel": "high",
+  "skipAutoPermissionPrompt": true
+}

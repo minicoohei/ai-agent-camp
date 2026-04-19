@@ -1,0 +1,16 @@
+# Chapter 5: AIコーディングツールの使い方
+id: "ch05-cursor-usage"
+order: 5
+name: "ツール操作基礎"
+description: "Cursor / Claude Code / Codex の基本的な操作と安全な使い分けを学びます。"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch04-context-engineering"
+objectives:
+  - "Cursor / Claude Code / Codex の違いを説明できる"
+  - "各ツールの基本導線を使い分けられる"
+  - "安全設定を理解する"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-5"

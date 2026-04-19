@@ -1,0 +1,15 @@
+# Chapter 3: Mastering Cursor with Screenshots
+id: "module03-screenshot"
+order: 3
+name: "Create Tutorials with AI Agent"
+description: "Learn how to give AI "eyes" — analyze screenshots and videos to auto-generate tutorials and manuals"
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Auto-diagnose error screens"
+  - "Break down operating procedures step by step"
+  - "Auto-generate user manuals"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-3"
+  slides: "https://ai-agent.camp/en/course/module-3"

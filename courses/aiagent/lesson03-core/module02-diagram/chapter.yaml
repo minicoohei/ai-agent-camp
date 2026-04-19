@@ -1,0 +1,15 @@
+# Chapter 2: 図表・フロー作成
+id: "module02-diagram"
+order: 2
+name: "図表・フロー作成"
+description: "テキストから図解やフローチャートを自動生成します。"
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "インフォグラフィックを生成できる"
+  - "PlantUML図を作成できる"
+  - "Mermaid記法を活用できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-2"
+  slides: "https://ai-agent.camp/ja/course/module-2"

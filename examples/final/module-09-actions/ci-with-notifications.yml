@@ -1,0 +1,351 @@
+# CI/CD + Gmail/Slack 統合通知ワークフロー
+#
+# 機能:
+# - プッシュ/PR時に自動ビルド・テスト
+# - 成功/失敗時にSlackとGmailで通知
+# - デプロイ完了通知
+#
+# 必要なSecrets:
+# - SLACK_WEBHOOK_URL
+# - GMAIL_ADDRESS
+# - GMAIL_APP_PASSWORD
+# - NOTIFY_EMAIL
+
+name: CI/CD with Notifications
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  NODE_VERSION: '20'
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  # ============================================
+  # ビルド & テスト
+  # ============================================
+  build-and-test:
+    runs-on: ubuntu-latest
+    outputs:
+      build_status: ${{ steps.build.outcome }}
+      test_status: ${{ steps.test.outcome }}
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        id: build
+        run: npm run build
+
+      - name: Test
+        id: test
+        run: npm test
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: dist/
+          retention-days: 7
+
+  # ============================================
+  # デプロイ（mainブランチのみ）
+  # ============================================
+  deploy:
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: production
+    outputs:
+      deploy_url: ${{ steps.deploy.outputs.url }}
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: dist/
+
+      - name: Deploy to production
+        id: deploy
+        run: |
+          echo "Deploying to production..."
+          # 実際のデプロイコマンドをここに記述
+          # 例: aws s3 sync dist/ s3://my-bucket/
+          # 例: vercel --prod
+          echo "url=https://example.com" >> $GITHUB_OUTPUT
+          echo "✅ デプロイ完了"
+
+  # ============================================
+  # Slack通知 - 成功時
+  # ============================================
+  notify-slack-success:
+    needs: [build-and-test, deploy]
+    if: success() && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Send success notification to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          COMMIT_MSG=$(echo "${{ github.event.head_commit.message }}" | head -1)
+          
+          curl -X POST "$SLACK_WEBHOOK_URL" \
+            -H 'Content-type: application/json' \
+            --data '{
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "✅ デプロイ完了",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*リポジトリ:*\n${{ github.repository }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*ブランチ:*\n`${{ github.ref_name }}`"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*コミット:*\n`${{ github.sha }}`"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*実行者:*\n${{ github.actor }}"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*コミットメッセージ:*\n> '"${COMMIT_MSG}"'"
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "🔗 本番サイトを見る"
+                      },
+                      "url": "${{ needs.deploy.outputs.deploy_url }}",
+                      "style": "primary"
+                    },
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "📋 Actions ログ"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ],
+              "attachments": [
+                {
+                  "color": "#36a64f"
+                }
+              ]
+            }'
+
+  # ============================================
+  # Slack通知 - 失敗時
+  # ============================================
+  notify-slack-failure:
+    needs: [build-and-test]
+    if: failure()
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Send failure notification to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -X POST "$SLACK_WEBHOOK_URL" \
+            -H 'Content-type: application/json' \
+            --data '{
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "❌ ビルド/テスト失敗",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "@channel CI/CDパイプラインでエラーが発生しました。\n\n*リポジトリ:* ${{ github.repository }}\n*ブランチ:* `${{ github.ref_name }}`\n*実行者:* ${{ github.actor }}"
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "🔍 エラーを確認"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+                      "style": "danger"
+                    }
+                  ]
+                }
+              ],
+              "attachments": [
+                {
+                  "color": "#dc3545"
+                }
+              ]
+            }'
+
+  # ============================================
+  # Gmail通知 - 失敗時のみ
+  # ============================================
+  notify-gmail-failure:
+    needs: [build-and-test]
+    if: failure()
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Send failure notification via Gmail
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+        run: |
+          python3 << 'EOF'
+          import smtplib
+          import os
+          from email.mime.text import MIMEText
+          from email.mime.multipart import MIMEMultipart
+          from email.header import Header
+          from datetime import datetime
+          
+          gmail_address = os.environ['GMAIL_ADDRESS']
+          gmail_password = os.environ['GMAIL_APP_PASSWORD']
+          notify_email = os.environ['NOTIFY_EMAIL']
+          
+          subject = "🚨 [緊急] CI/CD失敗: ${{ github.repository }}"
+          
+          html_body = """
+          <html>
+          <body style="font-family: Arial, sans-serif; line-height: 1.6;">
+            <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+              <div style="background: #dc3545; color: white; padding: 20px; border-radius: 8px 8px 0 0;">
+                <h2 style="margin: 0;">❌ CI/CDパイプライン失敗</h2>
+              </div>
+              <div style="background: #f8f9fa; padding: 20px; border: 1px solid #dee2e6; border-radius: 0 0 8px 8px;">
+                <h3>エラー詳細</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                  <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6;"><strong>リポジトリ</strong></td>
+                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6;">${{ github.repository }}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6;"><strong>ブランチ</strong></td>
+                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6;">${{ github.ref_name }}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6;"><strong>コミット</strong></td>
+                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6;">${{ github.sha }}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6;"><strong>実行者</strong></td>
+                    <td style="padding: 8px; border-bottom: 1px solid #dee2e6;">${{ github.actor }}</td>
+                  </tr>
+                </table>
+                
+                <p style="margin-top: 20px;">
+                  <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" 
+                     style="display: inline-block; background: #dc3545; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">
+                    🔍 エラーログを確認
+                  </a>
+                </p>
+                
+                <hr style="border: none; border-top: 1px solid #dee2e6; margin: 20px 0;">
+                <p style="font-size: 12px; color: #6c757d;">
+                  このメールはGitHub Actionsから自動送信されています。<br>
+                  送信日時: """ + datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC') + """
+                </p>
+              </div>
+            </div>
+          </body>
+          </html>
+          """
+          
+          msg = MIMEMultipart()
+          msg['From'] = gmail_address
+          msg['To'] = notify_email
+          msg['Subject'] = Header(subject, 'utf-8')
+          msg.attach(MIMEText(html_body, 'html', 'utf-8'))
+          
+          try:
+              with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+                  server.login(gmail_address, gmail_password)
+                  server.send_message(msg)
+              print(f"✅ Gmail通知送信完了: {notify_email}")
+          except Exception as e:
+              print(f"❌ Gmail送信エラー: {e}")
+              raise
+          EOF
+
+  # ============================================
+  # PRコメント（テスト結果サマリー）
+  # ============================================
+  pr-comment:
+    needs: [build-and-test]
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    
+    steps:
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const status = '${{ needs.build-and-test.result }}';
+            const emoji = status === 'success' ? '✅' : '❌';
+            const message = status === 'success' 
+              ? 'ビルド・テストが正常に完了しました！' 
+              : 'ビルドまたはテストが失敗しました。ログを確認してください。';
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## ${emoji} CI/CD 結果\n\n${message}\n\n**ワークフロー:** [Actions ログ](${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID})`
+            });

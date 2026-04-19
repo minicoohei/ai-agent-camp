@@ -1,0 +1,98 @@
+defaults:
+  output_dir: "output/slides"
+  default_template: "simple"
+  default_slides_count: 8
+
+templates:
+  simple:
+    file: "simple/template.pptx"
+    slide_width_inches: 13.333
+    slide_height_inches: 7.5
+    theme:
+      heading_font: "游ゴシック"
+      body_font: "游ゴシック"
+      accent_color: "4472C4"
+    layouts:
+      title:       {index: 0, placeholders: {title: {idx: 0}, subtitle: {idx: 1}, extra: {idx: 10}}}
+      key_message: {index: 1, placeholders: {title: {idx: 0}, body: {idx: 1}}}
+      content:     {index: 2, placeholders: {title: {idx: 0}, key_message: {idx: 1}, body: {idx: 13}}}
+      title_only:  {index: 3, placeholders: {title: {idx: 0}}}
+      key_slide:   {index: 4, placeholders: {body: {idx: 13}}}
+      section:     {index: 5, placeholders: {title: {idx: 0}, subtitle: {idx: 1}}}
+      blank:       {index: 6, placeholders: {}}
+      blank_clean: {index: 7, placeholders: {}}
+
+  pattern1:
+    file: "pattern1/template.pptx"
+    slide_width_inches: 13.333
+    slide_height_inches: 7.5
+    style: "McKinsey consulting"
+    generator: "pattern1/generate_template.py"
+    theme:
+      heading_font: "Georgia"
+      body_font: "Arial"
+      heading_font_jp: "游ゴシック"
+      body_font_jp: "游ゴシック"
+      number_font: "Futura"
+      accent_color: "005EB8"
+      colors:
+        navy: "051C2C"
+        blue: "005EB8"
+        slate: "6B7B8D"
+        charcoal: "222222"
+        grey_bg: "F5F5F5"
+        grey_line: "D0D0D0"
+    margins:
+      left_inches: 0.6
+      right_inches: 0.6
+      title_y: 0.25
+      body_y: 1.33
+    layouts:
+      # pattern1 は全て code_gen 方式（Blank レイアウト上にプログラム描画）
+      blank: {index: 6, placeholders: {}}
+    slide_types:
+      - title           # Dark navy background
+      - exec_summary    # KPI dots + descriptions
+      - content         # Full-width bullets in grey box
+      - content_image   # 58/42 split (bullets + image)
+      - comparison      # 50/50 split with section labels
+      - quadrant        # 2x2 matrix framework
+      - process_flow    # Horizontal numbered steps
+      - table           # McKinsey-style data table
+      - full_image      # Full-width image/diagram
+      - closing         # Dark navy background
+
+  standard:
+    file: "standard/template.pptx"
+    slide_width_inches: 20.0
+    slide_height_inches: 11.25
+    theme:
+      heading_font: "Noto Sans JP Bold"
+      body_font: "Noto Sans JP"
+      number_font: "Futura"
+      accent_color: "4472C4"
+    layouts:
+      # standard テンプレートは Blank+TextBox 方式のため、全て code_gen で描画
+      title:      {index: 0, placeholders: {title: {idx: 0}, subtitle: {idx: 1}}}
+      content:    {index: 1, placeholders: {title: {idx: 0}, body: {idx: 1}}}
+      section:    {index: 2, placeholders: {title: {idx: 0}, subtitle: {idx: 1}}}
+      two_column: {index: 3, placeholders: {title: {idx: 0}, left_body: {idx: 1}, right_body: {idx: 2}}}
+      comparison: {index: 4, placeholders: {title: {idx: 0}, left_subtitle: {idx: 1}, left_body: {idx: 2}, right_subtitle: {idx: 3}, right_body: {idx: 4}}}
+      blank:      {index: 6, placeholders: {}}
+
+slide_type_mapping:
+  title:         {simple: "title",       standard: "code_gen", pattern1: "code_gen"}
+  section:       {simple: "section",     standard: "code_gen", pattern1: "code_gen"}
+  content:       {simple: "content",     standard: "code_gen", pattern1: "code_gen"}
+  key_message:   {simple: "key_message", standard: "code_gen", pattern1: "code_gen"}
+  two_column:    {simple: "code_gen",    standard: "code_gen", pattern1: "code_gen"}
+  comparison:    {simple: "code_gen",    standard: "code_gen", pattern1: "code_gen"}
+  agenda:        {simple: "content",     standard: "code_gen", pattern1: "code_gen"}
+  closing:       {simple: "title",       standard: "code_gen", pattern1: "code_gen"}
+  kpi_dashboard: {simple: "code_gen",    standard: "code_gen", pattern1: "code_gen"}
+  exec_summary:  {simple: "code_gen",    standard: "code_gen", pattern1: "code_gen"}
+  content_image: {simple: "code_gen",    standard: "code_gen", pattern1: "code_gen"}
+  quadrant:      {simple: "code_gen",    standard: "code_gen", pattern1: "code_gen"}
+  full_image:    {simple: "code_gen",    standard: "code_gen", pattern1: "code_gen"}
+  process_flow:  {simple: "code_gen",    standard: "code_gen", pattern1: "code_gen"}
+  table:         {simple: "code_gen",    standard: "code_gen", pattern1: "code_gen"}

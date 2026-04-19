@@ -1,0 +1,15 @@
+# Capítulo 9: Búsqueda y Análisis en Slack
+id: "module09-slack"
+order: 9
+name: "Búsqueda y Análisis en Slack"
+description: "Búsqueda semántica y análisis de datos de Slack."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Buscar canales y obtener detalles"
+  - "Buscar personas y eventos"
+  - "Extraer TODOs"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-9"
+  slides: "https://ai-agent.camp/es/course/module-9"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Product Marketing Context"
+  short_description: "When the user wants to create or update their product marketing context document"

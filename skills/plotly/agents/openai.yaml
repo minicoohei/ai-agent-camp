@@ -1,0 +1,3 @@
+interface:
+  display_name: "Plotly"
+  short_description: "Interactive visualization library. Use when you need hover info, zoom, pan, or w"

@@ -1,0 +1,15 @@
+# Chapter 15: Video Generation
+id: "module15-video"
+order: 15
+name: "Video Generation"
+description: "Create storyboards and generate AI UGC videos."
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "Generate storyboards"
+  - "Maintain character consistency"
+  - "Generate videos with the Kling API"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-15"
+  slides: "https://ai-agent.camp/en/course/module-15"

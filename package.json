@@ -1,0 +1,38 @@
+{
+  "name": "ai-agent-camp",
+  "version": "1.0.0",
+  "description": "AI Agent Training Repository for Non-Engineers",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "dev": "node -e \"const{spawn}=require('child_process');const c=process.platform==='darwin'?'open':process.platform==='win32'?'start':'xdg-open';spawn(c,['https://ai-agent.camp/ja/course/module-0'],{stdio:'inherit',shell:process.platform==='win32'})\"",
+    "remotion:init": "cd tools/ugc/remotion && npm init video",
+    "remotion:dev": "cd tools/ugc/remotion && npm start",
+    "remotion:build": "cd tools/ugc/remotion && npm run build",
+    "format": "prettier --write 'README.md' 'docs/**/*.md' 'courses/**/*.yaml' '.cursor/commands/**/*.md' '.claude/commands/**/*.md' 'skills/**/*.md'",
+    "format:check": "prettier --check 'README.md' 'docs/**/*.md' 'courses/**/*.yaml' '.cursor/commands/**/*.md' '.claude/commands/**/*.md' 'skills/**/*.md'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minicoohei/ai-agent-camp.git"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "claude",
+    "cursor",
+    "automation",
+    "training"
+  ],
+  "author": "minicoohei",
+  "bugs": {
+    "url": "https://github.com/minicoohei/ai-agent-camp/issues"
+  },
+  "homepage": "https://github.com/minicoohei/ai-agent-camp#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.1",
+    "prettier": "^3.8.1"
+  }
+}

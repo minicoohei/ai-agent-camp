@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-01-01T00:00:00.000000",
+  "workspaces": [
+    "my-workspace"
+  ],
+  "stats": {
+    "total_channels": 0,
+    "total_persons": 0,
+    "total_events": 0
+  },
+  "tree": {
+    "my-workspace": {
+      "general": [],
+      "project": [],
+      "notify": []
+    }
+  },
+  "channels": {},
+  "entities": {
+    "persons": {},
+    "events": {}
+  },
+  "output_sources": {}
+}

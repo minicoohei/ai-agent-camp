@@ -1,0 +1,15 @@
+# Chapter 19: Windows Outlook
+id: "module19-outlook-windows"
+order: 19
+name: "Windows Outlook（デスクトップ）"
+description: "Outlook for Windows の画面、検索、フォルダ、ルール設計を整理し、Microsoft 365 CLI と使い分ける基本を学びます。"
+type: "manual"
+estimatedMinutes: 70
+thumbnail: "thumbnail.png"
+objectives:
+  - "Outlook デスクトップ版の役割を説明できる"
+  - "フォルダ、カテゴリ、ルールの基本設計を整理できる"
+  - "GUI 操作と CLI 自動化の使い分けを説明できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-19"
+  slides: "https://ai-agent.camp/ja/course/module-19"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Gslides Parser"
+  short_description: "Google Slides プレゼンテーションの構造を GAS 経由でパースし、"

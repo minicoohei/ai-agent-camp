@@ -1,0 +1,92 @@
+@startuml ECサイトシーケンス図
+
+skinparam backgroundColor #FEFEFE
+skinparam sequence {
+    ArrowColor #1565C0
+    LifeLineBorderColor #1565C0
+    ParticipantBackgroundColor #E3F2FD
+    ParticipantBorderColor #1565C0
+    ActorBorderColor #1565C0
+    GroupBackgroundColor #F5F5F5
+    DividerBackgroundColor #E8EAF6
+}
+
+title ECサイト システムシーケンス図
+
+actor "ユーザー" as User
+participant "フロントエンド\n(Next.js)" as FE
+participant "APIサーバー\n(FastAPI)" as API
+database "PostgreSQL" as DB
+database "Redis\nキャッシュ" as Redis
+participant "Elasticsearch" as ES
+participant "Stripe\n決済API" as Stripe
+participant "SendGrid\nメール" as SG
+
+== 商品検索フロー ==
+
+User -> FE : 検索キーワード入力
+activate FE
+FE -> API : GET /api/products?q=keyword
+activate API
+API -> Redis : キャッシュ確認
+Redis --> API : キャッシュミス
+API -> ES : 全文検索クエリ
+activate ES
+ES --> API : 検索結果（商品ID一覧）
+deactivate ES
+API -> DB : 商品詳細取得
+DB --> API : 商品データ
+API -> Redis : 結果をキャッシュ
+API --> FE : 商品一覧JSON
+deactivate API
+FE --> User : 商品一覧を表示
+deactivate FE
+
+== カート追加フロー ==
+
+User -> FE : 「カートに追加」クリック
+activate FE
+FE -> API : POST /api/cart\n{productId, quantity}
+activate API
+API -> DB : カートテーブル更新\n(INSERT/UPDATE)
+DB --> API : 更新完了
+API -> Redis : カートキャッシュ更新
+API --> FE : カート内容JSON\n{items, total}
+deactivate API
+FE --> User : カート更新表示\n（バッジ数値更新）
+deactivate FE
+
+== 決済フロー ==
+
+User -> FE : 「注文確定」クリック
+activate FE
+FE -> API : POST /api/orders\n{cartId, address, paymentMethod}
+activate API
+
+API -> DB : 注文レコード作成\n(status: pending)
+DB --> API : orderId
+
+API -> Stripe : 決済リクエスト\n{amount, token}
+activate Stripe
+Stripe --> API : 決済結果\n{status: succeeded, chargeId}
+deactivate Stripe
+
+alt 決済成功
+    API -> DB : 注文ステータス更新\n(status: confirmed)
+    API -> DB : 在庫数量を減算
+    API -> SG : 注文確認メール送信
+    activate SG
+    SG --> API : 送信完了
+    deactivate SG
+    API --> FE : 注文完了レスポンス\n{orderId, status}
+    FE --> User : 注文完了画面を表示
+else 決済失敗
+    API -> DB : 注文ステータス更新\n(status: failed)
+    API --> FE : エラーレスポンス\n{error, message}
+    FE --> User : エラー画面を表示
+end
+
+deactivate API
+deactivate FE
+
+@enduml

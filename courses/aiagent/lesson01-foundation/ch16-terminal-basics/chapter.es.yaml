@@ -1,0 +1,14 @@
+# Capítulo 16: Fundamentos de Terminal
+id: "ch16-terminal-basics"
+order: 16
+name: "Fundamentos de Terminal"
+description: "Aprende los fundamentos del uso del terminal (línea de comandos)."
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+objectives:
+  - "Comprender qué es un terminal y cómo difiere de la GUI"
+  - "Aprender a abrir el terminal y usar comandos básicos"
+  - "Comprender y evitar comandos peligrosos"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-8?slideId=what-is-terminal"

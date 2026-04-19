@@ -1,0 +1,15 @@
+# Chapter 9: Slack検索・分析
+id: "module09-slack"
+order: 9
+name: "Slack検索・分析"
+description: "Slackデータのセマンティック検索と分析を行います。"
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "チャンネル検索・詳細取得ができる"
+  - "人物・イベント検索ができる"
+  - "TODO抽出ができる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-9"
+  slides: "https://ai-agent.camp/ja/course/module-9"

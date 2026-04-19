@@ -1,0 +1,3 @@
+interface:
+  display_name: "Slack Task Manager"
+  short_description: "Slack検索・TODO抽出・タスク管理を行うサブエージェント。"

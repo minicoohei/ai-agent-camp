@@ -1,0 +1,3 @@
+interface:
+  display_name: "Email Sequence"
+  short_description: "When the user wants to create or optimize an email sequence, drip campaign, auto"

@@ -1,0 +1,52 @@
+---
+name: jupyter-to-marimo
+description: "Jupyter ノートブック (.ipynb) を marimo ノートブック (.py) に変換するスキル。 「Jupyterを変換して」「ipynbをmarimoに」「ノートブック変換」等のリクエストで発動。"
+source: github.com/marimo-team/skills@main
+triggers:
+  - jupyter-to-marimo
+  - Jupyter変換
+  - ipynb変換
+  - marimoに変換
+  - ノートブック変換
+  - marimo convert
+---
+
+## トリガーワード
+「Jupyter変換」「ipynb変換」「marimoに変換」「ノートブック変換」
+
+# Converting Jupyter Notebooks to Marimo
+
+**IMPORTANT**: When asked to translate a notebook, ALWAYS run `uvx marimo convert <notebook.ipynb> -o <notebook.py>` FIRST before reading any files. This saves precious tokens - reading large notebooks can consume 30k+ tokens, while the converted .py file is much smaller and easier to work with.
+
+## Steps
+
+1. **Convert using the CLI**
+
+Run the marimo convert command via `uvx` so no install is needed:
+
+```bash
+uvx marimo convert <notebook.ipynb> -o <notebook.py>
+```
+
+This generates a marimo-compatible `.py` file from the Jupyter notebook.
+
+2. **Run `marimo check` on the output**
+
+```bash
+uvx marimo check <notebook.py>
+```
+
+Fix any issues that are reported before continuing.
+
+3. **Review and clean up the converted notebook**
+
+Read the generated `.py` file and apply the following improvements:
+
+- Ensure the script metadata block lists all required packages. The converter may miss some.
+- Drop leftover Jupyter artifacts like `display()` calls, or `%magic` commands that don't apply in marimo.
+- Make sure the final expression of each cell is the value to render. Indented or conditional expressions won't display.
+- If the original notebook requires environment variables via an input, consider adding the `EnvConfig` widget from wigglystuff. Details can be found [here](https://koaning.github.io/wigglystuff/reference/env-config.md).
+- If the original notebook uses ipywidgets, replace them with corresponding ui from marimo. A slider, for example, would be replaced with `mo.ui.slider()`.
+
+4. **Run `marimo check` again** after your edits to confirm nothing was broken.
+

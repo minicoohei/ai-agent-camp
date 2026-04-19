@@ -1,0 +1,17 @@
+# Lesson 2: Environment Setup
+id: "lesson02-setup"
+order: 2
+name: "Environment Setup"
+description: "Set up your learning environment. Prepare Claude Code / Cursor / Codex, configure extensions or skills, and obtain API keys."
+estimatedMinutes: 90
+cover: "cover.png"
+prerequisites:
+  - "lesson01-foundation"
+chapters:
+  - "ch01-environment"
+  - "ch02-extensions"
+  - "ch03-api-settings"
+objectives:
+  - "Understand the startup path for Claude Code / Cursor / Codex"
+  - "Configure required extensions"
+  - "Obtain and set up API keys"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Motion Review"
+  short_description: "Remotionコンポジションを20項目チェックリストで品質レビューする。trigger: \"motion review\" / \"video review\" /"

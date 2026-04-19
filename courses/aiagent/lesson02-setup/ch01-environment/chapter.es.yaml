@@ -1,0 +1,13 @@
+# Capítulo 1: Configuración del Entorno
+id: "ch01-environment"
+order: 1
+name: "Configuración del Entorno"
+description: "Prepara y configura Claude Code / Cursor / Codex."
+type: "manual"
+estimatedMinutes: 30
+objectives:
+  - "Explicar cómo iniciar con Claude Code / Cursor / Codex"
+  - "Completar la configuración inicial básica"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-0"

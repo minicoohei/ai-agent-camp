@@ -1,0 +1,16 @@
+# Capítulo 2: Conceptos de Tokens
+id: "ch02-tokens"
+order: 2
+name: "Conceptos de Tokens"
+description: "Aprende sobre tokens y ventanas de contexto."
+type: "manual"
+estimatedMinutes: 30
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch01-llm-basics"
+objectives:
+  - "Entender el concepto de tokens"
+  - "Entender la diferencia entre tokens de entrada y salida"
+  - "Comprender las limitaciones de la ventana de contexto"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-1?slideId=transformer-mechanism"

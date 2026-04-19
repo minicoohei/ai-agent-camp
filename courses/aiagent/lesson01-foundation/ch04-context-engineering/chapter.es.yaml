@@ -1,0 +1,16 @@
+# Capítulo 4: Ingeniería de Contexto
+id: "ch04-context-engineering"
+order: 4
+name: "Ingeniería de Contexto"
+description: "Aprende diseño efectivo de prompts y gestión de contexto."
+type: "manual"
+estimatedMinutes: 30
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch03-agents"
+objectives:
+  - "Entender la diferencia entre prompts y contexto"
+  - "Diseñar contexto efectivo"
+  - "Comprender el concepto de MCP"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-2?slideId=ce-what-is"

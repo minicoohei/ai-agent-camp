@@ -1,0 +1,46 @@
+@startuml ECサイトシーケンス
+
+' ==================================================
+' ECサイト システムシーケンス図 テンプレート
+' このテンプレートを編集してシーケンス図を作成してください
+' ==================================================
+
+' テーマ設定
+skinparam backgroundColor #FEFEFE
+skinparam sequence {
+    ArrowColor #1565C0
+    LifeLineBorderColor #1565C0
+    ParticipantBackgroundColor #E3F2FD
+    ParticipantBorderColor #1565C0
+    ActorBorderColor #1565C0
+}
+
+title ECサイト シーケンス図
+
+actor ユーザー
+participant "フロントエンド\n(Next.js)" as FE
+participant "APIサーバー\n(FastAPI)" as API
+database "データベース\n(PostgreSQL)" as DB
+participant "外部サービス\n(Stripe等)" as EXT
+
+' --- 商品検索フロー ---
+== 商品検索 ==
+
+ユーザー -> FE : 検索キーワード入力
+FE -> API : GET /api/products?q=keyword
+API -> DB : SELECT FROM products
+DB --> API : 検索結果
+API --> FE : 商品一覧JSON
+FE --> ユーザー : 商品一覧表示
+
+' --- カート追加フロー ---
+== カート追加 ==
+
+' ここに追加してください
+
+' --- 決済フロー ---
+== 決済処理 ==
+
+' ここに追加してください
+
+@enduml

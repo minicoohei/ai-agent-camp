@@ -1,0 +1,15 @@
+# Capítulo 20: Integración con Freee / MoneyForward
+id: "module20-freee-mf"
+order: 20
+name: "Integración con Freee / MoneyForward"
+description: "Aprende la base de las integraciones con SaaS contables: autenticación, revisión de transacciones y operaciones básicas con cuentas e invoices."
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "Entender los requisitos de autenticación y permisos en integraciones contables"
+  - "Explicar operaciones básicas sobre transacciones, cuentas contables e invoices"
+  - "Organizar consideraciones de seguridad al tratar datos contables"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-20"
+  slides: "https://ai-agent.camp/es/course/module-20"

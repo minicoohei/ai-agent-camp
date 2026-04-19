@@ -1,0 +1,17 @@
+# Chapter 13: LP/HP制作
+id: "module13-lp"
+order: 13
+name: "LP/HP制作"
+description: "AI エージェントを使って、訴求整理、ワイヤーフレーム設計、Pencil デザイン、HTML 実装、Vercel デプロイまでを通しで学びます。"
+type: "manual"
+estimatedMinutes: 180
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "LP/HP の要件をヒアリングして訴求ブリーフを作成できる"
+  - "ワイヤーフレームとセクション構成を設計できる"
+  - "Pencil と実装を往復しながらページを形にできる"
+  - "公開前の確認と Vercel デプロイの流れを理解できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-13"
+  slides: "https://ai-agent.camp/ja/course/module-13"

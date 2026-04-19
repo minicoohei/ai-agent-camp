@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "theme": "AI研修",
+    "message": "業務効率3倍 - AIエージェント活用ブートキャンプ",
+    "sub_copy": "非エンジニアでも今日から使える",
+    "cta": "無料体験に申し込む",
+    "platform": "x_post"
+  },
+  {
+    "id": 2,
+    "theme": "SaaS製品",
+    "message": "チーム全員がデータドリブンに",
+    "sub_copy": "ダッシュボード構築を10分で",
+    "cta": "デモを見る",
+    "platform": "facebook"
+  },
+  {
+    "id": 3,
+    "theme": "イベント告知",
+    "message": "AI×業務改革 オンラインセミナー開催",
+    "sub_copy": "2026年3月15日（日）14:00〜",
+    "cta": "参加登録する",
+    "platform": "x_post"
+  },
+  {
+    "id": 4,
+    "theme": "採用",
+    "message": "AIネイティブなチームで働きませんか？",
+    "sub_copy": "エンジニア・ビジネス職 積極採用中",
+    "cta": "募集要項を見る",
+    "platform": "instagram_feed"
+  },
+  {
+    "id": 5,
+    "theme": "新機能リリース",
+    "message": "Slack連携が進化 - ワンクリックでタスク管理",
+    "sub_copy": "v3.0 アップデート配信開始",
+    "cta": "アップデートする",
+    "platform": "x_post"
+  },
+  {
+    "id": 6,
+    "theme": "ケーススタディ",
+    "message": "導入企業の87%が工数30%削減を実感",
+    "sub_copy": "AIエージェント導入事例集 公開中",
+    "cta": "事例集をダウンロード",
+    "platform": "facebook"
+  },
+  {
+    "id": 7,
+    "theme": "キャンペーン",
+    "message": "春の学習応援キャンペーン 全コース20%OFF",
+    "sub_copy": "期間: 3/1〜3/31",
+    "cta": "クーポンを取得",
+    "platform": "instagram_feed"
+  },
+  {
+    "id": 8,
+    "theme": "ウェビナー",
+    "message": "ChatGPT vs Claude - 業務利用で比較検証",
+    "sub_copy": "実務担当者が語る活用ノウハウ",
+    "cta": "今すぐ視聴",
+    "platform": "youtube"
+  },
+  {
+    "id": 9,
+    "theme": "プレスリリース",
+    "message": "AIエージェント研修サービスを正式リリース",
+    "sub_copy": "株式会社〇〇 - 法人向けSaaS研修プラットフォーム",
+    "cta": "詳細はこちら",
+    "platform": "prtimes"
+  },
+  {
+    "id": 10,
+    "theme": "社内告知",
+    "message": "全社DX推進 - まずはAIツールから始めよう",
+    "sub_copy": "情報システム部からのお知らせ",
+    "cta": "受講申込フォーム",
+    "platform": "line"
+  }
+]

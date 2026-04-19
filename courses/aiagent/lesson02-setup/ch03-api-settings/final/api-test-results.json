@@ -1,0 +1,43 @@
+{
+  "test_date": "2026-02-10T09:00:00+09:00",
+  "results": [
+    {
+      "service": "Google Gemini",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta/models",
+      "status": "ok",
+      "response_time_ms": 245,
+      "model": "gemini-2.0-flash",
+      "note": "モデル一覧取得成功"
+    },
+    {
+      "service": "Anthropic Claude",
+      "endpoint": "https://api.anthropic.com/v1/messages",
+      "status": "ok",
+      "response_time_ms": 380,
+      "model": "claude-sonnet-4-20250514",
+      "note": "メッセージAPI応答成功"
+    },
+    {
+      "service": "OpenAI",
+      "endpoint": "https://api.openai.com/v1/models",
+      "status": "not_configured",
+      "response_time_ms": null,
+      "model": null,
+      "note": "OPENAI_API_KEY が未設定"
+    },
+    {
+      "service": "fal.ai",
+      "endpoint": "https://fal.run/fal-ai/wan-i2v",
+      "status": "not_configured",
+      "response_time_ms": null,
+      "model": null,
+      "note": "FAL_KEY が未設定"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "ok": 2,
+    "not_configured": 2,
+    "error": 0
+  }
+}

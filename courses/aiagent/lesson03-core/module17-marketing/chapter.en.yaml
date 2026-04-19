@@ -1,0 +1,17 @@
+# Chapter 17: Marketing
+id: "module17-marketing"
+order: 17
+name: "Marketing"
+description: "Learn to create and manage marketing content leveraging AI skills."
+type: "manual"
+estimatedMinutes: 120
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module01-banner"
+objectives:
+  - "Efficiently create SNS post content"
+  - "Conduct SEO audits and propose improvements"
+  - "Create and refine marketing copy"
+  - "Create design mockups with Pencil MCP"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-17"

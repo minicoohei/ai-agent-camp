@@ -1,0 +1,15 @@
+# Capítulo 1: Generación de Banners e Imágenes
+id: "module01-banner"
+order: 1
+name: "Generación de Banners e Imágenes"
+description: "Genera automáticamente banners para publicaciones en redes sociales y comunicados de prensa."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Usar la API de Gemini Image Generation"
+  - "Configurar tamaños específicos por plataforma"
+  - "Especificar tono y esquemas de color"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-1"
+  slides: "https://ai-agent.camp/es/course/module-1"

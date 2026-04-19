@@ -1,0 +1,15 @@
+# Capítulo 10: Automatización con GAS
+id: "module10-gas"
+order: 10
+name: "Automatizacion GAS y Automatizacion Practica"
+description: "Experimenta la automatizacion practica de negocios incluyendo la integracion de servicios con Google Apps Script (GAS), procesamiento automatico de facturas PDF, extraccion de TODO desde correos y generacion automatica de Google Slides con GAS."
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "Usar la CLI clasp"
+  - "Gestionar múltiples proyectos"
+  - "Configurar despliegue automático"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-10"
+  slides: "https://ai-agent.camp/es/course/module-10"

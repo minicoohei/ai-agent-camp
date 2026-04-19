@@ -1,0 +1,3 @@
+interface:
+  display_name: "Style Analyzer"
+  short_description: "ユーザーの既存文章を複数読み込み、文体特徴（語尾パターン、文の長さ、漢字/ひらがな比率、口調、接続詞傾向）を抽出してスタイルプロファイルを生成する。「文体を分析"

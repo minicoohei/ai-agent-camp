@@ -1,0 +1,15 @@
+# Chapter 12: Notion連携
+id: "module12-notion"
+order: 12
+name: "Notion CLI（ncli）"
+description: "ターミナルからNotionを操作するCLI（@sakasegawa/ncli）の導入とエージェント向けワークフローを学びます。"
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Notion APIを設定できる"
+  - "データベース操作ができる"
+  - "自動連携フローを構築できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-12"
+  slides: "https://ai-agent.camp/ja/course/module-12"

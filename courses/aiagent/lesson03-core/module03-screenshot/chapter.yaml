@@ -1,0 +1,15 @@
+# Chapter 3: スクリーンショットでCursorを使いこなす
+id: "module03-screenshot"
+order: 3
+name: "AI Agentでチュートリアルを作る"
+description: "AIに「目」を与えてスクリーンショットや動画を分析させ、チュートリアルやマニュアルを自動生成する方法を学びます"
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "エラー画面を自動診断できる"
+  - "操作手順をステップ化できる"
+  - "マニュアルを自動生成できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-3"
+  slides: "https://ai-agent.camp/ja/course/module-3"

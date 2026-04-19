@@ -1,0 +1,17 @@
+# Chapter 10: Hallucination
+id: "ch10-hallucination"
+order: 10
+name: "Hallucination"
+description: "Understand the phenomenon where AI fabricates plausible-sounding falsehoods."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch09-fine-tuning"
+objectives:
+  - "Explain what hallucination is and why it occurs"
+  - "Distinguish between types of hallucination"
+  - "Know mitigation strategies and practice them"
+  - "Build a habit of properly verifying AI output"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-3?slideId=what-is-hallucination"

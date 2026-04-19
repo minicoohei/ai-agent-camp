@@ -1,0 +1,3 @@
+interface:
+  display_name: "Video Playbook"
+  short_description: "動画分析結果からタイプ別Playbookに知見を蓄積・活用するスキル。"

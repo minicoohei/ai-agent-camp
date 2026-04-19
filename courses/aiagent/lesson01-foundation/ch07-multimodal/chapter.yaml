@@ -1,0 +1,17 @@
+# Chapter 7: マルチモーダルAI
+id: "ch07-multimodal"
+order: 7
+name: "マルチモーダルAI"
+description: "画像、テキスト、音声を統合的に理解するAIの仕組み"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch06-mcp"
+objectives:
+  - "マルチモーダルAI、VLMとは何かを説明できる"
+  - "VLMの3層アーキテクチャを理解する"
+  - "画像分析、文書分析などの活用シーンを知る"
+  - "主要なマルチモーダルモデルの特徴を把握する"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-6?slideId=multimodal-intro"

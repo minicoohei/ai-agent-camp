@@ -1,0 +1,16 @@
+# Chapter 2: Token概念
+id: "ch02-tokens"
+order: 2
+name: "Token概念"
+description: "トークンとコンテキストウィンドウの概念を学びます。"
+type: "manual"
+estimatedMinutes: 30
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch01-llm-basics"
+objectives:
+  - "トークンの概念を理解する"
+  - "入力トークンと出力トークンの違いを理解する"
+  - "コンテキストウィンドウの制限を理解する"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-1?slideId=transformer-mechanism"

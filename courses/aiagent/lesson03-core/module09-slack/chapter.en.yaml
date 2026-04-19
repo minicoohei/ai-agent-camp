@@ -1,0 +1,15 @@
+# Chapter 9: Slack Search & Analysis
+id: "module09-slack"
+order: 9
+name: "Slack Search & Analysis"
+description: "Semantic search and analysis of Slack data."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Search channels and retrieve details"
+  - "Search for people and events"
+  - "Extract TODOs"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-9"
+  slides: "https://ai-agent.camp/en/course/module-9"

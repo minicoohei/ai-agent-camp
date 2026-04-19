@@ -1,0 +1,3 @@
+interface:
+  display_name: "Aiagent Command Router"
+  short_description: "Route ai-agent-camp slash-style commands such as /start-0-1, /guide, and /setup-api-key to the matching Codex workflow."

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Fact Checker"
+  short_description: "記事内の事実主張（数値、日付、固有名詞、統計）を自動抽出し、Web検索で裏付け確認する。信頼度スコア付きレポートを出力。「ファクトチェックして」「事実確認」「裏"

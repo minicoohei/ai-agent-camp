@@ -1,0 +1,3 @@
+interface:
+  display_name: "Nanobanana"
+  short_description: "Generate images from text prompts or edit existing images using Gemini Image Gen"

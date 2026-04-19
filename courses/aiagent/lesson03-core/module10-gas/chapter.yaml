@@ -1,0 +1,15 @@
+# Chapter 10: GAS自動化
+id: "module10-gas"
+order: 10
+name: "GAS自動化 & 実践オートメーション"
+description: "Google Apps Script (GAS) によるサービス連携に加え、PDF請求書の自動処理、メールからのTODO抽出、GASでのGoogle Slides自動生成まで、実践的な業務自動化を体験します。"
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "clasp CLIを活用できる"
+  - "複数プロジェクトを管理できる"
+  - "自動デプロイを設定できる"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-10"
+  slides: "https://ai-agent.camp/ja/course/module-10"

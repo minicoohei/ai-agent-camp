@@ -1,0 +1,15 @@
+# Chapter 6: Agent Development
+id: "module06-agent-development"
+order: 6
+name: "Agent Development"
+description: "Learn how to develop custom AI agents."
+type: "manual"
+estimatedMinutes: 90
+objectives:
+  - "Create Skill files"
+  - "Define Commands"
+  - "Design sub-agents"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-6"
+  slides: "https://ai-agent.camp/en/course/module-6"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Create Cowork Plugin"
+  short_description: "Guide users through creating a new plugin from scratch in a cowork session."

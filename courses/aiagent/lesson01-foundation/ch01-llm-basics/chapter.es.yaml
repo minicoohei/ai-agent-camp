@@ -1,0 +1,14 @@
+# Capítulo 1: Fundamentos de LLM
+id: "ch01-llm-basics"
+order: 1
+name: "Fundamentos de LLM"
+description: "Aprende cómo funcionan los LLMs (Modelos de Lenguaje Grande)."
+type: "manual"
+estimatedMinutes: 30
+thumbnail: "thumbnail.png"
+objectives:
+  - "Comprender los conceptos básicos de los LLMs"
+  - "Conocer la historia y evolución de la IA"
+  - "Entender el mecanismo de predicción del siguiente token"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-1?slideId=ai-evolution"

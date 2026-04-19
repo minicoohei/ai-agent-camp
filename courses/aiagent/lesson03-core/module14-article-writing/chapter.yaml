@@ -1,0 +1,18 @@
+# Chapter 14: 記事作成
+id: "module14-article-writing"
+order: 14
+name: "記事作成"
+description: "AI エージェントを使って、テーマ設計、構成作成、文体調整、挿絵、校閲、ファクトチェックまでを通しで学びます。"
+type: "manual"
+estimatedMinutes: 230
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "記事のテーマと読者像を設計できる"
+  - "アウトラインから初稿作成までを効率化できる"
+  - "文体調整、校閲、ファクトチェックの役割を分けて進められる"
+  - "記事制作に必要な補助素材を整理できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-14"
+  slides: "https://ai-agent.camp/ja/course/module-14"

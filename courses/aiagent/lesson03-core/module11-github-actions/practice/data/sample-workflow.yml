@@ -1,0 +1,27 @@
+# 基本的な Hello World ワークフロー
+# GitHub Actions の最小構成を理解するためのサンプル
+
+name: Hello World
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: echo "Hello, GitHub Actions!"
+
+      - name: Show environment
+        run: |
+          echo "Runner OS: ${{ runner.os }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Actor: ${{ github.actor }}"

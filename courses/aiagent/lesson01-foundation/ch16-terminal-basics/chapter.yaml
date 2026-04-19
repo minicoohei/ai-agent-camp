@@ -1,0 +1,14 @@
+# Chapter 16: ターミナル基礎
+id: "ch16-terminal-basics"
+order: 16
+name: "ターミナル基礎"
+description: "ターミナル（コマンドライン）の基本操作を学びます。"
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+objectives:
+  - "ターミナルとは何か、GUIとの違いを理解する"
+  - "ターミナルの開き方と基本コマンドを習得する"
+  - "危険なコマンドを理解し回避する"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-8?slideId=what-is-terminal"

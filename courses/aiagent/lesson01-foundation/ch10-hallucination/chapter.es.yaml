@@ -1,0 +1,17 @@
+# Capítulo 10: Alucinación
+id: "ch10-hallucination"
+order: 10
+name: "Alucinación"
+description: "Comprende el fenómeno en que la IA fabrica falsedades que parecen plausibles."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch09-fine-tuning"
+objectives:
+  - "Explicar qué es la alucinación y por qué ocurre"
+  - "Distinguir entre tipos de alucinación"
+  - "Conocer estrategias de mitigación y practicarlas"
+  - "Desarrollar el hábito de verificar correctamente las respuestas de la IA"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-3?slideId=what-is-hallucination"

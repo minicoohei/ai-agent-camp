@@ -1,0 +1,838 @@
+# lessons.manifest.es.yaml — Índice de todas las lecciones (Español)
+# Independiente de course.yaml / lesson.yaml / chapter.yaml del AI Tutor
+#
+# Uso: referencia y búsqueda del listado de lecciones. Utilizado por AI Lesson Runner para resolver lecciones.
+# Fuente principal: .cursor/commands/lesson/{lessonId}.md  (los archivos existentes son la fuente principal)
+# Generado: .claude/commands/lesson/{lessonId}.md (copiado por generate-commands.sh)
+
+# === Módulo 0: Configuración ===
+- lessonId: start-0-1
+  title: "Verificar configuración del entorno"
+  chapterRef: "courses/aiagent/lesson02-setup/ch01-environment"
+  module: 0
+  lesson: 1
+
+- lessonId: start-0-2
+  title: "Instalar extensiones"
+  chapterRef: "courses/aiagent/lesson02-setup/ch02-extensions"
+  module: 0
+  lesson: 2
+
+- lessonId: start-0-3
+  title: "Configuración de Gemini API"
+  chapterRef: "courses/aiagent/lesson02-setup/ch03-api-settings"
+  module: 0
+  lesson: 3
+
+- lessonId: start-0-4
+  title: "Configuración de Slack API"
+  chapterRef: "courses/aiagent/lesson02-setup/ch03-api-settings"
+  module: 0
+  lesson: 4
+
+- lessonId: start-0-5
+  title: "Verificar configuración de seguridad"
+  chapterRef: "courses/aiagent/lesson02-setup/ch03-api-settings"
+  module: 0
+  lesson: 5
+
+- lessonId: start-0-6
+  title: "Configuración de Codex CLI"
+  chapterRef: "courses/aiagent/lesson02-setup/ch01-environment"
+  module: 0
+  lesson: 6
+
+- lessonId: start-0-7
+  title: "Configuración de Claude Code"
+  chapterRef: "courses/aiagent/lesson02-setup/ch01-environment"
+  module: 0
+  lesson: 7
+
+- lessonId: start-0-8
+  title: "Guía de selección de herramientas (Cursor / Claude Code / Codex)"
+  chapterRef: "courses/aiagent/lesson02-setup/ch01-environment"
+  module: 0
+  lesson: 8
+
+# === Módulo 1: Banner ===
+- lessonId: start-1-1
+  title: "Introducción a la generación de banners"
+  chapterRef: "courses/aiagent/lesson03-core/module01-banner"
+  module: 1
+  lesson: 1
+
+- lessonId: start-1-2
+  title: "Banners avanzados (Instagram, Facebook)"
+  chapterRef: "courses/aiagent/lesson03-core/module01-banner"
+  module: 1
+  lesson: 2
+
+- lessonId: start-1-3
+  title: "Edición de imágenes con nanobanana"
+  chapterRef: "courses/aiagent/lesson03-core/module01-banner"
+  module: 1
+  lesson: 3
+
+# === Módulo 2: Diagrama ===
+- lessonId: start-2-1
+  title: "Generar diagramas de flujo"
+  chapterRef: "courses/aiagent/lesson03-core/module02-diagram"
+  module: 2
+  lesson: 1
+
+- lessonId: start-2-2
+  title: "Crear infografías"
+  chapterRef: "courses/aiagent/lesson03-core/module02-diagram"
+  module: 2
+  lesson: 2
+
+- lessonId: start-2-3
+  title: "Crear diagramas con PlantUML"
+  chapterRef: "courses/aiagent/lesson03-core/module02-diagram"
+  module: 2
+  lesson: 3
+
+# === Módulo 3: Captura de pantalla ===
+- lessonId: start-3-1
+  title: "Fundamentos de análisis de capturas de pantalla"
+  chapterRef: "courses/aiagent/lesson03-core/module03-screenshot"
+  module: 3
+  lesson: 1
+
+- lessonId: start-3-2
+  title: "Diagnóstico de errores avanzado"
+  chapterRef: "courses/aiagent/lesson03-core/module03-screenshot"
+  module: 3
+  lesson: 2
+
+- lessonId: start-3-3
+  title: "Generación automática de tutoriales"
+  chapterRef: "courses/aiagent/lesson03-core/module03-screenshot"
+  module: 3
+  lesson: 3
+
+- lessonId: start-3-4
+  title: "Agregar anotaciones a capturas de pantalla"
+  chapterRef: "courses/aiagent/lesson03-core/module03-screenshot"
+  module: 3
+  lesson: 4
+
+- lessonId: start-3-5
+  title: "Análisis en lote de múltiples capturas de pantalla"
+  chapterRef: "courses/aiagent/lesson03-core/module03-screenshot"
+  module: 3
+  lesson: 5
+
+- lessonId: start-3-6
+  title: "Ejercicio integrado del módulo 3: generación de manual de pasos"
+  chapterRef: "courses/aiagent/lesson03-core/module03-screenshot"
+  module: 3
+  lesson: 6
+
+# === Módulo 4: Google Workspace ===
+- lessonId: start-4-1
+  title: "Configuración de autenticación de gogcli"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
+  module: 4
+  lesson: 1
+
+- lessonId: start-4-2
+  title: "Buscar y consultar Gmail"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
+  module: 4
+  lesson: 2
+
+- lessonId: start-4-3
+  title: "Pasos de Google Calendar"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
+  module: 4
+  lesson: 3
+
+- lessonId: start-4-4
+  title: "Registro y gestión de eventos en Google Calendar"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
+  module: 4
+  lesson: 4
+
+- lessonId: start-4-5
+  title: "Pasos de Google Drive"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
+  module: 4
+  lesson: 5
+
+- lessonId: start-4-6
+  title: "Pasos de Google Sheets"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
+  module: 4
+  lesson: 6
+
+- lessonId: start-4-7
+  title: "Integración de flujo de trabajo de asistente de IA"
+  chapterRef: "courses/aiagent/lesson03-core/module04-google-workspace"
+  module: 4
+  lesson: 7
+
+# === Módulo 5: PPTX ===
+- lessonId: start-5-1
+  title: "Análisis de PPTX (análisis de estructura, extracción de plantillas)"
+  chapterRef: "courses/aiagent/lesson03-core/module05-pptx"
+  module: 5
+  lesson: 1
+
+- lessonId: start-5-2
+  title: "Edición y generación automática de PPTX"
+  chapterRef: "courses/aiagent/lesson03-core/module05-pptx"
+  module: 5
+  lesson: 2
+
+# === Módulo 6: Desarrollo de Agentes ===
+- lessonId: start-6-1
+  title: "Fundamentos de creación de Comandos personalizados"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 1
+
+- lessonId: start-6-2
+  title: "Fundamentos de creación de Skills (Skills de Claude Code)"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 2
+
+- lessonId: start-6-3
+  title: "Configuración de Rules (Cursor Rules) y control de comportamiento de IA"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 3
+
+- lessonId: start-6-4
+  title: "Patrones de diseño e implementación de SubAgent"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 4
+
+- lessonId: start-6-5
+  title: "Ejercicio integrado (integración de todas las funciones)"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 5
+
+# === Módulo 7: Skill / Comandos ===
+- lessonId: start-7-1
+  title: "Fundamentos de diseño de Skills (mejores prácticas de Anthropic)"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 1
+
+- lessonId: start-7-2
+  title: "Implementación de SKILL.md (desarrollo del Skill de actas de reunión)"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 2
+
+- lessonId: start-7-3
+  title: "Pruebas e iteración (mejora de calidad de Skills)"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 3
+
+- lessonId: start-7-4
+  title: "5 patrones de diseño (aplicación avanzada de diseño de Skills)"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 4
+
+- lessonId: start-7-5
+  title: "Comprender y analizar la estructura de Skills/Comandos existentes"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 5
+
+- lessonId: start-7-6
+  title: "Crear Comandos para su propio flujo de trabajo"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 6
+
+- lessonId: start-7-7
+  title: "Desarrollo de Skills basado en SKILL.md"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 7
+
+- lessonId: start-7-8
+  title: "Pruebas, depuración e iteración"
+  chapterRef: "courses/aiagent/lesson03-core/module07-skill-commands"
+  module: 7
+  lesson: 8
+
+# === Módulo 8: Análisis de datos ===
+- lessonId: start-8-1
+  title: "Conexión y configuración de autenticación de BigQuery"
+  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+  module: 8
+  lesson: 1
+
+- lessonId: start-8-2
+  title: "Ejecutar EDA (análisis exploratorio de datos)"
+  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+  module: 8
+  lesson: 2
+
+- lessonId: start-8-3
+  title: "Análisis interactivo con notebooks de Marimo"
+  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+  module: 8
+  lesson: 3
+
+- lessonId: start-8-4
+  title: "Visualización de datos y creación de panel de control"
+  chapterRef: "courses/aiagent/lesson03-core/module08-data-analysis"
+  module: 8
+  lesson: 4
+
+# === Módulo 9: Slack ===
+- lessonId: start-9-1
+  title: "Configuración de User Access Token y obtención de canales"
+  chapterRef: "courses/aiagent/lesson03-core/module09-slack"
+  module: 9
+  lesson: 1
+
+- lessonId: start-9-2
+  title: "Obtener mensajes e hilos (history / replies / mpim / im)"
+  chapterRef: "courses/aiagent/lesson03-core/module09-slack"
+  module: 9
+  lesson: 2
+
+- lessonId: start-9-3
+  title: "Enviar respuestas (chat.postMessage)"
+  chapterRef: "courses/aiagent/lesson03-core/module09-slack"
+  module: 9
+  lesson: 3
+
+# === Módulo 10: GAS ===
+- lessonId: start-10-1
+  title: "Fundamentos de Clasp y gestión de proyectos GAS"
+  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
+  module: 10
+  lesson: 1
+
+- lessonId: start-10-2
+  title: "Integración con Google Calendar API y automatización de eventos"
+  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
+  module: 10
+  lesson: 2
+
+- lessonId: start-10-3
+  title: "Automatización de Google Sheets y reportes de procesamiento de datos"
+  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
+  module: 10
+  lesson: 3
+
+- lessonId: start-10-4
+  title: "Búsqueda y extracción de correos con GmailApp y organización en hojas de cálculo"
+  chapterRef: "courses/aiagent/lesson03-core/module10-gas"
+  module: 10
+  lesson: 4
+
+# === Módulo 11: GitHub Actions ===
+- lessonId: start-11-1
+  title: "Fundamentos de GitHub Actions Workflow y automatización"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 1
+
+- lessonId: start-11-2
+  title: "Configuración de GitHub Actions Secrets e integración con Google"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 2
+
+- lessonId: start-11-3
+  title: "Flujo de trabajo de obtención de noticias y envío por email/Slack"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 3
+
+- lessonId: start-11-4
+  title: "Ejecutar Claude Code / Codex / Cursor en GitHub Actions"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 4
+
+- lessonId: start-11-5
+  title: "Despliegue y generación de archivos con GitHub Actions"
+  chapterRef: "courses/aiagent/lesson03-core/module11-github-actions"
+  module: 11
+  lesson: 5
+
+# === Módulo 12: Notion ===
+- lessonId: start-12-1
+  title: "Configuración de ncli y autenticación por navegador"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
+  module: 12
+  lesson: 1
+
+- lessonId: start-12-2
+  title: "Obtención y consulta de bases de datos"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
+  module: 12
+  lesson: 2
+
+- lessonId: start-12-3
+  title: "Obtención de archivos"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
+  module: 12
+  lesson: 3
+
+- lessonId: start-12-4
+  title: "Creación de archivos y páginas"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
+  module: 12
+  lesson: 4
+
+- lessonId: start-12-5
+  title: "Escritura y actualización"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
+  module: 12
+  lesson: 5
+
+- lessonId: start-12-6
+  title: "Creación de resúmenes y respuesta a comentarios"
+  chapterRef: "courses/aiagent/lesson03-core/module12-notion"
+  module: 12
+  lesson: 6
+
+# === Módulo 13: Creación de LP ===
+- lessonId: start-13-1
+  title: "Creación de LP - organización de la propuesta de valor"
+  chapterRef: "courses/aiagent/lesson03-core/module13-lp"
+  module: 13
+  lesson: 1
+
+- lessonId: start-13-2
+  title: "Creación de LP - crear wireframe"
+  chapterRef: "courses/aiagent/lesson03-core/module13-lp"
+  module: 13
+  lesson: 2
+
+- lessonId: start-13-3
+  title: "Creación de LP - crear archivo de diseño con Pencil MCP"
+  chapterRef: "courses/aiagent/lesson03-core/module13-lp"
+  module: 13
+  lesson: 3
+
+- lessonId: start-13-4
+  title: "Creación de LP - crear una LP funcional"
+  chapterRef: "courses/aiagent/lesson03-core/module13-lp"
+  module: 13
+  lesson: 4
+
+- lessonId: start-13-5
+  title: "Creación de LP - desplegar en Vercel"
+  chapterRef: "courses/aiagent/lesson03-core/module13-lp"
+  module: 13
+  lesson: 5
+
+# === Módulo 14: Artículo ===
+- lessonId: start-14-1
+  title: "Planificación de artículo - definición del tema y generación de esquema"
+  chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
+  module: 14
+  lesson: 1
+
+- lessonId: start-14-2
+  title: "Aprendizaje de estilo - creación de perfil de estilo"
+  chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
+  module: 14
+  lesson: 2
+
+- lessonId: start-14-3
+  title: "Redacción de artículo - crear borrador con estilo aplicado"
+  chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
+  module: 14
+  lesson: 3
+
+- lessonId: start-14-4
+  title: "Planificación y generación de ilustraciones - nanobanana + PlantUML"
+  chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
+  module: 14
+  lesson: 4
+
+- lessonId: start-14-5
+  title: "Corrección - revisión por Agente de corrección"
+  chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
+  module: 14
+  lesson: 5
+
+- lessonId: start-14-6
+  title: "Verificación de hechos - Agente de verificación de datos"
+  chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
+  module: 14
+  lesson: 6
+
+- lessonId: start-14-7
+  title: "Ejecución paralela y finalización - procesamiento simultáneo de múltiples artículos"
+  chapterRef: "courses/aiagent/lesson03-core/module14-article-writing"
+  module: 14
+  lesson: 7
+
+# === Módulo 15: Video ===
+# Orden: gratis/local → bajo costo → APIs de pago (reordenado por reproducibilidad)
+- lessonId: start-15-1
+  title: "Extraer fotogramas clave de video y analizar"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 1
+
+- lessonId: start-15-2
+  title: "Fundamentos de animación con Remotion — animación de texto slide-shoot"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 2
+
+- lessonId: start-15-3
+  title: "Extraer highlights de video con YouTube Clipper + subtítulos y corte de silencios"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 3
+
+- lessonId: start-15-4
+  title: "Generar materiales de marketing automáticamente con Clipper × Remotion"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 4
+
+- lessonId: start-15-5
+  title: "Comprender la visión general del motor de video con IA y aprender a usar fal.ai"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 5
+
+- lessonId: start-15-6
+  title: "Generar video animado a partir de storyboard (imágenes Gemini + Kling/Veo I2V + unión FFmpeg)"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 6
+
+- lessonId: start-15-7
+  title: "Crear video musical con IA (Suno + sincronización de ritmo + escenas en video)"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 7
+
+- lessonId: start-15-8
+  title: "Crear video explicativo de diapositivas (análisis HTML + TTS + composición de presentador)"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 8
+
+- lessonId: start-15-9
+  title: "Crear video de presentación de producto (avatar en pantalla verde + composición de capturas)"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 9
+
+# === Módulo 16: Email ===
+- lessonId: start-16-1
+  title: "Configuración de Gmail - autenticación de gogcli y sincronización de correos"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 1
+
+- lessonId: start-16-2
+  title: "Análisis de correos recibidos y extracción de tareas - check-inbox"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 2
+
+- lessonId: start-16-3
+  title: "Enviar correos con gogcli - nuevo, respuesta y adjuntos"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 3
+
+- lessonId: start-16-4
+  title: "Diseño de secuencia de correos - campaña de drip"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 4
+
+- lessonId: start-16-5
+  title: "Flujo de trabajo de automatización de correos - GitHub Actions y ejercicio integrado"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 5
+
+- lessonId: start-16-6
+  title: "Integración con Google Workspace - uso combinado de Gmail + Calendar"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 6
+
+- lessonId: start-16-7
+  title: "Automatizar publicaciones en X con Typefully CLI"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 7
+
+- lessonId: start-16-8
+  title: "Automatizar campañas de drip con Resend Sequence y CLI"
+  chapterRef: "courses/aiagent/lesson03-core/module16-email-automation"
+  module: 16
+  lesson: 8
+
+# === Módulo 17: Marketing ===
+- lessonId: start-17-1
+  title: "Publicaciones en X y creación de banners"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 1
+
+- lessonId: start-17-2
+  title: "Investigación SEO y estrategia de palabras clave"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 2
+
+- lessonId: start-17-3
+  title: "Copywriting"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 3
+
+- lessonId: start-17-4
+  title: "Mockups de diseño con Pencil MCP"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 4
+
+- lessonId: start-17-5
+  title: "Automatizar publicaciones en X/Threads con Typefully"
+  chapterRef: "courses/aiagent/lesson03-core/module17-marketing"
+  module: 17
+  lesson: 5
+
+# === Módulo 18: PM ===
+- lessonId: start-18-1
+  title: "PM - entrevista con clientes y recopilación de necesidades"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 1
+
+- lessonId: start-18-2
+  title: "PM - creación de documentos de requisitos"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 2
+
+- lessonId: start-18-3
+  title: "PM - creación de PRD (método Working Backwards)"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 3
+
+- lessonId: start-18-4
+  title: "PM - 3 tipos de revisión (Devil's Advocate / seguridad / planificación de negocio)"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 4
+
+- lessonId: start-18-5
+  title: "PM - creación de documento de definición de requisitos (conforme a IPA)"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 5
+
+- lessonId: start-18-6
+  title: "PM - descripción de casos de uso y diagramas de secuencia"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 6
+
+- lessonId: start-18-7
+  title: "PM - diagrama de transición de pantallas y wireframe"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 7
+
+- lessonId: start-18-8
+  title: "PM - diseño de BD (diagrama ER y especificación de entidades)"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 8
+
+- lessonId: start-18-9
+  title: "PM - diagrama de arquitectura del sistema y diseño de API"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 9
+
+- lessonId: start-18-10
+  title: "PM - WBS y diagrama de Gantt"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 10
+
+- lessonId: start-18-11
+  title: "PM - integración con Notion (BD de seguimiento de requisitos)"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 11
+
+- lessonId: start-18-12
+  title: "PM - diseño de UI (Pencil MCP)"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 12
+
+- lessonId: start-18-13
+  title: "PM - implementación de prototipo con HTML + Tailwind CSS"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 13
+
+- lessonId: start-18-14
+  title: "PM - pruebas E2E con Playwright"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 14
+
+- lessonId: start-18-15
+  title: "PM - plan de pruebas y generación de casos de prueba"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 15
+
+- lessonId: start-18-16
+  title: "PM - ejecución de pruebas unitarias (pytest)"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 16
+
+- lessonId: start-18-17
+  title: "PM - ejecución de pruebas de integración"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 17
+
+- lessonId: start-18-18
+  title: "PM - diseño de reuniones y análisis de actas"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 18
+
+- lessonId: start-18-19
+  title: "PM - panel de control con Marimo"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 19
+
+- lessonId: start-18-20
+  title: "PM - ejercicio integrado (capstone)"
+  chapterRef: "courses/aiagent/lesson03-core/module18-pm-sysdef"
+  module: 18
+  lesson: 20
+
+# === Módulo 19: Outlook / Microsoft 365 ===
+- lessonId: start-19-1
+  title: "Introducción a la integración con Microsoft Office (Outlook)"
+  chapterRef: "courses/aiagent/lesson03-core/module19-outlook-windows"
+  module: 19
+  lesson: 1
+
+- lessonId: start-19-2
+  title: "Carpetas, reglas y categorías"
+  chapterRef: "courses/aiagent/lesson03-core/module19-outlook-windows"
+  module: 19
+  lesson: 2
+
+# === Módulo 20: Freee / MoneyForward ===
+- lessonId: start-20-1
+  title: "Introducción a la integración con Freee/MoneyForward"
+  chapterRef: "courses/aiagent/lesson03-core/module20-freee-mf"
+  module: 20
+  lesson: 1
+
+# === Comandos de utilidad (no son lecciones) ===
+# Estos no son lecciones sino comandos de utilidad. Se listan aquí
+# por completitud pero no tienen números de módulo/lección.
+# Fuente: .cursor/commands/lesson/{id}.md
+- lessonId: setup-start
+  title: "Iniciar configuración"
+  type: utility
+
+- lessonId: setup-extensions
+  title: "Configuración de extensiones"
+  type: utility
+
+- lessonId: setup-gemini
+  title: "Configuración de Gemini"
+  type: utility
+
+- lessonId: setup-github
+  title: "Configuración de GitHub"
+  type: utility
+
+- lessonId: setup-slack
+  title: "Configuración de Slack"
+  type: utility
+
+- lessonId: setup-security
+  title: "Configuración de seguridad"
+  type: utility
+
+- lessonId: setup-bigquery
+  title: "Configuración de autenticación BigQuery / GCP"
+  type: utility
+
+- lessonId: setup-clasp
+  title: "Configuración de Google Apps Script CLI (clasp)"
+  type: utility
+
+- lessonId: setup-elevenlabs
+  title: "Configuración de ElevenLabs API"
+  type: utility
+
+- lessonId: setup-fal
+  title: "Configuración de fal.ai API"
+  type: utility
+
+- lessonId: setup-gogcli
+  title: "Configuración de gogcli (Google Workspace CLI)"
+  type: utility
+
+- lessonId: setup-notion
+  title: "Configuración de Notion CLI (ncli) + MCP"
+  type: utility
+
+- lessonId: setup-pencil
+  title: "Configuración de Pencil MCP"
+  type: utility
+
+- lessonId: setup-remotion
+  title: "Configuración de Remotion"
+  type: utility
+
+- lessonId: setup-typefully
+  title: "Configuración de Typefully API"
+  type: utility
+
+- lessonId: setup-vercel
+  title: "Configuración de Vercel CLI"
+  type: utility
+
+- lessonId: setup-x-api
+  title: "Configuración de X (Twitter) API"
+  type: utility
+
+- lessonId: check-setup
+  title: "Verificar configuración"
+  type: utility
+
+- lessonId: check-security
+  title: "Verificar seguridad"
+  type: utility
+
+- lessonId: exercise-review
+  title: "Revisión de ejercicio"
+  type: utility
