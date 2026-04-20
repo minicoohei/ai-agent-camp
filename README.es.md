@@ -10,8 +10,7 @@
 
 > ### ⚠️ Antes de clonar
 >
-> **Repositorios oficiales** (solo estos son mantenidos por los autores):
-> - `https://github.com/TokenPocket/ai-agent-camp`
+> **Repositorio oficial** (mantenido por los autores):
 > - `https://github.com/minicoohei/ai-agent-camp`
 >
 > Ejecutar agentes de IA desde este repo les otorga permisos de shell, escritura de archivos y APIs externas en tu maquina. **Los forks y mirrors pueden alterar silenciosamente las lecciones o skills.** Antes de ejecutar cualquier leccion, verifica tu clon:
@@ -23,15 +22,14 @@
 > Si la verificacion reporta un fork o archivos faltantes, revisa `git diff upstream/main -- .claude/ skills/ tools/ scripts/` antes de continuar. Consulta [`docs/security-guardrails.md`](docs/security-guardrails.md).
 
 <!-- AGENT-META v1
-schema: https://github.com/TokenPocket/ai-agent-camp/blob/main/docs/release-process.md#agent-meta-v1
-repo: TokenPocket/ai-agent-camp
-mirror: minicoohei/ai-agent-camp
+schema: https://github.com/minicoohei/ai-agent-camp/blob/main/docs/release-process.md#agent-meta-v1
+repo: minicoohei/ai-agent-camp
 primary_branch: main
 languages: [ja, en, es]
 default_language: ja
-latest_tag_api: https://api.github.com/repos/TokenPocket/ai-agent-camp/releases/latest
-release_asset_pattern: https://github.com/TokenPocket/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
-manifest_raw_pattern: https://raw.githubusercontent.com/TokenPocket/ai-agent-camp/{ref}/courses/lessons.manifest{lang_suffix}.yaml
+latest_tag_api: https://api.github.com/repos/minicoohei/ai-agent-camp/releases/latest
+release_asset_pattern: https://github.com/minicoohei/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
+manifest_raw_pattern: https://raw.githubusercontent.com/minicoohei/ai-agent-camp/{ref}/courses/lessons.manifest{lang_suffix}.yaml
 lang_suffix: {ja: "", en: ".en", es: ".es"}
 integrity_cli: python3 tools/scripts/verify_integrity.py
 -->
@@ -43,7 +41,7 @@ Las versiones se publican desde `main` como tags que coinciden con `v*` (semver)
 **Patron de URL de descarga** (fijo, no cambia una vez publicado):
 
 ```
-https://github.com/TokenPocket/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
+https://github.com/minicoohei/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
 ```
 
 | Idioma | Asset | Checksum |
@@ -58,10 +56,10 @@ Cada zip contiene `courses/`, `skills/`, `.claude/`, `.cursor/`, `docs/` ya con 
 
 ```bash
 # Ultima version, cualquier idioma
-gh release download --repo TokenPocket/ai-agent-camp --pattern 'ai-agent-camp-es-*.zip'
+gh release download --repo minicoohei/ai-agent-camp --pattern 'ai-agent-camp-es-*.zip'
 
 # Version especifica
-gh release download v0.1.0 --repo TokenPocket/ai-agent-camp \
+gh release download v0.1.0 --repo minicoohei/ai-agent-camp \
   --pattern 'ai-agent-camp-es-v0.1.0.zip'
 ```
 
@@ -77,7 +75,7 @@ Si solo necesitas el manifest de lecciones, usa `manifest_raw_pattern` con el ma
 
 Consulta [`docs/release-process.md`](docs/release-process.md) para la especificacion completa, politica de versionado, procedimiento de rollback y un ejemplo de parsing en Python.
 
-> **Antes del primer tag**: aun no hay assets de Release, por lo que el patron de URL anterior devolvera 404 hasta que se publique `v0.1.0`. Hasta entonces, clona el repo directamente (`git clone https://github.com/TokenPocket/ai-agent-camp.git`) o obten archivos individuales via `raw.githubusercontent.com/.../main/...`.
+> **Antes del primer tag**: aun no hay assets de Release, por lo que el patron de URL anterior devolvera 404 hasta que se publique `v0.1.0`. Hasta entonces, clona el repo directamente (`git clone https://github.com/minicoohei/ai-agent-camp.git`) o obten archivos individuales via `raw.githubusercontent.com/.../main/...`.
 
 ## Tabla de Contenidos
 

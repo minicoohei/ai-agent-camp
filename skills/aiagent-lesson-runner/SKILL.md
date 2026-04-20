@@ -25,7 +25,7 @@ Use this skill to reproduce the `start-*` workflow in Codex.
 - A lesson id such as `start-0-1`
 
 ## Workflow
-0. Before running any lesson on a freshly cloned repo, run `python3 tools/scripts/verify_integrity.py`. If it reports the origin is not official (`github.com/TokenPocket/ai-agent-camp` or `github.com/minicoohei/ai-agent-camp`) or required files are missing, stop and ask the user to review the diff against upstream/main.
+0. Before running any lesson on a freshly cloned repo, run `python3 tools/scripts/verify_integrity.py`. If it reports the origin is not official (`github.com/minicoohei/ai-agent-camp`) or required files are missing, stop and ask the user to review the diff against upstream/main.
 1. Validate that the lesson id matches `^start-\d+-\d+$`. Reject any other value.
 2. Check that `.cursor/commands/lesson/<lesson-id>.md` exists before reading it.
 3. Open `.cursor/commands/lesson/<lesson-id>.md`.
