@@ -28,7 +28,6 @@ from pathlib import Path
 
 
 OFFICIAL_REPO_URLS: tuple[str, ...] = (
-    "github.com/TokenPocket/ai-agent-camp",
     "github.com/minicoohei/ai-agent-camp",
 )
 
