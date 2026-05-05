@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-14-1"]
 level: "beginner"
 tags: ["article", "style"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 14-2: Aprendizaje de estilo - Creación de perfil de estilo
 
 ## 📍 Lo que hará en está sesión

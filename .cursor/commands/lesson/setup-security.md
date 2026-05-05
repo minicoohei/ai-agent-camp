@@ -4,8 +4,8 @@ duration: "約5分"
 prerequisites: ["ai-agent-camp フォルダを Cursor で開いている"]
 level: "beginner"
 tags: ["setup", "security"]
+nonInteractiveMode: deferred
 ---
-
 # /setup-security -- セキュリティ設定の自動セットアップ
 
 ## Step 0: セットアップ進捗の確認

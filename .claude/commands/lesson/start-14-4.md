@@ -6,8 +6,8 @@ duration: "40分"
 prerequisites: ["start-14-3"]
 level: "intermediate"
 tags: ["article", "illustration"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-4: 挿絵計画と生成 - nanobanana + PlantUML
 
 ## 📍 このセッションでやること

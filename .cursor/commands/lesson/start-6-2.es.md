@@ -5,8 +5,8 @@ prerequisites: ["start-6-1"]
 duration: "~35 min"
 level: "intermediate"
 tags: ["agent", "skill", "skills"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 6-2: Fundamentos de creacion de skills
 
 ## 📍 Lo que hara en esta sesion

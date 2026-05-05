@@ -1,7 +1,7 @@
 ---
 description: "Lesson command"
+nonInteractiveMode: compliant
 ---
-
 # 応用演習レビュー
 
 ## 使い方

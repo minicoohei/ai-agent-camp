@@ -5,8 +5,8 @@ prerequisites: ["start-10-1"]
 duration: "約30分"
 level: "intermediate"
 tags: ["gas", "calendar", "google", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 10-2: Google Calendar API連携・イベント自動化
 
 ## 📍 このセッションでやること

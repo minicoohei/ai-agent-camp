@@ -1,7 +1,7 @@
 ---
 description: Module 18 Lesson 4-2 — Assist Calendar (calendar_ops / gog calendar) via prompts
+nonInteractiveMode: compliant
 ---
-
 # Module 18 — Calendar (Lesson 4-2)
 
 The user is working on the course material "Module 18 - Schedule Coordination." **Via prompts and skill execution,** use `google-workspace-ops`'s `calendar_ops.py` or `gog calendar` to assist with event retrieval, free-slot search, and event creation.

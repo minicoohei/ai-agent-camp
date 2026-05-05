@@ -253,9 +253,13 @@ class TestModuleContentAlignment:
         return request.param
 
     def test_lesson_file_names_match_heading(self, command_dir):
-        """start-X-Y.md のファイル名と # heading 内の X-Y が一致すること"""
+        """start-X-Y.md のファイル名と # heading 内の X-Y が一致すること
+
+        Y は数字のみ (15-1) または 数字+英小文字 (15-7a, 15-8b 等) の
+        sub-lesson 表記もサポートする。
+        """
         heading_re = re.compile(
-            r"^#\s+.*?(?:Lesson|レッスン)\s+(\d+)-(\d+)", re.MULTILINE
+            r"^#\s+.*?(?:Lesson|レッスン)\s+(\d+)-(\d+[a-z]*)", re.MULTILINE
         )
         errors = []
         for md in _lesson_files_for(command_dir):

@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Notion Fetch - Notion連携
 
 Notionのページやデータベースを取得し、Markdown形式で出力します。

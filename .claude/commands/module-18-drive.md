@@ -1,7 +1,7 @@
 ---
 description: Module 18 Lesson 4-4 — Google Drive（drive_ops / gog drive）をプロンプトで支援
+nonInteractiveMode: compliant
 ---
-
 # Module 18 — Drive（Lesson 4-4）
 
 ユーザーが教材「モジュール18・ファイル管理」に取り組んでいます。**プロンプト経由で** `drive_ops.py` または `gog drive` を使い、一覧・アップロード・ダウンロード・エクスポートを支援してください。

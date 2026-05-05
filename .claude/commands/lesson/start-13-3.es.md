@@ -5,8 +5,8 @@ prerequisites: ["start-13-2", "setup-pencil"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["lp", "pencil", "design", "mockup"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 13-3: Creación de archivo de diseño (Pencil MCP)
 
 ## 📍 Lo que hará en está sesión

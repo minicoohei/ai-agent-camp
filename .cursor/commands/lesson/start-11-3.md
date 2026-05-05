@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-11-2"]
 level: "intermediate"
 tags: ["github-actions", "news", "email", "slack", "webhook", "cron"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 11-3: ニュース取得→メール/Slack配信ワークフロー
 
 ## 📍 このセッションでやること

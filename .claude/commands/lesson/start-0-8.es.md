@@ -5,8 +5,8 @@ duration: "~10 min"
 prerequisites: []
 level: "beginner"
 tags: ["setup", "tool-selection", "cursor", "claude-code", "codex"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 0-8: Guía de selección de herramientas
 
 ## Verificar progreso de configuración

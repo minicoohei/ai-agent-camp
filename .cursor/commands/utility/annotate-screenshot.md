@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Annotate Screenshot with Nano Banana Pro
 
 このコマンドは、`tools/annotate_screenshot.py` を使用して、スクリーンショットにマニュアル用の注釈（赤枠・矢印・吹き出し・テキスト）を追加します。

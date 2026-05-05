@@ -5,8 +5,8 @@ prerequisites: ["start-5-1"]
 duration: "約30分"
 level: "intermediate"
 tags: ["pptx", "generation", "automation", "document"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 5-2: PPTX編集と自動生成
 
 ## 📍 このセッションでやること

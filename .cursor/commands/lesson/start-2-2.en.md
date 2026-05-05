@@ -5,8 +5,8 @@ prerequisites: ["start-2-1"]
 duration: "~25 min"
 level: "beginner"
 tags: ["diagram", "infographic", "visualization"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 2-2: Infographic Creation
 
 ## 📍 What You'll Do

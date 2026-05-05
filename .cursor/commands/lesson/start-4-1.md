@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-0-1"]
 level: "beginner"
 tags: ["google", "workspace", "gogcli", "auth"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 4-1: gogcli認証セットアップ
 
 ## 📍 このセッションでやること

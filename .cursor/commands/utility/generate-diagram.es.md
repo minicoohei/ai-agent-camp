@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Generate Diagram con Nano Banana Pro
 
 Este comando utiliza `.cursor/tools/generate_diagram.py` para generar diagramas e infografías basados en un tema especificado.

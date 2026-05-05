@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # Tutor - Generación de contenido de aprendizaje
 
 Este comando utiliza `tools/tutor_generate.py` para generar automáticamente HTML de aprendizaje para principiantes a partir de diversas fuentes de entrada.

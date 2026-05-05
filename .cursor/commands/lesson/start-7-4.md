@@ -5,8 +5,8 @@ prerequisites: ["start-7-3"]
 duration: "約20分"
 level: "advanced"
 tags: ["agent", "design-patterns", "architecture"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 7-4: 5つの設計パターン
 
 ## 📍 このセッションでやること

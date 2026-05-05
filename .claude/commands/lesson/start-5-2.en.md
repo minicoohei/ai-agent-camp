@@ -5,8 +5,8 @@ prerequisites: ["start-5-1"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["pptx", "generation", "automation", "document"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 5-2: PPTX Editing and Auto-generation
 
 ## 📍 What You'll Do

@@ -1,8 +1,8 @@
 ---
 description: Actualizar habilidades externas instaladas
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # Actualizar plugins externos
 
 ## Uso

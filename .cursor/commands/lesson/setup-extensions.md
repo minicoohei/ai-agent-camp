@@ -4,8 +4,8 @@ duration: "約5分"
 prerequisites: ["Cursor が起動している"]
 level: "beginner"
 tags: ["setup", "extensions"]
+nonInteractiveMode: incompatible
 ---
-
 # /setup-extensions -- 拡張機能の自動セットアップ
 
 ## Step 0: セットアップ進捗の確認

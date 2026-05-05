@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Overview - プロジェクト構造可視化
 
 このコマンドは、`tools/project_overview.py` を使用して、serena MCPを活用してプロジェクト構造を可視化し、不足している機能や未実装部分を抽出します。

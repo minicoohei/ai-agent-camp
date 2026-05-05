@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Setup Google API for MCP - Google API設定ガイド
 
 このコマンドは、Cursor Browserを使用して、MCP（Model Context Protocol）用のGoogle API設定とOAuth 2.0認証をステップバイステップでガイドします。

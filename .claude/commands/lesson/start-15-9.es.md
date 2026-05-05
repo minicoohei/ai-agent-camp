@@ -5,8 +5,8 @@ duration: "~30 min"
 prerequisites: ["start-15-5"]
 level: "advanced"
 tags: ["video", "product-demo", "avatar", "kling"]
+nonInteractiveMode: deferred
 ---
-
 # 15-9: Video de Demostración de Producto
 
 ## Lo Que Hará en Esta Sesión
@@ -327,3 +327,14 @@ apply_musetalk(video, audio, output)
   }]
 }
 ```
+
+## Enlaces de referencia (sincronizado con las slides de Module 15)
+
+Cinco recursos para buscar plantillas o inspiración.
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # BigQuery Auth - Autenticación de BigQuery a nivel de proyecto
 
 Este comando utiliza Cursor Browser para configurar la autenticación de BigQuery por proyecto de GCP. Aprovecha los perfiles de configuración de gcloud para gestionar múltiples proyectos de forma segura.

@@ -5,8 +5,8 @@ prerequisites: ["start-8-1"]
 duration: "約30分"
 level: "intermediate"
 tags: ["data", "bigquery", "eda", "analysis"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 8-2: EDA（探索的データ分析）の実行
 
 ## 📍 このセッションでやること

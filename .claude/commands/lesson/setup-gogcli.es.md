@@ -4,8 +4,8 @@ duration: "~15 min"
 prerequisites: ["Tener una cuenta de Google", "Navegador disponible"]
 level: "beginner"
 tags: ["setup", "gogcli", "google", "gmail", "calendar", "oauth"]
+nonInteractiveMode: incompatible
 ---
-
 # Configuración de gogcli (Google Workspace CLI)
 
 ## Step 0: Verificar el progreso de configuración

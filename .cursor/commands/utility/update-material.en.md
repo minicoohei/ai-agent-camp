@@ -1,7 +1,7 @@
 ---
 description: Pull the latest course materials from the upstream repository
+nonInteractiveMode: compliant
 ---
-
 # Update Course Materials to Latest Version
 
 ## Usage

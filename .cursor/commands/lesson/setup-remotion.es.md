@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Node.js 18 o superior instalado"]
 level: "beginner"
 tags: ["setup", "remotion", "video", "react", "npm"]
+nonInteractiveMode: deferred
 ---
-
 # Configuración de Remotion
 
 ## Step 0: Verificar progreso de configuración
@@ -353,3 +353,14 @@ La configuración de Remotion está completa. Ahora puede continuar con las lecc
 - lesson_15_8 -> /start-15-8
 - mv_composer -> Escriba "crear un video MV" para iniciar el skill mv-composer
 - finish -> Finalizar
+
+## Enlaces de referencia (sincronizado con las slides de Module 15)
+
+Cinco recursos para buscar plantillas o inspiración.
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: []
 level: "intermediate"
 tags: ["pm", "interview", "customer-needs"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-1: Customer Interview & Needs Collection
 
 ## 📍 What You'll Do

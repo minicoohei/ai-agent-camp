@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # Create Banner - Generación de banners/creativos publicitarios
 
 Este comando utiliza `tools/banner_creator.py` para generar banners/creativos para diversas plataformas de redes sociales y publicidad.

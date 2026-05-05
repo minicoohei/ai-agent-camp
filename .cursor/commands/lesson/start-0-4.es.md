@@ -5,8 +5,8 @@ duration: "~15 min"
 prerequisites: ["start-0-1", "start-0-2", "start-0-3"]
 level: "beginner"
 tags: ["setup", "slack", "api"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 0-4: Configuración de Slack API
 
 ## Verificar progreso de configuración

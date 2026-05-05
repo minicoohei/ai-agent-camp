@@ -1,7 +1,7 @@
 ---
 description: "Verificación de finalización de módulo (con evaluación de IA)"
+nonInteractiveMode: compliant
 ---
-
 # /verify-module [número de módulo]
 
 Verificar automáticamente el estado de finalización de todas las lecciones de un módulo, y obtener una evaluación integral y retroalimentación de la IA.

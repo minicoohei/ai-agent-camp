@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Notion Fetch - Notion Integration
 
 Fetches Notion pages and databases and outputs them in Markdown format.

@@ -5,8 +5,8 @@ duration: "~35 min"
 prerequisites: ["start-7-5"]
 level: "intermediate"
 tags: ["skill", "command", "workflow", "customization"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 7-6: Creación de Commands para su propio flujo de trabajo
 
 ## 📍 Lo que hará en está sesion

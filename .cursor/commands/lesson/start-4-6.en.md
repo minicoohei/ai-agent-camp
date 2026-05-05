@@ -5,8 +5,8 @@ duration: "~30 min"
 prerequisites: ["start-4-1"]
 level: "beginner"
 tags: ["google", "workspace", "gogcli", "sheets"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 4-6: Google Sheets Operations
 
 ## 📍 What You'll Do

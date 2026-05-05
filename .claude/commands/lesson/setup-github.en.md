@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["/setup-start completed"]
 level: "beginner"
 tags: ["setup", "github"]
+nonInteractiveMode: incompatible
 ---
-
 # GitHub Account Setup and Repository Creation
 
 ## Step 0: Check Setup Progress

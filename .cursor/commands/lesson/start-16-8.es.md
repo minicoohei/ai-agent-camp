@@ -6,8 +6,8 @@ duration: "30 min"
 prerequisites: ["start-16-6", "start-16-7"]
 level: "intermediate"
 tags: ["email", "resend", "resend-cli", "sequences", "drip-campaign", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 16-8: Campaña de Goteo con Resend Sequence y CLI
 
 ## Lo Que Hará en Esta Sesión

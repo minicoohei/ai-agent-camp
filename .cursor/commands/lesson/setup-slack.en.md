@@ -4,8 +4,8 @@ duration: "~15 min"
 prerequisites: ["Admin access to a Slack workspace"]
 level: "beginner"
 tags: ["setup", "slack", "api"]
+nonInteractiveMode: incompatible
 ---
-
 # Slack API Setup
 
 ## Step 0: Check Setup Progress

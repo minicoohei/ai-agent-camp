@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # Guide - Suggest Next Actions
 
 This command uses `tools/guide_action.py` to analyze the current situation from SpecStory history and present background context and next actions.

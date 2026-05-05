@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-15", "output/pm/test-cases.md"]
 level: "intermediate"
 tags: ["pm", "test", "unit-test", "pytest"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-16: 単体テスト実施
 
 | 項目 | 内容 |

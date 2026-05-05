@@ -1,7 +1,7 @@
 ---
 description: Module 18 Lesson 4-4 — Assist Google Drive (drive_ops / gog drive) via prompts
+nonInteractiveMode: compliant
 ---
-
 # Module 18 — Drive (Lesson 4-4)
 
 The user is working on the course material "Module 18 - File Management." **Via prompts,** use `drive_ops.py` or `gog drive` to assist with listing, uploading, downloading, and exporting.

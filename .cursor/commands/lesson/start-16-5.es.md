@@ -6,8 +6,8 @@ duration: "30 min"
 prerequisites: ["start-16-1", "start-16-2", "start-16-3"]
 level: "advanced"
 tags: ["email", "gmail", "gogcli", "github-actions", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 16-5: Flujo de Trabajo de Automatización de Correo
 
 ## Lo Que Hará en Esta Sesión

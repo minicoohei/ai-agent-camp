@@ -5,8 +5,8 @@ prerequisites: ["start-13-2", "setup-pencil"]
 duration: "約30分"
 level: "intermediate"
 tags: ["lp", "pencil", "design", "mockup"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 13-3: デザインファイル作成（Pencil MCP）
 
 ## 📍 このセッションでやること

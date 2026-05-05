@@ -6,8 +6,8 @@ duration: "~25 min"
 prerequisites: []
 level: "beginner"
 tags: ["article", "planning"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 14-1: Planificación de artículos - Selección de tema y generación de esquema
 
 ## 📍 Lo que hará en está sesión

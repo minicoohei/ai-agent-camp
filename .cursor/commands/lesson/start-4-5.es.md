@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-4-1"]
 level: "beginner"
 tags: ["google", "workspace", "gogcli", "drive"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 4-5: Operaciones de Google Drive
 
 ## 📍 Lo que hara en esta sesion

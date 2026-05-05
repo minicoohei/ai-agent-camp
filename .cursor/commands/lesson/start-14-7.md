@@ -6,8 +6,8 @@ duration: "40分"
 prerequisites: ["start-14-1", "start-14-2", "start-14-3", "start-14-4", "start-14-5", "start-14-6"]
 level: "advanced"
 tags: ["article", "parallel"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-7: 並列実行と仕上げ - 複数記事の同時処理
 
 ## 📍 このセッションでやること

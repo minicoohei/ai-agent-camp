@@ -5,8 +5,8 @@ duration: "~35 min"
 prerequisites: ["start-17-3"]
 level: "intermediate"
 tags: ["marketing", "pencil", "design", "mockup"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 17-4: Mockups de Diseño con Pencil MCP
 
 ## Lo Qué Hará en Esta Sesion

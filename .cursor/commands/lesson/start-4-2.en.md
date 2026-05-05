@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-4-1"]
 level: "beginner"
 tags: ["google", "workspace", "gogcli", "gmail"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 4-2: Gmail Search and Browse
 
 ## 📍 What You'll Do

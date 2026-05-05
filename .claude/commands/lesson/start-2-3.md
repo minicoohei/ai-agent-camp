@@ -5,8 +5,8 @@ prerequisites: ["start-2-1"]
 duration: "約30分"
 level: "intermediate"
 tags: ["diagram", "presentation", "architecture"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 2-3: プレゼン資料向け図表作成
 
 ## 📍 このセッションでやること

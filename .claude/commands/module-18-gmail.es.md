@@ -1,7 +1,7 @@
 ---
 description: Módulo 18 Lección 4-3 — Asistir con Gmail (gmail_ops / gog gmail) mediante prompts
+nonInteractiveMode: compliant
 ---
-
 # Módulo 18 — Gmail (Lección 4-3)
 
 El usuario está trabajando con el material del curso "Módulo 18 - Briefing matutino." **Mediante prompts,** utilice `gmail_ops.py` o `gog gmail` para asistir con la detección de correos sin responder, triaje y generación de borradores. Siempre solicite confirmación del contenido antes de enviar.

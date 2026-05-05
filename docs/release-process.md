@@ -116,12 +116,12 @@ import re
 import urllib.request
 import yaml
 
-URL = "https://raw.githubusercontent.com/TokenPocket/ai-agent-camp/main/README.md"
+URL = "https://raw.githubusercontent.com/minicoohei/ai-agent-camp/main/README.md"
 readme = urllib.request.urlopen(URL).read().decode("utf-8")
 m = re.search(r"<!--\s*AGENT-META\s+v1\n(.*?)\n-->", readme, re.DOTALL)
 meta = yaml.safe_load(m.group(1))
 print(meta["release_asset_pattern"].format(tag="v0.1.0", lang="ja"))
-# → https://github.com/TokenPocket/ai-agent-camp/releases/download/v0.1.0/ai-agent-camp-ja-v0.1.0.zip
+# → https://github.com/minicoohei/ai-agent-camp/releases/download/v0.1.0/ai-agent-camp-ja-v0.1.0.zip
 ```
 
 ---
@@ -195,8 +195,8 @@ zip 自体の sha256 は同梱の `*.zip.sha256` に 1 行で入る。検証例:
 
 ```bash
 # 方法1: sha256 ファイルと照合
-curl -fsSLO https://github.com/TokenPocket/ai-agent-camp/releases/download/v0.1.0/ai-agent-camp-ja-v0.1.0.zip
-curl -fsSLO https://github.com/TokenPocket/ai-agent-camp/releases/download/v0.1.0/ai-agent-camp-ja-v0.1.0.zip.sha256
+curl -fsSLO https://github.com/minicoohei/ai-agent-camp/releases/download/v0.1.0/ai-agent-camp-ja-v0.1.0.zip
+curl -fsSLO https://github.com/minicoohei/ai-agent-camp/releases/download/v0.1.0/ai-agent-camp-ja-v0.1.0.zip.sha256
 sha256sum -c ai-agent-camp-ja-v0.1.0.zip.sha256
 
 # 方法2: zip 展開後、同梱の CHECKSUMS.txt で個別ファイルを検証

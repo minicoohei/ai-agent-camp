@@ -4,8 +4,8 @@ duration: "約10分"
 prerequisites: ["Node.js 18以上がインストール済み", "Googleアカウントを持っている", "ブラウザが使える"]
 level: "beginner"
 tags: ["setup", "gas", "clasp", "google"]
+nonInteractiveMode: incompatible
 ---
-
 # Google Apps Script CLI (clasp) セットアップ
 
 ## Step 0: セットアップ進捗の確認

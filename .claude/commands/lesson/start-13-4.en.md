@@ -5,8 +5,8 @@ prerequisites: ["start-13-3"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["lp", "html", "tailwind", "implementation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 13-4: Build a Working Landing Page (HTML/CSS/JS)
 
 ## 📍 What You'll Do

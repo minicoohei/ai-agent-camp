@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Nano Banana Pro Image Generation & Editing
 
 This command uses `tools/nanobanana.py` to generate and edit images with Nano Banana Pro (Gemini 3 Pro Image).

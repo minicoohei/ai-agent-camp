@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Capture Tutorial - Generar tutoriales de operación a partir de capturas de pantalla
 
 Este comando captura capturas de pantalla con Cursor Browser y utiliza la Gemini Vision API para generar automáticamente tutoriales de operación que explican "qué hacer en esta pantalla."

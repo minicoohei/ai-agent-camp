@@ -5,8 +5,8 @@ duration: "約15分"
 prerequisites: ["Codex Desktop または Cursor をインストール済み", "ai-agent-camp フォルダを開いている"]
 level: "beginner"
 tags: ["setup", "environment"]
+nonInteractiveMode: incompatible
 ---
-
 # Lesson 0-1: 環境セットアップ確認
 
 ## セットアップ進捗の確認

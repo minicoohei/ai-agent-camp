@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # Guide - 次のアクション提示
 
 このコマンドは、`tools/guide_action.py` を使用して、SpecStory履歴から現在の状況を分析し、背景説明と次のアクションを提示します。

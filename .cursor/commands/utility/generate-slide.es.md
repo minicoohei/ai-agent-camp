@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Generate Lecture Slide con Nano Banana Pro
 
 Este comando utiliza `tools/generate_slide.py` para generar diapositivas profesionales para conferencias.

@@ -1,7 +1,7 @@
 ---
 description: Module 18 Lesson 4-6 — GAS × clasp 統合をプロンプトで支援
+nonInteractiveMode: compliant
 ---
-
 # Module 18 — GAS / clasp（Lesson 4-6）
 
 ユーザーが教材「モジュール18・定型業務の自動化」に取り組んでいます。**プロンプト経由で** `gas-clasp-ops` スキルと `clasp` を使い、プロジェクト作成・push・デプロイを支援してください。

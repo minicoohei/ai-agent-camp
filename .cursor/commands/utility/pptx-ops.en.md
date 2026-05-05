@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # PowerPoint Operations - PPTX Operations
 
 Read, write, and analyze PowerPoint files using python-pptx.

@@ -6,8 +6,8 @@ duration: "~25 min"
 prerequisites: []
 level: "beginner"
 tags: ["email", "gmail", "gogcli", "setup"]
+nonInteractiveMode: incompatible
 ---
-
 # Lesson 16-1: Gmail Setup - gogcli Authentication and Email Sync
 
 ## What You Will Do in This Session

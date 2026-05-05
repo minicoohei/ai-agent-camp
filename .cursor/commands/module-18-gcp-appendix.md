@@ -1,7 +1,7 @@
 ---
 description: スラッシュ /module-18-gcp-appendix — Module 18 — GCP を自分で運用する（コンソール手順のチェックリスト）
+nonInteractiveMode: incompatible
 ---
-
 ## まずこれ（最短）
 
 チャットで **`/module-18-gcp-appendix`** を実行すると、GCP コンソール手順の支援用コンテキストが載ります。

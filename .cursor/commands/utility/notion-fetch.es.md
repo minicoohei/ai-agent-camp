@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Notion Fetch - Integración con Notion
 
 Obtiene páginas y bases de datos de Notion y las exporta en formato Markdown.

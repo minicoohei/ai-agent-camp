@@ -5,8 +5,8 @@ prerequisites: ["start-0-1"]
 duration: "~35 min"
 level: "intermediate"
 tags: ["github-actions", "ci-cd", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 11-1: GitHub Actions Basics
 
 ## 📍 What You'll Do

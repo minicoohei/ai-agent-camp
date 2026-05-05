@@ -5,8 +5,8 @@ prerequisites: ["start-1-1"]
 duration: "約30分"
 level: "beginner"
 tags: ["banner", "image", "sns", "multi-platform"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 1-2: 応用バナー（Instagram, Facebook）
 
 ## 📍 このセッションでやること

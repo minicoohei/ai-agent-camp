@@ -5,8 +5,8 @@ prerequisites: ["start-12-5"]
 duration: "~35 min"
 level: "intermediate"
 tags: ["notion", "mcp", "write", "update"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 12-6: Workflow Automation with Notion
 
 ## 📍 What You'll Do

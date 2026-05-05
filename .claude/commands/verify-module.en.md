@@ -1,7 +1,7 @@
 ---
 description: "Module completion check (with AI evaluation)"
+nonInteractiveMode: compliant
 ---
-
 # /verify-module [module number]
 
 Automatically check the completion status of all lessons in a module, and have AI provide a comprehensive evaluation and feedback.

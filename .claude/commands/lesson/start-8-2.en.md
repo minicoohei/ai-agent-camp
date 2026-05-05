@@ -5,8 +5,8 @@ prerequisites: ["start-8-1"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["data", "bigquery", "eda", "analysis"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 8-2: Running EDA (Exploratory Data Analysis)
 
 ## 📍 What You'll Do

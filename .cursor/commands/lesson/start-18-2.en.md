@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-1", "output/pm/customer-needs.md"]
 level: "intermediate"
 tags: ["pm", "requirements", "moscow"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-2: Creating Requirements Document
 
 ## 📍 What You'll Do

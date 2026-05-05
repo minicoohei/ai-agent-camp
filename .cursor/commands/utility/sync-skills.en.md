@@ -1,8 +1,8 @@
 ---
 description: Sync skills to global or other projects
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # Skill Sync
 
 ## Usage

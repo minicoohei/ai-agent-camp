@@ -4,8 +4,8 @@ duration: "約15分"
 prerequisites: ["Googleアカウントを持っている", "ブラウザが使える"]
 level: "beginner"
 tags: ["setup", "bigquery", "gcp", "gcloud"]
+nonInteractiveMode: incompatible
 ---
-
 # BigQuery / GCP 認証セットアップ
 
 ## Step 0: セットアップ進捗の確認

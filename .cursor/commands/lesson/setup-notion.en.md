@@ -4,8 +4,8 @@ duration: "~15 min"
 prerequisites: ["Have a Notion account (free plan OK)", "Browser available", "Node.js 18 or higher"]
 level: "beginner"
 tags: ["setup", "notion", "ncli", "mcp", "api"]
+nonInteractiveMode: incompatible
 ---
-
 # Notion CLI (ncli) + MCP Setup
 
 ## Step 0: Check Setup Progress

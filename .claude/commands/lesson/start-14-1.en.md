@@ -6,8 +6,8 @@ duration: "~25 min"
 prerequisites: []
 level: "beginner"
 tags: ["article", "planning"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-1: Article Planning - Topic Selection and Outline Generation
 
 ## 📍 What You'll Do

@@ -6,8 +6,8 @@ duration: "30分"
 prerequisites: ["start-14-4"]
 level: "intermediate"
 tags: ["article", "proofreading"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-5: 校閲 - 校閲エージェントによるレビュー
 
 ## 📍 このセッションでやること

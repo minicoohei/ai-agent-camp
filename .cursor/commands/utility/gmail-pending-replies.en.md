@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Gmail Pending Replies - Extract Unreplied Emails
 
 Extract emails that need a reply from Gmail and **automatically generate reply drafts**.

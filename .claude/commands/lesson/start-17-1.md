@@ -5,8 +5,8 @@ duration: "約30分"
 prerequisites: ["start-0-3"]
 level: "intermediate"
 tags: ["marketing", "x-post", "banner", "sns"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 17-1: X投稿 & バナー作成
 
 ## 📍 このセッションでやること

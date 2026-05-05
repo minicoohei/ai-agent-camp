@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-4", "output/pm/prd.md", "output/pm/requirements-brief.md"]
 level: "intermediate"
 tags: ["pm", "requirements-spec", "ipa"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 18-5: 要件定義書の作成
 
 Topic: IPA（情報処理推進機構）の形式に基づいた要件定義書をTaskFlowについて作成する。

@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Extract Tasks - Extracción de tareas
 
 Extraiga tareas de múltiples fuentes de datos y lístelas con clasificación de prioridad.

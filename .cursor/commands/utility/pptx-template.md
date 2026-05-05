@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # PPTXテンプレート操作
 
 PowerPointファイルのフォーマットを抽出してYAMLテンプレート化し、テキストだけを差し替えた新しいスライドを生成するツールです。

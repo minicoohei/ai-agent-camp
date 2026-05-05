@@ -6,8 +6,8 @@ duration: "30分"
 prerequisites: ["start-13-1"]
 level: "beginner"
 tags: ["email", "resend", "domain", "dns", "vercel", "spf", "dkim"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 16-6: Resend 登録 & ドメイン設定
 
 ## 📍 このセッションでやること

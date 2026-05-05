@@ -6,8 +6,8 @@ duration: "約30分"
 prerequisites: ["start-0-7"]
 level: "intermediate"
 tags: ["freee", "moneyforward", "accounting", "mcp"]
+nonInteractiveMode: compliant
 ---
-
 # Lesson 20-1: Freee/MoneyForward連携 入門
 
 ## このセッションでやること

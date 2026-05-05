@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Have a Google account", "Browser available"]
 level: "beginner"
 tags: ["setup", "gemini", "api"]
+nonInteractiveMode: incompatible
 ---
-
 # Gemini API Setup
 
 ## Step 0: Check Setup Progress

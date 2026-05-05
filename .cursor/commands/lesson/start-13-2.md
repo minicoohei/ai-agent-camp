@@ -5,8 +5,8 @@ prerequisites: ["start-13-1"]
 duration: "約25分"
 level: "intermediate"
 tags: ["lp", "wireframe", "design", "information-architecture"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 13-2: ワイヤーフレーム作成（ASCII + ビジュアルWF）
 
 ## 📍 このセッションでやること

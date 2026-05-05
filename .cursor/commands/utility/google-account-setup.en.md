@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Google Account Setup (for Calendar/Drive)
 
 Assists with setting up personal Google account Calendar/Drive integration.

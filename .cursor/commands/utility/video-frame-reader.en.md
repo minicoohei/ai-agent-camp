@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Video Frame Reader - Video Keyframe Extraction
 
 This command extracts keyframes from videos, optionally performs frame analysis with Gemini Vision, and outputs results as JSON.

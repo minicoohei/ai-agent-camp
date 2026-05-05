@@ -5,8 +5,8 @@ duration: "~20 min"
 prerequisites: ["start-15-1"]
 level: "intermediate"
 tags: ["video", "ai-engine", "fal"]
+nonInteractiveMode: deferred
 ---
-
 # 15-5: Video AI Engine Overview
 
 ## What You Will Do in This Session
@@ -264,3 +264,14 @@ Verification items:
   }]
 }
 ```
+
+## Reference links (mirrors aiagent-course Module 15 slides)
+
+Five resources you can use to find templates or inspiration.
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

@@ -5,8 +5,8 @@ prerequisites: ["start-6-1"]
 duration: "~25 min"
 level: "intermediate"
 tags: ["agent", "rules", "cursor"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 6-3: Configuracion de Cursor Rules
 
 ## 📍 Lo que hara en esta sesion

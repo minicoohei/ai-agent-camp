@@ -5,8 +5,8 @@ duration: "約35分"
 prerequisites: ["start-7-5"]
 level: "intermediate"
 tags: ["skill", "command", "workflow", "customization"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 7-6: 自分のワークフロー用Command作成
 
 ## 📍 このセッションでやること

@@ -5,8 +5,8 @@ prerequisites: ["start-2-1"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["diagram", "presentation", "architecture"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 2-3: Diagramas para materiales de presentación
 
 ## 📍 Lo que hará en está sesion

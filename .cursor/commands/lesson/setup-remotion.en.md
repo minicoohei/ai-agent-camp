@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Node.js 18 or higher installed"]
 level: "beginner"
 tags: ["setup", "remotion", "video", "react", "npm"]
+nonInteractiveMode: incompatible
 ---
-
 # Remotion Setup
 
 ## Step 0: Check Setup Progress
@@ -353,3 +353,14 @@ Remotion setup is complete. You can now proceed to video production lessons.
 - lesson_15_8 -> /start-15-8
 - mv_composer -> Type "create an MV video" to launch the mv-composer skill
 - finish -> End
+
+## Reference links (mirrors aiagent-course Module 15 slides)
+
+Five resources you can use to find templates or inspiration.
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

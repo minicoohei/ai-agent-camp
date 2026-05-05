@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Annotate Screenshot con Nano Banana Pro
 
 Este comando utiliza `tools/annotate_screenshot.py` para agregar anotaciones de tipo manual (recuadros rojos, flechas, globos de texto, texto) a capturas de pantalla.

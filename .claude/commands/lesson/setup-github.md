@@ -4,8 +4,8 @@ duration: "約10分"
 prerequisites: ["/setup-start 完了"]
 level: "beginner"
 tags: ["setup", "github"]
+nonInteractiveMode: incompatible
 ---
-
 # GitHub アカウント設定とリポジトリ作成
 
 ## Step 0: セットアップ進捗の確認

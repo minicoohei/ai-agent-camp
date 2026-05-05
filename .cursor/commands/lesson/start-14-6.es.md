@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-14-5"]
 level: "intermediate"
 tags: ["article", "factcheck"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 14-6: Verificación de hechos - Agente de verificación de hechos
 
 ## 📍 Lo que hará en está sesión

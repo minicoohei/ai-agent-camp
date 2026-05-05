@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-16-6", "start-16-7"]
 level: "intermediate"
 tags: ["email", "resend", "resend-cli", "sequences", "drip-campaign", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 16-8: Resend Sequence & CLI Drip Campaign
 
 ## What You Will Do in This Session

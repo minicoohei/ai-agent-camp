@@ -5,8 +5,8 @@ prerequisites: ["start-0-1"]
 duration: "約35分"
 level: "intermediate"
 tags: ["github-actions", "ci-cd", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 11-1: GitHub Actions Workflow基本・自動化
 
 ## 📍 このセッションでやること

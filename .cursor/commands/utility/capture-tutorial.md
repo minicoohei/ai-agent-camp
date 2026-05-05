@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Capture Tutorial - スクリーンショットから操作チュートリアル生成
 
 このコマンドは、Cursor Browserでスクリーンショットを撮影し、Gemini Vision APIを使用して「この画面で何をすべきか」という操作チュートリアルを自動生成します。

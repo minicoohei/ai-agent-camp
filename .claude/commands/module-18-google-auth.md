@@ -1,7 +1,7 @@
 ---
 description: スラッシュ /module-18-google-auth — Module 18 Lesson 4-1 — Google 認証（gog auth）と Gmail/Calendar 動作確認を支援
+nonInteractiveMode: incompatible
 ---
-
 ## まずこれ（最短）
 
 チャットで **`/module-18-google-auth`** を実行すると、このレッスン用の指示が一括でコンテキストに載ります。**長文プロンプトを手入力するより早く、確実です。**

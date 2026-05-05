@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-6", "output/pm/usecases.md"]
 level: "intermediate"
 tags: ["pm", "ui", "wireframe", "screen-transition"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-7: Screen Transition Diagram & Wireframes
 
 | Item | Details |

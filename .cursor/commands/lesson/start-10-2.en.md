@@ -5,8 +5,8 @@ prerequisites: ["start-10-1"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["gas", "calendar", "google", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 10-2: Spreadsheet Automation with GAS
 
 ## 📍 What You'll Do

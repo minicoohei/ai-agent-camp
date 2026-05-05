@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-11-1"]
 level: "intermediate"
 tags: ["github-actions", "deploy", "artifact", "release", "vercel", "github-pages"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 11-5: GitHub Actions でデプロイ・ファイル生成
 
 ## 📍 このセッションでやること

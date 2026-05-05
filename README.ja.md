@@ -10,8 +10,7 @@
 
 > ### ⚠️ クローンする前に
 >
-> **公式リポジトリ**（メンテナンス主体は以下のみ）:
-> - `https://github.com/TokenPocket/ai-agent-camp`
+> **公式リポジトリ**（メンテナンス主体）:
 > - `https://github.com/minicoohei/ai-agent-camp`
 >
 > このリポジトリのレッスンを実行すると、AI エージェントにシェル・ファイル書き込み・外部 API への権限を与えることになります。**fork やミラーは、レッスンやスキルの中身を静かに書き換えている可能性があります。** レッスンを始める前に、クローンしたリポが公式かを検証してください:
@@ -23,15 +22,14 @@
 > fork や欠落ファイルが検出された場合は、`git diff upstream/main -- .claude/ skills/ tools/ scripts/` で差分を確認してから進めてください。詳細は [`docs/security-guardrails.md`](docs/security-guardrails.md)。
 
 <!-- AGENT-META v1
-schema: https://github.com/TokenPocket/ai-agent-camp/blob/main/docs/release-process.md#agent-meta-v1
-repo: TokenPocket/ai-agent-camp
-mirror: minicoohei/ai-agent-camp
+schema: https://github.com/minicoohei/ai-agent-camp/blob/main/docs/release-process.md#agent-meta-v1
+repo: minicoohei/ai-agent-camp
 primary_branch: main
 languages: [ja, en, es]
 default_language: ja
-latest_tag_api: https://api.github.com/repos/TokenPocket/ai-agent-camp/releases/latest
-release_asset_pattern: https://github.com/TokenPocket/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
-manifest_raw_pattern: https://raw.githubusercontent.com/TokenPocket/ai-agent-camp/{ref}/courses/lessons.manifest{lang_suffix}.yaml
+latest_tag_api: https://api.github.com/repos/minicoohei/ai-agent-camp/releases/latest
+release_asset_pattern: https://github.com/minicoohei/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
+manifest_raw_pattern: https://raw.githubusercontent.com/minicoohei/ai-agent-camp/{ref}/courses/lessons.manifest{lang_suffix}.yaml
 lang_suffix: {ja: "", en: ".en", es: ".es"}
 integrity_cli: python3 tools/scripts/verify_integrity.py
 -->
@@ -43,7 +41,7 @@ integrity_cli: python3 tools/scripts/verify_integrity.py
 **ダウンロード URL のパターン**（一度 publish されたら同じ内容を返す固定 URL）:
 
 ```
-https://github.com/TokenPocket/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
+https://github.com/minicoohei/ai-agent-camp/releases/download/{tag}/ai-agent-camp-{lang}-{tag}.zip
 ```
 
 | 言語 | アセット | チェックサム |
@@ -58,10 +56,10 @@ https://github.com/TokenPocket/ai-agent-camp/releases/download/{tag}/ai-agent-ca
 
 ```bash
 # 最新リリース・任意の言語
-gh release download --repo TokenPocket/ai-agent-camp --pattern 'ai-agent-camp-ja-*.zip'
+gh release download --repo minicoohei/ai-agent-camp --pattern 'ai-agent-camp-ja-*.zip'
 
 # 特定バージョン
-gh release download v0.1.0 --repo TokenPocket/ai-agent-camp \
+gh release download v0.1.0 --repo minicoohei/ai-agent-camp \
   --pattern 'ai-agent-camp-ja-v0.1.0.zip'
 ```
 
@@ -77,7 +75,7 @@ gh release download v0.1.0 --repo TokenPocket/ai-agent-camp \
 
 仕様の全文・バージョニング方針・ロールバック手順・Python parse サンプルは [`docs/release-process.md`](docs/release-process.md) を参照してください。
 
-> **初回タグ前の注意**: まだ Release アセットが存在しないため、上記 URL パターンは `v0.1.0` がリリースされるまで 404 を返します。それまでは `git clone https://github.com/TokenPocket/ai-agent-camp.git` でリポを取得するか、`raw.githubusercontent.com/.../main/...` で個別ファイルを参照してください。
+> **初回タグ前の注意**: まだ Release アセットが存在しないため、上記 URL パターンは `v0.1.0` がリリースされるまで 404 を返します。それまでは `git clone https://github.com/minicoohei/ai-agent-camp.git` でリポを取得するか、`raw.githubusercontent.com/.../main/...` で個別ファイルを参照してください。
 
 ## 目次
 

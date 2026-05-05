@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-11-1"]
 level: "intermediate"
 tags: ["github-actions", "deploy", "artifact", "release", "vercel", "github-pages"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 11-5: Deploy & File Generation with GitHub Actions
 
 ## 📍 What You'll Do

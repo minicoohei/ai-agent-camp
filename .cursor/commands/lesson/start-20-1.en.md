@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-0-7"]
 level: "intermediate"
 tags: ["freee", "moneyforward", "accounting", "mcp"]
+nonInteractiveMode: compliant
 ---
-
 # Lesson 20-1: Freee/MoneyForward Integration Introduction
 
 ## What You'll Do

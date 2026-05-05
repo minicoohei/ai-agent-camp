@@ -5,8 +5,8 @@ prerequisites: ["start-2-1"]
 duration: "約25分"
 level: "beginner"
 tags: ["diagram", "infographic", "visualization"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 2-2: インフォグラフィック作成
 
 ## 📍 このセッションでやること

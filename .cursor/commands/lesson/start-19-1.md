@@ -6,8 +6,8 @@ duration: "約30分"
 prerequisites: ["start-0-7"]
 level: "intermediate"
 tags: ["outlook", "microsoft365", "m365-cli", "email"]
+nonInteractiveMode: compliant
 ---
-
 # Lesson 19-1: Microsoft Office連携(Outlook) 入門
 
 ## このセッションでやること

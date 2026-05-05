@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Navegador disponible", "Tener cuenta de GitHub o Google"]
 level: "beginner"
 tags: ["setup", "fal", "api", "video", "image"]
+nonInteractiveMode: deferred
 ---
-
 # Configuración de la API de fal.ai
 
 ## Step 0: Verificar el progreso de configuración
@@ -397,3 +397,14 @@ sincronización labial (Fabric), generación de música (Suno) y más.
 1. Ejecutar `uv run python tools/setup_progress.py complete setup-fal` para actualizar el progreso
 2. El resumen de progreso actualizado se muestra automáticamente
 3. Indicar al usuario el siguiente paso: "A continuación, aprenda sobre motores de IA de video con `/start-13-2`. O configure la API de ElevenLabs con `/setup-elevenlabs`."
+
+## Enlaces de referencia (sincronizado con las slides de Module 15)
+
+Cinco recursos para buscar plantillas o inspiración.
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

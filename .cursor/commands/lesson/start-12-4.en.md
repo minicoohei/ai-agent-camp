@@ -5,8 +5,8 @@ prerequisites: ["start-12-3"]
 duration: "~35 min"
 level: "intermediate"
 tags: ["notion", "database", "automation", "summarize"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 12-4: Automated Report Generation
 
 ## 📍 What You'll Do

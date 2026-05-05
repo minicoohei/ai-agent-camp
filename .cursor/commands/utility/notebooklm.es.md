@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # NotebookLM - Notebooks de API
 
 Utilice la API de NotebookLM Enterprise para crear u obtener notebooks.

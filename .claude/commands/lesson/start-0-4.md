@@ -5,8 +5,8 @@ duration: "約15分"
 prerequisites: ["start-0-1", "start-0-2", "start-0-3"]
 level: "beginner"
 tags: ["setup", "slack", "api"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 0-4: Slack API設定
 
 ## セットアップ進捗の確認

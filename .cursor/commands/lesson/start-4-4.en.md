@@ -5,8 +5,8 @@ duration: "~30 min"
 prerequisites: ["start-4-3"]
 level: "beginner"
 tags: ["google", "workspace", "gogcli", "calendar", "event-management"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 4-4: Google Calendar Event Registration and Management
 
 ## 📍 What You'll Do

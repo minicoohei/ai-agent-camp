@@ -5,8 +5,8 @@ duration: "~15 min"
 prerequisites: ["Codex Desktop o Cursor instalado", "La carpeta ai-agent-camp esta abierta"]
 level: "beginner"
 tags: ["setup", "environment"]
+nonInteractiveMode: incompatible
 ---
-
 # Lección 0-1: Verificación de configuración del entorno
 
 ## Verificar progreso de configuración

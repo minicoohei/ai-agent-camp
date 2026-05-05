@@ -5,8 +5,8 @@ prerequisites: ["start-10-1"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["gas", "calendar", "google", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 10-2: Automatizacion de hojas de calculo con GAS
 
 ## 📍 Lo que hara en esta sesion

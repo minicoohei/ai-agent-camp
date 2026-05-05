@@ -4,8 +4,8 @@ duration: "~5 min"
 prerequisites: ["Cursor está en ejecución"]
 level: "beginner"
 tags: ["setup", "extensions"]
+nonInteractiveMode: deferred
 ---
-
 # /setup-extensions -- Configuración automática de extensiones
 
 ## Step 0: Verificar el progreso de configuración

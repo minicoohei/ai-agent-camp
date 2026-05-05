@@ -5,8 +5,8 @@ duration: "~20 min"
 prerequisites: ["start-0-1"]
 level: "intermediate"
 tags: ["lp", "copywriting", "persona", "brief"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 13-1: Organización de la propuesta de valor (Entrevista y copywriting)
 
 ## 📍 Lo que hará en está sesión

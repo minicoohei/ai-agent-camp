@@ -4,8 +4,8 @@ duration: "約15分"
 prerequisites: ["Slack ワークスペースの管理者権限"]
 level: "beginner"
 tags: ["setup", "slack", "api"]
+nonInteractiveMode: incompatible
 ---
-
 # Slack API セットアップ
 
 ## Step 0: セットアップ進捗の確認

@@ -5,8 +5,8 @@ prerequisites: ["start-3-1", "start-3-2", "start-3-3", "start-3-4", "start-3-5"]
 duration: "~40 min"
 level: "intermediate"
 tags: ["screenshot", "capstone", "manual"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 3-6: Ejercicio resumen de analisis de capturas de pantalla
 
 ## 📍 Lo que hara en esta sesion

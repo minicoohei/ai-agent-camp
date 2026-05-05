@@ -4,8 +4,8 @@ duration: "~15 min"
 prerequisites: ["Tener cuenta de Notion (plan gratuito OK)", "Navegador disponible", "Node.js 18+"]
 level: "beginner"
 tags: ["setup", "notion", "ncli", "mcp", "api"]
+nonInteractiveMode: deferred
 ---
-
 # Configuración de Notion CLI (ncli) + MCP
 
 ## Step 0: Verificar el progreso de configuración

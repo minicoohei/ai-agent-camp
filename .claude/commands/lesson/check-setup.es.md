@@ -4,8 +4,8 @@ duration: "~2 min"
 prerequisites: ["La carpeta ai-agent-camp esta abierta en Codex o Cursor"]
 level: "beginner"
 tags: ["setup", "check"]
+nonInteractiveMode: deferred
 ---
-
 # /check-setup -- Verificación automática del entorno
 
 ## Step 0: Verificar progreso de configuración

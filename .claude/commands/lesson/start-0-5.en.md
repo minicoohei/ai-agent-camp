@@ -5,8 +5,8 @@ duration: "~5 min"
 prerequisites: ["start-0-1", "start-0-2", "start-0-3", "start-0-4"]
 level: "beginner"
 tags: ["setup", "security"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 0-5: Security Settings Verification
 
 ## Check Setup Progress

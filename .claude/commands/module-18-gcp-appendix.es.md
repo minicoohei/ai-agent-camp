@@ -1,7 +1,7 @@
 ---
 description: Slash /module-18-gcp-appendix — Módulo 18 — GCP autogestionado (lista de verificación del procedimiento de consola)
+nonInteractiveMode: incompatible
 ---
-
 ## Comience aquí (lo más rápido)
 
 Ejecute **`/module-18-gcp-appendix`** en el chat para cargar el contexto de soporte del procedimiento de la consola de GCP.

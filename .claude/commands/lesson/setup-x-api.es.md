@@ -4,8 +4,8 @@ duration: "~15 min"
 prerequisites: ["Tener una cuenta de X", "Navegador disponible"]
 level: "beginner"
 tags: ["setup", "x", "twitter", "api"]
+nonInteractiveMode: deferred
 ---
-
 # Configuración de X (Twitter) API
 
 ## Step 0: Verificar progreso de configuración
