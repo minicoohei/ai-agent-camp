@@ -1,0 +1,7 @@
+[`.cursor/commands/lesson/setup-salesforce.md`](.cursor/commands/lesson/setup-salesforce.md) の frontmatter は **`nonInteractiveMode: incompatible`** です。
+
+**ため非対話では実行しません。** ブラウザ OAuth（`sf org login web`）が必須で、`claude -p` / `cursor-agent --print` などでは完走できない想定です。
+
+**対話モードでやることの要約:** ① `@salesforce/cli@2.x` をグローバル導入（例: npm）② 本番なら `sf org login web --alias prod`、Sandbox なら `sf org login web --alias dev --instance-url https://test.salesforce.com` ③ `sf org list` で確認。v1 の `sfdx` ではなく v2 の `sf` を使う。
+
+**あなたへの案内:** Cursor や Claude Code の通常チャットで `/lesson:setup-salesforce`（または `/setup-salesforce`）を開き、ブラウザログインまで含めて進めてください。
