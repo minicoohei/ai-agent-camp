@@ -396,7 +396,7 @@ Ahora puede operar páginas y bases de datos de Notion directamente desde Claude
 3. Si hay conflicto de puertos, detener otros servidores locales (especialmente servidores de desarrollo) y reintentar
 
 ### Problema 5: Preocupación por los costos
-**Indicación de la IA**: "Notion está disponible en plan gratuito. No hay costos adicionales por el uso de la API mediante OAuth. El Hosted MCP oficial de Notion (`mcp.notion.com`) también es gratuito. ncli (@sakasegawa/ncli) es de código abierto y gratuito."
+**Indicación de la IA**: "Notion está disponible en plan gratuito y no hay costos adicionales por el uso de la API mediante OAuth. El Hosted MCP oficial de Notion (`mcp.notion.com`) **también es gratuito por el momento**, pero la disponibilidad por herramienta puede depender de tu plan de Notion (Free / Plus / Business / Enterprise) y de si Notion AI está habilitado. Consulta siempre la [documentación oficial de herramientas MCP soportadas](https://developers.notion.com/docs/mcp-supported-tools) y la [página de precios de Notion](https://www.notion.com/pricing) para el alcance más reciente. ncli (@sakasegawa/ncli) es de código abierto y gratuito."
 
 ### Problema 6: Otros errores
 **Lo que hace la IA**: Verificar el contenido del mensaje de error, identificar la causa e indicar la solución

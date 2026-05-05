@@ -396,7 +396,7 @@ Notion Hosted MCP の設定が完了しました！
 3. ポート競合の場合は他のローカルサーバー（特に開発サーバー）を停止してから再試行
 
 ### トラブル5: 料金が心配
-**AIの案内**: 「Notion 自体は無料プランで利用可能です。OAuth 経由の API 利用にも追加費用はかかりません。Notion 公式 Hosted MCP（`mcp.notion.com`）も無料で利用できます。ncli（@sakasegawa/ncli）もオープンソースで無料です」
+**AIの案内**: 「Notion 自体は無料プランで利用可能です。OAuth 経由の API 利用にも追加費用はかかりません。Notion 公式 Hosted MCP（`mcp.notion.com`）も**現時点では**無料で利用できますが、ツールごとの利用可否は Notion のプラン（Free / Plus / Business / Enterprise）や Notion AI の有効化状況によって変わる場合があります。最新の対応範囲は公式の [MCP supported tools ドキュメント](https://developers.notion.com/docs/mcp-supported-tools) と [Notion 料金ページ](https://www.notion.com/pricing) を確認してください。ncli（@sakasegawa/ncli）はオープンソースで無料です」
 
 ### トラブル6: その他のエラー
 **AIが行うこと**: エラーメッセージの内容を確認し、原因を特定して解決方法を案内する

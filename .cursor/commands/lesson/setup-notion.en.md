@@ -396,7 +396,7 @@ You can now operate Notion pages and databases directly from Claude Code/Cursor.
 3. If a port conflict, stop other local servers (especially dev servers) and retry
 
 ### Trouble 5: Cost concerns
-**AI guidance**: "Notion itself is available on the free plan. There are no additional costs for OAuth-based API usage. Notion's official Hosted MCP (`mcp.notion.com`) is also free. ncli (@sakasegawa/ncli) is open-source and free."
+**AI guidance**: "Notion itself is available on the free plan, and there are no additional costs for OAuth-based API usage. Notion's official Hosted MCP (`mcp.notion.com`) is **also free as of now**, but per-tool availability can depend on your Notion plan (Free / Plus / Business / Enterprise) and whether Notion AI is enabled. Always check the official [MCP supported tools docs](https://developers.notion.com/docs/mcp-supported-tools) and the [Notion pricing page](https://www.notion.com/pricing) for the latest scope. ncli (@sakasegawa/ncli) is open-source and free."
 
 ### Trouble 6: Other errors
 **What the AI does**: Inspect the error message, identify the cause, and guide on a solution
