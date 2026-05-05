@@ -132,19 +132,14 @@ total_items: 25
 
 ## Requisitos previos
 
-Es necesario configurar la variable de entorno `NOTION_API_KEY`.
+La autenticación con Notion es **solo OAuth**. Basta con tener completada cualquiera de las siguientes configuraciones:
 
-### Pasos de configuración
+- Ya inició sesión con `ncli login` (OAuth de navegador aprobado)
+- O su Claude Code / Cursor está conectado al **Hosted MCP de Notion** (`https://mcp.notion.com/mcp`, Streamable HTTP + OAuth)
 
-1. Cree una integración en https://www.notion.so/my-integrations
-2. Obtenga la clave API (comienza con `secret_`)
-3. Conecte la integración a la página/base de datos de destino
+Consulte `/setup-notion` para el procedimiento de configuración completo.
 
-Detalles:
-
-```bash
-uv run python tools/api_setup_wizard.py guide notion
-```
+> No se requiere ninguna clave API (`secret_xxx`) ni `NOTION_TOKEN`. Tampoco hace falta compartir página por página con "Add connections" en Notion (OAuth concede acceso a todo el workspace).
 
 ## Tipos de bloques soportados
 
@@ -168,5 +163,5 @@ uv run python tools/api_setup_wizard.py guide notion
 
 ## Comandos relacionados
 
-- `/api-setup-wizard` - Configuración de la API de Notion
+- `/setup-notion` - Configuración de Notion con OAuth (ncli + Hosted MCP)
 - `/extract-tasks` - Extracción de tareas (integración con Notion planificada)

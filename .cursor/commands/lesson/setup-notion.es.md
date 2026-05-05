@@ -1,12 +1,12 @@
 ---
 description: "Lesson command"
-duration: "~15 min"
+duration: "~10 min"
 prerequisites: ["Tener cuenta de Notion (plan gratuito OK)", "Navegador disponible", "Node.js 18+"]
 level: "beginner"
-tags: ["setup", "notion", "ncli", "mcp", "api"]
+tags: ["setup", "notion", "ncli", "mcp", "oauth"]
 ---
 
-# Configuración de Notion CLI (ncli) + MCP
+# Configuración de Notion CLI (ncli) + Hosted MCP (solo OAuth)
 
 ## Step 0: Verificar el progreso de configuración
 
@@ -15,25 +15,28 @@ tags: ["setup", "notion", "ncli", "mcp", "api"]
 2. Detectar automáticamente la configuración existente:
    - `which ncli` para verificar si ncli está instalado
    - Para Claude Code: verificar si el servidor `notion` está definido en `~/.claude/mcp_settings.json`
-   - Para Cursor: verificar si el servidor `notion` está definido en `.cursor/mcp.json`
+   - Para Cursor: verificar si el servidor `notion` está definido en `~/.cursor/mcp.json`
    - Si ncli está instalado y MCP está configurado, puede ejecutar solo el Step 6 (prueba de conexión) y marcarlo como completado
 
 ## Lo que hará en esta sesión
 
 | Elemento | Contenido |
 |----------|-----------|
-| Objetivo | Instalar ncli (Notion CLI), crear una integración de Notion y habilitar Claude Code/Cursor para operar páginas y bases de datos de Notion a través del terminal + servidor MCP |
-| Duración | ~15 minutos |
-| Requisitos previos | Tener cuenta de Notion (plan gratuito OK), Node.js 18+, navegador disponible |
-| Nivel de operación | No se necesitan comandos CLI (todo lo ejecuta automáticamente la IA + solo operaciones de GUI) |
+| Objetivo | Conectar ncli (Notion CLI) y el Hosted MCP oficial de Notion mediante **OAuth**, para operar Notion desde el terminal y desde herramientas compatibles con MCP |
+| Duración | ~10 minutos |
+| Requisitos previos | Cuenta de Notion (plan gratuito OK), Node.js 18+, navegador |
+| Nivel de operación | No se necesitan comandos CLI (todo lo ejecuta automáticamente la IA + una sola aprobación OAuth en el navegador) |
+| Método de autenticación | **Esta configuración usa solo OAuth** (no se requieren claves API).<br>Nota: algunos scripts heredados (p. ej. `tools/run_lesson_14_11.py`) todavía requieren `NOTION_API_KEY`. Consulta `.env.example` para más detalles. |
 
 **Flujo de la sesión:**
 1. Instalar ncli (@sakasegawa/ncli) (la IA lo ejecuta automáticamente)
-2. Abrir la página de integraciones de Notion en el navegador (la IA abre el navegador automáticamente)
-3. Crear una integración y obtener la clave de API (solo hacer clic en botones en pantalla)
-4. Crear el archivo de configuración MCP (la IA lo crea automáticamente)
-5. Compartir la integración con las páginas de Notion
-6. Prueba de conexión de ncli + MCP
+2. Ejecutar `ncli login` y aprobar el OAuth de Notion en el navegador
+3. Verificar con `ncli whoami` / `ncli search`
+4. Añadir el Notion Hosted MCP (OAuth) al archivo de configuración MCP (la IA lo escribe automáticamente)
+5. Reiniciar Claude Code / Cursor y aprobar el diálogo OAuth en el primer uso
+6. Prueba de conexión MCP
+
+> **¿Por qué Hosted MCP + OAuth?** El flujo antiguo de Internal Integration Token obligaba a crear una integración en Notion y a compartir cada página individualmente con "Add connections". Con OAuth, un único inicio de sesión en el navegador concede acceso a todo el workspace, por lo que **en este flujo Hosted MCP** compartir página por página **no es necesario**. Si todavía necesitas ejecutar scripts heredados que leen `NOTION_API_KEY` directamente (p. ej. `tools/run_lesson_14_11.py`), sigue usando un Internal Integration Token junto con esta configuración OAuth.
 
 > **Consejo**: Si la respuesta de la IA se detiene a mitad de camino, escriba "por favor continúe" o "se detuvo" para reanudar.
 
@@ -50,7 +53,6 @@ tags: ["setup", "notion", "ncli", "mcp", "api"]
     "prompt": "¿Está preparado/a?",
     "options": [
       {"id": "ready", "label": "¡Preparado/a! Comencemos"},
-      {"id": "chrome", "label": "Automatizar operaciones del navegador con /chrome"},
       {"id": "check_prereq", "label": "Quiero verificar los requisitos previos"},
       {"id": "which_tool", "label": "Quiero confirmar si uso Claude Code o Cursor"},
       {"id": "different_lesson", "label": "Quiero ir a otra lección"}
@@ -60,9 +62,8 @@ tags: ["setup", "notion", "ncli", "mcp", "api"]
 ```
 
 (ready -> Ir al Step 1)
-(chrome -> Después de abrir el navegador en el Step 2, seguir la sección "Automatización con integración Chrome" para la ejecución automática)
-(check_prereq -> Indicar: "Está listo/a si tiene una cuenta de Notion (plan gratuito OK), Node.js 18+ y puede iniciar sesión a través de su navegador.")
-(which_tool -> Explicar: "La ubicación del archivo de configuración difiere entre Claude Code y Cursor. El Step 4 le guiará con los pasos para cada uno.")
+(check_prereq -> Indicar: "Está listo/a si tiene una cuenta de Notion (plan gratuito OK), puede iniciar sesión por navegador y tiene Node.js 18 o superior instalado.")
+(which_tool -> Explicar: "La ubicación del archivo de configuración MCP difiere entre Claude Code y Cursor. El Step 4 le guiará con los pasos para cada uno.")
 (different_lesson -> Mostrar la lista de módulos)
 
 ---
@@ -104,115 +105,117 @@ npm install -g @sakasegawa/ncli
 
 ---
 
-## Step 2: Abrir la página de integraciones de Notion en el navegador
+## Step 2: Iniciar sesión en Notion mediante OAuth con ncli
 
 **Lo que hace la IA:**
-1. Detectar automáticamente el SO (Mac / Windows / Linux)
-2. Ejecutar el siguiente comando para abrir el navegador automáticamente:
+1. Ejecutar en el terminal:
 
 ```bash
-# Mac:
-open https://www.notion.so/my-integrations
-# Windows:
-start https://www.notion.so/my-integrations
-# Linux:
-xdg-open https://www.notion.so/my-integrations
+ncli login
 ```
 
-**Después de que se abra el navegador, mostrar la siguiente AskQuestion:**
-
-```json
-{
-  "title": "Step 2: Crear una integración",
-  "questions": [{
-    "id": "browser_status",
-    "prompt": "¿Se abrió el navegador? Siga estos pasos para crear una integración:\n\n1. Inicie sesión en Notion\n2. Haga clic en el botón 'New integration' (Nueva integración)\n3. Establezca el nombre como 'AIAgent Bootcamp'\n4. Seleccione 'Internal' como tipo\n5. En Capabilities, marque 'Read content', 'Update content' e 'Insert content'\n6. Haga clic en 'Submit' (Enviar)\n\n¿Creó la integración?",
-    "options": [
-      {"id": "created", "label": "¡Creé la integración!"},
-      {"id": "browser_not_open", "label": "El navegador no se abrió"},
-      {"id": "no_button", "label": "No encuentro el botón 'New integration'"},
-      {"id": "login_issue", "label": "No puedo iniciar sesión en Notion"}
-    ]
-  }]
-}
-```
-
-(created -> Ir al Step 3)
-(browser_not_open -> Indicar: "Abra esta URL directamente en su navegador: https://www.notion.so/my-integrations")
-(no_button -> Indicar: "Espere a que la página se cargue completamente. Cuando visite https://www.notion.so/my-integrations con sesión iniciada en Notion, verá el botón 'New integration' cerca de la esquina superior derecha.")
-(login_issue -> Indicar: "Si no tiene cuenta de Notion, puede crear una gratis en https://www.notion.so/signup. Si ya tiene una cuenta, inicie sesión con su dirección de correo electrónico o cuenta de Google.")
-
----
-
-## Automatización con integración Chrome (modo `/chrome`)
-
-**Requisito previo:** La extensión "Claude in Chrome" (v1.0.36+) debe estar instalada en Chrome, y debe haber iniciado con `claude --chrome` o ejecutado `/chrome` en la sesión.
-
-**Lo que la IA ejecuta automáticamente con la integración Chrome:**
-1. Abrir https://www.notion.so/my-integrations en el navegador
-2. Usar la integración Chrome para realizar las siguientes operaciones en orden:
-   - Hacer clic en el botón "New integration"
-   - Ingresar "AIAgent Bootcamp" en el campo Name
-   - Seleccionar el espacio de trabajo predeterminado en Associated workspace
-   - Seleccionar "Internal" como Type
-   - Marcar Read content, Update content e Insert content en Capabilities
-   - Hacer clic en "Submit"
-3. Una vez que aparezca el Internal Integration Secret, indicar al usuario "Haga clic en el botón Copy junto al secreto para copiarlo"
-4. Ir al Step 4
-
-**Nota:** No leer el valor del secreto desde la pantalla del navegador. El usuario lo copia manualmente.
-
-Si la integración Chrome no está disponible, siga las instrucciones anteriores manualmente.
-
----
-
-## Step 3: Copiar la clave de API
+2. ncli abre automáticamente la pantalla OAuth de Notion en el navegador
+3. El usuario sigue el flujo en pantalla:
+   - Iniciar sesión en Notion (si no lo está)
+   - Seleccionar el workspace al que conceder acceso
+   - Hacer clic en "Allow access"
+4. Si tiene éxito, el terminal muestra "Logged in as ..."
 
 **Mensaje para mostrar al usuario:**
 
 ```text
-Después de crear la integración, siga estos pasos para copiar la clave de API:
+Se abrió la pantalla OAuth de Notion en el navegador.
 
-1. Se mostrará la página de configuración de la integración creada
-2. Se muestra un token en la sección "Internal Integration Secret"
-   (una cadena que comienza con secret_xxx)
-3. Haga clic en el botón "Copy" para copiar el token
+1. Si no ha iniciado sesión en Notion, inicie sesión
+2. Seleccione el workspace al que desea conceder acceso
+3. Haga clic en "Allow access" para aprobar
 
-⚠️ No pegue el token copiado en este chat.
-   En el siguiente paso, la IA lo escribirá de forma segura en el archivo de configuración.
+Tras la aprobación, la pestaña del navegador se cierra automáticamente y el terminal mostrará un mensaje de inicio de sesión exitoso.
+
+No es necesario introducir ninguna clave API (secret_xxx). Todo se completa con el flujo OAuth en el navegador.
 ```
 
 **Configuración de AskQuestion:**
 ```json
 {
-  "title": "Step 3: Copiar la clave de API",
+  "title": "Step 2: Inicio de sesión OAuth en Notion",
   "questions": [{
-    "id": "copy_status",
-    "prompt": "¿Copió el Internal Integration Secret (la cadena que comienza con secret_xxx)?",
+    "id": "login_status",
+    "prompt": "¿Se completó el flujo OAuth de ncli login?",
     "options": [
-      {"id": "copied", "label": "¡Copié la clave de API!"},
-      {"id": "no_secret", "label": "No encuentro el token"},
-      {"id": "help_capabilities", "label": "No entiendo la configuración de Capabilities"}
+      {"id": "logged_in", "label": "¡Inicié sesión correctamente!"},
+      {"id": "browser_not_open", "label": "El navegador no se abrió"},
+      {"id": "login_denied", "label": "No puedo iniciar sesión / la aprobación falló"},
+      {"id": "wrong_workspace", "label": "Aprobé el workspace equivocado"}
     ]
   }]
 }
 ```
 
-(copied -> Ir al Step 4)
-(no_secret -> Indicar: "Haga clic en el nombre de la integración que creó desde la lista de integraciones (https://www.notion.so/my-integrations) para ir a la página de configuración. Encontrará un token que comienza con secret_ en la sección 'Internal Integration Secret'.")
-(help_capabilities -> Indicar: "En la página de configuración de la integración, vaya a la pestaña 'Capabilities' y marque 'Read content', 'Update content' e 'Insert content'. Esto habilita la lectura y escritura de páginas a través de la API.")
+(logged_in -> Ir al Step 3)
+(browser_not_open -> Indicar: "Busque la URL de OAuth impresa en el terminal. Cópiela y péguela manualmente en el navegador.")
+(login_denied -> Indicar: "Si no tiene cuenta de Notion, puede crear una gratis en https://www.notion.so/signup. Si la aprobación falla, ejecute `ncli login` de nuevo.")
+(wrong_workspace -> Indicar: "Ejecute primero `ncli logout`, luego `ncli login` y seleccione el workspace correcto.")
 
 ---
 
-## Step 4: Crear el archivo de configuración MCP
+## Step 3: Verificar ncli (whoami / search)
+
+**Lo que hace la IA:**
+1. Verificar el estado de sesión actual:
+
+```bash
+ncli whoami
+```
+
+2. Prueba de humo de búsqueda en el workspace (basta con que devuelva uno o dos resultados):
+
+```bash
+ncli search ""
+```
+
+O especificar una palabra clave:
+
+```bash
+ncli search "test"
+```
+
+3. Si aparecen resultados, OAuth ha concedido correctamente acceso a todo el workspace
+
+**Configuración de AskQuestion:**
+```json
+{
+  "title": "Step 3: Verificación de ncli",
+  "questions": [{
+    "id": "smoke_test",
+    "prompt": "¿Los comandos whoami / search devolvieron resultados esperados?",
+    "options": [
+      {"id": "ok", "label": "Aparece mi usuario y la búsqueda devuelve resultados"},
+      {"id": "whoami_fail", "label": "whoami dice que no he iniciado sesión"},
+      {"id": "search_empty", "label": "La búsqueda devolvió 0 resultados"},
+      {"id": "other_error", "label": "Apareció otro error"}
+    ]
+  }]
+}
+```
+
+(ok -> Ir al Step 4)
+(whoami_fail -> Indicar: "Ejecute `ncli login` de nuevo. Si alterna entre varias cuentas de Notion, ejecute `ncli logout` primero por seguridad.")
+(search_empty -> Indicar: "Cero resultados solo significa que no hay páginas en el workspace. Cree una página de prueba en Notion y vuelva a probar `ncli search`.")
+(other_error -> Inspeccionar el mensaje de error y orientar sobre la causa)
+
+---
+
+## Step 4: Añadir Notion Hosted MCP (OAuth) al archivo de configuración MCP
+
+El Hosted MCP oficial de Notion está alojado en `https://mcp.notion.com/mcp` y utiliza Streamable HTTP + OAuth. **No** se incluyen tokens ni variables de entorno en la configuración.
 
 **Lo que la IA ejecuta automáticamente:**
 
 1. Determinar la herramienta utilizada (Claude Code o Cursor)
-2. Crear el archivo de configuración MCP correspondiente con un marcador de posición
-3. Hacer que el usuario reemplace el marcador de posición con la clave de API
+2. Añadir una entrada `notion` al archivo de configuración MCP (preservar el `mcpServers` existente)
 
-**Archivo de configuración MCP que la IA crea:**
+**Archivo de configuración MCP que la IA escribe:**
 
 **Para Claude Code:** `~/.claude/mcp_settings.json`
 **Para Cursor:** `~/.cursor/mcp.json` (directorio principal; NO escribir en `.cursor/mcp.json` dentro del repositorio)
@@ -222,35 +225,17 @@ Contenido de la configuración (si `mcpServers` ya existe, agregar la entrada `n
 {
   "mcpServers": {
     "notion": {
-      "command": "npx",
-      "args": ["-y", "@notionhq/notion-mcp-server"],
-      "env": {
-        "NOTION_TOKEN": "YOUR_NOTION_TOKEN_HERE"
-      }
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
     }
   }
 }
 ```
 
-3. Después de que la IA cree el archivo, mostrar este mensaje al usuario:
-
-```text
-Se creó el archivo de configuración MCP. Por favor configure la clave de API:
-
-┌─────────────────────────────────────────────────────────────┐
-│ Abra el siguiente archivo en un editor de texto:            │
-│                                                             │
-│ Claude Code: ~/.claude/mcp_settings.json                    │
-│ Cursor:      ~/.cursor/mcp.json                             │
-│                                                             │
-│ Reemplace YOUR_NOTION_TOKEN_HERE en el archivo con          │
-│ la clave de API que copió (secret_xxx...).                   │
-│ Después de guardar, regrese a este chat.                    │
-└─────────────────────────────────────────────────────────────┘
-
-⚠️ No pegue la clave de API en este chat.
-   Al editar el archivo directamente en un editor, no queda en los registros del chat.
-```
+**Importante:**
+- **No** incluir `command` / `args` / `env` (es un Hosted MCP; no se ejecuta localmente)
+- **No** establecer `NOTION_TOKEN` ni ningún otro secreto (OAuth gestiona la autenticación)
+- `type` debe ser `http` (Streamable HTTP)
 
 **Configuración de AskQuestion:**
 ```json
@@ -258,71 +243,63 @@ Se creó el archivo de configuración MCP. Por favor configure la clave de API:
   "title": "Step 4: Crear el archivo de configuración MCP",
   "questions": [{
     "id": "config_status",
-    "prompt": "¿Reemplazó la clave de API en el archivo de configuración MCP?",
+    "prompt": "¿Añadió la entrada Notion al archivo de configuración MCP?",
     "options": [
-      {"id": "done", "label": "¡Configuré la clave de API!"},
-      {"id": "editor_help", "label": "No sé cómo abrir el archivo"},
-      {"id": "existing_config", "label": "Ya tengo un archivo de configuración y quiero saber cómo agregar"},
-      {"id": "security_question", "label": "Tengo una pregunta sobre seguridad"}
+      {"id": "done", "label": "¡Lo añadí!"},
+      {"id": "editor_help", "label": "No sé dónde está el archivo"},
+      {"id": "existing_config", "label": "Ya tengo otros servidores MCP configurados y quiero saber cómo agregar este"},
+      {"id": "security_question", "label": "Tengo una pregunta sobre la seguridad de OAuth"}
     ]
   }]
 }
 ```
 
-(done -> La IA lee el archivo de configuración y verifica que `YOUR_NOTION_TOKEN_HERE` ya no esté presente (sin mostrar el valor de la clave). Si está bien, ir al Step 5)
-(editor_help -> Indicar: "Ejecute lo siguiente en su terminal para abrirlo en un editor: Mac: `open ~/.claude/mcp_settings.json` / Cursor: `code ~/.cursor/mcp.json`. O muestre los archivos ocultos en Finder/Explorador y abra el archivo.")
-(existing_config -> Leer el contenido del archivo existente y guiar para agregar la entrada `notion` a `mcpServers`. Preservar las configuraciones existentes de otros servidores MCP)
-(security_question -> Explicar: "El archivo de configuración MCP está en su directorio principal y no se incluye en el repositorio Git. La clave de API se almacena solo en este archivo y se pasa como variable de entorno cuando se inicia el servidor MCP.")
+(done -> La IA lee el archivo y verifica que la entrada `notion` tenga `type: "http"` y `url: "https://mcp.notion.com/mcp"`, sin que se cuele ningún `NOTION_TOKEN` ni `command`. Si está bien, ir al Step 5)
+(editor_help -> Indicar: "En macOS, ejecute `open ~/.claude/mcp_settings.json` o `open ~/.cursor/mcp.json`. Si el archivo no existe, créelo.")
+(existing_config -> Leer el contenido del archivo existente y agregar la entrada `notion` al objeto `mcpServers`, preservando las demás configuraciones)
+(security_question -> Explicar: "El Hosted MCP lo opera la propia Notion y la autenticación se realiza mediante OAuth en el navegador. Los tokens nunca se almacenan en el archivo de configuración: se guardan en el almacén seguro de la herramienta (Claude Code / Cursor).")
 
 ---
 
-## Step 5: Compartir la integración con las páginas
+## Step 5: Reiniciar la herramienta y aprobar el diálogo OAuth
 
-**Importante: Si omite este paso, el MCP no podrá acceder a sus páginas de Notion.**
-
-**Mensaje para mostrar al usuario:**
+**Mensaje que muestra la IA:**
 
 ```text
-La API de Notion requiere que especifique explícitamente a qué páginas puede acceder la integración.
-Siga estos pasos para compartir la integración con las páginas que desea acceder:
+Es necesario reiniciar la herramienta para aplicar la configuración MCP.
 
-┌─────────────────────────────────────────────────────────────┐
-│ 1. Abra la página de Notion a la que desea acceder          │
-│ 2. Haga clic en "..." (menú de tres puntos) en la esquina   │
-│    superior derecha                                         │
-│ 3. Seleccione "Add connections" (Agregar conexiones)         │
-│ 4. Escriba "AIAgent Bootcamp" en el campo de búsqueda       │
-│ 5. Haga clic en el nombre de la integración que aparece      │
-│ 6. Haga clic en "Confirm" en el diálogo de confirmación     │
-│                                                             │
-│ * Compartir una página padre se aplica automáticamente       │
-│   a las páginas hijas                                       │
-│ * Para acceder a múltiples páginas, repita esto para cada    │
-│   página o configúrelo en una página padre común             │
-└─────────────────────────────────────────────────────────────┘
+Para Claude Code:
+  -> Salga con exit, luego inicie claude nuevamente
+
+Para Cursor:
+  -> Presione Cmd+Shift+P (Mac) / Ctrl+Shift+P (Windows) para abrir
+    la Paleta de comandos y ejecute "Reload Window"
+
+Tras el reinicio, la primera vez que se invoque una herramienta MCP de Notion,
+el navegador abrirá el diálogo de aprobación OAuth de Notion.
+Haga clic en "Allow access" para aprobar.
+(Una vez aprobado, la sesión se mantiene automáticamente.)
 ```
 
 **Configuración de AskQuestion:**
 ```json
 {
-  "title": "Step 5: Compartir la integración con las páginas",
+  "title": "Step 5: Reinicio y aprobación OAuth",
   "questions": [{
-    "id": "share_status",
-    "prompt": "¿Compartió la integración con su página de Notion?",
+    "id": "restart_status",
+    "prompt": "¿Reinició la herramienta?",
     "options": [
-      {"id": "shared", "label": "¡Configuré la compartición!"},
-      {"id": "no_connection", "label": "No encuentro 'Add connections'"},
-      {"id": "no_integration", "label": "No aparece el nombre de la integración"},
-      {"id": "skip_share", "label": "Lo configuraré más tarde (omitir)"}
+      {"id": "restarted", "label": "¡Reinicié! A la prueba"},
+      {"id": "how_restart", "label": "No sé cómo reiniciar"},
+      {"id": "no_oauth_dialog", "label": "El diálogo OAuth no aparece"}
     ]
   }]
 }
 ```
 
-(shared -> Ir al Step 6)
-(no_connection -> Indicar: "Abra el menú '...' en la esquina superior derecha de la página, y encontrará 'Add connections' cerca de la parte inferior. Si no lo encuentra, verifique que tenga permisos de propietario en la página. No aparece con permisos de invitado.")
-(no_integration -> Indicar: "Puede tardar un momento en aparecer la integración justo después de crearla. Recargue la página e inténtelo de nuevo. Si sigue sin aparecer, verifique que la integración se haya creado correctamente en https://www.notion.so/my-integrations.")
-(skip_share -> Indicar: "Puede configurar esto más tarde. Esta configuración es necesaria cuando accede a páginas a través de MCP. Por favor configúrela antes de usar Notion en /start-12-1." Luego ir al Step 6)
+(restarted -> Ir al Step 6)
+(how_restart -> Reexplicar los pasos de reinicio por herramienta)
+(no_oauth_dialog -> Indicar: "El diálogo se abre la **primera vez** que se invoca una herramienta MCP. Ejecute la prueba del Step 6 y debería aparecer automáticamente. Si sigue sin aparecer, revise los logs de la herramienta (Claude Code: `claude --debug`; Cursor: la sección MCP del panel Output).")
 
 ---
 
@@ -330,45 +307,14 @@ Siga estos pasos para compartir la integración con las páginas que desea acced
 
 **Lo que hace la IA:**
 
-1. Guiar al usuario para reiniciar Claude Code / Cursor:
-
-```text
-Es necesario reiniciar la herramienta para aplicar la configuración MCP.
-
-Para Claude Code:
-  → Salga con exit, luego inicie claude nuevamente
-
-Para Cursor:
-  → Presione Cmd+Shift+P (Mac) / Ctrl+Shift+P (Windows) para abrir
-    la Paleta de comandos y ejecute "Reload Window"
-```
-
-**Configuración de AskQuestion:**
-```json
-{
-  "title": "Step 6: Prueba de conexión MCP",
-  "questions": [{
-    "id": "restart_status",
-    "prompt": "¿Reinició la herramienta?",
-    "options": [
-      {"id": "restarted", "label": "¡Reinicié! Ejecute la prueba por favor"},
-      {"id": "how_restart", "label": "No sé cómo reiniciar"},
-      {"id": "skip_test", "label": "Omitir la prueba"}
-    ]
-  }]
-}
-```
-
-(restarted -> Ejecutar la prueba de conexión MCP)
-
-2. Prueba de conexión MCP:
-   - Verificar si la herramienta MCP de Notion está disponible
-   - Si está disponible: obtener la lista de páginas de Notion para confirmar la conexión exitosa
-   - Mostrar "Se obtuvieron X páginas de Notion. La conexión MCP funciona correctamente."
+1. Verificar que las herramientas MCP de Notion (por ejemplo `notion-search`, `notion-fetch`) están disponibles
+2. Emitir una solicitud sencilla para obtener información del workspace
+3. En la primera ejecución, el navegador abre el diálogo OAuth: pedir al usuario que lo apruebe
+4. Mostrar "Se obtuvieron N páginas de Notion. La conexión MCP funciona."
 
 **En caso de éxito:**
 ```text
-¡La configuración de Notion MCP se completó!
+¡La configuración del Notion Hosted MCP se completó!
 
 Resultado de la prueba: Se conectó exitosamente a Notion a través del servidor MCP.
 Ahora puede operar páginas y bases de datos de Notion directamente desde Claude Code/Cursor.
@@ -380,11 +326,11 @@ Ahora puede operar páginas y bases de datos de Notion directamente desde Claude
   "title": "Resultado de la prueba: Ocurrió un error",
   "questions": [{
     "id": "test_error",
-    "prompt": "Ocurrió un error durante la prueba de conexión MCP. Verifiquemos las posibles causas.",
+    "prompt": "Ocurrió un error durante la prueba de conexión MCP. Verifiquemos la causa.",
     "options": [
       {"id": "retry", "label": "Ejecutar la prueba de nuevo"},
       {"id": "check_config", "label": "Verificar el archivo de configuración MCP"},
-      {"id": "recheck_key", "label": "Verificar la clave de API de nuevo (volver al Step 2)"},
+      {"id": "reauth", "label": "Volver a aprobar OAuth"},
       {"id": "show_error", "label": "Quiero ver los detalles del error"},
       {"id": "skip_test", "label": "Omitir la prueba y continuar"}
     ]
@@ -392,9 +338,9 @@ Ahora puede operar páginas y bases de datos de Notion directamente desde Claude
 }
 ```
 
-(retry -> Volver a ejecutar la prueba)
-(check_config -> Verificar el contenido del archivo de configuración MCP. Comprobar que NOTION_TOKEN no siga siendo el marcador de posición y que la sintaxis JSON sea correcta)
-(recheck_key -> Volver al Step 2)
+(retry -> Volver a ejecutar la prueba. Si aparece el diálogo OAuth, pedir al usuario que lo apruebe)
+(check_config -> Verificar la configuración: `type: "http"` y `url: "https://mcp.notion.com/mcp"`, y que el JSON sea válido)
+(reauth -> Indicar al usuario que borre el estado de autenticación de Notion en el almacén de la herramienta y reinicie. Claude Code: por ejemplo `claude mcp logout notion`)
 (show_error -> Mostrar el mensaje de error e indicar la causa y la solución)
 (skip_test -> Indicar: "Se omitió la prueba. Puede verificarla más tarde con /check-setup.")
 
@@ -410,11 +356,10 @@ Ahora puede operar páginas y bases de datos de Notion directamente desde Claude
     "id": "trouble",
     "prompt": "Seleccione el que corresponda a su situación",
     "options": [
-      {"id": "trouble_mcp_start", "label": "El servidor MCP no se inicia"},
-      {"id": "trouble_invalid", "label": "Obtengo un error 'token_invalid'"},
-      {"id": "trouble_permissions", "label": "Obtengo un error 'insufficient_permissions'"},
-      {"id": "trouble_not_found", "label": "Obtengo un error 'object_not_found'"},
-      {"id": "trouble_npx", "label": "No se encuentra el comando npx"},
+      {"id": "trouble_oauth_fail", "label": "La aprobación OAuth falla"},
+      {"id": "trouble_mcp_no_response", "label": "No hay respuesta del servidor MCP"},
+      {"id": "trouble_no_pages", "label": "No se obtienen páginas (workspace incorrecto)"},
+      {"id": "trouble_ncli_login", "label": "ncli login no funciona"},
       {"id": "trouble_cost", "label": "Me preocupan los costos"},
       {"id": "trouble_other", "label": "Otro error"}
     ]
@@ -422,53 +367,50 @@ Ahora puede operar páginas y bases de datos de Notion directamente desde Claude
 }
 ```
 
-### Problema 1: El servidor MCP no se inicia
-**Causa**: Node.js no está instalado, npx no está disponible, o el JSON del archivo de configuración MCP está mal formado
+### Problema 1: La aprobación OAuth falla
+**Causa**: El navegador bloquea ventanas emergentes, o el usuario canceló la aprobación en Notion
 **Lo que hace la IA**:
-1. Verificar la existencia y versión de Node.js (se requiere 18 o superior) con `node --version`
-2. Verificar si npx está disponible con `npx --version`
-3. Validar el JSON del archivo de configuración MCP (verificación de sintaxis con `python -m json.tool`)
-4. Si Node.js no está instalado: indicar "Instale la versión LTS desde https://nodejs.org/"
+1. Pedir al usuario que permita ventanas emergentes / redirecciones en el navegador
+2. Volver a ejecutar `ncli login` o invocar de nuevo la herramienta MCP para reintentar OAuth
+3. Si sigue fallando, cerrar sesión de Notion en el navegador y volver a intentarlo
 
-### Problema 2: Error "token_invalid"
-**Causa**: La clave de API no se copió correctamente, o la clave es inválida
+### Problema 2: No hay respuesta del servidor MCP
+**Causa**: Archivo MCP mal configurado, herramienta no reiniciada, o `https://mcp.notion.com` bloqueado en la red
 **Lo que hace la IA**:
-1. Verificar el archivo de configuración MCP (solo comprobar que comience con `secret_`, sin mostrar el valor de la clave)
-2. Verificar si sigue siendo el marcador de posición (`secret_your_token_here`)
-3. Si hay un problema: indicar "Regenere el token en https://www.notion.so/my-integrations, luego actualice el archivo de configuración MCP"
+1. Verificar la configuración MCP (`type: "http"`, `url: "https://mcp.notion.com/mcp"`)
+2. Validar la sintaxis JSON (Claude Code: `python -m json.tool ~/.claude/mcp_settings.json` / Cursor: `python -m json.tool ~/.cursor/mcp.json`)
+3. Reiniciar completamente la herramienta (Claude Code / Cursor)
+4. Comprobar la conectividad con `curl -I https://mcp.notion.com/mcp`
 
-### Problema 3: Error "insufficient_permissions"
-**Causa**: La configuración de Capabilities de la integración es insuficiente, o la página no está compartida
+### Problema 3: No se obtienen páginas
+**Causa**: Se seleccionó el workspace equivocado durante la aprobación OAuth
 **Lo que hace la IA**:
-1. Indicar: "Verifique las Capabilities de la integración en https://www.notion.so/my-integrations. ¿Están marcados Read content / Update content / Insert content?"
-2. Indicar: "¿Está compartida la integración con la página de Notion objetivo? Por favor revise las instrucciones del Step 5."
+1. Ejecutar `ncli logout` -> `ncli login` y elegir el workspace correcto
+2. En el lado MCP, cerrar sesión de Notion en el almacén de autenticación de la herramienta y volver a autenticar
 
-### Problema 4: Error "object_not_found"
-**Causa**: La página objetivo no tiene la integración compartida
-**Indicación de la IA**: "La integración no está compartida con la página de Notion a la que desea acceder a través de la API. Siga las instrucciones del Step 5 para agregar la integración desde 'Add connections' de la página. Agregarla a una página padre también se aplica a las páginas hijas."
-
-### Problema 5: No se encuentra el comando npx
-**Causa**: Node.js no está instalado, o el PATH no está configurado
+### Problema 4: ncli login no funciona
+**Causa**: Node.js demasiado antiguo, ncli desactualizado, o el puerto del listener OAuth está en uso
 **Lo que hace la IA**:
-1. Verificar con `node --version`. Si no está instalado, guiar a https://nodejs.org/
-2. Si está instalado pero es un problema de PATH, guiar para especificar la ruta completa (`/usr/local/bin/npx`) en el archivo de configuración
+1. Verificar Node.js >= 18 con `node --version`
+2. Actualizar con `npm install -g @sakasegawa/ncli@latest`
+3. Si hay conflicto de puertos, detener otros servidores locales (especialmente servidores de desarrollo) y reintentar
 
-### Problema 6: Preocupación por los costos
-**Indicación de la IA**: "Notion está disponible en plan gratuito. No hay costos adicionales por el uso de la API. Todas las funciones de la API están disponibles en el plan gratuito. El servidor MCP de Notion (@notionhq/notion-mcp-server) también es gratuito y de código abierto."
+### Problema 5: Preocupación por los costos
+**Indicación de la IA**: "Notion está disponible en plan gratuito y no hay costos adicionales por el uso de la API mediante OAuth. El Hosted MCP oficial de Notion (`mcp.notion.com`) **también es gratuito por el momento**, pero la disponibilidad por herramienta puede depender de tu plan de Notion (Free / Plus / Business / Enterprise) y de si Notion AI está habilitado. Consulta siempre la [documentación oficial de herramientas MCP soportadas](https://developers.notion.com/docs/mcp-supported-tools) y la [página de precios de Notion](https://www.notion.com/pricing) para el alcance más reciente. ncli (@sakasegawa/ncli) es de código abierto y gratuito."
 
-### Problema 7: Otros errores
+### Problema 6: Otros errores
 **Lo que hace la IA**: Verificar el contenido del mensaje de error, identificar la causa e indicar la solución
 
 ---
 
 ## Punto de control
 - [ ] ncli (@sakasegawa/ncli) está instalado
-- [ ] Creó una integración (AIAgent Bootcamp) en la página de integraciones de Notion
-- [ ] Copió el Internal Integration Secret (secret_xxx)
-- [ ] Agregó la configuración del servidor Notion al archivo de configuración MCP
-- [ ] Compartió la integración con las páginas de Notion a las que desea acceder
+- [ ] El OAuth en navegador con `ncli login` está completo
+- [ ] `ncli whoami` muestra el usuario con sesión iniciada
+- [ ] `ncli search` devuelve páginas del workspace
+- [ ] El archivo de configuración MCP tiene una entrada `notion` (`type: http`, `url: https://mcp.notion.com/mcp`)
 - [ ] Reinició Claude Code / Cursor
-- [ ] La prueba de conexión MCP fue exitosa (pudo acceder a las páginas de Notion)
+- [ ] La prueba de conexión MCP fue exitosa (tras la aprobación OAuth, puede acceder a las páginas de Notion)
 
 ---
 

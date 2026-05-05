@@ -132,19 +132,14 @@ total_items: 25
 
 ## 前提条件
 
-`NOTION_API_KEY` 環境変数の設定が必要です。
+Notion への認証は **OAuth 統一** です。以下のいずれかが完了していれば動作します。
 
-### 設定手順
+- `ncli login` 済みである（ブラウザ OAuth で承認済み）
+- もしくは Claude Code / Cursor に **Notion Hosted MCP**（`https://mcp.notion.com/mcp`、Streamable HTTP + OAuth）が接続済みである
 
-1. https://www.notion.so/my-integrations でインテグレーションを作成
-2. APIキーを取得（`secret_` で始まる）
-3. 対象ページ/データベースにインテグレーションを接続
+詳しいセットアップ手順は `/setup-notion` を参照してください。
 
-詳細:
-
-```bash
-uv run python tools/api_setup_wizard.py guide notion
-```
+> APIキー（`secret_xxx`）や `NOTION_TOKEN` の設定は不要です。Notion 側でのページ単位の「Add connections」共有も不要です（OAuth がワークスペース全体への権限を付与します）。
 
 ## 対応ブロックタイプ
 
@@ -168,5 +163,5 @@ uv run python tools/api_setup_wizard.py guide notion
 
 ## 関連コマンド
 
-- `/api-setup-wizard` - Notion API設定
+- `/setup-notion` - Notion OAuth セットアップ（ncli + Hosted MCP）
 - `/extract-tasks` - タスク抽出（Notionも統合予定）

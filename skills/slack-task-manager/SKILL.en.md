@@ -133,10 +133,9 @@ google-generativeai>=0.3.0  # When using LLM mode
 ```bash
 # When using LLM mode
 GEMINI_API_KEY=your_api_key
-
-# When using Notion integration
-NOTION_TOKEN=your_token
 ```
+
+Notion integration is OAuth-only (no environment variable needed). Run `/setup-notion` first to configure ncli login and the Notion Hosted MCP (`https://mcp.notion.com/mcp`).
 
 ## Use Cases
 
