@@ -1,57 +1,51 @@
-# ヒント: Notion API
+# ヒント: Notion 連携
 
-## Notion Integration の作成手順
+## 認証は OAuth に統一
 
-1. https://www.notion.so/my-integrations にアクセス
-2. 「New integration」をクリック
-3. 名前を入力（例: "Task Manager"）
-4. ワークスペースを選択
-5. 「Submit」で作成
-6. Internal Integration Token（`secret_xxx`）をコピー
+このモジュールでは Notion 公式 Hosted MCP（OAuth）と ncli（OAuth）を使います。
+API キー（`secret_xxx`）の作成や、ページ単位の「Add connections」共有は **行いません**。
 
-## ワークスペースへの接続
+セットアップが終わっていない場合は、まず `/setup-notion` を実行してください。
 
-Integration を作成しただけでは、ページやデータベースにアクセスできません。
+## ncli の基本コマンド
 
-1. 対象のページを Notion で開く
-2. 右上の「...」メニュー → 「Connections」
-3. 作成した Integration を選択して接続
+```bash
+# 初回ログイン（ブラウザで OAuth 承認）
+ncli login
 
-## API の基本
+# 現在のログインユーザーを確認
+ncli whoami
 
-### 認証ヘッダー
+# ワークスペース内検索
+ncli search "キーワード"
+
+# ログアウト
+ncli logout
 ```
-Authorization: Bearer secret_xxxxxxxxxxxxx
-Content-Type: application/json
+
+## MCP 経由での操作
+
+`/setup-notion` 完了後、Claude Code / Cursor から Notion MCP のツール（検索／ページ取得／ページ作成など）を直接呼び出せます。具体的なツール名はお使いのクライアントの MCP リストで確認してください。
+
+## API を直接叩きたい場合（参考）
+
+学習目的で REST API を直接呼びたい場合は、ncli が払い出す OAuth アクセストークンを使う、もしくはコードから ncli/MCP を経由します。**新たに `secret_xxx` を発行する必要はありません。**
+
+参考までに API の基本構造を示します（実際のリクエストは ncli または MCP に任せる方が安全です）:
+
+### ベース URL とバージョンヘッダー
+
+```
+https://api.notion.com/v1/
 Notion-Version: 2022-06-28
 ```
 
-### ベース URL
-```
-https://api.notion.com/v1/
-```
+### ページネーション
 
-### Python での基本セットアップ
-```python
-import requests
-import os
-
-NOTION_API_KEY = os.environ.get("NOTION_API_KEY")
-
-headers = {
-    "Authorization": f"Bearer {NOTION_API_KEY}",
-    "Content-Type": "application/json",
-    "Notion-Version": "2022-06-28"
-}
-```
-
-## ページネーション
-
-Notion API はデフォルトで最大100件を返します。それ以上のデータがある場合:
+Notion API はデフォルトで最大100件を返します。それ以上のデータがある場合の擬似コード:
 
 ```python
-def get_all_pages(database_id):
-    url = f"https://api.notion.com/v1/databases/{database_id}/query"
+def get_all_pages(query_fn, database_id):
     all_results = []
     has_more = True
     start_cursor = None
@@ -61,8 +55,7 @@ def get_all_pages(database_id):
         if start_cursor:
             body["start_cursor"] = start_cursor
 
-        response = requests.post(url, headers=headers, json=body)
-        data = response.json()
+        data = query_fn(database_id, body)  # ncli/MCP 経由のラッパー想定
 
         all_results.extend(data["results"])
         has_more = data.get("has_more", False)
@@ -71,9 +64,9 @@ def get_all_pages(database_id):
     return all_results
 ```
 
-## リッチテキストの作成
+### リッチテキストの作成例
 
-### シンプルなテキスト
+シンプルなテキスト:
 ```json
 {
   "type": "text",
@@ -81,7 +74,7 @@ def get_all_pages(database_id):
 }
 ```
 
-### リンク付きテキスト
+リンク付きテキスト:
 ```json
 {
   "type": "text",
@@ -92,7 +85,7 @@ def get_all_pages(database_id):
 }
 ```
 
-### 太字・斜体
+太字:
 ```json
 {
   "type": "text",
@@ -101,7 +94,7 @@ def get_all_pages(database_id):
 }
 ```
 
-## ページ作成のフォーマット
+### ページ作成のフォーマット例
 
 ```python
 page_data = {
@@ -139,15 +132,15 @@ page_data = {
 
 | エラー | 原因 | 対処 |
 |--------|------|------|
-| 401 Unauthorized | APIキーが無効 | キーを再確認 |
-| 403 Forbidden | Integration 未接続 | ページの Connections で接続 |
-| 404 Not Found | ページ/DB ID が不正 | ID をURLから再取得 |
-| 400 Validation Error | プロパティ名の不一致 | DBスキーマと照合 |
-| Rate limit exceeded | リクエスト過多 | 1秒待って再実行 |
+| OAuth 認証が失敗する | ブラウザでポップアップがブロックされている／承認をキャンセルした | ポップアップを許可し、`ncli login` または MCP ツールから再試行 |
+| MCP から応答がない | 設定ファイルの記述ミス、ツール未再起動 | `/setup-notion` の Step 4〜5 を確認、ツールを完全再起動 |
+| object_not_found | 別ワークスペースで OAuth 承認した／対象ページが存在しない | `ncli logout` → `ncli login` で正しいワークスペースを選択 |
+| validation_error | リクエスト本文の形式不正 | プロパティ名・型がデータベーススキーマと一致しているか確認 |
+| rate_limited | リクエスト過多（3 req/s 程度） | 待機時間を入れる／バッチ化 |
 
-### ページ/データベース ID の取得方法
+### ページ／データベース ID の取得方法
 
-Notion の URL からIDを取得:
+Notion の URL から ID を取得:
 ```
 https://www.notion.so/workspace/ページ名-<32文字のID>
                                       ^^^^^^^^^^^^^^^^

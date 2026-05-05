@@ -2,13 +2,15 @@
 """
 API Setup Wizard - 各種API設定の統合ガイド
 
-Google API / Notion / Slack / Fal.AI / Gemini の設定を一元化し、
+Google API / Slack / Fal.AI / Gemini などの設定を一元化し、
 対話形式または自動検証で環境変数・トークンをセットアップします。
+
+Notion は OAuth 統一（ncli login + Notion 公式 Hosted MCP）になったため
+本ウィザードの対象外です。Notion のセットアップは `/setup-notion` を使ってください。
 
 使用方法:
     uv run python tools/api_setup_wizard.py check              # 全APIの設定状況確認
     uv run python tools/api_setup_wizard.py setup google       # Google API設定
-    uv run python tools/api_setup_wizard.py setup notion       # Notion API設定
     uv run python tools/api_setup_wizard.py setup slack        # Slack API設定
     uv run python tools/api_setup_wizard.py setup fal          # Fal.AI設定
     uv run python tools/api_setup_wizard.py setup gemini       # Gemini API設定
@@ -67,15 +69,6 @@ SERVICES = {
             {"path": "token.json", "description": "OAuth トークン"},
         ],
         "docs_url": "https://console.cloud.google.com/apis/credentials",
-    },
-    "notion": {
-        "name": "Notion API",
-        "description": "Notion ページ・データベースの取得・更新",
-        "env_vars": [
-            {"name": "NOTION_API_KEY", "required": True, "description": "Notion Integration トークン"},
-            {"name": "NOTION_DATABASE_ID", "required": False, "description": "デフォルトデータベースID"},
-        ],
-        "docs_url": "https://www.notion.so/my-integrations",
     },
     "slack": {
         "name": "Slack API",
@@ -247,36 +240,6 @@ def validate_google_credentials() -> Dict[str, Any]:
     return result
 
 
-def validate_notion_api() -> Dict[str, Any]:
-    """Notion API検証"""
-    result = {"valid": False, "details": []}
-    
-    api_key = os.getenv("NOTION_API_KEY")
-    if not api_key:
-        result["details"].append("NOTION_API_KEY not set")
-        return result
-    
-    try:
-        import requests
-        headers = {
-            "Authorization": f"Bearer {api_key}",
-            "Notion-Version": "2022-06-28"
-        }
-        resp = requests.get("https://api.notion.com/v1/users/me", headers=headers, timeout=10)
-        if resp.status_code == 200:
-            data = resp.json()
-            result["valid"] = True
-            result["details"].append(f"User: {data.get('name', 'N/A')}")
-        else:
-            result["details"].append(f"API error: {resp.status_code}")
-    except ImportError:
-        result["details"].append("requests not installed - cannot validate")
-    except Exception as e:
-        result["details"].append(f"Validation error: {e}")
-    
-    return result
-
-
 def validate_fal_api() -> Dict[str, Any]:
     """Fal.AI API検証"""
     result = {"valid": False, "details": []}
@@ -373,10 +336,6 @@ def cmd_check(args):
             validation = validate_google_credentials()
             for detail in validation.get("details", []):
                 print(f"   ℹ️  {detail}")
-        elif service_id == "notion":
-            validation = validate_notion_api()
-            for detail in validation.get("details", []):
-                print(f"   ℹ️  {detail}")
         elif service_id == "gemini":
             validation = validate_gemini_api()
             for detail in validation.get("details", []):
@@ -462,39 +421,6 @@ GOOGLE_WORKSPACE_USER="user@company.com"     # なりすまし対象
 
 # 複数Gmailアカウント
 GMAIL_ACCOUNTS_CONFIG='{"accounts":[...]}'
-```
-""",
-        "notion": """
-## 1. Notion Integration を作成
-
-1. https://www.notion.so/my-integrations にアクセス
-2. 「+ 新しいインテグレーション」をクリック
-3. 名前を入力（例: MCP Integration）
-4. ワークスペースを選択
-5. 権限を設定:
-   - コンテンツを読み取る
-   - コンテンツを更新する
-   - コンテンツを挿入する
-
-## 2. APIキーを取得
-
-1. 作成したインテグレーションをクリック
-2. 「内部インテグレーショントークン」をコピー
-3. トークンは `secret_` で始まります
-
-## 3. ページ/データベースにインテグレーションを追加
-
-1. 連携したいページまたはデータベースを開く
-2. 右上の「...」> 「コネクト」
-3. 作成したインテグレーションを選択
-
-## 環境変数
-
-```bash
-# Credential Store に保存（別ターミナルで実行）
-# uv run python tools/credential_manager.py store
-NOTION_API_KEY="<your-notion-api-key>"
-NOTION_DATABASE_ID="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"  # オプション
 ```
 """,
         "slack": """
@@ -759,7 +685,7 @@ def main():
     
     # setup コマンド
     setup_parser = subparsers.add_parser("setup", help="対話形式でサービスをセットアップ")
-    setup_parser.add_argument("service", help="サービス名 (google, notion, slack, fal, gemini)")
+    setup_parser.add_argument("service", help="サービス名 (google, slack, fal, gemini)")
     setup_parser.add_argument(
         "--storage",
         choices=["credential-store", "dotenv"],
@@ -769,7 +695,7 @@ def main():
     
     # guide コマンド
     guide_parser = subparsers.add_parser("guide", help="設定手順ガイドを表示")
-    guide_parser.add_argument("service", help="サービス名 (google, notion, slack, fal, gemini)")
+    guide_parser.add_argument("service", help="サービス名 (google, slack, fal, gemini)")
     
     args = parser.parse_args()
     

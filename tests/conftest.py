@@ -109,7 +109,6 @@ def mock_env(monkeypatch):
         "SLACK_BOT_TOKEN": "test-slack-bot-token-dummy",
         "SLACK_USER_TOKEN": "test-slack-user-token-dummy",
         "X_BEARER_TOKEN": "test_x_bearer_token",
-        "NOTION_TOKEN": "test_notion_token",
         "RESEND_API_KEY": "test_resend_key",
     }
     for key, value in env_vars.items():
@@ -123,7 +122,7 @@ def clean_env(monkeypatch):
     keys_to_remove = [
         "GEMINI_API_KEY", "GOOGLE_CLOUD_PROJECT", "GOOGLE_API_KEY",
         "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "SLACK_BOT_TOKEN",
-        "X_BEARER_TOKEN", "NOTION_TOKEN",
+        "X_BEARER_TOKEN",
     ]
     for key in keys_to_remove:
         monkeypatch.delenv(key, raising=False)

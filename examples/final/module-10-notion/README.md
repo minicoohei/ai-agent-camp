@@ -16,22 +16,39 @@ Notion APIを使ったデータベース操作、ページ作成の例です。
 | `sample_pages/` | JSON | サンプルページデータ |
 | `sync_script.py` | スクリプト | 同期スクリプト |
 
-## Notion API設定
+## Notion 認証設定（OAuth 統一）
 
-### 1. インテグレーション作成
-1. [Notion Integrations](https://www.notion.so/my-integrations) にアクセス
-2. 「New integration」をクリック
-3. 名前を入力、ワークスペースを選択
-4. 「Submit」→ Internal Integration Token をコピー
+このモジュールでは Notion 公式 Hosted MCP（OAuth）と ncli（OAuth）を使います。
+**API キー（Internal Integration Token）の発行や、ページ単位の「Add connections」共有は不要** です。
 
-### 2. データベースへのアクセス許可
-1. 対象のNotionページを開く
-2. 右上「...」→「Add connections」
-3. 作成したインテグレーションを選択
-
-### 3. 環境変数設定
+### 1. ncli でログイン
 ```bash
-export NOTION_API_KEY="secret_xxxxx"
+npm install -g @sakasegawa/ncli
+ncli login         # ブラウザで OAuth 承認
+ncli whoami        # ログイン確認
+```
+
+### 2. Notion Hosted MCP の設定
+Claude Code: `~/.claude/mcp_settings.json` / Cursor: `~/.cursor/mcp.json` に追記:
+```json
+{
+  "mcpServers": {
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    }
+  }
+}
+```
+ツールを再起動し、初回呼び出し時にブラウザで OAuth ダイアログを承認します。
+
+詳細は `/setup-notion` を参照してください。
+
+### 3. データベース ID の取得
+データベース ID は Notion ページの URL から取得できます（32文字のハイフンなし文字列）。
+このサンプルでは `NOTION_DATABASE_ID` 環境変数で対象 DB を指定します。
+
+```bash
 export NOTION_DATABASE_ID="xxxxx-xxxx-xxxx"
 ```
 
@@ -74,10 +91,12 @@ class NotionClient:
     
     BASE_URL = "https://api.notion.com/v1"
     
-    def __init__(self, api_key: str = None):
-        self.api_key = api_key or os.environ.get("NOTION_API_KEY")
+    def __init__(self, access_token: str = None):
+        # OAuth アクセストークンを引数または環境変数から取得
+        # 例: ncli が払い出す OAuth トークンを `NOTION_ACCESS_TOKEN` として設定する
+        self.access_token = access_token or os.environ.get("NOTION_ACCESS_TOKEN")
         self.headers = {
-            "Authorization": f"Bearer {self.api_key}",
+            "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
             "Notion-Version": "2022-06-28"
         }
@@ -311,9 +330,9 @@ def export_to_json(client, database_id, output_file):
 
 ## チェックリスト
 
-- [ ] Notion Integrationが作成されている
-- [ ] データベースへのアクセスが許可されている
-- [ ] APIキーが環境変数に設定されている
+- [ ] ncli が `ncli login` で OAuth ログイン済み
+- [ ] Notion Hosted MCP（`https://mcp.notion.com/mcp`）が Claude Code / Cursor に接続済み
+- [ ] OAuth ダイアログを承認済み
 - [ ] データベースの取得ができる
 - [ ] ページの作成ができる
 - [ ] ページの更新ができる

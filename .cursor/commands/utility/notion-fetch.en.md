@@ -132,19 +132,14 @@ total_items: 25
 
 ## Prerequisites
 
-The `NOTION_API_KEY` environment variable must be configured.
+Notion authentication is **OAuth-only**. Either of the following completed setups will work:
 
-### Setup Steps
+- You're already logged in via `ncli login` (browser OAuth approved)
+- Or your Claude Code / Cursor is connected to the **Notion Hosted MCP** (`https://mcp.notion.com/mcp`, Streamable HTTP + OAuth)
 
-1. Create an integration at https://www.notion.so/my-integrations
-2. Obtain the API key (starts with `secret_`)
-3. Connect the integration to the target page/database
+See `/setup-notion` for the full setup walkthrough.
 
-Details:
-
-```bash
-uv run python tools/api_setup_wizard.py guide notion
-```
+> No API key (`secret_xxx`) or `NOTION_TOKEN` is required. Per-page "Add connections" sharing in Notion is also unnecessary (OAuth grants workspace-wide access).
 
 ## Supported Block Types
 

@@ -729,7 +729,7 @@ Lista de habilidades que adquiriras al completar el curso.
 | **Google OAuth** | Integracion de cuenta de Google | [Google Cloud Console](https://console.cloud.google.com/) | Operaciones de Gmail, Calendar, Drive | 4, 10 |
 | **BigQuery** | Data warehouse SQL de Google | [Google Cloud Console](https://console.cloud.google.com/) | Analisis de datos a gran escala | 8 |
 | **Slack API** | Integracion con workspace de Slack | [Slack App Directory](https://api.slack.com/apps) | Obtencion de mensajes, respuestas automaticas | 9 |
-| **Notion API** | Integracion con workspace de Notion | [Notion Integrations](https://www.notion.so/my-integrations) | Operaciones de base de datos | 12 |
+| **Notion (OAuth)** | Integracion con workspace de Notion | `ncli login` (OAuth en navegador) + Notion Hosted MCP (`https://mcp.notion.com/mcp`) | Operaciones de base de datos | 12 |
 
 ### Opcionales (recomendadas para el Modulo 15)
 
