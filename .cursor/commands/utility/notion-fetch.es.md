@@ -163,5 +163,5 @@ Consulte `/setup-notion` para el procedimiento de configuración completo.
 
 ## Comandos relacionados
 
-- `/api-setup-wizard` - Configuración de la API de Notion
+- `/setup-notion` - Configuración de Notion con OAuth (ncli + Hosted MCP)
 - `/extract-tasks` - Extracción de tareas (integración con Notion planificada)

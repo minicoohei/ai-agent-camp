@@ -378,7 +378,7 @@ Notion Hosted MCP の設定が完了しました！
 **原因**: MCP 設定ファイルの記述ミス、ツールの再起動忘れ、ネットワーク経路で `https://mcp.notion.com` がブロックされている
 **AIが行うこと**:
 1. MCP 設定ファイルを確認（`type: "http"`、`url: "https://mcp.notion.com/mcp"` か）
-2. JSON の構文を `python -m json.tool ~/.claude/mcp_settings.json` で検証
+2. JSON の構文を検証（Claude Code: `python -m json.tool ~/.claude/mcp_settings.json` / Cursor: `python -m json.tool ~/.cursor/mcp.json`）
 3. ツール（Claude Code / Cursor）を完全に再起動する
 4. `curl -I https://mcp.notion.com/mcp` でネットワーク到達性を確認
 

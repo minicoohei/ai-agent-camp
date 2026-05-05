@@ -685,7 +685,7 @@ def main():
     
     # setup コマンド
     setup_parser = subparsers.add_parser("setup", help="対話形式でサービスをセットアップ")
-    setup_parser.add_argument("service", help="サービス名 (google, slack, fal, gemini)")
+    setup_parser.add_argument("service", help="サービス名 (google, slack, fal, gemini, heygen, elevenlabs, typefully)")
     setup_parser.add_argument(
         "--storage",
         choices=["credential-store", "dotenv"],
@@ -695,7 +695,7 @@ def main():
     
     # guide コマンド
     guide_parser = subparsers.add_parser("guide", help="設定手順ガイドを表示")
-    guide_parser.add_argument("service", help="サービス名 (google, slack, fal, gemini)")
+    guide_parser.add_argument("service", help="サービス名 (google, slack, fal, gemini, heygen, elevenlabs, typefully)")
     
     args = parser.parse_args()
     

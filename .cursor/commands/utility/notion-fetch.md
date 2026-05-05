@@ -163,5 +163,5 @@ Notion への認証は **OAuth 統一** です。以下のいずれかが完了�
 
 ## 関連コマンド
 
-- `/api-setup-wizard` - Notion API設定
+- `/setup-notion` - Notion OAuth セットアップ（ncli + Hosted MCP）
 - `/extract-tasks` - タスク抽出（Notionも統合予定）

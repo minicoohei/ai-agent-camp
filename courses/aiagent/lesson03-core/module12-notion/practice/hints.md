@@ -35,7 +35,7 @@ ncli logout
 
 ### ベース URL とバージョンヘッダー
 
-```
+```text
 https://api.notion.com/v1/
 Notion-Version: 2022-06-28
 ```

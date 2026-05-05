@@ -122,7 +122,7 @@ def clean_env(monkeypatch):
     keys_to_remove = [
         "GEMINI_API_KEY", "GOOGLE_CLOUD_PROJECT", "GOOGLE_API_KEY",
         "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "SLACK_BOT_TOKEN",
-        "X_BEARER_TOKEN",
+        "SLACK_USER_TOKEN", "X_BEARER_TOKEN", "RESEND_API_KEY",
     ]
     for key in keys_to_remove:
         monkeypatch.delenv(key, raising=False)

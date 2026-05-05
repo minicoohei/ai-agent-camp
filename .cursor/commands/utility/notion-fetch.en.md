@@ -163,5 +163,5 @@ See `/setup-notion` for the full setup walkthrough.
 
 ## Related Commands
 
-- `/api-setup-wizard` - Notion API setup
+- `/setup-notion` - Notion OAuth setup (ncli + Hosted MCP)
 - `/extract-tasks` - Task extraction (Notion integration planned)

@@ -378,7 +378,7 @@ You can now operate Notion pages and databases directly from Claude Code/Cursor.
 **Cause**: Misconfigured MCP file, tool not restarted, or `https://mcp.notion.com` blocked on the network
 **What the AI does**:
 1. Verify the MCP config (`type: "http"`, `url: "https://mcp.notion.com/mcp"`)
-2. Validate JSON with `python -m json.tool ~/.claude/mcp_settings.json`
+2. Validate JSON syntax (Claude Code: `python -m json.tool ~/.claude/mcp_settings.json` / Cursor: `python -m json.tool ~/.cursor/mcp.json`)
 3. Fully restart the tool (Claude Code / Cursor)
 4. Check reachability with `curl -I https://mcp.notion.com/mcp`
 

@@ -12,7 +12,7 @@ Notion API を使ったデータベース操作とページ管理を学びます
 - `/setup-notion` 完了済み（**OAuth 統一**: ncli login と Notion Hosted MCP のセットアップ）
 - `ncli whoami` でログインユーザーが表示できる
 - ターゲットのワークスペースで OAuth 承認済み（ワークスペース全体に権限付与）
-- Python 3.8+ と `requests` パッケージ（API を直接叩く演習を行う場合）
+- Python 3.9+ と `requests` パッケージ（API を直接叩く演習を行う場合）
 
 > 旧方式（Internal Integration Token, `secret_xxx`, ページ単位の Add connections 共有）は使いません。すべて OAuth ベースで進めます。
 
@@ -47,7 +47,7 @@ Notion にタスク管理データベースを API 経由で作成します。
 import requests
 
 # OAuth アクセストークンを ncli の認証ストアから取得する想定
-# 例: token = subprocess.run(["ncli", "token"], capture_output=True, text=True).stdout.strip()
+# 例: access_token = subprocess.run(["ncli", "token"], capture_output=True, text=True).stdout.strip()
 
 headers = {
     "Authorization": f"Bearer {access_token}",  # OAuth で取得したトークン

@@ -378,7 +378,7 @@ Ahora puede operar páginas y bases de datos de Notion directamente desde Claude
 **Causa**: Archivo MCP mal configurado, herramienta no reiniciada, o `https://mcp.notion.com` bloqueado en la red
 **Lo que hace la IA**:
 1. Verificar la configuración MCP (`type: "http"`, `url: "https://mcp.notion.com/mcp"`)
-2. Validar el JSON con `python -m json.tool ~/.claude/mcp_settings.json`
+2. Validar la sintaxis JSON (Claude Code: `python -m json.tool ~/.claude/mcp_settings.json` / Cursor: `python -m json.tool ~/.cursor/mcp.json`)
 3. Reiniciar completamente la herramienta (Claude Code / Cursor)
 4. Comprobar la conectividad con `curl -I https://mcp.notion.com/mcp`
 

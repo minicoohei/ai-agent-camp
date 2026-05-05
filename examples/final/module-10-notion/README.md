@@ -44,7 +44,22 @@ Claude Code: `~/.claude/mcp_settings.json` / Cursor: `~/.cursor/mcp.json` に追
 
 詳細は `/setup-notion` を参照してください。
 
-### 3. データベース ID の取得
+### 3. REST API を直接叩く場合のアクセストークン取得
+このサンプル `notion_client.py` は REST API を直接叩く構成のため、ncli が払い出した
+OAuth アクセストークンを `NOTION_ACCESS_TOKEN` 環境変数で渡します（MCP 経由のみ使う場合は不要）。
+
+```bash
+# ncli の OAuth トークンを取り出す
+export NOTION_ACCESS_TOKEN="$(ncli token)"
+
+# 確認（先頭数文字だけ表示してコピペ事故を防ぐ）
+echo "${NOTION_ACCESS_TOKEN:0:6}..."
+```
+
+`ncli token` が利用できない場合は、`ncli whoami --json` の出力やローカル設定ファイル
+（`~/.config/ncli/config.json` 等）からアクセストークンを取り出してください。
+
+### 4. データベース ID の取得
 データベース ID は Notion ページの URL から取得できます（32文字のハイフンなし文字列）。
 このサンプルでは `NOTION_DATABASE_ID` 環境変数で対象 DB を指定します。
 
@@ -95,6 +110,12 @@ class NotionClient:
         # OAuth アクセストークンを引数または環境変数から取得
         # 例: ncli が払い出す OAuth トークンを `NOTION_ACCESS_TOKEN` として設定する
         self.access_token = access_token or os.environ.get("NOTION_ACCESS_TOKEN")
+        if not self.access_token:
+            raise RuntimeError(
+                "NOTION_ACCESS_TOKEN が未設定です。"
+                "`/setup-notion` 実行後に `export NOTION_ACCESS_TOKEN=\"$(ncli token)\"` を設定するか、"
+                "コンストラクタ引数 access_token を直接渡してください。"
+            )
         self.headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
