@@ -26,7 +26,7 @@ tags: ["setup", "notion", "ncli", "mcp", "oauth"]
 | Duration | ~10 minutes |
 | Prerequisites | Notion account (free plan OK), Node.js 18 or higher, browser |
 | Skill Level | No CLI commands needed (everything is auto-run by AI + a single browser-based OAuth approval) |
-| Auth Method | **OAuth only**. No API keys (Internal Integration Tokens) are used. |
+| Auth Method | **This setup uses OAuth only** (no API keys required).<br>Note: a few legacy scripts (e.g. `tools/run_lesson_14_11.py`) still require `NOTION_API_KEY`. See `.env.example` for details. |
 
 **Session flow:**
 1. Install ncli (@sakasegawa/ncli) (AI auto-runs)
@@ -36,7 +36,7 @@ tags: ["setup", "notion", "ncli", "mcp", "oauth"]
 5. Restart Claude Code / Cursor and approve the OAuth dialog on first use
 6. MCP connection test
 
-> **Why OAuth-only?** With the legacy Internal Integration Token flow, you had to create an integration in Notion and individually share each page via "Add connections". With OAuth, a single browser login grants workspace-wide access, so per-page sharing is **not required**.
+> **Why Hosted MCP + OAuth?** The legacy Internal Integration Token flow forced you to create an integration in Notion and individually share each page via "Add connections". With OAuth, a single browser login grants workspace-wide access, so **for this Hosted MCP flow** per-page sharing is **not required**. If you still need to run legacy scripts that read `NOTION_API_KEY` directly (e.g. `tools/run_lesson_14_11.py`), keep using an Internal Integration Token alongside this OAuth setup.
 
 > **Hint**: If the AI's response stops midway, type "please continue" or "it stopped" to resume.
 

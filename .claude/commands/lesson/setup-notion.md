@@ -26,7 +26,7 @@ tags: ["setup", "notion", "ncli", "mcp", "oauth"]
 | 所要時間 | 約10分 |
 | 前提条件 | Notionアカウント（無料プランでOK）、Node.js 18以上、ブラウザ |
 | 操作レベル | CLIコマンド入力なし（すべてAIが自動実行 + ブラウザでの OAuth 承認のみ） |
-| 認証方式 | **OAuth のみ**。APIキー（Internal Integration Token）は使いません |
+| 認証方式 | **このセットアップ手順では OAuth のみ**を使います（APIキー不要）。<br>※ 一部のレガシースクリプト（`tools/run_lesson_14_11.py` 等）は引き続き `NOTION_API_KEY` を要求します。詳細は `.env.example` を参照 |
 
 **このセッションの流れ:**
 1. ncli（@sakasegawa/ncli）をインストールする（AIが自動実行）
@@ -36,7 +36,7 @@ tags: ["setup", "notion", "ncli", "mcp", "oauth"]
 5. Claude Code / Cursor を再起動 → 初回利用時に OAuth ダイアログを承認する
 6. MCP接続テスト
 
-> **OAuth に統一した理由**: 旧方式の Internal Integration Token は、Notion 上でインテグレーションを作成し、各ページに「Add connections」で個別に共有する必要がありました。OAuth ではブラウザでログインするだけで、ワークスペース全体への権限を一度に付与できるため、ページ単位の共有設定は **不要** です。
+> **Hosted MCP + OAuth に統一した理由**: 旧方式の Internal Integration Token は、Notion 上でインテグレーションを作成し、各ページに「Add connections」で個別に共有する必要がありました。OAuth ではブラウザでログインするだけで、ワークスペース全体への権限を一度に付与できるため、**この Hosted MCP 手順では**ページ単位の共有設定は **不要** です。なお、`NOTION_API_KEY` を直接読む旧スクリプト（`tools/run_lesson_14_11.py` 等）を実行する場合は、従来通り Internal Integration Token も併用してください。
 
 > **ヒント**: AIの応答が途中で止まった場合は「続きを表示して」「止まってるよ」と入力すると再開します。
 
