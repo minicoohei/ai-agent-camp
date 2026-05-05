@@ -34,7 +34,7 @@ def mod():
 
 class TestServicesConfig:
     def test_all_services_present(self, mod):
-        expected = {"google", "notion", "slack", "fal", "gemini", "heygen", "elevenlabs", "typefully"}
+        expected = {"google", "slack", "fal", "gemini", "heygen", "elevenlabs", "typefully"}
         assert set(mod.SERVICES.keys()) == expected
 
     def test_service_has_required_fields(self, mod):
@@ -256,27 +256,6 @@ class TestValidateGeminiApi:
         mock_get.return_value = MagicMock(status_code=401)
         result = mod.validate_gemini_api()
         assert result["valid"] is False
-
-
-# ===========================================================================
-# validate_notion_api
-# ===========================================================================
-
-class TestValidateNotionApi:
-    def test_no_key(self, mod, monkeypatch):
-        monkeypatch.delenv("NOTION_API_KEY", raising=False)
-        result = mod.validate_notion_api()
-        assert result["valid"] is False
-
-    @patch("requests.get")
-    def test_valid_key(self, mock_get, mod, monkeypatch):
-        monkeypatch.setenv("NOTION_API_KEY", "secret_test")
-        mock_get.return_value = MagicMock(
-            status_code=200,
-            json=MagicMock(return_value={"name": "Test User"})
-        )
-        result = mod.validate_notion_api()
-        assert result["valid"] is True
 
 
 # ===========================================================================
