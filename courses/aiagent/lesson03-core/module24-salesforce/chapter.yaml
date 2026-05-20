@@ -1,0 +1,15 @@
+# Chapter 24: Salesforce連携
+id: "module24-salesforce"
+order: 24
+name: "Salesforce連携"
+description: "Salesforce APIを使ったCRMデータ操作と自動化を扱う近日公開モジュールです。想定内容は、リード、取引先、商談、活動履歴の取得・更新、営業レポート、フォローアップ提案、マーケティングやメール自動化との接続です。CRMは顧客情報と営業判断の中心になるため、AIエージェントに任せる操作範囲、更新前の承認、監査ログ、重複・誤更新の検出を重視し、安全なCRM自動化の基礎を学ぶ章です。"
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "Salesforce API連携で扱うCRMデータの種類を理解する"
+  - "営業・マーケティング業務でのAI活用ユースケースを整理できる"
+  - "CRM更新時の承認、監査、誤更新防止の重要性を説明できる"

@@ -28,6 +28,10 @@ chapters:
   - "module18-pm-sysdef"
   - "module19-outlook-windows"
   - "module20-freee-mf"
+  - "module21-figma"
+  - "module22-discord"
+  - "module23-line"
+  - "module24-salesforce"
 objectives:
   - "バナー・画像を自動生成できる"
   - "図表・フローチャートを作成できる"
@@ -40,3 +44,4 @@ objectives:
   - "記事企画から校閲までの執筆フローを実行できる"
   - "Outlook / Microsoft 365 の実務運用を整理できる"
   - "Freee 連携の初期セットアップと会計データ操作の流れを理解できる"
+  - "未公開の外部連携モジュールで扱う目的と安全運用上の観点を把握する"
