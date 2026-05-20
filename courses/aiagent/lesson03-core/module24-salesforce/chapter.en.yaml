@@ -1,0 +1,15 @@
+# Chapter 24: Salesforce Integration
+id: "module24-salesforce"
+order: 24
+name: "Salesforce Integration"
+description: "A coming-soon module covering CRM data operations and automation using the Salesforce API. Expected content includes retrieving and updating leads, accounts, opportunities, and activity history, sales reports, follow-up proposals, and connections with marketing and email automation. As CRM sits at the center of customer information and sales decisions, this module emphasizes the scope of operations delegated to AI agents, pre-update approvals, audit logs, and detecting duplicates or erroneous updates."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "Understand the types of CRM data handled with Salesforce API integration"
+  - "Organize AI use cases for sales and marketing operations"
+  - "Explain the importance of approvals, audits, and erroneous-update prevention when updating CRM"

@@ -1,23 +1,28 @@
 # AI Agent Training Course
 id: "aiagent"
 name: "AI Agent Training"
-description: "A practical course on leveraging AI agents for non-engineers. Learn business automation and efficiency using Claude Code / Cursor / Codex."
+description: "A practical course on leveraging AI agents for non-engineers. Covers foundational knowledge including LLMs, tokens, context, RAG, AI agents, security, multimodal AI, MCP, Git, and terminal basics, along with practical skills using Cursor / Claude Code / Codex for environment setup, API integration, image generation, diagram creation, data analysis, and workflows across Slack, Google Workspace, GitHub Actions, Notion, email, marketing, and PM requirements definition — building a foundation for safe, continuous AI agent use."
 icon: "bot"
 version: "1.0.0"
 author: "AI Brain Partners"
 audience: "Non-engineers (marketing, sales, planning, etc.)"
-estimatedHours: 12
+estimatedHours: 50
 cover: "cover.png"
 prerequisites:
   - "Basic PC operations"
   - "Internet connection"
-  - "Eagerness to learn"
+  - "Willingness to use Cursor, Claude Code, or Codex"
 tags:
   - "AI Agent"
   - "Claude Code"
   - "Cursor"
   - "Codex"
+  - "Setup"
+  - "API Configuration"
+  - "Security"
+  - "AI Fundamentals"
+  - "Skills"
   - "Business Automation"
   - "Efficiency"
 language: "en"
-lastUpdated: "2026-02-10"
+lastUpdated: "2026-05-20"

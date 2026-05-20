@@ -1,0 +1,14 @@
+# Chapter 14: Tool Basics
+id: "ch14-tool-basics"
+order: 14
+name: "Tool Basics"
+description: "Learn the basic operations of your chosen AI coding tool. Covers the entry points, UI layout, how to make requests via chat or terminal, file editing, approval flows, work verification, and safety settings for Cursor, Claude Code, and Codex. Regardless of tool, the key is to clearly state the goal and constraints to the AI, review diffs, stop before dangerous operations, and verify with reviews or tests when needed. Build safe operation habits common across all tools while understanding tool-specific UI differences."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch13-hooks-guardrail"
+objectives:
+  - "Understand the basic workflow for Cursor, Claude Code, and Codex"
+  - "Explain the flow of AI requests, diff review, approval, and verification"
+  - "Build safe operation habits suited to your chosen tool"

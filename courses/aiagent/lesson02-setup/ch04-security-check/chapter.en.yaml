@@ -1,0 +1,16 @@
+# Chapter 4: Security & Final Check
+id: "ch04-security-check"
+order: 4
+name: "Security & Final Check"
+description: "Configure security settings to protect secrets, then run a comprehensive check before completing setup. API keys are the keys to your services: if accidentally exposed on GitHub, bots can detect them in seconds, leading to unauthorized use, large bills, account suspension, and data leaks. This chapter covers .gitignore exclusion of .env, .env file permissions, pre-commit hooks for secret pattern detection, commit-msg hooks, and verifying Git user information. Then run /check-setup to validate Cursor, Claude Code, Python, Git, .env, Gemini/Anthropic API connectivity, SDK, repository initialization, .gitignore, hooks, extensions, and Prettier settings in one go."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch03-api-settings"
+objectives:
+  - "Explain API key leak risks and emergency response"
+  - "Understand the roles of .gitignore, .env permissions, and Git hooks"
+  - "Understand the flow of confirming and building safety settings with /setup-security"
+  - "Know what /check-setup validates and how to read the result report"
+  - "Be able to re-check and consult AI for fixes when issues arise"

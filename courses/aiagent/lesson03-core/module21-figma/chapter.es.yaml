@@ -1,0 +1,15 @@
+# Capítulo 21: Integración con Figma
+id: "module21-figma"
+order: 21
+name: "Integración con Figma"
+description: "Módulo próximamente disponible sobre operaciones con datos de diseño y automatización usando Figma MCP. El contenido esperado incluye lectura de archivos y frames de Figma, extracción de especificaciones de diseño, inspección de componentes y estilos, conversión a instrucciones de implementación, revisiones de diseño y uso diferenciado con Pencil MCP. Posiciona a los agentes de IA como puente entre el diseño y la ingeniería o producción de contenidos."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module13-lp"
+objectives:
+  - "Comprender los tipos de datos de diseño manejados con Figma MCP"
+  - "Entender el flujo de conversión de especificaciones de diseño a implementación o revisión"
+  - "Tener conciencia de los permisos y el alcance de compartir datos de diseño"

@@ -1,0 +1,15 @@
+# Capítulo 22: Integración con Discord
+id: "module22-discord"
+order: 22
+name: "Integración con Discord"
+description: "Módulo próximamente disponible sobre construcción de Discord Bot y automatización de mensajes. El contenido esperado incluye creación de Bots, publicación en canales, recuperación de mensajes, notificaciones de eventos, operaciones de comunidad, respuestas de FAQ, asistencia de moderación e integraciones con servicios externos. A diferencia del capítulo de Slack centrado en el análisis de comunicación interna, este módulo usa agentes de IA en entornos comunitarios o de cara al cliente, enfatizando permisos, contenido de publicaciones, información personal y procedimientos de detención ante errores."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module09-slack"
+objectives:
+  - "Explicar los casos de uso básicos de integración con Discord Bot"
+  - "Comprender las consideraciones de diseño para notificaciones, FAQ y asistencia de moderación"
+  - "Tener conciencia de la seguridad al ejecutar IA en entornos de comunidades externas"

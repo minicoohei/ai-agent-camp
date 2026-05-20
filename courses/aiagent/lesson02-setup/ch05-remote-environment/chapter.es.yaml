@@ -1,0 +1,16 @@
+# Capítulo 5: Configuración de Entorno Remoto
+id: "ch05-remote-environment"
+order: 5
+name: "Configuración de Entorno Remoto"
+description: "Sección avanzada para construir un entorno de aprendizaje y trabajo que no dependa únicamente de un PC local, usando múltiples dispositivos, Dispatch, Cursor Web Agent y herramientas similares. Este capítulo organiza la premisa de usar el mismo espacio de trabajo de entrenamiento desde múltiples dispositivos, la autenticación, los permisos y la gestión de secretos al delegar trabajo a agentes en la nube o remotos, y los puntos clave para verificar las variables de entorno y dependencias que suelen diferir entre entornos locales y remotos."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch04-security-check"
+objectives:
+  - "Explicar el propósito y los escenarios aplicables para usar entornos de ejecución remota"
+  - "Comprender las precauciones al usar el espacio de trabajo de entrenamiento desde múltiples dispositivos"
+  - "Entender las perspectivas de autenticación, permisos y gestión de secretos en entornos remotos"
+  - "Comprender por qué es necesario verificar las diferencias de entorno entre local y remoto"
