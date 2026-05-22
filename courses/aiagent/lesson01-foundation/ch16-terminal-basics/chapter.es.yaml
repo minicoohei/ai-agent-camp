@@ -2,7 +2,7 @@
 id: "ch16-terminal-basics"
 order: 16
 name: "Fundamentos de Terminal"
-description: "Aprende los conceptos básicos y las operaciones de la CLI. El contenido cubre la diferencia entre GUI y CLI, cómo abrir el terminal, verificar tu ubicación actual, navegar por archivos y directorios, comandos básicos, cómo leer la salida de comandos y operaciones peligrosas a evitar. Los agentes de IA frecuentemente ejecutan comandos de terminal en tu nombre."
+description: "Aprende los conceptos básicos y las operaciones de la CLI. El contenido cubre la diferencia entre GUI y CLI, cómo abrir el terminal, verificar tu ubicación actual, navegar por archivos y directorios, comandos básicos, cómo leer la salida de comandos y operaciones peligrosas a evitar. Los agentes de IA frecuentemente ejecutan comandos de terminal en tu nombre. Verifica la intención del comando y revisa su salida antes de aprobar su ejecución."
 type: "manual"
 estimatedMinutes: 20
 thumbnail: "thumbnail.png"
