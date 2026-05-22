@@ -2,7 +2,7 @@
 id: "ch11-security"
 order: 11
 name: "Seguridad en IA"
-description: "Conocimientos para usar LLMs y agentes de IA de forma segura."
+description: "Aprende los riesgos y defensas para usar LLMs y agentes de IA de forma segura. El contenido cubre Prompt Injection (directa e indirecta), OWASP Top 10 para LLMs, riesgos ampliados introducidos por MCP y herramientas externas, la mentalidad de Defensa en Profundidad y patrones prácticos de guardrail."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

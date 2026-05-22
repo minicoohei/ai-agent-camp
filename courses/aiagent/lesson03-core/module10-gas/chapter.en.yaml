@@ -2,7 +2,7 @@
 id: "module10-gas"
 order: 10
 name: "GAS Automation & Practical Automation"
-description: "Experience practical business automation including Google Apps Script (GAS) service integration, PDF invoice processing, email-to-TODO extraction, and Google Slides auto-generation with GAS."
+description: "Learn how to build GAS-powered automation using AI agents. The course covers Google Apps Script project management, clasp CLI, multi-project management, deployment, trigger configuration, Drive operations, automatic PDF invoice processing, TODO extraction from email, and Google Slides auto-generation — unlocking a wide range of business automation through script-based Google service integration."
 type: "manual"
 estimatedMinutes: 90
 objectives:

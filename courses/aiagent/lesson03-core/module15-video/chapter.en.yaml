@@ -2,7 +2,7 @@
 id: "module15-video"
 order: 15
 name: "Video Generation"
-description: "Create storyboards and generate AI UGC videos."
+description: "Learn how to combine video generation AI with Remotion to create slide explainer videos, MV-style videos, storyboard animations, product demos, and branding videos. The course covers fal.ai, Kling, Veo, Remotion, FFmpeg, ElevenLabs TTS, and green-screen avatar compositing — progressing from free local rendering to paid AI engines for professional-quality output."
 type: "manual"
 estimatedMinutes: 90
 objectives:

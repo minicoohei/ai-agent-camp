@@ -2,7 +2,7 @@
 id: "ch04-context-engineering"
 order: 4
 name: "Context Engineering"
-description: "効果的なプロンプト設計とコンテキスト管理を学びます。"
+description: "プロンプト設計とコンテキスト管理を学びます。教材では、プロンプトを単発の命令文として捉えるだけでなく、目的、制約、背景、入力データ、出力形式、評価基準、過去の作業履歴を含めた『モデルに渡す作業環境』として設計する考え方を扱います。良いコンテキストは、AIの推測を減らし、期待する形式で回答させ、長いタスクでも判断基準を保つための土台になります。"
 type: "manual"
 estimatedMinutes: 30
 thumbnail: "thumbnail.png"

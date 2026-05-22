@@ -2,7 +2,7 @@
 id: "ch09-subagent"
 order: 9
 name: "Skill / SubAgent"
-description: "Techniques to extend AI agent capabilities and coordinate them as a team."
+description: "Learn skills, subagents, and agent team architectures. The course covers how Skills bundle procedures, templates, constraints, and output formats to extend AI capability; how SubAgents handle specialized tasks in parallel; and how Agent Teams coordinate multiple agents for complex workflows. Understand when to use each pattern and the safety considerations for multi-agent systems."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

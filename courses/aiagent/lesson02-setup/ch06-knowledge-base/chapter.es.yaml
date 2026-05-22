@@ -2,7 +2,7 @@
 id: "ch06-knowledge-base"
 order: 6
 name: "Construcción de Base de Conocimiento"
-description: "Sección avanzada para organizar el conocimiento específico del proyecto, reglas, información de entrenamiento y criterios de decisión en una forma que los agentes de IA puedan referenciar. Este capítulo extiende ese concepto a tus propios proyectos, organizando el propósito de convertir procedimientos de negocio frecuentes, perspectivas de revisión, convenciones de código, reglas de uso de API, resolución de problemas y enlaces a documentos de entrenamiento o internos en una base de conocimiento."
+description: "Sección avanzada para organizar el conocimiento específico del proyecto, reglas, información de entrenamiento y criterios de decisión en una forma que los agentes de IA puedan referenciar. Este capítulo extiende ese concepto a tus propios proyectos — organizando procedimientos de negocio frecuentes, perspectivas de revisión, convenciones de código, reglas de uso de API y guías de solución de problemas."
 type: "manual"
 status: "coming_soon"
 estimatedMinutes: 20

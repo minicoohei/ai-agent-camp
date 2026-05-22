@@ -2,7 +2,7 @@
 id: "module01-banner"
 order: 1
 name: "バナー・画像生成"
-description: "SNS投稿やプレスリリース用のバナーを自動生成します。"
+description: "AIを使ってSNS投稿、プレスリリース、広告、YouTube、LINE、Web向けのバナーや画像を生成する方法を学びます。教材では、banner-creator と nanobanana / Gemini Image Generation API を使い、プラットフォーム別のサイズ、トーン、配色、リファレンス画像、画像編集、Nano Banana Pro の高精度出力を扱います。単発の画像生成ではなく、目的、媒体、訴求、ブランド感、出力サイズを整理して、再利用できるプロモーション画像生成フローに落とし込む章です。"
 type: "manual"
 estimatedMinutes: 60
 objectives:

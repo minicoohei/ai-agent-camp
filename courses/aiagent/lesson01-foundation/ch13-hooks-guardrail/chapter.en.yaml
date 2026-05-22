@@ -2,7 +2,7 @@
 id: "ch13-hooks-guardrail"
 order: 13
 name: "Hooks & Guardrail"
-description: "Learn design patterns for Hooks and Guardrails to prevent coding agent runaway."
+description: "Learn safety mechanisms and hook architecture. The course covers safe deletion, minimal guardrails, approval flows, dangerous operation detection, pre/post-execution checks with Hooks, failure handling, and Credential Manager. Learn how to design layered defenses so that even when an AI agent operates autonomously, it cannot exceed safe boundaries."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

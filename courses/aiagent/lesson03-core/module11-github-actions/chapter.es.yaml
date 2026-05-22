@@ -2,7 +2,7 @@
 id: "module11-github-actions"
 order: 11
 name: "GitHub Actions"
-description: "Automatización CI/CD y creación de flujos de trabajo."
+description: "Aprende a construir pipelines de CI/CD y flujos de trabajo automatizados usando GitHub Actions. El contenido cubre definición de flujos de trabajo, disparadores de eventos, jobs, steps, gestión de Secrets, automatización de pruebas y builds, flujos de trabajo de obtención de noticias y notificaciones, y llamadas a Claude Code/Codex/Cursor desde Actions."
 type: "manual"
 estimatedMinutes: 90
 objectives:

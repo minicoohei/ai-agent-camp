@@ -2,7 +2,7 @@
 id: "ch15-git-safety"
 order: 15
 name: "Git安全運用"
-description: "危険なGit操作を理解し、安全にバージョン管理を行う方法を学びます。"
+description: "危険なGit操作と安全対策を学びます。教材では、reset、rebase、checkout、clean、force push など、使い方を誤ると未保存の作業や共有履歴を失う可能性がある操作を扱います。AIエージェントが提案するコマンドであっても、その意味を確認し、実行前に差分確認、コミット、stash、バックアップブランチ作成などの保険をかけることが重要です。安全運用を身につけることで、AIによる高速な編集と人間による復旧可能性を両立します。"
 type: "manual"
 estimatedMinutes: 20
 thumbnail: "thumbnail.png"

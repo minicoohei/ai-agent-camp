@@ -2,7 +2,7 @@
 id: "module14-article-writing"
 order: 14
 name: "Redacción de Artículos"
-description: "Usa agentes de IA para ejecutar el flujo completo de un artículo: tema, estructura, ajuste de estilo, imágenes, corrección y verificación de hechos."
+description: "Aprende a crear artículos de blog y documentación usando agentes de IA. El contenido cubre selección de tema, definición de audiencia objetivo, generación de esquemas, aprendizaje de estilo, perfiles de estilo, redacción de borradores, generación de ilustraciones y diagramas, corrección de estilo, verificación de hechos y procesamiento paralelo de múltiples artículos."
 type: "manual"
 estimatedMinutes: 230
 thumbnail: "thumbnail.png"

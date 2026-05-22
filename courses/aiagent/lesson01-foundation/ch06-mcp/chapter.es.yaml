@@ -2,7 +2,7 @@
 id: "ch06-mcp"
 order: 6
 name: "MCP (Protocolo de Contexto de Modelo)"
-description: "Comprende el protocolo estándar que conecta la IA con herramientas externas."
+description: "Aprende los conceptos y la configuración del Protocolo de Contexto del Modelo. El contenido cubre MCP como mecanismo estándar que conecta la IA con herramientas y fuentes de datos externas; Tools, Resources, Prompts y Sampling; arquitectura de host y cliente; cómo configurar servidores MCP de forma segura."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

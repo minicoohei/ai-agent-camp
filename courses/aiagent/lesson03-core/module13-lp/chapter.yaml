@@ -2,7 +2,7 @@
 id: "module13-lp"
 order: 13
 name: "LP/HP制作"
-description: "AI エージェントを使って、訴求整理、ワイヤーフレーム設計、Pencil デザイン、HTML 実装、Vercel デプロイまでを通しで学びます。"
+description: "ランディングページやホームページをAIエージェントと制作する方法を学びます。教材では、訴求整理、ワイヤーフレーム作成、Pencil MCPによるデザイン、HTML / Tailwind / JavaScriptによる実装、FAQやCTA、レスポンシブ対応、Vercelデプロイまでを扱います。単なるページ生成ではなく、ターゲット、課題、価値提案、セクション構成、公開前チェックを整理し、実際に動くWebページへ落とし込む章です。"
 type: "manual"
 estimatedMinutes: 180
 prerequisites:

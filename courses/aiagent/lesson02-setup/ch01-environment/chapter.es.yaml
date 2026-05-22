@@ -2,7 +2,7 @@
 id: "ch01-environment"
 order: 1
 name: "Configuración del Entorno"
-description: "Prepara y configura Claude Code / Cursor / Codex."
+description: "Confirma el propósito, el enfoque y los requisitos del sistema para la configuración general. Este entrenamiento prepara un espacio de trabajo dedicado donde los agentes de IA pueden realizar procesamiento sofisticado con un solo comando — combinando skills personalizadas, herramientas Python, comandos de lección, reglas de seguridad, servidores MCP y APIs externas."
 type: "manual"
 estimatedMinutes: 30
 objectives:

@@ -2,7 +2,7 @@
 id: "ch02-tokens"
 order: 2
 name: "Conceptos de Tokens"
-description: "Aprende sobre tokens y ventanas de contexto."
+description: "Aprende sobre tokenización, ventanas de contexto, tokens de entrada y salida, cómo contar tokens y optimización del uso de tokens. El contenido cubre cómo los LLMs procesan el texto como secuencias de tokens en lugar de caracteres o palabras, el impacto de los contextos largos en el costo y la precisión, y técnicas prácticas para comprimir el contexto y escribir prompts de manera eficiente."
 type: "manual"
 estimatedMinutes: 30
 thumbnail: "thumbnail.png"

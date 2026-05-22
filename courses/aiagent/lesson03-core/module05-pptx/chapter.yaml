@@ -2,7 +2,7 @@
 id: "module05-pptx"
 order: 5
 name: "PPTX解析・変換・生成"
-description: "3つの専門ツールを使い分けて、PowerPointファイルの解析、テンプレート変換、ゼロからのプレゼン自動生成をマスターします"
+description: "PowerPointファイルの解析、変換、生成をAIエージェントで行う方法を学びます。教材では、pptx-analyzer、pptx-converter、pptx-creator の3つの専門ツールを使い、既存PPTXの構造抽出、スライド画像化、Geminiによる意味解析、テンプレートを活かした内容差し替え、ゼロからのプレゼン資料生成を扱います。提案資料、研修資料、営業報告などを作る際に、デザインを保ちながら内容更新を効率化する実務向けの章です。"
 type: "manual"
 estimatedMinutes: 60
 objectives:

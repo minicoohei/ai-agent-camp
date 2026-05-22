@@ -2,7 +2,7 @@
 id: "module11-github-actions"
 order: 11
 name: "GitHub Actions"
-description: "CI/CD自動化とワークフロー作成を行います。"
+description: "GitHub Actions を使い、CI/CDパイプラインや自動ワークフローを構築する方法を学びます。教材では、ワークフロー定義、イベントトリガー、ジョブ、ステップ、Secrets管理、テストやビルドの自動実行、失敗時の確認方法を扱います。AIエージェントがコードや設定を編集したあと、人間の手作業に頼らず検証・配布・通知を回すための自動化基盤を理解します。"
 type: "manual"
 estimatedMinutes: 90
 objectives:

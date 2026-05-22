@@ -2,7 +2,7 @@
 id: "module18-pm-sysdef"
 order: 18
 name: "Gestión de Producto y Definición de Requisitos del Sistema"
-description: "Usando una aplicación de gestión de tareas como ejemplo, experimenta el ciclo completo de desarrollo de producto—desde la planificación hasta diseño, implementación, pruebas y operación—con asistencia de IA."
+description: "Experimenta el ciclo completo de desarrollo de productos desde entrevistas con clientes hasta creación de PRD, definición de requisitos, diseño, prototipado, pruebas y operaciones. El contenido cubre investigación de usuarios con AskQuestion, requisitos de partes interesadas, PRD Working Backwards, descripción de casos de uso, diagramas de secuencia, diagramas de transición de pantallas, diseño de DB y pruebas con Playwright y pytest."
 type: "manual"
 estimatedMinutes: 480
 thumbnail: "thumbnail.png"

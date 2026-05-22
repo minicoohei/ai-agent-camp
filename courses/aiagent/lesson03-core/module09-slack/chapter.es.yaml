@@ -2,7 +2,7 @@
 id: "module09-slack"
 order: 9
 name: "Búsqueda y Análisis en Slack"
-description: "Búsqueda semántica y análisis de datos de Slack."
+description: "Construye funciones de integración con Slack para búsqueda de canales, búsqueda de personas y eventos, extracción de TODOs y análisis del historial de conversaciones. El contenido cubre búsqueda semántica y análisis de datos de Slack, diseño de condiciones de búsqueda, estructura de canales e hilos, y la ética del manejo de mensajes privados."
 type: "manual"
 estimatedMinutes: 60
 objectives:

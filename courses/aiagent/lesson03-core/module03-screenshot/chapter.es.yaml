@@ -2,7 +2,7 @@
 id: "module03-screenshot"
 order: 3
 name: "Crear Tutoriales con AI Agent"
-description: "Aprende a darle "ojos" a la IA — analiza capturas de pantalla y videos para generar tutoriales y manuales automáticamente"
+description: "Aprende a pasar información visual — capturas de pantalla y video — a la IA para comprensión de pantallas, diagnóstico de errores, extracción de procedimientos operativos y generación de tutoriales/manuales. El contenido cubre las capacidades de visión de la API de Gemini, extracción de elementos UI, anotación y análisis por lotes de múltiples capturas."
 type: "manual"
 estimatedMinutes: 60
 objectives:

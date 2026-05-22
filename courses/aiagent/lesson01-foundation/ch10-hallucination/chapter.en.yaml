@@ -2,7 +2,7 @@
 id: "ch10-hallucination"
 order: 10
 name: "Hallucination"
-description: "Understand the phenomenon where AI fabricates plausible-sounding falsehoods."
+description: "Learn the phenomenon where AI outputs plausible misinformation, its causes, types, and countermeasures. The course covers how LLMs generate text probabilistically and may assert things they don't know, fabricate citations or specs, or produce contextually plausible but factually wrong content. Learn detection methods, verification strategies, and how to design workflows that prevent hallucination from causing real-world harm."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

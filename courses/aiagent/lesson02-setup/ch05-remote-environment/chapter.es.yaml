@@ -2,7 +2,7 @@
 id: "ch05-remote-environment"
 order: 5
 name: "Configuración de Entorno Remoto"
-description: "Sección avanzada para construir un entorno de aprendizaje y trabajo que no dependa únicamente de un PC local, usando múltiples dispositivos, Dispatch, Cursor Web Agent y herramientas similares. Este capítulo organiza la premisa de usar el mismo espacio de trabajo de entrenamiento desde múltiples dispositivos, la autenticación, los permisos y la gestión de secretos al delegar trabajo a agentes en la nube o remotos, y los puntos clave para verificar las variables de entorno y dependencias que suelen diferir entre entornos locales y remotos."
+description: "Sección avanzada para construir un entorno de aprendizaje y trabajo que no dependa únicamente de un PC local, usando múltiples dispositivos, Dispatch, Cursor Web Agent y herramientas similares. Este capítulo organiza la premisa de usar el mismo espacio de trabajo de entrenamiento desde múltiples dispositivos, autenticación, permisos y gestión de secretos al delegar trabajo a agentes en la nube o remotos."
 type: "manual"
 status: "coming_soon"
 estimatedMinutes: 25

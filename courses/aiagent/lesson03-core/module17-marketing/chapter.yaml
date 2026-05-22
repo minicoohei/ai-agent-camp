@@ -2,7 +2,7 @@
 id: "module17-marketing"
 order: 17
 name: "マーケティング"
-description: "AIスキルを活用したマーケティングコンテンツの作成と運用を学びます。"
+description: "AIスキルを活用したマーケティングコンテンツの作成と運用を学びます。教材では、SNS投稿、バナー作成、SEO監査、キーワード戦略、マーケティングコピー、Pencil MCPによるデザイン可視化、programmatic SEO の考え方を扱います。SNS・SEO集客からコピー作成、デザインモックアップまでを一つの流れとして捉え、施策案、制作物、改善提案をAIで効率化する章です。"
 type: "manual"
 estimatedMinutes: 120
 thumbnail: "thumbnail.png"
