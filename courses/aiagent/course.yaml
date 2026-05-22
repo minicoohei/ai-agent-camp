@@ -1,7 +1,11 @@
 # AIエージェント研修コース
 id: "aiagent"
 name: "AIエージェント研修"
-description: "非エンジニア向けのAIエージェント活用講座です。LLM、トークン、コンテキスト、RAG、AIエージェント、セキュリティ、マルチモーダル、MCP、Git、ターミナルなどの基礎知識と、Cursor / Claude Code / Codex を使った環境構築、API連携、画像生成、図表作成、データ分析、Slack・Google Workspace・GitHub Actions・Notion・メール・マーケティング・PM要件定義などの実務スキルを通じて、AIエージェントを安全かつ継続的に活用する学習基盤を作ります。"
+description: >
+  非エンジニア向けのAIエージェント活用講座です。LLM、トークン、コンテキスト、RAG、AIエージェント、セキュリティ、
+  マルチモーダル、MCP、Git、ターミナルなどの基礎知識と、Cursor / Claude Code / Codex を使った環境構築、
+  API連携、画像生成、図表作成、データ分析、Slack・Google Workspace・GitHub Actions・Notion・メール・
+  マーケティング・PM要件定義などの実務スキルを通じて、AIエージェントを安全かつ継続的に活用する学習基盤を作ります。
 icon: "bot"
 version: "1.0.0"
 author: "AI Brain Partners"
