@@ -1,7 +1,13 @@
 # Curso de Capacitación en Agentes de IA
 id: "aiagent"
 name: "Capacitación en Agentes de IA"
-description: "Curso práctico sobre el uso de agentes de IA para no ingenieros. Cubre conocimientos fundamentales como LLMs, tokens, contexto, RAG, agentes de IA, seguridad, IA multimodal, MCP, Git y terminal, junto con habilidades prácticas usando Cursor / Claude Code / Codex para configuración de entorno, integración de APIs, generación de imágenes, creación de diagramas, análisis de datos y flujos de trabajo en Slack, Google Workspace, GitHub Actions, Notion, correo, marketing y definición de requisitos de PM."
+description: >
+  Curso práctico sobre el uso de agentes de IA para no ingenieros. Cubre conocimientos
+  fundamentales como LLMs, tokens, contexto, RAG, agentes de IA, seguridad, IA multimodal,
+  MCP, Git y terminal, junto con habilidades prácticas usando Cursor / Claude Code / Codex
+  para configuración de entorno, integración de APIs, generación de imágenes, creación de
+  diagramas, análisis de datos y flujos de trabajo en Slack, Google Workspace, GitHub Actions,
+  Notion, correo, marketing y definición de requisitos de PM.
 icon: "bot"
 version: "1.0.0"
 author: "AI Brain Partners"
