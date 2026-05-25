@@ -2,7 +2,7 @@
 id: "module02-diagram"
 order: 2
 name: "Diagram & Flow Creation"
-description: "Auto-generate diagrams and flowcharts from text."
+description: "Learn how to create business flow diagrams, org charts, system architecture diagrams, sequence diagrams, and decision trees using the diagram-generator skill. The course covers Mermaid, PlantUML, Draw.io-compatible formats, and how to translate complex business processes into clear visual diagrams through AI."
 type: "manual"
 estimatedMinutes: 60
 objectives:

@@ -1,0 +1,16 @@
+# Chapter 6: Knowledge Base Setup
+id: "ch06-knowledge-base"
+order: 6
+name: "Knowledge Base Setup"
+description: "An advanced section for organizing project-specific knowledge, rules, training information, and decision criteria into a form that AI agents can reference. This chapter extends that concept to your own projects — organizing frequently used business procedures, review perspectives, coding conventions, API usage rules, troubleshooting guides, and links to training or internal documents. While marked as coming soon, this is important groundwork for improving AI response quality, reproducibility, and safety by ensuring agents can always verify the same baseline assumptions."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch04-security-check"
+objectives:
+  - "Explain the purpose of a knowledge base for AI agents"
+  - "Understand the perspective of organizing project-specific rules and workflows"
+  - "Grasp the concept of treating training materials, skills, commands, and safety rules as a knowledge foundation"
+  - "Understand information design for improving response quality and reproducibility in real projects"

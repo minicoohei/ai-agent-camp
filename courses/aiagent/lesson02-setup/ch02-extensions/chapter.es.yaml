@@ -2,7 +2,7 @@
 id: "ch02-extensions"
 order: 2
 name: "Extensiones"
-description: "Instala y configura las extensiones necesarias."
+description: "Configura las extensiones, plugins oficiales y claves API externas necesarias para el aprendizaje. Las extensiones incluyen herramientas esenciales como Git Graph, GitLens, Python, Pylance y Prettier, además de REST Client y ayudantes específicos del lenguaje. Este capítulo también cubre dónde obtener claves API para Gemini, Anthropic, Slack y otros servicios."
 type: "manual"
 estimatedMinutes: 15
 prerequisites:

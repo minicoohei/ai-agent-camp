@@ -2,7 +2,7 @@
 id: "ch14-git-basics"
 order: 14
 name: "Fundamentos de Git"
-description: "Aprende los fundamentos del control de versiones y cómo usar Git/GitHub."
+description: "Aprende los conceptos básicos del control de versiones. El contenido trata Git como puntos de guardado para cambios en código y archivos, cubriendo árbol de trabajo, staging, commits, ramas, revisión del historial, inspección de diferencias e integración con GitHub. Construye la base para entender qué hacen los agentes de IA cuando crean commits, ramas o envían cambios en tu nombre."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

@@ -2,7 +2,7 @@
 id: "module07-skill-commands"
 order: 7
 name: "Skill / Command Development"
-description: "Design reusable SKILL.md files and slash commands, then apply them to real workflows like invoices and PDF updates."
+description: "Learn how to design reusable SKILL.md files and slash commands to turn repetitive real-work tasks into stable AI workflows. The course covers the roles of Skills vs Commands, YAML frontmatter, trigger conditions, prompt templates, output format specification, versioning, and testing — so you can build skills for invoice generation, PDF updates, and other recurring business patterns."
 type: "manual"
 estimatedMinutes: 120
 objectives:

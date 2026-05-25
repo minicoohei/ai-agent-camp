@@ -2,7 +2,7 @@
 id: "module08-data-analysis"
 order: 8
 name: "Análisis de Datos"
-description: "Conecta con BigQuery/Snowflake y realiza análisis de datos."
+description: "Aprende a impulsar el análisis de datos y la visualización con agentes de IA. El contenido cubre plataformas de datos como BigQuery y Snowflake, análisis exploratorio de datos, agregación, visualización, solicitudes de análisis en lenguaje natural, informes y notebooks interactivos de Marimo."
 type: "manual"
 estimatedMinutes: 120
 objectives:

@@ -2,7 +2,7 @@
 id: "ch08-rag"
 order: 8
 name: "RAG"
-description: "外部知識を検索してLLMの回答を強化する技術"
+description: "検索拡張生成の仕組みと活用を学びます。教材では、RAGが外部資料を検索し、その結果をコンテキストに追加して回答を生成する仕組み、Ingestion、Retrieval、Augmentation、Generation の4ステップ、ベクトルデータベース、埋め込み、類似検索、ファインチューニングとの使い分けを扱います。社内文書、FAQ、仕様書、過去事例などをAIに参照させるとき、どこまでをモデルに覚えさせるのではなく検索させるべきかを判断できるようにします。"
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

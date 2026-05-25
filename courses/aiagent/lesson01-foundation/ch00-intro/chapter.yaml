@@ -2,7 +2,7 @@
 id: "ch00-intro"
 order: 0
 name: "学習パス"
-description: "AIエージェント研修の全体像と学習の進め方を把握します。"
+description: "AI基礎セクション全体の学習パスと目標を確認します。この章では、LLMの仕組み、トークン、コンテキスト、RAG、AIエージェント、Skill / SubAgent、セキュリティ、MCP、Git、ターミナルといった後続テーマが、AIエージェントを実務で安全に使うためにどうつながるかを整理します。単なる用語暗記ではなく、AIに依頼する前に何を判断し、どこを検証し、どの操作を慎重に扱うべきかという学習の地図を作ります。"
 type: "manual"
 estimatedMinutes: 10
 thumbnail: "thumbnail.png"

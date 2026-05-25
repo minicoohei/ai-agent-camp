@@ -1,0 +1,15 @@
+# Capítulo 23: Integración con LINE
+id: "module23-line"
+order: 23
+name: "Integración con LINE"
+description: "Módulo próximamente disponible sobre construcción de Bot y automatización usando la API de Mensajería de LINE. El contenido esperado incluye Webhooks, envío y recepción de mensajes, atención de consultas de usuarios, entrega de notificaciones, diseño de escenarios e integración con CRM u hojas de cálculo. Al ser un punto de contacto directo con clientes, este módulo clarifica la precisión de respuestas, manejo de información personal, opt-in, frecuencia de envío y condiciones de escalada."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "Comprender la estructura básica de integración con la API de LINE"
+  - "Organizar casos de uso de automatización para atención de consultas y entrega de notificaciones"
+  - "Entender los riesgos de información personal y respuestas erróneas al usar IA en contacto con clientes"

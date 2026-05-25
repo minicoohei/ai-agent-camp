@@ -1,0 +1,16 @@
+# Chapter 4: セキュリティ & 最終確認
+id: "ch04-security-check"
+order: 4
+name: "セキュリティ & 最終確認"
+description: "秘密情報を守るためのセキュリティ設定と、セットアップ完了前の総合チェックを行います。APIキーはサービスを利用するための鍵であり、GitHub に誤って公開されると、ボットに数秒で検出され、不正利用、高額請求、アカウント停止、データ漏洩につながる可能性があります。この章では .gitignore による .env 除外、.env ファイルのパーミッション、pre-commit フックによる秘密情報パターン検出、commit-msg フック、Git ユーザー情報の確認を扱います。続けて /check-setup を実行し、Cursor、Claude Code、Python、Git、.env、Gemini / Anthropic API 接続、SDK、リポジトリ初期化、.gitignore、フック、拡張機能、Prettier 設定を一括検証します。問題が見つかった場合は AI が修正方法を提案し、再チェックで全項目が通ることを確認してからコース本編へ進みます。"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch03-api-settings"
+objectives:
+  - "APIキー漏洩のリスクと緊急対応を説明できる"
+  - ".gitignore、.env パーミッション、Git フックの役割を理解する"
+  - "/setup-security で安全設定を確認・構築する流れを理解する"
+  - "/check-setup の検証対象を把握し、結果レポートを読み取れる"
+  - "問題発生時に再チェックと修正相談を行える"

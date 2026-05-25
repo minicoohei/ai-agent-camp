@@ -2,7 +2,7 @@
 id: "module06-agent-development"
 order: 6
 name: "Agent Development"
-description: "Learn how to develop custom AI agents."
+description: "Learn how to develop custom AI agents using Claude Code's Commands, Skills, Cursor Rules, and SubAgent patterns. The course covers agent design for business users, building reusable skill libraries, implementing safety guardrails, and orchestrating multi-agent workflows — giving you the ability to create purpose-built AI automation for your specific business context."
 type: "manual"
 estimatedMinutes: 90
 objectives:

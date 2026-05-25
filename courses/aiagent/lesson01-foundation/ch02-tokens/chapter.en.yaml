@@ -2,7 +2,7 @@
 id: "ch02-tokens"
 order: 2
 name: "Token Concepts"
-description: "Learn about tokens and context windows."
+description: "Learn tokenization, context windows, input and output tokens, how to count tokens, and token usage optimization. The course covers how LLMs process text as token sequences rather than characters or words, the impact of long contexts on cost and accuracy, and practical techniques for compressing context and writing prompts efficiently."
 type: "manual"
 estimatedMinutes: 30
 thumbnail: "thumbnail.png"

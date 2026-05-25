@@ -1,0 +1,15 @@
+# Chapter 23: LINE Integration
+id: "module23-line"
+order: 23
+name: "LINE Integration"
+description: "A coming-soon module covering Bot construction and automation using the LINE Messaging API. Expected content includes Webhooks, message sending and receiving, user inquiry handling, notification delivery, scenario design, and integration with CRM or spreadsheets. As a direct customer touchpoint, this module clarifies response accuracy, personal information handling, opt-in, delivery frequency, and escalation conditions, teaching how to safely incorporate AI agents into customer support."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "Understand the basic structure of LINE Messaging API integration"
+  - "Organize automation use cases for inquiry handling and notification delivery"
+  - "Grasp personal information and error response risks when using AI at customer touchpoints"

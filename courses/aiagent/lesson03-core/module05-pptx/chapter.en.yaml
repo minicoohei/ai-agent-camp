@@ -2,7 +2,7 @@
 id: "module05-pptx"
 order: 5
 name: "PPTX Analysis, Conversion & Generation"
-description: "Master PowerPoint file analysis, template conversion, and automated presentation generation using three specialized tools"
+description: "Learn how to analyze, convert, and generate PowerPoint files using AI agents. The course covers three specialized tools — pptx-analyzer, pptx-converter, and pptx-creator — and how to choose between them: structural analysis of existing decks, template-preserving content replacement, and zero-to-deck generation from a topic description."
 type: "manual"
 estimatedMinutes: 60
 objectives:

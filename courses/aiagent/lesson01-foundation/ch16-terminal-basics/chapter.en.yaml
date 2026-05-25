@@ -2,7 +2,7 @@
 id: "ch16-terminal-basics"
 order: 16
 name: "Terminal Basics"
-description: "Learn the basics of using the terminal (command line)."
+description: "Learn the basic concepts and operations of the CLI. The course covers the difference between GUI and CLI, how to open the terminal, checking your current location, navigating files and directories, basic commands, how to read command output, and dangerous operations to avoid. AI agents frequently run terminal commands on your behalf — understanding this layer lets you verify and safely approve their actions."
 type: "manual"
 estimatedMinutes: 20
 thumbnail: "thumbnail.png"

@@ -11,7 +11,13 @@ chapters:
   - "ch01-environment"
   - "ch02-extensions"
   - "ch03-api-settings"
+  - "ch04-security-check"
+  - "ch05-remote-environment"
+  - "ch06-knowledge-base"
 objectives:
   - "Entender el flujo inicial de Claude Code / Cursor / Codex"
   - "Configurar las extensiones necesarias"
   - "Obtener y configurar las claves API"
+  - "Implementar medidas contra fugas de secretos y completar la verificación de setup"
+  - "Comprender la autenticación, permisos y gestión de secretos en entornos remotos"
+  - "Comprender el propósito de diseño de bases de conocimiento para agentes de IA"

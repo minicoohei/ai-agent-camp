@@ -2,7 +2,7 @@
 id: "module12-notion"
 order: 12
 name: "Notion CLI（ncli）"
-description: "ターミナルからNotionを操作するCLI（@sakasegawa/ncli）の導入とエージェント向けワークフローを学びます。"
+description: "ターミナルからNotionを操作するCLIを導入し、AIエージェント向けのNotionワークフローを作る方法を学びます。教材では、Notion APIやデータベース操作、ページ作成、情報取得、タスク管理、ドキュメント更新、AIから扱いやすい入出力設計を扱います。Notionを人間が開いて手作業で更新するだけでなく、CLIとAIエージェントを通じて、ナレッジ管理や進捗管理を自動化する章です。"
 type: "manual"
 estimatedMinutes: 60
 objectives:

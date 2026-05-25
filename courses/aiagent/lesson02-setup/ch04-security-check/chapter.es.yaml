@@ -1,0 +1,16 @@
+# Capítulo 4: Seguridad y Verificación Final
+id: "ch04-security-check"
+order: 4
+name: "Seguridad y Verificación Final"
+description: "Configura los ajustes de seguridad para proteger la información secreta y realiza una verificación integral antes de completar el setup. Las claves API son las llaves de tus servicios: si se exponen accidentalmente en GitHub, los bots pueden detectarlas en segundos, llevando a uso no autorizado, facturas elevadas, suspensión de cuenta y fugas de datos. Este capítulo cubre la exclusión de .env en .gitignore, permisos del archivo .env, hooks de pre-commit para detección de patrones de secretos, hooks de commit-msg y verificación de la información de usuario Git."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch03-api-settings"
+objectives:
+  - "Explicar los riesgos de fuga de claves API y la respuesta de emergencia"
+  - "Entender los roles de .gitignore, permisos de .env y Git hooks"
+  - "Comprender el flujo de confirmación y construcción de ajustes de seguridad con /setup-security"
+  - "Conocer qué valida /check-setup y cómo leer el informe de resultados"
+  - "Poder re-verificar y consultar a la IA para correcciones cuando surjan problemas"

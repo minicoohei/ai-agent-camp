@@ -1,0 +1,15 @@
+# Chapter 21: Figma Integration
+id: "module21-figma"
+order: 21
+name: "Figma Integration"
+description: "A coming-soon module covering design data operations and automation using Figma MCP. Expected content includes reading Figma files and frames, extracting design specifications, inspecting components and style information, converting to implementation instructions, design reviews, and choosing between LP/HP production and Pencil MCP. Positions AI agents as a bridge to translate design intent into engineering and content production."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module13-lp"
+objectives:
+  - "Understand the types of design data handled with Figma MCP"
+  - "Grasp the flow of converting design specs into implementation or review"
+  - "Be aware of permissions and sharing scope for design data"

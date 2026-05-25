@@ -2,7 +2,7 @@
 id: "module18-pm-sysdef"
 order: 18
 name: "Product Management & System Requirements Definition"
-description: "Using a task management app as an example, experience the full product development cycle—from planning through design, implementation, testing, and operation—with AI assistance."
+description: "Experience the complete product development cycle from customer interviews through PRD creation, requirements definition, design, prototyping, testing, and operations. The course covers AskQuestion-based user research, stakeholder requirements, Working Backwards PRD, use case description, sequence diagrams, screen transition diagrams, DB design, system architecture, API design, WBS, Playwright E2E testing, and pytest — delivering a full PM-to-engineer handoff workflow powered by AI agents."
 type: "manual"
 estimatedMinutes: 480
 thumbnail: "thumbnail.png"

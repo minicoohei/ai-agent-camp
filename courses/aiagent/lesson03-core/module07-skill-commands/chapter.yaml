@@ -2,7 +2,7 @@
 id: "module07-skill-commands"
 order: 7
 name: "Skill / Commands 開発"
-description: "再利用可能な SKILL.md とスラッシュコマンドを設計し、請求書生成・PDF更新などの実務パターンに落とし込みます。"
+description: "再利用可能な SKILL.md とスラッシュコマンドを設計し、実務で繰り返す作業を安定したAIワークフローにする方法を学びます。教材では、Skill と Command の役割分担、YAMLフロントマター、手順・禁止事項・入出力形式の書き方、請求書生成やPDF更新の例、Skill Creator プラグイン、カスタムスキル作成演習を扱います。エージェントが自律的に参照する知識と、ユーザーが明示的に開始する入口を分けることで、作業品質とオンボーディングを両立します。"
 type: "manual"
 estimatedMinutes: 120
 objectives:

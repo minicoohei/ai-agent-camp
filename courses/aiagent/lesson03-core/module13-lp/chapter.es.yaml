@@ -2,7 +2,7 @@
 id: "module13-lp"
 order: 13
 name: "Produccion LP/HP"
-description: "Desde la entrevista hasta el diseno de atractivos, wireframes, diseno en Pencil, implementacion HTML y despliegue en Vercel. Experimenta el flujo completo de produccion LP/HP."
+description: "Aprende a crear páginas de destino y sitios web en colaboración con agentes de IA. El contenido cubre organización de propuestas de valor, creación de wireframes, diseño con Pencil MCP, implementación en HTML/Tailwind/JavaScript y despliegue en Vercel — guiándote a través del pipeline completo de producción de LP desde el concepto hasta el sitio en vivo."
 type: "manual"
 estimatedMinutes: 180
 prerequisites:

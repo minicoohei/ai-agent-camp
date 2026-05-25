@@ -2,7 +2,7 @@
 id: "ch11-security"
 order: 11
 name: "AIセキュリティ"
-description: "LLMとAIエージェントを安全に使うための知識"
+description: "LLMとAIエージェントを安全に使うためのリスクと防御を学びます。教材では、Prompt Injection、直接・間接インジェクション、OWASP Top 10 for LLM、MCPや外部ツール連携で拡大する攻撃面、秘密情報漏洩、権限過多、データ取り扱いの注意点を扱います。AIにブラウザ、ファイル、Git、APIを触らせる前に、入力を信用しすぎない、多層防御を置く、重要操作に承認を挟むという安全運用の考え方を整理します。"
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

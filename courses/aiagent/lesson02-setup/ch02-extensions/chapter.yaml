@@ -2,7 +2,7 @@
 id: "ch02-extensions"
 order: 2
 name: "拡張機能"
-description: "必要な拡張機能をインストールして設定します。"
+description: "学習に必要な拡張機能、公式プラグイン、外部 API キーを設定します。拡張機能では Git Graph、GitLens、Python、Pylance、Prettier などの必須機能に加え、REST Client、Markdown、Excel、JSON 関連の確認ツールを扱います。Cursor のチャット欄で /setup-extensions を実行すると、AI が不足している拡張機能を特定し、Prettier の保存時フォーマットや Python インタプリタ選択まで整える流れです。API 設定では、API、APIキー、.env ファイルの意味を確認し、Gemini API を必須、GitHub を推奨、Slack と BigQuery を必要に応じたオプションとして扱います。キーはチャットに貼らず .env に直接保存し、AI が接続テストまで行うことで、後続の画像解析、文章生成、Git 操作、Slack 検索、データ分析モジュールの準備を完了します。"
 type: "manual"
 estimatedMinutes: 15
 prerequisites:

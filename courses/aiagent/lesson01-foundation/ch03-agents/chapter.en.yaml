@@ -2,7 +2,7 @@
 id: "ch03-agents"
 order: 3
 name: "AI Agents"
-description: "Learn about the concept and mechanics of AI agents."
+description: "Learn how agents work and their autonomy levels. The course covers the difference between regular chat assistants and AI agents, the agent loop — receiving goals, planning, using tools, observing results, and deciding next actions — and autonomy levels from fully automatic to human-in-the-loop. Understand the benefits and risks of agent autonomy and how to design safe human checkpoints."
 type: "manual"
 estimatedMinutes: 30
 thumbnail: "thumbnail.png"

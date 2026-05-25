@@ -1,0 +1,14 @@
+# Chapter 14: ツール操作基礎
+id: "ch14-tool-basics"
+order: 14
+name: "ツール操作基礎"
+description: "選択したツールの基本操作を学びます。教材では、Cursor、Claude Code、Codex それぞれの入口、画面構成、チャットやターミナルでの依頼方法、ファイル編集、承認、作業確認、安全設定の基本導線を扱います。どのツールでも重要なのは、AIに目的と制約を明確に伝え、差分を確認し、危険操作の前に止まり、必要に応じてレビューやテストで検証することです。ツール固有のUI差分を理解しながら、共通する安全な操作習慣を身につけます。"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch13-hooks-guardrail"
+objectives:
+  - "Cursor、Claude Code、Codex の基本導線を理解する"
+  - "AIへの依頼、差分確認、承認、検証の流れを説明できる"
+  - "選択ツールに合わせた安全な操作習慣を身につける"

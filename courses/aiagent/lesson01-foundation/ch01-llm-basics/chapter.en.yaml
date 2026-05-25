@@ -2,7 +2,7 @@
 id: "ch01-llm-basics"
 order: 1
 name: "LLM Basics"
-description: "Learn how LLMs (Large Language Models) work."
+description: "Learn how large language models work and explore major models. The course covers AI evolution, the role of generative AI, Transformers, next-token prediction, pre-training and fine-tuning, and differences between representative models. LLMs appear to 'understand' meaning, but actually predict the next token probabilistically from context — understand what they excel at, where they fall short, and why output verification matters."
 type: "manual"
 estimatedMinutes: 30
 thumbnail: "thumbnail.png"

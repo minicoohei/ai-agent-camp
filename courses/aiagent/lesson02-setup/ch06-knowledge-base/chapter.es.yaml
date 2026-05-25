@@ -1,0 +1,16 @@
+# Capítulo 6: Construcción de Base de Conocimiento
+id: "ch06-knowledge-base"
+order: 6
+name: "Construcción de Base de Conocimiento"
+description: "Sección avanzada para organizar el conocimiento específico del proyecto, reglas, información de entrenamiento y criterios de decisión en una forma que los agentes de IA puedan referenciar. Este capítulo extiende ese concepto a tus propios proyectos — organizando procedimientos de negocio frecuentes, perspectivas de revisión, convenciones de código, reglas de uso de API y guías de solución de problemas."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "ch04-security-check"
+objectives:
+  - "Explicar el propósito de una base de conocimiento para agentes de IA"
+  - "Comprender la perspectiva de organizar reglas y flujos de trabajo específicos del proyecto"
+  - "Entender el concepto de tratar materiales de entrenamiento, habilidades, comandos y reglas de seguridad como base de conocimiento"
+  - "Comprender el diseño de información para mejorar la calidad de respuestas y la reproducibilidad en proyectos reales"

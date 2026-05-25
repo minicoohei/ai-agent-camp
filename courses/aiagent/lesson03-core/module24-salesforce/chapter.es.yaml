@@ -1,0 +1,15 @@
+# Capítulo 24: Integración con Salesforce
+id: "module24-salesforce"
+order: 24
+name: "Integración con Salesforce"
+description: "Módulo próximamente disponible sobre operaciones con datos CRM y automatización usando la API de Salesforce. El contenido esperado incluye recuperación y actualización de leads, cuentas, oportunidades e historial de actividades, reportes de ventas, propuestas de seguimiento y conexión con automatización de marketing y correo. Dado que el CRM es el centro de la información de clientes y las decisiones de ventas, este módulo enfatiza el alcance de operaciones delegadas a agentes de IA, aprobaciones previas a actualizaciones, registros de auditoría y detección de duplicados o actualizaciones erróneas."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module17-marketing"
+objectives:
+  - "Comprender los tipos de datos CRM manejados con integración de API de Salesforce"
+  - "Organizar casos de uso de IA para operaciones de ventas y marketing"
+  - "Explicar la importancia de aprobaciones, auditorías y prevención de actualizaciones erróneas en CRM"

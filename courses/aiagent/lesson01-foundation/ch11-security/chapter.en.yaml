@@ -2,7 +2,7 @@
 id: "ch11-security"
 order: 11
 name: "AI Security"
-description: "Knowledge for using LLMs and AI agents safely."
+description: "Learn risks and defenses for using LLMs and AI agents safely. The course covers Prompt Injection (direct and indirect), OWASP Top 10 for LLMs, expanded risks introduced by MCP and external tools, the Defense in Depth mindset, and practical guardrail patterns. Understand how attackers exploit agent capabilities and how to design systems that remain safe even when agents have broad permissions."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

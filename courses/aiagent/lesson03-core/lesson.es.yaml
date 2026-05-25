@@ -28,6 +28,10 @@ chapters:
   - "module18-pm-sysdef"
   - "module19-outlook-windows"
   - "module20-freee-mf"
+  - "module21-figma"
+  - "module22-discord"
+  - "module23-line"
+  - "module24-salesforce"
 objectives:
   - "Generar automáticamente banners e imágenes"
   - "Crear diagramas y diagramas de flujo"
@@ -40,3 +44,4 @@ objectives:
   - "Ejecutar un flujo de artículos desde la planificación hasta la corrección"
   - "Organizar flujos operativos de Outlook y Microsoft 365"
   - "Comprender la configuración de Freee y las operaciones sobre datos contables"
+  - "Comprender el propósito y las consideraciones de seguridad de los módulos de integración externa próximos a publicar"

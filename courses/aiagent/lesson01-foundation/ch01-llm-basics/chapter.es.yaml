@@ -2,7 +2,7 @@
 id: "ch01-llm-basics"
 order: 1
 name: "Fundamentos de LLM"
-description: "Aprende cómo funcionan los LLMs (Modelos de Lenguaje Grande)."
+description: "Aprende cómo funcionan los grandes modelos de lenguaje y explora los principales modelos. El contenido cubre la evolución de la IA, el papel de la IA generativa, Transformers, predicción del siguiente token, preentrenamiento y ajuste fino, y diferencias entre modelos representativos. Los LLMs parecen 'entender' el significado, pero en realidad predicen el siguiente token de forma probabilística a partir del contexto."
 type: "manual"
 estimatedMinutes: 30
 thumbnail: "thumbnail.png"

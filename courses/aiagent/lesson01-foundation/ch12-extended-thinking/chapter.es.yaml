@@ -2,7 +2,7 @@
 id: "ch12-extended-thinking"
 order: 12
 name: "Extended Thinking"
-description: "Aprende cómo Extended Thinking da tiempo a los LLMs para razonar y mejora la precisión."
+description: "Aprende cómo funciona el pensamiento extendido y cuándo aplicarlo. El contenido cubre cómo los modelos pueden tener más tiempo de razonamiento para planificar, comparar y deliberar en lugar de responder inmediatamente en problemas complejos — aplicable a definición de requisitos, revisión de diseño, evaluación de múltiples opciones y análisis de seguridad."
 type: "manual"
 estimatedMinutes: 20
 thumbnail: "thumbnail.png"

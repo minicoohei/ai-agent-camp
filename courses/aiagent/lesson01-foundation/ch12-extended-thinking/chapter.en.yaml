@@ -2,7 +2,7 @@
 id: "ch12-extended-thinking"
 order: 12
 name: "Extended Thinking"
-description: "Learn how Extended Thinking gives LLMs time to reason and improves accuracy."
+description: "Learn how extended thinking works and when to apply it. The course covers how models can be given more reasoning time to plan, compare, and deliberate rather than answering immediately on complex problems — applicable to requirements definition, design review, multi-option evaluation, and security analysis. Understand the trade-offs of thinking time, token cost, and output quality."
 type: "manual"
 estimatedMinutes: 20
 thumbnail: "thumbnail.png"

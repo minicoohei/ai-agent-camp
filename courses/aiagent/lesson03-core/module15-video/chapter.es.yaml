@@ -2,7 +2,7 @@
 id: "module15-video"
 order: 15
 name: "Generación de Video"
-description: "Crea guiones gráficos y genera videos UGC con IA."
+description: "Aprende a combinar IA de generación de video con Remotion para crear videos explicativos de diapositivas, videos estilo MV, animaciones de storyboard, demos de productos y videos de marca. El contenido cubre fal.ai, Kling, Veo, Remotion, FFmpeg, ElevenLabs TTS y composición de avatares con pantalla verde."
 type: "manual"
 estimatedMinutes: 90
 objectives:

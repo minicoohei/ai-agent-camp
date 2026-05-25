@@ -2,7 +2,7 @@
 id: "ch04-context-engineering"
 order: 4
 name: "Context Engineering"
-description: "Learn effective prompt design and context management."
+description: "Learn prompt design and context management. Rather than treating prompts as simple one-off commands, this chapter covers thinking of them as a 'work environment passed to the model' — including purpose, constraints, background, input data, output format, evaluation criteria, and past work history. Practice writing structured prompts that yield stable output and managing context efficiently."
 type: "manual"
 estimatedMinutes: 30
 thumbnail: "thumbnail.png"

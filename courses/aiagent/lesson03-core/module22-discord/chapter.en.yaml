@@ -1,0 +1,15 @@
+# Chapter 22: Discord Integration
+id: "module22-discord"
+order: 22
+name: "Discord Integration"
+description: "A coming-soon module covering Discord Bot construction and message automation. Expected content includes Bot creation, channel posting, message retrieval, event notifications, community operations, FAQ responses, moderation assistance, and external service integrations. Unlike the Slack chapter focused on internal communication analysis, this module uses AI agents in community or customer-facing environments, emphasizing permissions, post content, personal information, and stopping procedures when errors occur."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+prerequisites:
+  - "module09-slack"
+objectives:
+  - "Explain the basic use cases for Discord Bot integration"
+  - "Understand the design considerations for notifications, FAQ, and moderation assistance"
+  - "Be aware of safety when running AI in external community environments"

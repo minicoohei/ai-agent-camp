@@ -2,7 +2,7 @@
 id: "ch08-rag"
 order: 8
 name: "RAG"
-description: "Técnica para mejorar las respuestas de LLMs recuperando conocimiento externo."
+description: "Aprende cómo funciona la Generación Aumentada por Recuperación y cómo aplicarla. El contenido cubre cómo RAG recupera documentos externos, añade los resultados al contexto y genera respuestas; el pipeline de Ingestión, Recuperación, Aumento y Generación; búsqueda vectorial y similitud; patrones de diseño para datos empresariales, PDFs y páginas de Notion."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"
