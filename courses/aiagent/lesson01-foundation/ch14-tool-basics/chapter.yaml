@@ -6,6 +6,8 @@ description: "選択したツールの基本操作を学びます。教材では
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-5"
 prerequisites:
   - "ch13-hooks-guardrail"
 objectives:

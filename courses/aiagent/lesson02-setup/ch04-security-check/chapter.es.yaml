@@ -6,6 +6,8 @@ description: "Configura los ajustes de seguridad para proteger la información s
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-0?slideId=security-overview"
 prerequisites:
   - "ch03-api-settings"
 objectives:

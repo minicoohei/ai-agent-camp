@@ -6,6 +6,8 @@ description: "Learn the basic operations of your chosen AI coding tool. Covers t
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-5"
 prerequisites:
   - "ch13-hooks-guardrail"
 objectives:

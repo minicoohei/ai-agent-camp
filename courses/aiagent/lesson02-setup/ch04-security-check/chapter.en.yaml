@@ -6,6 +6,8 @@ description: "Configure security settings to protect secrets, then run a compreh
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-0?slideId=security-overview"
 prerequisites:
   - "ch03-api-settings"
 objectives:
