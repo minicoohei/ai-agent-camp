@@ -7,6 +7,8 @@ type: "manual"
 status: "coming_soon"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-0"
 prerequisites:
   - "ch04-security-check"
 objectives:
