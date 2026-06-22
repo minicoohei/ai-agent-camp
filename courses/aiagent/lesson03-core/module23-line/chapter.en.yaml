@@ -7,6 +7,8 @@ type: "manual"
 status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-23"
 prerequisites:
   - "module17-marketing"
 objectives:

@@ -11,3 +11,5 @@ objectives:
   - "Obtener una clave de Gemini API"
   - "Configurar todas las claves API necesarias"
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-0?slideId=api-setup-steps"

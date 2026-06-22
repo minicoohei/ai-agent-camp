@@ -11,3 +11,5 @@ objectives:
   - "Install recommended extensions"
   - "Complete extension configuration"
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-0?slideId=extensions-overview"

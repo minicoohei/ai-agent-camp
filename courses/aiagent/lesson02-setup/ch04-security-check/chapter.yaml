@@ -6,6 +6,8 @@ description: "秘密情報を守るためのセキュリティ設定と、セッ
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-0?slideId=security-overview"
 prerequisites:
   - "ch03-api-settings"
 objectives:

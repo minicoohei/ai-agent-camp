@@ -6,6 +6,8 @@ description: "Aprende las operaciones básicas de la herramienta de codificació
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-5"
 prerequisites:
   - "ch13-hooks-guardrail"
 objectives:

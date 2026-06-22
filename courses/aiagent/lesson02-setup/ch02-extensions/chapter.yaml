@@ -11,3 +11,5 @@ objectives:
   - "推奨拡張機能をインストールできる"
   - "拡張機能の設定を完了できる"
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-0?slideId=extensions-overview"

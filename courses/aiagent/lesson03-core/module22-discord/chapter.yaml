@@ -7,6 +7,8 @@ type: "manual"
 status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-22"
 prerequisites:
   - "module09-slack"
 objectives:
