@@ -6155,6 +6155,159 @@
     },
     {
       "kind": "lesson",
+      "canonicalId": "start-21-1.en",
+      "aliases": [
+        "/start-21-1.en",
+        "start-21-1.en",
+        "/lesson/start-21-1.en"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-21-1.en.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-21-1.en"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
+      "canonicalId": "start-21-1.es",
+      "aliases": [
+        "/start-21-1.es",
+        "start-21-1.es",
+        "/lesson/start-21-1.es"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-21-1.es.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-21-1.es"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
+      "canonicalId": "start-21-1",
+      "aliases": [
+        "/start-21-1",
+        "start-21-1",
+        "/lesson/start-21-1"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-21-1.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-21-1"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
+      "canonicalId": "start-23-1.en",
+      "aliases": [
+        "/start-23-1.en",
+        "start-23-1.en",
+        "/lesson/start-23-1.en"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-23-1.en.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-23-1.en"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
+      "canonicalId": "start-23-1.es",
+      "aliases": [
+        "/start-23-1.es",
+        "start-23-1.es",
+        "/lesson/start-23-1.es"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-23-1.es.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-23-1.es"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
+      "canonicalId": "start-23-1",
+      "aliases": [
+        "/start-23-1",
+        "start-23-1",
+        "/lesson/start-23-1"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-23-1.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-23-1"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
+      "canonicalId": "start-24-1.en",
+      "aliases": [
+        "/start-24-1.en",
+        "start-24-1.en",
+        "/lesson/start-24-1.en"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-24-1.en.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-24-1.en"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
+      "canonicalId": "start-24-1.es",
+      "aliases": [
+        "/start-24-1.es",
+        "start-24-1.es",
+        "/lesson/start-24-1.es"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-24-1.es.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-24-1.es"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
+      "canonicalId": "start-24-1",
+      "aliases": [
+        "/start-24-1",
+        "start-24-1",
+        "/lesson/start-24-1"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-24-1.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-24-1"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
       "canonicalId": "start-29-1.en",
       "aliases": [
         "/start-29-1.en",
@@ -8521,6 +8674,198 @@
         "handler": "aiagent-utility-runner",
         "mode": "utility",
         "target": "module-18-sheets"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-exercise.en",
+      "aliases": [
+        "/module-24-exercise.en",
+        "module-24-exercise.en"
+      ],
+      "sourcePath": ".cursor/commands/module-24-exercise.en.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-exercise.en"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-exercise.es",
+      "aliases": [
+        "/module-24-exercise.es",
+        "module-24-exercise.es"
+      ],
+      "sourcePath": ".cursor/commands/module-24-exercise.es.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-exercise.es"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-exercise",
+      "aliases": [
+        "/module-24-exercise",
+        "module-24-exercise"
+      ],
+      "sourcePath": ".cursor/commands/module-24-exercise.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-exercise"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-metadata-deploy.en",
+      "aliases": [
+        "/module-24-metadata-deploy.en",
+        "module-24-metadata-deploy.en"
+      ],
+      "sourcePath": ".cursor/commands/module-24-metadata-deploy.en.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-metadata-deploy.en"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-metadata-deploy.es",
+      "aliases": [
+        "/module-24-metadata-deploy.es",
+        "module-24-metadata-deploy.es"
+      ],
+      "sourcePath": ".cursor/commands/module-24-metadata-deploy.es.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-metadata-deploy.es"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-metadata-deploy",
+      "aliases": [
+        "/module-24-metadata-deploy",
+        "module-24-metadata-deploy"
+      ],
+      "sourcePath": ".cursor/commands/module-24-metadata-deploy.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-metadata-deploy"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-metadata-retrieve.en",
+      "aliases": [
+        "/module-24-metadata-retrieve.en",
+        "module-24-metadata-retrieve.en"
+      ],
+      "sourcePath": ".cursor/commands/module-24-metadata-retrieve.en.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-metadata-retrieve.en"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-metadata-retrieve.es",
+      "aliases": [
+        "/module-24-metadata-retrieve.es",
+        "module-24-metadata-retrieve.es"
+      ],
+      "sourcePath": ".cursor/commands/module-24-metadata-retrieve.es.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-metadata-retrieve.es"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-metadata-retrieve",
+      "aliases": [
+        "/module-24-metadata-retrieve",
+        "module-24-metadata-retrieve"
+      ],
+      "sourcePath": ".cursor/commands/module-24-metadata-retrieve.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-metadata-retrieve"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-soql.en",
+      "aliases": [
+        "/module-24-soql.en",
+        "module-24-soql.en"
+      ],
+      "sourcePath": ".cursor/commands/module-24-soql.en.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-soql.en"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-soql.es",
+      "aliases": [
+        "/module-24-soql.es",
+        "module-24-soql.es"
+      ],
+      "sourcePath": ".cursor/commands/module-24-soql.es.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-soql.es"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "module-24-soql",
+      "aliases": [
+        "/module-24-soql",
+        "module-24-soql"
+      ],
+      "sourcePath": ".cursor/commands/module-24-soql.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "module-24-soql"
       },
       "expectedHandler": "aiagent-utility-runner",
       "status": "ready"

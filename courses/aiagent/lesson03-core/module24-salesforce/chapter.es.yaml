@@ -1,0 +1,17 @@
+# Capítulo 24: Integración con Salesforce CLI
+id: "module24-salesforce"
+order: 24
+name: "Integración con Salesforce CLI"
+description: "Instala sf CLI e inicia sesión en el navegador. Consulta con SOQL y haz updates masivos por CSV, todo desde la terminal con tu agente IA."
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "Instalar sf CLI y conectarse con login por navegador"
+  - "Gestionar varias orgs con aliases"
+  - "Consultar Cuentas, Oportunidades y Leads con SOQL"
+  - "Ejecutar operaciones masivas de insert, update y upsert con CSV"
+  - "Hacer deploy y retrieve de metadatos como Apex, Flow y Layouts"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-24?slideId=module-overview"
+  slides: "https://ai-agent.camp/es/course/module-24?slideId=module-overview"

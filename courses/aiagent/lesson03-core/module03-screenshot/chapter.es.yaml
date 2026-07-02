@@ -2,7 +2,7 @@
 id: "module03-screenshot"
 order: 3
 name: "Crear Tutoriales con AI Agent"
-description: "Aprende a darle "ojos" a la IA — analiza capturas de pantalla y videos para generar tutoriales y manuales automáticamente"
+description: 'Aprende a darle "ojos" a la IA — analiza capturas de pantalla y videos para generar tutoriales y manuales automáticamente'
 type: "manual"
 estimatedMinutes: 60
 objectives:

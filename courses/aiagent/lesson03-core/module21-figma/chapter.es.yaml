@@ -1,0 +1,16 @@
+# Capítulo 21: Integración con Figma
+id: "module21-figma"
+order: 21
+name: "Integración con Figma"
+description: "Combina el MCP oficial de Figma con el MCP del sistema de diseño Serendie para que la IA escriba y lea directamente en Figma, y entrega UI alineada con tu sistema de diseño de extremo a extremo."
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "Explicar cómo se reparten responsabilidades el MCP oficial de Figma y Serendie MCP"
+  - "Instalar el plugin de Figma en Claude Code y completar la autenticación OAuth"
+  - "Llevar el Serendie UI Kit a tu propio equipo de Figma y publicarlo como biblioteca"
+  - "Entender el flujo de implementación desde una selección en Figma hasta Claude y las actualizaciones de código/Figma"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-21?slideId=module-overview"
+  slides: "https://ai-agent.camp/es/course/module-21?slideId=module-overview"

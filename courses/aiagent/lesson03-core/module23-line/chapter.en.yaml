@@ -1,0 +1,17 @@
+# Chapter 23: LINE Official Account Operations
+id: "module23-line"
+order: 23
+name: "LINE Official Account Operations"
+description: "Learn how to build and operate a fully controlled LINE Official Account with Cloudflare Worker and the LINE Messaging API."
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "Set up LINE Developers Console, webhooks, and secret management"
+  - "Understand the auto-register pattern for importing existing friends without relying only on follow events"
+  - "Implement and choose between auto replies, scenario delivery, and broadcasts"
+  - "Explain operational points for rich menu images, Flex messages, and a two-way Slack bridge"
+  - "Check KPIs from the CLI with wrangler, D1, and line-harness MCP"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-23?slideId=module-overview"
+  slides: "https://ai-agent.camp/en/course/module-23?slideId=module-overview"
