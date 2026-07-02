@@ -3,7 +3,7 @@ id: "lesson03-core"
 order: 3
 name: "Core Skills (Core Modules)"
 description: "Develop practical skills across real business workflows: image generation, data analysis, Google Workspace, email automation, article creation, Slack integration, GAS automation, and accounting integrations."
-estimatedMinutes: 870
+estimatedMinutes: 970
 cover: "cover.png"
 prerequisites:
   - "lesson02-setup"
@@ -28,6 +28,7 @@ chapters:
   - "module18-pm-sysdef"
   - "module19-outlook-windows"
   - "module20-freee-mf"
+  - "module29-slide-forge"
 objectives:
   - "Auto-generate banners and images"
   - "Create diagrams and flowcharts"

@@ -1,0 +1,16 @@
+# Chapter 29: スライド自動生成（slide-forge）
+id: "module29-slide-forge"
+order: 29
+name: "スライド自動生成（slide-forge）"
+description: "議事録から編集可能PPTX/PDF/PNG/HTMLの提案デッキを自動生成するOSSの導入と活用"
+type: "manual"
+estimatedMinutes: 100
+objectives:
+  - "slide-forge をセットアップできる"
+  - "APIキー不要デモを動かせる"
+  - "5問で本番生成できる"
+  - "実画像取得を安全に使える"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-29"
+  slides: "https://ai-agent.camp/ja/course/module-29"

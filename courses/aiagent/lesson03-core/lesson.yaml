@@ -3,7 +3,7 @@ id: "lesson03-core"
 order: 3
 name: "コアスキル（Core Modules）"
 description: "実践的なスキルを身につけます。画像生成、データ分析、Google Workspace、メール、記事作成、Slack連携、GAS自動化、会計連携まで、業務で使えるAI活用を横断的に学びます。"
-estimatedMinutes: 870
+estimatedMinutes: 970
 cover: "cover.png"
 prerequisites:
   - "lesson02-setup"
@@ -28,6 +28,7 @@ chapters:
   - "module18-pm-sysdef"
   - "module19-outlook-windows"
   - "module20-freee-mf"
+  - "module29-slide-forge"
 objectives:
   - "バナー・画像を自動生成できる"
   - "図表・フローチャートを作成できる"
