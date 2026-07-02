@@ -3,7 +3,7 @@ id: "aiagent"
 name: "AI Agent Training"
 description: "A practical course on leveraging AI agents for non-engineers. Learn business automation and efficiency using Claude Code / Cursor / Codex."
 icon: "bot"
-version: "1.1.0"
+version: "1.2.0"
 author: "AI Brain Partners"
 audience: "Non-engineers (marketing, sales, planning, etc.)"
 estimatedHours: 12

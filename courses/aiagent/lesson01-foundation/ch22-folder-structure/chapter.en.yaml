@@ -1,0 +1,16 @@
+# Chapter 22: Folder structure & making files findable for AI
+id: "ch22-folder-structure"
+order: 22
+name: "Folder structure & making files findable for AI"
+description: "How to organize local folders, name files, and ask AI to find your materials."
+type: "manual"
+estimatedMinutes: 45
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand why folder structure matters for making materials findable by AI"
+  - "Learn a recommended five-part project folder structure"
+  - "Use naming conventions and a CLAUDE.md map to improve findability"
+  - "Ask AI to find and use materials without specifying every location"
+  - "Organize one project folder and ask AI to build a map"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-14?slideId=overview"

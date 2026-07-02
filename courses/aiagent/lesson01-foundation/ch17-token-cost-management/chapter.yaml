@@ -1,0 +1,16 @@
+# Chapter 17: Claude Codeのトークン節約・コスト管理
+id: "ch17-token-cost-management"
+order: 17
+name: "Claude Codeのトークン節約・コスト管理"
+description: "モデル使い分け、プロンプトキャッシュ、コンテキスト管理、委任によるコスト設計を学びます"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+objectives:
+  - "モデル選択、キャッシュ、コンテキスト管理、委任によるコスト設計を理解する"
+  - "タスクに合う最小モデルを選び、上位モデルを要所に使う判断基準を身につける"
+  - "プロンプトキャッシュと長いセッションの再読み込みコストを区別する"
+  - "サブエージェント委任で親セッションの文脈を小さく保つ方法を学ぶ"
+  - "Fable 5 の料金計算例を通じて入力・出力トークンの費用感をつかむ"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-9?slideId=overview"

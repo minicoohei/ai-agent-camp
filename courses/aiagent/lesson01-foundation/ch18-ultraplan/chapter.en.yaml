@@ -1,0 +1,16 @@
+# Chapter 18: ultraplan and Planning Techniques
+id: "ch18-ultraplan"
+order: 18
+name: "ultraplan and Planning Techniques"
+description: "Use Plan Mode and ultraplan effectively to plan before implementation"
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+objectives:
+  - "Use Plan Mode and ultraplan as planning tools before implementation"
+  - "Understand the flow from read-only investigation to plan, approval, and execution"
+  - "Use planning to reduce misinterpretation, rework, and token waste"
+  - "Understand how to invoke ultraplan and how cloud-side parallel exploration works"
+  - "Review returned plans before moving into implementation"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-10?slideId=overview"

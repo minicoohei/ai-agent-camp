@@ -1,0 +1,16 @@
+# Chapter 18: ultraplanと計画テクニック
+id: "ch18-ultraplan"
+order: 18
+name: "ultraplanと計画テクニック"
+description: "Plan Mode と ultraplan を使い分け、実装前に計画する技術を学びます"
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+objectives:
+  - "Plan Mode と ultraplan を実装前の計画ツールとして使い分ける"
+  - "読み取り専用の調査から計画提示、承認、実行へ進む流れを理解する"
+  - "計画によって誤解釈、手戻り、トークン浪費を減らす考え方を学ぶ"
+  - "ultraplan の起動方法とクラウド側での並列探索の仕組みを理解する"
+  - "返ってきた計画をレビューしてから実装へ進む判断を身につける"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-10?slideId=overview"

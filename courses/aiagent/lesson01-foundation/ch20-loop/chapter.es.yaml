@@ -1,0 +1,16 @@
+# Capítulo 20: /loop (ejecución periódica y autoadministrada)
+id: "ch20-loop"
+order: 20
+name: "/loop (ejecución periódica y autoadministrada)"
+description: "Cómo /loop ejecuta repetidamente un comando o tarea, y cuándo usarlo."
+type: "manual"
+estimatedMinutes: 40
+thumbnail: "thumbnail.png"
+objectives:
+  - "Comprender cómo /loop ejecuta repetidamente prompts o comandos de barra"
+  - "Elegir entre modo con intervalo y modo dynamic de autorritmo"
+  - "Comprender qué ocurre en cada iteración dentro de la sesión"
+  - "Distinguir /loop de las routines que se ejecutan en la nube"
+  - "Ejecutar una tarea periódica entendiendo cómo detenerla y controlar el costo"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-12?slideId=module-overview"
