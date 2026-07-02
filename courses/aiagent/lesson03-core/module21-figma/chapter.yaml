@@ -1,0 +1,16 @@
+# Chapter 21: Figma 連携
+id: "module21-figma"
+order: 21
+name: "Figma 連携"
+description: "Figma 公式 MCP と Serendie デザインシステムを組み合わせて、AI に Figma へ直接書き込み・読み取りさせ、デザインシステムに沿った UI 実装まで一気通貫で行う方法を学びます。"
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "Figma 公式 MCP と Serendie MCP の役割の違いを説明できる"
+  - "Claude Code への Figma プラグイン導入と OAuth 認証を実行できる"
+  - "Serendie UI Kit を自分の Figma チームに取り込み、ライブラリとして公開できる"
+  - "Figma の選択から Claude、コード/Figma 双方向の実装フローを理解できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-21?slideId=module-overview"
+  slides: "https://ai-agent.camp/ja/course/module-21?slideId=module-overview"

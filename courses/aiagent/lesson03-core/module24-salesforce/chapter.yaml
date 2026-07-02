@@ -1,0 +1,17 @@
+# Chapter 24: Salesforce CLI 連携
+id: "module24-salesforce"
+order: 24
+name: "Salesforce CLI 連携"
+description: "sf CLI を入れてブラウザでログインするだけ。SOQL でデータ取得、CSV で一括更新まで「ターミナル + AI エージェント」で完結します。"
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "sf CLI をインストールし、ブラウザログインで接続できる"
+  - "複数 Org を alias で切り替えて管理できる"
+  - "SOQL で取引先、商談、リードを検索できる"
+  - "CSV を使った一括 insert、update、upsert を実行できる"
+  - "Apex、Flow、レイアウトなどのメタデータを deploy / retrieve できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-24?slideId=module-overview"
+  slides: "https://ai-agent.camp/ja/course/module-24?slideId=module-overview"
