@@ -1,0 +1,16 @@
+# Chapter 21: MCP で外部ツール連携（Microsoft 365）
+id: "ch21-mcp-m365"
+order: 21
+name: "MCP で外部ツール連携（Microsoft 365）"
+description: "Claude を Outlook・Teams・SharePoint・Excel などにつなぎ、社内の情報を横断して使う"
+type: "manual"
+estimatedMinutes: 50
+thumbnail: "thumbnail.png"
+objectives:
+  - "MCP を Claude と外部ツールをつなぐ標準的な仕組みとして理解する"
+  - "メール、予定、ファイルを横断してAIに調査・要約させる使い方を学ぶ"
+  - "Microsoft 365 の各ツールをAIの作業対象にするイメージをつかむ"
+  - "Claude Code と Claude Desktop での MCP サーバー追加方法の違いを理解する"
+  - "接続範囲と権限を安全に決める観点を身につける"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-13?slideId=overview"

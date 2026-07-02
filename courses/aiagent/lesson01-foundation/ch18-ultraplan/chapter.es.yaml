@@ -1,0 +1,16 @@
+# Capítulo 18: ultraplan y técnicas de planificación
+id: "ch18-ultraplan"
+order: 18
+name: "ultraplan y técnicas de planificación"
+description: "Usa Plan Mode y ultraplan para planificar antes de implementar"
+type: "manual"
+estimatedMinutes: 20
+thumbnail: "thumbnail.png"
+objectives:
+  - "Usar Plan Mode y ultraplan como herramientas de planificación antes de implementar"
+  - "Comprender el flujo desde investigación de solo lectura hasta plan, aprobación y ejecución"
+  - "Usar la planificación para reducir malentendidos, retrabajo y desperdicio de tokens"
+  - "Comprender cómo invocar ultraplan y cómo funciona la exploración paralela en la nube"
+  - "Revisar los planes devueltos antes de pasar a la implementación"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-10?slideId=overview"

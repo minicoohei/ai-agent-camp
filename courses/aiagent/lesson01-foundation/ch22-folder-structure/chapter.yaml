@@ -1,0 +1,16 @@
+# Chapter 22: フォルダ構成と、資料の探させ方
+id: "ch22-folder-structure"
+order: 22
+name: "フォルダ構成と、資料の探させ方"
+description: "AIが資料を見つけられるローカルフォルダの整え方・命名・AIへの探させ方"
+type: "manual"
+estimatedMinutes: 45
+thumbnail: "thumbnail.png"
+objectives:
+  - "AIが資料を見つけやすいフォルダ構成の重要性を理解する"
+  - "案件・プロジェクト単位の5点セット構成を学ぶ"
+  - "命名ルールと CLAUDE.md の地図で探しやすさを高める方法を理解する"
+  - "場所を細かく指定せずにAIへ資料を探させる聞き方を身につける"
+  - "自分の案件フォルダを整理し、AIに地図づくりを依頼できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-14?slideId=overview"
