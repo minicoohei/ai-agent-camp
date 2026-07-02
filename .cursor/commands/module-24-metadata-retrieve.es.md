@@ -13,9 +13,10 @@ El usuario esta trabajando en la parte de **retrieve** del material "metadata de
 ## Pasos
 
 1. Si todavia no existe, ejecutar `sf project generate --name my-sf-project`
-2. Ejecutar `sf project retrieve start -o dev --metadata ApexClass --metadata Flow --metadata Layout`
-3. Resumir los archivos agregados bajo `force-app/main/default/`
-4. Reportar las rutas principales con `git status`
+2. Ejecutar `cd my-sf-project`
+3. Ejecutar `sf project retrieve start -o dev --metadata ApexClass --metadata Flow --metadata Layout`
+4. Resumir los archivos agregados bajo `force-app/main/default/`
+5. Reportar las rutas principales con `git status`
 
 ## Notas
 

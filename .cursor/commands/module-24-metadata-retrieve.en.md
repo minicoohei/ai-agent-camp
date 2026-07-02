@@ -13,9 +13,10 @@ The user is working on the **retrieve** portion of the course material "Metadata
 ## Steps
 
 1. If it has not been created yet, run `sf project generate --name my-sf-project`
-2. Run `sf project retrieve start -o dev --metadata ApexClass --metadata Flow --metadata Layout`
-3. Summarize the added files under `force-app/main/default/`
-4. Report the main paths with `git status`
+2. Run `cd my-sf-project`
+3. Run `sf project retrieve start -o dev --metadata ApexClass --metadata Flow --metadata Layout`
+4. Summarize the added files under `force-app/main/default/`
+5. Report the main paths with `git status`
 
 ## Notes
 

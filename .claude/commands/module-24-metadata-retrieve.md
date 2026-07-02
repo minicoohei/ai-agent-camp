@@ -13,9 +13,10 @@ nonInteractiveMode: incompatible
 ## 手順
 
 1. 未作成なら `sf project generate --name my-sf-project`
-2. `sf project retrieve start -o dev --metadata ApexClass --metadata Flow --metadata Layout`
-3. `force-app/main/default/` 配下の追加ファイルを要約
-4. `git status` で主要パスを報告
+2. `cd my-sf-project`
+3. `sf project retrieve start -o dev --metadata ApexClass --metadata Flow --metadata Layout`
+4. `force-app/main/default/` 配下の追加ファイルを要約
+5. `git status` で主要パスを報告
 
 ## 注意
 

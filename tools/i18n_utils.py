@@ -105,12 +105,21 @@ ASSET_GROUPS = [
         "recursive": False,
     },
     {
+        "name": "module-commands",
+        "label": "Shared Module Commands",
+        "source": ".claude/commands",
+        "outputs": [".claude/commands", ".cursor/commands"],
+        "pattern": "module-*.md",
+        "recursive": False,
+    },
+    {
         "name": "claude-commands",
         "label": "Claude Non-Lesson Commands",
         "source": ".claude/commands",
         "outputs": [".claude/commands"],
         "pattern": "*.md",
         "recursive": False,
+        "exclude_prefixes": ["module-"],
     },
     {
         "name": "cursor-utility",
@@ -164,6 +173,10 @@ def get_base_files_for_group(group: dict) -> list[Path]:
             f for f in files
             if not any(ex in f.relative_to(source_dir).parts for ex in exclude_dirs)
         ]
+
+    exclude_prefixes = tuple(group.get("exclude_prefixes", []))
+    if exclude_prefixes:
+        files = [f for f in files if not f.name.startswith(exclude_prefixes)]
 
     # For "courses" group, exclude manifest files (handled separately)
     if group["name"] == "courses":
