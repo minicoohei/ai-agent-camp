@@ -30,3 +30,7 @@ Aprenda a manejar **Google Ads API** de forma segura desde un agente de IA: jera
 ## Página relacionada
 
 - Página del material: [Module 25](https://ai-agent.camp/es/course/module-25?slideId=module-overview)
+
+## Siguientes pasos
+
+A continuacion, ejecute `/start-29-1` para continuar con la generacion de diapositivas con slide-forge.

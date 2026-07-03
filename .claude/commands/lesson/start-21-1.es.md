@@ -31,3 +31,6 @@ Aprenda a combinar el **MCP oficial de Figma** y el **MCP del sistema de diseno 
 
 - Pagina del material: [Module 21](https://ai-agent.camp/es/course/module-21)
 
+## Siguientes pasos
+
+A continuacion, ejecute `/start-23-1` para continuar con la operacion de cuentas oficiales de LINE.

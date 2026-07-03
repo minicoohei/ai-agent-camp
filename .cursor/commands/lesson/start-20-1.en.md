@@ -30,4 +30,4 @@ Learn how to retrieve and operate accounting data using the **Freee MCP server**
 
 ## Next Steps
 
-Detailed lessons for this module will be added progressively.
+Detailed lessons for this module will be added progressively. Next, run `/start-21-1` to continue to Figma integration.

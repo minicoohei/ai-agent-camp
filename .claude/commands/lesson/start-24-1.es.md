@@ -31,3 +31,6 @@ Aprenda los conceptos basicos de login en navegador, consulta de datos con SOQL,
 
 - Pagina del material: [Module 24](https://ai-agent.camp/es/course/module-24)
 
+## Siguientes pasos
+
+A continuacion, ejecute `/start-25-1` para continuar con la integracion de Google Ads.

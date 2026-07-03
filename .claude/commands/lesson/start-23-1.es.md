@@ -31,3 +31,6 @@ Aprenda la arquitectura para operar una cuenta oficial de LINE totalmente contro
 
 - Pagina del material: [Module 23](https://ai-agent.camp/es/course/module-23)
 
+## Siguientes pasos
+
+A continuacion, ejecute `/start-24-1` para continuar con la integracion de Salesforce CLI.

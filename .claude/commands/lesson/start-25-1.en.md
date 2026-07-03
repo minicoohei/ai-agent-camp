@@ -30,3 +30,7 @@ Learn how to handle the **Google Ads API** safely from an AI agent: account hier
 ## Related Page
 
 - Lesson Page: [Module 25](https://ai-agent.camp/en/course/module-25?slideId=module-overview)
+
+## Next Steps
+
+Next, run `/start-29-1` to continue to slide generation with slide-forge.

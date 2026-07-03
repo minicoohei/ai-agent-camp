@@ -31,3 +31,6 @@ Learn how to combine the **official Figma MCP** and the **Serendie design system
 
 - Lesson Page: [Module 21](https://ai-agent.camp/en/course/module-21)
 
+## Next Steps
+
+Next, run `/start-23-1` to continue to LINE official account operations.

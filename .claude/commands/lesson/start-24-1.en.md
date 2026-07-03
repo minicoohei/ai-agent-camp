@@ -31,3 +31,6 @@ Learn the basics of browser login, SOQL data retrieval, CSV bulk updates, and me
 
 - Lesson Page: [Module 24](https://ai-agent.camp/en/course/module-24)
 
+## Next Steps
+
+Next, run `/start-25-1` to continue to Google Ads integration.
