@@ -1,0 +1,17 @@
+# Chapter 25: Google Ads Integration
+id: "module25-google-ads"
+order: 25
+name: "Google Ads Integration"
+description: "Learn automation for Google Ads API campaign queries, reporting, and creation"
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand the Google Ads account hierarchy and API prerequisites"
+  - "Review the setup flow for Developer Token, OAuth Client, and refresh_token"
+  - "Handle the Google Ads API safely with dry-run, PAUSED, and execution logs"
+  - "Check campaign lists and GAQL reports with read-only API calls"
+  - "Use /setup-google-ads through the dry-run connection check"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-25?slideId=module-overview"
+  slides: "https://ai-agent.camp/en/course/module-25?slideId=module-overview"

@@ -6308,6 +6308,57 @@
     },
     {
       "kind": "lesson",
+      "canonicalId": "start-25-1.en",
+      "aliases": [
+        "/start-25-1.en",
+        "start-25-1.en",
+        "/lesson/start-25-1.en"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-25-1.en.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-25-1.en"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
+      "canonicalId": "start-25-1.es",
+      "aliases": [
+        "/start-25-1.es",
+        "start-25-1.es",
+        "/lesson/start-25-1.es"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-25-1.es.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-25-1.es"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
+      "canonicalId": "start-25-1",
+      "aliases": [
+        "/start-25-1",
+        "start-25-1",
+        "/lesson/start-25-1"
+      ],
+      "sourcePath": ".cursor/commands/lesson/start-25-1.md",
+      "codexRoute": {
+        "handler": "aiagent-lesson-runner",
+        "mode": "lesson",
+        "target": "start-25-1"
+      },
+      "expectedHandler": "aiagent-lesson-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "lesson",
       "canonicalId": "start-29-1.en",
       "aliases": [
         "/start-29-1.en",

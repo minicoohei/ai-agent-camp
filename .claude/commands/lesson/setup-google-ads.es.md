@@ -47,4 +47,4 @@ El OAuth en navegador es obligatorio — no termina bajo `claude -p` / `cursor-a
 
 ## Slides relacionadas
 
-- aiagent-course Module 25: see slide deck for the full visual walkthrough
+- aiagent-course Module 25: https://ai-agent.camp/es/course/module-25?slideId=module-overview

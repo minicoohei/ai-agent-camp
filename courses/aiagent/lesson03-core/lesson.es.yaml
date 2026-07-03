@@ -3,7 +3,7 @@ id: "lesson03-core"
 order: 3
 name: "Habilidades Fundamentales (Módulos Core)"
 description: "Desarrolla habilidades prácticas para flujos reales de negocio: generación de imágenes, análisis de datos, Google Workspace, automatización de correo, redacción de artículos, integración con Slack, automatización con GAS e integraciones contables."
-estimatedMinutes: 1150
+estimatedMinutes: 1210
 cover: "cover.png"
 prerequisites:
   - "lesson02-setup"
@@ -31,6 +31,7 @@ chapters:
   - "module21-figma"
   - "module23-line"
   - "module24-salesforce"
+  - "module25-google-ads"
   - "module29-slide-forge"
 objectives:
   - "Generar automáticamente banners e imágenes"
@@ -47,3 +48,4 @@ objectives:
   - "Conectar Figma y un sistema de diseño mediante agentes de IA"
   - "Diseñar operaciones de LINE Official Account con flujos CLI y automatización"
   - "Usar Salesforce CLI para SOQL, actualizaciones CSV y operaciones de metadatos"
+  - "Configurar Google Ads API de forma segura y diseñar automatización de consultas, reportes y creación de campañas"

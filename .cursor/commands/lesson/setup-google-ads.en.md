@@ -47,4 +47,4 @@ Browser OAuth is mandatory — cannot complete under `claude -p` / `cursor-agent
 
 ## Related slides
 
-- aiagent-course Module 25: see slide deck for the full visual walkthrough
+- aiagent-course Module 25: https://ai-agent.camp/en/course/module-25?slideId=module-overview
