@@ -47,4 +47,4 @@ tags: ["setup", "module-25"]
 
 ## 関連スライド
 
-- aiagent-course Module 25: see slide deck for the full visual walkthrough
+- aiagent-course Module 25: https://ai-agent.camp/ja/course/module-25?slideId=module-overview
