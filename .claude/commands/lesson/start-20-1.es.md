@@ -30,4 +30,4 @@ Aprenda a obtener y operar datos contables utilizando el **servidor MCP de Freee
 
 ## Siguientes pasos
 
-Las lecciones detalladas de este módulo se añadirán progresivamente.
+Las lecciones detalladas de este módulo se añadirán progresivamente. A continuacion, ejecute `/start-21-1` para continuar con la integracion de Figma.

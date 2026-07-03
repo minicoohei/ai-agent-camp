@@ -30,3 +30,7 @@ nonInteractiveMode: incompatible
 ## 関連ページ
 
 - 教材ページ: [Module 25](https://ai-agent.camp/ja/course/module-25?slideId=module-overview)
+
+## 次のステップ
+
+次は `/start-29-1` で slide-forge によるスライド生成に進みます。

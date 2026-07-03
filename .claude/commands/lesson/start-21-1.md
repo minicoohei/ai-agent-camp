@@ -31,3 +31,6 @@ nonInteractiveMode: incompatible
 
 - 教材ページ: [Module 21](https://ai-agent.camp/ja/course/module-21)
 
+## 次のステップ
+
+次は `/start-23-1` で LINE 公式アカウント運用に進みます。

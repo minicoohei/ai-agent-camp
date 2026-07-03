@@ -31,3 +31,6 @@ nonInteractiveMode: incompatible
 
 - 教材ページ: [Module 24](https://ai-agent.camp/ja/course/module-24)
 
+## 次のステップ
+
+次は `/start-25-1` で Google Ads 連携に進みます。

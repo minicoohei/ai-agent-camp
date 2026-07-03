@@ -31,3 +31,6 @@ Learn the architecture for operating a LINE Official Account that your organizat
 
 - Lesson Page: [Module 23](https://ai-agent.camp/en/course/module-23)
 
+## Next Steps
+
+Next, run `/start-24-1` to continue to Salesforce CLI integration.
