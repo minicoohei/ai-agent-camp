@@ -1,22 +1,24 @@
 ---
-description: "Lesson command — configuración del Bot de Discord + claude-channel-discord MCP"
+description: "Lesson command — configuración del Bot de Discord + plugin oficial de Claude Code Channels"
 duration: "~30 min"
-prerequisites: ["Cuenta de Discord", "Bun o Node.js 18+"]
+prerequisites: ["Cuenta de Discord", "Claude Code", "Bun"]
 level: "intermediate"
 nonInteractiveMode: deferred
-tags: ["setup", "discord", "mcp", "module-22"]
+tags: ["setup", "discord", "plugin", "module-22"]
 ---
 
-# /setup-discord -- Bot de Discord + claude-channel-discord MCP
+# /setup-discord -- Bot de Discord + plugin oficial de Claude Code Channels
 
 ## Objetivo
 
-Crear un Bot de Discord en el Developer Portal y conectarlo a Claude Code vía
-el MCP `claude-channel-discord`. Refleja el módulo 22 de aiagent-course.
+Crear un Bot de Discord en el Developer Portal y lanzarlo como Channel de Claude
+Code con el plugin oficial `discord@claude-plugins-official`. Refleja el módulo
+22 de aiagent-course.
 
-> **Modo no interactivo**: requiere navegador y pegado de token. Bajo `claude -p`
-> / `cursor-agent --print` no termina — `nonInteractiveMode: deferred` indica a
-> la IA que emita un `setup-resume.md` y se detenga.
+> **Modo no interactivo**: requiere navegador, pegado de token y comandos de
+> plugin dentro de Claude Code. Bajo `claude -p` / `cursor-agent --print` no
+> termina; `nonInteractiveMode: deferred` indica a la IA que emita un
+> `setup-resume.md` y se detenga.
 
 ---
 
@@ -24,12 +26,11 @@ el MCP `claude-channel-discord`. Refleja el módulo 22 de aiagent-course.
 
 La IA debe:
 
-1. Comprobar `~/.claude/mcp_settings.json` y `<project>/.mcp.json` por una entrada `discord`.
-2. Verificar `bunx claude-channel-discord@0.0.4 --version` (o `npx ...`).
-3. Confirmar `DISCORD_BOT_TOKEN` en Keychain con `security find-generic-password
-   -s DISCORD_BOT_TOKEN 2>&1 | head -3` (NO imprimir el valor).
+1. Guiar al alumno para comprobar si `discord@claude-plugins-official` está instalado en Claude Code.
+2. Confirmar que `~/.claude/channels/discord/.env` contiene `DISCORD_BOT_TOKEN` sin imprimir el valor.
+3. Pedir que ejecute `/discord:access` dentro de Claude Code para revisar el estado de acceso.
 
-Si todo está, saltar al **Paso 5 (prueba)**.
+Si todo está listo, saltar al **Paso 6 (prueba)**.
 
 ---
 
@@ -37,53 +38,97 @@ Si todo está, saltar al **Paso 5 (prueba)**.
 
 Abre <https://discord.com/developers/applications>.
 
-1. **New Application** → ponle nombre (p. ej. `AI Agent Camp Demo`) → **Create**.
-2. Sidebar **Bot** → **Reset Token** → copia el token al gestor de contraseñas.
-3. Activa los dos **Privileged Gateway Intents**: `SERVER MEMBERS INTENT` y `MESSAGE CONTENT INTENT`.
+1. **New Application** → ponle nombre (por ejemplo, `AI Agent Camp Demo`) → **Create**.
+2. Sidebar **Bot** → **Reset Token** → copia el token inmediatamente al gestor de contraseñas.
+3. En **Privileged Gateway Intents**, activa sólo `MESSAGE CONTENT INTENT`.
+
+MESSAGE CONTENT INTENT es necesario para que el bot pueda leer el texto de los mensajes.
 
 ---
 
 ## Paso 2: invitar el bot
 
-OAuth2 → URL Generator → scopes `bot` + `applications.commands` → permisos
-(Read / Send Messages, Add Reactions, Manage Messages) → abre la URL → elige tu servidor.
+1. Abre **OAuth2** → **URL Generator**.
+2. Selecciona el scope `bot`.
+3. En **Bot Permissions**, selecciona los permisos mínimos:
+   - `View Channels`
+   - `Send Messages`
+   - `Send Messages in Threads`
+   - `Read Message History`
+   - `Attach Files`
+4. Define **Integration type** como **Guild Install**.
+5. Abre la URL generada y agrega el bot a tu servidor.
 
 ---
 
-## Paso 3: guardar el token en Keychain
+## Paso 3: instalar el plugin oficial de Discord
 
-```bash
-security add-generic-password -a "$USER" -s DISCORD_BOT_TOKEN -w '<paste-token>'
-echo 'export DISCORD_BOT_TOKEN="$(security find-generic-password -s DISCORD_BOT_TOKEN -w 2>/dev/null)"' >> ~/.zshrc
+Inicia Claude Code y ejecuta estos comandos dentro de Claude Code:
+
+```text
+/plugin install discord@claude-plugins-official
+/reload-plugins
 ```
+
+Después de recargar plugins, configura el token del bot en la misma sesión de Claude Code:
+
+```text
+/discord:configure <paste-bot-token>
+```
+
+Esto escribe `DISCORD_BOT_TOKEN` en `~/.claude/channels/discord/.env`. No pegues
+el token en chats normales ni logs.
 
 ---
 
-## Paso 4: registrar el MCP
+## Paso 4: lanzar Claude Code con Channels
+
+Sal de Claude Code y arráncalo desde la terminal:
 
 ```bash
-bun install -g claude-channel-discord@0.0.4
-claude mcp add --transport stdio discord -- bun x claude-channel-discord@0.0.4
-claude mcp list
+claude --channels plugin:discord@claude-plugins-official
 ```
 
-Esperado: `discord (stdio): ... ✓ connected`.
+El channel de Discord no se inicia con un registro normal de servidor. Lanza
+siempre con `--channels plugin:discord@claude-plugins-official`.
 
 ---
 
-## Paso 5: política de acceso
+## Paso 5: configurar control de acceso
 
-```bash
-/discord:access set --dm-policy allowlist
-/discord:access approve <tu-discord-user-id>
-/discord:access list
+El pairing captura tu ID de usuario de Discord. Mantén Claude Code corriendo con
+el comando del Paso 4 y envía un DM al bot desde Discord. Cuando el bot responda
+con un código de 6 caracteres, ejecuta dentro de Claude Code:
+
+```text
+/discord:access pair <code>
+/discord:access policy allowlist
+/discord:access
 ```
+
+Si ya conoces el snowflake de Discord de un usuario, agrégalo manualmente:
+
+```text
+/discord:access allow <snowflake>
+/discord:access
+```
+
+Para producción, cambia a `allowlist` después de agregar los usuarios necesarios
+para que emisores desconocidos no reciban códigos de pairing.
 
 ---
 
 ## Paso 6: prueba
 
-En Claude Code: `Mándame un DM "Hello from MCP" en Discord`. Si llega, listo.
+Con Claude Code corriendo como:
+
+```bash
+claude --channels plugin:discord@claude-plugins-official
+```
+
+Envía un DM al bot desde Discord y confirma que la notificación llega a Claude
+Code y que el bot puede responder. Si no pasa nada, ejecuta `/discord:access`
+para revisar allowlist y pairings pendientes.
 
 ---
 
@@ -91,14 +136,16 @@ En Claude Code: `Mándame un DM "Hello from MCP" en Discord`. Si llega, listo.
 
 | Síntoma | Causa | Solución |
 |---|---|---|
-| Token deja de funcionar | Token viejo tras Reset | Reset y actualiza Keychain |
-| No lee mensajes | `MESSAGE CONTENT INTENT` apagado | Activar y reiniciar MCP |
-| DMs ajenos no visibles | Límite del API | Canales de ticket privados |
-| No puedo iniciar DM | Sin canal DM previo | El usuario debe escribirle al bot primero |
+| Token deja de funcionar | Token viejo tras `Reset Token` | Haz Reset otra vez y ejecuta `/discord:configure <paste-bot-token>` |
+| No lee mensajes | `MESSAGE CONTENT INTENT` apagado | Actívalo y relanza con `--channels` |
+| El bot no reacciona a DMs | Claude Code se lanzó sin `--channels` | Inicia con `claude --channels plugin:discord@claude-plugins-official` |
+| No está claro qué pasa con usuarios desconocidos | Política de acceso / allowlist sin revisar | Ejecuta `/discord:access`, luego usa `pair` o `allow` según haga falta |
 
 ---
 
 ## Comportamiento no interactivo
 
-`nonInteractiveMode: deferred` — bajo `-p` sólo corre el Paso 0; el resto
-queda en `setup-resume.md` para retomar en interactivo. Ver `_lib/non-interactive.md`.
+`nonInteractiveMode: deferred` — bajo `-p`, sólo puede correr el Paso 0. Las
+acciones de navegador, pegado de token y comandos de plugin de Claude Code se
+escriben en `setup-resume.md` para retomar en modo interactivo. Ver
+`_lib/non-interactive.md`.
