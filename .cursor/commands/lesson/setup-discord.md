@@ -1,36 +1,36 @@
 ---
-description: "Lesson command — Discord Bot + claude-channel-discord MCP セットアップ"
+description: "Lesson command — Discord Bot + Claude Code Channels 公式 plugin セットアップ"
 duration: "約30分"
-prerequisites: ["Discord アカウント", "Bun または Node.js 18+"]
+prerequisites: ["Discord アカウント", "Claude Code", "Bun"]
 level: "intermediate"
 nonInteractiveMode: deferred
-tags: ["setup", "discord", "mcp", "module-22"]
+tags: ["setup", "discord", "plugin", "module-22"]
 ---
 
-# /setup-discord -- Discord Bot + claude-channel-discord MCP セットアップ
+# /setup-discord -- Discord Bot + Claude Code Channels 公式 plugin セットアップ
 
 ## このセッションでやること
 
 | 項目 | 内容 |
 |------|------|
-| ゴール | Discord Developer Portal で Bot を作成し、Claude Code から `claude-channel-discord` MCP 経由で操作できる状態にする |
-| 所要時間 | 約 30 分（うち手動ブラウザ操作 5 分、CLI 5 分、待ち時間 5 分） |
-| 前提 | Discord アカウント / Bun または Node.js 18+ / 自分のサーバー（Bot 招待先） |
+| ゴール | Discord Developer Portal で Bot を作成し、Claude Code 公式 Discord plugin を Channels として起動できる状態にする |
+| 所要時間 | 約 30 分（うち手動ブラウザ操作 5 分、Claude Code 設定 5 分、待ち時間 5 分） |
+| 前提 | Discord アカウント / Claude Code / Bun / 自分のサーバー（Bot 招待先） |
 | つながる先 | aiagent-course Module 22 のスライド内容と一致 |
 
-> **非対話モードでの注意**: ブラウザ操作と Bot トークンの貼り付けが必須なので、`claude -p` / `cursor-agent --print` 単独での完走はできません。`nonInteractiveMode: deferred` 宣言により、-p 実行時はチェックリストだけ生成して停止します。
+> **非対話モードでの注意**: ブラウザ操作と Bot トークンの貼り付け、Claude Code 内の plugin コマンド実行が必須です。`claude -p` / `cursor-agent --print` 単独では完走できません。`nonInteractiveMode: deferred` 宣言により、-p 実行時はチェックリストだけ生成して停止します。
 
 ---
 
 ## Step 0: 進捗と既存設定の確認
 
-**AI が裏で実行する内容:**
+**AI が裏で確認する内容:**
 
-1. `~/.claude/mcp_settings.json` または `<project>/.mcp.json` に `discord` エントリがあるか確認
-2. `bunx claude-channel-discord@0.0.4 --version` または `npx claude-channel-discord@0.0.4 --version` でインストール状況を確認
-3. macOS Keychain に `DISCORD_BOT_TOKEN` が登録されているか `security find-generic-password -s DISCORD_BOT_TOKEN 2>&1 | head -3` で確認（値は表示しない）
+1. Claude Code で `discord@claude-plugins-official` plugin がインストール済みか確認する手順を案内
+2. `~/.claude/channels/discord/.env` に `DISCORD_BOT_TOKEN` があるか確認（値は表示しない）
+3. Discord access 設定は Claude Code 内で `/discord:access` を実行して確認するよう案内
 
-すべて揃っているなら **Step 5（接続テスト）にスキップ**。
+すべて揃っているなら **Step 6（接続テスト）にスキップ**。
 
 ---
 
@@ -39,95 +39,89 @@ tags: ["setup", "discord", "mcp", "module-22"]
 ブラウザで <https://discord.com/developers/applications> を開く（AI が `open` で代行可）。
 
 1. 右上の **New Application** をクリック → アプリ名（例: `AI Agent Camp Demo`）→ **Create**
-2. 左サイドバー **Bot** → **Reset Token** → 出てきたトークンを **すぐコピーして安全な場所に保存**（再表示不可）
-3. **Privileged Gateway Intents** で次の 2 つを ON:
-   - `SERVER MEMBERS INTENT`
-   - `MESSAGE CONTENT INTENT`
+2. 左サイドバー **Bot** → **Reset Token** → 出てきたトークンをすぐコピーして安全な場所に保存（再表示不可）
+3. **Privileged Gateway Intents** で `MESSAGE CONTENT INTENT` だけを ON
 
-> ⚠️ INTENT を ON にしないと Bot がメッセージ本文を読めません。
+> MESSAGE CONTENT INTENT を ON にしないと Bot がメッセージ本文を読めません。
 
 ---
 
 ## Step 2: Bot をサーバーに招待
 
 1. 左サイドバー **OAuth2** → **URL Generator**
-2. **Scopes**: `bot`、`applications.commands` をチェック
-3. **Bot Permissions** で必要なものを選択（最小: Read Messages / Send Messages / Add Reactions / Manage Messages）
-4. 出てきた URL をブラウザで開いて、自分のサーバーに招待
+2. **Scopes**: `bot` をチェック
+3. **Bot Permissions** で最小権限を選択:
+   - `View Channels`
+   - `Send Messages`
+   - `Send Messages in Threads`
+   - `Read Message History`
+   - `Attach Files`
+4. **Integration type** は **Guild Install** を選ぶ
+5. 出てきた URL をブラウザで開いて、自分のサーバーに招待
 
 ---
 
-## Step 3: Bot トークンを Keychain に保存
+## Step 3: 公式 Discord plugin をインストール
 
-```bash
-security add-generic-password -a "$USER" -s DISCORD_BOT_TOKEN -w '<paste-token>'
+Claude Code を起動して、Claude Code 内で次を実行:
+
+```text
+/plugin install discord@claude-plugins-official
+/reload-plugins
 ```
 
-シェル起動時に自動で読み込ませるため、`.zshrc` / `.bashrc` に以下を追記:
+plugin を再読み込みしたら、同じ Claude Code セッションで Bot トークンを設定:
 
-```bash
-export DISCORD_BOT_TOKEN="$(security find-generic-password -s DISCORD_BOT_TOKEN -w 2>/dev/null)"
+```text
+/discord:configure <paste-bot-token>
 ```
 
-> ⚠️ Token を `.env` に書く場合は `.gitignore` に必ず登録してから。`chmod 600 ~/.env` も推奨。
+この設定は `~/.claude/channels/discord/.env` に `DISCORD_BOT_TOKEN` を保存します。トークン値をチャットやログに貼らないでください。
 
 ---
 
-## Step 4: claude-channel-discord MCP を Claude Code に追加
+## Step 4: Channels として Claude Code を起動
+
+いったん Claude Code を終了し、ターミナルから次で起動:
 
 ```bash
-# Bun 推奨
-bun install -g claude-channel-discord@0.0.4
-
-# Claude Code への登録
-claude mcp add --transport stdio discord -- bun x claude-channel-discord@0.0.4
-
-# 接続確認
-claude mcp list
+claude --channels plugin:discord@claude-plugins-official
 ```
 
-`discord (stdio): bun x claude-channel-discord ... ✓ connected` が出れば OK。
-
-`.mcp.json` を直接書く場合（プロジェクトローカル）:
-
-```json
-{
-  "mcpServers": {
-    "discord": {
-      "type": "stdio",
-      "command": "bun",
-      "args": ["x", "claude-channel-discord"],
-      "env": {
-        "DISCORD_BOT_TOKEN": "${DISCORD_BOT_TOKEN}"
-      }
-    }
-  }
-}
-```
+通常の MCP 登録では Discord channel は起動しません。必ず `--channels plugin:discord@claude-plugins-official` で起動してください。
 
 ---
 
-## Step 5: アクセスポリシーをロックダウン
+## Step 5: アクセス制御を設定
 
-```bash
-/discord:access set --dm-policy allowlist
-/discord:access approve <your-discord-user-id>
-/discord:access list
+最初の DM は pairing でユーザー ID を捕捉します。Claude Code を Step 4 の起動方法で開いたまま、Discord から Bot に DM してください。Bot が 6 文字の pairing code を返したら、Claude Code 内で次を実行:
+
+```text
+/discord:access pair <code>
+/discord:access policy allowlist
+/discord:access
 ```
 
-> `dmPolicy: allowlist` にしないと未許可ユーザーから DM が届く。本番運用では必ず allowlist に。
+ユーザー ID（snowflake）が分かっている場合は、手動で allowlist に追加できます。
+
+```text
+/discord:access allow <snowflake>
+/discord:access
+```
+
+> 本番運用では、必要なユーザーを追加した後に `allowlist` にしておくと、未知の DM に pairing code を返しません。
 
 ---
 
 ## Step 6: 接続テスト
 
-Claude Code から:
+Claude Code を次の起動方法で実行中に:
 
-```
-> Discord で自分宛に「Hello from MCP」とDMして
+```bash
+claude --channels plugin:discord@claude-plugins-official
 ```
 
-Bot からの DM が届けば成功。
+Discord から Bot に DM して、Claude Code 側に通知が届き、Bot が返信できることを確認します。反応がない場合は `/discord:access` で allowlist と pending pairings を確認してください。
 
 ---
 
@@ -135,10 +129,10 @@ Bot からの DM が届けば成功。
 
 | 症状 | 原因 | 対処 |
 |---|---|---|
-| Bot トークンが効かない | Token Reset 後に古い値を使っている | 再度 Reset → 新しい値を Keychain に上書き |
-| メッセージが読めない | `MESSAGE CONTENT INTENT` 未 ON | Developer Portal で ON にして MCP を再接続 |
-| 他人同士の DM を読みたい | Discord API 仕様で不可能 | Pattern A（プライベート Ticket チャンネル）に切り替え |
-| 未送信ユーザーへ DM できない | DM チャンネル作成不可 | 共通サーバー経由でメンション → 相手から先制 DM をもらう |
+| Bot トークンが効かない | Token Reset 後に古い値を使っている | 再度 Reset → `/discord:configure <paste-bot-token>` で更新 |
+| メッセージが読めない | `MESSAGE CONTENT INTENT` 未 ON | Developer Portal で ON にして `--channels` 付きで再起動 |
+| Bot が DM に反応しない | `--channels` なしで Claude Code を起動している | `claude --channels plugin:discord@claude-plugins-official` で起動 |
+| 未許可ユーザーの扱いが分からない | access policy / allowlist 未確認 | `/discord:access` で状態を確認し、必要なら `pair` または `allow` を実行 |
 
 ---
 
@@ -147,7 +141,7 @@ Bot からの DM が届けば成功。
 このコマンドは `nonInteractiveMode: deferred` です。
 
 - Step 0 の read-only チェックは実行する
-- Step 1〜2 のブラウザ操作、Step 3 の Token 貼り付けは実行できないため、`setup-resume.md` を生成して停止する
+- Step 1〜3 のブラウザ操作、Token 貼り付け、Claude Code 内 plugin コマンドは実行できないため、`setup-resume.md` を生成して停止する
 - 対話モードに戻ってから `/setup-discord` を再実行してください
 
 `setup-resume.md` のフォーマットは `_lib/non-interactive.md` 参照。
@@ -157,5 +151,6 @@ Bot からの DM が届けば成功。
 ## 関連
 
 - スライド本体: aiagent-course Module 22
-- claude-channel-discord: <https://www.npmjs.com/package/claude-channel-discord>
+- Claude Code Discord plugin README: <https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/discord>
+- Claude Code Discord access guide: <https://github.com/anthropics/claude-plugins-official/blob/main/external_plugins/discord/ACCESS.md>
 - Module 23 (LINE) との比較: `/setup-line-harness`
