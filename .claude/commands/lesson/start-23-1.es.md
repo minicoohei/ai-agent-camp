@@ -3,7 +3,7 @@ description: "Lesson command"
 category: "lesson"
 chapter: "courses/aiagent/lesson03-core/module23-line"
 duration: "~60 min"
-prerequisites: ["start-21-1"]
+prerequisites: ["start-22-1"]
 level: "intermediate"
 tags: ["line", "cloudflare", "messaging-api", "mcp"]
 nonInteractiveMode: incompatible

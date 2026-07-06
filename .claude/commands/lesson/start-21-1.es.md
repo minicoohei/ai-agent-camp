@@ -33,4 +33,4 @@ Aprenda a combinar el **MCP oficial de Figma** y el **MCP del sistema de diseno 
 
 ## Siguientes pasos
 
-A continuacion, ejecute `/start-23-1` para continuar con la operacion de cuentas oficiales de LINE.
+A continuacion, ejecute `/start-22-1` para continuar con la integracion con Discord.

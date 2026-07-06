@@ -1,0 +1,17 @@
+# Chapter 22: Discord 連携
+id: "module22-discord"
+order: 22
+name: "Discord連携"
+description: "Discord Botの構築とメッセージ自動化を学びます"
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "Discord Developer Portal で Bot を作成し、MESSAGE CONTENT INTENT を有効化できる"
+  - "Claude Code の公式 discord plugin をインストールし、Channels として起動できる"
+  - "Bot token を /discord:configure またはローカル環境変数で安全に扱える"
+  - "pairing、allowlist、チャンネル権限で Bot のアクセス範囲を限定できる"
+  - "Discord API の境界を理解し、顧客別チャンネル方式と Bot ハブ方式を選び分けられる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-22?slideId=module-overview"
+  slides: "https://ai-agent.camp/ja/course/module-22?slideId=module-overview"
