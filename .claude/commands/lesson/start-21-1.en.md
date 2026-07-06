@@ -33,4 +33,4 @@ Learn how to combine the **official Figma MCP** and the **Serendie design system
 
 ## Next Steps
 
-Next, run `/start-23-1` to continue to LINE official account operations.
+Next, run `/start-22-1` to continue to Discord integration.

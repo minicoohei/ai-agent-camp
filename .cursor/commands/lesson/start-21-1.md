@@ -33,4 +33,4 @@ nonInteractiveMode: incompatible
 
 ## 次のステップ
 
-次は `/start-23-1` で LINE 公式アカウント運用に進みます。
+次は `/start-22-1` で Discord 連携に進みます。
