@@ -10329,6 +10329,57 @@
     },
     {
       "kind": "utility",
+      "canonicalId": "slide-forge.en",
+      "aliases": [
+        "/slide-forge.en",
+        "slide-forge.en",
+        "/utility/slide-forge.en"
+      ],
+      "sourcePath": ".cursor/commands/utility/slide-forge.en.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "slide-forge.en"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "slide-forge.es",
+      "aliases": [
+        "/slide-forge.es",
+        "slide-forge.es",
+        "/utility/slide-forge.es"
+      ],
+      "sourcePath": ".cursor/commands/utility/slide-forge.es.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "slide-forge.es"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
+      "canonicalId": "slide-forge",
+      "aliases": [
+        "/slide-forge",
+        "slide-forge",
+        "/utility/slide-forge"
+      ],
+      "sourcePath": ".cursor/commands/utility/slide-forge.md",
+      "codexRoute": {
+        "handler": "aiagent-utility-runner",
+        "mode": "utility",
+        "target": "slide-forge"
+      },
+      "expectedHandler": "aiagent-utility-runner",
+      "status": "ready"
+    },
+    {
+      "kind": "utility",
       "canonicalId": "sync-skills.en",
       "aliases": [
         "/sync-skills.en",

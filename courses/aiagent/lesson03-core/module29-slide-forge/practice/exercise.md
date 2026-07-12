@@ -59,3 +59,18 @@ cp -n config.default.yaml config.yaml
 - 初回生成時の `./out/job1/deck/navy/deck.pptx`
 - `revise` 後の `./out/job1/deck/navy/deck.pptx`
 - どのページをどう修正したかのメモ
+
+## 補足: Claudeネイティブの `/slide-forge` スキルとの違い
+
+このレッスンで扱う「slide-forge」は、外部OSS `github.com/minicoohei/slide-forge`（`git clone` して使う Python CLI）です。編集可能な **PPTX を含む4形式（PPTX/PDF/PNG/HTML）** を生成でき、`OPENAI_API_KEY` と `config.yaml` を用意して `python cli.py generate` / `revise` で動かします。
+
+これとは**別に**、このリポジトリには Claude / Cursor / Codex から呼べる `/slide-forge` **スキル**（`.claude/skills/slide-forge/`・`skills/slide-forge/`）も入っています。こちらは骨子から **自己完結HTML（16:9）1形式**を素早く組み立てる軽量版で、clone も APIキーも不要です。
+
+| | このレッスンの slide-forge（外部OSS） | `/slide-forge` スキル（Claudeネイティブ） |
+|---|---|---|
+| 実体 | `minicoohei/slide-forge`（Python CLI） | このリポの `.claude/skills/slide-forge/` |
+| 出力 | PPTX / PDF / PNG / HTML の4形式 | 自己完結HTML（16:9）1形式 |
+| 準備 | clone・`OPENAI_API_KEY`・`config.yaml` | 不要（対話の中で完結） |
+| 向く用途 | 編集可能PPTXや多形式が要る本番デッキ | 骨子からその場で見せる軽量デッキ |
+
+同名ですが中身は別物です。Claude Code / Cursor / Codex で `/slide-forge` と打つと**スキルの方**が起動します（このレッスンの Python CLI ではありません）。編集可能PPTXが必要なときは本レッスンの手順（`python cli.py`）を、骨子からHTMLを手早く作りたいときはスキルを使ってください。
