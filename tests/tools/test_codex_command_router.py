@@ -5,7 +5,14 @@ from __future__ import annotations
 
 import unittest
 
-from codex_commands import ROOT, build_manifest, iter_command_files, resolve_command
+from tests.conftest import import_module_from_repo
+
+
+codex_commands = import_module_from_repo("codex_commands", "tools/codex_commands.py")
+ROOT = codex_commands.ROOT
+build_manifest = codex_commands.build_manifest
+iter_command_files = codex_commands.iter_command_files
+resolve_command = codex_commands.resolve_command
 
 
 class ManifestCoverageTests(unittest.TestCase):

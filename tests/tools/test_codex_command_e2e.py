@@ -7,17 +7,28 @@ import os
 import unittest
 from pathlib import Path
 
-from codex_commands import ROOT, resolve_command
+import pytest
+
+from tests.conftest import import_module_from_repo
+
+
+codex_commands = import_module_from_repo("codex_commands", "tools/codex_commands.py")
+ROOT = codex_commands.ROOT
+resolve_command = codex_commands.resolve_command
 
 
 COURSE_ROOT = Path(
     os.environ.get("AIAGENT_COURSE_ROOT", str(ROOT.parent / "aiagent-course"))
 )
+pytestmark = pytest.mark.skipif(
+    not COURSE_ROOT.exists(),
+    reason="aiagent-course sibling repo is unavailable; set AIAGENT_COURSE_ROOT to run",
+)
 
 
 class CourseCodexParityTests(unittest.TestCase):
     def test_course_repo_exists(self) -> None:
-        self.assertTrue(COURSE_ROOT.exists(), "aiagent-course repo not found next to aiagent-base")
+        self.assertTrue(COURSE_ROOT.exists(), "aiagent-course repo not found next to ai-agent-camp")
 
     def test_codex_only_copy_is_removed_from_runtime_components(self) -> None:
         files = [

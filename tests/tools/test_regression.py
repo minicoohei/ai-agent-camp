@@ -70,23 +70,25 @@ class TestVerifyCommandsRegex:
     def test_section_regex_matches_kono_session(self):
         """Section header regex must match 'このセッションでやること'."""
         from tools.verify_commands import REQUIRED_SECTIONS
-        pattern = REQUIRED_SECTIONS[0]
+        pattern = REQUIRED_SECTIONS["full"]["ja"][0]
         content = "## このセッションでやること"
         assert re.search(pattern, content) is not None
 
     def test_section_regex_matches_ima_anata(self):
         """Section header regex must also match '今あなたがやっていること'."""
         from tools.verify_commands import REQUIRED_SECTIONS
-        pattern = REQUIRED_SECTIONS[0]
+        pattern = REQUIRED_SECTIONS["full"]["ja"][0]
         content = "## 📍 今あなたがやっていること"
         assert re.search(pattern, content) is not None
 
     def test_all_required_section_patterns_are_valid_regex(self):
         """All REQUIRED_SECTIONS entries must be compilable regex."""
         from tools.verify_commands import REQUIRED_SECTIONS
-        for pattern in REQUIRED_SECTIONS:
-            compiled = re.compile(pattern)
-            assert compiled is not None
+        for layouts in REQUIRED_SECTIONS.values():
+            for patterns in layouts.values():
+                for pattern in patterns:
+                    compiled = re.compile(pattern)
+                    assert compiled is not None
 
 
 # ---------------------------------------------------------------------------

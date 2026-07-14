@@ -1,5 +1,5 @@
 ---
-description: "APIキー・トークンを安全に設定する手順を案内する（初学者向け）"
+description: APIキー・トークンを安全に設定する手順を案内する（初学者向け）
 nonInteractiveMode: incompatible
 ---
 # APIキー設定の案内
