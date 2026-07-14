@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-8", "output/pm/er-diagram.puml"]
 level: "intermediate"
 tags: ["pm", "architecture", "api", "network"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 18-9: Arquitectura del sistema y diseño de API
 
 | Elemento | Detalles |

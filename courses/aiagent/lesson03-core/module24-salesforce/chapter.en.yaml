@@ -1,17 +1,19 @@
-# Chapter 24: Salesforce Integration
+# Chapter 24: Salesforce CLI Integration
 id: "module24-salesforce"
 order: 24
-name: "Salesforce Integration"
-description: "A coming-soon module covering CRM data operations and automation using the Salesforce API. Expected content includes retrieving and updating leads, accounts, opportunities, and activity history, sales reports, follow-up proposals, and connections with marketing and email automation. As CRM sits at the center of customer information and sales decisions, this module emphasizes the scope of operations delegated to AI agents, pre-update approvals, audit logs, and detecting duplicates or erroneous updates."
+name: "Salesforce CLI Integration"
+description: "Use sf CLI and browser login to retrieve Leads, Accounts, Opportunities, and activity history with SOQL, perform bulk CSV updates, and manage metadata from the terminal with an AI agent. Because CRM sits at the center of customer data and sales decisions, also define delegated operation scope, pre-update approvals, audit logs, duplicate and erroneous-update detection, and connections to marketing or email automation."
 type: "manual"
-status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+objectives:
+  - "Install sf CLI and connect with browser login"
+  - "Manage multiple orgs with aliases"
+  - "Query Accounts, Opportunities, and Leads with SOQL"
+  - "Run bulk insert, update, and upsert operations with CSV"
+  - "Deploy and retrieve metadata such as Apex, Flow, and Layouts"
 externalContent:
-  manual: "https://ai-agent.camp/en/course/module-24"
+  manual: "https://ai-agent.camp/en/course/module-24?slideId=module-overview"
+  slides: "https://ai-agent.camp/en/course/module-24?slideId=module-overview"
 prerequisites:
   - "module17-marketing"
-objectives:
-  - "Understand the types of CRM data handled with Salesforce API integration"
-  - "Organize AI use cases for sales and marketing operations"
-  - "Explain the importance of approvals, audits, and erroneous-update prevention when updating CRM"

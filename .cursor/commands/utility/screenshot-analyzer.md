@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Screenshot Analyzer - スクリーンショット解析統合ツール
 
 このコマンドは、`tools/screenshot_analyzer.py` を使用して、スクリーンショットを解析し、エラー診断や操作チュートリアル生成を行います。

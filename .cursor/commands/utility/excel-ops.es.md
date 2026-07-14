@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Excel Operations - Operaciones con archivos Excel
 
 Lea, escriba y analice archivos Excel utilizando openpyxl.

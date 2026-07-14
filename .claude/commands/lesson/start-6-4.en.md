@@ -5,8 +5,8 @@ prerequisites: ["start-6-1", "start-6-2", "start-6-3"]
 duration: "~40 min"
 level: "advanced"
 tags: ["agent", "subagent", "orchestration"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 6-4: SubAgent Integration
 
 ## 📍 What You'll Do

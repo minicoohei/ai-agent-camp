@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # Create Banner - Ad Banner/Creative Generation
 
 This command uses `tools/banner_creator.py` to generate banners/creatives for various SNS and advertising platforms.

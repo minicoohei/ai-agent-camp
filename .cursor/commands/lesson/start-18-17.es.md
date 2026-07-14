@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-16", "output/pm/unit-test-code/"]
 level: "intermediate"
 tags: ["pm", "test", "integration", "api-test"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-17: Pruebas de integracion
 
 | Elemento | Detalles |

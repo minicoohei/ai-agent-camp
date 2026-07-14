@@ -1,0 +1,17 @@
+# Chapter 25: Google Ads 連携
+id: "module25-google-ads"
+order: 25
+name: "Google Ads 連携"
+description: "Google Ads APIを使ったキャンペーン照会・レポート・作成の自動化を学びます"
+type: "manual"
+estimatedMinutes: 60
+thumbnail: "thumbnail.png"
+objectives:
+  - "Google Ads のアカウント階層と API 操作の前提を理解できる"
+  - "Developer Token、OAuth Client、refresh_token のセットアップ手順を確認できる"
+  - "dry-run、PAUSED、実行ログで安全に Google Ads API を扱える"
+  - "キャンペーン一覧や GAQL レポートを読み取り系 API で確認できる"
+  - "/setup-google-ads で dry-run 接続確認まで進められる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-25?slideId=module-overview"
+  slides: "https://ai-agent.camp/ja/course/module-25?slideId=module-overview"

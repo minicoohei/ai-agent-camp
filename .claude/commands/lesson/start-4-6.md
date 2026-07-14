@@ -5,8 +5,8 @@ duration: "約30分"
 prerequisites: ["start-4-1"]
 level: "beginner"
 tags: ["google", "workspace", "gogcli", "sheets"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 4-6: Google Sheets操作
 
 ## 📍 このセッションでやること

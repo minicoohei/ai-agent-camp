@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Generate PlantUML Diagram con Nano Banana Pro
 
 Este comando utiliza `tools/generate_plantuml_diagram.py` para generar imágenes de diagramas de flujo modernos estilo plantilla de Visio Flowchart a partir de archivos PlantUML.

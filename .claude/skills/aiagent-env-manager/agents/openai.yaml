@@ -1,3 +1,0 @@
-interface:
-  display_name: "Aiagent Env Manager"
-  short_description: "Manage environment variables and credentials for ai-agent-camp. Use when setting up API keys, .env handling, or the credential manager safely."

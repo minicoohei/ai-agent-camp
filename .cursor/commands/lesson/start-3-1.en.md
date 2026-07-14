@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-0-3"]
 level: "beginner"
 tags: ["screenshot", "analysis", "gemini-vision"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 3-1: Screenshot Analysis Fundamentals
 
 ## 📍 What You'll Do

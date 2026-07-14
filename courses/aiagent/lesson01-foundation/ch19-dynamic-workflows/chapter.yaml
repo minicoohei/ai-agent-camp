@@ -1,0 +1,16 @@
+# Chapter 19: ultracode = Dynamic Workflows
+id: "ch19-dynamic-workflows"
+order: 19
+name: "ultracode = Dynamic Workflows"
+description: "タスク専用のオーケストレーションを動的生成し、数百のサブエージェントを並列＋敵対的検証で動かす"
+type: "manual"
+estimatedMinutes: 50
+thumbnail: "thumbnail.png"
+objectives:
+  - "Dynamic Workflows / ultracode の仕組みと位置づけを理解する"
+  - "タスク専用のオーケストレーションと並列サブエージェント実行の流れを把握する"
+  - "品質向上に効く検証・比較・敵対的レビューの役割を理解する"
+  - "大量並列と検証が有効な代表的な使いどころを判断できる"
+  - "/deep-research のハンズオンを通じて挙動を体感する"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-11?slideId=overview"

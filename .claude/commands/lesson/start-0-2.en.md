@@ -5,8 +5,8 @@ duration: "~5 min"
 prerequisites: ["Lesson 0-1 completed"]
 level: "beginner"
 tags: ["setup", "extensions"]
+nonInteractiveMode: incompatible
 ---
-
 # Lesson 0-2: Extension Installation
 
 ## Check Setup Progress

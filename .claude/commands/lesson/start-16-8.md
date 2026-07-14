@@ -6,8 +6,8 @@ duration: "30分"
 prerequisites: ["start-16-6", "start-16-7"]
 level: "intermediate"
 tags: ["email", "resend", "resend-cli", "sequences", "drip-campaign", "automation"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 16-8: Resend Sequence & CLI でドリップキャンペーン
 
 ## 📍 このセッションでやること

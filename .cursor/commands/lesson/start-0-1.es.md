@@ -5,8 +5,8 @@ duration: "~15 min"
 prerequisites: ["Codex Desktop o Cursor instalado", "La carpeta ai-agent-camp esta abierta"]
 level: "beginner"
 tags: ["setup", "environment"]
+nonInteractiveMode: incompatible
 ---
-
 # Lección 0-1: Verificación de configuración del entorno
 
 ## Verificar progreso de configuración
@@ -34,6 +34,11 @@ En esta lección, utilizará los siguientes dos comandos para configurar su ento
 **No se requieren operaciones de terminal. La IA se encarga de todo automáticamente.**
 
 > **Nota para Codex**: En Codex, en lugar de ejecutar `/setup-start` o `/check-setup` directamente como comandos slash de Cursor, siga los pasos de verificación escritos en este archivo en orden. Cuando se necesiten operaciones GUI como autenticación en el navegador, cambie a operación manual del usuario en ese momento.
+
+### Step 0: Activar el hook de seguridad
+
+**Ejecución automática por IA:** Ejecute `bash scripts/install_hooks.sh`. Se puede ejecutar varias
+veces de forma segura y activa el análisis de secretos previo a cada commit.
 
 ### Step 1: Iniciar configuración
 

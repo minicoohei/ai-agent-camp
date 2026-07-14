@@ -111,7 +111,7 @@ The index is automatically updated daily via GitHub Actions.
 Manual update:
 
 ```bash
-python3 slack-sync/scripts/build_book_index.py
+python3 data/slack-sync/scripts/build_book_index.py
 ```
 
 ## Overview
@@ -122,7 +122,7 @@ A skill that uses BookRAG-based hierarchical indexing for semantic search of Sla
 
 | Error | Solution |
 |-------|----------|
-| Index file not found | Rebuild the index with `python3 slack-sync/scripts/build_book_index.py` |
+| Index file not found | Rebuild the index with `python3 data/slack-sync/scripts/build_book_index.py` |
 | No results found | Change query keywords or check available categories with `get_workspace_overview()` |
 
 ## Success Criteria

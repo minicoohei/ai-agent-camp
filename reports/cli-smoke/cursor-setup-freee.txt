@@ -1,0 +1,14 @@
+[`.cursor/commands/lesson/setup-freee.md`](./.cursor/commands/lesson/setup-freee.md) の frontmatter は **`nonInteractiveMode: incompatible`** です。
+
+**結論**: 非対話モードではセットアップを完走できません。手順は実行しません。
+
+**理由**: Freee は **ブラウザ OAuth** と Developer Portal での **Client ID / Secret 取得** が必須で、レッスン本文でも `claude -p` / `cursor-agent --print` では完走不可と明記されています。
+
+**対話モードで行うこと（概要）**  
+1. [freee Developer Portal](https://app.secure.freee.co.jp/developers/applications) でアプリ作成  
+2. Client ID / Secret を控える  
+3. `npm install -g freee-mcp@0.26.0`  
+4. `claude mcp add --transport stdio freee -- npx freee-mcp@0.26.0` で MCP 登録  
+5. MCP の指示に従い OAuth を完了。事業所 ID は `freee_get_companies` 等で取得し設定へ反映  
+
+このチャットでは上記の**実行・代行はしません**。Freee 連携が必要なら、IDE の対話チャットで同じレッスンを開き、ブラウザまで含めて自分で進めてください。

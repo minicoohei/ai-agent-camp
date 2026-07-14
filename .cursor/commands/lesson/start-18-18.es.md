@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-17"]
 level: "intermediate"
 tags: ["pm", "meeting", "minutes", "spec-change"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-18: Diseno de reuniones y analisis de actas
 
 | Elemento | Detalles |

@@ -4,8 +4,8 @@ duration: "~5 min"
 prerequisites: ["ai-agent-camp folder is open in Cursor"]
 level: "beginner"
 tags: ["setup", "security"]
+nonInteractiveMode: deferred
 ---
-
 # /setup-security -- Automatic Security Settings Setup
 
 ## Step 0: Check Setup Progress

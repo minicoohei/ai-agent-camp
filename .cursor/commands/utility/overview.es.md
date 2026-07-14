@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Overview - Visualización de la estructura del proyecto
 
 Este comando utiliza `tools/project_overview.py` para aprovechar serena MCP en la visualización de la estructura del proyecto y la extracción de funcionalidades faltantes o partes no implementadas.

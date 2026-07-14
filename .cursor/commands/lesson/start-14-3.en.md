@@ -6,8 +6,8 @@ duration: "~35 min"
 prerequisites: ["start-14-1", "start-14-2"]
 level: "intermediate"
 tags: ["article", "writing"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-3: Article Writing - Style-Applied Draft Creation
 
 ## 📍 What You'll Do

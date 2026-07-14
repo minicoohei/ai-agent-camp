@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # PDF Page Editor
 
 A command to edit (modify/delete) text in PDFs.

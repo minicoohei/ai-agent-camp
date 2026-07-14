@@ -753,6 +753,31 @@
   module: 20
   lesson: 1
 
+# === Module 29: slide-forge ===
+- lessonId: start-29-1
+  title: "slide-forge APIキー不要デモ"
+  chapterRef: "courses/aiagent/lesson03-core/module29-slide-forge"
+  module: 29
+  lesson: 1
+
+- lessonId: start-29-2
+  title: "議事録から本番生成・5問"
+  chapterRef: "courses/aiagent/lesson03-core/module29-slide-forge"
+  module: 29
+  lesson: 2
+
+- lessonId: start-29-3
+  title: "revise で既存ジョブを修正"
+  chapterRef: "courses/aiagent/lesson03-core/module29-slide-forge"
+  module: 29
+  lesson: 3
+
+- lessonId: start-29-4
+  title: "実画像の自動取得 fetch-assets"
+  chapterRef: "courses/aiagent/lesson03-core/module29-slide-forge"
+  module: 29
+  lesson: 4
+
 # === Utility commands (non-lesson) ===
 # These are not lessons but utility commands. They are listed here
 # for completeness but do not have module/lesson numbers.

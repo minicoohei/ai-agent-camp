@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-18"]
 level: "intermediate"
 tags: ["pm", "dashboard", "marimo", "monitoring"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-19: marimo Dashboard
 
 | Item | Details |

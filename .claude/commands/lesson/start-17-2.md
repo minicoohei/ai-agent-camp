@@ -5,8 +5,8 @@ duration: "約40分"
 prerequisites: ["start-0-3"]
 level: "intermediate"
 tags: ["marketing", "seo", "keyword", "audit"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 17-2: SEO調査 & キーワード戦略
 
 ## 📍 このセッションでやること

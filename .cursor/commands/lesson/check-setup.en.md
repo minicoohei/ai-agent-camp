@@ -4,8 +4,8 @@ duration: "~2 min"
 prerequisites: ["ai-agent-camp folder is open in Codex or Cursor"]
 level: "beginner"
 tags: ["setup", "check"]
+nonInteractiveMode: incompatible
 ---
-
 # /check-setup -- Automatic Environment Check
 
 ## Step 0: Check Setup Progress

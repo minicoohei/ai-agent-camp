@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-9-2"]
 level: "intermediate"
 tags: ["slack", "api", "message", "reply", "post"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 9-3: Envio de respuestas
 
 ## 📍 Lo que hara en esta sesion

@@ -6,8 +6,8 @@ duration: "25 min"
 prerequisites: []
 level: "beginner"
 tags: ["email", "gmail", "gogcli", "setup"]
+nonInteractiveMode: incompatible
 ---
-
 # Lección 16-1: Configuración de Gmail - Autenticación y Sincronización de Correo con gogcli
 
 ## Lo Que Hará en Esta Sesión

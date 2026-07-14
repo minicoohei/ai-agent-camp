@@ -5,8 +5,8 @@ prerequisites: ["start-6-1", "start-6-2", "start-6-3", "start-6-4"]
 duration: "約50分"
 level: "advanced"
 tags: ["agent", "capstone", "deployment"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 6-5: 総合演習 - AIエージェント開発統合
 
 ## 📍 このセッションでやること

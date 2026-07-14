@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: []
 level: "intermediate"
 tags: ["pm", "interview", "customer-needs"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-1: Entrevista al cliente y recopilación de necesidades
 
 ## 📍 Lo que hará en esta sesión

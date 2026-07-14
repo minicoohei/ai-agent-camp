@@ -1,7 +1,7 @@
 ---
 description: 元リポジトリ（upstream）から最新の教材を取り込む
+nonInteractiveMode: compliant
 ---
-
 # 教材を最新版に更新
 
 ## 使い方

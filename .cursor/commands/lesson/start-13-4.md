@@ -5,8 +5,8 @@ prerequisites: ["start-13-3"]
 duration: "約30分"
 level: "intermediate"
 tags: ["lp", "html", "tailwind", "implementation"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 13-4: 実際に動くLP作成（HTML/CSS/JS）
 
 ## 📍 このセッションでやること

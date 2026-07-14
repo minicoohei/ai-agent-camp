@@ -5,8 +5,8 @@ prerequisites: ["start-6-2"]
 duration: "~20 min"
 level: "intermediate"
 tags: ["agent", "skill-design", "best-practices"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 7-1: Fundamentos del diseño de skills
 
 ## 📍 Lo que hará en está sesion

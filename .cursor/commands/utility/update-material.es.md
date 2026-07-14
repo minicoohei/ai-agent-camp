@@ -1,7 +1,7 @@
 ---
 description: Obtener los materiales más recientes del repositorio de origen (upstream)
+nonInteractiveMode: compliant
 ---
-
 # Actualizar materiales del curso a la última versión
 
 ## Uso

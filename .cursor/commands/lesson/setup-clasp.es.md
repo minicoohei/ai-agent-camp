@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Node.js 18 o superior instalado", "Tener una cuenta de Google", "Navegador disponible"]
 level: "beginner"
 tags: ["setup", "gas", "clasp", "google"]
+nonInteractiveMode: incompatible
 ---
-
 # Configuración de Google Apps Script CLI (clasp)
 
 ## Step 0: Verificar el progreso de configuración

@@ -5,8 +5,8 @@ duration: "約30分"
 prerequisites: ["start-4-3"]
 level: "beginner"
 tags: ["google", "workspace", "gogcli", "calendar", "event-management"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 4-4: Google Calendar 予定登録・管理
 
 ## 📍 このセッションでやること

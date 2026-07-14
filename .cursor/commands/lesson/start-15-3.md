@@ -5,8 +5,8 @@ duration: 40分
 prerequisites: ["start-15-2"]
 level: intermediate
 tags: ["video", "clipper", "subtitles", "ai-analysis"]
+nonInteractiveMode: compliant
 ---
-
 # Lesson 15-3: YouTube Clipper — 動画ハイライト抽出
 
 ## 学習目標
@@ -154,3 +154,14 @@ python skills/youtube-clipper/scripts/clipper.py \
 ## 次のステップ
 
 Lesson 15-4 では、抽出したクリップを Remotion でSNS用マーケティング素材に変換する方法を学びます。
+
+## 参考リンク（aiagent-course Module 15 スライドと共通）
+
+テンプレートやインスピレーションを探すときに使う 5 つのリソース。
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

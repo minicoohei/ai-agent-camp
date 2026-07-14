@@ -1,0 +1,154 @@
+file,total,askq,oauth,restart,secret,install,namespace,score,grade,nonInteractiveMode,blockers
+commands/lesson/check-setup.md,14,7,0,2,0,0,5,0,D,,AskQuestion×7; Restart×2; Namespace×5
+commands/lesson/setup-bigquery.md,32,15,15,0,1,1,0,0,D,,AskQuestion×15; OAuth×15; Secret×1; Install×1
+commands/lesson/setup-clasp.md,26,17,8,0,0,0,1,0,D,,AskQuestion×17; OAuth×8; Namespace×1
+commands/lesson/setup-elevenlabs.md,36,15,2,0,19,0,0,0,D,,AskQuestion×15; OAuth×2; Secret×19
+commands/lesson/setup-extensions.md,13,11,0,1,0,0,1,0,D,,AskQuestion×11; Restart×1; Namespace×1
+commands/lesson/setup-fal.md,34,15,3,0,16,0,0,0,D,,AskQuestion×15; OAuth×3; Secret×16
+commands/lesson/setup-gemini.md,31,13,1,0,17,0,0,0,D,,AskQuestion×13; OAuth×1; Secret×17
+commands/lesson/setup-github.md,32,19,12,0,0,0,1,0,D,,AskQuestion×19; OAuth×12; Namespace×1
+commands/lesson/setup-gogcli.md,37,14,17,0,0,6,0,0,D,,AskQuestion×14; OAuth×17; Install×6
+commands/lesson/setup-notion.md,34,20,2,1,8,3,0,0,D,,AskQuestion×20; OAuth×2; Restart×1; Secret×8; Install×3
+commands/lesson/setup-pencil.md,17,16,0,1,0,0,0,0,D,,AskQuestion×16; Restart×1
+commands/lesson/setup-security.md,17,9,0,0,6,0,2,0,D,,AskQuestion×9; Secret×6; Namespace×2
+commands/lesson/setup-slack.md,37,16,17,0,4,0,0,0,D,,AskQuestion×16; OAuth×17; Secret×4
+commands/lesson/setup-start.md,20,10,3,0,0,1,6,0,D,,AskQuestion×10; OAuth×3; Install×1; Namespace×6
+commands/lesson/setup-typefully.md,34,15,1,0,17,0,1,0,D,,AskQuestion×15; OAuth×1; Secret×17; Namespace×1
+commands/lesson/setup-vercel.md,34,16,12,0,0,4,2,0,D,,AskQuestion×16; OAuth×12; Install×4; Namespace×2
+commands/lesson/setup-x-api.md,32,15,1,0,15,0,1,0,D,,AskQuestion×15; OAuth×1; Secret×15; Namespace×1
+commands/lesson/start-1-1.md,17,17,0,0,0,0,0,0,D,,AskQuestion×17
+commands/lesson/start-1-2.md,20,20,0,0,0,0,0,0,D,,AskQuestion×20
+commands/lesson/start-1-3.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-10-1.md,25,23,2,0,0,0,0,0,D,,AskQuestion×23; OAuth×2
+commands/lesson/start-10-2.md,28,23,5,0,0,0,0,0,D,,AskQuestion×23; OAuth×5
+commands/lesson/start-10-3.md,27,26,1,0,0,0,0,0,D,,AskQuestion×26; OAuth×1
+commands/lesson/start-11-1.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-11-2.md,24,23,1,0,0,0,0,0,D,,AskQuestion×23; OAuth×1
+commands/lesson/start-12-1.md,32,16,14,0,0,2,0,0,D,,AskQuestion×16; OAuth×14; Install×2
+commands/lesson/start-12-2.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-12-3.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-12-4.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-12-5.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-12-6.md,17,16,1,0,0,0,0,0,D,,AskQuestion×16; OAuth×1
+commands/lesson/start-13-1.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-13-2.md,15,14,1,0,0,0,0,0,D,,AskQuestion×14; OAuth×1
+commands/lesson/start-13-3.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-13-4.md,17,16,1,0,0,0,0,0,D,,AskQuestion×16; OAuth×1
+commands/lesson/start-13-5.md,26,14,12,0,0,0,0,0,D,,AskQuestion×14; OAuth×12
+commands/lesson/start-14-4.md,14,14,0,0,0,0,0,0,D,,AskQuestion×14
+commands/lesson/start-14-7.md,14,14,0,0,0,0,0,0,D,,AskQuestion×14
+commands/lesson/start-15-1.md,27,26,0,0,0,1,0,0,D,,AskQuestion×26; Install×1
+commands/lesson/start-15-6.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-15-8.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-15-9.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-16-1.md,15,10,3,0,0,2,0,0,D,,AskQuestion×10; OAuth×3; Install×2
+commands/lesson/start-17-1.md,17,17,0,0,0,0,0,0,D,,AskQuestion×17
+commands/lesson/start-17-2.md,17,17,0,0,0,0,0,0,D,,AskQuestion×17
+commands/lesson/start-17-3.md,17,17,0,0,0,0,0,0,D,,AskQuestion×17
+commands/lesson/start-17-4.md,18,17,1,0,0,0,0,0,D,,AskQuestion×17; OAuth×1
+commands/lesson/start-17-5.md,25,23,0,0,2,0,0,0,D,,AskQuestion×23; Secret×2
+commands/lesson/start-18-1.md,14,14,0,0,0,0,0,0,D,,AskQuestion×14
+commands/lesson/start-18-2.md,18,18,0,0,0,0,0,0,D,,AskQuestion×18
+commands/lesson/start-18-3.md,18,18,0,0,0,0,0,0,D,,AskQuestion×18
+commands/lesson/start-18-4.md,15,14,1,0,0,0,0,0,D,,AskQuestion×14; OAuth×1
+commands/lesson/start-19-2.md,24,23,1,0,0,0,0,0,D,,AskQuestion×23; OAuth×1
+commands/lesson/start-2-1.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-2-2.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-2-3.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-3-1.md,17,17,0,0,0,0,0,0,D,,AskQuestion×17
+commands/lesson/start-3-2.md,17,17,0,0,0,0,0,0,D,,AskQuestion×17
+commands/lesson/start-3-3.md,17,17,0,0,0,0,0,0,D,,AskQuestion×17
+commands/lesson/start-3-4.md,20,20,0,0,0,0,0,0,D,,AskQuestion×20
+commands/lesson/start-3-5.md,20,20,0,0,0,0,0,0,D,,AskQuestion×20
+commands/lesson/start-3-6.md,20,20,0,0,0,0,0,0,D,,AskQuestion×20
+commands/lesson/start-4-1.md,20,12,6,0,0,2,0,0,D,,AskQuestion×12; OAuth×6; Install×2
+commands/lesson/start-4-4.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-4-7.md,14,14,0,0,0,0,0,0,D,,AskQuestion×14
+commands/lesson/start-5-1.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-5-2.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-6-1.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-6-2.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-6-3.md,24,23,0,1,0,0,0,0,D,,AskQuestion×23; Restart×1
+commands/lesson/start-6-4.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-6-5.md,26,26,0,0,0,0,0,0,D,,AskQuestion×26
+commands/lesson/start-7-1.md,20,20,0,0,0,0,0,0,D,,AskQuestion×20
+commands/lesson/start-7-2.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-7-3.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-7-4.md,26,26,0,0,0,0,0,0,D,,AskQuestion×26
+commands/lesson/start-7-5.md,17,17,0,0,0,0,0,0,D,,AskQuestion×17
+commands/lesson/start-7-6.md,17,16,0,1,0,0,0,0,D,,AskQuestion×16; Restart×1
+commands/lesson/start-7-7.md,17,16,0,1,0,0,0,0,D,,AskQuestion×16; Restart×1
+commands/lesson/start-7-8.md,16,16,0,0,0,0,0,0,D,,AskQuestion×16
+commands/lesson/start-8-1.md,25,20,5,0,0,0,0,0,D,,AskQuestion×20; OAuth×5
+commands/lesson/start-8-2.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-8-3.md,24,23,1,0,0,0,0,0,D,,AskQuestion×23; OAuth×1
+commands/lesson/start-8-4.md,23,23,0,0,0,0,0,0,D,,AskQuestion×23
+commands/lesson/start-9-1.md,24,21,3,0,0,0,0,0,D,,AskQuestion×21; OAuth×3
+commands/lesson/start-9-2.md,23,21,2,0,0,0,0,0,D,,AskQuestion×21; OAuth×2
+commands/lesson/start-9-3.md,24,21,3,0,0,0,0,0,D,,AskQuestion×21; OAuth×3
+commands/lesson/start-10-4.md,13,9,4,0,0,0,0,4,D,,AskQuestion×9; OAuth×4
+commands/lesson/start-14-1.md,12,12,0,0,0,0,0,4,D,,AskQuestion×12
+commands/lesson/start-14-2.md,12,12,0,0,0,0,0,4,D,,AskQuestion×12
+commands/lesson/start-14-3.md,12,12,0,0,0,0,0,4,D,,AskQuestion×12
+commands/lesson/start-14-5.md,12,12,0,0,0,0,0,4,D,,AskQuestion×12
+commands/lesson/start-14-6.md,12,12,0,0,0,0,0,4,D,,AskQuestion×12
+commands/lesson/start-15-7.md,12,12,0,0,0,0,0,4,D,,AskQuestion×12
+commands/lesson/start-4-2.md,12,12,0,0,0,0,0,4,D,,AskQuestion×12
+commands/lesson/start-4-3.md,12,12,0,0,0,0,0,4,D,,AskQuestion×12
+commands/lesson/start-4-5.md,12,12,0,0,0,0,0,4,D,,AskQuestion×12
+commands/lesson/start-4-6.md,12,12,0,0,0,0,0,4,D,,AskQuestion×12
+commands/lesson/setup-remotion.md,12,10,1,0,0,1,0,12,D,,AskQuestion×10; OAuth×1; Install×1
+commands/lesson/start-0-7.md,14,8,2,0,0,3,1,13,D,,AskQuestion×8; OAuth×2; Install×3; Namespace×1
+commands/lesson/start-15-5.md,10,10,0,0,0,0,0,20,D,,AskQuestion×10
+commands/lesson/start-16-6.md,13,8,1,0,1,3,0,20,D,,AskQuestion×8; OAuth×1; Secret×1; Install×3
+commands/lesson/start-11-3.md,10,9,1,0,0,0,0,22,D,,AskQuestion×9; OAuth×1
+commands/lesson/start-11-4.md,12,9,0,0,0,3,0,22,D,,AskQuestion×9; Install×3
+commands/lesson/start-11-5.md,10,9,0,0,0,1,0,26,D,,AskQuestion×9; Install×1
+commands/lesson/start-16-2.md,10,8,1,0,1,0,0,26,D,,AskQuestion×8; OAuth×1; Secret×1
+commands/lesson/start-16-7.md,12,6,1,0,5,0,0,26,D,,AskQuestion×6; OAuth×1; Secret×5
+commands/lesson/start-18-20.md,9,9,0,0,0,0,0,28,D,,AskQuestion×9
+commands/lesson/start-16-3.md,9,8,1,0,0,0,0,30,D,,AskQuestion×8; OAuth×1
+commands/lesson/start-16-5.md,9,8,1,0,0,0,0,30,D,,AskQuestion×8; OAuth×1
+commands/lesson/start-18-5.md,8,7,1,0,0,0,0,38,D,,AskQuestion×7; OAuth×1
+commands/lesson/start-0-8.md,8,7,0,0,0,0,1,39,D,,AskQuestion×7; Namespace×1
+commands/lesson/start-0-1.md,8,6,2,0,0,0,0,40,D,,AskQuestion×6; OAuth×2
+commands/lesson/start-18-11.md,10,5,0,0,5,0,0,40,D,,AskQuestion×5; Secret×5
+commands/lesson/start-16-4.md,7,6,1,0,0,0,0,46,D,,AskQuestion×6; OAuth×1
+commands/lesson/start-16-8.md,7,6,1,0,0,0,0,46,D,,AskQuestion×6; OAuth×1
+commands/lesson/start-18-13.md,7,5,2,0,0,0,0,48,D,,AskQuestion×5; OAuth×2
+commands/lesson/start-18-9.md,7,4,3,0,0,0,0,50,C,,AskQuestion×4; OAuth×3
+commands/lesson/start-0-2.md,5,4,0,1,0,0,0,53,C,,AskQuestion×4; Restart×1
+commands/lesson/start-0-3.md,7,4,0,0,3,0,0,56,C,,AskQuestion×4; Secret×3
+commands/module-18-gcp-quick.md,7,0,7,0,0,0,0,58,C,,OAuth×7
+commands/lesson/start-18-19.md,5,5,0,0,0,0,0,60,C,,AskQuestion×5
+commands/lesson/start-18-7.md,5,5,0,0,0,0,0,60,C,,AskQuestion×5
+commands/lesson/start-18-8.md,5,5,0,0,0,0,0,60,C,,AskQuestion×5
+commands/lesson/start-0-4.md,5,4,0,0,1,0,0,64,C,,AskQuestion×4; Secret×1
+commands/lesson/start-0-5.md,5,4,0,0,1,0,0,64,C,,AskQuestion×4; Secret×1
+commands/lesson/start-15-2.md,4,4,0,0,0,0,0,68,C,,AskQuestion×4
+commands/lesson/start-18-10.md,4,4,0,0,0,0,0,68,C,,AskQuestion×4
+commands/lesson/start-18-12.md,4,4,0,0,0,0,0,68,C,,AskQuestion×4
+commands/lesson/start-18-14.md,4,4,0,0,0,0,0,68,C,,AskQuestion×4
+commands/lesson/start-18-15.md,3,3,0,0,0,0,0,76,B,,AskQuestion×3
+commands/lesson/start-18-16.md,3,3,0,0,0,0,0,76,B,,AskQuestion×3
+commands/lesson/start-18-17.md,3,3,0,0,0,0,0,76,B,,AskQuestion×3
+commands/lesson/start-18-18.md,3,3,0,0,0,0,0,76,B,,AskQuestion×3
+commands/next_lesson.md,3,3,0,0,0,0,0,76,B,,AskQuestion×3
+commands/lesson/start-0-6.md,7,0,0,0,3,4,0,80,B,,Secret×3; Install×4
+commands/module-18-gcp-appendix.md,3,0,3,0,0,0,0,82,B,,OAuth×3
+commands/lesson/start-15-4.md,2,2,0,0,0,0,0,84,B,,AskQuestion×2
+commands/lesson/exercise-review.md,3,0,0,0,0,0,3,85,B,,Namespace×3
+commands/setup-api-key.md,3,0,1,0,2,0,0,86,B,,OAuth×1; Secret×2
+commands/module-18-google-auth.md,2,0,2,0,0,0,0,88,B,,OAuth×2
+commands/lesson/verify-module.md,2,0,0,0,0,0,2,90,A,,Namespace×2
+commands/lesson/start-15-3.md,3,0,0,0,0,3,0,94,A,,Install×3
+commands/lesson/check-security.md,1,0,0,0,0,0,1,95,A,,Namespace×1
+commands/lesson/start-18-6.md,0,0,0,0,0,0,0,100,A,,
+commands/lesson/start-19-1.md,0,0,0,0,0,0,0,100,A,,
+commands/lesson/start-20-1.md,0,0,0,0,0,0,0,100,A,,
+commands/module-18-calendar.md,0,0,0,0,0,0,0,100,A,,
+commands/module-18-drive.md,0,0,0,0,0,0,0,100,A,,
+commands/module-18-gas.md,0,0,0,0,0,0,0,100,A,,
+commands/module-18-gmail.md,0,0,0,0,0,0,0,100,A,,
+commands/module-18-sheets.md,0,0,0,0,0,0,0,100,A,,
+commands/verify-module.md,0,0,0,0,0,0,0,100,A,,

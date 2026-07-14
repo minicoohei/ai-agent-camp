@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Video Frame Reader - Extracción de fotogramas clave de video
 
 Este comando extrae fotogramas clave de videos, opcionalmente realiza análisis de fotogramas con Gemini Vision y genera los resultados en JSON.

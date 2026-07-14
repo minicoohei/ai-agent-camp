@@ -5,8 +5,8 @@ duration: "~40 min"
 prerequisites: ["setup-remotion"]
 level: "intermediate"
 tags: ["video", "remotion", "animation", "text", "slide-shoot"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 15-2: Fundamentos de Animación con Remotion — Animación de Texto Slide-Shoot
 
 ## Objetivos de Aprendizaje
@@ -183,3 +183,14 @@ Prueba crear un video slide-shoot original:
   }]
 }
 ```
+
+## Enlaces de referencia (sincronizado con las slides de Module 15)
+
+Cinco recursos para buscar plantillas o inspiración.
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

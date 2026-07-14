@@ -1,8 +1,8 @@
 ---
 description: Install skills from external plugins
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # External Plugin Installation
 
 ## Usage

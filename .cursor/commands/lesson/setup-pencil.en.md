@@ -4,8 +4,8 @@ duration: "~15 min"
 prerequisites: ["Browser available", "Claude Code or Cursor installed"]
 level: "beginner"
 tags: ["setup", "pencil", "mcp", "design"]
+nonInteractiveMode: incompatible
 ---
-
 # Pencil MCP Setup
 
 ## Step 0: Check Setup Progress

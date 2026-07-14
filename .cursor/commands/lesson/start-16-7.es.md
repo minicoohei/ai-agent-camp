@@ -6,8 +6,8 @@ duration: "25 min"
 prerequisites: ["start-16-6"]
 level: "beginner"
 tags: ["email", "resend", "api-key", "resend-cli", "send"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 16-7: Creación de Clave API y Primer Envió de Correo
 
 ## Lo Que Hará en Esta Sesión

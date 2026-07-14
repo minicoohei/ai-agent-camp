@@ -6,8 +6,8 @@ duration: "35分"
 prerequisites: ["start-16-1"]
 level: "intermediate"
 tags: ["email", "gmail", "gogcli", "send"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 16-3: gogcli でメール送信
 
 ## 📍 このセッションでやること

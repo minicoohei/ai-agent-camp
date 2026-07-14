@@ -1,7 +1,7 @@
 ---
 description: スラッシュ /module-18-gcp-quick — Module 18 Lesson 4-1 — ai-agent-camp 同梱 OAuth で gog 認証まで（ターミナル手入力不要）
+nonInteractiveMode: incompatible
 ---
-
 ## まずこれ（最短）
 
 **受講者が意識するのはチャットでの `/module-18-gcp-quick` だけで構いません。** 下の bash はエージェント（または自分で切り分けたい人）向けです。

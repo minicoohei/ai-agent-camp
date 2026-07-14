@@ -6,8 +6,8 @@ duration: "~40 min"
 prerequisites: ["start-14-1", "start-14-2", "start-14-3", "start-14-4", "start-14-5", "start-14-6"]
 level: "advanced"
 tags: ["article", "parallel"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 14-7: Ejecución paralela y finalización - Procesamiento por lotes de múltiples artículos
 
 ## 📍 Lo que hará en está sesión

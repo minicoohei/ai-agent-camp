@@ -252,7 +252,7 @@ class TestValidateLinkReferencesExtended:
 
     def test_skill_reference_exists(self, tmp_path):
         from verify_commands import validate_link_references
-        content = "Use the check-inboxスキル to process email."
+        content = "Use `.claude/skills/check-inbox/SKILL.md` to process email."
         f = tmp_path / "test.md"
         f.write_text(content, encoding="utf-8")
         with patch("verify_commands.PROJECT_ROOT", tmp_path):
@@ -263,7 +263,7 @@ class TestValidateLinkReferencesExtended:
 
     def test_skill_reference_missing(self, tmp_path):
         from verify_commands import validate_link_references
-        content = "Use the missing-skillスキル to do something."
+        content = "Use `skills/missing-skill/SKILL.md` to do something."
         f = tmp_path / "test.md"
         f.write_text(content, encoding="utf-8")
         with patch("verify_commands.PROJECT_ROOT", tmp_path):
@@ -363,6 +363,22 @@ class TestMainFunction:
              patch("verify_commands.RESULTS_DIR", tmp_path):
             result = main()
         assert result >= 1
+
+    def test_main_normalizes_large_failure_count_to_one(self, tmp_path):
+        from verify_commands import main
+
+        results = {
+            "timestamp": "2026-07-14T00:00:00",
+            "total_files": 256,
+            "passed": 0,
+            "failed": 256,
+            "files": {},
+        }
+        with patch("verify_commands.validate_all_commands", return_value=results), \
+             patch("verify_commands.RESULTS_DIR", tmp_path):
+            result = main()
+
+        assert result == 1
 
 
 class TestGenerateReportExtended:

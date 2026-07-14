@@ -1,0 +1,16 @@
+# Chapter 20: /loop（定期実行と自己ペース）
+id: "ch20-loop"
+order: 20
+name: "/loop（定期実行と自己ペース）"
+description: "プロンプトやコマンドを繰り返し実行する /loop の仕組みと使いどころ"
+type: "manual"
+estimatedMinutes: 40
+thumbnail: "thumbnail.png"
+objectives:
+  - "/loop がプロンプトやスラッシュコマンドを繰り返し実行する仕組みを理解する"
+  - "間隔指定モードと自己ペース（dynamic）モードを使い分ける"
+  - "各ループで何が起きるか、セッション内実行の要点を把握する"
+  - "/loop とクラウド側 routines の違いを理解する"
+  - "止め方とコスト感覚を押さえたうえで定期タスクを実行できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-12?slideId=module-overview"

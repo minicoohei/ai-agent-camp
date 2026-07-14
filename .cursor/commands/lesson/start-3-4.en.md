@@ -5,8 +5,8 @@ prerequisites: ["start-3-1"]
 duration: "~25 min"
 level: "intermediate"
 tags: ["screenshot", "annotation", "manual"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 3-4: Dashboard Monitoring Setup
 
 ## 📍 What You'll Do

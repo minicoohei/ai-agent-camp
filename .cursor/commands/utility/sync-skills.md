@@ -1,8 +1,8 @@
 ---
 description: スキルをグローバル・他プロジェクトに同期
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # スキル同期
 
 ## 使い方

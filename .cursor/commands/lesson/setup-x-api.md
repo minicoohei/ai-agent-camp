@@ -4,8 +4,8 @@ duration: "約15分"
 prerequisites: ["Xアカウントを持っている", "ブラウザが使える"]
 level: "beginner"
 tags: ["setup", "x", "twitter", "api"]
+nonInteractiveMode: incompatible
 ---
-
 # X (Twitter) API セットアップ
 
 ## Step 0: セットアップ進捗の確認

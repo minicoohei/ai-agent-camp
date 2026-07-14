@@ -1,0 +1,189 @@
+file,total,askq,oauth,restart,secret,install,namespace,score,grade,nonInteractiveMode,blockers
+commands/lesson/check-setup.md,14,7,0,2,0,0,5,70,B,incompatible,AskQuestion×7; Restart×2; Namespace×5; declared:incompatible
+commands/lesson/setup-bigquery.md,32,15,15,0,1,1,0,70,B,incompatible,AskQuestion×15; OAuth×15; Secret×1; Install×1; declared:incompatible
+commands/lesson/setup-clasp.md,26,17,8,0,0,0,1,70,B,incompatible,AskQuestion×17; OAuth×8; Namespace×1; declared:incompatible
+commands/lesson/setup-elevenlabs.md,36,15,2,0,19,0,0,70,B,incompatible,AskQuestion×15; OAuth×2; Secret×19; declared:incompatible
+commands/lesson/setup-extensions.md,13,11,0,1,0,0,1,70,B,incompatible,AskQuestion×11; Restart×1; Namespace×1; declared:incompatible
+commands/lesson/setup-fal.md,34,15,3,0,16,0,0,70,B,incompatible,AskQuestion×15; OAuth×3; Secret×16; declared:incompatible
+commands/lesson/setup-figma.md,6,0,5,0,0,0,1,70,B,incompatible,OAuth×5; Namespace×1; declared:incompatible
+commands/lesson/setup-freee.md,7,0,5,0,0,1,1,70,B,incompatible,OAuth×5; Install×1; Namespace×1; declared:incompatible
+commands/lesson/setup-gemini.md,31,13,1,0,17,0,0,70,B,incompatible,AskQuestion×13; OAuth×1; Secret×17; declared:incompatible
+commands/lesson/setup-github.md,32,19,12,0,0,0,1,70,B,incompatible,AskQuestion×19; OAuth×12; Namespace×1; declared:incompatible
+commands/lesson/setup-gogcli.md,37,14,17,0,0,6,0,70,B,incompatible,AskQuestion×14; OAuth×17; Install×6; declared:incompatible
+commands/lesson/setup-google-ads.md,11,0,7,0,3,0,1,70,B,incompatible,OAuth×7; Secret×3; Namespace×1; declared:incompatible
+commands/lesson/setup-line-harness.md,16,0,2,1,11,0,2,70,B,incompatible,OAuth×2; Restart×1; Secret×11; Namespace×2; declared:incompatible
+commands/lesson/setup-notion.md,34,20,2,1,8,3,0,70,B,incompatible,AskQuestion×20; OAuth×2; Restart×1; Secret×8; Install×3; declared:incompatible
+commands/lesson/setup-pencil.md,17,16,0,1,0,0,0,70,B,incompatible,AskQuestion×16; Restart×1; declared:incompatible
+commands/lesson/setup-remotion.md,12,10,1,0,0,1,0,70,B,incompatible,AskQuestion×10; OAuth×1; Install×1; declared:incompatible
+commands/lesson/setup-slack.md,37,16,17,0,4,0,0,70,B,incompatible,AskQuestion×16; OAuth×17; Secret×4; declared:incompatible
+commands/lesson/setup-start.md,20,10,3,0,0,1,6,70,B,incompatible,AskQuestion×10; OAuth×3; Install×1; Namespace×6; declared:incompatible
+commands/lesson/setup-typefully.md,34,15,1,0,17,0,1,70,B,incompatible,AskQuestion×15; OAuth×1; Secret×17; Namespace×1; declared:incompatible
+commands/lesson/setup-vercel.md,34,16,12,0,0,4,2,70,B,incompatible,AskQuestion×16; OAuth×12; Install×4; Namespace×2; declared:incompatible
+commands/lesson/setup-x-api.md,32,15,1,0,15,0,1,70,B,incompatible,AskQuestion×15; OAuth×1; Secret×15; Namespace×1; declared:incompatible
+commands/lesson/start-0-1.md,8,6,2,0,0,0,0,70,B,incompatible,AskQuestion×6; OAuth×2; declared:incompatible
+commands/lesson/start-0-2.md,5,4,0,1,0,0,0,70,B,incompatible,AskQuestion×4; Restart×1; declared:incompatible
+commands/lesson/start-0-7.md,14,8,2,0,0,3,1,70,B,incompatible,AskQuestion×8; OAuth×2; Install×3; Namespace×1; declared:incompatible
+commands/lesson/start-10-1.md,25,23,2,0,0,0,0,70,B,incompatible,AskQuestion×23; OAuth×2; declared:incompatible
+commands/lesson/start-11-2.md,24,23,1,0,0,0,0,70,B,incompatible,AskQuestion×23; OAuth×1; declared:incompatible
+commands/lesson/start-11-3.md,10,9,1,0,0,0,0,70,B,incompatible,AskQuestion×9; OAuth×1; declared:incompatible
+commands/lesson/start-12-1.md,32,16,14,0,0,2,0,70,B,incompatible,AskQuestion×16; OAuth×14; Install×2; declared:incompatible
+commands/lesson/start-12-6.md,17,16,1,0,0,0,0,70,B,incompatible,AskQuestion×16; OAuth×1; declared:incompatible
+commands/lesson/start-13-2.md,15,14,1,0,0,0,0,70,B,incompatible,AskQuestion×14; OAuth×1; declared:incompatible
+commands/lesson/start-13-4.md,17,16,1,0,0,0,0,70,B,incompatible,AskQuestion×16; OAuth×1; declared:incompatible
+commands/lesson/start-13-5.md,26,14,12,0,0,0,0,70,B,incompatible,AskQuestion×14; OAuth×12; declared:incompatible
+commands/lesson/start-16-1.md,15,10,3,0,0,2,0,70,B,incompatible,AskQuestion×10; OAuth×3; Install×2; declared:incompatible
+commands/lesson/start-16-2.md,10,8,1,0,1,0,0,70,B,incompatible,AskQuestion×8; OAuth×1; Secret×1; declared:incompatible
+commands/lesson/start-16-3.md,9,8,1,0,0,0,0,70,B,incompatible,AskQuestion×8; OAuth×1; declared:incompatible
+commands/lesson/start-16-4.md,7,6,1,0,0,0,0,70,B,incompatible,AskQuestion×6; OAuth×1; declared:incompatible
+commands/lesson/start-16-5.md,9,8,1,0,0,0,0,70,B,incompatible,AskQuestion×8; OAuth×1; declared:incompatible
+commands/lesson/start-16-6.md,13,8,1,0,1,3,0,70,B,incompatible,AskQuestion×8; OAuth×1; Secret×1; Install×3; declared:incompatible
+commands/lesson/start-16-7.md,12,6,1,0,5,0,0,70,B,incompatible,AskQuestion×6; OAuth×1; Secret×5; declared:incompatible
+commands/lesson/start-16-8.md,7,6,1,0,0,0,0,70,B,incompatible,AskQuestion×6; OAuth×1; declared:incompatible
+commands/lesson/start-17-4.md,18,17,1,0,0,0,0,70,B,incompatible,AskQuestion×17; OAuth×1; declared:incompatible
+commands/lesson/start-18-13.md,7,5,2,0,0,0,0,70,B,incompatible,AskQuestion×5; OAuth×2; declared:incompatible
+commands/lesson/start-18-4.md,15,14,1,0,0,0,0,70,B,incompatible,AskQuestion×14; OAuth×1; declared:incompatible
+commands/lesson/start-18-5.md,8,7,1,0,0,0,0,70,B,incompatible,AskQuestion×7; OAuth×1; declared:incompatible
+commands/lesson/start-18-9.md,7,4,3,0,0,0,0,70,B,incompatible,AskQuestion×4; OAuth×3; declared:incompatible
+commands/lesson/start-19-2.md,24,23,1,0,0,0,0,70,B,incompatible,AskQuestion×23; OAuth×1; declared:incompatible
+commands/lesson/start-25-1.md,5,0,5,0,0,0,0,70,B,incompatible,OAuth×5; declared:incompatible
+commands/lesson/start-29-2.md,21,20,0,0,1,0,0,70,B,incompatible,AskQuestion×20; Secret×1; declared:incompatible
+commands/lesson/start-29-4.md,22,20,0,0,2,0,0,70,B,incompatible,AskQuestion×20; Secret×2; declared:incompatible
+commands/lesson/start-4-1.md,20,12,6,0,0,2,0,70,B,incompatible,AskQuestion×12; OAuth×6; Install×2; declared:incompatible
+commands/lesson/start-6-3.md,24,23,0,1,0,0,0,70,B,incompatible,AskQuestion×23; Restart×1; declared:incompatible
+commands/lesson/start-7-6.md,17,16,0,1,0,0,0,70,B,incompatible,AskQuestion×16; Restart×1; declared:incompatible
+commands/lesson/start-7-7.md,17,16,0,1,0,0,0,70,B,incompatible,AskQuestion×16; Restart×1; declared:incompatible
+commands/lesson/start-8-1.md,25,20,5,0,0,0,0,70,B,incompatible,AskQuestion×20; OAuth×5; declared:incompatible
+commands/lesson/start-8-3.md,24,23,1,0,0,0,0,70,B,incompatible,AskQuestion×23; OAuth×1; declared:incompatible
+commands/lesson/start-9-1.md,24,21,3,0,0,0,0,70,B,incompatible,AskQuestion×21; OAuth×3; declared:incompatible
+commands/lesson/start-9-2.md,23,21,2,0,0,0,0,70,B,incompatible,AskQuestion×21; OAuth×2; declared:incompatible
+commands/lesson/start-9-3.md,24,21,3,0,0,0,0,70,B,incompatible,AskQuestion×21; OAuth×3; declared:incompatible
+commands/module-18-gcp-quick.md,7,0,7,0,0,0,0,70,B,incompatible,OAuth×7; declared:incompatible
+commands/lesson/setup-salesforce.md,5,0,3,0,0,1,1,75,B,incompatible,OAuth×3; Install×1; Namespace×1; declared:incompatible
+commands/lesson/setup-discord.md,5,0,2,1,0,0,2,80,B,deferred,OAuth×2; Restart×1; Namespace×2; declared:deferred
+commands/lesson/setup-m365cli.md,5,0,3,0,0,1,1,80,B,deferred,OAuth×3; Install×1; Namespace×1; declared:deferred
+commands/lesson/setup-security.md,17,9,0,0,6,0,2,80,B,deferred,AskQuestion×9; Secret×6; Namespace×2; declared:deferred
+commands/lesson/start-0-3.md,7,4,0,0,3,0,0,80,B,deferred,AskQuestion×4; Secret×3; declared:deferred
+commands/lesson/start-0-4.md,5,4,0,0,1,0,0,80,B,deferred,AskQuestion×4; Secret×1; declared:deferred
+commands/lesson/start-0-5.md,5,4,0,0,1,0,0,80,B,deferred,AskQuestion×4; Secret×1; declared:deferred
+commands/lesson/start-0-8.md,8,7,0,0,0,0,1,80,B,deferred,AskQuestion×7; Namespace×1; declared:deferred
+commands/lesson/start-1-1.md,17,17,0,0,0,0,0,80,B,deferred,AskQuestion×17; declared:deferred
+commands/lesson/start-1-2.md,20,20,0,0,0,0,0,80,B,deferred,AskQuestion×20; declared:deferred
+commands/lesson/start-1-3.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-10-2.md,28,23,5,0,0,0,0,80,B,deferred,AskQuestion×23; OAuth×5; declared:deferred
+commands/lesson/start-10-3.md,27,26,1,0,0,0,0,80,B,deferred,AskQuestion×26; OAuth×1; declared:deferred
+commands/lesson/start-10-4.md,13,9,4,0,0,0,0,80,B,deferred,AskQuestion×9; OAuth×4; declared:deferred
+commands/lesson/start-11-1.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-11-4.md,12,9,0,0,0,3,0,80,B,deferred,AskQuestion×9; Install×3; declared:deferred
+commands/lesson/start-11-5.md,10,9,0,0,0,1,0,80,B,deferred,AskQuestion×9; Install×1; declared:deferred
+commands/lesson/start-12-2.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-12-3.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-12-4.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-12-5.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-13-1.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-13-3.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-14-1.md,12,12,0,0,0,0,0,80,B,deferred,AskQuestion×12; declared:deferred
+commands/lesson/start-14-2.md,12,12,0,0,0,0,0,80,B,deferred,AskQuestion×12; declared:deferred
+commands/lesson/start-14-3.md,12,12,0,0,0,0,0,80,B,deferred,AskQuestion×12; declared:deferred
+commands/lesson/start-14-4.md,14,14,0,0,0,0,0,80,B,deferred,AskQuestion×14; declared:deferred
+commands/lesson/start-14-5.md,12,12,0,0,0,0,0,80,B,deferred,AskQuestion×12; declared:deferred
+commands/lesson/start-14-6.md,12,12,0,0,0,0,0,80,B,deferred,AskQuestion×12; declared:deferred
+commands/lesson/start-14-7.md,14,14,0,0,0,0,0,80,B,deferred,AskQuestion×14; declared:deferred
+commands/lesson/start-15-1.md,27,26,0,0,0,1,0,80,B,deferred,AskQuestion×26; Install×1; declared:deferred
+commands/lesson/start-15-2.md,4,4,0,0,0,0,0,80,B,deferred,AskQuestion×4; declared:deferred
+commands/lesson/start-15-5.md,10,10,0,0,0,0,0,80,B,deferred,AskQuestion×10; declared:deferred
+commands/lesson/start-15-6.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-15-7.md,12,12,0,0,0,0,0,80,B,deferred,AskQuestion×12; declared:deferred
+commands/lesson/start-15-8.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-15-9.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-17-1.md,17,17,0,0,0,0,0,80,B,deferred,AskQuestion×17; declared:deferred
+commands/lesson/start-17-2.md,17,17,0,0,0,0,0,80,B,deferred,AskQuestion×17; declared:deferred
+commands/lesson/start-17-3.md,17,17,0,0,0,0,0,80,B,deferred,AskQuestion×17; declared:deferred
+commands/lesson/start-17-5.md,25,23,0,0,2,0,0,80,B,deferred,AskQuestion×23; Secret×2; declared:deferred
+commands/lesson/start-18-1.md,14,14,0,0,0,0,0,80,B,deferred,AskQuestion×14; declared:deferred
+commands/lesson/start-18-10.md,4,4,0,0,0,0,0,80,B,deferred,AskQuestion×4; declared:deferred
+commands/lesson/start-18-11.md,10,5,0,0,5,0,0,80,B,deferred,AskQuestion×5; Secret×5; declared:deferred
+commands/lesson/start-18-12.md,4,4,0,0,0,0,0,80,B,deferred,AskQuestion×4; declared:deferred
+commands/lesson/start-18-14.md,4,4,0,0,0,0,0,80,B,deferred,AskQuestion×4; declared:deferred
+commands/lesson/start-18-15.md,3,3,0,0,0,0,0,80,B,deferred,AskQuestion×3; declared:deferred
+commands/lesson/start-18-16.md,3,3,0,0,0,0,0,80,B,deferred,AskQuestion×3; declared:deferred
+commands/lesson/start-18-17.md,3,3,0,0,0,0,0,80,B,deferred,AskQuestion×3; declared:deferred
+commands/lesson/start-18-18.md,3,3,0,0,0,0,0,80,B,deferred,AskQuestion×3; declared:deferred
+commands/lesson/start-18-19.md,5,5,0,0,0,0,0,80,B,deferred,AskQuestion×5; declared:deferred
+commands/lesson/start-18-2.md,18,18,0,0,0,0,0,80,B,deferred,AskQuestion×18; declared:deferred
+commands/lesson/start-18-20.md,9,9,0,0,0,0,0,80,B,deferred,AskQuestion×9; declared:deferred
+commands/lesson/start-18-3.md,18,18,0,0,0,0,0,80,B,deferred,AskQuestion×18; declared:deferred
+commands/lesson/start-18-7.md,5,5,0,0,0,0,0,80,B,deferred,AskQuestion×5; declared:deferred
+commands/lesson/start-18-8.md,5,5,0,0,0,0,0,80,B,deferred,AskQuestion×5; declared:deferred
+commands/lesson/start-2-1.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-2-2.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-2-3.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-29-1.md,25,20,0,0,3,2,0,80,B,deferred,AskQuestion×20; Secret×3; Install×2; declared:deferred
+commands/lesson/start-29-3.md,20,20,0,0,0,0,0,80,B,deferred,AskQuestion×20; declared:deferred
+commands/lesson/start-3-1.md,17,17,0,0,0,0,0,80,B,deferred,AskQuestion×17; declared:deferred
+commands/lesson/start-3-2.md,17,17,0,0,0,0,0,80,B,deferred,AskQuestion×17; declared:deferred
+commands/lesson/start-3-3.md,17,17,0,0,0,0,0,80,B,deferred,AskQuestion×17; declared:deferred
+commands/lesson/start-3-4.md,20,20,0,0,0,0,0,80,B,deferred,AskQuestion×20; declared:deferred
+commands/lesson/start-3-5.md,20,20,0,0,0,0,0,80,B,deferred,AskQuestion×20; declared:deferred
+commands/lesson/start-3-6.md,20,20,0,0,0,0,0,80,B,deferred,AskQuestion×20; declared:deferred
+commands/lesson/start-4-2.md,12,12,0,0,0,0,0,80,B,deferred,AskQuestion×12; declared:deferred
+commands/lesson/start-4-3.md,12,12,0,0,0,0,0,80,B,deferred,AskQuestion×12; declared:deferred
+commands/lesson/start-4-4.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-4-5.md,12,12,0,0,0,0,0,80,B,deferred,AskQuestion×12; declared:deferred
+commands/lesson/start-4-6.md,12,12,0,0,0,0,0,80,B,deferred,AskQuestion×12; declared:deferred
+commands/lesson/start-4-7.md,14,14,0,0,0,0,0,80,B,deferred,AskQuestion×14; declared:deferred
+commands/lesson/start-5-1.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-5-2.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-6-1.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-6-2.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-6-4.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-6-5.md,26,26,0,0,0,0,0,80,B,deferred,AskQuestion×26; declared:deferred
+commands/lesson/start-7-1.md,20,20,0,0,0,0,0,80,B,deferred,AskQuestion×20; declared:deferred
+commands/lesson/start-7-2.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-7-3.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-7-4.md,26,26,0,0,0,0,0,80,B,deferred,AskQuestion×26; declared:deferred
+commands/lesson/start-7-5.md,17,17,0,0,0,0,0,80,B,deferred,AskQuestion×17; declared:deferred
+commands/lesson/start-7-8.md,16,16,0,0,0,0,0,80,B,deferred,AskQuestion×16; declared:deferred
+commands/lesson/start-8-2.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/lesson/start-8-4.md,23,23,0,0,0,0,0,80,B,deferred,AskQuestion×23; declared:deferred
+commands/next_lesson.md,3,3,0,0,0,0,0,80,B,deferred,AskQuestion×3; declared:deferred
+commands/module-18-gcp-appendix.md,3,0,3,0,0,0,0,82,B,incompatible,OAuth×3; declared:incompatible
+commands/check-setup.md,2,2,0,0,0,0,0,84,B,deferred,AskQuestion×2; declared:deferred
+commands/lesson/start-15-4.md,2,2,0,0,0,0,0,84,B,deferred,AskQuestion×2; declared:deferred
+commands/lesson/setup-content.md,3,0,0,0,0,0,3,85,B,deferred,Namespace×3; declared:deferred
+commands/setup-api-key.md,3,0,1,0,2,0,0,86,B,incompatible,OAuth×1; Secret×2; declared:incompatible
+commands/lesson/start-21-1.md,2,0,2,0,0,0,0,88,B,incompatible,OAuth×2; declared:incompatible
+commands/module-18-google-auth.md,2,0,2,0,0,0,0,88,B,incompatible,OAuth×2; declared:incompatible
+commands/_lib/non-interactive.md,16,4,10,2,0,0,0,90,A,compliant,AskQuestion×4; OAuth×10; Restart×2; declared:compliant
+commands/lesson/exercise-review.md,3,0,0,0,0,0,3,90,A,compliant,Namespace×3; declared:compliant
+commands/lesson/start-0-6.md,7,0,0,0,3,4,0,90,A,compliant,Secret×3; Install×4; declared:compliant
+commands/lesson/verify-module.md,2,0,0,0,0,0,2,90,A,compliant,Namespace×2; declared:compliant
+commands/lesson/start-15-3.md,3,0,0,0,0,3,0,94,A,compliant,Install×3; declared:compliant
+commands/lesson/start-24-1.md,1,0,1,0,0,0,0,94,A,incompatible,OAuth×1; declared:incompatible
+commands/lesson/check-security.md,1,0,0,0,0,0,1,95,A,compliant,Namespace×1; declared:compliant
+commands/lesson/start-15-10.md,1,0,0,0,0,0,1,95,A,deferred,Namespace×1; declared:deferred
+commands/lesson/start-15-11.md,1,0,0,0,0,0,1,95,A,deferred,Namespace×1; declared:deferred
+commands/lesson/start-15-12.md,1,0,0,0,0,0,1,95,A,deferred,Namespace×1; declared:deferred
+commands/lesson/start-15-13.md,1,0,0,0,0,0,1,95,A,deferred,Namespace×1; declared:deferred
+commands/lesson/start-15-7a.md,1,0,0,0,0,0,1,95,A,deferred,Namespace×1; declared:deferred
+commands/lesson/start-15-7b.md,1,0,0,0,0,0,1,95,A,deferred,Namespace×1; declared:deferred
+commands/lesson/start-15-7c.md,1,0,0,0,0,0,1,95,A,deferred,Namespace×1; declared:deferred
+commands/lesson/start-15-7d.md,1,0,0,0,0,0,1,95,A,deferred,Namespace×1; declared:deferred
+commands/lesson/start-18-6.md,0,0,0,0,0,0,0,100,A,compliant,declared:compliant
+commands/lesson/start-19-1.md,0,0,0,0,0,0,0,100,A,compliant,declared:compliant
+commands/lesson/start-20-1.md,0,0,0,0,0,0,0,100,A,compliant,declared:compliant
+commands/lesson/start-22-1.md,0,0,0,0,0,0,0,100,A,incompatible,declared:incompatible
+commands/lesson/start-23-1.md,0,0,0,0,0,0,0,100,A,incompatible,declared:incompatible
+commands/lesson/start-6-6.md,0,0,0,0,0,0,0,100,A,deferred,declared:deferred
+commands/lesson/start-6-7.md,0,0,0,0,0,0,0,100,A,deferred,declared:deferred
+commands/lesson/start-6-8.md,0,0,0,0,0,0,0,100,A,deferred,declared:deferred
+commands/lesson/start-6-9.md,0,0,0,0,0,0,0,100,A,deferred,declared:deferred
+commands/module-18-calendar.md,0,0,0,0,0,0,0,100,A,compliant,declared:compliant
+commands/module-18-drive.md,0,0,0,0,0,0,0,100,A,compliant,declared:compliant
+commands/module-18-gas.md,0,0,0,0,0,0,0,100,A,compliant,declared:compliant
+commands/module-18-gmail.md,0,0,0,0,0,0,0,100,A,compliant,declared:compliant
+commands/module-18-sheets.md,0,0,0,0,0,0,0,100,A,compliant,declared:compliant
+commands/module-24-exercise.md,0,0,0,0,0,0,0,100,A,incompatible,declared:incompatible
+commands/module-24-metadata-deploy.md,0,0,0,0,0,0,0,100,A,incompatible,declared:incompatible
+commands/module-24-metadata-retrieve.md,0,0,0,0,0,0,0,100,A,incompatible,declared:incompatible
+commands/module-24-soql.md,0,0,0,0,0,0,0,100,A,incompatible,declared:incompatible
+commands/verify-module.md,0,0,0,0,0,0,0,100,A,compliant,declared:compliant

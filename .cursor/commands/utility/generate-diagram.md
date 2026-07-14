@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Generate Diagram with Nano Banana Pro
 
 このコマンドは、`.cursor/tools/generate_diagram.py` を使用して、指定されたテーマに基づいた図解やインフォグラフィックを生成します。

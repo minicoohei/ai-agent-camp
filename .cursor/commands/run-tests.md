@@ -1,7 +1,7 @@
 ---
 description: "プロジェクトのテストを実行"
+nonInteractiveMode: compliant
 ---
-
 # テスト実行
 
 プロジェクトのテストを実行するコマンドです。

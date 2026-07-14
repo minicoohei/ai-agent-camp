@@ -5,8 +5,8 @@ prerequisites: ["start-7-2"]
 duration: "~25 min"
 level: "intermediate"
 tags: ["agent", "testing", "iteration"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 7-3: Pruebas e iteración
 
 ## 📍 Lo que hará en está sesion

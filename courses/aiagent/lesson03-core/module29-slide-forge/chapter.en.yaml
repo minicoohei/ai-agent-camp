@@ -1,0 +1,16 @@
+# Chapter 29: Automated Slide Generation (slide-forge)
+id: "module29-slide-forge"
+order: 29
+name: "Automated Slide Generation (slide-forge)"
+description: "Install and use the OSS tool that turns meeting notes into editable proposal decks in PPTX, PDF, PNG, and HTML."
+type: "manual"
+estimatedMinutes: 100
+objectives:
+  - "Set up slide-forge"
+  - "Run the demo without an API key"
+  - "Generate a production deck with five questions"
+  - "Use real image fetching safely"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-29"
+  slides: "https://ai-agent.camp/en/course/module-29"

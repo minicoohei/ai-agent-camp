@@ -6,8 +6,8 @@ duration: "About 35 min"
 prerequisites: ["start-19-1"]
 level: "intermediate"
 tags: ["outlook", "microsoft365", "rules", "folders", "categories"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 19-2: Folders, Rules & Categories
 
 ## 📍 What You'll Do in This Session

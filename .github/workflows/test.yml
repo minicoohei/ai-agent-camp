@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Set up Python
@@ -28,6 +29,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Lint Python with Ruff
+        run: ruff check .
+
       - name: Lint skills structure
         run: bash scripts/lint-skills.sh
 
@@ -36,6 +40,9 @@ jobs:
 
       - name: Lint command sync
         run: bash scripts/lint-commands.sh
+
+      - name: Check generated reference docs
+        run: python tools/generate_reference_docs.py --check
 
       - name: Lint openai.yaml coverage
         run: bash scripts/lint-openai-yaml.sh
@@ -67,6 +74,12 @@ jobs:
 
       - name: Check residual Japanese in translations
         run: python tools/check_residual_japanese.py
+
+      - name: Verify skill metadata and executable references
+        run: python tools/verify_skill_metadata.py
+
+      - name: Verify localized command structure
+        run: python tools/verify_commands.py
 
       - name: Run tests
         run: pytest tests/ -v --cov=tools --cov-report=term-missing --cov-report=xml

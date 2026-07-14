@@ -1,7 +1,7 @@
 ---
 description: Módulo 18 Lección 4-5 — Asistir con Google Sheets (sheets_ops) mediante prompts
+nonInteractiveMode: compliant
 ---
-
 # Módulo 18 — Sheets (Lección 4-5)
 
 El usuario está trabajando con el material del curso "Módulo 18 - Integración de datos." **Mediante prompts,** utilice `sheets_ops.py` para asistir con la obtención por rango, exportación CSV y vista previa.

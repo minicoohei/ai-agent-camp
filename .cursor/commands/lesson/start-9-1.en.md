@@ -5,8 +5,8 @@ prerequisites: ["start-0-4"]
 duration: "~25 min"
 level: "intermediate"
 tags: ["slack", "search", "bookrag"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 9-1: Slack Search
 
 ## 📍 What You'll Do

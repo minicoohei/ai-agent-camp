@@ -5,8 +5,8 @@ prerequisites: ["start-13-3"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["lp", "html", "tailwind", "implementation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 13-4: Crear una Landing Page funcional (HTML/CSS/JS)
 
 ## 📍 Lo que hará en está sesión

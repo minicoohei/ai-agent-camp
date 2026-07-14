@@ -19,6 +19,11 @@ main() {
         exit 0
     fi
 
+    # Malformed hook input must not break the Edit/Write operation.
+    if ! echo "$input" | jq -e . > /dev/null 2>&1; then
+        exit 0
+    fi
+
     local tool_name
     tool_name=$(echo "$input" | jq -r '.tool_name // .tool // ""')
 

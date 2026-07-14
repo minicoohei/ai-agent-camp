@@ -1,7 +1,7 @@
 ---
 description: Module 18 Lesson 4-5 — Assist Google Sheets (sheets_ops) via prompts
+nonInteractiveMode: compliant
 ---
-
 # Module 18 — Sheets (Lesson 4-5)
 
 The user is working on the course material "Module 18 - Data Integration." **Via prompts,** use `sheets_ops.py` to assist with range-specified retrieval, CSV export, and previewing.

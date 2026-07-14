@@ -5,8 +5,8 @@ duration: "~30 min"
 prerequisites: ["start-15-5"]
 level: "advanced"
 tags: ["video", "product-demo", "avatar", "kling"]
+nonInteractiveMode: deferred
 ---
-
 # 15-9: Product Demo Video
 
 ## What You Will Do in This Session
@@ -327,3 +327,14 @@ apply_musetalk(video, audio, output)
   }]
 }
 ```
+
+## Reference links (mirrors aiagent-course Module 15 slides)
+
+Five resources you can use to find templates or inspiration.
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

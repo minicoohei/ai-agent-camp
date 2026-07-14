@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # PowerPoint Operations - PPTX操作
 
 python-pptxを使用してPowerPointファイルの読み取り・書き込み・分析を行います。

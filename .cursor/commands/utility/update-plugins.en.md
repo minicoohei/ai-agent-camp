@@ -1,8 +1,8 @@
 ---
 description: Update installed external skills
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # Update External Plugins
 
 ## Usage

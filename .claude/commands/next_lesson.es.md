@@ -1,7 +1,7 @@
 ---
 description: "Verificar finalización y pasar a la siguiente lección"
+nonInteractiveMode: deferred
 ---
-
 # /next_lesson
 
 ## ✅ Verificación de finalización y siguiente lección

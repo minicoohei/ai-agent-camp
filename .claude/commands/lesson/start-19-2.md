@@ -6,8 +6,8 @@ duration: "約35分"
 prerequisites: ["start-19-1"]
 level: "intermediate"
 tags: ["outlook", "microsoft365", "rules", "folders", "categories"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 19-2: フォルダ・ルール・カテゴリ
 
 ## 📍 このセッションでやること

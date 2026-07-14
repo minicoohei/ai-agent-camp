@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Gmail Pending Replies - Extraer correos sin responder
 
 Extraiga correos electrónicos que necesitan respuesta de Gmail y **genere borradores de respuesta automáticamente**.

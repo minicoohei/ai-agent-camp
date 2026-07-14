@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-10-1"]
 level: "intermediate"
 tags: ["gas", "gmail", "sheets", "automation", "clasp"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 10-4: GmailApp Email Search/Extraction → Sheet Organization
 
 ## 📍 What You'll Do

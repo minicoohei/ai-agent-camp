@@ -86,6 +86,10 @@ data/google-sync/data/
 # SpecStory
 .specstory/
 
+# Agent worktrees and execution logs
+/.claude/worktrees
+/.entire
+
 # User workspace (examples)
 work/
 my-projects/

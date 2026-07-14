@@ -4,8 +4,8 @@ duration: "約2分"
 prerequisites: ["ai-agent-camp フォルダを Codex または Cursor で開いている"]
 level: "beginner"
 tags: ["setup", "check"]
+nonInteractiveMode: incompatible
 ---
-
 # /check-setup -- 環境の自動チェック
 
 ## Step 0: セットアップ進捗の確認

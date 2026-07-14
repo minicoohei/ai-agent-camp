@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Excel Operations - Excel操作
 
 openpyxlを使用してExcelファイルの読み取り・書き込み・分析を行います。

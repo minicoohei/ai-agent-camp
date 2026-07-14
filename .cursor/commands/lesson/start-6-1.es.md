@@ -5,8 +5,8 @@ duration: "~30 min"
 prerequisites: ["start-0-1"]
 level: "intermediate"
 tags: ["agent", "command", "cursor"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 6-1: Fundamentos de creacion de comandos personalizados
 
 ## 📍 Lo que hara en esta sesion

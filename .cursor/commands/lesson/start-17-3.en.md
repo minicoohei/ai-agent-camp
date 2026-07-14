@@ -5,8 +5,8 @@ duration: "~35 min"
 prerequisites: ["start-0-3"]
 level: "intermediate"
 tags: ["marketing", "copywriting", "lp", "ab-test"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 17-3: Copywriting
 
 ## What You Will Do in This Session

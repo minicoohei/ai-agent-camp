@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-4-1"]
 level: "beginner"
 tags: ["google", "workspace", "gogcli", "calendar"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 4-3: Google Calendar操作
 
 ## 📍 このセッションでやること

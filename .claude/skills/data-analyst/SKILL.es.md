@@ -1,6 +1,7 @@
 ---
 name: data-analyst
 description: "Sub-agente que realiza conexiones a BigQuery/Snowflake, EDA, visualización y creación de notebooks Marimo. Integra cuatro reglas relacionadas (data_analysis, visualization, notebook, marimo_variable_naming). Se activa con solicitudes como 'analiza datos,' 'conectar a BigQuery,' 'ejecutar EDA,' 'analizar con Marimo,' etc."
+status: draft
 triggers:
   - データ分析
   - BigQuery
@@ -16,6 +17,8 @@ triggers:
 # Sub-Agente de Análisis de Datos
 
 Un sub-agente que ejecuta conexiones a BigQuery/Snowflake, EDA, visualización y creación de notebooks Marimo en un contexto dedicado.
+
+> **Borrador:** El script auxiliar para verificar variables de Marimo no está incluido. Revise manualmente los nombres de variables duplicados.
 
 ## Propósito
 
@@ -172,12 +175,9 @@ def _(data):
     return fig_detail, axes_detail
 ```
 
-## Verificación de Lint de Variables
+## Verificación de Variables Duplicadas
 
-```bash
-# Ejecute antes y después de editar; confirme que las redefiniciones sean 0
-python scripts/lint_marimo_vars.py <path>
-```
+Antes y después de editar, revise los nombres de variables de nivel superior en cada celda y confirme que ningún nombre se redefina entre celdas. Agregue un sufijo específico de la función a cualquier nombre duplicado.
 
 ---
 
@@ -283,7 +283,7 @@ tqdm>=4.65.0
 |-------|----------|
 | Error de autenticación de GCP | Ejecute `gcloud auth application-default login` |
 | Tabla de BigQuery no encontrada | Verifique los perfiles con `gcloud config configurations list` y cambie al apropiado |
-| Error de redefinición de variable en Marimo | Verifique y corrija variables duplicadas con `python scripts/lint_marimo_vars.py <path>` |
+| Error de redefinición de variable en Marimo | Revise las variables de nivel superior de cada celda y agregue sufijos únicos a los nombres duplicados |
 
 ## Criterios de Éxito
 
@@ -302,7 +302,4 @@ Consulte las secciones "Patrón de Invocación del Sub-Agente" y "Autenticación
 ```bash
 # Iniciar análisis con un notebook Marimo
 marimo edit notebooks/eda_analysis.py
-
-# Verificación de lint de variables
-python scripts/lint_marimo_vars.py notebooks/eda_analysis.py
 ```

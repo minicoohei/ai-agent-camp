@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-11", "output/pm/wireframes.md"]
 level: "intermediate"
 tags: ["pm", "ui", "design", "pencil-mcp"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-12: UIデザイン（Pencil MCP）
 
 | 項目 | 内容 |

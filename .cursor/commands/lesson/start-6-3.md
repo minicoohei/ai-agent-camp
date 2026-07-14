@@ -5,8 +5,8 @@ prerequisites: ["start-6-1"]
 duration: "約25分"
 level: "intermediate"
 tags: ["agent", "rules", "cursor"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 6-3: Cursor Rules設定
 
 ## 📍 このセッションでやること

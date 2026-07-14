@@ -625,7 +625,11 @@ max 3イテレーションで収束させる。
     npx remotion render src/index.ts {CompositionId} out/{Name}_v{N}.mp4
         ↓
 [2] QA Frame Extraction
-    bash scripts/qa_frames.sh out/{Name}_v{N}.mp4
+    VIDEO=out/{Name}_v{N}.mp4
+    QA_DIR=data/qa_{Name}_v{N}
+    mkdir -p "$QA_DIR"
+    DURATION="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$VIDEO")"
+    ffmpeg -y -i "$VIDEO" -vf "fps=12/${DURATION}" -frames:v 12 "$QA_DIR/qa_%02d.png"
     → data/qa_{Name}_v{N}/ に12フレーム出力
         ↓
 [3] Visual Review（QAフレーム目視）
@@ -659,7 +663,7 @@ CCTrend-All をレンダリングしてレビューして
 
 Claude Code が以下を自動実行:
 1. `npx remotion render src/index.ts CCTrend-All out/CCTrend-All_v1.mp4`
-2. `bash scripts/qa_frames.sh out/CCTrend-All_v1.mp4`
+2. Step 2 の `ffprobe` / `ffmpeg` コマンドで12枚のQAフレームを抽出
 3. QAフレームを Read で目視確認
 4. .tsx を Read → 20項目チェック
 5. レビューレポート出力

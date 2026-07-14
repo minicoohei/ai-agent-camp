@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-12-2"]
 level: "intermediate"
 tags: ["notion", "ncli", "file", "fetch"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 12-3: ファイル取得
 
 ## 📍 このセッションでやること

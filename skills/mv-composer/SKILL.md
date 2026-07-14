@@ -1,6 +1,7 @@
 ---
 name: mv-composer
 description: "Remotion + Kling i2v でプロモーションMV動画・バイラルショート動画を生成するスキル。 「MV作成」「動画を作って」「プロモーション動画」「TikTok動画」等のリクエストで発動。"
+status: draft
 triggers:
   - MV作成
   - 動画を作って
@@ -16,6 +17,8 @@ triggers:
 
 MV作成, 動画を作って, プロモーション動画, Remotion動画, アニメMV, 宣伝動画, 広告動画,
 TikTok動画, ショート動画, バイラル動画, リール, Short動画の台本, バズる動画
+
+> **Draft:** i2v のバッチ生成と自動 Video QA は未実装。実在する補助ツールと手動レビューの範囲で使用する。
 
 # MV Composer — Remotion + i2v 動画生成（横型 & 縦型）
 
@@ -97,8 +100,8 @@ F8: CTA（行動喚起）   — 価格 + ボタン + ブランド
 
 **イラスト生成（Gemini 3 Pro）:**
 ```bash
-python cursor_tools/nanobanana.py \
-  --prompt "Anime style, frustrated person at desk with laptop, warm amber lighting, dark room" \
+python3 skills/nanobanana/scripts/nanobanana.py \
+  "Anime style, frustrated person at desk with laptop, warm amber lighting, dark room" \
   --output public/assets/illustrations/f1_scene.jpg
 ```
 
@@ -113,11 +116,7 @@ ffmpeg -i narration_raw.mp3 -filter:a "atempo=1.15" -y narration_fast/frame_01.m
 
 **重要**: 1動画あたり i2v は **1-2シーンに限定**。コスト最適化のため。
 
-```bash
-cd mv-composer
-export $(grep '^FAL_KEY=' ../.env | tr -d '"' | xargs)
-python3.11 scripts/i2v_batch.py
-```
+汎用 i2v バッチスクリプトは未実装。承認済みの動画生成ワークフローで必要な1-2シーンを個別生成し、`mv-composer/public/assets/i2v/` に配置する。
 
 ### Step 4: Remotion コンポジション
 
@@ -143,8 +142,7 @@ ffmpeg -ss 2 -i output/mv01_final.mp4 -vframes 1 -q:v 2 /tmp/check_f1.jpg
 ### バイラルスクリプト生成
 
 ```bash
-cd mv-composer
-python3.11 scripts/generate_viral_script.py \
+python3 skills/viral-short-video/scripts/generate_viral_script.py \
   --topic "AIで業務を自動化する方法" \
   --duration 30 \
   --target "30代のビジネスパーソン" \
@@ -157,15 +155,15 @@ python3.11 scripts/generate_viral_script.py \
 
 ```bash
 # プリセット素材をダウンロード（初回のみ）
-bash scripts/download_assets.sh
+bash skills/viral-short-video/scripts/download_assets.sh
 
 # バズ動画のフックを分析
-python3.11 scripts/generate_viral_script.py \
+python3 skills/viral-short-video/scripts/generate_viral_script.py \
   --analyze-video hook_viral_10 \
   --topic "AI自動化" --duration 30
 ```
 
-### generate_viral_script.py パラメータ
+### viral-short-video 生成ツールのパラメータ
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -265,85 +263,6 @@ Hook部分だけ差し替えてA/Bテスト。制作コスト-40%、テスト速
 
 ---
 
-## Video QA パイプライン（11ステージ多段チェック）
-
-レンダリング済みMVの品質を自動検証するパイプライン。
-ローカル検証（Phase 1）→ AI音声検証（Phase 2）→ AI映像検証（Phase 3）→ AIディレクターレビュー（Phase 4）の順に実行。
-
-### 実行方法
-
-```bash
-# 全11ステージ実行
-python3.11 scripts/video_qa.py output/clearpay_mv_v4.mp4 clearpay
-
-# 新ステージのみ（安価なローカル + ディレクターレビュー）
-python3.11 scripts/video_qa.py output/clearpay_mv_v4.mp4 clearpay --stages lufs pacing director
-
-# ローカルチェックのみ（$0）
-python3.11 scripts/video_qa.py output/clearpay_mv_v4.mp4 clearpay --stages metadata black silence sync lufs pacing
-
-# 全MV自動検出
-python3.11 scripts/video_qa.py
-```
-
-### 11ステージ一覧
-
-| # | Phase | Stage | チェック内容 | 手法 | コスト |
-|---|-------|-------|------------|------|--------|
-| 1 | ローカル | metadata | 解像度・尺・コーデック | ffprobe | $0 |
-| 2 | ローカル | black_frames | 黒フレーム（トランジション除外） | ffmpeg blackdetect | $0 |
-| 3 | ローカル | silence | 1.5s超の無音区間 | ffmpeg silencedetect | $0 |
-| 4 | ローカル | narration_sync | ナレーション尺 vs シーン尺 | ffprobe | $0 |
-| 5 | ローカル | **lufs** | **音量バランス（LUFS）** | ffmpeg loudnorm | $0 |
-| 6 | ローカル | **pacing** | **ペーシング分析（詰まり/間延び検出）** | ffprobe | $0 |
-| 7 | AI音声 | audio_accuracy | Whisper書き起こし + 発音比較 | fal.ai Whisper + Gemini | ~$0.001 |
-| 8 | AI映像 | visual + terop | マルチフレーム映像品質 + テロップOCR照合 | Gemini Vision ×8 | ~$0.0015 |
-| 9 | AI映像 | i2v_quality | i2vアーティファクト検出 | Gemini Vision + PIL diff | ~$0.0004 |
-| 10 | AIレビュー | **director** | **5軸スコアリング + 改善P1/P2/P3** | Gemini Vision (8画像) | ~$0.002 |
-| | | **合計** | | | **~$0.005** |
-
-### シーケンス図・詳細設計
-
-→ [docs/video-qa-sequence.md](docs/video-qa-sequence.md)
-
-### 新ステージ詳細
-
-**Stage 5: LUFS音量バランス**:
-- ffmpeg loudnorm で全体 + シーン別の統合ラウドネス（LUFS）を測定
-- BGMがナレーションを食っている、シーン間の音量差が大きい場合に警告
-- Pass条件: シーン間差 < 8dB、全体 > -24dB
-
-**Stage 6: ペーシング分析**:
-- ナレーション尺 ÷ シーン尺 の比率を計算
-- > 0.95: cramped（詰まりすぎ）、< 0.4: sparse（間延び）
-- 各シーンのゲージ表示で直感的に確認可能
-
-**Stage 10: AIディレクターレビュー**:
-- 全シーン代表フレーム（50%地点）×8枚 + 全ナレーションテキストをGemini Visionに一括投入
-- SaaS企業のシニアクリエイティブディレクター視点で5軸評価:
-  - Storytelling / Visual Quality / Text Design / Pacing / Brand Consistency
-- 各軸10点満点、合計100点。P1改善案が2件以上なら FAIL
-- 強み + 改善案（P1/P2/P3優先度付き + 具体的なシーン指定）を出力
-
-### 多段チェックによる精度向上
-
-**音声精度向上** (Stage 7):
-- narration_qa.py の Whisper+Gemini パイプラインを再利用
-- fal.ai Whisper で書き起こし → pykakasi でひらがな変換 → Gemini で発音比較
-- 「人材→臨済」「立場→直ち」等の TTS 発音エラーを自動検出
-
-**映像精度向上** (Stage 8):
-- シーンあたり2フレーム (30% + 70%) を1回の Gemini Vision 呼出に統合
-- テロップ検出: Gemini OCR → ひらがな変換 → スライディングウィンドウ部分一致（UI内テキストとの誤照合を回避）
-- デザインスコア + フレーム間変化量で総合評価
-
-**i2v品質判定** (Stage 9):
-- i2v元ファイルから3フレーム (0.5s, 2.5s, 4.5s) を抽出
-- PILでフレーム差分を計算（モーション量の定量評価）
-- Gemini Vision で顔の歪み・テクスチャ崩壊・フリッカーを検出
-
----
-
 ## ファイル構成
 
 ```
@@ -363,16 +282,10 @@ mv-composer/
 │       ├── logos/            # ツール/企業ロゴ
 │       ├── hooks/            # フック分析用素材（download_assets.sh で取得）
 │       └── gameplay/         # ゲームプレイ背景素材（同上）
-├── scripts/
-│   ├── video_qa.py                 # 8ステージ多段QAパイプライン ★
-│   ├── narration_qa.py             # ナレーション TTS→STT→比較→自動修正
-│   ├── i2v_batch.py                # Kling 3.0 バッチ i2v 生成
-│   ├── generate_viral_script.py    # バイラルスクリプト生成 + フック分析
-│   └── download_assets.sh          # フック/ゲームプレイ素材DL
+├── scripts/                  # プロジェクト固有の生成補助スクリプト
 ├── output/                   # レンダリング済み MP4
 ├── package.json
-├── tsconfig.json
-└── remotion.config.ts
+└── tsconfig.json
 ```
 
 ---

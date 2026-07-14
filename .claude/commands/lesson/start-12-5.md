@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-12-4"]
 level: "intermediate"
 tags: ["notion", "ncli", "update", "write"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 12-5: 書き込みと更新
 
 ## 📍 このセッションでやること

@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-0-3"]
 level: "beginner"
 tags: ["screenshot", "analysis", "gemini-vision"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 3-1: スクリーンショット分析基礎
 
 ## 📍 このセッションでやること

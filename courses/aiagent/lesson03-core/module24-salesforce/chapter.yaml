@@ -1,17 +1,19 @@
-# Chapter 24: Salesforce連携
+# Chapter 24: Salesforce CLI 連携
 id: "module24-salesforce"
 order: 24
-name: "Salesforce連携"
-description: "Salesforce APIを使ったCRMデータ操作と自動化を扱う近日公開モジュールです。想定内容は、リード、取引先、商談、活動履歴の取得・更新、営業レポート、フォローアップ提案、マーケティングやメール自動化との接続です。CRMは顧客情報と営業判断の中心になるため、AIエージェントに任せる操作範囲、更新前の承認、監査ログ、重複・誤更新の検出を重視し、安全なCRM自動化の基礎を学ぶ章です。"
+name: "Salesforce CLI 連携"
+description: "sf CLI とブラウザログインを使い、SOQL によるリード・取引先・商談・活動履歴の取得から CSV 一括更新、メタデータ操作までを「ターミナル + AI エージェント」で学びます。顧客情報と営業判断の中心である CRM を安全に自動化するため、AI に任せる操作範囲、更新前の承認、監査ログ、重複・誤更新の検出、マーケティングやメール自動化との接続も重視します。"
 type: "manual"
-status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+objectives:
+  - "sf CLI をインストールし、ブラウザログインで接続できる"
+  - "複数 Org を alias で切り替えて管理できる"
+  - "SOQL で取引先、商談、リードを検索できる"
+  - "CSV を使った一括 insert、update、upsert を実行できる"
+  - "Apex、Flow、レイアウトなどのメタデータを deploy / retrieve できる"
 externalContent:
-  manual: "https://ai-agent.camp/ja/course/module-24"
+  manual: "https://ai-agent.camp/ja/course/module-24?slideId=module-overview"
+  slides: "https://ai-agent.camp/ja/course/module-24?slideId=module-overview"
 prerequisites:
   - "module17-marketing"
-objectives:
-  - "Salesforce API連携で扱うCRMデータの種類を理解する"
-  - "営業・マーケティング業務でのAI活用ユースケースを整理できる"
-  - "CRM更新時の承認、監査、誤更新防止の重要性を説明できる"

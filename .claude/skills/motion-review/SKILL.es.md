@@ -36,6 +36,18 @@ Se invoca automáticamente en el paso de Revisión de Calidad del GTM Manager / 
 6. Si solo P3 -> VEREDICTO: APROBADO
 ```
 
+## Extracción Manual de Fotogramas de QA
+
+Después del renderizado, extraiga 12 fotogramas espaciados uniformemente directamente con `ffprobe` y `ffmpeg`:
+
+```bash
+VIDEO=out/Composition_v1.mp4
+QA_DIR=data/qa_Composition_v1
+mkdir -p "$QA_DIR"
+DURATION="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$VIDEO")"
+ffmpeg -y -i "$VIDEO" -vf "fps=12/${DURATION}" -frames:v 12 "$QA_DIR/qa_%02d.png"
+```
+
 ## Tono (Estilo de Salida de Revisión)
 
 - Use el tono de "un director de video profesional haciendo una verificación final antes de la entrega"

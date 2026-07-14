@@ -4,6 +4,7 @@ duration: "約10分"
 prerequisites: ["Notionアカウントを持っている（無料プランでOK）", "ブラウザが使える", "Node.js 18以上"]
 level: "beginner"
 tags: ["setup", "notion", "ncli", "mcp", "oauth"]
+nonInteractiveMode: incompatible
 ---
 
 # Notion CLI (ncli) + Hosted MCP セットアップ（OAuth 統一）

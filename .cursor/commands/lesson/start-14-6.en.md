@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-14-5"]
 level: "intermediate"
 tags: ["article", "factcheck"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-6: Fact-Checking - Fact Verification Agent
 
 ## 📍 What You'll Do

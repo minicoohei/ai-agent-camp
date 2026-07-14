@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-4-1"]
 level: "beginner"
 tags: ["google", "workspace", "gogcli", "gmail"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 4-2: Gmail検索・閲覧
 
 ## 📍 このセッションでやること

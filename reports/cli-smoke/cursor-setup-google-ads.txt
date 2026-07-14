@@ -1,0 +1,7 @@
+[`.cursor/commands/lesson/setup-google-ads.md`](.cursor/commands/lesson/setup-google-ads.md) の frontmatter は **`nonInteractiveMode: incompatible`** です。
+
+**扱い:** このレッスンはブラウザでのアカウント作成・API Center 申請（Basic Access で最大およそ1営業日）、GCP での OAuth Web クライアント作成、Web フローでの **refresh_token 取得**、さらに Keychain / GitHub Secrets への5値の保存など、**人の操作と承認待ちが必須**なため、非対話モードでは手順を代行・実行しません。
+
+**対話モードでやること（要約）:** MCC 作成 → API Center で Developer Token（Basic Access）→ GCP OAuth（web）→ refresh_token 発行 → `GOOGLE_ADS_DEVELOPER_TOKEN` 等5つを安全に保管 → Python SDK で疎通の確認。
+
+今回は上記のみ案内し、セットアップの実行やコマンド運用は行いません。

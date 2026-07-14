@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Codex Desktop or Cursor installed"]
 level: "beginner"
 tags: ["setup", "environment"]
+nonInteractiveMode: incompatible
 ---
-
 # Training Environment Setup
 
 ## Step 0: Check Setup Progress

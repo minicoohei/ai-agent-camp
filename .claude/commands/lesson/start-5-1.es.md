@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-0-1"]
 level: "beginner"
 tags: ["pptx", "analysis", "document"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 5-1: Analisis de PPTX
 
 ## 📍 Lo que hara en esta sesion

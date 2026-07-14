@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Tener una cuenta de Google", "Navegador disponible"]
 level: "beginner"
 tags: ["setup", "gemini", "api"]
+nonInteractiveMode: deferred
 ---
-
 # Configuración de la API de Gemini
 
 ## Step 0: Verificar el progreso de configuración

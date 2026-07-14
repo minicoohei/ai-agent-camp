@@ -5,8 +5,8 @@ duration: "約10分"
 prerequisites: ["start-0-1", "start-0-2"]
 level: "beginner"
 tags: ["setup", "gemini", "api"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 0-3: Gemini API設定
 
 ## セットアップ進捗の確認

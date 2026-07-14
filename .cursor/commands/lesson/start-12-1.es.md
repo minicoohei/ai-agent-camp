@@ -5,8 +5,8 @@ duration: "~30 min"
 prerequisites: ["start-0-1"]
 level: "intermediate"
 tags: ["notion", "mcp", "api"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 12-1: Conexion API de Notion
 
 ## 📍 Lo que hara en esta sesion

@@ -5,8 +5,8 @@ prerequisites: ["start-8-1", "start-8-2"]
 duration: "約40分"
 level: "intermediate"
 tags: ["data", "marimo", "dashboard", "visualization"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 8-3: Marimoノートブックで対話型分析
 
 ## 📍 このセッションでやること

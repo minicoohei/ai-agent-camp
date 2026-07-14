@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Have an X (Twitter) account", "Browser available"]
 level: "beginner"
 tags: ["setup", "typefully", "api", "sns"]
+nonInteractiveMode: incompatible
 ---
-
 # Typefully API Setup
 
 ## Step 0: Check Setup Progress

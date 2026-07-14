@@ -4,8 +4,8 @@ duration: "約10分"
 prerequisites: ["ブラウザが使える", "メールアドレスまたはGoogle/GitHubアカウントを持っている"]
 level: "beginner"
 tags: ["setup", "elevenlabs", "api", "tts", "voice"]
+nonInteractiveMode: incompatible
 ---
-
 # ElevenLabs API セットアップ
 
 ## Step 0: セットアップ進捗の確認
@@ -404,3 +404,14 @@ ElevenLabs APIの設定が完了しました！
 1. `uv run python tools/setup_progress.py complete setup-elevenlabs` を実行して進捗を更新
 2. 更新後の進捗サマリーが自動表示される
 3. ユーザーに次のステップを案内: 「ElevenLabs APIの設定が完了しました。`/start-13-3` でプロダクト紹介動画の作成、`/start-13-5` でスライド解説動画の作成に進めます」
+
+## 参考リンク（aiagent-course Module 15 スライドと共通）
+
+テンプレートやインスピレーションを探すときに使う 5 つのリソース。
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

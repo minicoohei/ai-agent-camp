@@ -1,8 +1,8 @@
 ---
 description: Sincronizar habilidades a nivel global u otros proyectos
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # Sincronización de habilidades
 
 ## Uso

@@ -17,7 +17,11 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 GUARD_SCRIPT = PROJECT_ROOT / ".claude" / "hooks" / "bash_guard.py"
 
 
-def run_guard(command: str, description: str = "") -> tuple[int, str, str]:
+def run_guard(
+    command: str,
+    description: str = "",
+    extra_env: dict[str, str] | None = None,
+) -> tuple[int, str, str]:
     """bash_guard.py を実行して (exit_code, stdout, stderr) を返す。"""
     tool_input = json.dumps({
         "tool_name": "Bash",
@@ -31,9 +35,22 @@ def run_guard(command: str, description: str = "") -> tuple[int, str, str]:
         input=tool_input,
         capture_output=True,
         text=True,
-        env={**os.environ, "CLAUDE_GUARDRAILS_SKIP": ""},
+        env={
+            **os.environ,
+            "CLAUDE_GUARDRAILS_SKIP": "",
+            **(extra_env or {}),
+        },
     )
     return result.returncode, result.stdout, result.stderr
+
+
+@pytest.fixture
+def gomi_env(tmp_path: Path) -> dict[str, str]:
+    """gomi が利用可能な環境を作り、置換結果を決定論的に検証する。"""
+    gomi = tmp_path / "gomi"
+    gomi.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
+    gomi.chmod(0o755)
+    return {"PATH": f"{tmp_path}{os.pathsep}{os.environ.get('PATH', '')}"}
 
 
 # =====================================================================
@@ -41,6 +58,59 @@ def run_guard(command: str, description: str = "") -> tuple[int, str, str]:
 # =====================================================================
 
 class TestRmGuard:
+    @pytest.mark.parametrize(
+        ("command", "expected"),
+        [
+            (" rm -rf lead-space", " gomi lead-space"),
+            ("echo a\n  rm -rf sp", "echo a\n  gomi sp"),
+            ("if true; then\n  rm -rf x\nfi", "if true; then\n  gomi x\nfi"),
+            (
+                'for f in *; do\n  rm "$f"\ndone',
+                'for f in *; do\n  gomi "$f"\ndone',
+            ),
+        ],
+    )
+    def test_indented_rm_is_replaced_and_preserves_indent(
+        self, command, expected, gomi_env
+    ):
+        code, stdout, stderr = run_guard(command, extra_env=gomi_env)
+
+        assert code == 0, stderr
+        output = json.loads(stdout)
+        assert output["hookSpecificOutput"]["updatedInput"]["command"] == expected
+
+    def test_rm_in_heredoc_body_is_replaced_by_conservative_design(self, gomi_env):
+        """regex guard は安全側に倒し、heredoc 本文の行頭 rm も置換する。"""
+        command = "cat > script.sh <<'EOF'\nrm -rf /important\nEOF"
+
+        code, stdout, stderr = run_guard(command, extra_env=gomi_env)
+
+        assert code == 0, stderr
+        output = json.loads(stdout)
+        updated = output["hookSpecificOutput"]["updatedInput"]["command"]
+        assert updated == "cat > script.sh <<'EOF'\ngomi /important\nEOF"
+
+    @pytest.mark.parametrize(
+        "command",
+        [
+            "echo hi\nrm -rf foo",
+            "cd dir\nrm -rf build",
+            "cat <<'EOF'\nheredoc content\nEOF\nrm -rf generated",
+            "echo hi && printf ok;\nrm -rf mixed",
+        ],
+    )
+    def test_rm_on_later_command_line_is_handled(self, command):
+        """複数行コマンドの2行目以降にある rm も処理される。"""
+        code, stdout, stderr = run_guard(command)
+        if code == 0:
+            output = json.loads(stdout)
+            updated_cmd = output["hookSpecificOutput"]["updatedInput"]["command"]
+            assert "gomi" in updated_cmd
+            assert "\nrm " not in updated_cmd
+        else:
+            assert code == 2
+            assert "gomi" in stderr
+
     def test_rm_simple_file_is_handled(self):
         """rm <file> は gomi 置換またはブロック（gomi の有無による）。"""
         code, stdout, stderr = run_guard("rm test.txt")

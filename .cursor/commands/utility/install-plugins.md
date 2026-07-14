@@ -1,8 +1,8 @@
 ---
 description: 外部プラグインからスキルをインストール
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # 外部プラグインインストール
 
 ## 使い方

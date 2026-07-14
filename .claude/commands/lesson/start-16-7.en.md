@@ -6,8 +6,8 @@ duration: "~25 min"
 prerequisites: ["start-16-6"]
 level: "beginner"
 tags: ["email", "resend", "api-key", "resend-cli", "send"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 16-7: API Key Creation & First Email Send
 
 ## What You Will Do in This Session

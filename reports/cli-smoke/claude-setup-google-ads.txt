@@ -1,0 +1,17 @@
+`nonInteractiveMode: incompatible` のため、非対話モードでは実行不可です。
+
+## /setup-google-ads — 非対話モードでは実行不可
+
+このコマンドは `nonInteractiveMode: incompatible` に指定されており、`claude -p` / `cursor-agent --print` では完走できません。
+
+**理由**: Google OAuth の web flow（ブラウザでの認可・refresh_token 取得）が必須で、ヘッドレス実行ではユーザー操作を得られないため。
+
+**対話モードで実行した場合の流れ（参考）**:
+1. Google Ads Manager Account (MCC) 作成
+2. API Center で Developer Token を Basic Access 申請（承認に最大1営業日）
+3. GCP プロジェクト + OAuth Client (web) を作成
+4. OAuth Playground 等で refresh_token を取得
+5. Keychain / GitHub Secrets に5つの値（DEVELOPER_TOKEN / CLIENT_ID / CLIENT_SECRET / REFRESH_TOKEN / LOGIN_CUSTOMER_ID）を保存
+6. Python SDK で疎通確認
+
+**次のアクション**: 対話モード（通常の Claude Code セッション）で `/setup-google-ads` を再実行してください。Plan Mode が有効ですが実行系の処理は不要なため、ここで停止します。

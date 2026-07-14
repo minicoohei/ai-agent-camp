@@ -5,8 +5,8 @@ duration: 45分
 prerequisites: ["start-15-3"]
 level: intermediate
 tags: ["video", "remotion", "marketing", "sns"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 15-4: Clipper × Remotion — マーケ素材自動生成
 
 ## 学習目標
@@ -207,3 +207,14 @@ Codex では通常チャットで選択肢を提示しながらで選べます�
 - next_auto → /next_lesson
 - next_window → 新しいウィンドウで /start-15-5
 - finish → 終了
+
+## 参考リンク（aiagent-course Module 15 スライドと共通）
+
+テンプレートやインスピレーションを探すときに使う 5 つのリソース。
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

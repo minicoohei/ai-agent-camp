@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Extract Tasks - Task Extraction
 
 Extract tasks from multiple data sources and list them with priority rankings.

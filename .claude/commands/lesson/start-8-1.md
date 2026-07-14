@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-0-3"]
 level: "intermediate"
 tags: ["data", "bigquery", "gcp", "authentication"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 8-1: BigQuery接続と認証設定
 
 ## 📍 このセッションでやること

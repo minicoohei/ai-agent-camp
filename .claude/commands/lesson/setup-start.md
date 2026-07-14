@@ -4,8 +4,8 @@ duration: "約10分"
 prerequisites: ["Codex Desktop または Cursor をインストール済み"]
 level: "beginner"
 tags: ["setup", "environment"]
+nonInteractiveMode: incompatible
 ---
-
 # 研修環境セットアップ
 
 ## Step 0: セットアップ進捗の確認

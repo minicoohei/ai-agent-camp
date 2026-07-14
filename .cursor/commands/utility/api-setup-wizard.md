@@ -6,8 +6,8 @@ duration: "約5分"
 prerequisites: ["Cursor をインストール済み", "ai-agent-camp フォルダを開いている"]
 level: "beginner"
 tags: ["setup", "api", "guide"]
+nonInteractiveMode: incompatible
 ---
-
 # API Setup Wizard - 設定ガイド統合
 
 各種API（Google, Notion, Slack, Fal.AI, Gemini 等）の設定を一元管理します。

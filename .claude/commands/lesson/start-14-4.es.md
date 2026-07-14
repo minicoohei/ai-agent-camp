@@ -6,8 +6,8 @@ duration: "~40 min"
 prerequisites: ["start-14-3"]
 level: "intermediate"
 tags: ["article", "illustration"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 14-4: Planificación y generación de ilustraciones - nanobanana + PlantUML
 
 ## 📍 Lo que hará en está sesión

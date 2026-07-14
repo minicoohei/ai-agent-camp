@@ -5,8 +5,8 @@ prerequisites: ["start-10-1", "start-10-2"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["gas", "sheets", "google", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 10-3: Ejecucion programada y configuracion de triggers
 
 ## 📍 Lo que hara en esta sesion

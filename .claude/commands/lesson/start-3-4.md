@@ -5,8 +5,8 @@ prerequisites: ["start-3-1"]
 duration: "約25分"
 level: "intermediate"
 tags: ["screenshot", "annotation", "manual"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 3-4: スクリーンショットに注釈追加
 
 ## 📍 このセッションでやること

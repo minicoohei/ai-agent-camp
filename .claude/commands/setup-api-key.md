@@ -1,7 +1,7 @@
 ---
-description: "APIキー・トークンを安全に設定する手順を案内する（初学者向け）"
+description: APIキー・トークンを安全に設定する手順を案内する（初学者向け）
+nonInteractiveMode: incompatible
 ---
-
 # APIキー設定の案内
 
 ユーザーが「APIキーを設定したい」「Gemini のキーを入れたい」などと依頼したとき、**この手順だけ**で案内する。秘密をチャットに貼らせない。

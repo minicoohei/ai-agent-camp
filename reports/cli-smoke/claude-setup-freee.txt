@@ -1,0 +1,16 @@
+`nonInteractiveMode: incompatible` のため、非対話モードでは実行しません。
+
+## /setup-freee（非対話モードでは実行不可）
+
+このコマンドは **対話モード専用**（`nonInteractiveMode: incompatible`）です。理由はブラウザ OAuth が必須のため。
+
+対話モードで実行されると、以下を順に進めます：
+
+1. freee Developer Portal でアプリ作成（`https://app.secure.freee.co.jp/developers/applications`）
+2. Client ID / Client Secret を取得（ブラウザのみで操作）
+3. `npm install -g freee-mcp@0.26.0` で MCP を pin install
+4. `claude mcp add --transport stdio freee -- npx freee-mcp@0.26.0` で MCP 登録
+5. ブラウザ OAuth フローで認可
+6. `freee_get_companies` で事業所 ID を取得し `~/.config/freee-mcp/config.json` に保存
+
+**実行するには**: 対話モード（`claude` を引数なしで起動）で `/lesson:setup-freee` を実行してください。`claude -p` や `cursor-agent --print` では完走できません。

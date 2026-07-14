@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Codex Desktop o Cursor instalado"]
 level: "beginner"
 tags: ["setup", "environment"]
+nonInteractiveMode: deferred
 ---
-
 # Configuración del entorno de capacitación
 
 ## Step 0: Verificar progreso de configuración

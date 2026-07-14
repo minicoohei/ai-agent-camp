@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-12-3"]
 level: "intermediate"
 tags: ["notion", "ncli", "create", "page", "file", "database"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 12-4: ファイル作成・ページ作成
 
 ## 📍 このセッションでやること

@@ -4,8 +4,8 @@ duration: "~15 min"
 prerequisites: ["Tener una cuenta de Google", "Navegador disponible"]
 level: "beginner"
 tags: ["setup", "bigquery", "gcp", "gcloud"]
+nonInteractiveMode: incompatible
 ---
-
 # Configuración de autenticación BigQuery / GCP
 
 ## Step 0: Verificar el progreso de configuración

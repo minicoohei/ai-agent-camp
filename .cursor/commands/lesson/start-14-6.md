@@ -6,8 +6,8 @@ duration: "30分"
 prerequisites: ["start-14-5"]
 level: "intermediate"
 tags: ["article", "factcheck"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-6: ファクトチェック - 事実検証エージェント
 
 ## 📍 このセッションでやること

@@ -228,10 +228,10 @@ high_priority:
 
 ```bash
 # Slack同期
-python slack-sync/scripts/fetch_slack.py --workspace my-workspace
+python data/slack-sync/scripts/fetch_slack.py --workspace my-workspace
 
 # スレッド返信も取得
-python slack-sync/scripts/fetch_slack.py --workspace my-workspace --refresh-threads
+python data/slack-sync/scripts/fetch_slack.py --workspace my-workspace --refresh-threads
 ```
 
 ## 依存関係

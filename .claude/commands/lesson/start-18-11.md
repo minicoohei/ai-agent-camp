@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-10", "output/pm/wbs.md", "output/pm/requirements-spec.md"]
 level: "intermediate"
 tags: ["pm", "notion", "tracker", "collaboration"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-11: Notion連携
 
 | 項目 | 内容 |

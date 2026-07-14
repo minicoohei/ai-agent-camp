@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Generate Lecture Slide with Nano Banana Pro
 
 This command uses `tools/generate_slide.py` to generate professional lecture slides.

@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Video Frame Reader - 動画キーフレーム抽出
 
 このコマンドは、動画からキーフレームを抽出し、必要に応じてGemini Visionでフレーム解析を行い、結果をJSONで出力します。

@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # BigQuery Auth - Project-Level BigQuery Authentication
 
 This command uses Cursor Browser to set up BigQuery authentication on a per-GCP-project basis. It leverages gcloud configuration profiles to safely manage multiple projects.

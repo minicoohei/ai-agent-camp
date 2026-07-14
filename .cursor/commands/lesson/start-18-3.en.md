@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-2", "output/pm/requirements-brief.md"]
 level: "intermediate"
 tags: ["pm", "prd", "working-backwards"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-3: PRD Creation (Working Backwards Method)
 
 ## 📍 What You'll Do

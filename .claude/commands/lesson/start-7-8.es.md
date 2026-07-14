@@ -5,8 +5,8 @@ duration: "~30 min"
 prerequisites: ["start-7-6", "start-7-7"]
 level: "intermediate"
 tags: ["skill", "command", "testing", "debugging", "iteration"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 7-8: Pruebas, depuración e iteración
 
 ## 📍 Lo que hará en esta sesión

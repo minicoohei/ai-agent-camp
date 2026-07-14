@@ -1,7 +1,7 @@
 ---
 description: "研修スタート - コース教材を自動で開く"
+nonInteractiveMode: incompatible
 ---
-
 # あなた（AI）が実行する手順
 
 このコマンドは `/start-cursor-bootcamp` で起動します。以下のエイリアスでも同じ内容が実行されます:

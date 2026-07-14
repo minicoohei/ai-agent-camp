@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-1", "start-18-2", "start-18-3", "start-18-4", "start-18-5", "start-18-6", "start-18-7", "start-18-8", "start-18-9", "start-18-10", "start-18-11", "start-18-12", "start-18-13", "start-18-14", "start-18-15", "start-18-16", "start-18-17", "start-18-18", "start-18-19"]
 level: "intermediate"
 tags: ["pm", "capstone", "review", "traceability"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-20: 総合演習（カプストーン）
 
 | 項目 | 内容 |

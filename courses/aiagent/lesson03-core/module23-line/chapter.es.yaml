@@ -1,17 +1,19 @@
-# Capítulo 23: Integración con LINE
+# Capítulo 23: Operación de LINE Official Account
 id: "module23-line"
 order: 23
-name: "Integración con LINE"
-description: "Módulo próximamente disponible sobre construcción de Bot y automatización usando la API de Mensajería de LINE. El contenido esperado incluye Webhooks, envío y recepción de mensajes, atención de consultas de usuarios, entrega de notificaciones, diseño de escenarios e integración con CRM u hojas de cálculo. Al ser un punto de contacto directo con clientes, este módulo clarifica la precisión de respuestas, manejo de información personal, opt-in, frecuencia de envío y condiciones de escalada."
+name: "Operación de LINE Official Account"
+description: "Construye y opera una LINE Official Account totalmente controlada por tu organización con Cloudflare Worker y la LINE Messaging API. Incluye webhooks, mensajería, atención de consultas, notificaciones y entregas por escenario, además de integración con CRM y Slack, definiendo precisión de respuestas, tratamiento de datos personales, opt-in, frecuencia de envío y escalado para automatizar de forma segura un punto de contacto directo con clientes."
 type: "manual"
-status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+objectives:
+  - "Configurar LINE Developers Console, webhooks y gestión de secretos"
+  - "Entender el patrón auto-register para importar amigos existentes sin depender solo de follow events"
+  - "Implementar y elegir entre respuestas automáticas, entregas por escenario y broadcasts"
+  - "Explicar puntos operativos de imágenes de rich menu, Flex messages y un puente bidireccional con Slack"
+  - "Consultar KPIs desde la CLI con wrangler, D1 y line-harness MCP"
 externalContent:
-  manual: "https://ai-agent.camp/es/course/module-23"
+  manual: "https://ai-agent.camp/es/course/module-23?slideId=module-overview"
+  slides: "https://ai-agent.camp/es/course/module-23?slideId=module-overview"
 prerequisites:
   - "module17-marketing"
-objectives:
-  - "Comprender la estructura básica de integración con la API de LINE"
-  - "Organizar casos de uso de automatización para atención de consultas y entrega de notificaciones"
-  - "Entender los riesgos de información personal y respuestas erróneas al usar IA en contacto con clientes"

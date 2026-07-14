@@ -5,8 +5,8 @@ duration: "~30 min"
 prerequisites: ["start-0-3"]
 level: "intermediate"
 tags: ["marketing", "x-post", "banner", "sns"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 17-1: Publicación en X y Creación de Banners
 
 ## Lo Que Hará en Esta Sesión

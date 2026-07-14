@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-0-7"]
 level: "intermediate"
 tags: ["freee", "moneyforward", "accounting", "mcp"]
+nonInteractiveMode: compliant
 ---
-
 # Lesson 20-1: Integración con Freee/MoneyForward - Introducción
 
 ## Lo que hará en esta sesión
@@ -30,4 +30,4 @@ Aprenda a obtener y operar datos contables utilizando el **servidor MCP de Freee
 
 ## Siguientes pasos
 
-Las lecciones detalladas de este módulo se añadirán progresivamente.
+Las lecciones detalladas de este módulo se añadirán progresivamente. A continuacion, ejecute `/start-21-1` para continuar con la integracion de Figma.

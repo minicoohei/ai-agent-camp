@@ -5,8 +5,8 @@ duration: "~40 min"
 prerequisites: ["start-7-5", "start-7-1"]
 level: "intermediate"
 tags: ["skill", "skill-design", "python", "SKILL.md"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 7-7: SKILL.md-Driven Skill Development
 
 ## 📍 What You'll Do

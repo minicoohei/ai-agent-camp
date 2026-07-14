@@ -1,7 +1,7 @@
 ---
 description: "モジュール完了チェック（AI評価付き）"
+nonInteractiveMode: compliant
 ---
-
 # /verify-module [モジュール番号]
 
 モジュール内の全レッスンの完了状況を自動チェックし、AI が総合評価とフィードバックを行います。

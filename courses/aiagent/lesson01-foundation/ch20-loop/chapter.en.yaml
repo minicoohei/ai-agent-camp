@@ -1,0 +1,16 @@
+# Chapter 20: /loop (scheduled & self-paced runs)
+id: "ch20-loop"
+order: 20
+name: "/loop (scheduled & self-paced runs)"
+description: "How /loop repeatedly runs a command or task, and when to use it."
+type: "manual"
+estimatedMinutes: 40
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand how /loop repeatedly runs prompts or slash commands"
+  - "Choose between interval mode and self-paced dynamic mode"
+  - "Understand what happens on each loop iteration inside the session"
+  - "Distinguish /loop from cloud-side routines"
+  - "Run a periodic task while understanding how to stop it and manage cost"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-12?slideId=module-overview"

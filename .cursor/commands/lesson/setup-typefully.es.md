@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Tener cuenta de X (Twitter)", "Navegador disponible"]
 level: "beginner"
 tags: ["setup", "typefully", "api", "sns"]
+nonInteractiveMode: deferred
 ---
-
 # Configuración de Typefully API
 
 ## Step 0: Verificar progreso de configuración

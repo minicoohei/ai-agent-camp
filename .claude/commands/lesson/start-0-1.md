@@ -5,8 +5,8 @@ duration: "約15分"
 prerequisites: ["Codex Desktop または Cursor をインストール済み", "ai-agent-camp フォルダを開いている"]
 level: "beginner"
 tags: ["setup", "environment"]
+nonInteractiveMode: incompatible
 ---
-
 # Lesson 0-1: 環境セットアップ確認
 
 ## セットアップ進捗の確認
@@ -35,6 +35,11 @@ tags: ["setup", "environment"]
 もしAIが「ターミナルで実行してください」と案内した場合は [ターミナル入門ガイド](../../../docs/terminal-guide.md) を参照してください。
 
 > **Codex向けメモ**: Codex では `/setup-start` や `/check-setup` を Cursor の slash command として直接実行するのではなく、このファイルに書かれた確認内容を順番に実行します。ブラウザ認証など GUI 操作が必要になったら、その時点でユーザー操作に切り替えます。
+
+### Step 0: セキュリティフックを有効化
+
+**AIが自動実行:** `bash scripts/install_hooks.sh` を実行する。何度実行しても同じ設定になり、
+コミット前の秘密情報スキャンが有効になります。
 
 ### Step 1: セットアップ開始
 

@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-0-3"]
 level: "beginner"
 tags: ["diagram", "flowchart", "gemini"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 2-1: フロー図生成
 
 ## 📍 このセッションでやること

@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # Create Banner - 広告バナー/クリエイティブ生成
 
 このコマンドは、`tools/banner_creator.py` を使用して、各種SNS・広告プラットフォーム向けのバナー/クリエイティブを生成します。

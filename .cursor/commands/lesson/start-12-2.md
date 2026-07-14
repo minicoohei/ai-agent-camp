@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-12-1"]
 level: "beginner"
 tags: ["notion", "ncli", "database", "query"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 12-2: データベース取得・クエリ
 
 ## 📍 このセッションでやること

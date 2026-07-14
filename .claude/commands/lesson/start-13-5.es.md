@@ -5,8 +5,8 @@ prerequisites: ["start-13-4"]
 duration: "~15 min"
 level: "intermediate"
 tags: ["lp", "vercel", "deploy", "hosting"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lección 13-5: Despliegue en Vercel
 
 ## 📍 Lo que hará en está sesión

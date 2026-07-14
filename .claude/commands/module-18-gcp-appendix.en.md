@@ -1,7 +1,7 @@
 ---
 description: Slash /module-18-gcp-appendix — Module 18 — Self-managed GCP (Console procedure checklist)
+nonInteractiveMode: incompatible
 ---
-
 ## Start here (quickest)
 
 Run **`/module-18-gcp-appendix`** in chat to load the GCP console procedure support context.

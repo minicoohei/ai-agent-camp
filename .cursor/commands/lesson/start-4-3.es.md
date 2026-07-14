@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-4-1"]
 level: "beginner"
 tags: ["google", "workspace", "gogcli", "calendar"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 4-3: Operaciones de Google Calendar
 
 ## 📍 Lo que hara en esta sesion

@@ -5,8 +5,8 @@ prerequisites: ["start-12-1"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["notion", "database", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 12-2: Notion Database Operations
 
 ## 📍 What You'll Do

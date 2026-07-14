@@ -1,8 +1,8 @@
 ---
 description: Obtener las habilidades más recientes desde upstream
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # Actualizar habilidades a la última versión
 
 ## Uso

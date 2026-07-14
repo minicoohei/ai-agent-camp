@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-10-1"]
 level: "intermediate"
 tags: ["gas", "gmail", "sheets", "automation", "clasp"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 10-4: GmailAppメール検索・抽出→シート整理
 
 ## 📍 このセッションでやること

@@ -5,8 +5,8 @@ duration: "約35分"
 prerequisites: ["start-0-3"]
 level: "intermediate"
 tags: ["marketing", "copywriting", "lp", "ab-test"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 17-3: コピーライティング
 
 ## 📍 このセッションでやること

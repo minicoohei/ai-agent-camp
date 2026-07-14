@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-3", "output/pm/prd.md"]
 level: "intermediate"
 tags: ["pm", "review", "devils-advocate", "security", "business"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 18-4: Tres revisiones
 
 ## 📍 Lo que hará en esta sesión

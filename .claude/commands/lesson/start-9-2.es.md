@@ -5,8 +5,8 @@ prerequisites: ["start-9-1"]
 duration: "~25 min"
 level: "intermediate"
 tags: ["slack", "task", "todo", "extraction"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 9-2: Resumen y reporte de canales de Slack
 
 ## 📍 Lo que hara en esta sesion

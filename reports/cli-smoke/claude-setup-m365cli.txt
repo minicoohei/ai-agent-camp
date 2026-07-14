@@ -1,0 +1,18 @@
+`nonInteractiveMode: deferred` を確認しました。非対話モードでは実行せず、何をするかの説明のみ行います。
+
+## /setup-m365cli 概要（deferred モード）
+
+**目的**: Microsoft 365 CLI (`@pnp/cli-microsoft365`) を導入し、Outlook / SharePoint / Teams をコマンドラインから操作できるようにする。OAuth デバイスコード認証のみで PAT 不要。
+
+**通常実行時の手順**（今回はスキップ）:
+1. `node -v` で Node.js 18+ を確認
+2. `npm install -g @pnp/cli-microsoft365@7.x` で pin install
+3. `m365 login` を実行 → 出力された URL とコードをブラウザで入力（デバイスコード認証）
+4. `m365 status` で接続確認
+
+**非対話モードでの扱い**:
+ブラウザでのデバイスコード入力が必要なため、`claude -p` 実行時は読み取り系チェック（Node.js バージョン、CLI インストール状況）のみを行い、`setup-resume.md` を生成して終了する設計になっています。
+
+**注意点**: WSL では `m365 login` 出力 URL を Windows 側ブラウザで手動オープンする必要があります。
+
+実際のインストール・ログインは対話セッション（通常の Claude Code）で再実行してください。

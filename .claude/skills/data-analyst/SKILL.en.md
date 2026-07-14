@@ -1,6 +1,7 @@
 ---
 name: data-analyst
 description: "Sub-agent that performs BigQuery/Snowflake connections, EDA, visualization, and Marimo notebook creation. Integrates four related rules (data_analysis, visualization, notebook, marimo_variable_naming). Triggered by requests like 'analyze data,' 'connect to BigQuery,' 'run EDA,' 'analyze with Marimo,' etc."
+status: draft
 triggers:
   - データ分析
   - BigQuery
@@ -16,6 +17,8 @@ triggers:
 # Data Analyst Sub-Agent
 
 A sub-agent that executes BigQuery/Snowflake connections, EDA, visualization, and Marimo notebook creation in a dedicated context.
+
+> **Draft:** The helper script for linting Marimo variables is not included. Check variable-name duplication manually.
 
 ## Purpose
 
@@ -172,12 +175,9 @@ def _(data):
     return fig_detail, axes_detail
 ```
 
-## Variable Lint Check
+## Variable Duplication Check
 
-```bash
-# Run before and after editing; confirm redefinitions are 0
-python scripts/lint_marimo_vars.py <path>
-```
+Before and after editing, review top-level variable names in every cell and confirm that no name is redefined across cells. Add a role-specific suffix to any duplicate name.
 
 ---
 
@@ -283,7 +283,7 @@ tqdm>=4.65.0
 |-------|----------|
 | GCP authentication error | Run `gcloud auth application-default login` |
 | BigQuery table not found | Check profiles with `gcloud config configurations list` and switch to the appropriate one |
-| Marimo variable redefinition error | Check and fix duplicate variables with `python scripts/lint_marimo_vars.py <path>` |
+| Marimo variable redefinition error | Review top-level variables in each cell and add unique suffixes to duplicate names |
 
 ## Success Criteria
 
@@ -302,7 +302,4 @@ See the "Sub-Agent Invocation Pattern" and "GCP Authentication" sections above. 
 ```bash
 # Start analysis with a Marimo notebook
 marimo edit notebooks/eda_analysis.py
-
-# Variable lint check
-python scripts/lint_marimo_vars.py notebooks/eda_analysis.py
 ```

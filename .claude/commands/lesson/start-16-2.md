@@ -6,8 +6,8 @@ duration: "30分"
 prerequisites: ["start-16-1"]
 level: "beginner"
 tags: ["email", "gmail", "check-inbox", "task-extraction"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 16-2: 受信メール分析 & タスク抽出
 
 ## 📍 このセッションでやること

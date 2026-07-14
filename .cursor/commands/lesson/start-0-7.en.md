@@ -5,8 +5,8 @@ duration: "~15 min"
 prerequisites: ["Node.js 18 or higher installed", "Familiar with terminal operations"]
 level: "beginner"
 tags: ["setup", "claude-code", "cli"]
+nonInteractiveMode: incompatible
 ---
-
 # Lesson 0-7: Claude Code Setup
 
 ## Check Setup Progress

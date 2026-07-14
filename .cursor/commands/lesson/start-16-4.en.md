@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-16-1"]
 level: "intermediate"
 tags: ["email", "sequence", "drip-campaign", "marketing"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 16-4: Email Sequence Design
 
 ## What You Will Do in This Session

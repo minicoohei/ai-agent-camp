@@ -253,9 +253,13 @@ class TestModuleContentAlignment:
         return request.param
 
     def test_lesson_file_names_match_heading(self, command_dir):
-        """start-X-Y.md のファイル名と # heading 内の X-Y が一致すること"""
+        """start-X-Y.md のファイル名と # heading 内の X-Y が一致すること
+
+        Y は数字のみ (15-1) または 数字+英小文字 (15-7a, 15-8b 等) の
+        sub-lesson 表記もサポートする。
+        """
         heading_re = re.compile(
-            r"^#\s+.*?(?:Lesson|レッスン)\s+(\d+)-(\d+)", re.MULTILINE
+            r"^#\s+.*?(?:Lesson|レッスン)\s+(\d+)-(\d+[a-z]*)", re.MULTILINE
         )
         errors = []
         for md in _lesson_files_for(command_dir):
@@ -331,6 +335,59 @@ class TestSetupChain:
     def test_check_setup_exists(self, command_dir):
         """check-setup.md が存在すること"""
         assert (command_dir / "check-setup.md").exists(), "check-setup.md が存在しない"
+
+
+class TestDiscordSetupCommand:
+    """/setup-discord が Claude Code Channels の公式 plugin フローを案内することを検証"""
+
+    @pytest.fixture(params=_all_command_dirs(), ids=lambda d: d.parent.parent.name)
+    def command_dir(self, request):
+        return request.param
+
+    @pytest.mark.parametrize("filename", [
+        "setup-discord.md",
+        "setup-discord.en.md",
+        "setup-discord.es.md",
+    ])
+    def test_setup_discord_uses_official_channels_flow(self, command_dir, filename):
+        path = command_dir / filename
+        assert path.exists(), f"{filename} が存在しない"
+        text = path.read_text(encoding="utf-8")
+
+        required = [
+            "/plugin install discord@claude-plugins-official",
+            "/reload-plugins",
+            "/discord:configure",
+            "claude --channels plugin:discord@claude-plugins-official",
+            "/discord:access policy allowlist",
+            "/discord:access allow",
+            "/discord:access pair",
+            "MESSAGE CONTENT INTENT",
+            "View Channels",
+            "Send Messages",
+            "Send Messages in Threads",
+            "Read Message History",
+            "Attach Files",
+        ]
+        missing = [item for item in required if item not in text]
+
+        forbidden = [
+            "claude-channel-discord",
+            "claude mcp add",
+            "mcpServers",
+            "mcp_settings.json",
+            ".mcp.json",
+            "SERVER MEMBERS INTENT",
+            "Manage Messages",
+            "/discord:access set --dm-policy",
+            "/discord:access approve",
+            "/discord:access list",
+            "Hello from MCP",
+        ]
+        present = [item for item in forbidden if item in text]
+
+        assert not missing, f"{filename}: missing official flow text: {missing}"
+        assert not present, f"{filename}: still contains obsolete flow text: {present}"
 
 
 # ---------------------------------------------------------------------------

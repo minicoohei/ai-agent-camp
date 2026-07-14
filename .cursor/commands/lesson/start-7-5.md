@@ -5,8 +5,8 @@ duration: "約30分"
 prerequisites: ["start-6-1", "start-6-2"]
 level: "intermediate"
 tags: ["skill", "command", "agent", "analysis"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 7-5: 既存Skill/Commandの構造理解と分析
 
 ## 📍 このセッションでやること

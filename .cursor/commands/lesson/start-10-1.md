@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-0-1"]
 level: "intermediate"
 tags: ["gas", "clasp", "google", "automation"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 10-1: Clasp基本・GASプロジェクト管理
 
 ## 📍 このセッションでやること

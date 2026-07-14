@@ -5,8 +5,8 @@ duration: "約5分"
 prerequisites: ["Lesson 0-1 完了"]
 level: "beginner"
 tags: ["setup", "extensions"]
+nonInteractiveMode: incompatible
 ---
-
 # Lesson 0-2: 拡張機能インストール
 
 ## セットアップ進捗の確認

@@ -5,8 +5,8 @@ prerequisites: ["start-6-1", "start-6-2", "start-6-3", "start-6-4"]
 duration: "~50 min"
 level: "advanced"
 tags: ["agent", "capstone", "deployment"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 6-5: Ejercicio integral - Integracion de desarrollo de agentes de IA
 
 ## 📍 Lo que hara en esta sesion

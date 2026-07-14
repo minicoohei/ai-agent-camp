@@ -2,16 +2,17 @@
 id: "module21-figma"
 order: 21
 name: "Figma Integration"
-description: "A coming-soon module covering design data operations and automation using Figma MCP. Expected content includes reading Figma files and frames, extracting design specifications, inspecting components and style information, converting to implementation instructions, design reviews, and choosing between LP/HP production and Pencil MCP. Positions AI agents as a bridge to translate design intent into engineering and content production."
+description: "Combine the official Figma MCP with the Serendie design system MCP so AI can read and write Figma data and deliver design-system-aligned UI end to end. Learn to inspect files, frames, components, and styles; extract specifications; turn design intent into implementation guidance; review designs; and choose appropriately between Figma and Pencil MCP while respecting permissions and sharing scope."
 type: "manual"
-status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+objectives:
+  - "Explain how the official Figma MCP and Serendie MCP divide responsibilities"
+  - "Install the Figma plugin in Claude Code and complete OAuth authentication"
+  - "Bring the Serendie UI Kit into your own Figma team and publish it as a library"
+  - "Understand the implementation flow from Figma selection to Claude to code/Figma updates"
 externalContent:
-  manual: "https://ai-agent.camp/en/course/module-21"
+  manual: "https://ai-agent.camp/en/course/module-21?slideId=module-overview"
+  slides: "https://ai-agent.camp/en/course/module-21?slideId=module-overview"
 prerequisites:
   - "module13-lp"
-objectives:
-  - "Understand the types of design data handled with Figma MCP"
-  - "Grasp the flow of converting design specs into implementation or review"
-  - "Be aware of permissions and sharing scope for design data"

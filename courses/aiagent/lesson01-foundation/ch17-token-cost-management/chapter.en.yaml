@@ -1,0 +1,16 @@
+# Chapter 17: Saving Tokens and Managing Cost in Claude Code
+id: "ch17-token-cost-management"
+order: 17
+name: "Saving Tokens and Managing Cost in Claude Code"
+description: "Learn model selection, prompt caching, context management, and cost design through delegation"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand cost design with model selection, caching, context management, and delegation"
+  - "Choose the smallest model that fits the task and reserve top models for key decisions"
+  - "Separate prompt cache discounts from the cost of rereading long sessions"
+  - "Use subagent delegation to keep the parent session context small"
+  - "Build intuition for input and output token costs through a Fable 5 pricing example"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-9?slideId=overview"

@@ -5,8 +5,8 @@ prerequisites: ["start-11-1"]
 duration: "~35 min"
 level: "intermediate"
 tags: ["github-actions", "secrets", "google-api"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 11-2: Pruebas automatizadas y despliegue
 
 ## 📍 Lo que hara en esta sesion
