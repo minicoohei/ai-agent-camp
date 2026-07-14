@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Set up Python
@@ -39,6 +40,9 @@ jobs:
 
       - name: Lint command sync
         run: bash scripts/lint-commands.sh
+
+      - name: Check generated reference docs
+        run: python tools/generate_reference_docs.py --check
 
       - name: Lint openai.yaml coverage
         run: bash scripts/lint-openai-yaml.sh

@@ -1,18 +1,19 @@
 # コマンドリファレンス完全ガイド
 
-**対応コマンド数**: 134個（レッスンコマンド107個 + cursor-workshop 4個 + ユーティリティコマンド27個）
+**対応コマンド数**: 226個（レッスン 171個 + ユーティリティ 33個 + トップレベル 22個）
 
-最終更新: 2026年3月20日
+最終更新: 2026-07-14
 
 ---
 
 ## 目次
 
 1. [クイックスタート](#クイックスタート)
-2. [レッスンコマンド (107個 + cursor-workshop 4個)](#レッスンコマンド-107個--cursor-workshop-4個)
-3. [ユーティリティコマンド (27個)](#ユーティリティコマンド-27個)
-4. [コマンド実行方法](#コマンド実行方法)
-5. [トラブルシューティング](#トラブルシューティング)
+2. [コマンド一覧](#コマンド一覧)
+3. [コマンド実行方法](#コマンド実行方法)
+4. [トラブルシューティング](#トラブルシューティング)
+5. [FAQ](#faq)
+6. [参考リンク](#参考リンク)
 
 ---
 
@@ -46,538 +47,389 @@ Codex と Claude Code では同じ lesson id を使いますが、入口が異�
 
 ---
 
-## レッスンコマンド (107個 + cursor-workshop 4個)
-
-基礎から応用まで段階的に学習できるコマンド群です。**Module 0 ～ 18** に分類されています（Module 17 は欠番）。
-
-### Module 0: セットアップ (8個)
-
-初期環境構築用コマンド（`start-0-1` ～ `start-0-8`）
-
-#### `/start-0-1` - 最初の lesson 開始
-- **難易度**: 初心者
-- **実行時間**: 1-2分
-- **機能**: lesson 0-1 の開始。詳細な setup 確認は tool ごとの入口から行う
-- **使用例**: `/start-0-1`
-
-#### `/start-0-2` - 拡張機能インストール
-- **難易度**: 初心者
-- **実行時間**: 5-10分
-- **機能**: Playwright, Python パッケージのインストール
-
-#### `/start-0-3` - Gemini API設定
-- **難易度**: 初心者
-- **前提条件**: Google アカウント
-- **必要情報**: GEMINI_API_KEY
-
-#### `/start-0-4` - Slack API設定
-- **難易度**: 初心者
-- **前提条件**: Slack ワークスペース管理権限
-- **設定項目**: Bot Token, Channel IDs
-
-#### `/start-0-5` - セキュリティ設定確認
-- **難易度**: 初心者
-- **実行時間**: 2-3分
-- **確認項目**: API キー安全性, 環境変数, .gitignore
-
-#### `/start-0-6` - Codex CLI セットアップ
-#### `/start-0-7` - Claude Code セットアップ
-#### `/start-0-8` - ツール選択ガイド（Cursor / Claude Code / Codex）
-
----
-
-### Module 1: バナー・画像生成 (3個)
-
-`start-1-1` ～ `start-1-3`
-
-#### `/start-1-1` - バナー生成入門
-- **学習内容**: バナーサイズの種類, プラットフォーム別の違い, デザイン原則
-
-#### `/start-1-2` - 応用バナー（Instagram, Facebook）
-- **学習内容**: プラットフォーム別最適化, ストーリーズ vs フィード
-
-#### `/start-1-3` - nanobanana画像編集
-- **学習内容**: 画像フォーマット変換, サイズ調整, エフェクト
-
----
-
-### Module 2: 図表・フロー作成 (3個)
-
-`start-2-1` ～ `start-2-3`
-
-#### `/start-2-1` - フロー図生成
-#### `/start-2-2` - インフォグラフィック作成
-#### `/start-2-3` - プレゼン資料向け図表作成
-
----
-
-### Module 3: チュートリアル作成 (6個)
-
-`start-3-1` ～ `start-3-6`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-3-1` | スクリーンショット分析基礎 |
-| `/start-3-2` | エラー診断の応用 |
-| `/start-3-3` | チュートリアル自動生成 |
-| `/start-3-4` | スクリーンショットに注釈追加 |
-| `/start-3-5` | 複数スクリーンショットの一括分析 |
-| `/start-3-6` | 操作マニュアル生成（総合演習） |
-
----
-
-### Module 4: データ分析 (4個)
-
-`start-4-1` ～ `start-4-4`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-4-1` | BigQuery接続と認証設定 |
-| `/start-4-2` | EDA（探索的データ分析）の実行 |
-| `/start-4-3` | Marimoノートブックで対話型分析 |
-| `/start-4-4` | データ可視化とダッシュボード作成 |
-
----
-
-### Module 5: PPTX解析・編集 (2個)
-
-`start-5-1` ～ `start-5-2`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-5-1` | PPTX解析（構造分析、テンプレート抽出） |
-| `/start-5-2` | PPTX編集と自動生成 |
-
----
-
-### Module 6: Slack検索・分析 (2個)
-
-`start-6-1` ～ `start-6-2`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-6-1` | Slackメッセージのキーワード拡張検索 |
-| `/start-6-2` | SlackメッセージからTODOとタスクを抽出 |
-
----
-
-### Module 7: 動画生成 (8個)
-
-`start-7-1` ～ `start-7-8`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-7-1` | 動画フレーム分析 |
-| `/start-7-2` | 動画AIエンジンの全体像（fal.ai） |
-| `/start-7-3` | プロダクト紹介動画（グリーンスクリーン + スクショ合成） |
-| `/start-7-4` | 絵コンテからアニメ動画生成（Kling/Veo3） |
-| `/start-7-5` | スライド解説動画（HTML解析 + TTS） |
-| `/start-7-6` | ミュージックビデオ作成（Suno + ビート同期） |
-| `/start-7-7` | YouTube Clipper で動画ハイライト抽出 |
-| `/start-7-8` | Clipper × Remotion でマーケ素材を自動生成 |
-
----
-
-### Module 8: GAS自動化 (3個)
-
-`start-8-1` ～ `start-8-3`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-8-1` | Clasp基本・GASプロジェクト管理 |
-| `/start-8-2` | Google Calendar API連携・イベント自動化 |
-| `/start-8-3` | Google Sheets自動化・データ処理レポート |
-
----
-
-### Module 9: GitHub Actions (2個)
-
-`start-9-1` ～ `start-9-2`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-9-1` | GitHub Actions Workflow基本・自動化 |
-| `/start-9-2` | GitHub Actions Secrets設定・Google連携 |
-
----
-
-### Module 10: Notion連携 (2個)
-
-`start-10-1` ～ `start-10-2`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-10-1` | Notion MCP接続とセットアップ |
-| `/start-10-2` | Notionデータベース操作 |
-
----
-
-### Module 11: エージェント開発 (13個)
-
-`start-11-1` ～ `start-11-13`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-11-1` | カスタムCommand作成基本 |
-| `/start-11-2` | Skill作成基本（共通 skills/ ディレクトリ） |
-| `/start-11-3` | Rules設定（Cursor Rules）とAI行動制御 |
-| `/start-11-4` | SubAgent統合 - 複数エージェントの連携 |
-| `/start-11-5` | 総合演習（全機能統合） |
-| `/start-11-6` | スキル設計の基礎（Anthropicベストプラクティス） |
-| `/start-11-7` | SKILL.md の実装（議事録スキル開発） |
-| `/start-11-8` | テストとイテレーション（スキル品質改善） |
-| `/start-11-9` | 5つの設計パターン（スキル設計の応用） |
-| `/start-11-10` | 既存Skill/Commandの構造理解と分析 |
-| `/start-11-11` | 自分のワークフロー用Command作成 |
-| `/start-11-12` | SKILL.md駆動のスキル開発 |
-| `/start-11-13` | テスト・デバッグ・イテレーション |
-
----
-
-### Module 12: マーケティング (4個)
-
-`start-12-1` ～ `start-12-4`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-12-1` | X投稿 & バナー作成 |
-| `/start-12-2` | SEO調査 & キーワード戦略 |
-| `/start-12-3` | コピーライティング |
-| `/start-12-4` | Pencil MCPでデザインモックアップ |
-
----
-
-### Module 13: LP/HP制作 (5個)
-
-`start-13-1` ～ `start-13-5`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-13-1` | LP制作 - 訴求の整理 |
-| `/start-13-2` | LP制作 - ワイヤーフレーム作成 |
-| `/start-13-3` | LP制作 - Pencilデザインファイル作成 |
-| `/start-13-4` | LP制作 - 実際に動くLP作成 |
-| `/start-13-5` | LP制作 - Vercelデプロイ |
-
----
-
-### Module 14: PM & 要件定義 (20個)
-
-`start-14-1` ～ `start-14-20`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-14-1` | 顧客インタビュー & ニーズ収集 |
-| `/start-14-2` | 要求資料の作成 |
-| `/start-14-3` | PRD作成（Working Backwards方式） |
-| `/start-14-4` | 3種レビュー（Devil's Advocate / セキュリティ等） |
-| `/start-14-5` | 要件定義書の作成（IPA準拠） |
-| `/start-14-6` | ユースケース記述 & シーケンス図 |
-| `/start-14-7` | 画面遷移図 & ワイヤーフレーム |
-| `/start-14-8` | DB設計（ER図 & エンティティ仕様書） |
-| `/start-14-9` | システム構成図 & API設計 |
-| `/start-14-10` | WBS & ガントチャート |
-| `/start-14-11` | Notion連携（要件トラッカーDB） |
-| `/start-14-12` | UIデザイン（Pencil MCP） |
-| `/start-14-13` | HTML + Tailwind CSS プロトタイプ実装 |
-| `/start-14-14` | Playwright E2Eテスト |
-| `/start-14-15` | テスト計画書 & テストケース生成 |
-| `/start-14-16` | 単体テスト実施（pytest） |
-| `/start-14-17` | 結合テスト実施 |
-| `/start-14-18` | 会議体設計 & 議事録分析 |
-| `/start-14-19` | marimo ダッシュボード |
-| `/start-14-20` | 総合演習（カプストーン） |
-
----
-
-### Module 15: メール自動化 (8個)
-
-`start-15-1` ～ `start-15-8`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-15-1` | Gmail セットアップ - gogcli 認証とメール同期 |
-| `/start-15-2` | 受信メール分析 & タスク抽出 |
-| `/start-15-3` | gogcli でメール送信 - 新規・返信・添付 |
-| `/start-15-4` | メールシーケンス設計 - ドリップキャンペーン |
-| `/start-15-5` | メール自動化ワークフロー - GitHub Actions & 総合演習 |
-| `/start-15-6` | Resend 登録 & ドメイン設定 - Vercel DNS 自動設定 |
-| `/start-15-7` | APIキー作成 & Resend CLI で初回メール送信 |
-| `/start-15-8` | Resend Sequence & CLI でドリップキャンペーン自動化 |
-
----
-
-### Module 16: 記事作成 (7個)
-
-`start-16-1` ～ `start-16-7`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-16-1` | 記事企画 - テーマ決定・アウトライン生成 |
-| `/start-16-2` | 文体学習 - スタイルプロファイル作成 |
-| `/start-16-3` | 記事執筆 - スタイル適用ドラフト作成 |
-| `/start-16-4` | 挿絵計画と生成 - nanobanana + PlantUML |
-| `/start-16-5` | 校閲 - 校閲エージェントによるレビュー |
-| `/start-16-6` | ファクトチェック - 事実検証エージェント |
-| `/start-16-7` | 並列実行と仕上げ - 複数記事の同時処理 |
-
----
-
-### Module 18: AI秘書 Google Workspace (7個)
-
-`start-18-1` ～ `start-18-7`
-
-| コマンド | 説明 |
-|---------|------|
-| `/start-18-1` | gogcli認証セットアップ |
-| `/start-18-2` | Gmail検索・閲覧 |
-| `/start-18-3` | Google Calendar操作 |
-| `/start-18-4` | Google Calendar 予定登録・管理 |
-| `/start-18-5` | Google Drive操作 |
-| `/start-18-6` | Google Sheets操作 |
-| `/start-18-7` | AI秘書ワークフロー統合 |
-
----
-
-### その他のレッスンコマンド
-
-#### セキュリティ・確認系
-- `/check-setup` - Cursor でのセットアップ状態確認
-- `/check-security` - セキュリティ設定確認
-- `/exercise-review` - 応用演習レビュー
-
-## 他ツールでの読み替え
-
-- `Cursor` ではこのドキュメントの slash command をそのまま使う
-- `Codex` では `/check-setup` を `aiagent-check-setup`、`/start-0-1` を `aiagent-lesson-runner start-0-1` と読み替える
-- `Claude Code` では `CLAUDE.md` と Claude 側の lesson 導線を入口にし、lesson id 自体は同じ `start-*` を使う
-
-## 他ツールでの読み替え
-
-- `Cursor` ではこのドキュメントの slash command をそのまま使う
-- `Codex` では `/check-setup` を `aiagent-check-setup`、`/start-0-1` を `aiagent-lesson-runner start-0-1` と読み替える
-- `Claude Code` では `CLAUDE.md` と Claude 側の lesson 導線を入口にし、lesson id 自体は同じ `start-*` を使う
-
----
-
-## ユーティリティコマンド (27個)
-
-日常的によく使うツール系コマンド
-
-### 画像・バナー生成 (4個)
-
-#### `/create-banner` - SNSバナー/クリエイティブ生成
-
-**説明**: 各種SNS・広告プラットフォーム向けバナー生成
-
-**対応プラットフォーム**:
-- X (Twitter): 1200x675, 800x418
-- Facebook: 1200x630, 1080x1920
-- Instagram: 1080x1080, 1080x1920
-- PRタイムズ: 1200x630
-- YouTube: 1280x720
-- LINE: 1040x1040
-- Web広告: 1200x628, 300x600
-
-**パラメータ**:
-```
---platform       対象プラットフォーム（必須）
---message        メインメッセージ（必須）
---sub-copy       サブコピー（オプション）
---cta            Call to Action（オプション）
---tone           professional, casual, pop, elegant, urgent, minimal, tech, natural
---color-scheme   warm, cool, mono, pastel, vivid, dark, HEXコード
---font-style     gothic, mincho, handwritten, bold, script, geometric
---brand-name     ブランド名（オプション）
---with-copy      投稿用コピーも生成するか
---variants       生成バリエーション数
---session        セッション名
---output         出力先パス
-```
-
-**使用例**:
-```bash
-/create-banner --platform x_post --message "新製品発表" --tone professional --with-copy
-
-/create-banner --platform instagram_feed --message "夏セール" --tone pop --color-scheme vivid
-
-/create-banner --platform youtube --message "チュートリアル"
-```
-
-**出力**: `docs/generated/banners/{日付}_{セッション}/`
-
----
-
-#### `/nanobanana` - AI画像生成・編集
-
-**説明**: Gemini API を使用した画像生成・編集
-
-**パラメータ**:
-```
---prompt         生成・編集内容（必須）
---input          編集対象の画像ファイル（オプション）
---style          realistic, anime, illustration, art, photo, sketch
---size           256x256, 512x512, 1024x1024, 1024x768, 768x1024
---quality        draft, normal, high
-```
-
-**使用例**:
-```bash
-/nanobanana --prompt "青い空を背景にした商品写真" --style realistic
-
-/nanobanana --input photo.jpg --prompt "明度を上げて、暖色系に変更"
-```
-
----
-
-#### `/generate-diagram` - 図表・インフォグラフィック生成
-
-**説明**: テキストトピックから図表生成
-
-**対応図表種類**: infographic, flow, comparison, hierarchy, timeline, network
-
-**使用例**:
-```bash
-/generate-diagram --topic "ユーザー登録フロー" --type flow --style professional
-
-/generate-diagram --topic "売上成長推移" --type timeline
-```
-
----
-
-#### `/annotate-screenshot` - スクショに注釈追加
-
-**説明**: スクリーンショットに手書き風の注釈を追加
-
-**機能**: 赤枠, 矢印, 吹き出し, テキスト注釈, ハイライト
-
----
-
-### スクリーンショット分析 (3個)
-
-#### `/screenshot-analyzer` - スクリーンショット解析統合ツール
-
-**説明**: スクリーンショット分析・エラー検出・マニュアル生成
-
-**機能**: エラー画面診断, UIコンポーネント認識, OCR, チュートリアル生成
-
----
-
-#### `/capture-tutorial` - スクショからチュートリアル生成
-
-**説明**: 複数スクショから操作チュートリアル生成
-
----
-
-#### `/video-frame-reader` - 動画キーフレーム抽出
-
-**説明**: 動画からキーフレーム抽出・分析
-
----
-
-### データ処理・ドキュメント (7個)
-
-#### `/bigquery-auth` - BigQuery認証設定
-
-**説明**: GCP プロジェクト単位の BigQuery 認証設定
-
-#### `/pptx-ops` - PowerPoint 操作
-
-**説明**: PowerPoint ファイルの操作・編集
-
-#### `/pptx-template` - PPTX テンプレート操作
-
-**説明**: PPTX テンプレート管理・カスタマイズ
-
-#### `/excel-ops` - Excel 操作
-
-**説明**: Excel ファイルの読み込み・編集・出力
-
-#### `/pdf-editor` - PDF ページエディタ
-
-**説明**: PDF ファイルの結合・分割・ページ操作
-
-#### `/fetch-slides` - Google Slides 取得
-
-**説明**: Google Slides から情報取得・エクスポート
-
-#### `/notion-fetch` - Notion 連携
-
-**説明**: Notion データベース・ページ取得
-
----
-
-### API・Google 関連 (6個)
-
-#### `/gmail-account-setup` - Gmail アカウント設定
-
-**説明**: Gmail API 認証設定
-
-#### `/google-account-setup` - Google アカウント設定
-
-**説明**: Google Calendar/Drive API 認証
-
-#### `/setup-google-api` - Google API 設定ガイド
-
-**説明**: MCP 連携用 Google API セットアップ
-
-#### `/api-setup-wizard` - API セットアップウィザード
-
-**説明**: 各種 API の統合セットアップガイド
-
-#### `/gmail-pending-replies` - Gmail 未返信抽出
-
-**説明**: 未返信メール一覧を自動抽出
-
----
-
-### 補助コマンド (5個)
-
-#### `/overview` - プロジェクト構造可視化
-
-**説明**: serena MCP を活用してプロジェクト構造を可視化
-
-**機能**:
-- ファイル・関数一覧表示
-- PlantUML 形式で構造図生成
-- 不足機能の特定
-- HTML レポート出力
-
-**パラメータ**:
-```
---directory      分析対象ディレクトリ
---format         plantuml, wbs, all
---output         出力パス
-```
-
-**使用例**:
-```bash
-/overview
-
-/overview --directory src/ --format plantuml
-
-/overview --directory scripts/ --output docs/overview.html
-```
-
----
-
-#### `/guide` - 次のアクション提示
-
-**説明**: 現在の進捗に基づく次のアクション提示
-
-#### `/tutor` - 学習コンテンツ生成
-
-**説明**: 指定トピックの学習教材自動生成
-
-#### `/generate-slide` - スライド生成
-
-**説明**: テーマから Google Slides を自動生成
-
-#### `/notebooklm` - NotebookLM
-
-**説明**: NotebookLM API を活用した対話型分析
-
----
+<!-- AUTO-GENERATED:commands START -->
+## コマンド一覧
+
+`.en.md` / `.es.md` は同じ slash command の翻訳版として重複計上しません。
+
+### レッスンコマンド（171個）
+
+#### Module 0（9個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/setup-content` | 教材コンテンツの初回セットアップ | [`.cursor/commands/lesson/setup-content.md`](../.cursor/commands/lesson/setup-content.md) |
+| `/start-0-1` | 環境セットアップ確認 | [`.cursor/commands/lesson/start-0-1.md`](../.cursor/commands/lesson/start-0-1.md) |
+| `/start-0-2` | 拡張機能インストール | [`.cursor/commands/lesson/start-0-2.md`](../.cursor/commands/lesson/start-0-2.md) |
+| `/start-0-3` | Gemini API設定 | [`.cursor/commands/lesson/start-0-3.md`](../.cursor/commands/lesson/start-0-3.md) |
+| `/start-0-4` | Slack API設定 | [`.cursor/commands/lesson/start-0-4.md`](../.cursor/commands/lesson/start-0-4.md) |
+| `/start-0-5` | セキュリティ設定確認 | [`.cursor/commands/lesson/start-0-5.md`](../.cursor/commands/lesson/start-0-5.md) |
+| `/start-0-6` | Codex CLI セットアップ | [`.cursor/commands/lesson/start-0-6.md`](../.cursor/commands/lesson/start-0-6.md) |
+| `/start-0-7` | Claude Code セットアップ | [`.cursor/commands/lesson/start-0-7.md`](../.cursor/commands/lesson/start-0-7.md) |
+| `/start-0-8` | ツール選択ガイド | [`.cursor/commands/lesson/start-0-8.md`](../.cursor/commands/lesson/start-0-8.md) |
+
+#### Module 1（3個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-1-1` | バナー生成入門 | [`.cursor/commands/lesson/start-1-1.md`](../.cursor/commands/lesson/start-1-1.md) |
+| `/start-1-2` | 応用バナー（Instagram, Facebook） | [`.cursor/commands/lesson/start-1-2.md`](../.cursor/commands/lesson/start-1-2.md) |
+| `/start-1-3` | nanobanana画像編集 | [`.cursor/commands/lesson/start-1-3.md`](../.cursor/commands/lesson/start-1-3.md) |
+
+#### Module 2（3個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-2-1` | フロー図生成 | [`.cursor/commands/lesson/start-2-1.md`](../.cursor/commands/lesson/start-2-1.md) |
+| `/start-2-2` | インフォグラフィック作成 | [`.cursor/commands/lesson/start-2-2.md`](../.cursor/commands/lesson/start-2-2.md) |
+| `/start-2-3` | プレゼン資料向け図表作成 | [`.cursor/commands/lesson/start-2-3.md`](../.cursor/commands/lesson/start-2-3.md) |
+
+#### Module 3（6個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-3-1` | スクリーンショット分析基礎 | [`.cursor/commands/lesson/start-3-1.md`](../.cursor/commands/lesson/start-3-1.md) |
+| `/start-3-2` | エラー診断の応用 | [`.cursor/commands/lesson/start-3-2.md`](../.cursor/commands/lesson/start-3-2.md) |
+| `/start-3-3` | チュートリアル自動生成 | [`.cursor/commands/lesson/start-3-3.md`](../.cursor/commands/lesson/start-3-3.md) |
+| `/start-3-4` | スクリーンショットに注釈追加 | [`.cursor/commands/lesson/start-3-4.md`](../.cursor/commands/lesson/start-3-4.md) |
+| `/start-3-5` | 複数スクリーンショットの一括分析 | [`.cursor/commands/lesson/start-3-5.md`](../.cursor/commands/lesson/start-3-5.md) |
+| `/start-3-6` | Module 3 総合演習 | [`.cursor/commands/lesson/start-3-6.md`](../.cursor/commands/lesson/start-3-6.md) |
+
+#### Module 4（7個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-4-1` | gogcli認証セットアップ | [`.cursor/commands/lesson/start-4-1.md`](../.cursor/commands/lesson/start-4-1.md) |
+| `/start-4-2` | Gmail検索・閲覧 | [`.cursor/commands/lesson/start-4-2.md`](../.cursor/commands/lesson/start-4-2.md) |
+| `/start-4-3` | Google Calendar操作 | [`.cursor/commands/lesson/start-4-3.md`](../.cursor/commands/lesson/start-4-3.md) |
+| `/start-4-4` | Google Calendar 予定登録・管理 | [`.cursor/commands/lesson/start-4-4.md`](../.cursor/commands/lesson/start-4-4.md) |
+| `/start-4-5` | Google Drive操作 | [`.cursor/commands/lesson/start-4-5.md`](../.cursor/commands/lesson/start-4-5.md) |
+| `/start-4-6` | Google Sheets操作 | [`.cursor/commands/lesson/start-4-6.md`](../.cursor/commands/lesson/start-4-6.md) |
+| `/start-4-7` | AI秘書ワークフロー統合 | [`.cursor/commands/lesson/start-4-7.md`](../.cursor/commands/lesson/start-4-7.md) |
+
+#### Module 5（2個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-5-1` | PPTX解析 | [`.cursor/commands/lesson/start-5-1.md`](../.cursor/commands/lesson/start-5-1.md) |
+| `/start-5-2` | PPTX編集と自動生成 | [`.cursor/commands/lesson/start-5-2.md`](../.cursor/commands/lesson/start-5-2.md) |
+
+#### Module 6（9個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-6-1` | カスタムCommand作成基本 | [`.cursor/commands/lesson/start-6-1.md`](../.cursor/commands/lesson/start-6-1.md) |
+| `/start-6-2` | Skill作成基本 | [`.cursor/commands/lesson/start-6-2.md`](../.cursor/commands/lesson/start-6-2.md) |
+| `/start-6-3` | Cursor Rules設定 | [`.cursor/commands/lesson/start-6-3.md`](../.cursor/commands/lesson/start-6-3.md) |
+| `/start-6-4` | SubAgent統合 | [`.cursor/commands/lesson/start-6-4.md`](../.cursor/commands/lesson/start-6-4.md) |
+| `/start-6-5` | 総合演習 - AIエージェント開発統合 | [`.cursor/commands/lesson/start-6-5.md`](../.cursor/commands/lesson/start-6-5.md) |
+| `/start-6-6` | スキル設計の基礎 | [`.cursor/commands/lesson/start-6-6.md`](../.cursor/commands/lesson/start-6-6.md) |
+| `/start-6-7` | SKILL.md の実装 | [`.cursor/commands/lesson/start-6-7.md`](../.cursor/commands/lesson/start-6-7.md) |
+| `/start-6-8` | テストとイテレーション | [`.cursor/commands/lesson/start-6-8.md`](../.cursor/commands/lesson/start-6-8.md) |
+| `/start-6-9` | 5つの設計パターン | [`.cursor/commands/lesson/start-6-9.md`](../.cursor/commands/lesson/start-6-9.md) |
+
+#### Module 7（8個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-7-1` | スキル設計の基礎 | [`.cursor/commands/lesson/start-7-1.md`](../.cursor/commands/lesson/start-7-1.md) |
+| `/start-7-2` | SKILL.md の実装 | [`.cursor/commands/lesson/start-7-2.md`](../.cursor/commands/lesson/start-7-2.md) |
+| `/start-7-3` | テストとイテレーション | [`.cursor/commands/lesson/start-7-3.md`](../.cursor/commands/lesson/start-7-3.md) |
+| `/start-7-4` | 5つの設計パターン | [`.cursor/commands/lesson/start-7-4.md`](../.cursor/commands/lesson/start-7-4.md) |
+| `/start-7-5` | 既存Skill/Commandの構造理解と分析 | [`.cursor/commands/lesson/start-7-5.md`](../.cursor/commands/lesson/start-7-5.md) |
+| `/start-7-6` | 自分のワークフロー用Command作成 | [`.cursor/commands/lesson/start-7-6.md`](../.cursor/commands/lesson/start-7-6.md) |
+| `/start-7-7` | SKILL.md駆動のスキル開発 | [`.cursor/commands/lesson/start-7-7.md`](../.cursor/commands/lesson/start-7-7.md) |
+| `/start-7-8` | テスト・デバッグ・イテレーション | [`.cursor/commands/lesson/start-7-8.md`](../.cursor/commands/lesson/start-7-8.md) |
+
+#### Module 8（4個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-8-1` | BigQuery接続と認証設定 | [`.cursor/commands/lesson/start-8-1.md`](../.cursor/commands/lesson/start-8-1.md) |
+| `/start-8-2` | EDA（探索的データ分析）の実行 | [`.cursor/commands/lesson/start-8-2.md`](../.cursor/commands/lesson/start-8-2.md) |
+| `/start-8-3` | Marimoノートブックで対話型分析 | [`.cursor/commands/lesson/start-8-3.md`](../.cursor/commands/lesson/start-8-3.md) |
+| `/start-8-4` | データ可視化とダッシュボード作成 | [`.cursor/commands/lesson/start-8-4.md`](../.cursor/commands/lesson/start-8-4.md) |
+
+#### Module 9（3個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-9-1` | User Access Token設定・チャネル取得 | [`.cursor/commands/lesson/start-9-1.md`](../.cursor/commands/lesson/start-9-1.md) |
+| `/start-9-2` | メッセージ・スレッド取得 | [`.cursor/commands/lesson/start-9-2.md`](../.cursor/commands/lesson/start-9-2.md) |
+| `/start-9-3` | 返信の送信 | [`.cursor/commands/lesson/start-9-3.md`](../.cursor/commands/lesson/start-9-3.md) |
+
+#### Module 10（4個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-10-1` | Clasp基本・GASプロジェクト管理 | [`.cursor/commands/lesson/start-10-1.md`](../.cursor/commands/lesson/start-10-1.md) |
+| `/start-10-2` | Google Calendar API連携・イベント自動化 | [`.cursor/commands/lesson/start-10-2.md`](../.cursor/commands/lesson/start-10-2.md) |
+| `/start-10-3` | Google Sheets自動化・データ処理レポート | [`.cursor/commands/lesson/start-10-3.md`](../.cursor/commands/lesson/start-10-3.md) |
+| `/start-10-4` | GmailAppメール検索・抽出→シート整理 | [`.cursor/commands/lesson/start-10-4.md`](../.cursor/commands/lesson/start-10-4.md) |
+
+#### Module 11（5個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-11-1` | GitHub Actions Workflow基本・自動化 | [`.cursor/commands/lesson/start-11-1.md`](../.cursor/commands/lesson/start-11-1.md) |
+| `/start-11-2` | GitHub Actions Secrets設定・Google連携 | [`.cursor/commands/lesson/start-11-2.md`](../.cursor/commands/lesson/start-11-2.md) |
+| `/start-11-3` | ニュース取得→メール/Slack配信ワークフロー | [`.cursor/commands/lesson/start-11-3.md`](../.cursor/commands/lesson/start-11-3.md) |
+| `/start-11-4` | Claude Code / Codex / Cursor を GitHub Actions で呼ぶ | [`.cursor/commands/lesson/start-11-4.md`](../.cursor/commands/lesson/start-11-4.md) |
+| `/start-11-5` | GitHub Actions でデプロイ・ファイル生成 | [`.cursor/commands/lesson/start-11-5.md`](../.cursor/commands/lesson/start-11-5.md) |
+
+#### Module 12（6個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-12-1` | ncliセットアップ・ブラウザ認証 | [`.cursor/commands/lesson/start-12-1.md`](../.cursor/commands/lesson/start-12-1.md) |
+| `/start-12-2` | データベース取得・クエリ | [`.cursor/commands/lesson/start-12-2.md`](../.cursor/commands/lesson/start-12-2.md) |
+| `/start-12-3` | ファイル取得 | [`.cursor/commands/lesson/start-12-3.md`](../.cursor/commands/lesson/start-12-3.md) |
+| `/start-12-4` | ファイル作成・ページ作成 | [`.cursor/commands/lesson/start-12-4.md`](../.cursor/commands/lesson/start-12-4.md) |
+| `/start-12-5` | 書き込みと更新 | [`.cursor/commands/lesson/start-12-5.md`](../.cursor/commands/lesson/start-12-5.md) |
+| `/start-12-6` | 要約の作成とコメントの返信 | [`.cursor/commands/lesson/start-12-6.md`](../.cursor/commands/lesson/start-12-6.md) |
+
+#### Module 13（5個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-13-1` | 訴求の整理（ヒアリング & コピーライティング） | [`.cursor/commands/lesson/start-13-1.md`](../.cursor/commands/lesson/start-13-1.md) |
+| `/start-13-2` | ワイヤーフレーム作成（ASCII + ビジュアルWF） | [`.cursor/commands/lesson/start-13-2.md`](../.cursor/commands/lesson/start-13-2.md) |
+| `/start-13-3` | デザインファイル作成（Pencil MCP） | [`.cursor/commands/lesson/start-13-3.md`](../.cursor/commands/lesson/start-13-3.md) |
+| `/start-13-4` | 実際に動くLP作成（HTML/CSS/JS） | [`.cursor/commands/lesson/start-13-4.md`](../.cursor/commands/lesson/start-13-4.md) |
+| `/start-13-5` | Vercelデプロイ | [`.cursor/commands/lesson/start-13-5.md`](../.cursor/commands/lesson/start-13-5.md) |
+
+#### Module 14（7個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-14-1` | 記事企画 - テーマ決定・アウトライン生成 | [`.cursor/commands/lesson/start-14-1.md`](../.cursor/commands/lesson/start-14-1.md) |
+| `/start-14-2` | 文体学習 - スタイルプロファイル作成 | [`.cursor/commands/lesson/start-14-2.md`](../.cursor/commands/lesson/start-14-2.md) |
+| `/start-14-3` | 記事執筆 - スタイル適用ドラフト作成 | [`.cursor/commands/lesson/start-14-3.md`](../.cursor/commands/lesson/start-14-3.md) |
+| `/start-14-4` | 挿絵計画と生成 - nanobanana + PlantUML | [`.cursor/commands/lesson/start-14-4.md`](../.cursor/commands/lesson/start-14-4.md) |
+| `/start-14-5` | 校閲 - 校閲エージェントによるレビュー | [`.cursor/commands/lesson/start-14-5.md`](../.cursor/commands/lesson/start-14-5.md) |
+| `/start-14-6` | ファクトチェック - 事実検証エージェント | [`.cursor/commands/lesson/start-14-6.md`](../.cursor/commands/lesson/start-14-6.md) |
+| `/start-14-7` | 並列実行と仕上げ - 複数記事の同時処理 | [`.cursor/commands/lesson/start-14-7.md`](../.cursor/commands/lesson/start-14-7.md) |
+
+#### Module 15（17個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-15-1` | 動画フレーム分析 | [`.cursor/commands/lesson/start-15-1.md`](../.cursor/commands/lesson/start-15-1.md) |
+| `/start-15-2` | Remotion アニメーション基礎 — スライドシュート風テキストアニメ | [`.cursor/commands/lesson/start-15-2.md`](../.cursor/commands/lesson/start-15-2.md) |
+| `/start-15-3` | YouTube Clipper — 動画ハイライト抽出 | [`.cursor/commands/lesson/start-15-3.md`](../.cursor/commands/lesson/start-15-3.md) |
+| `/start-15-4` | Clipper × Remotion — マーケ素材自動生成 | [`.cursor/commands/lesson/start-15-4.md`](../.cursor/commands/lesson/start-15-4.md) |
+| `/start-15-5` | 動画AIエンジン概要 | [`.cursor/commands/lesson/start-15-5.md`](../.cursor/commands/lesson/start-15-5.md) |
+| `/start-15-6` | Storyboard Anime Video | [`.cursor/commands/lesson/start-15-6.md`](../.cursor/commands/lesson/start-15-6.md) |
+| `/start-15-7` | Music Video | [`.cursor/commands/lesson/start-15-7.md`](../.cursor/commands/lesson/start-15-7.md) |
+| `/start-15-7a` | start-15-7a | [`.cursor/commands/lesson/start-15-7a.md`](../.cursor/commands/lesson/start-15-7a.md) |
+| `/start-15-7b` | start-15-7b | [`.cursor/commands/lesson/start-15-7b.md`](../.cursor/commands/lesson/start-15-7b.md) |
+| `/start-15-7c` | start-15-7c | [`.cursor/commands/lesson/start-15-7c.md`](../.cursor/commands/lesson/start-15-7c.md) |
+| `/start-15-7d` | start-15-7d | [`.cursor/commands/lesson/start-15-7d.md`](../.cursor/commands/lesson/start-15-7d.md) |
+| `/start-15-8` | Slide Narration Video | [`.cursor/commands/lesson/start-15-8.md`](../.cursor/commands/lesson/start-15-8.md) |
+| `/start-15-9` | Product Demo Video | [`.cursor/commands/lesson/start-15-9.md`](../.cursor/commands/lesson/start-15-9.md) |
+| `/start-15-10` | 記事からSNS紹介動画 | [`.cursor/commands/lesson/start-15-10.md`](../.cursor/commands/lesson/start-15-10.md) |
+| `/start-15-11` | Remotionで思い通りの動きにするには | [`.cursor/commands/lesson/start-15-11.md`](../.cursor/commands/lesson/start-15-11.md) |
+| `/start-15-12` | Remotion + SRTキャプション | [`.cursor/commands/lesson/start-15-12.md`](../.cursor/commands/lesson/start-15-12.md) |
+| `/start-15-13` | アニメーションとスライドショー | [`.cursor/commands/lesson/start-15-13.md`](../.cursor/commands/lesson/start-15-13.md) |
+
+#### Module 16（8個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-16-1` | Gmail セットアップ - gogcli 認証とメール同期 | [`.cursor/commands/lesson/start-16-1.md`](../.cursor/commands/lesson/start-16-1.md) |
+| `/start-16-2` | 受信メール分析 & タスク抽出 | [`.cursor/commands/lesson/start-16-2.md`](../.cursor/commands/lesson/start-16-2.md) |
+| `/start-16-3` | gogcli でメール送信 | [`.cursor/commands/lesson/start-16-3.md`](../.cursor/commands/lesson/start-16-3.md) |
+| `/start-16-4` | メールシーケンス設計 | [`.cursor/commands/lesson/start-16-4.md`](../.cursor/commands/lesson/start-16-4.md) |
+| `/start-16-5` | メール自動化ワークフロー | [`.cursor/commands/lesson/start-16-5.md`](../.cursor/commands/lesson/start-16-5.md) |
+| `/start-16-6` | Resend 登録 & ドメイン設定 | [`.cursor/commands/lesson/start-16-6.md`](../.cursor/commands/lesson/start-16-6.md) |
+| `/start-16-7` | APIキー作成 & 初回メール送信 | [`.cursor/commands/lesson/start-16-7.md`](../.cursor/commands/lesson/start-16-7.md) |
+| `/start-16-8` | Resend Sequence & CLI でドリップキャンペーン | [`.cursor/commands/lesson/start-16-8.md`](../.cursor/commands/lesson/start-16-8.md) |
+
+#### Module 17（5個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-17-1` | X投稿 & バナー作成 | [`.cursor/commands/lesson/start-17-1.md`](../.cursor/commands/lesson/start-17-1.md) |
+| `/start-17-2` | SEO調査 & キーワード戦略 | [`.cursor/commands/lesson/start-17-2.md`](../.cursor/commands/lesson/start-17-2.md) |
+| `/start-17-3` | コピーライティング | [`.cursor/commands/lesson/start-17-3.md`](../.cursor/commands/lesson/start-17-3.md) |
+| `/start-17-4` | Pencil MCPでデザインモックアップ | [`.cursor/commands/lesson/start-17-4.md`](../.cursor/commands/lesson/start-17-4.md) |
+| `/start-17-5` | Typefully で X/Threads 投稿自動化 | [`.cursor/commands/lesson/start-17-5.md`](../.cursor/commands/lesson/start-17-5.md) |
+
+#### Module 18（20個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-18-1` | 顧客インタビュー & ニーズ収集 | [`.cursor/commands/lesson/start-18-1.md`](../.cursor/commands/lesson/start-18-1.md) |
+| `/start-18-2` | 要求資料の作成 | [`.cursor/commands/lesson/start-18-2.md`](../.cursor/commands/lesson/start-18-2.md) |
+| `/start-18-3` | PRD作成（Working Backwards方式） | [`.cursor/commands/lesson/start-18-3.md`](../.cursor/commands/lesson/start-18-3.md) |
+| `/start-18-4` | 3種レビュー | [`.cursor/commands/lesson/start-18-4.md`](../.cursor/commands/lesson/start-18-4.md) |
+| `/start-18-5` | 要件定義書の作成 | [`.cursor/commands/lesson/start-18-5.md`](../.cursor/commands/lesson/start-18-5.md) |
+| `/start-18-6` | ユースケース記述 & シーケンス図 | [`.cursor/commands/lesson/start-18-6.md`](../.cursor/commands/lesson/start-18-6.md) |
+| `/start-18-7` | 画面遷移図 & ワイヤーフレーム | [`.cursor/commands/lesson/start-18-7.md`](../.cursor/commands/lesson/start-18-7.md) |
+| `/start-18-8` | DB設計 | [`.cursor/commands/lesson/start-18-8.md`](../.cursor/commands/lesson/start-18-8.md) |
+| `/start-18-9` | システム構成図 & API設計 | [`.cursor/commands/lesson/start-18-9.md`](../.cursor/commands/lesson/start-18-9.md) |
+| `/start-18-10` | WBS & ガントチャート | [`.cursor/commands/lesson/start-18-10.md`](../.cursor/commands/lesson/start-18-10.md) |
+| `/start-18-11` | Notion連携 | [`.cursor/commands/lesson/start-18-11.md`](../.cursor/commands/lesson/start-18-11.md) |
+| `/start-18-12` | UIデザイン（Pencil MCP） | [`.cursor/commands/lesson/start-18-12.md`](../.cursor/commands/lesson/start-18-12.md) |
+| `/start-18-13` | HTML + Tailwind CSS プロトタイプ | [`.cursor/commands/lesson/start-18-13.md`](../.cursor/commands/lesson/start-18-13.md) |
+| `/start-18-14` | Playwright E2Eテスト | [`.cursor/commands/lesson/start-18-14.md`](../.cursor/commands/lesson/start-18-14.md) |
+| `/start-18-15` | テスト計画書 & テストケース生成 | [`.cursor/commands/lesson/start-18-15.md`](../.cursor/commands/lesson/start-18-15.md) |
+| `/start-18-16` | 単体テスト実施 | [`.cursor/commands/lesson/start-18-16.md`](../.cursor/commands/lesson/start-18-16.md) |
+| `/start-18-17` | 結合テスト実施 | [`.cursor/commands/lesson/start-18-17.md`](../.cursor/commands/lesson/start-18-17.md) |
+| `/start-18-18` | 会議体設計 & 議事録分析 | [`.cursor/commands/lesson/start-18-18.md`](../.cursor/commands/lesson/start-18-18.md) |
+| `/start-18-19` | marimo ダッシュボード | [`.cursor/commands/lesson/start-18-19.md`](../.cursor/commands/lesson/start-18-19.md) |
+| `/start-18-20` | 総合演習（カプストーン） | [`.cursor/commands/lesson/start-18-20.md`](../.cursor/commands/lesson/start-18-20.md) |
+
+#### Module 19（3個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/setup-m365cli` | M365 CLI セットアップ | [`.cursor/commands/lesson/setup-m365cli.md`](../.cursor/commands/lesson/setup-m365cli.md) |
+| `/start-19-1` | Microsoft Office連携(Outlook) 入門 | [`.cursor/commands/lesson/start-19-1.md`](../.cursor/commands/lesson/start-19-1.md) |
+| `/start-19-2` | フォルダ・ルール・カテゴリ | [`.cursor/commands/lesson/start-19-2.md`](../.cursor/commands/lesson/start-19-2.md) |
+
+#### Module 20（2個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/setup-freee` | Freee MCP セットアップ | [`.cursor/commands/lesson/setup-freee.md`](../.cursor/commands/lesson/setup-freee.md) |
+| `/start-20-1` | Freee/MoneyForward連携 入門 | [`.cursor/commands/lesson/start-20-1.md`](../.cursor/commands/lesson/start-20-1.md) |
+
+#### Module 21（2個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/setup-figma` | Figma + Serendie デザインシステム MCP セットアップ | [`.cursor/commands/lesson/setup-figma.md`](../.cursor/commands/lesson/setup-figma.md) |
+| `/start-21-1` | Figma 連携 入門 | [`.cursor/commands/lesson/start-21-1.md`](../.cursor/commands/lesson/start-21-1.md) |
+
+#### Module 22（2個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/setup-discord` | Discord Bot + Claude Code Channels 公式 plugin セットアップ | [`.cursor/commands/lesson/setup-discord.md`](../.cursor/commands/lesson/setup-discord.md) |
+| `/start-22-1` | Discord 連携 入門 | [`.cursor/commands/lesson/start-22-1.md`](../.cursor/commands/lesson/start-22-1.md) |
+
+#### Module 23（2個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/setup-line-harness` | line-harness-oss + Cloudflare デプロイ | [`.cursor/commands/lesson/setup-line-harness.md`](../.cursor/commands/lesson/setup-line-harness.md) |
+| `/start-23-1` | LINE 公式アカウント運用 入門 | [`.cursor/commands/lesson/start-23-1.md`](../.cursor/commands/lesson/start-23-1.md) |
+
+#### Module 24（2個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/setup-salesforce` | Salesforce CLI (sf) セットアップ | [`.cursor/commands/lesson/setup-salesforce.md`](../.cursor/commands/lesson/setup-salesforce.md) |
+| `/start-24-1` | Salesforce CLI 連携 入門 | [`.cursor/commands/lesson/start-24-1.md`](../.cursor/commands/lesson/start-24-1.md) |
+
+#### Module 25（2個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/setup-google-ads` | Google Ads API セットアップ | [`.cursor/commands/lesson/setup-google-ads.md`](../.cursor/commands/lesson/setup-google-ads.md) |
+| `/start-25-1` | Google Ads 連携 入門 | [`.cursor/commands/lesson/start-25-1.md`](../.cursor/commands/lesson/start-25-1.md) |
+
+#### Module 29（4個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/start-29-1` | slide-forge APIキー不要デモ | [`.cursor/commands/lesson/start-29-1.md`](../.cursor/commands/lesson/start-29-1.md) |
+| `/start-29-2` | 議事録から本番生成・5問 | [`.cursor/commands/lesson/start-29-2.md`](../.cursor/commands/lesson/start-29-2.md) |
+| `/start-29-3` | revise で既存ジョブを修正 | [`.cursor/commands/lesson/start-29-3.md`](../.cursor/commands/lesson/start-29-3.md) |
+| `/start-29-4` | 実画像の自動取得 fetch-assets | [`.cursor/commands/lesson/start-29-4.md`](../.cursor/commands/lesson/start-29-4.md) |
+
+#### 共通・セットアップ（21個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/check-security` | セキュリティ設定確認 | [`.cursor/commands/lesson/check-security.md`](../.cursor/commands/lesson/check-security.md) |
+| `/check-setup` | 環境の自動チェック | [`.cursor/commands/lesson/check-setup.md`](../.cursor/commands/lesson/check-setup.md) |
+| `/exercise-review` | 応用演習レビュー | [`.cursor/commands/lesson/exercise-review.md`](../.cursor/commands/lesson/exercise-review.md) |
+| `/setup-bigquery` | BigQuery / GCP 認証セットアップ | [`.cursor/commands/lesson/setup-bigquery.md`](../.cursor/commands/lesson/setup-bigquery.md) |
+| `/setup-clasp` | Google Apps Script CLI (clasp) セットアップ | [`.cursor/commands/lesson/setup-clasp.md`](../.cursor/commands/lesson/setup-clasp.md) |
+| `/setup-elevenlabs` | ElevenLabs API セットアップ | [`.cursor/commands/lesson/setup-elevenlabs.md`](../.cursor/commands/lesson/setup-elevenlabs.md) |
+| `/setup-extensions` | 拡張機能の自動セットアップ | [`.cursor/commands/lesson/setup-extensions.md`](../.cursor/commands/lesson/setup-extensions.md) |
+| `/setup-fal` | fal.ai API セットアップ | [`.cursor/commands/lesson/setup-fal.md`](../.cursor/commands/lesson/setup-fal.md) |
+| `/setup-gemini` | Gemini API セットアップ | [`.cursor/commands/lesson/setup-gemini.md`](../.cursor/commands/lesson/setup-gemini.md) |
+| `/setup-github` | GitHub アカウント設定とリポジトリ作成 | [`.cursor/commands/lesson/setup-github.md`](../.cursor/commands/lesson/setup-github.md) |
+| `/setup-gogcli` | gogcli (Google Workspace CLI) セットアップ | [`.cursor/commands/lesson/setup-gogcli.md`](../.cursor/commands/lesson/setup-gogcli.md) |
+| `/setup-notion` | Notion CLI (ncli) + MCP セットアップ | [`.cursor/commands/lesson/setup-notion.md`](../.cursor/commands/lesson/setup-notion.md) |
+| `/setup-pencil` | Pencil MCP セットアップ | [`.cursor/commands/lesson/setup-pencil.md`](../.cursor/commands/lesson/setup-pencil.md) |
+| `/setup-remotion` | Remotion セットアップ | [`.cursor/commands/lesson/setup-remotion.md`](../.cursor/commands/lesson/setup-remotion.md) |
+| `/setup-security` | セキュリティ設定の自動セットアップ | [`.cursor/commands/lesson/setup-security.md`](../.cursor/commands/lesson/setup-security.md) |
+| `/setup-slack` | Slack API セットアップ | [`.cursor/commands/lesson/setup-slack.md`](../.cursor/commands/lesson/setup-slack.md) |
+| `/setup-start` | 研修環境セットアップ | [`.cursor/commands/lesson/setup-start.md`](../.cursor/commands/lesson/setup-start.md) |
+| `/setup-typefully` | Typefully API セットアップ | [`.cursor/commands/lesson/setup-typefully.md`](../.cursor/commands/lesson/setup-typefully.md) |
+| `/setup-vercel` | Vercel CLI セットアップ | [`.cursor/commands/lesson/setup-vercel.md`](../.cursor/commands/lesson/setup-vercel.md) |
+| `/setup-x-api` | X (Twitter) API セットアップ | [`.cursor/commands/lesson/setup-x-api.md`](../.cursor/commands/lesson/setup-x-api.md) |
+| `/verify-module` | [モジュール番号] | [`.cursor/commands/lesson/verify-module.md`](../.cursor/commands/lesson/verify-module.md) |
+
+### ユーティリティコマンド（33個）
+
+| コマンド | 説明 | 定義 |
+|---|---|---|
+| `/annotate-screenshot` | Annotate Screenshot with Nano Banana Pro | [`.cursor/commands/utility/annotate-screenshot.md`](../.cursor/commands/utility/annotate-screenshot.md) |
+| `/api-setup-wizard` | API設定ガイド統合（各種サービスのセットアップ一覧） | [`.cursor/commands/utility/api-setup-wizard.md`](../.cursor/commands/utility/api-setup-wizard.md) |
+| `/bigquery-auth` | BigQuery Auth - プロジェクト単位のBigQuery認証 | [`.cursor/commands/utility/bigquery-auth.md`](../.cursor/commands/utility/bigquery-auth.md) |
+| `/capture-tutorial` | Capture Tutorial - スクリーンショットから操作チュートリアル生成 | [`.cursor/commands/utility/capture-tutorial.md`](../.cursor/commands/utility/capture-tutorial.md) |
+| `/create-banner` | Create Banner - 広告バナー/クリエイティブ生成 | [`.cursor/commands/utility/create-banner.md`](../.cursor/commands/utility/create-banner.md) |
+| `/excel-ops` | Excel Operations - Excel操作 | [`.cursor/commands/utility/excel-ops.md`](../.cursor/commands/utility/excel-ops.md) |
+| `/extract-tasks` | Extract Tasks - タスク抽出 | [`.cursor/commands/utility/extract-tasks.md`](../.cursor/commands/utility/extract-tasks.md) |
+| `/fetch-slides` | Fetch Slides - Google Slides取得 | [`.cursor/commands/utility/fetch-slides.md`](../.cursor/commands/utility/fetch-slides.md) |
+| `/generate-diagram` | Generate Diagram with Nano Banana Pro | [`.cursor/commands/utility/generate-diagram.md`](../.cursor/commands/utility/generate-diagram.md) |
+| `/generate-plantuml-diagram` | Generate PlantUML Diagram with Nano Banana Pro | [`.cursor/commands/utility/generate-plantuml-diagram.md`](../.cursor/commands/utility/generate-plantuml-diagram.md) |
+| `/generate-slide` | Generate Lecture Slide with Nano Banana Pro | [`.cursor/commands/utility/generate-slide.md`](../.cursor/commands/utility/generate-slide.md) |
+| `/gmail-account-setup` | Gmail アカウント セットアップ | [`.cursor/commands/utility/gmail-account-setup.md`](../.cursor/commands/utility/gmail-account-setup.md) |
+| `/gmail-pending-replies` | Gmail Pending Replies - メール未返信抽出 | [`.cursor/commands/utility/gmail-pending-replies.md`](../.cursor/commands/utility/gmail-pending-replies.md) |
+| `/google-account-setup` | Google アカウント セットアップ（Calendar/Drive用） | [`.cursor/commands/utility/google-account-setup.md`](../.cursor/commands/utility/google-account-setup.md) |
+| `/guide` | 次のアクション提示 | [`.cursor/commands/utility/guide.md`](../.cursor/commands/utility/guide.md) |
+| `/install-plugins` | 外部プラグインからスキルをインストール | [`.cursor/commands/utility/install-plugins.md`](../.cursor/commands/utility/install-plugins.md) |
+| `/nanobanana` | Nano Banana Pro 画像生成・編集 | [`.cursor/commands/utility/nanobanana.md`](../.cursor/commands/utility/nanobanana.md) |
+| `/notebooklm` | API notebooks | [`.cursor/commands/utility/notebooklm.md`](../.cursor/commands/utility/notebooklm.md) |
+| `/notion-fetch` | Notion Fetch - Notion連携 | [`.cursor/commands/utility/notion-fetch.md`](../.cursor/commands/utility/notion-fetch.md) |
+| `/overview` | プロジェクト構造可視化 | [`.cursor/commands/utility/overview.md`](../.cursor/commands/utility/overview.md) |
+| `/pdf-editor` | PDF Page Editor | [`.cursor/commands/utility/pdf-editor.md`](../.cursor/commands/utility/pdf-editor.md) |
+| `/pptx-ops` | PowerPoint Operations - PPTX操作 | [`.cursor/commands/utility/pptx-ops.md`](../.cursor/commands/utility/pptx-ops.md) |
+| `/pptx-template` | PPTXテンプレート操作 | [`.cursor/commands/utility/pptx-template.md`](../.cursor/commands/utility/pptx-template.md) |
+| `/screenshot-analyzer` | Screenshot Analyzer - スクリーンショット解析統合ツール | [`.cursor/commands/utility/screenshot-analyzer.md`](../.cursor/commands/utility/screenshot-analyzer.md) |
+| `/setup-google-api` | Setup Google API for MCP - Google API設定ガイド | [`.cursor/commands/utility/setup-google-api.md`](../.cursor/commands/utility/setup-google-api.md) |
+| `/slide-forge` | Slide Forge — 骨子からスライドを作る | [`.cursor/commands/utility/slide-forge.md`](../.cursor/commands/utility/slide-forge.md) |
+| `/sync-skills` | スキルをグローバル・他プロジェクトに同期 | [`.cursor/commands/utility/sync-skills.md`](../.cursor/commands/utility/sync-skills.md) |
+| `/tools-index` | Tools Index - ツール一覧 | [`.cursor/commands/utility/tools-index.md`](../.cursor/commands/utility/tools-index.md) |
+| `/tutor` | 学習コンテンツ生成 | [`.cursor/commands/utility/tutor.md`](../.cursor/commands/utility/tutor.md) |
+| `/update-material` | 元リポジトリ（upstream）から最新の教材を取り込む | [`.cursor/commands/utility/update-material.md`](../.cursor/commands/utility/update-material.md) |
+| `/update-plugins` | インストール済み外部スキルを更新 | [`.cursor/commands/utility/update-plugins.md`](../.cursor/commands/utility/update-plugins.md) |
+| `/update-skills` | upstream からスキルの最新版を取り込む | [`.cursor/commands/utility/update-skills.md`](../.cursor/commands/utility/update-skills.md) |
+| `/video-frame-reader` | Video Frame Reader - 動画キーフレーム抽出 | [`.cursor/commands/utility/video-frame-reader.md`](../.cursor/commands/utility/video-frame-reader.md) |
+
+### トップレベルコマンド（22個）
+
+| コマンド | Module | 説明 | 定義 |
+|---|---:|---|---|
+| `/cursor-daisuki` | — | 研修スタート - コース教材を自動で開く | [`.cursor/commands/cursor-daisuki.md`](../.cursor/commands/cursor-daisuki.md) |
+| `/env-check` | — | 開発環境の状態をチェック | [`.cursor/commands/env-check.md`](../.cursor/commands/env-check.md) |
+| `/module-18-calendar` | Module 18 | Module 18 Lesson 4-2 — Calendar（calendar_ops / gog calendar）をプロンプトで支援 | [`.cursor/commands/module-18-calendar.md`](../.cursor/commands/module-18-calendar.md) |
+| `/module-18-drive` | Module 18 | Module 18 Lesson 4-4 — Google Drive（drive_ops / gog drive）をプロンプトで支援 | [`.cursor/commands/module-18-drive.md`](../.cursor/commands/module-18-drive.md) |
+| `/module-18-gas` | Module 18 | Module 18 Lesson 4-6 — GAS × clasp 統合をプロンプトで支援 | [`.cursor/commands/module-18-gas.md`](../.cursor/commands/module-18-gas.md) |
+| `/module-18-gcp-appendix` | Module 18 | スラッシュ /module-18-gcp-appendix — Module 18 — GCP を自分で運用する（コンソール手順のチェックリスト） | [`.cursor/commands/module-18-gcp-appendix.md`](../.cursor/commands/module-18-gcp-appendix.md) |
+| `/module-18-gcp-quick` | Module 18 | スラッシュ /module-18-gcp-quick — Module 18 Lesson 4-1 — ai-agent-camp 同梱 OAuth で gog 認証まで（ターミナル手入力不要） | [`.cursor/commands/module-18-gcp-quick.md`](../.cursor/commands/module-18-gcp-quick.md) |
+| `/module-18-gmail` | Module 18 | Module 18 Lesson 4-3 — Gmail（gmail_ops / gog gmail）をプロンプトで支援 | [`.cursor/commands/module-18-gmail.md`](../.cursor/commands/module-18-gmail.md) |
+| `/module-18-google-auth` | Module 18 | スラッシュ /module-18-google-auth — Module 18 Lesson 4-1 — Google 認証（gog auth）と Gmail/Calendar 動作確認を支援 | [`.cursor/commands/module-18-google-auth.md`](../.cursor/commands/module-18-google-auth.md) |
+| `/module-18-sheets` | Module 18 | Module 18 Lesson 4-5 — Google Sheets（sheets_ops）をプロンプトで支援 | [`.cursor/commands/module-18-sheets.md`](../.cursor/commands/module-18-sheets.md) |
+| `/module-24-exercise` | Module 24 | When the user says /module-24-exercise — Module 24 演習チェックリスト（SOQL / CSV / メタデータ） | [`.cursor/commands/module-24-exercise.md`](../.cursor/commands/module-24-exercise.md) |
+| `/module-24-metadata-deploy` | Module 24 | When the user says /module-24-metadata-deploy — Module 24 — Sandbox へメタデータ deploy | [`.cursor/commands/module-24-metadata-deploy.md`](../.cursor/commands/module-24-metadata-deploy.md) |
+| `/module-24-metadata-retrieve` | Module 24 | When the user says /module-24-metadata-retrieve — Module 24 — Apex / Flow / Layout を retrieve | [`.cursor/commands/module-24-metadata-retrieve.md`](../.cursor/commands/module-24-metadata-retrieve.md) |
+| `/module-24-soql` | Module 24 | When the user says /module-24-soql — Module 24 SOQL — sf data query で Account / Opportunity を取得 | [`.cursor/commands/module-24-soql.md`](../.cursor/commands/module-24-soql.md) |
+| `/next_lesson` | — | 完了チェックして次のレッスンへ進む | [`.cursor/commands/next_lesson.md`](../.cursor/commands/next_lesson.md) |
+| `/project-info` | — | プロジェクト情報を表示 | [`.cursor/commands/project-info.md`](../.cursor/commands/project-info.md) |
+| `/run-tests` | — | プロジェクトのテストを実行 | [`.cursor/commands/run-tests.md`](../.cursor/commands/run-tests.md) |
+| `/setup-api-key` | — | APIキー・トークンを安全に設定する手順を案内する（初学者向け） | [`.cursor/commands/setup-api-key.md`](../.cursor/commands/setup-api-key.md) |
+| `/start-cursor-bootcamp` | — | 研修スタート - コース教材を自動で開く | [`.cursor/commands/start-cursor-bootcamp.md`](../.cursor/commands/start-cursor-bootcamp.md) |
+| `/研修をスタート` | — | 研修スタート - コース教材を自動で開く | [`.cursor/commands/研修をスタート.md`](../.cursor/commands/研修をスタート.md) |
+| `/研修を始めたい` | — | 研修スタート - コース教材を自動で開く | [`.cursor/commands/研修を始めたい.md`](../.cursor/commands/研修を始めたい.md) |
+| `/研修開始` | — | 研修スタート - コース教材を自動で開く | [`.cursor/commands/研修開始.md`](../.cursor/commands/研修開始.md) |
+<!-- AUTO-GENERATED:commands END -->
 
 ## コマンド実行方法
 
