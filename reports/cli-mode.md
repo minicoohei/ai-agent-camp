@@ -1,8 +1,8 @@
 # CLI mode compatibility report
 
-Total files scanned: **178**  
-Grades — A: 32, B: 146, C: 0, D: 0  
-Files with `nonInteractiveMode` frontmatter: **178**
+Total files scanned: **188**\
+Grades — A: 34, B: 154, C: 0, D: 0\
+Files with `nonInteractiveMode` frontmatter: **188**
 
 ## Lowest-scoring files (top 30)
 
@@ -14,9 +14,12 @@ Files with `nonInteractiveMode` frontmatter: **178**
 | 70 | B | `commands/lesson/setup-elevenlabs.md` | AskQuestion×15; OAuth×2; Secret×19; declared:incompatible |
 | 70 | B | `commands/lesson/setup-extensions.md` | AskQuestion×11; Restart×1; Namespace×1; declared:incompatible |
 | 70 | B | `commands/lesson/setup-fal.md` | AskQuestion×15; OAuth×3; Secret×16; declared:incompatible |
+| 70 | B | `commands/lesson/setup-figma.md` | OAuth×5; Namespace×1; declared:incompatible |
+| 70 | B | `commands/lesson/setup-freee.md` | OAuth×5; Install×1; Namespace×1; declared:incompatible |
 | 70 | B | `commands/lesson/setup-gemini.md` | AskQuestion×13; OAuth×1; Secret×17; declared:incompatible |
 | 70 | B | `commands/lesson/setup-github.md` | AskQuestion×19; OAuth×12; Namespace×1; declared:incompatible |
 | 70 | B | `commands/lesson/setup-gogcli.md` | AskQuestion×14; OAuth×17; Install×6; declared:incompatible |
+| 70 | B | `commands/lesson/setup-google-ads.md` | OAuth×7; Secret×3; Namespace×1; declared:incompatible |
 | 70 | B | `commands/lesson/setup-line-harness.md` | OAuth×2; Restart×1; Secret×11; Namespace×2; declared:incompatible |
 | 70 | B | `commands/lesson/setup-notion.md` | AskQuestion×20; OAuth×2; Restart×1; Secret×8; Install×3; declared:incompatible |
 | 70 | B | `commands/lesson/setup-pencil.md` | AskQuestion×16; Restart×1; declared:incompatible |
@@ -35,13 +38,10 @@ Files with `nonInteractiveMode` frontmatter: **178**
 | 70 | B | `commands/lesson/start-12-1.md` | AskQuestion×16; OAuth×14; Install×2; declared:incompatible |
 | 70 | B | `commands/lesson/start-12-6.md` | AskQuestion×16; OAuth×1; declared:incompatible |
 | 70 | B | `commands/lesson/start-13-2.md` | AskQuestion×14; OAuth×1; declared:incompatible |
-| 70 | B | `commands/lesson/start-13-4.md` | AskQuestion×16; OAuth×1; declared:incompatible |
-| 70 | B | `commands/lesson/start-13-5.md` | AskQuestion×14; OAuth×12; declared:incompatible |
-| 70 | B | `commands/lesson/start-16-1.md` | AskQuestion×10; OAuth×3; Install×2; declared:incompatible |
 
 ## Score distribution
 
-- **A**: 32
-- **B**: 146
+- **A**: 34
+- **B**: 154
 - **C**: 0
 - **D**: 0

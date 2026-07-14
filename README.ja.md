@@ -570,6 +570,10 @@ ai-agent-camp/
 │   ├── seo-audit/                      # SEO 監査
 │   └── social-content/                 # SNS コンテンツ
 │
+├── mv-composer/                        # 運営・制作専用の Remotion 動画制作（受講には不要）
+├── gas-example/                        # 運営・制作専用の GAS サンプル（受講には不要）
+├── ops/                                # 運営・制作専用スクリプト（受講には不要）
+│
 ├── 🗂️ data/                            # lesson / Codex 実行に必要な最小データ
 │   ├── codex-command-manifest.json     # Codex ルーティング定義
 │   ├── google-sync/                    # Google 同期用スクリプトとテンプレート

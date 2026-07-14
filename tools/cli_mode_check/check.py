@@ -231,7 +231,7 @@ def _csv_safe(value) -> str:
 def write_csv(rows: list[FileReport], dest: Path) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
     with dest.open("w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(
             [
                 "file",
@@ -274,10 +274,10 @@ def write_md(rows: list[FileReport], dest: Path) -> None:
     declared = sum(1 for r in rows if r.nonInteractiveMode)
     with dest.open("w", encoding="utf-8") as f:
         f.write("# CLI mode compatibility report\n\n")
-        f.write(f"Total files scanned: **{len(rows)}**  \n")
+        f.write(f"Total files scanned: **{len(rows)}**\\\n")
         f.write(
             f"Grades — A: {grades['A']}, B: {grades['B']}, "
-            f"C: {grades['C']}, D: {grades['D']}  \n"
+            f"C: {grades['C']}, D: {grades['D']}\\\n"
         )
         f.write(f"Files with `nonInteractiveMode` frontmatter: **{declared}**\n\n")
         f.write("## Lowest-scoring files (top 30)\n\n")

@@ -568,6 +568,10 @@ ai-agent-camp/
 │   ├── seo-audit/                       # SEO audits
 │   └── social-content/                  # Social media content
 │
+├── mv-composer/                         # Operations/production-only Remotion video tools (not required for learners)
+├── gas-example/                         # Operations/production-only GAS examples (not required for learners)
+├── ops/                                 # Operations/production-only scripts (not required for learners)
+│
 ├── data/                                # Minimum data for lessons/Codex
 │   ├── codex-command-manifest.json      # Codex routing definitions
 │   ├── google-sync/                     # Google sync scripts & templates

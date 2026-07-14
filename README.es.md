@@ -570,6 +570,10 @@ ai-agent-camp/
 |   +-- seo-audit/                     # Auditoria SEO
 |   +-- social-content/               # Contenido para redes sociales
 |
++-- mv-composer/                        # Herramientas Remotion solo para operaciones/produccion (no necesarias para cursar)
++-- gas-example/                        # Ejemplos GAS solo para operaciones/produccion (no necesarios para cursar)
++-- ops/                                # Scripts solo para operaciones/produccion (no necesarios para cursar)
+|
 +-- data/                                # Datos minimos para lecciones / ejecucion de Codex
 |   +-- codex-command-manifest.json      # Definicion de enrutamiento de Codex
 |   +-- google-sync/                     # Scripts y plantillas para sincronizacion con Google
