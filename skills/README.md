@@ -16,14 +16,13 @@ OpenClaw / Claude Code 対応のマーケティングスキルセット。
 | **content-creator** | コンテンツ制作（SNS/記事/バナー/動画/メール） | `skills/content-creator/` |
 | **post-publisher** | 投稿実行（Typefully API連携） | `skills/post-publisher/` |
 
-### ベーススキル（marketingskills由来 × 25）
+### ベーススキル（marketingskills由来 × 19）
 
 | カテゴリ | スキル |
 |---------|--------|
 | **戦略** | product-marketing-context, content-strategy, marketing-ideas, launch-strategy, marketing-psychology, pricing-strategy |
 | **コピー** | copywriting, copy-editing, email-sequence, social-content |
 | **SEO** | seo-audit, programmatic-seo, schema-markup, competitor-alternatives |
-| **CRO** | page-cro, signup-flow-cro, onboarding-cro, form-cro, popup-cro, paywall-upgrade-cro |
 | **広告** | paid-ads, ab-test-setup, analytics-tracking |
 | **成長** | referral-program, free-tool-strategy |
 

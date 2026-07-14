@@ -3,6 +3,7 @@
 name: skill-name
 description: 1行の説明文
 version: 1.0.0
+# status: draft  # 必要な実装スクリプトが未収録で、そのままでは実行できないスキル
 
 # === 分類 (必須) ===
 # role: designer | developer | analyst | marketer | communicator | educator | pm

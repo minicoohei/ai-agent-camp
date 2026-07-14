@@ -86,20 +86,20 @@ El flujo de respuesta es:
 ### Ubicación del script de respuesta
 
 ```
-slack-sync/scripts/reply_slack.py
+data/slack-sync/scripts/reply_slack.py
 ```
 
 ### Uso
 
 ```bash
 # Ejecución en seco (vista previa sin enviar)
-python slack-sync/scripts/reply_slack.py \
+python data/slack-sync/scripts/reply_slack.py \
   --url "https://xxx.slack.com/archives/CHANNEL/pTIMESTAMP" \
   --message "Contenido de respuesta" \
   --dry-run
 
 # Enviar realmente (¡solo después de que el usuario confirme!)
-python slack-sync/scripts/reply_slack.py \
+python data/slack-sync/scripts/reply_slack.py \
   --url "https://xxx.slack.com/archives/CHANNEL/pTIMESTAMP" \
   --message "Contenido de respuesta"
 ```

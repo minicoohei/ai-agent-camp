@@ -1,3 +1,0 @@
-interface:
-  display_name: "Aiagent Guide"
-  short_description: "Orient Codex inside ai-agent-camp. Use when the user wants repo overview, tool differences, or the next recommended lesson and workflow."

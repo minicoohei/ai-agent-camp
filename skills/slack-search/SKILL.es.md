@@ -111,7 +111,7 @@ El índice se actualiza automáticamente a diario mediante GitHub Actions.
 Actualización manual:
 
 ```bash
-python3 slack-sync/scripts/build_book_index.py
+python3 data/slack-sync/scripts/build_book_index.py
 ```
 
 ## Descripción general
@@ -122,7 +122,7 @@ Habilidad que utiliza indexación jerárquica basada en BookRAG para búsqueda s
 
 | Error | Solución |
 |-------|----------|
-| Index file not found | Reconstruya el índice con `python3 slack-sync/scripts/build_book_index.py` |
+| Index file not found | Reconstruya el índice con `python3 data/slack-sync/scripts/build_book_index.py` |
 | No results found | Cambie las palabras clave de la consulta o verifique las categorías disponibles con `get_workspace_overview()` |
 
 ## Criterios de éxito
