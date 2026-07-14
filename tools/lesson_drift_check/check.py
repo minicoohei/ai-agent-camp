@@ -57,6 +57,7 @@ _SETUP_TO_MODULE = {
     "freee": "module-20",
     "salesforce": "module-24",
     "m365": "module-19",
+    "m365cli": "module-19",
     "google-ads": "module-25",
     "figma": "module-21",
     "bigquery": "module-8",
@@ -403,7 +404,7 @@ def main() -> int:
     with md_path.open("w", encoding="utf-8") as f:
         f.write("# Lesson command ↔ slide drift report\n\n")
         scored = [r for r in rows if not r.note]
-        unmapped = [r for r in rows if r.note and "unmapped" in r.note]
+        unmapped = [r for r in rows if r.module_id == "(unmapped)"]
         no_slides = [r for r in rows if r.note and "No slide corpus" in r.note]
         f.write(f"Scanned commands: **{len(rows)}**  \n")
         f.write(f"With matching slide module: **{len(scored)}**  \n")
