@@ -51,24 +51,31 @@ def test_checks_repo_root_and_skill_relative_paths(tmp_path):
     ]
 
 
-def test_allowlist_suppresses_only_named_p2_skills():
+def test_allowlist_suppresses_only_named_skills(monkeypatch):
     mod = load_module()
+    monkeypatch.setattr(mod, "MISSING_EXECUTABLE_ALLOWLIST", {"excluded-skill"})
     skills = [
-        {"name": "motion-review", "missing_executable_scripts": ["scripts/qa.sh"]},
+        {"name": "excluded-skill", "missing_executable_scripts": ["scripts/qa.sh"]},
         {"name": "healthy-skill", "missing_executable_scripts": ["scripts/missing.py"]},
     ]
 
     assert mod.fatal_script_issues(skills) == [
         {"skill": "healthy-skill", "references": ["scripts/missing.py"]}
     ]
-    assert "motion-review" in mod.MISSING_EXECUTABLE_ALLOWLIST
 
 
-def test_exit_code_branches_on_unallowlisted_missing_script():
+def test_production_allowlist_is_empty():
+    # P2 (PR #77) で全スキルの参照を修理済み。ここが増える場合は理由を確認すること。
     mod = load_module()
+    assert mod.MISSING_EXECUTABLE_ALLOWLIST == set()
+
+
+def test_exit_code_branches_on_unallowlisted_missing_script(monkeypatch):
+    mod = load_module()
+    monkeypatch.setattr(mod, "MISSING_EXECUTABLE_ALLOWLIST", {"excluded-skill"})
     legacy_only = [{"name": "legacy", "issues": ["few-sections"]}]
     allowlisted = [
-        {"name": "slack-search", "missing_executable_scripts": ["missing.py"]}
+        {"name": "excluded-skill", "missing_executable_scripts": ["missing.py"]}
     ]
     fatal = [{"name": "new-skill", "missing_executable_scripts": ["missing.py"]}]
 
