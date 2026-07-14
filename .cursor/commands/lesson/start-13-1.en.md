@@ -5,8 +5,8 @@ duration: "~20 min"
 prerequisites: ["start-0-1"]
 level: "intermediate"
 tags: ["lp", "copywriting", "persona", "brief"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 13-1: Organizing Your Value Proposition (Hearing & Copywriting)
 
 ## 📍 What You'll Do

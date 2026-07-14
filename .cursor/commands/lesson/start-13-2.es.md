@@ -5,8 +5,8 @@ prerequisites: ["start-13-1"]
 duration: "~25 min"
 level: "intermediate"
 tags: ["lp", "wireframe", "design", "information-architecture"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 13-2: Creación de wireframe (ASCII + WF visual)
 
 ## 📍 Lo que hará en está sesión

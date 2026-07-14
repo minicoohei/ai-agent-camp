@@ -121,14 +121,14 @@ AIエージェントを「専門家向けのツール」から「すべての職
 - 実際の業務シナリオに基づいた教材
 
 🚀 **実践的なスキルセット**
-- すぐに業務で使える80個のコマンド
-- 実装済みの42個のスキル（マーケティング・LP/HP制作を含む）
+- [Commands リファレンス](docs/commands-reference.md)に掲載された業務用コマンド
+- [Skills リファレンス](docs/skills-reference.md)に掲載された実装済みスキル
 - 業務別のワークフローサンプル
 
 📚 **包括的なカリキュラム**
 - AI基礎（Foundation）11チャプター
 - 環境セットアップ（Setup）3チャプター
-- 20個のコアモジュール（Google Workspace・動画制作・要件定義・マーケティング等を含む）
+- 提供中の26個のコアモジュール（Google Workspace・動画制作・要件定義・マーケティング等を含む）
 - CursorBootcamp YAML メタデータ対応（全25チャプター）
 - 総学習時間：約24時間（演習込みで約30時間以上）
 
@@ -469,34 +469,40 @@ ai-agent-camp/
 │       │   └── ch01 ~ ch11/           # LLM, Token, Agent, MCP, RAG, Security 等
 │       ├── lesson02-setup/             # 環境構築（3 チャプター）
 │       │   └── ch01 ~ ch03/           # 環境, 拡張機能, API設定
-│       └── lesson03-core/              # コアスキル（20 モジュール）
-│           └── module01 ~ module20/   # Banner ～ Freee/MF（practice/final 付き）
+│       └── lesson03-core/              # コアスキル（提供中 26 モジュール）
+│           └── module01 ~ module25, module29/ # Banner ～ slide-forge
 │
-├── 💻 .cursor/commands/                # 80 個のコマンド
-│   ├── lesson/                         # 学習用コマンド (52 個)
+├── 💻 .cursor/commands/                # docs/commands-reference.md を参照
+│   ├── lesson/                         # 学習用コマンド
 │   │   ├── /start-0-1 ~ /start-0-8    # Module 0: Setup
 │   │   ├── /start-1-1 ~ /start-1-3    # Module 1: バナー
 │   │   ├── /start-2-1 ~ /start-2-3    # Module 2: 図解
 │   │   ├── /start-3-1 ~ /start-3-6    # Module 3: チュートリアル
 │   │   ├── /start-4-1 ~ /start-4-7    # Module 4: Google Workspace
 │   │   ├── /start-5-1 ~ /start-5-2    # Module 5: PPTX
-│   │   ├── /start-6-1 ~ /start-6-5    # Module 6: エージェント開発
+│   │   ├── /start-6-1 ~ /start-6-9    # Module 6: エージェント開発
 │   │   ├── /start-7-1 ~ /start-7-8    # Module 7: Skill/Commands
 │   │   ├── /start-8-1 ~ /start-8-4    # Module 8: データ分析
-│   │   ├── /start-9-1 ~ /start-9-2    # Module 9: Slack連携
-│   │   ├── /start-10-1 ~ /start-10-3  # Module 10: GAS
-│   │   ├── /start-11-1 ~ /start-11-2  # Module 11: GitHub Actions
+│   │   ├── /start-9-1 ~ /start-9-3    # Module 9: Slack連携
+│   │   ├── /start-10-1 ~ /start-10-4  # Module 10: GAS
+│   │   ├── /start-11-1 ~ /start-11-5  # Module 11: GitHub Actions
 │   │   ├── /start-12-1 ~ /start-12-6  # Module 12: Notion
 │   │   ├── /start-13-1 ~ /start-13-5  # Module 13: LP制作
 │   │   ├── /start-14-1 ~ /start-14-7  # Module 14: 記事制作
-│   │   ├── /start-15-1 ~ /start-15-8  # Module 15: 動画制作
+│   │   ├── /start-15-1 ~ /start-15-13 # Module 15: 動画制作（7a-7d を含む）
 │   │   ├── /start-16-1 ~ /start-16-8  # Module 16: メール/LINE自動化
-│   │   ├── /start-17-1 ~ /start-17-4  # Module 17: マーケティング
+│   │   ├── /start-17-1 ~ /start-17-5  # Module 17: マーケティング
 │   │   ├── /start-18-1 ~ /start-18-20 # Module 18: 要件定義/システム開発
-│   │   ├── /start-19-1               # Module 19: Outlook（準備中）
-│   │   └── /start-20-1               # Module 20: Freee/MoneyForward（準備中）
+│   │   ├── /setup-m365cli + /start-19-1 ~ /start-19-2 # Module 19: Outlook
+│   │   ├── /setup-freee + /start-20-1  # Module 20: Freee/MoneyForward
+│   │   ├── /setup-figma + /start-21-1  # Module 21: Figma
+│   │   ├── /setup-discord + /start-22-1 # Module 22: Discord
+│   │   ├── /setup-line-harness + /start-23-1 # Module 23: LINE
+│   │   ├── /setup-salesforce + /start-24-1 # Module 24: Salesforce
+│   │   ├── /setup-google-ads + /start-25-1 # Module 25: Google Ads
+│   │   └── /start-29-1 ~ /start-29-4  # Module 29: slide-forge
 │   │
-│   └── utility/                        # ユーティリティコマンド (28 個)
+│   └── utility/                        # ユーティリティコマンド
 │       ├── /check-setup                # セットアップ確認
 │       ├── /overview                   # プロジェクト概要
 │       ├── /guide                      # 使い方ガイド
@@ -504,7 +510,7 @@ ai-agent-camp/
 │       ├── /update-material            # 教材を最新版に更新
 │       └── ... その他のヘルパー
 │
-├── 🛠️ skills/                            # 42 個の再利用可能スキル
+├── 🛠️ skills/                            # docs/skills-reference.md を参照
 │   │
 │   │  ── 画像・バナー生成 ──
 │   ├── banner-creator/                 # SNS バナー生成
@@ -563,6 +569,10 @@ ai-agent-camp/
 │   ├── schema-markup/                  # 構造化データ
 │   ├── seo-audit/                      # SEO 監査
 │   └── social-content/                 # SNS コンテンツ
+│
+├── mv-composer/                        # 運営・制作専用の Remotion 動画制作（受講には不要）
+├── gas-example/                        # 運営・制作専用の GAS サンプル（受講には不要）
+├── ops/                                # 運営・制作専用スクリプト（受講には不要）
 │
 ├── 🗂️ data/                            # lesson / Codex 実行に必要な最小データ
 │   ├── codex-command-manifest.json     # Codex ルーティング定義
@@ -716,8 +726,14 @@ ai-agent-camp/
 | **16** | メール/LINE 自動化 | メールシーケンス、LINE Bot |
 | **17** | マーケティング | X投稿、SEO、コピーライティング |
 | **18** | 要件定義/システム開発 | PRD、設計、テスト、Notionエクスポート |
-| **19** | Outlook連携 | Microsoft Office統合（準備中） |
-| **20** | Freee/MoneyForward | 会計データ操作（準備中） |
+| **19** | Outlook連携 | Microsoft Office統合 |
+| **20** | Freee/MoneyForward | 会計データ操作 |
+| **21** | Figma連携 | デザインシステム・UI共同作業 |
+| **22** | Discord連携 | Bot・チャンネル運用 |
+| **23** | LINE公式アカウント | メッセージ・アカウント運用 |
+| **24** | Salesforce CLI連携 | CRMクエリ・メタデータ操作 |
+| **25** | Google Ads連携 | 広告データ操作 |
+| **29** | slide-forge | スライド生成・修正ワークフロー |
 
 ---
 
@@ -774,8 +790,8 @@ ai-agent-camp/
 
 | ドキュメント | 説明 |
 |------------|------|
-| [Commands リファレンス](docs/commands-reference.md) | 80 個のコマンド全体説明 |
-| [Skills リファレンス](docs/skills-reference.md) | 42 個のスキル詳細情報 |
+| [Commands リファレンス](docs/commands-reference.md) | 全コマンドの自動生成一覧 |
+| [Skills リファレンス](docs/skills-reference.md) | 全スキルの自動生成一覧 |
 | [Claude Code ガイド](CLAUDE.md) | Claude Code 特有の機能解説 |
 
 ### API 設定ガイド

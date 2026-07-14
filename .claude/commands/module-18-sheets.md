@@ -1,7 +1,7 @@
 ---
 description: Module 18 Lesson 4-5 — Google Sheets（sheets_ops）をプロンプトで支援
+nonInteractiveMode: compliant
 ---
-
 # Module 18 — Sheets（Lesson 4-5）
 
 ユーザーが教材「モジュール18・データ連携」に取り組んでいます。**プロンプト経由で** `sheets_ops.py` を使い、範囲指定での取得・CSV 出力・プレビューを支援してください。

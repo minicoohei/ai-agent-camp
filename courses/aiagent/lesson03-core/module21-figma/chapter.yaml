@@ -1,17 +1,18 @@
-# Chapter 21: Figma連携
+# Chapter 21: Figma 連携
 id: "module21-figma"
 order: 21
-name: "Figma連携"
-description: "Figma MCPを使ったデザインデータ操作と自動化を扱う近日公開モジュールです。想定内容は、Figmaファイルやフレームの読み取り、デザイン仕様の抽出、コンポーネントやスタイル情報の確認、実装指示への変換、デザインレビュー、LP/HP制作やPencil MCPとの使い分けです。AIエージェントがデザイン意図を読み取り、エンジニアリングやコンテンツ制作へつなげるための橋渡しとして位置づけます。"
+name: "Figma 連携"
+description: "Figma 公式 MCP と Serendie デザインシステムを組み合わせ、AI による Figma の読み書きからデザインシステムに沿った UI 実装までを一気通貫で学びます。Figma ファイルやフレームの読み取り、デザイン仕様・コンポーネント・スタイル情報の抽出、実装指示への変換、デザインレビュー、Pencil MCP との使い分けを通じて、デザイン意図をエンジニアリングやコンテンツ制作へ安全につなげます。"
 type: "manual"
-status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+objectives:
+  - "Figma 公式 MCP と Serendie MCP の役割の違いを説明できる"
+  - "Claude Code への Figma プラグイン導入と OAuth 認証を実行できる"
+  - "Serendie UI Kit を自分の Figma チームに取り込み、ライブラリとして公開できる"
+  - "Figma の選択から Claude、コード/Figma 双方向の実装フローを理解できる"
 externalContent:
-  manual: "https://ai-agent.camp/ja/course/module-21"
+  manual: "https://ai-agent.camp/ja/course/module-21?slideId=module-overview"
+  slides: "https://ai-agent.camp/ja/course/module-21?slideId=module-overview"
 prerequisites:
   - "module13-lp"
-objectives:
-  - "Figma MCPで扱うデザインデータの種類を理解する"
-  - "デザイン仕様を実装やレビューに変換する流れを把握する"
-  - "デザインデータの権限と共有範囲を意識できる"

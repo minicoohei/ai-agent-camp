@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Screenshot Analyzer - Herramienta integrada de análisis de capturas de pantalla
 
 Este comando utiliza `tools/screenshot_analyzer.py` para analizar capturas de pantalla, realizar diagnósticos de errores y generar tutoriales de operación.

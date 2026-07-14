@@ -1,8 +1,8 @@
 ---
 description: Pull the latest skills from upstream
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # Update Skills to Latest Version
 
 ## Usage

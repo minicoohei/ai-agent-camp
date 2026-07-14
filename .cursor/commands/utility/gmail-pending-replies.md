@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Gmail Pending Replies - メール未返信抽出
 
 Gmailで返信が必要なメールを抽出し、**返信案を自動生成**します。

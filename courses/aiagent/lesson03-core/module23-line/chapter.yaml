@@ -1,17 +1,19 @@
-# Chapter 23: LINE連携
+# Chapter 23: LINE 公式アカウント運用
 id: "module23-line"
 order: 23
-name: "LINE連携"
-description: "LINE Messaging APIを使ったBot構築と自動化を扱う近日公開モジュールです。想定内容は、Webhook、メッセージ送受信、ユーザー問い合わせ対応、通知配信、シナリオ設計、CRMやスプレッドシートとの連携です。顧客との直接接点になるため、返信内容の正確性、個人情報、オプトイン、配信頻度、エスカレーション条件を明確にし、AIエージェントを安全に顧客対応へ組み込む考え方を学びます。"
+name: "LINE 公式アカウント運用"
+description: "Cloudflare Worker と LINE Messaging API を使い、自社で完全にコントロールできる LINE 公式アカウントを構築・運用する方法を学びます。Webhook、メッセージ送受信、問い合わせ対応、通知・シナリオ配信、CRM や Slack との連携を扱い、顧客との直接接点に必要な返信の正確性、個人情報、オプトイン、配信頻度、エスカレーション条件を明確にして安全な自動化を設計します。"
 type: "manual"
-status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+objectives:
+  - "LINE Developers Console、Webhook、シークレット管理をセットアップできる"
+  - "既存友だちを取り込む auto-register パターンを理解できる"
+  - "自動応答、シナリオ配信、ブロードキャストを使い分けて実装できる"
+  - "リッチメニュー画像、Flex メッセージ、Slack 双方向ブリッジの運用ポイントを説明できる"
+  - "wrangler、D1、line-harness MCP で KPI を CLI から確認できる"
 externalContent:
-  manual: "https://ai-agent.camp/ja/course/module-23"
+  manual: "https://ai-agent.camp/ja/course/module-23?slideId=module-overview"
+  slides: "https://ai-agent.camp/ja/course/module-23?slideId=module-overview"
 prerequisites:
   - "module17-marketing"
-objectives:
-  - "LINE Messaging API連携の基本構成を理解する"
-  - "問い合わせ対応や通知配信の自動化ユースケースを整理できる"
-  - "顧客接点でAIを使う際の個人情報と誤応答リスクを把握する"

@@ -1,7 +1,7 @@
 ---
 description: Slash /module-18-google-auth — Módulo 18 Lección 4-1 — Asistir con la autenticación de Google (gog auth) y verificación de Gmail/Calendar
+nonInteractiveMode: incompatible
 ---
-
 ## Comience aquí (lo más rápido)
 
 Ejecute **`/module-18-google-auth`** en el chat para cargar todas las instrucciones de esta lección en el contexto de una sola vez. **Es más rápido y confiable que escribir prompts largos manualmente.**

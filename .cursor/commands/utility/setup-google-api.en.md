@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Setup Google API for MCP - Google API Setup Guide
 
 This command uses Cursor Browser to provide a step-by-step guide for Google API setup and OAuth 2.0 authentication for MCP (Model Context Protocol).

@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-9-1"]
 level: "beginner"
 tags: ["slack", "api", "message", "thread", "history"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 9-2: メッセージ・スレッド取得
 
 ## 📍 このセッションでやること

@@ -6,8 +6,8 @@ duration: "30 min"
 prerequisites: ["start-16-1"]
 level: "intermediate"
 tags: ["email", "sequence", "drip-campaign", "marketing"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 16-4: Diseño de Secuencia de Correos
 
 ## Lo Que Hará en Esta Sesión

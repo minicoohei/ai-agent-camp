@@ -1,6 +1,7 @@
 ---
 name: data-analyst
 description: "BigQuery/Snowflake接続、EDA、可視化、Marimoノートブック作成を行うサブエージェント。 データ分析関連の4つのルール（data_analysis, visualization, notebook, marimo_variable_naming）を統合。 「データ分析して」「BigQueryに接続」「EDAを実行」「Marimoで分析」等のリクエストで発動。"
+status: draft
 triggers:
   - データ分析
   - BigQuery
@@ -16,6 +17,8 @@ triggers:
 # Data Analyst サブエージェント
 
 BigQuery/Snowflake接続、EDA、可視化、Marimoノートブック作成を専用コンテキストで実行するサブエージェント。
+
+> **Draft:** Marimo変数の補助Lintスクリプトは未収録。変数名の重複は手動で確認する。
 
 ## 目的
 
@@ -172,12 +175,9 @@ def _(data):
     return fig_detail, axes_detail
 ```
 
-## 変数Lintチェック
+## 変数の重複確認
 
-```bash
-# 編集前後で実行し、再定義が0件であることを確認
-python scripts/lint_marimo_vars.py <path>
-```
+編集前後に各セルのトップレベル変数名を見直し、同じ名前を複数セルで再定義していないことを確認する。重複する場合は、セルの役割が分かる固有の接尾辞を付ける。
 
 ---
 
@@ -283,7 +283,7 @@ tqdm>=4.65.0
 |--------|---------|
 | GCP認証エラー | `gcloud auth application-default login` を実行 |
 | BigQueryテーブルが見つからない | `gcloud config configurations list` でプロファイルを確認し適切なものに切り替え |
-| Marimo変数再定義エラー | `python scripts/lint_marimo_vars.py <path>` で重複変数を確認・修正 |
+| Marimo変数再定義エラー | 各セルのトップレベル変数を見直し、重複名に固有の接尾辞を付ける |
 
 ## Success Criteria
 
@@ -302,7 +302,4 @@ BigQuery/Snowflake接続、EDA（探索的データ分析）、可視化、Marim
 ```bash
 # Marimo ノートブックで分析を開始
 marimo edit notebooks/eda_analysis.py
-
-# 変数Lintチェック
-python scripts/lint_marimo_vars.py notebooks/eda_analysis.py
 ```

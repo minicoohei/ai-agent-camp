@@ -5,8 +5,8 @@ prerequisites: ["start-3-1", "start-3-2", "start-3-3", "start-3-4"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["screenshot", "batch-processing", "manual"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 3-5: A/B Test Result Analysis
 
 ## 📍 What You'll Do

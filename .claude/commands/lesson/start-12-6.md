@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-12-5"]
 level: "intermediate"
 tags: ["notion", "ncli", "comment", "summary", "ai"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 12-6: 要約の作成とコメントの返信
 
 ## 📍 このセッションでやること

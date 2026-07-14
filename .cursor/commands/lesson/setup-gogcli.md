@@ -4,8 +4,8 @@ duration: "約15分"
 prerequisites: ["Googleアカウントを持っている", "ブラウザが使える"]
 level: "beginner"
 tags: ["setup", "gogcli", "google", "gmail", "calendar", "oauth"]
+nonInteractiveMode: incompatible
 ---
-
 # gogcli (Google Workspace CLI) セットアップ
 
 ## Step 0: セットアップ進捗の確認

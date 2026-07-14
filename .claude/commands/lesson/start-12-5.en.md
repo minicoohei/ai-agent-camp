@@ -5,8 +5,8 @@ prerequisites: ["start-12-4"]
 duration: "~30 min"
 level: "intermediate"
 tags: ["notion", "mcp", "files", "attachments"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 12-5: Notion and Slack Integration
 
 ## 📍 What You'll Do

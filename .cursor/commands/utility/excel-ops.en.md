@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Excel Operations - Excel File Operations
 
 Read, write, and analyze Excel files using openpyxl.

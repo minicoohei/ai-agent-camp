@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-11-2"]
 level: "intermediate"
 tags: ["github-actions", "news", "email", "slack", "webhook", "cron"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 11-3: News Fetching → Email/Slack Distribution Workflow
 
 ## 📍 What You'll Do

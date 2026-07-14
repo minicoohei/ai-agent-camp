@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-16-1"]
 level: "beginner"
 tags: ["email", "gmail", "check-inbox", "task-extraction"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 16-2: Incoming Email Analysis & Task Extraction
 
 ## What You Will Do in This Session

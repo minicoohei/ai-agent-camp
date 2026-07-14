@@ -5,8 +5,8 @@ duration: "約20分"
 prerequisites: ["start-0-1"]
 level: "intermediate"
 tags: ["lp", "copywriting", "persona", "brief"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 13-1: 訴求の整理（ヒアリング & コピーライティング）
 
 ## 📍 このセッションでやること

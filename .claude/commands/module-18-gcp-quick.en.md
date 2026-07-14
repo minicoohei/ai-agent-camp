@@ -1,7 +1,7 @@
 ---
 description: Slash /module-18-gcp-quick — Module 18 Lesson 4-1 — Authenticate gog using bundled OAuth (no terminal input required)
+nonInteractiveMode: incompatible
 ---
-
 ## Start here (quickest)
 
 **The learner only needs to run `/module-18-gcp-quick` in chat.** The bash commands below are for the agent (or for those who want to troubleshoot manually).

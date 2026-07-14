@@ -5,8 +5,8 @@ prerequisites: ["start-6-2"]
 duration: "約20分"
 level: "intermediate"
 tags: ["agent", "skill-design", "best-practices"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 7-1: スキル設計の基礎
 
 ## 📍 このセッションでやること

@@ -5,8 +5,8 @@ prerequisites: ["start-7-3"]
 duration: "~20 min"
 level: "advanced"
 tags: ["agent", "design-patterns", "architecture"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 7-4: 5 patrones de diseño
 
 ## 📍 Lo que hará en está sesion

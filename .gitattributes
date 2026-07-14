@@ -8,6 +8,8 @@
 *.json text eol=lf
 *.yaml text eol=lf
 *.yml text eol=lf
+reports/*.csv text eol=lf
+reports/*.md text eol=lf
 *.png binary
 *.jpg binary
 *.gif binary

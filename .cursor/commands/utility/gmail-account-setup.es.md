@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Configuración de cuenta de Gmail
 
 Asiste con la configuración de la integración de cuentas personales de Gmail.

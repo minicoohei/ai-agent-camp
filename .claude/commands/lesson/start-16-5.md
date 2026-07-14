@@ -6,8 +6,8 @@ duration: "30分"
 prerequisites: ["start-16-1", "start-16-2", "start-16-3"]
 level: "advanced"
 tags: ["email", "gmail", "gogcli", "github-actions", "automation"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 16-5: メール自動化ワークフロー
 
 ## 📍 このセッションでやること

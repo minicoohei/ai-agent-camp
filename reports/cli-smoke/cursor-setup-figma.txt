@@ -1,0 +1,15 @@
+## 結果
+
+[`setup-figma.md`](file:///Users/kou1904/ai-agent-camp/.cursor/commands/lesson/setup-figma.md) の frontmatter は **`nonInteractiveMode: incompatible`** です（6行目）。そのため **非対話モードではセットアップ手順を実行しません。**
+
+## 対話モードで行うこと（要約）
+
+Figma は **ブラウザ OAuth** が必要で、レッスン本文にも「`claude -p` / `cursor-agent --print` では完走できない」とあります。対話環境では次を順に行います。
+
+1. Figma 公式プラグインの導入（例: `/plugin install figma@claude-plugins-official`）  
+2. MCP 経由で Figma に **Authenticate → ブラウザで許可**  
+3. Serendie MCP を HTTP トランスポートで追加（例: `claude mcp add --transport http serendie-mcp https://serendie.design/mcp`）  
+4. `claude mcp list` で一覧確認  
+5. Serendie UI Kit をコミュニティから自分のチームへ取り込み（リンクはレッスン内）
+
+組織アカウントでは管理者の App 許可、UI Kit のチーム移動が必要な場合がある点に注意します。

@@ -6,8 +6,8 @@ duration: "30分"
 prerequisites: ["start-16-1"]
 level: "intermediate"
 tags: ["email", "sequence", "drip-campaign", "marketing"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 16-4: メールシーケンス設計
 
 ## 📍 このセッションでやること

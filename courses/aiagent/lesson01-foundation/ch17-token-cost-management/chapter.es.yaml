@@ -1,0 +1,16 @@
+# Capítulo 17: Ahorro de tokens y control de costos en Claude Code
+id: "ch17-token-cost-management"
+order: 17
+name: "Ahorro de tokens y control de costos en Claude Code"
+description: "Aprende selección de modelos, prompt caching, gestión de contexto y diseño de costos con delegación"
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+objectives:
+  - "Comprender el diseño de costos con selección de modelos, caché, gestión de contexto y delegación"
+  - "Elegir el modelo más pequeño que encaje con la tarea y reservar modelos superiores para decisiones clave"
+  - "Distinguir los descuentos de prompt caching del costo de releer sesiones largas"
+  - "Usar delegación a subagentes para mantener pequeño el contexto de la sesión principal"
+  - "Desarrollar intuición sobre costos de tokens de entrada y salida con un ejemplo de Fable 5"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-9?slideId=overview"

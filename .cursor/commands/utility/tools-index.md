@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Tools Index - ツール一覧
 
 このプロジェクトで使用できるツールの一覧と概要です。

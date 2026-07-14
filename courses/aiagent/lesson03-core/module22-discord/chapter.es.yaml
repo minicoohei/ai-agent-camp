@@ -2,16 +2,18 @@
 id: "module22-discord"
 order: 22
 name: "Integración con Discord"
-description: "Módulo próximamente disponible sobre construcción de Discord Bot y automatización de mensajes. El contenido esperado incluye creación de Bots, publicación en canales, recuperación de mensajes, notificaciones de eventos, operaciones de comunidad, respuestas de FAQ, asistencia de moderación e integraciones con servicios externos. A diferencia del capítulo de Slack centrado en el análisis de comunicación interna, este módulo usa agentes de IA en entornos comunitarios o de cara al cliente, enfatizando permisos, contenido de publicaciones, información personal y procedimientos de detención ante errores."
+description: "Construye Bots de Discord y automatiza mensajes con el plugin oficial discord de Claude Code y Channels. Incluye creación de Bots, publicaciones y lectura de canales, notificaciones, respuestas de FAQ, moderación e integraciones externas, con énfasis en permisos, pairing, allowlists, información personal y procedimientos de detención ante respuestas erróneas en comunidades o puntos de contacto con clientes."
 type: "manual"
-status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+objectives:
+  - "Crear un bot en Discord Developer Portal y activar MESSAGE CONTENT INTENT"
+  - "Instalar el plugin oficial discord de Claude Code e iniciarlo como Channel"
+  - "Manejar el bot token de forma segura con /discord:configure o una variable de entorno local"
+  - "Limitar el acceso del bot con pairing, allowlist y permisos por canal"
+  - "Comprender los limites del API de Discord y elegir entre canales privados por cliente y bot como hub"
 externalContent:
-  manual: "https://ai-agent.camp/es/course/module-22"
+  manual: "https://ai-agent.camp/es/course/module-22?slideId=module-overview"
+  slides: "https://ai-agent.camp/es/course/module-22?slideId=module-overview"
 prerequisites:
   - "module09-slack"
-objectives:
-  - "Explicar los casos de uso básicos de integración con Discord Bot"
-  - "Comprender las consideraciones de diseño para notificaciones, FAQ y asistencia de moderación"
-  - "Tener conciencia de la seguridad al ejecutar IA en entornos de comunidades externas"

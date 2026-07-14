@@ -36,6 +36,18 @@ Automatically invoked at the Quality Review step of the GTM Manager / Campaign O
 6. If P3 only -> VERDICT: PASS
 ```
 
+## Manual QA Frame Extraction
+
+After rendering, extract 12 evenly spaced frames directly with `ffprobe` and `ffmpeg`:
+
+```bash
+VIDEO=out/Composition_v1.mp4
+QA_DIR=data/qa_Composition_v1
+mkdir -p "$QA_DIR"
+DURATION="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$VIDEO")"
+ffmpeg -y -i "$VIDEO" -vf "fps=12/${DURATION}" -frames:v 12 "$QA_DIR/qa_%02d.png"
+```
+
 ## Tone (Review Output Style)
 
 - Use the tone of "a professional video director doing a final pre-delivery check"

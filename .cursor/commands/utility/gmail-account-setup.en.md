@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Gmail Account Setup
 
 Assists with setting up personal Gmail account integration.

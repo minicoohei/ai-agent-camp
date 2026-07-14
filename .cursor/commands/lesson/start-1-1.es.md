@@ -5,8 +5,8 @@ duration: "~30 min"
 prerequisites: ["start-0-3"]
 level: "beginner"
 tags: ["banner", "image", "gemini"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 1-1: Introducción a la generación de banners
 
 ## 📍 Lo que hará en está sesion

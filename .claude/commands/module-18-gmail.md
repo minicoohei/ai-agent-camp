@@ -1,7 +1,7 @@
 ---
 description: Module 18 Lesson 4-3 — Gmail（gmail_ops / gog gmail）をプロンプトで支援
+nonInteractiveMode: compliant
 ---
-
 # Module 18 — Gmail（Lesson 4-3）
 
 ユーザーが教材「モジュール18・朝のブリーフィング」に取り組んでいます。**プロンプト経由で** `gmail_ops.py` または `gog gmail` を使い、未返信検出・トリアージ・下書き生成を支援してください。送信前に必ず内容確認を促してください。

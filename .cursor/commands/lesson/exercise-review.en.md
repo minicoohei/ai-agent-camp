@@ -1,7 +1,7 @@
 ---
 description: "Lesson command"
+nonInteractiveMode: compliant
 ---
-
 # Exercise Review
 
 ## Usage

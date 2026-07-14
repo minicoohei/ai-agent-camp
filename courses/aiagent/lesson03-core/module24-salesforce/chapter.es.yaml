@@ -1,17 +1,19 @@
-# Capítulo 24: Integración con Salesforce
+# Capítulo 24: Integración con Salesforce CLI
 id: "module24-salesforce"
 order: 24
-name: "Integración con Salesforce"
-description: "Módulo próximamente disponible sobre operaciones con datos CRM y automatización usando la API de Salesforce. El contenido esperado incluye recuperación y actualización de leads, cuentas, oportunidades e historial de actividades, reportes de ventas, propuestas de seguimiento y conexión con automatización de marketing y correo. Dado que el CRM es el centro de la información de clientes y las decisiones de ventas, este módulo enfatiza el alcance de operaciones delegadas a agentes de IA, aprobaciones previas a actualizaciones, registros de auditoría y detección de duplicados o actualizaciones erróneas."
+name: "Integración con Salesforce CLI"
+description: "Usa sf CLI y el inicio de sesión en navegador para obtener Leads, Cuentas, Oportunidades e historial de actividades con SOQL, actualizar datos masivamente por CSV y gestionar metadatos desde la terminal con un agente de IA. Como el CRM concentra datos de clientes y decisiones comerciales, también define el alcance delegado, aprobaciones previas, registros de auditoría, detección de duplicados o errores e integración con automatización de marketing y correo."
 type: "manual"
-status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+objectives:
+  - "Instalar sf CLI y conectarse con login por navegador"
+  - "Gestionar varias orgs con aliases"
+  - "Consultar Cuentas, Oportunidades y Leads con SOQL"
+  - "Ejecutar operaciones masivas de insert, update y upsert con CSV"
+  - "Hacer deploy y retrieve de metadatos como Apex, Flow y Layouts"
 externalContent:
-  manual: "https://ai-agent.camp/es/course/module-24"
+  manual: "https://ai-agent.camp/es/course/module-24?slideId=module-overview"
+  slides: "https://ai-agent.camp/es/course/module-24?slideId=module-overview"
 prerequisites:
   - "module17-marketing"
-objectives:
-  - "Comprender los tipos de datos CRM manejados con integración de API de Salesforce"
-  - "Organizar casos de uso de IA para operaciones de ventas y marketing"
-  - "Explicar la importancia de aprobaciones, auditorías y prevención de actualizaciones erróneas en CRM"

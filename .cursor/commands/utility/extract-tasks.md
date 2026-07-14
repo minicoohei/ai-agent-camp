@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Extract Tasks - タスク抽出
 
 複数のデータソースからタスクを抽出し、優先順位付きで一覧化します。

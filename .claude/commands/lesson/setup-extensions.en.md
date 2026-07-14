@@ -4,8 +4,8 @@ duration: "~5 min"
 prerequisites: ["Cursor is running"]
 level: "beginner"
 tags: ["setup", "extensions"]
+nonInteractiveMode: incompatible
 ---
-
 # /setup-extensions -- Automatic Extension Setup
 
 ## Step 0: Check Setup Progress

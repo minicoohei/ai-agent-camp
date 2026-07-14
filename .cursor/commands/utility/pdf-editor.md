@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # PDF Page Editor
 
 PDFのテキストを編集（修正・削除）するコマンドです。

@@ -5,8 +5,8 @@ prerequisites: ["start-1-1"]
 duration: "約30分"
 level: "beginner"
 tags: ["image", "nanobanana", "gemini", "editing"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 1-3: nanobanana画像編集
 
 ## 📍 このセッションでやること

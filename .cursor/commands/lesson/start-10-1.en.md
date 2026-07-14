@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-0-1"]
 level: "intermediate"
 tags: ["gas", "clasp", "google", "automation"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 10-1: GAS Environment Setup with Clasp
 
 ## 📍 What You'll Do

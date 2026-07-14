@@ -5,8 +5,8 @@ prerequisites: ["start-3-1"]
 duration: "約25分"
 level: "intermediate"
 tags: ["screenshot", "tutorial", "documentation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 3-3: チュートリアル自動生成
 
 ## 📍 このセッションでやること

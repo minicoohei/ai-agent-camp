@@ -5,8 +5,8 @@ duration: "~15 min"
 prerequisites: ["Node.js 18 o superior instalado", "Clave de OpenAI API obtenida"]
 level: "beginner"
 tags: ["setup", "codex", "cli"]
+nonInteractiveMode: compliant
 ---
-
 # Lección 0-6: Configuración de Codex CLI
 
 ## Verificar progreso de configuración

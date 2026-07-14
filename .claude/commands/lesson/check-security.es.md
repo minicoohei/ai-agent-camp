@@ -1,7 +1,7 @@
 ---
 description: "Lesson command"
+nonInteractiveMode: compliant
 ---
-
 # Verificación de configuración de seguridad
 
 ## Uso

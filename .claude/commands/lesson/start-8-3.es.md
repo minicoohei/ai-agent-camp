@@ -5,8 +5,8 @@ prerequisites: ["start-8-1", "start-8-2"]
 duration: "~40 min"
 level: "intermediate"
 tags: ["data", "marimo", "dashboard", "visualization"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 8-3: Analisis interactivo con Marimo Notebooks
 
 ## 📍 Lo que hara en esta sesion

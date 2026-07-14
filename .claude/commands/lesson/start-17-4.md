@@ -5,8 +5,8 @@ duration: "約35分"
 prerequisites: ["start-17-3"]
 level: "intermediate"
 tags: ["marketing", "pencil", "design", "mockup"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 17-4: Pencil MCPでデザインモックアップ
 
 ## 📍 このセッションでやること

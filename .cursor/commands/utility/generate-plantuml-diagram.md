@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Generate PlantUML Diagram with Nano Banana Pro
 
 このコマンドは、`tools/generate_plantuml_diagram.py` を使用して、PlantUMLファイルからVisio Flowchartテンプレート風のモダンなフローチャート画像を生成します。

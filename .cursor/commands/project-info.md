@@ -1,7 +1,7 @@
 ---
 description: "プロジェクト情報を表示"
+nonInteractiveMode: compliant
 ---
-
 # プロジェクト情報
 
 ## 概要

@@ -6,8 +6,8 @@ duration: "約30分"
 prerequisites: ["start-0-7"]
 level: "intermediate"
 tags: ["freee", "moneyforward", "accounting", "mcp"]
+nonInteractiveMode: compliant
 ---
-
 # Lesson 20-1: Freee/MoneyForward連携 入門
 
 ## このセッションでやること
@@ -30,4 +30,4 @@ tags: ["freee", "moneyforward", "accounting", "mcp"]
 
 ## 次のステップ
 
-このモジュールの詳細レッスンは順次追加予定です。
+このモジュールの詳細レッスンは順次追加予定です。次は `/start-21-1` で Figma 連携に進みます。

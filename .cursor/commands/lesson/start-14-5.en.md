@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-14-4"]
 level: "intermediate"
 tags: ["article", "proofreading"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-5: Proofreading - Proofreading Agent Review
 
 ## 📍 What You'll Do

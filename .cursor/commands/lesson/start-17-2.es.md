@@ -5,8 +5,8 @@ duration: "~40 min"
 prerequisites: ["start-0-3"]
 level: "intermediate"
 tags: ["marketing", "seo", "keyword", "audit"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 17-2: Auditoria SEO y Estrategia de Palabras Clave
 
 ## Lo Qué Hará en Esta Sesion

@@ -5,8 +5,8 @@ duration: "約30分"
 prerequisites: ["start-0-1"]
 level: "intermediate"
 tags: ["agent", "command", "cursor"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 6-1: カスタムCommand作成基本
 
 ## 📍 このセッションでやること

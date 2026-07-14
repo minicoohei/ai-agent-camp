@@ -121,14 +121,14 @@ Democratizar los agentes de IA, transformandolos de "herramientas para especiali
   - Material basado en escenarios reales de trabajo
 
 - **Conjunto de habilidades practicas**
-  - 80 comandos listos para usar en el trabajo
-  - 42 habilidades implementadas (incluyendo marketing y creacion de LP/HP)
+  - Comandos listos para usar documentados en la [Referencia de Commands](docs/commands-reference.md)
+  - Habilidades implementadas documentadas en la [Referencia de Skills](docs/skills-reference.md)
   - Muestras de flujos de trabajo por area de negocio
 
 - **Curriculo integral**
   - Fundamentos de IA (Foundation): 11 capitulos
   - Configuracion del entorno (Setup): 3 capitulos
-  - 20 modulos principales (incluyendo Google Workspace, produccion de video, definicion de requisitos, marketing, etc.)
+  - 26 modulos principales disponibles (incluyendo Google Workspace, produccion de video, definicion de requisitos, marketing, etc.)
   - Metadatos YAML compatibles con CursorBootcamp (25 capitulos en total)
   - Tiempo total de aprendizaje: aprox. 24 horas (mas de 30 horas con ejercicios)
 
@@ -469,34 +469,40 @@ ai-agent-camp/
 |       |   +-- ch01 ~ ch11/             # LLM, Token, Agent, MCP, RAG, Seguridad, etc.
 |       +-- lesson02-setup/              # Configuracion del entorno (3 capitulos)
 |       |   +-- ch01 ~ ch03/             # Entorno, extensiones, configuracion de API
-|       +-- lesson03-core/               # Habilidades principales (20 modulos)
-|           +-- ch01 ~ ch20/             # Banner a Freee (con practice/final)
+|       +-- lesson03-core/               # Habilidades principales (26 modulos disponibles)
+|           +-- module01 ~ module25, module29/ # Banner a slide-forge
 |
-+-- .cursor/commands/                     # 80 comandos
-|   +-- lesson/                           # Comandos de aprendizaje (52)
++-- .cursor/commands/                     # Ver docs/commands-reference.md
+|   +-- lesson/                           # Comandos de aprendizaje
 |   |   +-- /start-0-1 ~ /start-0-8      # Module 0: Setup
 |   |   +-- /start-1-1 ~ /start-1-3      # Module 1: Banners
 |   |   +-- /start-2-1 ~ /start-2-3      # Module 2: Diagramas
 |   |   +-- /start-3-1 ~ /start-3-6      # Module 3: Tutoriales
 |   |   +-- /start-4-1 ~ /start-4-7      # Module 4: Google Workspace
 |   |   +-- /start-5-1 ~ /start-5-2      # Module 5: PPTX
-|   |   +-- /start-6-1 ~ /start-6-5      # Module 6: Desarrollo de agentes
+|   |   +-- /start-6-1 ~ /start-6-9      # Module 6: Desarrollo de agentes
 |   |   +-- /start-7-1 ~ /start-7-8      # Module 7: Skill/Commands
 |   |   +-- /start-8-1 ~ /start-8-4      # Module 8: Analisis de datos
-|   |   +-- /start-9-1 ~ /start-9-2      # Module 9: Slack
-|   |   +-- /start-10-1 ~ /start-10-3    # Module 10: GAS
-|   |   +-- /start-11-1 ~ /start-11-2    # Module 11: GitHub Actions
+|   |   +-- /start-9-1 ~ /start-9-3      # Module 9: Slack
+|   |   +-- /start-10-1 ~ /start-10-4    # Module 10: GAS
+|   |   +-- /start-11-1 ~ /start-11-5    # Module 11: GitHub Actions
 |   |   +-- /start-12-1 ~ /start-12-6    # Module 12: Notion
 |   |   +-- /start-13-1 ~ /start-13-5    # Module 13: Creacion de LP
 |   |   +-- /start-14-1 ~ /start-14-7    # Module 14: Creacion de articulos
-|   |   +-- /start-15-1 ~ /start-15-8    # Module 15: Produccion de video
+|   |   +-- /start-15-1 ~ /start-15-13   # Module 15: Produccion de video (+ 7a-7d)
 |   |   +-- /start-16-1 ~ /start-16-8    # Module 16: Email/LINE
-|   |   +-- /start-17-1 ~ /start-17-4    # Module 17: Marketing
+|   |   +-- /start-17-1 ~ /start-17-5    # Module 17: Marketing
 |   |   +-- /start-18-1 ~ /start-18-20   # Module 18: Requisitos/Desarrollo
-|   |   +-- /start-19-1                   # Module 19: Outlook (en preparacion)
-|   |   +-- /start-20-1                   # Module 20: Freee/MoneyForward (en preparacion)
+|   |   +-- /setup-m365cli + /start-19-1 ~ /start-19-2 # Module 19: Outlook
+|   |   +-- /setup-freee + /start-20-1    # Module 20: Freee/MoneyForward
+|   |   +-- /setup-figma + /start-21-1    # Module 21: Figma
+|   |   +-- /setup-discord + /start-22-1  # Module 22: Discord
+|   |   +-- /setup-line-harness + /start-23-1 # Module 23: LINE
+|   |   +-- /setup-salesforce + /start-24-1 # Module 24: Salesforce
+|   |   +-- /setup-google-ads + /start-25-1 # Module 25: Google Ads
+|   |   +-- /start-29-1 ~ /start-29-4    # Module 29: slide-forge
 |   |
-|   +-- utility/                          # Comandos de utilidad (28)
+|   +-- utility/                          # Comandos de utilidad
 |       +-- /check-setup                  # Verificacion de configuracion
 |       +-- /overview                     # Descripcion del proyecto
 |       +-- /guide                        # Guia de uso
@@ -504,7 +510,7 @@ ai-agent-camp/
 |       +-- /update-material              # Actualizar material a la ultima version
 |       +-- ... otros helpers
 |
-+-- skills/                               # 42 habilidades reutilizables
++-- skills/                               # Ver docs/skills-reference.md
 |   |
 |   |  -- Generacion de imagenes/banners --
 |   +-- banner-creator/                   # Generacion de banners para redes sociales
@@ -563,6 +569,10 @@ ai-agent-camp/
 |   +-- schema-markup/                 # Datos estructurados
 |   +-- seo-audit/                     # Auditoria SEO
 |   +-- social-content/               # Contenido para redes sociales
+|
++-- mv-composer/                        # Herramientas Remotion solo para operaciones/produccion (no necesarias para cursar)
++-- gas-example/                        # Ejemplos GAS solo para operaciones/produccion (no necesarios para cursar)
++-- ops/                                # Scripts solo para operaciones/produccion (no necesarios para cursar)
 |
 +-- data/                                # Datos minimos para lecciones / ejecucion de Codex
 |   +-- codex-command-manifest.json      # Definicion de enrutamiento de Codex
@@ -709,8 +719,14 @@ Lista de habilidades que adquiriras al completar el curso.
 | **16** | Automatizacion de email/LINE | Secuencias de email, LINE Bot |
 | **17** | Marketing | Publicaciones en X, SEO, copywriting |
 | **18** | Definicion de requisitos/Desarrollo | PRD, diseno, pruebas, exportacion a Notion |
-| **19** | Integracion con Outlook | Integracion con Microsoft Office (en preparacion) |
-| **20** | Freee/MoneyForward | Operaciones contables (en preparacion) |
+| **19** | Integracion con Outlook | Integracion con Microsoft Office |
+| **20** | Freee/MoneyForward | Operaciones contables |
+| **21** | Integracion con Figma | Sistemas de diseno y colaboracion UI |
+| **22** | Integracion con Discord | Operaciones de bots y canales |
+| **23** | Cuenta oficial de LINE | Mensajeria y operaciones de cuenta |
+| **24** | Integracion con Salesforce CLI | Consultas CRM y operaciones de metadatos |
+| **25** | Integracion con Google Ads | Operaciones de datos publicitarios |
+| **29** | slide-forge | Flujos de generacion y revision de diapositivas |
 
 ---
 
@@ -767,8 +783,8 @@ Consulta los siguientes documentos para mas detalles:
 
 | Documento | Descripcion |
 |-----------|-------------|
-| [Referencia de Commands](docs/commands-reference.md) | Descripcion de los 80 comandos |
-| [Referencia de Skills](docs/skills-reference.md) | Informacion detallada de las 42 habilidades |
+| [Referencia de Commands](docs/commands-reference.md) | Inventario autogenerado de todos los comandos |
+| [Referencia de Skills](docs/skills-reference.md) | Inventario autogenerado de todas las habilidades |
 | [Guia de Claude Code](CLAUDE.md) | Funciones especificas de Claude Code |
 
 ### Guias de Configuracion de API

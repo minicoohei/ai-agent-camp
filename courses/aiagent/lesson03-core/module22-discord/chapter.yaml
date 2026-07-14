@@ -1,17 +1,19 @@
-# Chapter 22: Discord連携
+# Chapter 22: Discord 連携
 id: "module22-discord"
 order: 22
 name: "Discord連携"
-description: "Discord Botの構築とメッセージ自動化を扱う近日公開モジュールです。想定内容は、Bot作成、チャンネル投稿、メッセージ取得、イベント通知、コミュニティ運用、FAQ応答、モデレーション補助、外部サービス連携です。Slack連携章で扱う社内コミュニケーション分析とは異なり、コミュニティや顧客接点に近い場でAIエージェントを使うため、権限、投稿内容、個人情報、誤応答時の停止手順を重視します。"
+description: "Discord Bot の構築とメッセージ自動化を、Claude Code の公式 discord plugin と Channels を使って学びます。Bot 作成、チャンネル投稿、メッセージ取得、イベント通知、FAQ 応答、モデレーション補助、外部サービス連携を扱い、社外コミュニティや顧客接点での権限、投稿内容、個人情報、pairing・allowlist、誤応答時の停止手順を重視して安全な運用を設計します。"
 type: "manual"
-status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+objectives:
+  - "Discord Developer Portal で Bot を作成し、MESSAGE CONTENT INTENT を有効化できる"
+  - "Claude Code の公式 discord plugin をインストールし、Channels として起動できる"
+  - "Bot token を /discord:configure またはローカル環境変数で安全に扱える"
+  - "pairing、allowlist、チャンネル権限で Bot のアクセス範囲を限定できる"
+  - "Discord API の境界を理解し、顧客別チャンネル方式と Bot ハブ方式を選び分けられる"
 externalContent:
-  manual: "https://ai-agent.camp/ja/course/module-22"
+  manual: "https://ai-agent.camp/ja/course/module-22?slideId=module-overview"
+  slides: "https://ai-agent.camp/ja/course/module-22?slideId=module-overview"
 prerequisites:
   - "module09-slack"
-objectives:
-  - "Discord Bot連携の基本ユースケースを説明できる"
-  - "通知、FAQ、モデレーション補助の設計観点を把握する"
-  - "外部コミュニティでAIを動かす際の安全性を意識する"

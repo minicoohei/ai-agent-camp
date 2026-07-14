@@ -7,7 +7,7 @@ description: >
   API連携、画像生成、図表作成、データ分析、Slack・Google Workspace・GitHub Actions・Notion・メール・
   マーケティング・PM要件定義などの実務スキルを通じて、AIエージェントを安全かつ継続的に活用する学習基盤を作ります。
 icon: "bot"
-version: "1.0.0"
+version: "1.4.0"
 author: "AI Brain Partners"
 audience: "非エンジニア（マーケ、営業、企画等）"
 estimatedHours: 50
@@ -29,4 +29,4 @@ tags:
   - "業務効率化"
   - "自動化"
 language: "ja"
-lastUpdated: "2026-05-20"
+lastUpdated: "2026-07-06"

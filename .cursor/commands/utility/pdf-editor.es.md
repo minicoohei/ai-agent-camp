@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # PDF Page Editor
 
 Un comando para editar (modificar/eliminar) texto en archivos PDF.

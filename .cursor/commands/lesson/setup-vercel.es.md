@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Node.js 18 o superior instalado", "Navegador disponible"]
 level: "beginner"
 tags: ["setup", "vercel", "deploy", "hosting"]
+nonInteractiveMode: incompatible
 ---
-
 # Configuración de Vercel CLI
 
 ## Step 0: Verificar progreso de configuración

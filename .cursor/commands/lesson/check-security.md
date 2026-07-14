@@ -1,7 +1,7 @@
 ---
 description: "Lesson command"
+nonInteractiveMode: compliant
 ---
-
 # セキュリティ設定確認
 
 ## 使い方

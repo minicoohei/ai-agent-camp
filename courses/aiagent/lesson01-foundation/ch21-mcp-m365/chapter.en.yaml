@@ -1,0 +1,16 @@
+# Chapter 21: MCP: connect external tools (Microsoft 365)
+id: "ch21-mcp-m365"
+order: 21
+name: "MCP: connect external tools (Microsoft 365)"
+description: "Connect Claude to Outlook, Teams, SharePoint and Excel to use your internal information across tools."
+type: "manual"
+estimatedMinutes: 50
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand MCP as a standard way to connect Claude to external tools"
+  - "Learn how AI can search and summarize across email, calendar, and files"
+  - "See how Microsoft 365 tools can become targets for AI work"
+  - "Understand CLI and GUI paths for adding MCP servers in Claude Code and Claude Desktop"
+  - "Decide connection scope and permissions with security in mind"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-13?slideId=overview"

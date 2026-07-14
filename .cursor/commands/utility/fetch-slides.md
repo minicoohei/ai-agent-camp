@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Fetch Slides - Google Slides取得
 
 Google Slidesのプレゼンテーション内容をMarkdown/JSON形式で取得します。

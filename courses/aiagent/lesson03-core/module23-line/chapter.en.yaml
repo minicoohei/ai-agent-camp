@@ -1,17 +1,19 @@
-# Chapter 23: LINE Integration
+# Chapter 23: LINE Official Account Operations
 id: "module23-line"
 order: 23
-name: "LINE Integration"
-description: "A coming-soon module covering Bot construction and automation using the LINE Messaging API. Expected content includes Webhooks, message sending and receiving, user inquiry handling, notification delivery, scenario design, and integration with CRM or spreadsheets. As a direct customer touchpoint, this module clarifies response accuracy, personal information handling, opt-in, delivery frequency, and escalation conditions, teaching how to safely incorporate AI agents into customer support."
+name: "LINE Official Account Operations"
+description: "Build and operate a fully controlled LINE Official Account with Cloudflare Worker and the LINE Messaging API. Cover webhooks, message exchange, inquiry handling, notifications and scenario delivery, plus CRM and Slack integration, while defining response accuracy, personal-data handling, opt-in, delivery frequency, and escalation rules for safe automation at a direct customer touchpoint."
 type: "manual"
-status: "coming_soon"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
+objectives:
+  - "Set up LINE Developers Console, webhooks, and secret management"
+  - "Understand the auto-register pattern for importing existing friends without relying only on follow events"
+  - "Implement and choose between auto replies, scenario delivery, and broadcasts"
+  - "Explain operational points for rich menu images, Flex messages, and a two-way Slack bridge"
+  - "Check KPIs from the CLI with wrangler, D1, and line-harness MCP"
 externalContent:
-  manual: "https://ai-agent.camp/en/course/module-23"
+  manual: "https://ai-agent.camp/en/course/module-23?slideId=module-overview"
+  slides: "https://ai-agent.camp/en/course/module-23?slideId=module-overview"
 prerequisites:
   - "module17-marketing"
-objectives:
-  - "Understand the basic structure of LINE Messaging API integration"
-  - "Organize automation use cases for inquiry handling and notification delivery"
-  - "Grasp personal information and error response risks when using AI at customer touchpoints"

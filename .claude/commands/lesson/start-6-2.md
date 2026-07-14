@@ -5,8 +5,8 @@ prerequisites: ["start-6-1"]
 duration: "約35分"
 level: "intermediate"
 tags: ["agent", "skill", "skills"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 6-2: Skill作成基本
 
 ## 📍 このセッションでやること

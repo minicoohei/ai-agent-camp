@@ -5,8 +5,8 @@ duration: "約30分"
 prerequisites: ["start-17-4"]
 level: "intermediate"
 tags: ["marketing", "typefully", "x", "threads", "sns", "api"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 17-5: Typefully で X/Threads 投稿自動化
 
 ## 📍 このセッションでやること

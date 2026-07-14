@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-0-7"]
 level: "intermediate"
 tags: ["outlook", "microsoft365", "m365-cli", "email"]
+nonInteractiveMode: compliant
 ---
-
 # Lesson 19-1: Integración con Microsoft Office (Outlook) - Introducción
 
 ## Lo que hará en esta sesión

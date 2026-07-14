@@ -1,7 +1,7 @@
 ---
 description: Module 18 Lesson 4-6 — Assist GAS × clasp integration via prompts
+nonInteractiveMode: compliant
 ---
-
 # Module 18 — GAS / clasp (Lesson 4-6)
 
 The user is working on the course material "Module 18 - Automating Routine Tasks." **Via prompts,** use the `gas-clasp-ops` skill and `clasp` to assist with project creation, push, and deployment.

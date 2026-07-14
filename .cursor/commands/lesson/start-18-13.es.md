@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-12"]
 level: "intermediate"
 tags: ["pm", "ui", "prototype", "html", "tailwind"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 18-13: Prototipo HTML + Tailwind CSS
 
 | Elemento | Detalles |

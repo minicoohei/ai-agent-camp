@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-11-2"]
 level: "intermediate"
 tags: ["github-actions", "news", "email", "slack", "webhook", "cron"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 11-3: Flujo de trabajo de obtencion de noticias y distribucion por correo/Slack
 
 ## 📍 Lo que hara en esta sesion

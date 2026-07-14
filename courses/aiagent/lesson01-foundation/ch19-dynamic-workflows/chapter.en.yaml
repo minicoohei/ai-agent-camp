@@ -1,0 +1,16 @@
+# Chapter 19: ultracode = Dynamic Workflows
+id: "ch19-dynamic-workflows"
+order: 19
+name: "ultracode = Dynamic Workflows"
+description: "Learn how Claude generates a task-specific orchestration script on the fly and runs dozens to hundreds of subagents in parallel with adversarial verification."
+type: "manual"
+estimatedMinutes: 50
+thumbnail: "thumbnail.png"
+objectives:
+  - "Understand the mechanism and role of Dynamic Workflows / ultracode"
+  - "Trace the flow of task-specific orchestration and parallel subagent execution"
+  - "Understand how verification, comparison, and adversarial review improve quality"
+  - "Identify scenarios where massive parallelism and verification are useful"
+  - "Experience the behavior through a /deep-research hands-on exercise"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-11?slideId=overview"

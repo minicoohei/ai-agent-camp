@@ -5,8 +5,8 @@ duration: "約30分"
 prerequisites: ["start-7-6", "start-7-7"]
 level: "intermediate"
 tags: ["skill", "command", "testing", "debugging", "iteration"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 7-8: テスト・デバッグ・イテレーション
 
 ## 📍 このセッションでやること

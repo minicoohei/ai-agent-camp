@@ -115,10 +115,10 @@ uv run python tools/extract_tasks.py --format html --output tasks.html
 
 ```bash
 # Sincronización de Slack
-python slack-sync/scripts/fetch_slack.py --workspace my-workspace
+python data/slack-sync/scripts/fetch_slack.py --workspace my-workspace
 
 # También obtener respuestas en hilos
-python slack-sync/scripts/fetch_slack.py --workspace my-workspace --refresh-threads
+python data/slack-sync/scripts/fetch_slack.py --workspace my-workspace --refresh-threads
 ```
 
 ## Dependencias

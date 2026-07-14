@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-4", "output/pm/prd.md", "output/pm/requirements-brief.md"]
 level: "intermediate"
 tags: ["pm", "requirements-spec", "ipa"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 18-5: Creación de especificación de requisitos
 
 Tema: Crear una especificación de requisitos para TaskFlow basada en el formato IPA (Agencia de Promoción de Tecnologías de la Información).

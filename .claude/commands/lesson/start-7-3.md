@@ -5,8 +5,8 @@ prerequisites: ["start-7-2"]
 duration: "約25分"
 level: "intermediate"
 tags: ["agent", "testing", "iteration"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 7-3: テストとイテレーション
 
 ## 📍 このセッションでやること

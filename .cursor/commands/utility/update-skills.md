@@ -1,8 +1,8 @@
 ---
 description: upstream からスキルの最新版を取り込む
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # スキルを最新版に更新
 
 ## 使い方

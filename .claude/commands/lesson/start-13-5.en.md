@@ -5,8 +5,8 @@ prerequisites: ["start-13-4"]
 duration: "~15 min"
 level: "intermediate"
 tags: ["lp", "vercel", "deploy", "hosting"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 13-5: Vercel Deploy
 
 ## 📍 What You'll Do

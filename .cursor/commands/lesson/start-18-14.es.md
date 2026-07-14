@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-13", "output/pm/prototype/"]
 level: "intermediate"
 tags: ["pm", "test", "e2e", "playwright"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-14: Pruebas E2E con Playwright
 
 | Elemento | Detalles |

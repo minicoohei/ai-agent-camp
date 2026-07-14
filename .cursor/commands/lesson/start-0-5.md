@@ -5,8 +5,8 @@ duration: "約5分"
 prerequisites: ["start-0-1", "start-0-2", "start-0-3", "start-0-4"]
 level: "beginner"
 tags: ["setup", "security"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 0-5: セキュリティ設定確認
 
 ## セットアップ進捗の確認

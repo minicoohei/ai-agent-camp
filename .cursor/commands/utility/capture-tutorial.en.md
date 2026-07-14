@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Capture Tutorial - Generate Operation Tutorials from Screenshots
 
 This command captures screenshots with Cursor Browser and uses the Gemini Vision API to automatically generate operation tutorials explaining "what to do on this screen."

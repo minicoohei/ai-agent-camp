@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-0-4"]
 level: "beginner"
 tags: ["slack", "api", "token", "channel"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 9-1: User Access Token設定・チャネル取得
 
 ## 📍 このセッションでやること

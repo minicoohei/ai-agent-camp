@@ -6,8 +6,8 @@ duration: "30分"
 prerequisites: ["start-14-1"]
 level: "beginner"
 tags: ["article", "style"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-2: 文体学習 - スタイルプロファイル作成
 
 ## 📍 このセッションでやること

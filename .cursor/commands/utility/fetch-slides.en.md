@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Fetch Slides - Google Slides Retrieval
 
 Retrieve Google Slides presentation content in Markdown/JSON format.

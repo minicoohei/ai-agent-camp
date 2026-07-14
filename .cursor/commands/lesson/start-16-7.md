@@ -6,8 +6,8 @@ duration: "25分"
 prerequisites: ["start-16-6"]
 level: "beginner"
 tags: ["email", "resend", "api-key", "resend-cli", "send"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 16-7: APIキー作成 & 初回メール送信
 
 ## 📍 このセッションでやること

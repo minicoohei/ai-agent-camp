@@ -4,8 +4,8 @@ duration: "~15 min"
 prerequisites: ["Have an X account", "Browser available"]
 level: "beginner"
 tags: ["setup", "x", "twitter", "api"]
+nonInteractiveMode: incompatible
 ---
-
 # X (Twitter) API Setup
 
 ## Step 0: Check Setup Progress

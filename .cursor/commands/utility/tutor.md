@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # Tutor - 学習コンテンツ生成
 
 このコマンドは、`tools/tutor_generate.py` を使用して、様々な入力ソースから初学者向けの学習用HTMLを自動生成します。

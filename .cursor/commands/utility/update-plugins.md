@@ -1,8 +1,8 @@
 ---
 description: インストール済み外部スキルを更新
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # 外部プラグイン更新
 
 ## 使い方

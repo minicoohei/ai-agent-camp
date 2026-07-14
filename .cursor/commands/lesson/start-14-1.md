@@ -6,8 +6,8 @@ duration: "25分"
 prerequisites: []
 level: "beginner"
 tags: ["article", "planning"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-1: 記事企画 - テーマ決定・アウトライン生成
 
 ## 📍 このセッションでやること

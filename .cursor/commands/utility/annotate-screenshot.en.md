@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Annotate Screenshot with Nano Banana Pro
 
 This command uses `tools/annotate_screenshot.py` to add manual-style annotations (red boxes, arrows, callouts, text) to screenshots.

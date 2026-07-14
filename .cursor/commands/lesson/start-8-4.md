@@ -5,8 +5,8 @@ prerequisites: ["start-8-1", "start-8-2", "start-8-3"]
 duration: "約35分"
 level: "intermediate"
 tags: ["data", "visualization", "dashboard", "matplotlib"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 8-4: データ可視化とダッシュボード作成
 
 ## 📍 このセッションでやること

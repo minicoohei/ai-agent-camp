@@ -1,8 +1,8 @@
 ---
 description: Instalar habilidades desde complementos externos
 category: utility
+nonInteractiveMode: compliant
 ---
-
 # Instalación de complementos externos
 
 ## Uso

@@ -4,8 +4,8 @@ duration: "約10分"
 prerequisites: ["X (Twitter) アカウントを持っている", "ブラウザが使える"]
 level: "beginner"
 tags: ["setup", "typefully", "api", "sns"]
+nonInteractiveMode: incompatible
 ---
-
 # Typefully API セットアップ
 
 ## Step 0: セットアップ進捗の確認

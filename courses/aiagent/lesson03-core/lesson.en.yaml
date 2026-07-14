@@ -3,7 +3,7 @@ id: "lesson03-core"
 order: 3
 name: "Core Skills (Core Modules)"
 description: "Develop practical skills across real business workflows: image generation, data analysis, Google Workspace, email automation, article creation, Slack integration, GAS automation, and accounting integrations."
-estimatedMinutes: 870
+estimatedMinutes: 1270
 cover: "cover.png"
 prerequisites:
   - "lesson02-setup"
@@ -32,6 +32,8 @@ chapters:
   - "module22-discord"
   - "module23-line"
   - "module24-salesforce"
+  - "module25-google-ads"
+  - "module29-slide-forge"
 objectives:
   - "Auto-generate banners and images"
   - "Create diagrams and flowcharts"
@@ -44,4 +46,8 @@ objectives:
   - "Run an article workflow from planning to proofreading"
   - "Organize Outlook and Microsoft 365 operational flows"
   - "Understand Freee integration setup and accounting data operations"
-  - "Understand the purpose and safety considerations of upcoming external integration modules"
+  - "Connect Figma and a design system through AI agents"
+  - "Design safe Discord message integration with a Discord Bot and the official Claude Code Channels plugin"
+  - "Design LINE Official Account operations with CLI workflows and automation"
+  - "Use Salesforce CLI for SOQL, CSV updates, and metadata operations"
+  - "Safely set up the Google Ads API and design campaign query, reporting, and creation automation"

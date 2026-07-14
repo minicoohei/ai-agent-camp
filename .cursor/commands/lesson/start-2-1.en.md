@@ -5,8 +5,8 @@ duration: "~25 min"
 prerequisites: ["start-0-3"]
 level: "beginner"
 tags: ["diagram", "flowchart", "gemini"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 2-1: Flowchart Generation
 
 ## 📍 What You'll Do

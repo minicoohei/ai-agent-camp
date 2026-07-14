@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# lint-commands.sh — .claude/commands/lesson/ が .cursor/commands/lesson/ と同期しているか検証
+# lint-commands.sh — Cursor/Claude 共通コマンドが同期しているか検証
 # generate-commands.sh の実行忘れを検出する
 
 set -euo pipefail
@@ -7,9 +7,23 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SOURCE_DIR="$REPO_ROOT/.cursor/commands/lesson"
 TARGET_DIR="$REPO_ROOT/.claude/commands/lesson"
+TOP_SOURCE_DIR="$REPO_ROOT/.cursor/commands"
+TOP_TARGET_DIR="$REPO_ROOT/.claude/commands"
 
 errors=0
 warnings=0
+shared_top_level=0
+
+is_shared_top_level_command() {
+    case "$1" in
+        setup-api-key*.md|check-setup*.md|verify-module*.md|next_lesson*.md|module-18-*.md)
+            return 0
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
 
 echo "=== Command Sync Lint ==="
 
@@ -59,10 +73,29 @@ for target_file in "$TARGET_DIR"/*.md; do
     fi
 done
 
+# Top-level commands are maintained by both tools only when the same filename
+# exists in both directories. .cursor/commands/utility/ remains Cursor-only and
+# is intentionally excluded from this synchronization gate.
+for src_file in "$TOP_SOURCE_DIR"/*.md; do
+    [ ! -f "$src_file" ] && continue
+    filename="$(basename "$src_file")"
+    is_shared_top_level_command "$filename" || continue
+
+    target_file="$TOP_TARGET_DIR/$filename"
+    [ ! -f "$target_file" ] && continue
+    ((shared_top_level++)) || true
+
+    if ! diff -q "$src_file" "$target_file" >/dev/null 2>&1; then
+        echo "ERROR: Top-level command out of sync: $filename"
+        ((errors++)) || true
+    fi
+done
+
 echo ""
 echo "=== Lint Summary ==="
 echo "Source files:  $(find "$SOURCE_DIR" -name '*.md' -maxdepth 1 2>/dev/null | wc -l | tr -d ' ')"
 echo "Target files:  $(find "$TARGET_DIR" -name '*.md' -maxdepth 1 2>/dev/null | wc -l | tr -d ' ')"
+echo "Shared top-level files: $shared_top_level"
 echo "Errors:   $errors"
 echo "Warnings: $warnings"
 

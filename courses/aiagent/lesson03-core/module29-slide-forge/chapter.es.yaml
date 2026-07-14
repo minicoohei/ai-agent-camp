@@ -1,0 +1,16 @@
+# Capítulo 29: Generación automática de diapositivas (slide-forge)
+id: "module29-slide-forge"
+order: 29
+name: "Generación automática de diapositivas (slide-forge)"
+description: "Instala y usa la herramienta OSS que convierte notas de reuniones en decks de propuesta editables en PPTX, PDF, PNG y HTML."
+type: "manual"
+estimatedMinutes: 100
+objectives:
+  - "Configurar slide-forge"
+  - "Ejecutar la demo sin clave de API"
+  - "Generar un deck de producción con cinco preguntas"
+  - "Usar la obtención de imágenes reales de forma segura"
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/module-29"
+  slides: "https://ai-agent.camp/es/course/module-29"

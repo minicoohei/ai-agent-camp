@@ -1,0 +1,18 @@
+## /setup-figma — 非対話モード（incompatible）
+
+このコマンドは `nonInteractiveMode: incompatible` のため、`claude -p` / `cursor-agent --print` では実行しません。
+
+### 対話モードで実施する内容（参考）
+
+1. Figma プラグイン導入: `/plugin install figma@claude-plugins-official`
+2. OAuth で Figma にログイン: `/mcp → figma → Authenticate → ブラウザで Allow Access`
+3. Serendie MCP を追加: `claude mcp add --transport http serendie-mcp https://serendie.design/mcp`
+4. 動作確認: `claude mcp list`
+5. Serendie UI Kit を Community から自チームへ取り込み（https://www.figma.com/community/file/1433690846108785966）
+
+### 完走できない理由
+
+- Figma の認証はブラウザ OAuth（Allow Access の手動操作）が必須
+- 非対話モードではブラウザ操作・OAuth コールバック待ちができない
+
+→ 通常の対話モード（`claude` または `cursor-agent`）で `/setup-figma` を再実行してください。

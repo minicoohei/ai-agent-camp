@@ -5,8 +5,8 @@ duration: "~5 min"
 prerequisites: ["start-0-1", "start-0-2", "start-0-3", "start-0-4"]
 level: "beginner"
 tags: ["setup", "security"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 0-5: Verificación de configuración de seguridad
 
 ## Verificar progreso de configuración

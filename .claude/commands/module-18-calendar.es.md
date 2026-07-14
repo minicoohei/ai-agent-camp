@@ -1,7 +1,7 @@
 ---
 description: Módulo 18 Lección 4-2 — Asistir con Calendar (calendar_ops / gog calendar) mediante prompts
+nonInteractiveMode: compliant
 ---
-
 # Módulo 18 — Calendar (Lección 4-2)
 
 El usuario está trabajando con el material del curso "Módulo 18 - Coordinación de agenda." **Mediante prompts y ejecución de skills,** utilice `calendar_ops.py` de `google-workspace-ops` o `gog calendar` para asistir con la obtención de eventos, búsqueda de horarios libres y creación de eventos.

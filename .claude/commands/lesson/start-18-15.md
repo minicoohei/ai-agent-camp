@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-14", "output/pm/usecases.md"]
 level: "intermediate"
 tags: ["pm", "test", "test-plan", "test-cases"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-15: テスト計画書 & テストケース生成
 
 | 項目 | 内容 |

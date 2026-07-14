@@ -1,7 +1,7 @@
 ---
 description: "Lesson command"
+nonInteractiveMode: compliant
 ---
-
 # /verify-module [module number]
 
 Automatically check the completion status of all lessons in a module, and have the AI provide a comprehensive evaluation and feedback.

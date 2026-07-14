@@ -205,7 +205,7 @@ def _check_unicode_threats(command: str) -> tuple[bool, str | None]:
 # ---------------------------------------------------------------------------
 # rm コマンドの検出パターン
 # ---------------------------------------------------------------------------
-RM_PATTERN = re.compile(r'(?:^|[;&|]\s*)rm\s')
+RM_PATTERN = re.compile(r'(?:^[ \t]*|[;&|]\s*)rm\s', re.MULTILINE)
 
 
 def _check_gomi_available() -> bool:
@@ -221,7 +221,7 @@ def _replace_rm_with_gomi(command: str) -> str:
     def _replacer(m: re.Match) -> str:
         full = m.group(0)
         # rm の前にある区切り文字（;, &&, || 等）を保持
-        prefix_match = re.match(r'^(.*?)\brm\s+', full)
+        prefix_match = re.match(r'^(.*?)\brm\s+', full, re.DOTALL)
         if not prefix_match:
             return full
         prefix = prefix_match.group(1)
@@ -234,7 +234,12 @@ def _replace_rm_with_gomi(command: str) -> str:
                 args.append(token)
         return prefix + "gomi " + " ".join(args)
 
-    return re.sub(r'(?:^|[;&|]\s*)rm\s+[^\n;|&]*', _replacer, command)
+    return re.sub(
+        r'(?:^[ \t]*|[;&|]\s*)rm\s+[^\n;|&]*',
+        _replacer,
+        command,
+        flags=re.MULTILINE,
+    )
 
 
 def _emit_skip_warning(command: str) -> None:

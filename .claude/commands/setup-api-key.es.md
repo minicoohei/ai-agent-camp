@@ -1,7 +1,7 @@
 ---
 description: "Guiar el procedimiento para configurar claves de API y tokens de forma segura (para principiantes)"
+nonInteractiveMode: compliant
 ---
-
 # Guía de configuración de claves de API
 
 Cuando el usuario solicite "Quiero configurar una clave de API" o "Quiero ingresar una clave de Gemini," guíelo usando **solo este procedimiento**. No permita que pegue secretos en el chat.

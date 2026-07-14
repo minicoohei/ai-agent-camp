@@ -1,7 +1,7 @@
 ---
 description: "開発環境の状態をチェック"
+nonInteractiveMode: compliant
 ---
-
 # 環境チェック
 
 開発環境の状態を確認するコマンドです。

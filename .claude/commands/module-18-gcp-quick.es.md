@@ -1,7 +1,7 @@
 ---
 description: Slash /module-18-gcp-quick — Módulo 18 Lección 4-1 — Autenticar gog con OAuth incluido (sin necesidad de escribir en la terminal)
+nonInteractiveMode: incompatible
 ---
-
 ## Comience aquí (lo más rápido)
 
 **El estudiante solo necesita ejecutar `/module-18-gcp-quick` en el chat.** Los comandos bash a continuación son para el agente (o para quienes deseen solucionar problemas manualmente).

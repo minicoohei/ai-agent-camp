@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # BigQuery Auth - プロジェクト単位のBigQuery認証
 
 このコマンドは、Cursor Browserを使用して、GCPプロジェクト単位でBigQuery認証を設定します。gcloud設定プロファイルを活用して複数プロジェクトを安全に管理します。

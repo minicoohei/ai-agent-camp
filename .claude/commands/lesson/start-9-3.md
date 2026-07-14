@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-9-2"]
 level: "intermediate"
 tags: ["slack", "api", "message", "reply", "post"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 9-3: 返信の送信
 
 ## 📍 このセッションでやること

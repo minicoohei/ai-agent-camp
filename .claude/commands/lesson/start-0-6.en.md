@@ -5,8 +5,8 @@ duration: "~15 min"
 prerequisites: ["Node.js 18 or higher is installed", "OpenAI API key obtained"]
 level: "beginner"
 tags: ["setup", "codex", "cli"]
+nonInteractiveMode: compliant
 ---
-
 # Lesson 0-6: Codex CLI Setup
 
 ## Check Setup Progress

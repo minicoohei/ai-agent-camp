@@ -1,7 +1,7 @@
 ---
 description: Module 18 Lesson 4-2 — Calendar（calendar_ops / gog calendar）をプロンプトで支援
+nonInteractiveMode: compliant
 ---
-
 # Module 18 — Calendar（Lesson 4-2）
 
 ユーザーが教材「モジュール18・スケジュール調整」に取り組んでいます。**プロンプトとスキル実行で** `google-workspace-ops` の `calendar_ops.py` または `gog calendar` を使い、イベント取得・空き時間検索・イベント作成を支援してください。

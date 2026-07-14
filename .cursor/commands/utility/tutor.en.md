@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: deferred
+---
+
 # Tutor - Learning Content Generation
 
 This command uses `tools/tutor_generate.py` to automatically generate beginner-friendly learning HTML from various input sources.

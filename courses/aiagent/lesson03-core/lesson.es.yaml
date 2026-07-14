@@ -3,7 +3,7 @@ id: "lesson03-core"
 order: 3
 name: "Habilidades Fundamentales (Módulos Core)"
 description: "Desarrolla habilidades prácticas para flujos reales de negocio: generación de imágenes, análisis de datos, Google Workspace, automatización de correo, redacción de artículos, integración con Slack, automatización con GAS e integraciones contables."
-estimatedMinutes: 870
+estimatedMinutes: 1270
 cover: "cover.png"
 prerequisites:
   - "lesson02-setup"
@@ -32,6 +32,8 @@ chapters:
   - "module22-discord"
   - "module23-line"
   - "module24-salesforce"
+  - "module25-google-ads"
+  - "module29-slide-forge"
 objectives:
   - "Generar automáticamente banners e imágenes"
   - "Crear diagramas y diagramas de flujo"
@@ -44,4 +46,8 @@ objectives:
   - "Ejecutar un flujo de artículos desde la planificación hasta la corrección"
   - "Organizar flujos operativos de Outlook y Microsoft 365"
   - "Comprender la configuración de Freee y las operaciones sobre datos contables"
-  - "Comprender el propósito y las consideraciones de seguridad de los módulos de integración externa próximos a publicar"
+  - "Conectar Figma y un sistema de diseño mediante agentes de IA"
+  - "Diseñar una integracion segura de mensajes de Discord con un Bot de Discord y el plugin oficial de Claude Code Channels"
+  - "Diseñar operaciones de LINE Official Account con flujos CLI y automatización"
+  - "Usar Salesforce CLI para SOQL, actualizaciones CSV y operaciones de metadatos"
+  - "Configurar Google Ads API de forma segura y diseñar automatización de consultas, reportes y creación de campañas"

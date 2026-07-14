@@ -3,7 +3,7 @@ id: "lesson03-core"
 order: 3
 name: "コアスキル（Core Modules）"
 description: "実践的なスキルを身につけます。画像生成、データ分析、Google Workspace、メール、記事作成、Slack連携、GAS自動化、会計連携まで、業務で使えるAI活用を横断的に学びます。"
-estimatedMinutes: 870
+estimatedMinutes: 1270
 cover: "cover.png"
 prerequisites:
   - "lesson02-setup"
@@ -32,6 +32,8 @@ chapters:
   - "module22-discord"
   - "module23-line"
   - "module24-salesforce"
+  - "module25-google-ads"
+  - "module29-slide-forge"
 objectives:
   - "バナー・画像を自動生成できる"
   - "図表・フローチャートを作成できる"
@@ -44,4 +46,8 @@ objectives:
   - "記事企画から校閲までの執筆フローを実行できる"
   - "Outlook / Microsoft 365 の実務運用を整理できる"
   - "Freee 連携の初期セットアップと会計データ操作の流れを理解できる"
-  - "未公開の外部連携モジュールで扱う目的と安全運用上の観点を把握する"
+  - "Figma とデザインシステムを AI エージェントで連携できる"
+  - "Discord Bot と Claude Code Channels の公式 plugin で安全なメッセージ連携を設計できる"
+  - "LINE 公式アカウント運用を CLI と自動化で設計できる"
+  - "Salesforce CLI で SOQL、CSV 更新、メタデータ操作を実行できる"
+  - "Google Ads API を安全にセットアップし、照会・レポート・作成の自動化を設計できる"

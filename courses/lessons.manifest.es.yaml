@@ -753,6 +753,31 @@
   module: 20
   lesson: 1
 
+# === Módulo 29: slide-forge ===
+- lessonId: start-29-1
+  title: "Demo de slide-forge sin clave de API"
+  chapterRef: "courses/aiagent/lesson03-core/module29-slide-forge"
+  module: 29
+  lesson: 1
+
+- lessonId: start-29-2
+  title: "Generación de producción desde notas con cinco preguntas"
+  chapterRef: "courses/aiagent/lesson03-core/module29-slide-forge"
+  module: 29
+  lesson: 2
+
+- lessonId: start-29-3
+  title: "Revisar un trabajo existente con revise"
+  chapterRef: "courses/aiagent/lesson03-core/module29-slide-forge"
+  module: 29
+  lesson: 3
+
+- lessonId: start-29-4
+  title: "Obtener imágenes reales con fetch-assets"
+  chapterRef: "courses/aiagent/lesson03-core/module29-slide-forge"
+  module: 29
+  lesson: 4
+
 # === Comandos de utilidad (no son lecciones) ===
 # Estos no son lecciones sino comandos de utilidad. Se listan aquí
 # por completitud pero no tienen números de módulo/lección.

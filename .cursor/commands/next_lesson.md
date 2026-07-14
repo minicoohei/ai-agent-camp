@@ -1,7 +1,7 @@
 ---
 description: "完了チェックして次のレッスンへ進む"
+nonInteractiveMode: deferred
 ---
-
 # /next_lesson
 
 ## ✅ 完了チェックと次のレッスン

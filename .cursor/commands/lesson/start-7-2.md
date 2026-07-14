@@ -5,8 +5,8 @@ prerequisites: ["start-7-1"]
 duration: "約30分"
 level: "intermediate"
 tags: ["agent", "skill-md", "implementation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 7-2: SKILL.md の実装
 
 ## 📍 このセッションでやること

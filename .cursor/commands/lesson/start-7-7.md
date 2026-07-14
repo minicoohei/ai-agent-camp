@@ -5,8 +5,8 @@ duration: "約40分"
 prerequisites: ["start-7-5", "start-7-1"]
 level: "intermediate"
 tags: ["skill", "skill-design", "python", "SKILL.md"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 7-7: SKILL.md駆動のスキル開発
 
 ## 📍 このセッションでやること

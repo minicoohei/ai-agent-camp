@@ -5,8 +5,8 @@ prerequisites: ["start-3-1"]
 duration: "約25分"
 level: "intermediate"
 tags: ["screenshot", "error-diagnosis", "analysis"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 3-2: エラー診断の応用
 
 ## 📍 このセッションでやること

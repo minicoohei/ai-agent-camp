@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-0-1"]
 level: "beginner"
 tags: ["notion", "ncli", "auth", "oauth"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 12-1: ncliセットアップ・ブラウザ認証
 
 ## 📍 このセッションでやること

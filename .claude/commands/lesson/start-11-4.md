@@ -5,8 +5,8 @@ duration: "約25分"
 prerequisites: ["start-11-2"]
 level: "intermediate"
 tags: ["github-actions", "claude-code", "codex", "ai", "automation", "code-review"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 11-4: Claude Code / Codex / Cursor を GitHub Actions で呼ぶ
 
 ## 📍 このセッションでやること

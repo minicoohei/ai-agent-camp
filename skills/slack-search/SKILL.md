@@ -222,7 +222,7 @@ uv run python tools/slack_search.py timeline "開始日" "終了日"
 手動更新:
 
 ```bash
-python3 slack-sync/scripts/build_book_index.py
+python3 data/slack-sync/scripts/build_book_index.py
 ```
 
 ## ユースケース例
@@ -262,7 +262,7 @@ BookRAGに基づく階層的インデックスを活用し、Slackチャンネ�
 
 | エラー | 解決方法 |
 |--------|---------|
-| Index file not found | `python3 slack-sync/scripts/build_book_index.py` でインデックスを再構築 |
+| Index file not found | `python3 data/slack-sync/scripts/build_book_index.py` でインデックスを再構築 |
 | No results found | クエリのキーワードを変えるか、`get_workspace_overview()` で利用可能なカテゴリを確認 |
 
 ## Success Criteria

@@ -5,8 +5,8 @@ duration: "~35 min"
 prerequisites: ["start-0-3"]
 level: "intermediate"
 tags: ["marketing", "copywriting", "lp", "ab-test"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 17-3: Redaccion Publicitaria (Copywriting)
 
 ## Lo Qué Hará en Esta Sesion

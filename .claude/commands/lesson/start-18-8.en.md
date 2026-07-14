@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-7", "output/pm/usecases.md", "output/pm/requirements-spec.md"]
 level: "intermediate"
 tags: ["pm", "db", "er-diagram", "entity-spec"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-8: DB Design
 
 | Item | Details |

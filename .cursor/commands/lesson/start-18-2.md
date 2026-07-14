@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-1", "output/pm/customer-needs.md"]
 level: "intermediate"
 tags: ["pm", "requirements", "moscow"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-2: 要求資料の作成
 
 ## 📍 このセッションでやること

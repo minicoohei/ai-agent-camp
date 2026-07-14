@@ -1,7 +1,7 @@
 ---
 description: "Check completion and proceed to the next lesson"
+nonInteractiveMode: deferred
 ---
-
 # /next_lesson
 
 ## ✅ Completion Check and Next Lesson

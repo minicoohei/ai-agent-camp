@@ -6,8 +6,8 @@ duration: "~35 min"
 prerequisites: ["start-14-1", "start-14-2"]
 level: "intermediate"
 tags: ["article", "writing"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 14-3: Redacción de artículos - Creación de borrador con estilo aplicado
 
 ## 📍 Lo que hará en está sesión

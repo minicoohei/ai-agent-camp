@@ -4,8 +4,8 @@ duration: "約15分"
 prerequisites: ["ブラウザが使える", "Claude Code または Cursor が導入済み"]
 level: "beginner"
 tags: ["setup", "pencil", "mcp", "design"]
+nonInteractiveMode: incompatible
 ---
-
 # Pencil MCP セットアップ
 
 ## Step 0: セットアップ進捗の確認

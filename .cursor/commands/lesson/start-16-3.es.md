@@ -6,8 +6,8 @@ duration: "35 min"
 prerequisites: ["start-16-1"]
 level: "intermediate"
 tags: ["email", "gmail", "gogcli", "send"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 16-3: Envió de Correo con gogcli
 
 ## Lo Que Hará en Esta Sesión

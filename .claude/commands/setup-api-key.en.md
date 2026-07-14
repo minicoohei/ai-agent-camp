@@ -1,7 +1,7 @@
 ---
 description: "Guide the procedure for safely setting up API keys and tokens (for beginners)"
+nonInteractiveMode: compliant
 ---
-
 # API Key Setup Guide
 
 When the user requests "I want to set up an API key" or "I want to enter a Gemini key," guide them using **only this procedure**. Do not let them paste secrets in chat.

@@ -5,8 +5,8 @@ prerequisites: ["start-3-1"]
 duration: "~25 min"
 level: "intermediate"
 tags: ["screenshot", "tutorial", "documentation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 3-3: Automatic Tutorial Generation
 
 ## 📍 What You'll Do

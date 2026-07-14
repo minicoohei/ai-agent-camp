@@ -90,6 +90,10 @@ def composite_frame(
     Returns:
         合成されたフレーム
     """
+    # 遅延インポート（numpy/cv2互換性問題回避）
+    import cv2
+    import numpy as np
+
     x, y, w, h = bbox
     
     # パディングを適用

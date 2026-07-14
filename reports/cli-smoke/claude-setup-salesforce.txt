@@ -1,0 +1,25 @@
+**結論: `nonInteractiveMode: incompatible`** のため、非対話モードでは実行しません。
+
+## 対話モードで実行する場合に行う手順
+
+1. **Salesforce CLI v2 のインストール**
+   - `npm install -g @salesforce/cli@2.x`
+   - 旧 `sfdx` (v1) ではなく `sf` (v2) を使用
+
+2. **Production 組織にログイン (ブラウザ OAuth)**
+   - `sf org login web --alias prod`
+   - ブラウザが開いて Salesforce 認証画面 → 承認
+
+3. **Sandbox の場合**
+   - `sf org login web --alias dev --instance-url https://test.salesforce.com`
+
+4. **接続確認**
+   - `sf org list` で alias と接続状態を表示
+
+## なぜ非対話で完走できないか
+
+ステップ 2/3 がブラウザ OAuth フローを必須とするため。`claude -p` / `cursor-agent --print` ではブラウザ起動とコールバック受信ができず途中で停止します。
+
+## 推奨アクション
+
+通常の Claude Code 対話セッションを開いて `/lesson:setup-salesforce` を再実行してください。

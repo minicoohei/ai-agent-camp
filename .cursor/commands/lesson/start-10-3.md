@@ -5,8 +5,8 @@ prerequisites: ["start-10-1", "start-10-2"]
 duration: "約30分"
 level: "intermediate"
 tags: ["gas", "sheets", "google", "automation"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 10-3: Google Sheets自動化・データ処理レポート
 
 ## 📍 このセッションでやること

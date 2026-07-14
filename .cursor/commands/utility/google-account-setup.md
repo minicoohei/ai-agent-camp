@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Google アカウント セットアップ（Calendar/Drive用）
 
 個人GoogleアカウントのCalendar/Driveを連携するセットアップを支援します。

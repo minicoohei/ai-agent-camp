@@ -6,8 +6,8 @@ duration: "30 min"
 prerequisites: ["start-16-1"]
 level: "beginner"
 tags: ["email", "gmail", "check-inbox", "task-extraction"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 16-2: Análisis de Correos Recibidos y Extracción de Tareas
 
 ## Lo Que Hará en Esta Sesión

@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Nano Banana Pro 画像生成・編集
 
 このコマンドは、`tools/nanobanana.py` を使用して、Nano Banana Pro（Gemini 3 Pro Image）で画像を生成・編集します。

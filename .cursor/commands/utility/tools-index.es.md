@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Tools Index - Lista de herramientas
 
 Una lista y descripción general de las herramientas disponibles en este proyecto.

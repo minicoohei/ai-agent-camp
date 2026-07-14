@@ -121,14 +121,14 @@ Democratize AI agents from "tools for specialists" to "tools everyone can use," 
   - Materials based on real business scenarios
 
 - **Practical Skill Set**
-  - 80+ ready-to-use commands
-  - 42+ implemented skills (including marketing and LP/HP creation)
+  - Ready-to-use commands documented in the [Commands Reference](docs/commands-reference.md)
+  - Implemented skills documented in the [Skills Reference](docs/skills-reference.md)
   - Business-specific workflow samples
 
 - **Comprehensive Curriculum**
   - AI Fundamentals (Foundation) - 11 chapters
   - Environment Setup - 3 chapters
-  - 20 core modules (Google Workspace, video production, requirements definition, marketing, and more)
+  - 26 available core modules (Google Workspace, video production, requirements definition, marketing, and more)
   - CursorBootcamp YAML metadata support (all chapters)
   - Total study time: approx. 24 hours (30+ hours including exercises)
 
@@ -467,34 +467,40 @@ ai-agent-camp/
 │       │   └── ch01 ~ ch11/             # LLM, Tokens, Agents, MCP, RAG, Security, etc.
 │       ├── lesson02-setup/              # Environment setup (3 chapters)
 │       │   └── ch01 ~ ch03/             # Environment, Extensions, API setup
-│       └── lesson03-core/               # Core skills (20 modules)
-│           └── ch01 ~ ch20/             # Banner through Freee (practice/final included)
+│       └── lesson03-core/               # Core skills (26 available modules)
+│           └── module01 ~ module25, module29/ # Banner through slide-forge
 │
-├── .cursor/commands/                     # 80+ commands
-│   ├── lesson/                          # Learning commands (52+)
+├── .cursor/commands/                     # See docs/commands-reference.md
+│   ├── lesson/                          # Learning commands
 │   │   ├── /start-0-1 ~ /start-0-8     # Module 0: Setup
 │   │   ├── /start-1-1 ~ /start-1-3     # Module 1: Banners
 │   │   ├── /start-2-1 ~ /start-2-3     # Module 2: Diagrams
 │   │   ├── /start-3-1 ~ /start-3-6     # Module 3: Tutorials
 │   │   ├── /start-4-1 ~ /start-4-7     # Module 4: Google Workspace
 │   │   ├── /start-5-1 ~ /start-5-2     # Module 5: PPTX
-│   │   ├── /start-6-1 ~ /start-6-5     # Module 6: Agent Development
+│   │   ├── /start-6-1 ~ /start-6-9     # Module 6: Agent Development
 │   │   ├── /start-7-1 ~ /start-7-8     # Module 7: Skills/Commands
 │   │   ├── /start-8-1 ~ /start-8-4     # Module 8: Data Analysis
-│   │   ├── /start-9-1 ~ /start-9-2     # Module 9: Slack
-│   │   ├── /start-10-1 ~ /start-10-3   # Module 10: GAS
-│   │   ├── /start-11-1 ~ /start-11-2   # Module 11: GitHub Actions
+│   │   ├── /start-9-1 ~ /start-9-3     # Module 9: Slack
+│   │   ├── /start-10-1 ~ /start-10-4   # Module 10: GAS
+│   │   ├── /start-11-1 ~ /start-11-5   # Module 11: GitHub Actions
 │   │   ├── /start-12-1 ~ /start-12-6   # Module 12: Notion
 │   │   ├── /start-13-1 ~ /start-13-5   # Module 13: LP Creation
 │   │   ├── /start-14-1 ~ /start-14-7   # Module 14: Article Writing
-│   │   ├── /start-15-1 ~ /start-15-8   # Module 15: Video Production
+│   │   ├── /start-15-1 ~ /start-15-13  # Module 15: Video Production (+ 7a-7d)
 │   │   ├── /start-16-1 ~ /start-16-8   # Module 16: Email/LINE Automation
-│   │   ├── /start-17-1 ~ /start-17-4   # Module 17: Marketing
+│   │   ├── /start-17-1 ~ /start-17-5   # Module 17: Marketing
 │   │   ├── /start-18-1 ~ /start-18-20  # Module 18: Requirements/System Dev
-│   │   ├── /start-19-1                  # Module 19: Outlook (in progress)
-│   │   └── /start-20-1                  # Module 20: Freee/MoneyForward (in progress)
+│   │   ├── /setup-m365cli + /start-19-1 ~ /start-19-2 # Module 19: Outlook
+│   │   ├── /setup-freee + /start-20-1   # Module 20: Freee/MoneyForward
+│   │   ├── /setup-figma + /start-21-1   # Module 21: Figma
+│   │   ├── /setup-discord + /start-22-1 # Module 22: Discord
+│   │   ├── /setup-line-harness + /start-23-1 # Module 23: LINE
+│   │   ├── /setup-salesforce + /start-24-1 # Module 24: Salesforce
+│   │   ├── /setup-google-ads + /start-25-1 # Module 25: Google Ads
+│   │   └── /start-29-1 ~ /start-29-4   # Module 29: slide-forge
 │   │
-│   └── utility/                         # Utility commands (28+)
+│   └── utility/                         # Utility commands
 │       ├── /check-setup                 # Setup verification
 │       ├── /overview                    # Project overview
 │       ├── /guide                       # Usage guide
@@ -502,7 +508,7 @@ ai-agent-camp/
 │       ├── /update-material             # Update materials to latest
 │       └── ... other helpers
 │
-├── skills/                              # 42+ reusable skills
+├── skills/                              # See docs/skills-reference.md
 │   │
 │   │  -- Image & Banner Generation --
 │   ├── banner-creator/                  # SNS banner generation
@@ -561,6 +567,10 @@ ai-agent-camp/
 │   ├── schema-markup/                   # Structured data
 │   ├── seo-audit/                       # SEO audits
 │   └── social-content/                  # Social media content
+│
+├── mv-composer/                         # Operations/production-only Remotion video tools (not required for learners)
+├── gas-example/                         # Operations/production-only GAS examples (not required for learners)
+├── ops/                                 # Operations/production-only scripts (not required for learners)
 │
 ├── data/                                # Minimum data for lessons/Codex
 │   ├── codex-command-manifest.json      # Codex routing definitions
@@ -712,8 +722,14 @@ ai-agent-camp/
 | **16** | Email/LINE automation | Email sequences, LINE Bot |
 | **17** | Marketing | X posts, SEO, copywriting |
 | **18** | Requirements & system dev | PRD, design, testing, Notion export |
-| **19** | Outlook integration | Microsoft Office integration (in progress) |
-| **20** | Freee/MoneyForward | Accounting data operations (in progress) |
+| **19** | Outlook integration | Microsoft Office integration |
+| **20** | Freee/MoneyForward | Accounting data operations |
+| **21** | Figma integration | Design systems and UI collaboration |
+| **22** | Discord integration | Bot and channel operations |
+| **23** | LINE official account | Messaging and account operations |
+| **24** | Salesforce CLI integration | CRM queries and metadata operations |
+| **25** | Google Ads integration | Advertising data operations |
+| **29** | slide-forge | Slide generation and revision workflows |
 
 ---
 
@@ -770,8 +786,8 @@ Refer to the following guides for details:
 
 | Document | Description |
 |----------|-------------|
-| [Commands Reference](docs/commands-reference.md) | Full reference for 80+ commands |
-| [Skills Reference](docs/skills-reference.md) | Detailed info on 42+ skills |
+| [Commands Reference](docs/commands-reference.md) | Auto-generated inventory of all commands |
+| [Skills Reference](docs/skills-reference.md) | Auto-generated inventory of all skills |
 | [Claude Code Guide](CLAUDE.md) | Claude Code specific features |
 
 ### API Setup Guides

@@ -6,8 +6,8 @@ duration: "35分"
 prerequisites: ["start-14-1", "start-14-2"]
 level: "intermediate"
 tags: ["article", "writing"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 14-3: 記事執筆 - スタイル適用ドラフト作成
 
 ## 📍 このセッションでやること

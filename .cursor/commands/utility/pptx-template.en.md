@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # PPTX Template Operations
 
 A tool that extracts the format from PowerPoint files into YAML templates and generates new slides with only the text replaced.

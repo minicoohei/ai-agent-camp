@@ -5,8 +5,8 @@ duration: "約15分"
 prerequisites: ["Node.js 18以上がインストールされている", "OpenAI APIキーを取得済み"]
 level: "beginner"
 tags: ["setup", "codex", "cli"]
+nonInteractiveMode: compliant
 ---
-
 # Lesson 0-6: Codex CLI セットアップ
 
 ## セットアップ進捗の確認

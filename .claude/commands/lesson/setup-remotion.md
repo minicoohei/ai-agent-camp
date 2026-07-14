@@ -4,8 +4,8 @@ duration: "約10分"
 prerequisites: ["Node.js 18以上がインストール済み"]
 level: "beginner"
 tags: ["setup", "remotion", "video", "react", "npm"]
+nonInteractiveMode: incompatible
 ---
-
 # Remotion セットアップ
 
 ## Step 0: セットアップ進捗の確認
@@ -353,3 +353,14 @@ Remotion のセットアップが完了しました。動画制作レッスン�
 - lesson_15_8 → /start-15-8
 - mv_composer → 「MV動画を作って」と入力すると mv-composer スキルが起動します
 - finish → 終了
+
+## 参考リンク（aiagent-course Module 15 スライドと共通）
+
+テンプレートやインスピレーションを探すときに使う 5 つのリソース。
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

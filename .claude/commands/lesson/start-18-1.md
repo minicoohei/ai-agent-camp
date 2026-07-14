@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: []
 level: "intermediate"
 tags: ["pm", "interview", "customer-needs"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-1: 顧客インタビュー & ニーズ収集
 
 ## 📍 このセッションでやること

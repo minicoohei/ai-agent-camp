@@ -5,8 +5,8 @@ duration: "~40 min"
 prerequisites: ["start-0-3"]
 level: "intermediate"
 tags: ["marketing", "seo", "keyword", "audit"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 17-2: SEO Audit & Keyword Strategy
 
 ## What You Will Do in This Session

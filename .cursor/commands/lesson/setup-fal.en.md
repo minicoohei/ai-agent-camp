@@ -4,8 +4,8 @@ duration: "~10 min"
 prerequisites: ["Browser available", "Have a GitHub or Google account"]
 level: "beginner"
 tags: ["setup", "fal", "api", "video", "image"]
+nonInteractiveMode: incompatible
 ---
-
 # fal.ai API Setup
 
 ## Step 0: Check Setup Progress
@@ -396,3 +396,14 @@ lip sync (Fabric), music generation (Suno), and more.
 1. Run `uv run python tools/setup_progress.py complete setup-fal` to update progress
 2. The updated progress summary is displayed automatically
 3. Guide the user to the next step: "Next, learn about video AI engines with `/start-13-2`. Or set up the ElevenLabs API with `/setup-elevenlabs`."
+
+## Reference links (mirrors aiagent-course Module 15 slides)
+
+Five resources you can use to find templates or inspiration.
+
+- [Dribbble (motion design portfolios)](https://dribbble.com/)
+- [Envato Elements — video templates / logo animation](https://elements.envato.com/video-templates/logo+animation)
+- [Placeit — minimalist motion-graphics intro maker](https://placeit.net/c/videos/stages/intro-maker-with-minimalist-motion-graphics-988)
+- [YouTube — After Effects templates project channel](https://www.youtube.com/@paftereffectstemplatesproj6705)
+- [YouTube — motion-graphics templates playlist](https://www.youtube.com/playlist?list=PLCWRuswMLN-huRtRNjplBjZGuIknrhckj)
+

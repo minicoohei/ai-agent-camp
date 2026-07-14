@@ -6,8 +6,8 @@ duration: "About 5 minutes"
 prerequisites: ["Cursor is installed", "ai-agent-camp folder is open"]
 level: "beginner"
 tags: ["setup", "api", "guide"]
+nonInteractiveMode: incompatible
 ---
-
 # API Setup Wizard - Unified Setup Guide
 
 Centrally manage the setup of various APIs (Google, Notion, Slack, Fal.AI, Gemini, etc.).

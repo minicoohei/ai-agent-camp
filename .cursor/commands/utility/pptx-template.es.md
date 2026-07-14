@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: compliant
+---
+
 # Operaciones de plantillas PPTX
 
 Una herramienta que extrae el formato de archivos PowerPoint en plantillas YAML y genera nuevas diapositivas reemplazando solo el texto.

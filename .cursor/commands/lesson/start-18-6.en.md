@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-5", "output/pm/requirements-spec.md"]
 level: "intermediate"
 tags: ["pm", "usecase", "sequence", "uml"]
+nonInteractiveMode: compliant
 ---
-
 # 🎓 Lesson 18-6: Use Case Description & Sequence Diagrams
 
 | Item | Details |

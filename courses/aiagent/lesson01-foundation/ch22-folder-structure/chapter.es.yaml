@@ -1,0 +1,16 @@
+# Capítulo 22: Estructura de carpetas y archivos localizables por la IA
+id: "ch22-folder-structure"
+order: 22
+name: "Estructura de carpetas y archivos localizables por la IA"
+description: "Cómo organizar carpetas locales, nombrar archivos y pedir a la IA que encuentre tus materiales."
+type: "manual"
+estimatedMinutes: 45
+thumbnail: "thumbnail.png"
+objectives:
+  - "Comprender por qué la estructura de carpetas importa para que la IA encuentre materiales"
+  - "Aprender una estructura recomendada de cinco partes por proyecto"
+  - "Usar convenciones de nombres y un mapa en CLAUDE.md para mejorar la localización"
+  - "Pedir a la IA que encuentre y use materiales sin especificar cada ubicación"
+  - "Organizar una carpeta de proyecto y pedir a la IA que cree un mapa"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-14?slideId=overview"

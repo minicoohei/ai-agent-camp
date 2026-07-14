@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-13-1"]
 level: "beginner"
 tags: ["email", "resend", "domain", "dns", "vercel", "spf", "dkim"]
+nonInteractiveMode: deferred
 ---
-
 # Lesson 16-6: Resend Registration & Domain Setup
 
 ## What You Will Do in This Session

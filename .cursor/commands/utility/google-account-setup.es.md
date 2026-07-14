@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Configuración de cuenta de Google (para Calendar/Drive)
 
 Asiste con la configuración de la integración de Calendar/Drive de cuentas personales de Google.

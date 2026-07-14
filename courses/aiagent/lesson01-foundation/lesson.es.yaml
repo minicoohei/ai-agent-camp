@@ -3,7 +3,7 @@ id: "lesson01-foundation"
 order: 1
 name: "Conocimientos Fundamentales"
 description: "Aprende los conocimientos base para usar agentes de IA de manera efectiva. Cubre principios de LLM, tokens, agentes, MCP, IA multimodal, RAG y seguridad."
-estimatedMinutes: 410
+estimatedMinutes: 640
 cover: "cover.png"
 chapters:
   - "ch00-intro"
@@ -24,6 +24,12 @@ chapters:
   - "ch14-git-basics"
   - "ch15-git-safety"
   - "ch16-terminal-basics"
+  - "ch17-token-cost-management"
+  - "ch18-ultraplan"
+  - "ch19-dynamic-workflows"
+  - "ch20-loop"
+  - "ch21-mcp-m365"
+  - "ch22-folder-structure"
 objectives:
   - "Comprender la estructura general de la formación y la ruta de aprendizaje"
   - "Entender cómo funcionan los LLMs (Modelos de Lenguaje Grande)"
@@ -42,3 +48,9 @@ objectives:
   - "Desarrollar hábitos de operación segura en Cursor, Claude Code y Codex"
   - "Dominar las operaciones básicas de Git y prácticas seguras"
   - "Dominar las operaciones básicas del terminal"
+  - "Comprender el ahorro de tokens y control de costos en Claude Code"
+  - "Usar ultraplan y técnicas de planificación de manera efectiva"
+  - "Comprender Dynamic Workflows / ultracode"
+  - "Comprender la ejecución periódica y autoadministrada con /loop"
+  - "Comprender cómo MCP conecta herramientas externas como Microsoft 365"
+  - "Organizar carpetas y prompts para que la IA encuentre materiales"

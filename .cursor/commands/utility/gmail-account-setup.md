@@ -1,3 +1,7 @@
+---
+nonInteractiveMode: incompatible
+---
+
 # Gmail アカウント セットアップ
 
 個人Gmailアカウントを連携するセットアップを支援します。

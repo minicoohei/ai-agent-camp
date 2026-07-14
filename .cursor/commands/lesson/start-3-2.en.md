@@ -5,8 +5,8 @@ prerequisites: ["start-3-1"]
 duration: "~25 min"
 level: "intermediate"
 tags: ["screenshot", "error-diagnosis", "analysis"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 3-2: Advanced Error Diagnosis
 
 ## 📍 What You'll Do

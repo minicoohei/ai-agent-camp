@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-4", "output/pm/prd.md", "output/pm/requirements-brief.md"]
 level: "intermediate"
 tags: ["pm", "requirements-spec", "ipa"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 18-5: Requirements Specification Creation
 
 Topic: Create a requirements specification for TaskFlow based on the IPA (Information-technology Promotion Agency) format.

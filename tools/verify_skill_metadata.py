@@ -8,9 +8,10 @@ Checks: SKILL.md, frontmatter, agents/openai.yaml, .claude/skills/ sync, readabi
 
 import json
 import re
+import sys
 import yaml
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = PROJECT_ROOT / "skills"
@@ -18,6 +19,17 @@ CLAUDE_SKILLS_DIR = PROJECT_ROOT / ".claude" / "skills"
 CLAUDE_COMMANDS_DIR = PROJECT_ROOT / ".claude" / "commands" / "lesson"
 CURSOR_COMMANDS_DIR = PROJECT_ROOT / ".cursor" / "commands" / "lesson"
 OUTPUT_DIR = PROJECT_ROOT / "data" / "skill-verification"
+
+MISSING_EXECUTABLE_ISSUE = "missing-executable-script"
+
+# P2 (PR #77) で全スキルの参照を修理済み。新たな除外が必要になった場合のみ追加する。
+MISSING_EXECUTABLE_ALLOWLIST: set[str] = set()
+
+EXECUTABLE_COMMAND_RE = re.compile(
+    r"(?:^|[`|]\s*)(?:\$\s*)?(?:uv\s+run\s+)?(?:python3?|bash|sh)\s+"
+    r"[\"']?(?P<path>[A-Za-z0-9_./{}$<>-]+\.(?:py|sh))",
+    re.MULTILINE,
+)
 
 
 def parse_frontmatter(text: str) -> dict:
@@ -29,6 +41,81 @@ def parse_frontmatter(text: str) -> dict:
         return yaml.safe_load(m.group(1)) or {}
     except yaml.YAMLError:
         return {"_parse_error": True}
+
+
+def extract_executable_script_paths(content: str) -> list[str]:
+    """Extract relative script paths used in shell/Python execution commands."""
+    return sorted(
+        {
+            match.group("path")
+            for match in EXECUTABLE_COMMAND_RE.finditer(content)
+            if not any(marker in match.group("path") for marker in ("$", "{", "<"))
+        }
+    )
+
+
+def executable_script_candidates(
+    reference: str,
+    skill_dir: Path,
+    project_root: Path = PROJECT_ROOT,
+) -> list[Path]:
+    """Return the supported repo-root and skill-relative resolutions for a reference."""
+    relative = Path(reference.removeprefix("./"))
+    if relative.is_absolute():
+        return []
+
+    if relative.parts and relative.parts[0] == "scripts":
+        candidates = [skill_dir / relative, project_root / relative]
+    else:
+        candidates = [project_root / relative, skill_dir / relative]
+    if len(relative.parts) == 1:
+        candidates.append(skill_dir / "scripts" / relative)
+        candidates.extend((project_root / "skills").glob(f"*/scripts/{relative}"))
+    return candidates
+
+
+def check_executable_script_references(
+    skill_dir: Path,
+    content: str,
+    project_root: Path = PROJECT_ROOT,
+) -> list[dict]:
+    """Check executable script references in one SKILL.md."""
+    results = []
+    for reference in extract_executable_script_paths(content):
+        candidates = executable_script_candidates(reference, skill_dir, project_root)
+        existing = next((path for path in candidates if path.is_file()), None)
+        results.append(
+            {
+                "reference": reference,
+                "status": "OK" if existing else "BROKEN",
+                "resolved_path": (
+                    str(existing.relative_to(project_root)) if existing else ""
+                ),
+            }
+        )
+    return results
+
+
+def fatal_script_issues(
+    skills: list[dict],
+    allowlist: set[str] | None = None,
+) -> list[dict]:
+    """Return missing executable references not temporarily allowlisted for P2."""
+    if allowlist is None:
+        allowlist = MISSING_EXECUTABLE_ALLOWLIST
+    return [
+        {
+            "skill": skill["name"],
+            "references": skill.get("missing_executable_scripts", []),
+        }
+        for skill in skills
+        if skill.get("missing_executable_scripts") and skill["name"] not in allowlist
+    ]
+
+
+def exit_code_for_skills(skills: list[dict]) -> int:
+    """Return the CI exit code for the currently fatal issue categories."""
+    return 1 if fatal_script_issues(skills) else 0
 
 
 def check_skill(skill_dir: Path) -> dict:
@@ -50,6 +137,8 @@ def check_skill(skill_dir: Path) -> dict:
         "language": "unknown",
         "has_prerequisites": False,
         "has_scripts": False,
+        "executable_script_references": [],
+        "missing_executable_scripts": [],
         "issues": [],
     }
 
@@ -113,6 +202,16 @@ def check_skill(skill_dir: Path) -> dict:
     # Scripts
     scripts_dir = skill_dir / "scripts"
     result["has_scripts"] = scripts_dir.exists() and any(scripts_dir.iterdir())
+    result["executable_script_references"] = check_executable_script_references(
+        skill_dir, content
+    )
+    result["missing_executable_scripts"] = [
+        item["reference"]
+        for item in result["executable_script_references"]
+        if item["status"] == "BROKEN"
+    ]
+    if result["missing_executable_scripts"]:
+        result["issues"].append(MISSING_EXECUTABLE_ISSUE)
 
     # agents/openai.yaml
     openai_yaml = skill_dir / "agents" / "openai.yaml"
@@ -201,6 +300,15 @@ def main():
             status = "OK" if not result["issues"] else f"ISSUES: {', '.join(result['issues'])}"
             print(f"  {result['name']:40s} {status}")
 
+    fatal = fatal_script_issues(skills)
+    for skill in skills:
+        skill["severity"] = (
+            "fatal"
+            if skill["missing_executable_scripts"]
+            and skill["name"] not in MISSING_EXECUTABLE_ALLOWLIST
+            else "informational"
+        )
+
     # Summary
     total = len(skills)
     no_issues = sum(1 for s in skills if not s["issues"])
@@ -277,8 +385,32 @@ def main():
     for issue, count in sorted(issue_counts.items(), key=lambda x: -x[1]):
         print(f"  {issue:35s} {count}")
 
+    allowlisted = [
+        skill
+        for skill in skills
+        if skill["missing_executable_scripts"]
+        and skill["name"] in MISSING_EXECUTABLE_ALLOWLIST
+    ]
+    print("\n=== Executable Script Reference Gate ===")
+    print(f"  Fatal: {len(fatal)}, Allowlisted for P2: {len(allowlisted)}")
+    for item in fatal:
+        print(f"  FATAL: {item['skill']} -> {', '.join(item['references'])}")
+    for skill in allowlisted:
+        print(
+            f"  ALLOWLISTED: {skill['name']} -> "
+            f"{', '.join(skill['missing_executable_scripts'])}"
+        )
+
+    stale_allowlist = sorted(
+        MISSING_EXECUTABLE_ALLOWLIST
+        - {skill["name"] for skill in allowlisted}
+    )
+    if stale_allowlist:
+        print(f"  INFO: stale P2 allowlist entries: {', '.join(stale_allowlist)}")
+
     print(f"\nAll results saved to: {OUTPUT_DIR}")
+    return 1 if fatal else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

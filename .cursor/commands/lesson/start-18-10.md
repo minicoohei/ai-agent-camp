@@ -6,8 +6,8 @@ category: "lesson"
 prerequisites: ["start-18-9", "output/pm/api-spec.yaml"]
 level: "intermediate"
 tags: ["pm", "wbs", "gantt", "schedule"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 18-10: WBS & ガントチャート
 
 | 項目 | 内容 |

@@ -5,8 +5,8 @@ duration: "~5 min"
 prerequisites: ["Lección 0-1 completada"]
 level: "beginner"
 tags: ["setup", "extensions"]
+nonInteractiveMode: deferred
 ---
-
 # Lección 0-2: Instalación de extensiones
 
 ## Verificar progreso de configuración

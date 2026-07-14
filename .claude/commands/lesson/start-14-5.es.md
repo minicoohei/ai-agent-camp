@@ -6,8 +6,8 @@ duration: "~30 min"
 prerequisites: ["start-14-4"]
 level: "intermediate"
 tags: ["article", "proofreading"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lección 14-5: Corrección - Revisión con agente de corrección
 
 ## 📍 Lo que hará en está sesión

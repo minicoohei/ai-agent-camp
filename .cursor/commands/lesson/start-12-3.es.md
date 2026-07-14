@@ -5,8 +5,8 @@ duration: "~30 min"
 prerequisites: ["start-0-1"]
 level: "intermediate"
 tags: ["notion", "mcp", "api"]
+nonInteractiveMode: incompatible
 ---
-
 # 🎓 Lesson 12-3: Creacion de paginas de Notion
 
 ## 📍 Lo que hara en esta sesion

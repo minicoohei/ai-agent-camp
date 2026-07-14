@@ -5,8 +5,8 @@ prerequisites: ["start-1-1"]
 duration: "~30 min"
 level: "beginner"
 tags: ["banner", "image", "sns", "multi-platform"]
+nonInteractiveMode: deferred
 ---
-
 # 🎓 Lesson 1-2: Advanced Banners (Instagram, Facebook)
 
 ## 📍 What You'll Do
