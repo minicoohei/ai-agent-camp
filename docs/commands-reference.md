@@ -1,6 +1,6 @@
 # コマンドリファレンス完全ガイド
 
-**対応コマンド数**: 226個（レッスン 171個 + ユーティリティ 33個 + トップレベル 22個）
+**対応コマンド数**: 222個（レッスン 167個 + ユーティリティ 33個 + トップレベル 22個）
 
 最終更新: 2026-07-14
 
@@ -52,7 +52,7 @@ Codex と Claude Code では同じ lesson id を使いますが、入口が異�
 
 `.en.md` / `.es.md` は同じ slash command の翻訳版として重複計上しません。
 
-### レッスンコマンド（171個）
+### レッスンコマンド（167個）
 
 #### Module 0（9個）
 
@@ -210,7 +210,7 @@ Codex と Claude Code では同じ lesson id を使いますが、入口が異�
 | `/start-14-6` | ファクトチェック - 事実検証エージェント | [`.cursor/commands/lesson/start-14-6.md`](../.cursor/commands/lesson/start-14-6.md) |
 | `/start-14-7` | 並列実行と仕上げ - 複数記事の同時処理 | [`.cursor/commands/lesson/start-14-7.md`](../.cursor/commands/lesson/start-14-7.md) |
 
-#### Module 15（17個）
+#### Module 15（13個）
 
 | コマンド | 説明 | 定義 |
 |---|---|---|
@@ -221,10 +221,6 @@ Codex と Claude Code では同じ lesson id を使いますが、入口が異�
 | `/start-15-5` | 動画AIエンジン概要 | [`.cursor/commands/lesson/start-15-5.md`](../.cursor/commands/lesson/start-15-5.md) |
 | `/start-15-6` | Storyboard Anime Video | [`.cursor/commands/lesson/start-15-6.md`](../.cursor/commands/lesson/start-15-6.md) |
 | `/start-15-7` | Music Video | [`.cursor/commands/lesson/start-15-7.md`](../.cursor/commands/lesson/start-15-7.md) |
-| `/start-15-7a` | start-15-7a | [`.cursor/commands/lesson/start-15-7a.md`](../.cursor/commands/lesson/start-15-7a.md) |
-| `/start-15-7b` | start-15-7b | [`.cursor/commands/lesson/start-15-7b.md`](../.cursor/commands/lesson/start-15-7b.md) |
-| `/start-15-7c` | start-15-7c | [`.cursor/commands/lesson/start-15-7c.md`](../.cursor/commands/lesson/start-15-7c.md) |
-| `/start-15-7d` | start-15-7d | [`.cursor/commands/lesson/start-15-7d.md`](../.cursor/commands/lesson/start-15-7d.md) |
 | `/start-15-8` | Slide Narration Video | [`.cursor/commands/lesson/start-15-8.md`](../.cursor/commands/lesson/start-15-8.md) |
 | `/start-15-9` | Product Demo Video | [`.cursor/commands/lesson/start-15-9.md`](../.cursor/commands/lesson/start-15-9.md) |
 | `/start-15-10` | 記事からSNS紹介動画 | [`.cursor/commands/lesson/start-15-10.md`](../.cursor/commands/lesson/start-15-10.md) |

@@ -216,6 +216,30 @@
   module: 6
   lesson: 5
 
+- lessonId: start-6-6
+  title: "Fundamentos de diseño de skills"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 6
+
+- lessonId: start-6-7
+  title: "Implementación de SKILL.md"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 7
+
+- lessonId: start-6-8
+  title: "Pruebas e iteración"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 8
+
+- lessonId: start-6-9
+  title: "Cinco patrones de diseño"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 9
+
 # === Módulo 7: Skill / Comandos ===
 - lessonId: start-7-1
   title: "Fundamentos de diseño de Skills (mejores prácticas de Anthropic)"
@@ -532,6 +556,30 @@
   module: 15
   lesson: 9
 
+- lessonId: start-15-10
+  title: "De artículo a video para redes sociales"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 10
+
+- lessonId: start-15-11
+  title: "Calidad en Remotion"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 11
+
+- lessonId: start-15-12
+  title: "Remotion + subtítulos SRT"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 12
+
+- lessonId: start-15-13
+  title: "Animación UI y diapositivas"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 13
+
 # === Módulo 16: Email ===
 - lessonId: start-16-1
   title: "Configuración de Gmail - autenticación de gogcli y sincronización de correos"
@@ -753,6 +801,41 @@
   module: 20
   lesson: 1
 
+# === Módulo 21: Figma ===
+- lessonId: start-21-1
+  title: "Introducción a la integración con Figma"
+  chapterRef: "courses/aiagent/lesson03-core/module21-figma"
+  module: 21
+  lesson: 1
+
+# === Módulo 22: Discord ===
+- lessonId: start-22-1
+  title: "Introducción a la integración con Discord"
+  chapterRef: "courses/aiagent/lesson03-core/module22-discord"
+  module: 22
+  lesson: 1
+
+# === Módulo 23: LINE ===
+- lessonId: start-23-1
+  title: "Introducción a la operación de LINE Official Account"
+  chapterRef: "courses/aiagent/lesson03-core/module23-line"
+  module: 23
+  lesson: 1
+
+# === Módulo 24: Salesforce ===
+- lessonId: start-24-1
+  title: "Introducción a la integración con Salesforce CLI"
+  chapterRef: "courses/aiagent/lesson03-core/module24-salesforce"
+  module: 24
+  lesson: 1
+
+# === Módulo 25: Google Ads ===
+- lessonId: start-25-1
+  title: "Introducción a la integración con Google Ads"
+  chapterRef: "courses/aiagent/lesson03-core/module25-google-ads"
+  module: 25
+  lesson: 1
+
 # === Módulo 29: slide-forge ===
 - lessonId: start-29-1
   title: "Demo de slide-forge sin clave de API"
@@ -784,6 +867,10 @@
 # Fuente: .cursor/commands/lesson/{id}.md
 - lessonId: setup-start
   title: "Iniciar configuración"
+  type: utility
+
+- lessonId: setup-content
+  title: "Configuración inicial del contenido"
   type: utility
 
 - lessonId: setup-extensions
@@ -850,6 +937,34 @@
   title: "Configuración de X (Twitter) API"
   type: utility
 
+- lessonId: setup-m365cli
+  title: "Configuración de M365 CLI"
+  type: utility
+
+- lessonId: setup-freee
+  title: "Configuración de Freee MCP"
+  type: utility
+
+- lessonId: setup-figma
+  title: "Configuración de Figma + Serendie MCP"
+  type: utility
+
+- lessonId: setup-discord
+  title: "Configuración del Bot de Discord + plugin oficial de Claude Code Channels"
+  type: utility
+
+- lessonId: setup-line-harness
+  title: "Desplegar line-harness-oss en el plan gratuito de Cloudflare"
+  type: utility
+
+- lessonId: setup-salesforce
+  title: "Configuración de Salesforce CLI (sf)"
+  type: utility
+
+- lessonId: setup-google-ads
+  title: "Configuración de Google Ads API"
+  type: utility
+
 - lessonId: check-setup
   title: "Verificar configuración"
   type: utility
@@ -860,4 +975,8 @@
 
 - lessonId: exercise-review
   title: "Revisión de ejercicio"
+  type: utility
+
+- lessonId: verify-module
+  title: "Verificar finalización del módulo"
   type: utility

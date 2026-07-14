@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Scaffold the 6 missing module-15 lesson commands (15-7a/b/c/d, 15-10, 15-11)
+Scaffold the 2 missing module-15 lesson commands (15-10, 15-11)
 in three locales each. Pulls title/description from the aiagent-course
 slide JSON (module15.json) so the command title matches the slide badge.
 
@@ -20,26 +20,6 @@ from pathlib import Path
 # tags_extra is a per-locale dict so en/es scaffolds don't carry residual
 # Japanese (which fails tools/check_residual_japanese.py).
 LESSONS = [
-    ("start-15-7a", "s18", "intermediate", {
-        "ja": "音楽 / 動画 / Remotion / fal",
-        "en": "music / video / Remotion / fal",
-        "es": "música / vídeo / Remotion / fal",
-    }),
-    ("start-15-7b", "s19", "intermediate", {
-        "ja": "音楽解析 / librosa / ビート",
-        "en": "music analysis / librosa / beat",
-        "es": "análisis musical / librosa / beat",
-    }),
-    ("start-15-7c", "s20", "intermediate", {
-        "ja": "fal / 動画生成 / シーン同期",
-        "en": "fal / video generation / scene sync",
-        "es": "fal / generación de vídeo / sincronización de escenas",
-    }),
-    ("start-15-7d", "s21", "intermediate", {
-        "ja": "Remotion / FFmpeg / レンダリング",
-        "en": "Remotion / FFmpeg / rendering",
-        "es": "Remotion / FFmpeg / renderizado",
-    }),
     ("start-15-10", "s23", "intermediate", {
         "ja": "Remotion / 記事 / SNS",
         "en": "Remotion / articles / social",

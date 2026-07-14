@@ -216,6 +216,30 @@
   module: 6
   lesson: 5
 
+- lessonId: start-6-6
+  title: "スキル設計の基礎"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 6
+
+- lessonId: start-6-7
+  title: "SKILL.md の実装"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 7
+
+- lessonId: start-6-8
+  title: "テストとイテレーション"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 8
+
+- lessonId: start-6-9
+  title: "5つの設計パターン"
+  chapterRef: "courses/aiagent/lesson03-core/module06-agent-development"
+  module: 6
+  lesson: 9
+
 # === Module 7: Skill / Commands ===
 - lessonId: start-7-1
   title: "スキル設計の基礎（Anthropicベストプラクティス）"
@@ -532,6 +556,30 @@
   module: 15
   lesson: 9
 
+- lessonId: start-15-10
+  title: "記事からSNS紹介動画"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 10
+
+- lessonId: start-15-11
+  title: "Remotionで思い通りの動きにするには"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 11
+
+- lessonId: start-15-12
+  title: "Remotion + SRTキャプション"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 12
+
+- lessonId: start-15-13
+  title: "アニメーションとスライドショー"
+  chapterRef: "courses/aiagent/lesson03-core/module15-video"
+  module: 15
+  lesson: 13
+
 # === Module 16: Email ===
 - lessonId: start-16-1
   title: "Gmail セットアップ - gogcli 認証とメール同期"
@@ -753,6 +801,41 @@
   module: 20
   lesson: 1
 
+# === Module 21: Figma ===
+- lessonId: start-21-1
+  title: "Figma 連携 入門"
+  chapterRef: "courses/aiagent/lesson03-core/module21-figma"
+  module: 21
+  lesson: 1
+
+# === Module 22: Discord ===
+- lessonId: start-22-1
+  title: "Discord 連携 入門"
+  chapterRef: "courses/aiagent/lesson03-core/module22-discord"
+  module: 22
+  lesson: 1
+
+# === Module 23: LINE ===
+- lessonId: start-23-1
+  title: "LINE 公式アカウント運用 入門"
+  chapterRef: "courses/aiagent/lesson03-core/module23-line"
+  module: 23
+  lesson: 1
+
+# === Module 24: Salesforce ===
+- lessonId: start-24-1
+  title: "Salesforce CLI 連携 入門"
+  chapterRef: "courses/aiagent/lesson03-core/module24-salesforce"
+  module: 24
+  lesson: 1
+
+# === Module 25: Google Ads ===
+- lessonId: start-25-1
+  title: "Google Ads 連携 入門"
+  chapterRef: "courses/aiagent/lesson03-core/module25-google-ads"
+  module: 25
+  lesson: 1
+
 # === Module 29: slide-forge ===
 - lessonId: start-29-1
   title: "slide-forge APIキー不要デモ"
@@ -784,6 +867,10 @@
 # Source: .cursor/commands/lesson/{id}.md
 - lessonId: setup-start
   title: "セットアップ開始"
+  type: utility
+
+- lessonId: setup-content
+  title: "教材コンテンツの初回セットアップ"
   type: utility
 
 - lessonId: setup-extensions
@@ -850,6 +937,34 @@
   title: "X (Twitter) API セットアップ"
   type: utility
 
+- lessonId: setup-m365cli
+  title: "M365 CLI セットアップ"
+  type: utility
+
+- lessonId: setup-freee
+  title: "Freee MCP セットアップ"
+  type: utility
+
+- lessonId: setup-figma
+  title: "Figma + Serendie デザインシステム MCP セットアップ"
+  type: utility
+
+- lessonId: setup-discord
+  title: "Discord Bot + Claude Code Channels 公式 plugin セットアップ"
+  type: utility
+
+- lessonId: setup-line-harness
+  title: "line-harness-oss を Cloudflare 無料枠にデプロイ"
+  type: utility
+
+- lessonId: setup-salesforce
+  title: "Salesforce CLI (sf) セットアップ"
+  type: utility
+
+- lessonId: setup-google-ads
+  title: "Google Ads API セットアップ"
+  type: utility
+
 - lessonId: check-setup
   title: "セットアップ確認"
   type: utility
@@ -860,4 +975,8 @@
 
 - lessonId: exercise-review
   title: "演習レビュー"
+  type: utility
+
+- lessonId: verify-module
+  title: "モジュール完了チェック"
   type: utility
