@@ -35,6 +35,11 @@ In this lesson, you will use the following two commands to set up your environme
 
 > **Note for Codex**: In Codex, instead of running `/setup-start` or `/check-setup` directly as Cursor slash commands, follow the verification steps written in this file in order. When GUI operations like browser authentication are needed, switch to manual user operation at that point.
 
+### Step 0: Enable the Security Hook
+
+**Auto-run by AI:** Run `bash scripts/install_hooks.sh`. It is safe to run repeatedly and enables
+the secret scan that runs before each commit.
+
 ### Step 1: Start Setup
 
 Run `/setup-start` first. This command **automatically** performs the following:

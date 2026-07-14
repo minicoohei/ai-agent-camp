@@ -35,6 +35,11 @@ En esta lección, utilizará los siguientes dos comandos para configurar su ento
 
 > **Nota para Codex**: En Codex, en lugar de ejecutar `/setup-start` o `/check-setup` directamente como comandos slash de Cursor, siga los pasos de verificación escritos en este archivo en orden. Cuando se necesiten operaciones GUI como autenticación en el navegador, cambie a operación manual del usuario en ese momento.
 
+### Step 0: Activar el hook de seguridad
+
+**Ejecución automática por IA:** Ejecute `bash scripts/install_hooks.sh`. Se puede ejecutar varias
+veces de forma segura y activa el análisis de secretos previo a cada commit.
+
 ### Step 1: Iniciar configuración
 
 Ejecute `/setup-start` primero. Este comando realiza **automáticamente** lo siguiente:

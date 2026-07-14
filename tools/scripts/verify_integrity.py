@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -59,12 +60,12 @@ def _run(cmd: list[str]) -> str:
 
 def _normalize_url(url: str) -> str:
     """git remote URL を比較用に正規化。HTTPS/SSH どちらも同じ形に揃える。"""
-    url = url.strip()
+    url = url.strip().lower()
     if url.startswith("git@"):
         url = url.replace(":", "/").replace("git@", "https://")
     if url.endswith(".git"):
         url = url[:-4]
-    return url.lower()
+    return url
 
 
 def check_origin() -> tuple[str, str, bool]:
@@ -75,6 +76,12 @@ def check_origin() -> tuple[str, str, bool]:
         status: "ok" / "missing-origin" / "fork" / "no-git"
     """
     try:
+        repo_check = subprocess.run(
+            ["git", "rev-parse", "--is-inside-work-tree"],
+            cwd=REPO_ROOT, check=False, capture_output=True, text=True,
+        )
+        if repo_check.returncode != 0:
+            return "no-git", "", False
         raw = _run(["git", "remote", "get-url", "origin"])
     except FileNotFoundError:
         return "no-git", "", False
@@ -152,6 +159,30 @@ def check_upstream_drift(upstream_remote: str = "upstream") -> list[dict[str, st
     return drift
 
 
+def check_pre_commit_hook() -> tuple[bool, str]:
+    """Git が実際に使用する pre-commit hook の有効性を確認する。
+
+    `git rev-parse --git-path hooks` は linked worktree と core.hooksPath の
+    両方を反映する。相対パスの場合はリポジトリルート基準で解決する。
+
+    Returns:
+        (is_active, hook_path)
+    """
+    try:
+        raw_hooks_path = _run(["git", "rev-parse", "--git-path", "hooks"])
+    except FileNotFoundError:
+        return False, ""
+    if not raw_hooks_path:
+        return False, ""
+
+    hooks_path = Path(raw_hooks_path)
+    if not hooks_path.is_absolute():
+        hooks_path = REPO_ROOT / hooks_path
+    hook_path = hooks_path / "pre-commit"
+    is_active = hook_path.is_file() and os.access(hook_path, os.X_OK)
+    return is_active, str(hook_path)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json", action="store_true", help="JSON で出力")
@@ -169,6 +200,7 @@ def main(argv: list[str] | None = None) -> int:
     missing_files = check_manifest_exists()
     tracked_hashes = compute_tracked_hashes()
     drift = check_upstream_drift(upstream_remote=args.upstream)
+    pre_commit_active, pre_commit_path = check_pre_commit_hook()
 
     report = {
         "origin_url": origin_url,
@@ -178,6 +210,10 @@ def main(argv: list[str] | None = None) -> int:
         "official_urls": list(OFFICIAL_REPO_URLS),
         "tracked_hashes": tracked_hashes,
         "upstream_drift": drift,
+        "pre_commit_hook": {
+            "active": pre_commit_active,
+            "path": pre_commit_path,
+        },
     }
 
     if args.json:
@@ -200,6 +236,14 @@ def main(argv: list[str] | None = None) -> int:
             print(f"upstream 差分: {drift_paths}")
         else:
             print("upstream 差分: (未計測 — upstream remote 未設定、または差分なし)")
+
+        print(
+            f"pre-commit : {'有効' if pre_commit_active else '無効'}"
+            f" ({pre_commit_path or '解決できません'})"
+        )
+        if not pre_commit_active:
+            print("⚠️  pre-commit 秘密情報スキャンが有効ではありません。")
+            print("   次を実行してください: bash scripts/install_hooks.sh")
 
         print()
         if is_official and not missing_files and not drift:
