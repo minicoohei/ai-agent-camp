@@ -22,16 +22,8 @@ OUTPUT_DIR = PROJECT_ROOT / "data" / "skill-verification"
 
 MISSING_EXECUTABLE_ISSUE = "missing-executable-script"
 
-# TODO(P2): Remove entries after repairing each skill's executable references.
-MISSING_EXECUTABLE_ALLOWLIST = {
-    "motion-review",
-    "mv-composer",
-    "youtube-uploader",
-    "data-analyst",
-    "slack-search",
-    "slack-task-manager",
-    "slack-unanswered",
-}
+# P2 (PR #77) で全スキルの参照を修理済み。新たな除外が必要になった場合のみ追加する。
+MISSING_EXECUTABLE_ALLOWLIST: set[str] = set()
 
 EXECUTABLE_COMMAND_RE = re.compile(
     r"(?:^|[`|]\s*)(?:\$\s*)?(?:uv\s+run\s+)?(?:python3?|bash|sh)\s+"
