@@ -3,7 +3,7 @@ id: "lesson01-foundation"
 order: 1
 name: "Conocimientos Fundamentales"
 description: "Aprende los conocimientos base para usar agentes de IA de manera efectiva. Cubre principios de LLM, tokens, agentes, MCP, IA multimodal, RAG y seguridad."
-estimatedMinutes: 700
+estimatedMinutes: 725
 cover: "cover.png"
 chapters:
   - "ch00-intro"
@@ -31,6 +31,7 @@ chapters:
   - "ch21-mcp-m365"
   - "ch22-folder-structure"
   - "ch23-observability"
+  - "ch24-feasibility"
 objectives:
   - "Comprender la estructura general de la formación y la ruta de aprendizaje"
   - "Entender cómo funcionan los LLMs (Modelos de Lenguaje Grande)"
@@ -56,3 +57,4 @@ objectives:
   - "Comprender cómo MCP conecta herramientas externas como Microsoft 365"
   - "Organizar carpetas y prompts para que la IA encuentre materiales"
   - "Leer registros y trazas, y medir con OpenTelemetry para impulsar mejoras"
+  - "Evaluar qué puede asumir la IA y cómo implementarlo"

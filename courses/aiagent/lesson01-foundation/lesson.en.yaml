@@ -3,7 +3,7 @@ id: "lesson01-foundation"
 order: 1
 name: "Foundation Knowledge"
 description: "Learn the foundational knowledge for using AI agents effectively. Covers LLM principles, tokens, agents, MCP, multimodal AI, RAG, and security."
-estimatedMinutes: 700
+estimatedMinutes: 725
 cover: "cover.png"
 chapters:
   - "ch00-intro"
@@ -31,6 +31,7 @@ chapters:
   - "ch21-mcp-m365"
   - "ch22-folder-structure"
   - "ch23-observability"
+  - "ch24-feasibility"
 objectives:
   - "Understand the overall training structure and learning path"
   - "Understand how LLMs (Large Language Models) work"
@@ -56,3 +57,4 @@ objectives:
   - "Understand how MCP connects to external tools such as Microsoft 365"
   - "Organize folders and prompts so AI can find materials"
   - "Read session logs and traces, and measure with OpenTelemetry to drive improvements"
+  - "Judge what AI can own and how to implement it"
