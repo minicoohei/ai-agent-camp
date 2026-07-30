@@ -465,12 +465,14 @@ ai-agent-camp/
 |       +-- course.en.yaml                # Definicion del curso (EN)
 |       +-- course.es.yaml                # Definicion del curso (ES)
 |       +-- cover.png                     # Imagen de portada del curso
-|       +-- lesson01-foundation/          # Fundamentos (11 capitulos)
-|       |   +-- ch01 ~ ch11/             # LLM, Token, Agent, MCP, RAG, Seguridad, etc.
+|       +-- lesson01-foundation/          # Fundamentos (24 capitulos)
+|       |   +-- ch00 ~ ch23/             # LLM, Token, Agent, MCP, RAG, Seguridad, medicion, etc.
 |       +-- lesson02-setup/              # Configuracion del entorno (3 capitulos)
 |       |   +-- ch01 ~ ch03/             # Entorno, extensiones, configuracion de API
 |       +-- lesson03-core/               # Habilidades principales (26 modulos disponibles)
-|           +-- module01 ~ module25, module29/ # Banner a slide-forge
+|       |   +-- module01 ~ module25, module29/ # Banner a slide-forge
+|       +-- lesson04-practice/           # Ejercicios practicos (4 capitulos)
+|           +-- ex01 ~ ex04/             # Diagrama, sesiones paralelas, propuesta, PMO
 |
 +-- .cursor/commands/                     # Ver docs/commands-reference.md
 |   +-- lesson/                           # Comandos de aprendizaje

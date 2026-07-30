@@ -463,12 +463,14 @@ ai-agent-camp/
 │   └── aiagent/
 │       ├── course.yaml / .en.yaml / .es.yaml  # Course definition (multilingual)
 │       ├── cover.png                     # Course cover image
-│       ├── lesson01-foundation/          # Fundamentals (11 chapters)
-│       │   └── ch01 ~ ch11/             # LLM, Tokens, Agents, MCP, RAG, Security, etc.
+│       ├── lesson01-foundation/          # Fundamentals (24 chapters)
+│       │   └── ch00 ~ ch23/             # LLM, Tokens, Agents, MCP, RAG, Security, Observability, etc.
 │       ├── lesson02-setup/              # Environment setup (3 chapters)
 │       │   └── ch01 ~ ch03/             # Environment, Extensions, API setup
-│       └── lesson03-core/               # Core skills (26 available modules)
-│           └── module01 ~ module25, module29/ # Banner through slide-forge
+│       ├── lesson03-core/               # Core skills (26 available modules)
+│       │   └── module01 ~ module25, module29/ # Banner through slide-forge
+│       └── lesson04-practice/           # Practice exercises (4 chapters)
+│           └── ex01 ~ ex04/             # Diagram drill, parallel sessions, research deck, PMO ops
 │
 ├── .cursor/commands/                     # See docs/commands-reference.md
 │   ├── lesson/                          # Learning commands

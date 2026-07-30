@@ -4,7 +4,6 @@ order: 4
 name: "Ejercicios prácticos"
 description: "Consolida el uso de agentes de IA con ejercicios prácticos: diagramas, sesiones en paralelo, investigación a propuesta y operación periódica de PMO."
 estimatedMinutes: 120
-cover: "cover.png"
 prerequisites:
   - "lesson03-core"
 chapters:

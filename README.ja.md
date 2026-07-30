@@ -465,12 +465,14 @@ ai-agent-camp/
 │       ├── course.en.yaml              # コース全体定義（英語）
 │       ├── course.es.yaml              # コース全体定義（スペイン語）
 │       ├── cover.png                   # コースカバー画像
-│       ├── lesson01-foundation/        # 基礎知識（11 チャプター）
-│       │   └── ch01 ~ ch11/           # LLM, Token, Agent, MCP, RAG, Security 等
+│       ├── lesson01-foundation/        # 基礎知識（24 チャプター）
+│       │   └── ch00 ~ ch23/           # LLM, Token, Agent, MCP, RAG, Security, 計測 等
 │       ├── lesson02-setup/             # 環境構築（3 チャプター）
 │       │   └── ch01 ~ ch03/           # 環境, 拡張機能, API設定
-│       └── lesson03-core/              # コアスキル（提供中 26 モジュール）
-│           └── module01 ~ module25, module29/ # Banner ～ slide-forge
+│       ├── lesson03-core/              # コアスキル（提供中 26 モジュール）
+│       │   └── module01 ~ module25, module29/ # Banner ～ slide-forge
+│       └── lesson04-practice/          # 実践演習（4 チャプター）
+│           └── ex01 ~ ex04/           # 図解演習, 並列セッション, 提案デッキ, PMO定例
 │
 ├── 💻 .cursor/commands/                # docs/commands-reference.md を参照
 │   ├── lesson/                         # 学習用コマンド

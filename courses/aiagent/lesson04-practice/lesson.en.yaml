@@ -4,7 +4,6 @@ order: 4
 name: "Practice Exercises"
 description: "Solidify AI agent skills through practical exercises: diagramming, parallel sessions, research-to-proposal decks, and PMO recurring operations."
 estimatedMinutes: 120
-cover: "cover.png"
 prerequisites:
   - "lesson03-core"
 chapters:

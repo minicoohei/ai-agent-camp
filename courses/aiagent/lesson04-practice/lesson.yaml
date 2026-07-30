@@ -4,7 +4,6 @@ order: 4
 name: "実践演習（Practice）"
 description: "図解演習、並列セッション、調査から提案デッキ、PMO定例運用まで、実践的な演習でAIエージェント活用を定着させます。"
 estimatedMinutes: 120
-cover: "cover.png"
 prerequisites:
   - "lesson03-core"
 chapters:
