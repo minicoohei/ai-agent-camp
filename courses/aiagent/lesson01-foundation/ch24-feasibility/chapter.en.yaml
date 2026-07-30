@@ -1,0 +1,14 @@
+# Chapter 24: Feasibility Assessment
+id: "ch24-feasibility"
+order: 24
+name: "Feasibility Assessment"
+description: "Use a short three-step test to decide what AI can own and whether to implement it as a Command, Skill, or SubAgent."
+type: "manual"
+estimatedMinutes: 25
+objectives:
+  - "Separate work AI can own from work it cannot"
+  - "Judge feasibility quickly with a three-step test"
+  - "Choose between Command, Skill, and SubAgent for the implementation"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-16"
+  slides: "https://ai-agent.camp/en/course/foundation-16"

@@ -1,0 +1,14 @@
+# Chapter 24: Evaluación de viabilidad
+id: "ch24-feasibility"
+order: 24
+name: "Evaluación de viabilidad"
+description: "Usa una prueba breve de tres pasos para decidir qué delegar y si implementarlo como Command, Skill o SubAgent."
+type: "manual"
+estimatedMinutes: 25
+objectives:
+  - "Distinguir el trabajo que la IA puede asumir del que no"
+  - "Evaluar la viabilidad rápidamente con una prueba de tres pasos"
+  - "Elegir entre Command, Skill y SubAgent para la implementación"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-16"
+  slides: "https://ai-agent.camp/es/course/foundation-16"
