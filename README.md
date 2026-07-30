@@ -127,9 +127,9 @@ Democratize AI agents from "tools for specialists" to "tools everyone can use," 
 
 - **Comprehensive Curriculum**
   - AI Fundamentals (Foundation) - 26 chapters
-  - Environment Setup - 3 chapters
+  - Environment Setup - 6 chapters
   - 26 available core modules (Google Workspace, video production, requirements definition, marketing, and more)
-  - CursorBootcamp YAML metadata support (all chapters)
+  - CursorBootcamp YAML metadata support (62 chapters)
   - Total study time: approx. 24 hours (30+ hours including exercises)
 
 - **Security and Best Practices**
@@ -448,7 +448,7 @@ YAML metadata for the CursorBootcamp platform is stored in `courses/aiagent/`. S
 | **Lesson 01: Foundation** | 26 | LLM basics, Tokens, Agents, Context Engineering, MCP, Multimodal, RAG, SubAgents, Hallucination, Security, Observability, Feasibility |
 | **Lesson 02: Setup** | 6 | Environment setup, Extensions, API configuration, Security check, Remote environment, Knowledge base |
 | **Lesson 03: Core** | 26 | Banner through slide-forge (all core modules) |
-| **Lesson 04: Practice** | 4 | Diagram drill, parallel sessions, research-to-proposal deck, PMO operations |
+| **Lesson 04: Practice** | 4 | Diagram drill, parallel sessions, research-to-proposal deck, PMO operations (no `practice/` / `final/` directories) |
 
 62 chapters in total.
 
@@ -466,8 +466,8 @@ ai-agent-camp/
 │       ├── cover.png                     # Course cover image
 │       ├── lesson01-foundation/          # Fundamentals (26 chapters)
 │       │   └── ch00 ~ ch24/             # LLM, Tokens, Agents, MCP, RAG, Security, Observability, Feasibility, etc.
-│       ├── lesson02-setup/              # Environment setup (3 chapters)
-│       │   └── ch01 ~ ch03/             # Environment, Extensions, API setup
+│       ├── lesson02-setup/              # Environment setup (6 chapters)
+│       │   └── ch01 ~ ch06/             # Environment, Extensions, API setup, Security check, Remote env, Knowledge base
 │       ├── lesson03-core/               # Core skills (26 available modules)
 │       │   └── module01 ~ module25, module29/ # Banner through slide-forge
 │       └── lesson04-practice/           # Practice exercises (4 chapters)

@@ -127,9 +127,9 @@ Democratizar los agentes de IA, transformandolos de "herramientas para especiali
 
 - **Curriculo integral**
   - Fundamentos de IA (Foundation): 26 capitulos
-  - Configuracion del entorno (Setup): 3 capitulos
+  - Configuracion del entorno (Setup): 6 capitulos
   - 26 modulos principales disponibles (incluyendo Google Workspace, produccion de video, definicion de requisitos, marketing, etc.)
-  - Metadatos YAML compatibles con CursorBootcamp (25 capitulos en total)
+  - Metadatos YAML compatibles con CursorBootcamp (62 capitulos en total)
   - Tiempo total de aprendizaje: aprox. 24 horas (mas de 30 horas con ejercicios)
 
 - **Seguridad y mejores practicas**
@@ -448,7 +448,7 @@ En `courses/aiagent/` se encuentran los metadatos YAML para la plataforma Cursor
 | **Lesson 01: Foundation** | 26 | Fundamentos de LLM, Token, Agent, Context Engineering, MCP, Multimodal, RAG, SubAgent, Alucinacion, Seguridad, Medicion, Viabilidad |
 | **Lesson 02: Setup** | 6 | Configuracion del entorno, extensiones, configuracion de API, verificacion de seguridad, entorno remoto, base de conocimiento |
 | **Lesson 03: Core** | 26 | Banner a slide-forge (todos los modulos principales) |
-| **Lesson 04: Practice** | 4 | Diagramas, sesiones en paralelo, de la investigacion a la propuesta, operacion de PMO |
+| **Lesson 04: Practice** | 4 | Diagramas, sesiones en paralelo, de la investigacion a la propuesta, operacion de PMO (sin directorios `practice/` / `final/`) |
 
 Total: **62 capitulos**.
 
@@ -468,8 +468,8 @@ ai-agent-camp/
 |       +-- cover.png                     # Imagen de portada del curso
 |       +-- lesson01-foundation/          # Fundamentos (26 capitulos)
 |       |   +-- ch00 ~ ch24/             # LLM, Token, Agent, MCP, RAG, Seguridad, medicion, viabilidad, etc.
-|       +-- lesson02-setup/              # Configuracion del entorno (3 capitulos)
-|       |   +-- ch01 ~ ch03/             # Entorno, extensiones, configuracion de API
+|       +-- lesson02-setup/              # Configuracion del entorno (6 capitulos)
+|       |   +-- ch01 ~ ch06/             # Entorno, extensiones, API, seguridad, entorno remoto, base de conocimiento
 |       +-- lesson03-core/               # Habilidades principales (26 modulos disponibles)
 |       |   +-- module01 ~ module25, module29/ # Banner a slide-forge
 |       +-- lesson04-practice/           # Ejercicios practicos (4 capitulos)

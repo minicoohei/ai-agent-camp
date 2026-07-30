@@ -127,9 +127,9 @@ AIエージェントを「専門家向けのツール」から「すべての職
 
 📚 **包括的なカリキュラム**
 - AI基礎（Foundation）26チャプター
-- 環境セットアップ（Setup）3チャプター
+- 環境セットアップ（Setup）6チャプター
 - 提供中の26個のコアモジュール（Google Workspace・動画制作・要件定義・マーケティング等を含む）
-- CursorBootcamp YAML メタデータ対応（全25チャプター）
+- CursorBootcamp YAML メタデータ対応（全62チャプター）
 - 総学習時間：約24時間（演習込みで約30時間以上）
 
 🔒 **セキュリティとベストプラクティス**
@@ -448,7 +448,7 @@ Module 1 → Module 17 → Module 13 → Module 15 → Module 14 → Module 16
 | **Lesson 01: Foundation** | 26 | LLM基礎、Token、Agent、Context Engineering、MCP、マルチモーダル、RAG、SubAgent、ハルシネーション、セキュリティ、計測、実現可能性 |
 | **Lesson 02: Setup** | 6 | 環境構築、拡張機能、API設定、セキュリティ確認、リモート環境、ナレッジベース |
 | **Lesson 03: Core** | 26 | Banner ～ slide-forge（全コアモジュール対応） |
-| **Lesson 04: Practice** | 4 | 図解演習、並列セッション、調査→提案デッキ、PMO定例運用 |
+| **Lesson 04: Practice** | 4 | 図解演習、並列セッション、調査→提案デッキ、PMO定例運用（`practice/` / `final/` ディレクトリなし） |
 
 合計 **62 チャプター**。
 
@@ -468,8 +468,8 @@ ai-agent-camp/
 │       ├── cover.png                   # コースカバー画像
 │       ├── lesson01-foundation/        # 基礎知識（26 チャプター）
 │       │   └── ch00 ~ ch24/           # LLM, Token, Agent, MCP, RAG, Security, 計測, 実現可能性 等
-│       ├── lesson02-setup/             # 環境構築（3 チャプター）
-│       │   └── ch01 ~ ch03/           # 環境, 拡張機能, API設定
+│       ├── lesson02-setup/             # 環境構築（6 チャプター）
+│       │   └── ch01 ~ ch06/           # 環境, 拡張機能, API設定, セキュリティ確認, リモート環境, ナレッジベース
 │       ├── lesson03-core/              # コアスキル（提供中 26 モジュール）
 │       │   └── module01 ~ module25, module29/ # Banner ～ slide-forge
 │       └── lesson04-practice/          # 実践演習（4 チャプター）
