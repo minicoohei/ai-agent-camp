@@ -1,0 +1,14 @@
+# Chapter 2: 演習② 複数セッションを同時に動かす
+id: "ex02-parallel-sessions"
+order: 2
+name: "演習② 複数セッションを同時に動かす"
+description: "独立したタスクを選択ツールの複数セッションで並列実行し、待ち時間と編集衝突を管理する"
+type: "manual"
+estimatedMinutes: 15
+objectives:
+  - "複数セッションで独立タスクを並列実行できる"
+  - "待ち時間を管理できる"
+  - "編集衝突を管理できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/lesson-2"
+  slides: "https://ai-agent.camp/ja/course/lesson-2"

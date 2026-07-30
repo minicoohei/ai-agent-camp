@@ -1,0 +1,14 @@
+# Chapter 1: 演習① 丸投げ/質問/計画/ultracode で図を作る
+id: "ex01-diagram-exercise"
+order: 1
+name: "演習① 丸投げ/質問/計画/ultracode で図を作る"
+description: "同じお題の業務フロー図を4通りで作り、計画とultracodeの効果が 8→15→16→20 と積み上がるのを体感する"
+type: "manual"
+estimatedMinutes: 20
+objectives:
+  - "丸投げ/質問/計画/ultracodeの4通りで図を作れる"
+  - "計画とultracodeの効果の差を体感できる"
+  - "同じお題で品質の積み上がりを比較できる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/lesson-1"
+  slides: "https://ai-agent.camp/ja/course/lesson-1"

@@ -1,0 +1,14 @@
+# Capítulo 23: Medición de agentes de IA
+id: "ch23-observability"
+order: 23
+name: "Medición de agentes de IA"
+description: "Lee registros y trazas, y usa OpenTelemetry para medir automáticamente y mejorar."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Leer registros y trazas de sesión"
+  - "Medir automáticamente con OpenTelemetry"
+  - "Usar las mediciones para mejorar"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-15"
+  slides: "https://ai-agent.camp/es/course/foundation-15"

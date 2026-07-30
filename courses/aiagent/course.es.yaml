@@ -6,7 +6,7 @@ icon: "bot"
 version: "1.4.0"
 author: "AI Brain Partners"
 audience: "No ingenieros (marketing, ventas, planificación, etc.)"
-estimatedHours: 12
+estimatedHours: 36
 cover: "cover.png"
 prerequisites:
   - "Operaciones básicas de PC"
@@ -20,4 +20,4 @@ tags:
   - "Automatización empresarial"
   - "Eficiencia"
 language: "es"
-lastUpdated: "2026-07-06"
+lastUpdated: "2026-07-29"

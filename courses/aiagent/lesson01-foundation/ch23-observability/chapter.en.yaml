@@ -1,0 +1,14 @@
+# Chapter 23: Measuring AI Agents
+id: "ch23-observability"
+order: 23
+name: "Measuring AI Agents"
+description: "Read session logs and traces, then use OpenTelemetry to measure automatically and drive improvements."
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "Read session logs and traces"
+  - "Measure automatically with OpenTelemetry"
+  - "Use measurements to drive improvements"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/foundation-15"
+  slides: "https://ai-agent.camp/en/course/foundation-15"

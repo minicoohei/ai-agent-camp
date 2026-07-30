@@ -1,0 +1,14 @@
+# Chapter 3: Lesson 3 調査→検証→提案デッキ
+id: "ex03-research-deck"
+order: 3
+name: "Lesson 3 調査→検証→提案デッキ"
+description: "一次情報の調査からSemantic INDEX、WBS、提案デッキ、Judge結果までを再現可能な流れで作る"
+type: "manual"
+estimatedMinutes: 45
+objectives:
+  - "一次情報の調査から提案デッキまで作れる"
+  - "Semantic INDEXとWBSを再現可能な流れで作れる"
+  - "Judge結果まで含められる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/lesson-3"
+  slides: "https://ai-agent.camp/ja/course/lesson-3"

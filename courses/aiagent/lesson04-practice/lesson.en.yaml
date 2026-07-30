@@ -1,0 +1,20 @@
+# Lesson 4: Practice Exercises
+id: "lesson04-practice"
+order: 4
+name: "Practice Exercises"
+description: "Solidify AI agent skills through practical exercises: diagramming, parallel sessions, research-to-proposal decks, and PMO recurring operations."
+estimatedMinutes: 120
+cover: "cover.png"
+prerequisites:
+  - "lesson03-core"
+chapters:
+  - "ex01-diagram-exercise"
+  - "ex02-parallel-sessions"
+  - "ex03-research-deck"
+  - "ex04-pmo-ops"
+objectives:
+  - "Build a diagram four ways: blind, ask, plan, and ultracode"
+  - "Run independent tasks in parallel across multiple sessions"
+  - "Build from primary research to a proposal deck"
+  - "Combine Commands, Skills, and SubAgents"
+  - "Produce verifiable weekly reports and three-view QA"

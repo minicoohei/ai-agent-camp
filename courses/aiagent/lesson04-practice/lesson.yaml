@@ -1,0 +1,20 @@
+# Lesson 4: 実践演習（Practice）
+id: "lesson04-practice"
+order: 4
+name: "実践演習（Practice）"
+description: "図解演習、並列セッション、調査から提案デッキ、PMO定例運用まで、実践的な演習でAIエージェント活用を定着させます。"
+estimatedMinutes: 120
+cover: "cover.png"
+prerequisites:
+  - "lesson03-core"
+chapters:
+  - "ex01-diagram-exercise"
+  - "ex02-parallel-sessions"
+  - "ex03-research-deck"
+  - "ex04-pmo-ops"
+objectives:
+  - "丸投げ/質問/計画/ultracodeの4通りで図を作れる"
+  - "複数セッションで独立タスクを並列実行できる"
+  - "一次情報の調査から提案デッキまで作れる"
+  - "Command・Skill・SubAgentを組み合わせられる"
+  - "検証可能な週次報告と3視点QAを作れる"

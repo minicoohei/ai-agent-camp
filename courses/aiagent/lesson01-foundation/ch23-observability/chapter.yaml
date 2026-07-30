@@ -1,0 +1,14 @@
+# Chapter 23: AIエージェントの計測
+id: "ch23-observability"
+order: 23
+name: "AIエージェントの計測"
+description: "セッションログとトレースを読み、OpenTelemetryで自動計測して改善につなげます"
+type: "manual"
+estimatedMinutes: 60
+objectives:
+  - "セッションログとトレースを読める"
+  - "OpenTelemetryで自動計測できる"
+  - "計測結果を改善につなげられる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-15"
+  slides: "https://ai-agent.camp/ja/course/foundation-15"
