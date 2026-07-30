@@ -343,7 +343,7 @@ Reglas basicas para participantes:
 
 ### Fase 1: Foundation (Fundamentos de IA) - 5 horas
 
-Aprende los conceptos basicos de los agentes de IA. Comprension amplia en 26 capitulos.
+Aprende los conceptos basicos de los agentes de IA. La ruta siguiente cubre los primeros 11 capitulos (unas 5 horas); la leccion Foundation tiene 26 capitulos en total.
 
 | Capitulo | Contenido | Tiempo |
 |----------|-----------|--------|
@@ -441,7 +441,7 @@ Module 1 -> Module 17 -> Module 13 -> Module 15 -> Module 14 -> Module 16
 
 ### Metadatos YAML de CursorBootcamp
 
-En `courses/aiagent/` se encuentran los metadatos YAML para la plataforma CursorBootcamp. Cada capitulo incluye `practice/` (ejercicios) y `final/` (tarea final).
+En `courses/aiagent/` se encuentran los metadatos YAML para la plataforma CursorBootcamp. Algunos capitulos incluyen `practice/` (ejercicios) y `final/` (tarea final); los que enlazan a los materiales web no los tienen.
 
 | Leccion | Capitulos | Contenido |
 |---------|-----------|-----------|

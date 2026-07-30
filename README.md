@@ -343,7 +343,7 @@ Basic rules for learners:
 
 ### Phase 1: Foundation (AI Fundamentals) - 5 hours
 
-Learn the basics of AI agents across 26 chapters.
+Learn the basics of AI agents. The path below covers the first 11 chapters (about 5 hours); the Foundation lesson contains 26 chapters in total.
 
 | Chapter | Content | Study Time |
 |---------|---------|------------|
@@ -441,7 +441,7 @@ Module 1 → Module 17 → Module 13 → Module 15 → Module 14 → Module 16
 
 ### CursorBootcamp YAML Metadata
 
-YAML metadata for the CursorBootcamp platform is stored in `courses/aiagent/`. Each chapter includes `practice/` (exercises) and `final/` (final assignments).
+YAML metadata for the CursorBootcamp platform is stored in `courses/aiagent/`. Some chapters include `practice/` (exercises) and `final/` (final assignments); chapters that link out to the web materials do not.
 
 | Lesson | Chapters | Content |
 |--------|----------|---------|
