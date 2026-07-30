@@ -2,7 +2,7 @@
 id: "module23-line"
 order: 23
 name: "Operación de LINE Official Account"
-description: "Aprende a construir y operar una LINE Official Account totalmente controlada por tu organización con Cloudflare Worker y la LINE Messaging API."
+description: "Construye y opera una LINE Official Account totalmente controlada por tu organización con Cloudflare Worker y la LINE Messaging API. Incluye webhooks, mensajería, atención de consultas, notificaciones y entregas por escenario, además de integración con CRM y Slack, definiendo precisión de respuestas, tratamiento de datos personales, opt-in, frecuencia de envío y escalado para automatizar de forma segura un punto de contacto directo con clientes."
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
@@ -15,3 +15,5 @@ objectives:
 externalContent:
   manual: "https://ai-agent.camp/es/course/module-23?slideId=module-overview"
   slides: "https://ai-agent.camp/es/course/module-23?slideId=module-overview"
+prerequisites:
+  - "module17-marketing"

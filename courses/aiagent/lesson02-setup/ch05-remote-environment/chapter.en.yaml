@@ -1,0 +1,18 @@
+# Chapter 5: Remote Environment Setup
+id: "ch05-remote-environment"
+order: 5
+name: "Remote Environment Setup"
+description: "An advanced section for building a learning and working environment not solely dependent on a local PC, using multiple devices, Dispatch, Cursor Web Agent, and similar tools. This chapter organizes the premise of using the same training workspace from multiple devices, authentication, permissions, and secret management when delegating work to cloud or remote agents, and key points for checking environment variables and dependencies that tend to differ between local and remote environments. While marked as coming soon in screenshots, this is directly relevant to team work, low-spec PC supplementation, and continuing learning while away from your main machine."
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-0"
+prerequisites:
+  - "ch04-security-check"
+objectives:
+  - "Explain the purpose and applicable scenarios for using remote execution environments"
+  - "Understand the precautions when using the training workspace from multiple devices"
+  - "Understand authentication, permissions, and secret management perspectives in remote environments"
+  - "Understand why checking environment differences between local and remote is necessary"

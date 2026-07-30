@@ -1,0 +1,14 @@
+# Chapter 4: Lesson 4 PMO定例運用
+id: "ex04-pmo-ops"
+order: 4
+name: "Lesson 4 PMO定例運用"
+description: "Command・Skill・SubAgentを組み合わせ、検証可能な週次報告と3視点QAを作る"
+type: "manual"
+estimatedMinutes: 40
+objectives:
+  - "Command・Skill・SubAgentを組み合わせられる"
+  - "検証可能な週次報告を作れる"
+  - "3視点QAを作れる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/lesson-4"
+  slides: "https://ai-agent.camp/ja/course/lesson-4"

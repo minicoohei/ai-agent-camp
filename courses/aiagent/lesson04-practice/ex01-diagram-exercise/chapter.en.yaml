@@ -1,0 +1,14 @@
+# Chapter 1: Exercise 1: Build a diagram four ways (blind / ask / plan / ultracode)
+id: "ex01-diagram-exercise"
+order: 1
+name: "Exercise 1: Build a diagram four ways (blind / ask / plan / ultracode)"
+description: "Build the same workflow diagram four ways and feel the quality climb 8 → 15 → 16 → 20 as you stack asking, planning, and ultracode."
+type: "manual"
+estimatedMinutes: 20
+objectives:
+  - "Build a diagram four ways: blind, ask, plan, and ultracode"
+  - "Feel the quality difference from planning and ultracode"
+  - "Compare quality gains on the same task"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/lesson-1"
+  slides: "https://ai-agent.camp/en/course/lesson-1"

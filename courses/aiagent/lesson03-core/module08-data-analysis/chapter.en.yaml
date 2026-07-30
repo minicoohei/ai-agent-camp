@@ -2,7 +2,7 @@
 id: "module08-data-analysis"
 order: 8
 name: "Data Analysis"
-description: "Connect to BigQuery/Snowflake and perform data analysis."
+description: "Learn how to drive data analysis and visualization with AI agents. The course covers data platforms like BigQuery and Snowflake, exploratory data analysis, aggregation, visualization, natural-language analysis requests, reporting, and Marimo interactive notebooks — enabling you to go from raw data to business-ready insights through AI-assisted analysis."
 type: "manual"
 estimatedMinutes: 120
 objectives:

@@ -465,12 +465,14 @@ ai-agent-camp/
 │       ├── course.en.yaml              # コース全体定義（英語）
 │       ├── course.es.yaml              # コース全体定義（スペイン語）
 │       ├── cover.png                   # コースカバー画像
-│       ├── lesson01-foundation/        # 基礎知識（11 チャプター）
-│       │   └── ch01 ~ ch11/           # LLM, Token, Agent, MCP, RAG, Security 等
+│       ├── lesson01-foundation/        # 基礎知識（24 チャプター）
+│       │   └── ch00 ~ ch23/           # LLM, Token, Agent, MCP, RAG, Security, 計測 等
 │       ├── lesson02-setup/             # 環境構築（3 チャプター）
 │       │   └── ch01 ~ ch03/           # 環境, 拡張機能, API設定
-│       └── lesson03-core/              # コアスキル（提供中 26 モジュール）
-│           └── module01 ~ module25, module29/ # Banner ～ slide-forge
+│       ├── lesson03-core/              # コアスキル（提供中 26 モジュール）
+│       │   └── module01 ~ module25, module29/ # Banner ～ slide-forge
+│       └── lesson04-practice/          # 実践演習（4 チャプター）
+│           └── ex01 ~ ex04/           # 図解演習, 並列セッション, 提案デッキ, PMO定例
 │
 ├── 💻 .cursor/commands/                # docs/commands-reference.md を参照
 │   ├── lesson/                         # 学習用コマンド
@@ -752,7 +754,7 @@ ai-agent-camp/
 | **Google OAuth** | Google アカウント連携 | [Google Cloud Console](https://console.cloud.google.com/) | Gmail、Calendar、Drive 操作 | 4, 10 |
 | **BigQuery** | Google の SQL データウェアハウス | [Google Cloud Console](https://console.cloud.google.com/) | 大規模データ分析 | 8 |
 | **Slack API** | Slack ワークスペース連携 | [Slack App Directory](https://api.slack.com/apps) | メッセージ取得、自動返信 | 9 |
-| **Notion API** | Notion ワークスペース連携 | [Notion Integrations](https://www.notion.so/my-integrations) | データベース操作 | 12 |
+| **Notion (OAuth)** | Notion ワークスペース連携 | `ncli login`（ブラウザ OAuth）+ Notion 公式 Hosted MCP（`https://mcp.notion.com/mcp`） | データベース操作 | 12 |
 
 ### オプション（Module 15 で推奨）
 

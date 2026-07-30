@@ -3,7 +3,7 @@ id: "lesson01-foundation"
 order: 1
 name: "Foundation Knowledge"
 description: "Learn the foundational knowledge for using AI agents effectively. Covers LLM principles, tokens, agents, MCP, multimodal AI, RAG, and security."
-estimatedMinutes: 640
+estimatedMinutes: 700
 cover: "cover.png"
 chapters:
   - "ch00-intro"
@@ -20,6 +20,7 @@ chapters:
   - "ch11-security"
   - "ch12-extended-thinking"
   - "ch13-hooks-guardrail"
+  - "ch14-tool-basics"
   - "ch14-git-basics"
   - "ch15-git-safety"
   - "ch16-terminal-basics"
@@ -29,6 +30,7 @@ chapters:
   - "ch20-loop"
   - "ch21-mcp-m365"
   - "ch22-folder-structure"
+  - "ch23-observability"
 objectives:
   - "Understand the overall training structure and learning path"
   - "Understand how LLMs (Large Language Models) work"
@@ -44,6 +46,7 @@ objectives:
   - "Understand fundamental AI security principles"
   - "Understand how Extended Thinking works"
   - "Understand safety design with Hooks/Guardrails"
+  - "Build safe operation habits for Cursor, Claude Code, and Codex"
   - "Master basic Git operations and safe practices"
   - "Master basic terminal operations"
   - "Understand token saving and cost management in Claude Code"
@@ -52,3 +55,4 @@ objectives:
   - "Understand scheduled and self-paced execution with /loop"
   - "Understand how MCP connects to external tools such as Microsoft 365"
   - "Organize folders and prompts so AI can find materials"
+  - "Read session logs and traces, and measure with OpenTelemetry to drive improvements"

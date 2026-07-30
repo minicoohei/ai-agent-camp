@@ -1,0 +1,14 @@
+# Capítulo 4: Lección 4 Operación periódica de PMO
+id: "ex04-pmo-ops"
+order: 4
+name: "Lección 4 Operación periódica de PMO"
+description: "Combina Commands, Skills y SubAgents para crear informes verificables y QA de tres perspectivas."
+type: "manual"
+estimatedMinutes: 40
+objectives:
+  - "Combinar Commands, Skills y SubAgents"
+  - "Crear informes semanales verificables"
+  - "Crear QA de tres perspectivas"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/lesson-4"
+  slides: "https://ai-agent.camp/es/course/lesson-4"

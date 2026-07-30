@@ -2,7 +2,7 @@
 id: "module20-freee-mf"
 order: 20
 name: "Integración con Freee / MoneyForward"
-description: "Aprende la base de las integraciones con SaaS contables: autenticación, revisión de transacciones y operaciones básicas con cuentas e invoices."
+description: "Módulo próximamente disponible que usa el servidor MCP de Freee e integraciones de servicios contables para apoyar facturación, gastos, asientos contables y revisión de datos contables a través de agentes de IA. El contenido esperado incluye recuperación de datos contables, revisión mensual, organización de facturas y transacciones."
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"

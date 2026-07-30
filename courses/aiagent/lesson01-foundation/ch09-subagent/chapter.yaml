@@ -2,7 +2,7 @@
 id: "ch09-subagent"
 order: 9
 name: "Skill / SubAgent"
-description: "AIエージェントの能力を拡張し、チームとして協調させる技術"
+description: "スキル、サブエージェント、エージェントチーム構成を学びます。教材では、Skill が手順書、テンプレート、制約、出力形式をまとめてAIの能力を拡張する仕組み、SubAgent が専門タスクを分担する仕組み、複数エージェントをチームとして協調させる考え方を扱います。タスクに必要な知識を毎回長いプロンプトで渡すのではなく、再利用可能な知識基盤として整理し、必要な専門性だけを呼び出す設計を理解します。"
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

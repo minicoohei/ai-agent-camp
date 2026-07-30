@@ -2,7 +2,7 @@
 id: "ch15-git-safety"
 order: 15
 name: "Seguridad en Git"
-description: "Comprende las operaciones peligrosas de Git y aprende prácticas seguras de control de versiones."
+description: "Aprende las operaciones peligrosas de Git y cómo manejarlas de forma segura. El contenido cubre operaciones que pueden perder trabajo no guardado o historial compartido si se usan incorrectamente — reset, rebase, checkout, clean y force push — junto con hábitos protectores: verificar antes de operaciones destructivas, usar ramas y revisar commits generados por IA antes de enviarlos."
 type: "manual"
 estimatedMinutes: 20
 thumbnail: "thumbnail.png"

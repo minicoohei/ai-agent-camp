@@ -2,7 +2,7 @@
 id: "ch14-git-basics"
 order: 14
 name: "Git Basics"
-description: "Learn the fundamentals of version control and how to use Git/GitHub."
+description: "Learn the basic concepts of version control. The course treats Git as save points for code and file changes, covering working tree, staging, commits, branches, history review, diff inspection, and GitHub integration. Build the foundation for understanding what AI agents do when they create commits, branches, or push changes on your behalf."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

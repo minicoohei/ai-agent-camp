@@ -11,3 +11,5 @@ objectives:
   - "Gemini APIキーを取得できる"
   - "各種APIキーを設定できる"
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-0?slideId=api-setup-steps"

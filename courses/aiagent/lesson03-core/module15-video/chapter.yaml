@@ -2,7 +2,7 @@
 id: "module15-video"
 order: 15
 name: "動画生成"
-description: "Remotionローカルレンダリングから有料AIエンジンまで、段階的に動画制作を学びます。"
+description: "動画生成AIと Remotion を組み合わせ、スライド解説、MV風動画、絵コンテアニメ、プロダクト紹介、ブランディング動画を作る方法を学びます。教材では、fal.ai、Kling、Veo、Remotion、FFmpeg、キーフレーム抽出、絵コンテ、A-roll / B-roll 戦略、API従量課金とローカル生成の使い分けを扱います。動画をすべて生成AI任せにするのではなく、企画、素材、シーン構成、コスト、編集、書き出しを分けて制御する実務的な章です。"
 type: "manual"
 estimatedMinutes: 120
 objectives:

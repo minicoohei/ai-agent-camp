@@ -2,7 +2,7 @@
 id: "module16-email-automation"
 order: 16
 name: "Email Automation & Marketing"
-description: "Learn the full workflow from inbound email analysis and reply management to outbound automation and marketing delivery."
+description: "Learn inbound email analysis and outbound/marketing automation. The course covers gogcli-based email receipt and analysis, check-inbox, Resend-based sending, SMTP, MX, DNS, SPF, DKIM, DMARC configuration, drip campaign design, Typefully for X automation, and GitHub Actions-based scheduling — enabling end-to-end email workflow automation from receipt to structured marketing delivery."
 type: "manual"
 estimatedMinutes: 180
 thumbnail: "thumbnail.png"

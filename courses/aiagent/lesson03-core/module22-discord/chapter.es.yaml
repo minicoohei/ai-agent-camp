@@ -1,8 +1,8 @@
-# Capitulo 22: Integracion con Discord
+# Capítulo 22: Integración con Discord
 id: "module22-discord"
 order: 22
-name: "Integracion con Discord"
-description: "Construye Bots de Discord y aprende automatizacion de mensajes"
+name: "Integración con Discord"
+description: "Construye Bots de Discord y automatiza mensajes con el plugin oficial discord de Claude Code y Channels. Incluye creación de Bots, publicaciones y lectura de canales, notificaciones, respuestas de FAQ, moderación e integraciones externas, con énfasis en permisos, pairing, allowlists, información personal y procedimientos de detención ante respuestas erróneas en comunidades o puntos de contacto con clientes."
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
@@ -15,3 +15,5 @@ objectives:
 externalContent:
   manual: "https://ai-agent.camp/es/course/module-22?slideId=module-overview"
   slides: "https://ai-agent.camp/es/course/module-22?slideId=module-overview"
+prerequisites:
+  - "module09-slack"

@@ -2,7 +2,7 @@
 id: "ch02-extensions"
 order: 2
 name: "Extensions"
-description: "Install and configure the necessary extensions."
+description: "Configure the extensions, official plugins, and external API keys required for learning. Extensions include essential tools like Git Graph, GitLens, Python, Pylance, and Prettier, plus REST Client and language-specific helpers. This chapter also covers where to obtain API keys for Gemini, Anthropic, Slack, and other services used throughout the course."
 type: "manual"
 estimatedMinutes: 15
 prerequisites:
@@ -11,3 +11,5 @@ objectives:
   - "Install recommended extensions"
   - "Complete extension configuration"
 thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/module-0?slideId=extensions-overview"

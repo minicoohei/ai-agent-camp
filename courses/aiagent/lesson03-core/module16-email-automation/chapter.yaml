@@ -2,7 +2,7 @@
 id: "module16-email-automation"
 order: 16
 name: "メール自動化 & マーケティング"
-description: "受信メールの分析、返信方針の整理、送信メールの自動化、マーケティング配信の基礎までを一気通貫で学びます。"
+description: "メール受信分析と送信・マーケティング自動化を学びます。教材では、gogcliによるメール受信・分析、check-inbox、Resendによるメール送信、SMTP、MX、DNS、SPF、DKIM、DMARC、到達率、シーケンス、トランザクションメールとマーケティングメールの違いを扱います。メールをただ送るだけでなく、なりすまし防止、到達率、テンプレート、配信フロー、受信箱の分析までを含む業務自動化として設計します。"
 type: "manual"
 estimatedMinutes: 180
 thumbnail: "thumbnail.png"

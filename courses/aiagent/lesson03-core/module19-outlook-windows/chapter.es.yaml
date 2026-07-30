@@ -2,7 +2,7 @@
 id: "module19-outlook-windows"
 order: 19
 name: "Outlook para Windows"
-description: "Aprende los conceptos básicos de Outlook para Windows: vistas, búsqueda, carpetas, reglas y cuándo pasar a la automatización con Microsoft 365 CLI."
+description: "Módulo próximamente disponible sobre organización de Outlook para Windows, reglas y separación de roles con Microsoft 365 CLI. El contenido esperado incluye organización de correo en Outlook de escritorio, diseño de carpetas y reglas, gestión de categorías, integración de calendario y elección entre operaciones de UI de Outlook y automatización CLI."
 type: "manual"
 estimatedMinutes: 70
 thumbnail: "thumbnail.png"

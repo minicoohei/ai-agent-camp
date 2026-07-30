@@ -2,7 +2,7 @@
 id: "module02-diagram"
 order: 2
 name: "Creación de Diagramas y Flujos"
-description: "Genera automáticamente diagramas y diagramas de flujo a partir de texto."
+description: "Aprende a crear diagramas de flujo de negocio, organigramas, diagramas de arquitectura de sistemas, diagramas de secuencia y árboles de decisión usando la habilidad diagram-generator. El contenido cubre Mermaid, PlantUML, formatos compatibles con Draw.io, y cómo traducir procesos de negocio complejos en diagramas visuales claros."
 type: "manual"
 estimatedMinutes: 60
 objectives:

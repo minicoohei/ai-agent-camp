@@ -2,7 +2,7 @@
 id: "ch07-multimodal"
 order: 7
 name: "IA Multimodal"
-description: "Comprende cómo la IA integra imágenes, texto y audio."
+description: "Aprende los fundamentos de los modelos de IA que manejan imágenes y audio. El contenido cubre la IA multimodal y las arquitecturas VLM que procesan no solo texto sino también imágenes, capturas de pantalla, diagramas, documentos y audio; arquitectura de tres capas; precisión del análisis de imágenes y sus límites."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

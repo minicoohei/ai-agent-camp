@@ -1,0 +1,16 @@
+# Capítulo 14: Operación Básica de Herramientas
+id: "ch14-tool-basics"
+order: 14
+name: "Operación Básica de Herramientas"
+description: "Aprende las operaciones básicas de la herramienta de codificación con IA que hayas elegido. Cubre los puntos de entrada, diseño de interfaz, cómo hacer solicitudes por chat o terminal, edición de archivos, flujos de aprobación, verificación del trabajo y configuración de seguridad para Cursor, Claude Code y Codex. Independientemente de la herramienta, lo clave es comunicar claramente el objetivo y las restricciones a la IA, revisar los diffs, detenerse antes de operaciones peligrosas y verificar con revisiones o pruebas cuando sea necesario."
+type: "manual"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/foundation-5"
+prerequisites:
+  - "ch13-hooks-guardrail"
+objectives:
+  - "Comprender el flujo de trabajo básico de Cursor, Claude Code y Codex"
+  - "Explicar el flujo de solicitudes de IA, revisión de diffs, aprobación y verificación"
+  - "Desarrollar hábitos de operación segura adecuados a la herramienta elegida"

@@ -2,7 +2,7 @@
 id: "module24-salesforce"
 order: 24
 name: "Integración con Salesforce CLI"
-description: "Instala sf CLI e inicia sesión en el navegador. Consulta con SOQL y haz updates masivos por CSV, todo desde la terminal con tu agente IA."
+description: "Usa sf CLI y el inicio de sesión en navegador para obtener Leads, Cuentas, Oportunidades e historial de actividades con SOQL, actualizar datos masivamente por CSV y gestionar metadatos desde la terminal con un agente de IA. Como el CRM concentra datos de clientes y decisiones comerciales, también define el alcance delegado, aprobaciones previas, registros de auditoría, detección de duplicados o errores e integración con automatización de marketing y correo."
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
@@ -15,3 +15,5 @@ objectives:
 externalContent:
   manual: "https://ai-agent.camp/es/course/module-24?slideId=module-overview"
   slides: "https://ai-agent.camp/es/course/module-24?slideId=module-overview"
+prerequisites:
+  - "module17-marketing"

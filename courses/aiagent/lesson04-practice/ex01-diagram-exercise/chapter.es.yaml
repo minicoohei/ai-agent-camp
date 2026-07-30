@@ -1,0 +1,14 @@
+# Capítulo 1: Ejercicio 1: crea un diagrama de cuatro maneras (a ciegas / preguntando / planificando / ultracode)
+id: "ex01-diagram-exercise"
+order: 1
+name: "Ejercicio 1: crea un diagrama de cuatro maneras (a ciegas / preguntando / planificando / ultracode)"
+description: "Crea el mismo diagrama de flujo de cuatro maneras y siente cómo la calidad sube 8 → 15 → 16 → 20 al sumar preguntar, planificar y ultracode."
+type: "manual"
+estimatedMinutes: 20
+objectives:
+  - "Crear un diagrama de cuatro maneras: a ciegas, preguntando, planificando y ultracode"
+  - "Sentir la diferencia de calidad al planificar y usar ultracode"
+  - "Comparar las mejoras de calidad en la misma tarea"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/lesson-1"
+  slides: "https://ai-agent.camp/es/course/lesson-1"

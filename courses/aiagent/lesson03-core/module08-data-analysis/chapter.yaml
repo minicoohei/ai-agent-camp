@@ -2,7 +2,7 @@
 id: "module08-data-analysis"
 order: 8
 name: "データ分析"
-description: "BigQuery/Snowflakeに接続してデータ分析を行います。"
+description: "データの分析と可視化をAIエージェントで進める方法を学びます。教材では、BigQueryやSnowflakeなどのデータ基盤、探索的データ分析、集計、可視化、自然言語での分析依頼、分析結果のレポート化を扱います。データの所在、カラム意味、集計条件、検証方法をAIに明確に伝え、数値の読み間違いや権限・個人情報の取り扱いに注意しながら、意思決定に使える分析アウトプットを作る章です。"
 type: "manual"
 estimatedMinutes: 120
 objectives:

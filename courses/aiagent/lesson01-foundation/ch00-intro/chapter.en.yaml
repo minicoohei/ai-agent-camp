@@ -2,7 +2,7 @@
 id: "ch00-intro"
 order: 0
 name: "Learning Path"
-description: "Get an overview of the AI agent training and how to proceed."
+description: "Review the overall learning path and goals of the AI Fundamentals section. This chapter maps how LLM mechanics, tokens, context, RAG, AI agents, Skill/SubAgent, security, MCP, Git, and terminal basics interconnect for safe, practical AI agent use in real work. Rather than memorizing terms, build a learning map for what to judge, what to verify, and which operations to handle with care before delegating to AI."
 type: "manual"
 estimatedMinutes: 10
 thumbnail: "thumbnail.png"

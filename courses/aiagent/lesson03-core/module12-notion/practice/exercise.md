@@ -9,10 +9,12 @@ Notion API を使ったデータベース操作とページ管理を学びます
 ## 前提条件
 
 - Notion アカウントがあること
-- Notion Integration が作成済み（Internal Integration）
-- Integration の API キー（`NOTION_API_KEY`）が取得済み
-- 連携先のワークスペースで Integration が接続済み
-- Python 3.8+ と `requests` パッケージ
+- `/setup-notion` 完了済み（**OAuth 統一**: ncli login と Notion Hosted MCP のセットアップ）
+- `ncli whoami` でログインユーザーが表示できる
+- ターゲットのワークスペースで OAuth 承認済み（ワークスペース全体に権限付与）
+- Python 3.9+ と `requests` パッケージ（API を直接叩く演習を行う場合）
+
+> 旧方式（Internal Integration Token, `secret_xxx`, ページ単位の Add connections 共有）は使いません。すべて OAuth ベースで進めます。
 
 ## タスク
 
@@ -25,12 +27,11 @@ Notion にタスク管理データベースを API 経由で作成します。
 3. 作成されたデータベースの ID を記録する
 
 ```bash
-# API呼び出し例
-curl -X POST https://api.notion.com/v1/databases \
-  -H "Authorization: Bearer $NOTION_API_KEY" \
-  -H "Content-Type: application/json" \
-  -H "Notion-Version: 2022-06-28" \
-  -d @data/database-schema.json
+# 推奨: ncli または MCP 経由で実行する
+# 例: ncli database create --schema data/database-schema.json
+#
+# 直接 REST API を呼ぶ場合は ncli が払い出す OAuth アクセストークンを使う。
+# 新たに secret_xxx を発行する必要はない。
 ```
 
 ### タスク 2: ページ CRUD 操作
@@ -42,11 +43,14 @@ curl -X POST https://api.notion.com/v1/databases \
 3. `data/sample-queries.md` のクエリ例を参考にフィルタ検索を実行する
 
 ```python
-# Python での API 呼び出し例
+# Python から呼び出す場合の擬似コード（OAuth トークンは ncli から取得した値を使う）
 import requests
 
+# OAuth アクセストークンを ncli の認証ストアから取得する想定
+# 例: access_token = subprocess.run(["ncli", "token"], capture_output=True, text=True).stdout.strip()
+
 headers = {
-    "Authorization": f"Bearer {NOTION_API_KEY}",
+    "Authorization": f"Bearer {access_token}",  # OAuth で取得したトークン
     "Content-Type": "application/json",
     "Notion-Version": "2022-06-28"
 }

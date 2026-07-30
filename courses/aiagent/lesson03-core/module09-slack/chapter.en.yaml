@@ -2,7 +2,7 @@
 id: "module09-slack"
 order: 9
 name: "Slack Search & Analysis"
-description: "Semantic search and analysis of Slack data."
+description: "Build Slack integration features for channel search, person and event search, TODO extraction, and conversation history analysis. The course covers semantic search and analysis of Slack data, search condition design, channel and thread structure, the ethics of handling private messages, and building automated workflows that surface actionable information from your team's communication."
 type: "manual"
 estimatedMinutes: 60
 objectives:

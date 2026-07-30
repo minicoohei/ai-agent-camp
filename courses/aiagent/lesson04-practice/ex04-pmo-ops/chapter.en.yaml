@@ -1,0 +1,14 @@
+# Chapter 4: Lesson 4 PMO recurring operations
+id: "ex04-pmo-ops"
+order: 4
+name: "Lesson 4 PMO recurring operations"
+description: "Combine Commands, Skills, and SubAgents to produce verifiable weekly reports and three-view QA."
+type: "manual"
+estimatedMinutes: 40
+objectives:
+  - "Combine Commands, Skills, and SubAgents"
+  - "Produce verifiable weekly reports"
+  - "Create three-view QA"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/lesson-4"
+  slides: "https://ai-agent.camp/en/course/lesson-4"

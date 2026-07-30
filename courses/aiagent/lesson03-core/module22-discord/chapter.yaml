@@ -2,7 +2,7 @@
 id: "module22-discord"
 order: 22
 name: "Discord連携"
-description: "Discord Botの構築とメッセージ自動化を学びます"
+description: "Discord Bot の構築とメッセージ自動化を、Claude Code の公式 discord plugin と Channels を使って学びます。Bot 作成、チャンネル投稿、メッセージ取得、イベント通知、FAQ 応答、モデレーション補助、外部サービス連携を扱い、社外コミュニティや顧客接点での権限、投稿内容、個人情報、pairing・allowlist、誤応答時の停止手順を重視して安全な運用を設計します。"
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
@@ -15,3 +15,5 @@ objectives:
 externalContent:
   manual: "https://ai-agent.camp/ja/course/module-22?slideId=module-overview"
   slides: "https://ai-agent.camp/ja/course/module-22?slideId=module-overview"
+prerequisites:
+  - "module09-slack"

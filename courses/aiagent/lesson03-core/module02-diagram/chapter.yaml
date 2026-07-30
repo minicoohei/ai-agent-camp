@@ -2,7 +2,7 @@
 id: "module02-diagram"
 order: 2
 name: "図表・フロー作成"
-description: "テキストから図解やフローチャートを自動生成します。"
+description: "diagram-generator スキルを使い、業務フロー図、組織図、システム構成図、シーケンス図、意思決定図を作成する方法を学びます。教材では、Mermaid、PlantUML、Draw.io 互換SVGの特徴と使い分け、テキスト指示から図表を生成する流れ、出力形式、チームで編集しやすい成果物の作り方を扱います。AIと計画を立てる、提案資料を作る、仕様を共有する場面で、言葉だけでは伝わりにくい構造を視覚化する力を身につけます。"
 type: "manual"
 estimatedMinutes: 60
 objectives:

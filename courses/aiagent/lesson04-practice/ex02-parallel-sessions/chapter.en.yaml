@@ -1,0 +1,14 @@
+# Chapter 2: Exercise 2: Run multiple sessions at once
+id: "ex02-parallel-sessions"
+order: 2
+name: "Exercise 2: Run multiple sessions at once"
+description: "Run independent tasks in parallel across multiple sessions in your selected tool while managing wait time and edit conflicts."
+type: "manual"
+estimatedMinutes: 15
+objectives:
+  - "Run independent tasks in parallel across multiple sessions"
+  - "Manage wait time"
+  - "Manage edit conflicts"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/lesson-2"
+  slides: "https://ai-agent.camp/en/course/lesson-2"

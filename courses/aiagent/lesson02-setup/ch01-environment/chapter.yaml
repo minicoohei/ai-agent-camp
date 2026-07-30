@@ -2,7 +2,7 @@
 id: "ch01-environment"
 order: 1
 name: "環境セットアップ"
-description: "Claude Code / Cursor / Codex の開始準備と初期設定を行います。"
+description: "セットアップ全体の目的、進め方、システム要件を確認します。この研修では、AIエージェントがコマンド1つで高度な処理を実行できるよう、専用スキル、Python ツール、レッスンコマンド、安全ルール、MCP サーバー、外部 API が連携するワークスペースを使います。まず、セットアップがコース全体の土台であり、スキップせず順番に進める必要があることを理解します。初回セットアップは約60分、Cursor 導入済みの場合は約30分が目安です。macOS / Windows / Linux の必要要件、8GB以上のメモリ、十分なストレージ、Windows で起きやすい Git やパス認識の注意点も確認します。"
 type: "manual"
 estimatedMinutes: 30
 objectives:

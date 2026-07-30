@@ -2,7 +2,7 @@
 id: "ch10-hallucination"
 order: 10
 name: "Alucinación"
-description: "Comprende el fenómeno en que la IA fabrica falsedades que parecen plausibles."
+description: "Aprende el fenómeno en que la IA produce información errónea pero plausible, sus causas, tipos y contramedidas. El contenido cubre cómo los LLMs generan texto de forma probabilística y pueden afirmar cosas que no saben, fabricar citas o especificaciones, o producir contenido contextualmente plausible pero factualmente incorrecto. Aprende métodos de detección y estrategias de verificación."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

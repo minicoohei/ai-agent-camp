@@ -2,7 +2,7 @@
 id: "ch12-extended-thinking"
 order: 12
 name: "Extended Thinking"
-description: "LLMに「考える時間」を与えて推論精度を高めるExtended Thinkingの仕組みを学びます。"
+description: "拡張思考の仕組みと活用シーンを学びます。教材では、複雑な問題に対してモデルがすぐに答えを出すのではなく、より多くの推論時間を使って計画、比較、検討を行う考え方を扱います。要件定義、設計レビュー、複数案の比較、失敗原因の分析など、短い回答よりも深い検討が必要な場面で有効ですが、万能ではないため、使うべき場面、避けるべき場面、検証の必要性も整理します。"
 type: "manual"
 estimatedMinutes: 20
 thumbnail: "thumbnail.png"

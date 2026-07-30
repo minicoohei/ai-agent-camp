@@ -2,7 +2,7 @@
 id: "ch08-rag"
 order: 8
 name: "RAG"
-description: "A technique for enhancing LLM responses by retrieving external knowledge."
+description: "Learn how Retrieval-Augmented Generation works and how to apply it. The course covers how RAG retrieves external documents, adds the results to context, and generates answers; the Ingestion, Retrieval, Augmentation, and Generation pipeline; vector search and similarity; design patterns for company data, PDFs, and Notion pages; and the boundary between what RAG solves and what it does not."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

@@ -2,7 +2,7 @@
 id: "ch10-hallucination"
 order: 10
 name: "ハルシネーション"
-description: "AIが「もっともらしいウソ」をつく現象を理解する"
+description: "AIがもっともらしい誤情報を出す現象と、その原因・種類・対策を学びます。教材では、LLMが確率的に文章を生成するため、知らないことを断定したり、存在しない引用や仕様を作ったり、文脈に合うが事実ではない回答をする可能性を扱います。RAG、出典確認、制約の明示、検証手順、AIの出力を鵜呑みにしない運用を通じて、実務での誤判断を減らす習慣を身につけます。"
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

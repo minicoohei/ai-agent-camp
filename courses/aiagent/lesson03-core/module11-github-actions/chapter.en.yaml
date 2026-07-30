@@ -2,7 +2,7 @@
 id: "module11-github-actions"
 order: 11
 name: "GitHub Actions"
-description: "CI/CD automation and workflow creation."
+description: "Learn how to build CI/CD pipelines and automated workflows using GitHub Actions. The course covers workflow definition, event triggers, jobs, steps, Secrets management, test and build automation, news-fetching and notification workflows, calling Claude Code/Codex/Cursor from Actions, and deployment automation — enabling fully automated development and delivery pipelines."
 type: "manual"
 estimatedMinutes: 90
 objectives:

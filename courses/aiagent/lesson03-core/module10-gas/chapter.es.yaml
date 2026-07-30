@@ -2,7 +2,7 @@
 id: "module10-gas"
 order: 10
 name: "Automatizacion GAS y Automatizacion Practica"
-description: "Experimenta la automatizacion practica de negocios incluyendo la integracion de servicios con Google Apps Script (GAS), procesamiento automatico de facturas PDF, extraccion de TODO desde correos y generacion automatica de Google Slides con GAS."
+description: "Aprende a construir automatización impulsada por GAS usando agentes de IA. El contenido cubre gestión de proyectos de Google Apps Script, clasp CLI, gestión de múltiples proyectos, implementación, configuración de activadores, operaciones en Drive, procesamiento automático de facturas PDF, extracción de TODOs desde correo y generación automática de Google Slides."
 type: "manual"
 estimatedMinutes: 90
 objectives:

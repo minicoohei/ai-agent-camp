@@ -2,7 +2,7 @@
 id: "ch04-context-engineering"
 order: 4
 name: "Ingeniería de Contexto"
-description: "Aprende diseño efectivo de prompts y gestión de contexto."
+description: "Aprende diseño de prompts y gestión del contexto. En lugar de tratar los prompts como simples comandos únicos, este capítulo cubre pensarlos como un 'entorno de trabajo entregado al modelo' — incluyendo propósito, restricciones, contexto, datos de entrada, formato de salida, criterios de evaluación e historial de trabajo pasado. Practica la escritura de prompts estructurados que produzcan resultados estables."
 type: "manual"
 estimatedMinutes: 30
 thumbnail: "thumbnail.png"

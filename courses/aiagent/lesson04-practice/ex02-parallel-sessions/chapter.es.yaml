@@ -1,0 +1,14 @@
+# Capítulo 2: Ejercicio 2: ejecuta varias sesiones a la vez
+id: "ex02-parallel-sessions"
+order: 2
+name: "Ejercicio 2: ejecuta varias sesiones a la vez"
+description: "Ejecuta tareas independientes en paralelo en varias sesiones de la herramienta elegida y gestiona la espera y los conflictos de edición."
+type: "manual"
+estimatedMinutes: 15
+objectives:
+  - "Ejecutar tareas independientes en paralelo en varias sesiones"
+  - "Gestionar el tiempo de espera"
+  - "Gestionar conflictos de edición"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/lesson-2"
+  slides: "https://ai-agent.camp/es/course/lesson-2"

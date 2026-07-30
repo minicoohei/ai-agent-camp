@@ -2,7 +2,7 @@
 id: "module18-pm-sysdef"
 order: 18
 name: "プロダクトマネジメント & システム要件定義"
-description: "タスク管理アプリを題材に、企画から設計・実装・テスト・運用まで、AI活用でプロダクト開発の全工程を体験します。"
+description: "顧客インタビューからPRD作成、要件定義、設計、プロトタイプ、テスト、運用まで、プロダクト企画から開発工程を一気通貫で体験します。教材では、AskQuestionによるヒアリング、ステークホルダー要求、PRD、要件定義書、ユースケース、画面遷移、DB/API設計、WBS、Notion、Pencil、HTMLプロトタイプ、E2Eテスト、テスト計画、監視ダッシュボードを扱います。AIを単発作業の補助ではなく、PM・要件定義・設計・検証の各工程に組み込む実践章です。"
 type: "manual"
 estimatedMinutes: 480
 thumbnail: "thumbnail.png"

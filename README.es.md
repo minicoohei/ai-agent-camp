@@ -465,12 +465,14 @@ ai-agent-camp/
 |       +-- course.en.yaml                # Definicion del curso (EN)
 |       +-- course.es.yaml                # Definicion del curso (ES)
 |       +-- cover.png                     # Imagen de portada del curso
-|       +-- lesson01-foundation/          # Fundamentos (11 capitulos)
-|       |   +-- ch01 ~ ch11/             # LLM, Token, Agent, MCP, RAG, Seguridad, etc.
+|       +-- lesson01-foundation/          # Fundamentos (24 capitulos)
+|       |   +-- ch00 ~ ch23/             # LLM, Token, Agent, MCP, RAG, Seguridad, medicion, etc.
 |       +-- lesson02-setup/              # Configuracion del entorno (3 capitulos)
 |       |   +-- ch01 ~ ch03/             # Entorno, extensiones, configuracion de API
 |       +-- lesson03-core/               # Habilidades principales (26 modulos disponibles)
-|           +-- module01 ~ module25, module29/ # Banner a slide-forge
+|       |   +-- module01 ~ module25, module29/ # Banner a slide-forge
+|       +-- lesson04-practice/           # Ejercicios practicos (4 capitulos)
+|           +-- ex01 ~ ex04/             # Diagrama, sesiones paralelas, propuesta, PMO
 |
 +-- .cursor/commands/                     # Ver docs/commands-reference.md
 |   +-- lesson/                           # Comandos de aprendizaje
@@ -745,7 +747,7 @@ Lista de habilidades que adquiriras al completar el curso.
 | **Google OAuth** | Integracion de cuenta de Google | [Google Cloud Console](https://console.cloud.google.com/) | Operaciones de Gmail, Calendar, Drive | 4, 10 |
 | **BigQuery** | Data warehouse SQL de Google | [Google Cloud Console](https://console.cloud.google.com/) | Analisis de datos a gran escala | 8 |
 | **Slack API** | Integracion con workspace de Slack | [Slack App Directory](https://api.slack.com/apps) | Obtencion de mensajes, respuestas automaticas | 9 |
-| **Notion API** | Integracion con workspace de Notion | [Notion Integrations](https://www.notion.so/my-integrations) | Operaciones de base de datos | 12 |
+| **Notion (OAuth)** | Integracion con workspace de Notion | `ncli login` (OAuth en navegador) + Notion Hosted MCP (`https://mcp.notion.com/mcp`) | Operaciones de base de datos | 12 |
 
 ### Opcionales (recomendadas para el Modulo 15)
 

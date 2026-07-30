@@ -2,7 +2,7 @@
 id: "module21-figma"
 order: 21
 name: "Integración con Figma"
-description: "Combina el MCP oficial de Figma con el MCP del sistema de diseño Serendie para que la IA escriba y lea directamente en Figma, y entrega UI alineada con tu sistema de diseño de extremo a extremo."
+description: "Combina el MCP oficial de Figma con el MCP del sistema de diseño Serendie para que la IA lea y escriba datos de Figma y produzca interfaces alineadas con el sistema de diseño. Aprende a inspeccionar archivos, frames, componentes y estilos; extraer especificaciones; convertir la intención de diseño en instrucciones de implementación; revisar diseños; y elegir entre Figma y Pencil MCP respetando permisos y alcance de uso compartido."
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
@@ -14,3 +14,5 @@ objectives:
 externalContent:
   manual: "https://ai-agent.camp/es/course/module-21?slideId=module-overview"
   slides: "https://ai-agent.camp/es/course/module-21?slideId=module-overview"
+prerequisites:
+  - "module13-lp"

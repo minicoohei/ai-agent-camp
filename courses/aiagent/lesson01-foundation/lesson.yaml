@@ -3,7 +3,7 @@ id: "lesson01-foundation"
 order: 1
 name: "基礎知識（Foundation）"
 description: "AIエージェントを使いこなすための基礎知識を学びます。LLMの動作原理、トークン、エージェントの概念、MCP、マルチモーダル、RAG、セキュリティまで幅広く理解します。"
-estimatedMinutes: 640
+estimatedMinutes: 700
 cover: "cover.png"
 chapters:
   - "ch00-intro"
@@ -20,6 +20,7 @@ chapters:
   - "ch11-security"
   - "ch12-extended-thinking"
   - "ch13-hooks-guardrail"
+  - "ch14-tool-basics"
   - "ch14-git-basics"
   - "ch15-git-safety"
   - "ch16-terminal-basics"
@@ -29,6 +30,7 @@ chapters:
   - "ch20-loop"
   - "ch21-mcp-m365"
   - "ch22-folder-structure"
+  - "ch23-observability"
 objectives:
   - "研修の全体構成と学習パスを理解する"
   - "LLM（大規模言語モデル）の動作原理を理解する"
@@ -44,6 +46,7 @@ objectives:
   - "AIセキュリティの基本原則を身につける"
   - "Extended Thinkingの仕組みを理解する"
   - "Hooks/Guardrailによる安全設計を理解する"
+  - "Cursor、Claude Code、Codex の基本導線と安全な操作習慣を身につける"
   - "Gitの基本操作と安全な運用を身につける"
   - "ターミナルの基本操作を習得する"
   - "Claude Codeのトークン節約とコスト管理を理解する"
@@ -52,3 +55,4 @@ objectives:
   - "/loopによる定期実行と自己ペース実行を理解する"
   - "MCPでMicrosoft 365などの外部ツールと連携する方法を理解する"
   - "AIが資料を探しやすいフォルダ構成と依頼方法を身につける"
+  - "セッションログとトレースを読み、OpenTelemetryで計測して改善につなげる"

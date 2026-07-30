@@ -246,10 +246,9 @@ google-generativeai>=0.3.0  # LLMモード使用時
 ```bash
 # LLMモード使用時
 GEMINI_API_KEY=your_api_key
-
-# Notion連携時
-NOTION_TOKEN=your_token
 ```
+
+Notion 連携は OAuth 統一です（環境変数は不要）。事前に `/setup-notion` を実行し、ncli login と Notion 公式 Hosted MCP（`https://mcp.notion.com/mcp`）をセットアップしてください。
 
 ## ユースケース
 

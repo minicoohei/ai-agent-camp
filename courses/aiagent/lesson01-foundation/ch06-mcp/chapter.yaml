@@ -2,7 +2,7 @@
 id: "ch06-mcp"
 order: 6
 name: "MCP（Model Context Protocol）"
-description: "AIと外部ツールを繋ぐ標準プロトコルを理解する"
+description: "Model Context Protocol の概念と設定を学びます。教材では、AIと外部ツール・データソースを接続する標準的な仕組みとしてのMCP、Tools、Resources、Prompts、Sampling といった主要概念、代表的なMCPサーバー、Claude Code / Cursor / Codex での活用観点を扱います。AIエージェントに社内システム、ファイル、ブラウザ、データベースなどを扱わせるとき、接続方式、権限、監査、安全性をどう考えるかを理解します。"
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"
