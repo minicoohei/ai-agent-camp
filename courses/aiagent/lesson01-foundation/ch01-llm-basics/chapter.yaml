@@ -2,7 +2,7 @@
 id: "ch01-llm-basics"
 order: 1
 name: "LLM基礎"
-description: "LLM（大規模言語モデル）の動作原理を学びます。"
+description: "大規模言語モデルの仕組みと主要モデルを学びます。教材では、AIの進化、生成AIの位置づけ、Transformer、次トークン予測、事前学習とファインチューニング、代表的なモデルの違いを扱います。LLMは『意味を理解しているように見える』一方で、実際には文脈から次に来るトークンを確率的に予測しているため、得意なこと、苦手なこと、出力検証が必要な理由を構造的に理解します。"
 type: "manual"
 estimatedMinutes: 30
 thumbnail: "thumbnail.png"

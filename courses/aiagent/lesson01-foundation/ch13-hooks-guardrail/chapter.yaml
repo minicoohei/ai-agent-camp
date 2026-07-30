@@ -2,7 +2,7 @@
 id: "ch13-hooks-guardrail"
 order: 13
 name: "Hooks & Guardrail"
-description: "コーディングエージェントの暴走を防ぐHooksとGuardrailの設計パターンを学びます。"
+description: "安全装置とフック機構を学びます。教材では、安全削除、最小Guardrail、承認フロー、危険操作の検知、Hookによる実行前後のチェック、失敗時ハンドリング、Credential Manager などを扱います。AIエージェントは便利な一方で、ファイル削除、秘密情報の露出、危険なGit操作、外部送信などのリスクを持つため、作業を止める条件、警告する条件、自動レビューする条件を仕組みとして設計する考え方を理解します。"
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

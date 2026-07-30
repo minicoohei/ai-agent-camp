@@ -1,0 +1,18 @@
+# Chapter 5: リモート環境構築
+id: "ch05-remote-environment"
+order: 5
+name: "リモート環境構築"
+description: "複数端末、Dispatch、Cursor Web Agent などを使い、ローカルPCだけに依存しない学習・作業環境を構築する発展セクションです。教材のセットアップページでは、PCスペックが不足する場合や 8GB メモリ環境で Cursor / Claude Code の動作が重くなる場合、リモート実行機能の活用も検討対象として示されています。この章では、同じ教材ワークスペースを複数端末から扱う前提、クラウドやリモートエージェントに作業を任せるときの認証・権限・秘密情報管理、ローカルとリモートで差分が出やすい環境変数や依存関係の確認観点を整理します。スクショ上では近日公開の扱いですが、実務ではチーム作業、低スペックPCの補完、外出先からの継続学習に直結する準備領域です。"
+type: "manual"
+status: "coming_soon"
+estimatedMinutes: 25
+thumbnail: "thumbnail.png"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/module-0"
+prerequisites:
+  - "ch04-security-check"
+objectives:
+  - "リモート実行環境を使う目的と適用場面を説明できる"
+  - "複数端末で教材ワークスペースを扱う際の注意点を把握する"
+  - "リモート環境での認証、権限、秘密情報管理の観点を理解する"
+  - "ローカルとリモートの環境差分を確認する必要性を理解する"

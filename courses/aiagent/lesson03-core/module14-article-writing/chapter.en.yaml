@@ -2,7 +2,7 @@
 id: "module14-article-writing"
 order: 14
 name: "Article Writing"
-description: "Use AI agents to run the full article workflow: topic design, outlining, style alignment, illustrations, proofreading, and fact-checking."
+description: "Learn how to create blog and documentation articles using AI agents. The course covers theme selection, target audience setting, outline generation, style learning, style profiles, draft writing, illustration and diagram generation, proofreading, fact-checking, and parallel processing of multiple articles — giving you a complete AI-powered writing workflow from planning to publication-ready content."
 type: "manual"
 estimatedMinutes: 230
 thumbnail: "thumbnail.png"

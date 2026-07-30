@@ -2,7 +2,7 @@
 id: "module06-agent-development"
 order: 6
 name: "エージェント開発"
-description: "カスタムAIエージェントの開発方法を学びます。"
+description: "Claude Code の Commands、Skills、Cursor Rules、SubAgent を活用して、カスタムAIエージェントを開発する方法を学びます。教材では、ビジネスユーザー向けのカスタムコマンド作成、Cursor Rulesによる行動制御、発展コースとしてのSkills開発、SubAgent設計、統合プロジェクトを扱います。AIに毎回同じ説明をするのではなく、作業手順、制約、役割分担、ルールをファイル化し、チームでも再利用できるエージェント基盤を作るための章です。"
 type: "manual"
 estimatedMinutes: 90
 objectives:

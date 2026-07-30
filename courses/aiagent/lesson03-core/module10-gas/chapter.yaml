@@ -2,7 +2,7 @@
 id: "module10-gas"
 order: 10
 name: "GAS自動化 & 実践オートメーション"
-description: "Google Apps Script (GAS) によるサービス連携に加え、PDF請求書の自動処理、メールからのTODO抽出、GASでのGoogle Slides自動生成まで、実践的な業務自動化を体験します。"
+description: "GASを使った自動化をAIエージェントで構築する方法を学びます。教材では、Google Apps Script のプロジェクト管理、clasp CLI、複数プロジェクト管理、デプロイ、トリガー設定、Drive・Sheets・メール通知などの自動化パイプラインを扱います。Google Workspaceの操作を一度きりの手作業で終わらせず、定期実行やイベント駆動で動く業務自動化へ発展させるための章です。"
 type: "manual"
 estimatedMinutes: 90
 objectives:

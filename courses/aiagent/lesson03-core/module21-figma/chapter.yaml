@@ -2,7 +2,7 @@
 id: "module21-figma"
 order: 21
 name: "Figma 連携"
-description: "Figma 公式 MCP と Serendie デザインシステムを組み合わせて、AI に Figma へ直接書き込み・読み取りさせ、デザインシステムに沿った UI 実装まで一気通貫で行う方法を学びます。"
+description: "Figma 公式 MCP と Serendie デザインシステムを組み合わせ、AI による Figma の読み書きからデザインシステムに沿った UI 実装までを一気通貫で学びます。Figma ファイルやフレームの読み取り、デザイン仕様・コンポーネント・スタイル情報の抽出、実装指示への変換、デザインレビュー、Pencil MCP との使い分けを通じて、デザイン意図をエンジニアリングやコンテンツ制作へ安全につなげます。"
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
@@ -14,3 +14,5 @@ objectives:
 externalContent:
   manual: "https://ai-agent.camp/ja/course/module-21?slideId=module-overview"
   slides: "https://ai-agent.camp/ja/course/module-21?slideId=module-overview"
+prerequisites:
+  - "module13-lp"

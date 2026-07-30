@@ -2,7 +2,7 @@
 id: "module20-freee-mf"
 order: 20
 name: "Freee / MoneyForward 連携"
-description: "会計 SaaS と AI エージェントの連携入口として、認証セットアップ、取引データ確認、勘定科目や請求書の基本操作を学びます。"
+description: "Freee MCPサーバーや会計サービス連携を通じて、請求、経費、仕訳、会計データ確認をAIエージェントで支援する近日公開モジュールです。想定内容は、会計データの取得、月次確認、請求書や取引情報の整理、MoneyForwardなど周辺サービスとの役割分担、APIキーやOAuth権限の安全な扱いです。数値や会計情報は誤りの影響が大きいため、自動化だけでなく、出典、承認、監査ログ、人間による最終確認を前提にした運用を学ぶ領域です。"
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"

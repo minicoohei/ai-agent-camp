@@ -2,7 +2,7 @@
 id: "ch09-subagent"
 order: 9
 name: "Skill / SubAgent"
-description: "Técnicas para extender las capacidades de los agentes de IA y coordinarlos como equipo."
+description: "Aprende habilidades, subagentes y arquitecturas de equipos de agentes. El contenido cubre cómo las Skills agrupan procedimientos, plantillas, restricciones y formatos de salida para extender la capacidad de la IA; cómo los SubAgentes manejan tareas especializadas en paralelo; y cómo los Equipos de Agentes coordinan múltiples agentes para flujos de trabajo complejos."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

@@ -2,7 +2,7 @@
 id: "module24-salesforce"
 order: 24
 name: "Salesforce CLI 連携"
-description: "sf CLI を入れてブラウザでログインするだけ。SOQL でデータ取得、CSV で一括更新まで「ターミナル + AI エージェント」で完結します。"
+description: "sf CLI とブラウザログインを使い、SOQL によるリード・取引先・商談・活動履歴の取得から CSV 一括更新、メタデータ操作までを「ターミナル + AI エージェント」で学びます。顧客情報と営業判断の中心である CRM を安全に自動化するため、AI に任せる操作範囲、更新前の承認、監査ログ、重複・誤更新の検出、マーケティングやメール自動化との接続も重視します。"
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
@@ -15,3 +15,5 @@ objectives:
 externalContent:
   manual: "https://ai-agent.camp/ja/course/module-24?slideId=module-overview"
   slides: "https://ai-agent.camp/ja/course/module-24?slideId=module-overview"
+prerequisites:
+  - "module17-marketing"

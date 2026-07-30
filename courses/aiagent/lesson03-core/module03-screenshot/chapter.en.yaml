@@ -2,7 +2,7 @@
 id: "module03-screenshot"
 order: 3
 name: "Create Tutorials with AI Agent"
-description: 'Learn how to give AI "eyes" — analyze screenshots and videos to auto-generate tutorials and manuals'
+description: "Learn how to pass visual information — screenshots and video — to AI for screen understanding, error diagnosis, operation procedure extraction, and tutorial/manual generation. The course covers Gemini API vision capabilities, UI element extraction, annotation, multi-screenshot batch analysis, and producing professional-quality documentation from visual inputs."
 type: "manual"
 estimatedMinutes: 60
 objectives:

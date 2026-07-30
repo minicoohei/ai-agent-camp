@@ -2,7 +2,7 @@
 id: "ch14-git-basics"
 order: 14
 name: "Git基礎"
-description: "バージョン管理の基本概念とGit/GitHubの使い方を学びます。"
+description: "バージョン管理の基本概念を学びます。教材では、Gitをコードやファイル変更のセーブポイントとして捉え、作業ツリー、ステージング、コミット、ブランチ、履歴確認、差分確認、GitHubへの連携といった基礎を扱います。AIエージェントにファイル編集を任せる場合でも、変更を記録し、必要なら戻せる状態を作ることが重要です。Git/GitHubの基礎を理解することで、AIの作業結果をレビューし、チーム共有し、トラブル時に復旧しやすくなります。"
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

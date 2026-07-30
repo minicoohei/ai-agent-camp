@@ -2,7 +2,7 @@
 id: "ch03-agents"
 order: 3
 name: "Agentes de IA"
-description: "Aprende sobre el concepto y la mecánica de los agentes de IA."
+description: "Aprende cómo funcionan los agentes y sus niveles de autonomía. El contenido cubre la diferencia entre asistentes de chat regulares y agentes de IA, el bucle del agente — recibir objetivos, planificar, usar herramientas, observar resultados y decidir las próximas acciones — y los niveles de autonomía desde totalmente automático hasta humano en el ciclo."
 type: "manual"
 estimatedMinutes: 30
 thumbnail: "thumbnail.png"

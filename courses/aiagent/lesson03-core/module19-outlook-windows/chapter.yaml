@@ -2,7 +2,7 @@
 id: "module19-outlook-windows"
 order: 19
 name: "Windows Outlook（デスクトップ）"
-description: "Outlook for Windows の画面、検索、フォルダ、ルール設計を整理し、Microsoft 365 CLI と使い分ける基本を学びます。"
+description: "Outlook for Windows の整理、ルール、Microsoft 365 CLI との役割分担を扱う近日公開モジュールです。想定内容は、デスクトップOutlookのメール整理、フォルダ・ルール設計、予定や連絡先との連携、Microsoft 365の権限管理、ローカルアプリ操作とクラウドAPI操作の切り分けです。メール自動化章で学ぶSMTPやResendとは異なり、既存のOutlook運用をAIエージェントで補助する業務整理・運用改善の入口として位置づけます。"
 type: "manual"
 estimatedMinutes: 70
 thumbnail: "thumbnail.png"

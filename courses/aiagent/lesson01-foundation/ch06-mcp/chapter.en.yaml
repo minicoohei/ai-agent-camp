@@ -2,7 +2,7 @@
 id: "ch06-mcp"
 order: 6
 name: "MCP (Model Context Protocol)"
-description: "Understand the standard protocol connecting AI with external tools."
+description: "Learn the concepts and configuration of Model Context Protocol. The course covers MCP as a standard mechanism connecting AI to external tools and data sources; Tools, Resources, Prompts, and Sampling; host and client architecture; how to configure MCP servers safely; and the security considerations of giving agents access to external systems through MCP."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

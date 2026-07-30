@@ -2,7 +2,7 @@
 id: "module19-outlook-windows"
 order: 19
 name: "Windows Outlook (desktop)"
-description: "Learn the basics of Outlook for Windows, including views, search, folders, rules, and when to switch to Microsoft 365 CLI automation."
+description: "A coming-soon module covering Outlook for Windows organization, rules, and role separation with Microsoft 365 CLI. Expected content includes desktop Outlook email organization, folder and rule design, category management, calendar integration, and choosing between Outlook UI operations and CLI automation for different scenarios."
 type: "manual"
 estimatedMinutes: 70
 thumbnail: "thumbnail.png"

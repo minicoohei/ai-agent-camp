@@ -2,7 +2,7 @@
 id: "module07-skill-commands"
 order: 7
 name: "Desarrollo de Skills / Commands"
-description: "Diseña SKILL.md reutilizables y slash commands, y aplícalos a flujos reales como facturas y actualización de PDF."
+description: "Aprende a diseñar archivos SKILL.md reutilizables y comandos slash para convertir tareas repetitivas del trabajo real en flujos de trabajo de IA estables. El contenido cubre los roles de Skills vs Commands, frontmatter YAML, condiciones de activación, plantillas de prompt, especificación de formato de salida, versionado y pruebas."
 type: "manual"
 estimatedMinutes: 120
 objectives:

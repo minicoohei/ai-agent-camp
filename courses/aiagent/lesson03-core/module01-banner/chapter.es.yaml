@@ -2,7 +2,7 @@
 id: "module01-banner"
 order: 1
 name: "Generación de Banners e Imágenes"
-description: "Genera automáticamente banners para publicaciones en redes sociales y comunicados de prensa."
+description: "Aprende a usar IA para generar banners e imágenes para publicaciones en SNS, comunicados de prensa, anuncios, YouTube, LINE y web. El contenido cubre banner-creator y nanobanana/API de Generación de Imágenes de Gemini, especificaciones de tamaño por plataforma, prompting de tono y esquema de color, generación por lotes y flujos de edición."
 type: "manual"
 estimatedMinutes: 60
 objectives:

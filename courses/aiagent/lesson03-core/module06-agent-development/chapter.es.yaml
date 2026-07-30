@@ -2,7 +2,7 @@
 id: "module06-agent-development"
 order: 6
 name: "Desarrollo de Agentes"
-description: "Aprende cómo desarrollar agentes de IA personalizados."
+description: "Aprende a desarrollar agentes de IA personalizados usando Commands, Skills, Cursor Rules y patrones SubAgent de Claude Code. El contenido cubre diseño de agentes para usuarios empresariales, construcción de bibliotecas de habilidades reutilizables, implementación de guardrails de seguridad y orquestación de flujos de trabajo multi-agente."
 type: "manual"
 estimatedMinutes: 90
 objectives:

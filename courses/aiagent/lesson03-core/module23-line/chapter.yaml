@@ -2,7 +2,7 @@
 id: "module23-line"
 order: 23
 name: "LINE 公式アカウント運用"
-description: "Cloudflare Worker と LINE Messaging API で、自社で完全にコントロールできる LINE OA を構築・運用する方法を学びます。"
+description: "Cloudflare Worker と LINE Messaging API を使い、自社で完全にコントロールできる LINE 公式アカウントを構築・運用する方法を学びます。Webhook、メッセージ送受信、問い合わせ対応、通知・シナリオ配信、CRM や Slack との連携を扱い、顧客との直接接点に必要な返信の正確性、個人情報、オプトイン、配信頻度、エスカレーション条件を明確にして安全な自動化を設計します。"
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
@@ -15,3 +15,5 @@ objectives:
 externalContent:
   manual: "https://ai-agent.camp/ja/course/module-23?slideId=module-overview"
   slides: "https://ai-agent.camp/ja/course/module-23?slideId=module-overview"
+prerequisites:
+  - "module17-marketing"

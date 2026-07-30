@@ -754,7 +754,7 @@ ai-agent-camp/
 | **Google OAuth** | Google アカウント連携 | [Google Cloud Console](https://console.cloud.google.com/) | Gmail、Calendar、Drive 操作 | 4, 10 |
 | **BigQuery** | Google の SQL データウェアハウス | [Google Cloud Console](https://console.cloud.google.com/) | 大規模データ分析 | 8 |
 | **Slack API** | Slack ワークスペース連携 | [Slack App Directory](https://api.slack.com/apps) | メッセージ取得、自動返信 | 9 |
-| **Notion API** | Notion ワークスペース連携 | [Notion Integrations](https://www.notion.so/my-integrations) | データベース操作 | 12 |
+| **Notion (OAuth)** | Notion ワークスペース連携 | `ncli login`（ブラウザ OAuth）+ Notion 公式 Hosted MCP（`https://mcp.notion.com/mcp`） | データベース操作 | 12 |
 
 ### オプション（Module 15 で推奨）
 

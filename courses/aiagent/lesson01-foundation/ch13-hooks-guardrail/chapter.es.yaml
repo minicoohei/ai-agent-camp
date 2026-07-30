@@ -2,7 +2,7 @@
 id: "ch13-hooks-guardrail"
 order: 13
 name: "Hooks y Guardrail"
-description: "Aprende patrones de diseño de Hooks y Guardrails para prevenir descontrol de agentes de codificación."
+description: "Aprende los mecanismos de seguridad y la arquitectura de hooks. El contenido cubre eliminación segura, guardrails mínimos, flujos de aprobación, detección de operaciones peligrosas, verificaciones previas y posteriores a la ejecución con Hooks, manejo de fallos y Credential Manager. Aprende a diseñar defensas en capas para que los agentes de IA no puedan exceder los límites seguros."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

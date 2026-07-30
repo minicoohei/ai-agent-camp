@@ -2,7 +2,7 @@
 id: "module16-email-automation"
 order: 16
 name: "Automatización de Correo y Marketing"
-description: "Aprende el flujo completo desde el análisis de correo entrante y la gestión de respuestas hasta la automatización de envíos y campañas de marketing."
+description: "Aprende el análisis de correo entrante y la automatización de correo saliente/marketing. El contenido cubre recepción y análisis de correo con gogcli, check-inbox, envío con Resend, configuración de SMTP, MX, DNS, SPF, DKIM y DMARC, diseño de campañas de goteo, Typefully para automatización de X y programación con GitHub Actions."
 type: "manual"
 estimatedMinutes: 180
 thumbnail: "thumbnail.png"

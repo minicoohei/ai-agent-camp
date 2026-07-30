@@ -2,7 +2,7 @@
 id: "module13-lp"
 order: 13
 name: "LP/HP Production"
-description: "From hearing to appeal design, wireframes, Pencil design, HTML implementation, and Vercel deploy. Experience the end-to-end LP/HP production workflow."
+description: "Learn how to create landing pages and websites collaboratively with AI agents. The course covers appeal organization, wireframe creation, Pencil MCP design, HTML/Tailwind/JavaScript implementation, and Vercel deployment — walking you through the full LP production pipeline from concept to live site using AI-assisted design and development."
 type: "manual"
 estimatedMinutes: 180
 prerequisites:

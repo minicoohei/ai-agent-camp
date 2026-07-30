@@ -2,7 +2,7 @@
 id: "module17-marketing"
 order: 17
 name: "Marketing"
-description: "Aprende a crear y gestionar contenido de marketing aprovechando habilidades de IA."
+description: "Aprende a crear y operar contenido de marketing usando habilidades de IA. El contenido cubre creación de publicaciones en SNS, generación de banners, auditorías de SEO, estrategia de palabras clave, redacción de textos de marketing, visualización de diseño con Pencil MCP, generación programática de páginas SEO, análisis de competidores y optimización de anuncios pagados."
 type: "manual"
 estimatedMinutes: 120
 thumbnail: "thumbnail.png"

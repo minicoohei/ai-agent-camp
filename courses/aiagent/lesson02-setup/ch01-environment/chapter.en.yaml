@@ -2,7 +2,7 @@
 id: "ch01-environment"
 order: 1
 name: "Environment Setup"
-description: "Prepare and configure Claude Code / Cursor / Codex."
+description: "Confirm the purpose, approach, and system requirements for the overall setup. This training prepares a dedicated workspace where AI agents can perform sophisticated processing with a single command — combining custom skills, Python tools, lesson commands, safety rules, MCP servers, and external APIs. Understand the full picture before starting any installation step."
 type: "manual"
 estimatedMinutes: 30
 objectives:

@@ -2,7 +2,7 @@
 id: "module05-pptx"
 order: 5
 name: "Analisis, Conversion y Generacion de PPTX"
-description: "Domina el analisis de archivos PowerPoint, la conversion de plantillas y la generacion automatica de presentaciones usando tres herramientas especializadas"
+description: "Aprende a analizar, convertir y generar archivos PowerPoint usando agentes de IA. El contenido cubre tres herramientas especializadas — pptx-analyzer, pptx-converter y pptx-creator — y cómo elegir entre ellas: análisis estructural de presentaciones existentes, reemplazo de contenido preservando la plantilla, y generación desde cero a partir de una descripción."
 type: "manual"
 estimatedMinutes: 60
 objectives:

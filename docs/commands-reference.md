@@ -350,7 +350,7 @@ Codex と Claude Code では同じ lesson id を使いますが、入口が異�
 | `/setup-gemini` | Gemini API セットアップ | [`.cursor/commands/lesson/setup-gemini.md`](../.cursor/commands/lesson/setup-gemini.md) |
 | `/setup-github` | GitHub アカウント設定とリポジトリ作成 | [`.cursor/commands/lesson/setup-github.md`](../.cursor/commands/lesson/setup-github.md) |
 | `/setup-gogcli` | gogcli (Google Workspace CLI) セットアップ | [`.cursor/commands/lesson/setup-gogcli.md`](../.cursor/commands/lesson/setup-gogcli.md) |
-| `/setup-notion` | Notion CLI (ncli) + MCP セットアップ | [`.cursor/commands/lesson/setup-notion.md`](../.cursor/commands/lesson/setup-notion.md) |
+| `/setup-notion` | Notion CLI (ncli) + Hosted MCP セットアップ（OAuth 統一） | [`.cursor/commands/lesson/setup-notion.md`](../.cursor/commands/lesson/setup-notion.md) |
 | `/setup-pencil` | Pencil MCP セットアップ | [`.cursor/commands/lesson/setup-pencil.md`](../.cursor/commands/lesson/setup-pencil.md) |
 | `/setup-remotion` | Remotion セットアップ | [`.cursor/commands/lesson/setup-remotion.md`](../.cursor/commands/lesson/setup-remotion.md) |
 | `/setup-security` | セキュリティ設定の自動セットアップ | [`.cursor/commands/lesson/setup-security.md`](../.cursor/commands/lesson/setup-security.md) |

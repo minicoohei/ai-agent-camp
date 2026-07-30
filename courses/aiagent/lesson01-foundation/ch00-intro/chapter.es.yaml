@@ -2,7 +2,7 @@
 id: "ch00-intro"
 order: 0
 name: "Ruta de Aprendizaje"
-description: "Obtén una visión general de la formación en agentes de IA y cómo avanzar."
+description: "Revisa la ruta de aprendizaje y los objetivos generales de la sección de Fundamentos de IA. Este capítulo muestra cómo se interrelacionan los mecanismos de LLM, tokens, contexto, RAG, agentes de IA, Skill/SubAgent, seguridad, MCP, Git y conceptos básicos de terminal para un uso seguro y práctico de agentes de IA en el trabajo real."
 type: "manual"
 estimatedMinutes: 10
 thumbnail: "thumbnail.png"

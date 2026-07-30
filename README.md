@@ -750,7 +750,7 @@ ai-agent-camp/
 | **Google OAuth** | Google account integration | [Google Cloud Console](https://console.cloud.google.com/) | Gmail, Calendar, Drive operations | 4, 10 |
 | **BigQuery** | Google's SQL data warehouse | [Google Cloud Console](https://console.cloud.google.com/) | Large-scale data analysis | 8 |
 | **Slack API** | Slack workspace integration | [Slack App Directory](https://api.slack.com/apps) | Message retrieval, auto-replies | 9 |
-| **Notion API** | Notion workspace integration | [Notion Integrations](https://www.notion.so/my-integrations) | Database operations | 12 |
+| **Notion (OAuth)** | Notion workspace integration | `ncli login` (browser OAuth) + Notion Hosted MCP (`https://mcp.notion.com/mcp`) | Database operations | 12 |
 
 ### Optional (Recommended for Module 15)
 

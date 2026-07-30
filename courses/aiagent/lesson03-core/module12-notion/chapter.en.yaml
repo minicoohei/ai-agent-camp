@@ -2,7 +2,7 @@
 id: "module12-notion"
 order: 12
 name: "Notion CLI (ncli)"
-description: "Learn how to use the Notion CLI (@sakasegawa/ncli) from the terminal and build agent-friendly workflows."
+description: "Learn how to introduce a CLI for operating Notion from the terminal and build Notion workflows for AI agents. The course covers Notion API and database operations, page creation, information retrieval, task management, comment handling, summary generation, and designing automated Notion workflows that keep your knowledge base up-to-date through AI agent actions."
 type: "manual"
 estimatedMinutes: 60
 objectives:

@@ -2,7 +2,7 @@
 id: "module20-freee-mf"
 order: 20
 name: "Freee / MoneyForward Integration"
-description: "Learn the entry point for accounting SaaS integrations: authentication setup, transaction review, and basic operations around accounts and invoices."
+description: "A coming-soon module using Freee MCP server and accounting service integrations to support invoicing, expenses, journal entries, and accounting data review through AI agents. Expected content includes accounting data retrieval, monthly review, invoice and transaction organization, and basic CRM-to-accounting automation — with a focus on approval flows and audit trails for safe financial data handling."
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"

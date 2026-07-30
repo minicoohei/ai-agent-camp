@@ -2,7 +2,7 @@
 id: "ch07-multimodal"
 order: 7
 name: "Multimodal AI"
-description: "Understand how AI integrates images, text, and audio."
+description: "Learn the basics of AI models that handle images and audio. The course covers multimodal AI and VLM architectures that process not just text but also images, screenshots, diagrams, documents, and audio; three-layer architecture; image analysis accuracy and its limits; practical use cases for screenshots, charts, and PDFs; and best practices for prompting visual inputs effectively."
 type: "manual"
 estimatedMinutes: 25
 thumbnail: "thumbnail.png"

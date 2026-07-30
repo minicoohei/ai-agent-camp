@@ -24,8 +24,22 @@ Notion API を使ったデータベース管理と GitHub Issue 連携の完成�
 ## 使い方
 
 ```bash
-# 環境変数設定
-export NOTION_API_KEY="secret_xxx"
+# 認証は OAuth 統一（事前に /setup-notion を完了しておくこと）
+#   - ncli login（ブラウザ OAuth）
+#   - Notion 公式 Hosted MCP（https://mcp.notion.com/mcp）
+#
+# REST API を直接叩く場合は、ncli が払い出す OAuth アクセストークンを
+# 環境変数 NOTION_ACCESS_TOKEN として渡す。取得手順:
+#
+#   # ncli の認証ストアからアクセストークンを取り出す
+#   export NOTION_ACCESS_TOKEN="$(ncli token)"
+#
+#   # 確認
+#   echo "${NOTION_ACCESS_TOKEN:0:6}..."  # 先頭数文字だけ表示してコピペ事故を防ぐ
+#
+# `ncli token` が利用できないバージョンを使っている場合は、
+# `ncli whoami --json` の出力やローカル設定ファイル（~/.config/ncli/config.json 等）から
+# アクセストークンを取り出すか、Notion Hosted MCP 経由で操作してください。
 export GITHUB_TOKEN="ghp_xxx"
 
 # 実行
@@ -47,7 +61,7 @@ python output/automation-script.py \
 
 ## 学習ポイント
 
-1. **Notion API 認証**: Integration Token とワークスペース接続
+1. **Notion 認証（OAuth 統一）**: ncli login と Notion 公式 Hosted MCP（API キーは使用しない）
 2. **データベーススキーマ設計**: プロパティタイプの選択と設定
 3. **ページ CRUD**: 作成・読取・更新・削除の全操作
 4. **フィルタクエリ**: AND/OR 条件、日付フィルタ、ソート

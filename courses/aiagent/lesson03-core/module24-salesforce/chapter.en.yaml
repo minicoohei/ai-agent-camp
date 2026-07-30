@@ -2,7 +2,7 @@
 id: "module24-salesforce"
 order: 24
 name: "Salesforce CLI Integration"
-description: "Install sf CLI and sign in via browser. Query with SOQL and bulk-update via CSV, all from the terminal with your AI agent."
+description: "Use sf CLI and browser login to retrieve Leads, Accounts, Opportunities, and activity history with SOQL, perform bulk CSV updates, and manage metadata from the terminal with an AI agent. Because CRM sits at the center of customer data and sales decisions, also define delegated operation scope, pre-update approvals, audit logs, duplicate and erroneous-update detection, and connections to marketing or email automation."
 type: "manual"
 estimatedMinutes: 60
 thumbnail: "thumbnail.png"
@@ -15,3 +15,5 @@ objectives:
 externalContent:
   manual: "https://ai-agent.camp/en/course/module-24?slideId=module-overview"
   slides: "https://ai-agent.camp/en/course/module-24?slideId=module-overview"
+prerequisites:
+  - "module17-marketing"

@@ -2,7 +2,7 @@
 id: "module01-banner"
 order: 1
 name: "Banner & Image Generation"
-description: "Auto-generate banners for SNS posts and press releases."
+description: "Learn how to use AI to generate banners and images for SNS posts, press releases, ads, YouTube, LINE, and web. The course covers banner-creator and nanobanana/Gemini Image Generation API, platform-specific size specifications, tone and color scheme prompting, batch generation, and editing workflows for real business output."
 type: "manual"
 estimatedMinutes: 60
 objectives:
