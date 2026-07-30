@@ -126,7 +126,7 @@ Democratizar los agentes de IA, transformandolos de "herramientas para especiali
   - Muestras de flujos de trabajo por area de negocio
 
 - **Curriculo integral**
-  - Fundamentos de IA (Foundation): 11 capitulos
+  - Fundamentos de IA (Foundation): 26 capitulos
   - Configuracion del entorno (Setup): 3 capitulos
   - 26 modulos principales disponibles (incluyendo Google Workspace, produccion de video, definicion de requisitos, marketing, etc.)
   - Metadatos YAML compatibles con CursorBootcamp (25 capitulos en total)
@@ -343,7 +343,7 @@ Reglas basicas para participantes:
 
 ### Fase 1: Foundation (Fundamentos de IA) - 5 horas
 
-Aprende los conceptos basicos de los agentes de IA. Comprension amplia en 11 capitulos.
+Aprende los conceptos basicos de los agentes de IA. Comprension amplia en 26 capitulos.
 
 | Capitulo | Contenido | Tiempo |
 |----------|-----------|--------|
@@ -445,11 +445,12 @@ En `courses/aiagent/` se encuentran los metadatos YAML para la plataforma Cursor
 
 | Leccion | Capitulos | Contenido |
 |---------|-----------|-----------|
-| **Lesson 01: Foundation** | 11 | Fundamentos de LLM, Token, Agent, Context Engineering, MCP, Multimodal, RAG, SubAgent, Alucinacion, Seguridad |
-| **Lesson 02: Setup** | 3 | Configuracion del entorno, extensiones, configuracion de API |
-| **Lesson 03: Core** | 12 | Banner a Marketing (todos los modulos principales) |
+| **Lesson 01: Foundation** | 26 | Fundamentos de LLM, Token, Agent, Context Engineering, MCP, Multimodal, RAG, SubAgent, Alucinacion, Seguridad, Medicion, Viabilidad |
+| **Lesson 02: Setup** | 6 | Configuracion del entorno, extensiones, configuracion de API, verificacion de seguridad, entorno remoto, base de conocimiento |
+| **Lesson 03: Core** | 26 | Banner a slide-forge (todos los modulos principales) |
+| **Lesson 04: Practice** | 4 | Diagramas, sesiones en paralelo, de la investigacion a la propuesta, operacion de PMO |
 
-Total: **26 capitulos**, todos con contenido practice/final.
+Total: **62 capitulos**.
 
 ---
 
@@ -465,8 +466,8 @@ ai-agent-camp/
 |       +-- course.en.yaml                # Definicion del curso (EN)
 |       +-- course.es.yaml                # Definicion del curso (ES)
 |       +-- cover.png                     # Imagen de portada del curso
-|       +-- lesson01-foundation/          # Fundamentos (24 capitulos)
-|       |   +-- ch00 ~ ch23/             # LLM, Token, Agent, MCP, RAG, Seguridad, medicion, etc.
+|       +-- lesson01-foundation/          # Fundamentos (26 capitulos)
+|       |   +-- ch00 ~ ch24/             # LLM, Token, Agent, MCP, RAG, Seguridad, medicion, viabilidad, etc.
 |       +-- lesson02-setup/              # Configuracion del entorno (3 capitulos)
 |       |   +-- ch01 ~ ch03/             # Entorno, extensiones, configuracion de API
 |       +-- lesson03-core/               # Habilidades principales (26 modulos disponibles)

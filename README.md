@@ -126,7 +126,7 @@ Democratize AI agents from "tools for specialists" to "tools everyone can use," 
   - Business-specific workflow samples
 
 - **Comprehensive Curriculum**
-  - AI Fundamentals (Foundation) - 11 chapters
+  - AI Fundamentals (Foundation) - 26 chapters
   - Environment Setup - 3 chapters
   - 26 available core modules (Google Workspace, video production, requirements definition, marketing, and more)
   - CursorBootcamp YAML metadata support (all chapters)
@@ -343,7 +343,7 @@ Basic rules for learners:
 
 ### Phase 1: Foundation (AI Fundamentals) - 5 hours
 
-Learn the basics of AI agents across 11 chapters.
+Learn the basics of AI agents across 26 chapters.
 
 | Chapter | Content | Study Time |
 |---------|---------|------------|
@@ -445,11 +445,12 @@ YAML metadata for the CursorBootcamp platform is stored in `courses/aiagent/`. E
 
 | Lesson | Chapters | Content |
 |--------|----------|---------|
-| **Lesson 01: Foundation** | 11 | LLM basics, Tokens, Agents, Context Engineering, MCP, Multimodal, RAG, SubAgents, Hallucination, Security |
-| **Lesson 02: Setup** | 3 | Environment setup, Extensions, API configuration |
-| **Lesson 03: Core** | 20 | Banner through Marketing (all core modules) |
+| **Lesson 01: Foundation** | 26 | LLM basics, Tokens, Agents, Context Engineering, MCP, Multimodal, RAG, SubAgents, Hallucination, Security, Observability, Feasibility |
+| **Lesson 02: Setup** | 6 | Environment setup, Extensions, API configuration, Security check, Remote environment, Knowledge base |
+| **Lesson 03: Core** | 26 | Banner through slide-forge (all core modules) |
+| **Lesson 04: Practice** | 4 | Diagram drill, parallel sessions, research-to-proposal deck, PMO operations |
 
-All chapters include practice/final content.
+62 chapters in total.
 
 ---
 
@@ -463,8 +464,8 @@ ai-agent-camp/
 │   └── aiagent/
 │       ├── course.yaml / .en.yaml / .es.yaml  # Course definition (multilingual)
 │       ├── cover.png                     # Course cover image
-│       ├── lesson01-foundation/          # Fundamentals (24 chapters)
-│       │   └── ch00 ~ ch23/             # LLM, Tokens, Agents, MCP, RAG, Security, Observability, etc.
+│       ├── lesson01-foundation/          # Fundamentals (26 chapters)
+│       │   └── ch00 ~ ch24/             # LLM, Tokens, Agents, MCP, RAG, Security, Observability, Feasibility, etc.
 │       ├── lesson02-setup/              # Environment setup (3 chapters)
 │       │   └── ch01 ~ ch03/             # Environment, Extensions, API setup
 │       ├── lesson03-core/               # Core skills (26 available modules)
