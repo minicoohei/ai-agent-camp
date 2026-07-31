@@ -1,0 +1,14 @@
+# Chapter 3: Lesson 3 Research → verification → proposal deck
+id: "ex03-research-deck"
+order: 3
+name: "Lesson 3 Research → verification → proposal deck"
+description: "Build a reproducible path from primary research through a Semantic INDEX and WBS to a proposal deck and judge results."
+type: "manual"
+estimatedMinutes: 45
+objectives:
+  - "Build from primary research to a proposal deck"
+  - "Create a Semantic INDEX and WBS in a reproducible flow"
+  - "Include judge results in the path"
+externalContent:
+  manual: "https://ai-agent.camp/en/course/lesson-3"
+  slides: "https://ai-agent.camp/en/course/lesson-3"

@@ -1,0 +1,14 @@
+# Chapter 24: Feasibility Assessment
+id: "ch24-feasibility"
+order: 24
+name: "Feasibility Assessment"
+description: "短い3ステップテストで、AIに任せられる範囲とCommand・Skill・SubAgentのどれで実装するかを判断します"
+type: "manual"
+estimatedMinutes: 25
+objectives:
+  - "AIに任せられる作業と任せられない作業を切り分けられる"
+  - "3ステップのテストで実現可能性を短時間で判断できる"
+  - "Command / Skill / SubAgent のどれで実装するかを選べる"
+externalContent:
+  manual: "https://ai-agent.camp/ja/course/foundation-16"
+  slides: "https://ai-agent.camp/ja/course/foundation-16"

@@ -1,0 +1,19 @@
+# Lección 4: Ejercicios prácticos
+id: "lesson04-practice"
+order: 4
+name: "Ejercicios prácticos"
+description: "Consolida el uso de agentes de IA con ejercicios prácticos: diagramas, sesiones en paralelo, de la investigación a la propuesta y operación periódica de PMO."
+estimatedMinutes: 120
+prerequisites:
+  - "lesson03-core"
+chapters:
+  - "ex01-diagram-exercise"
+  - "ex02-parallel-sessions"
+  - "ex03-research-deck"
+  - "ex04-pmo-ops"
+objectives:
+  - "Crear un diagrama de cuatro maneras: a ciegas, preguntando, planificando y ultracode"
+  - "Ejecutar tareas independientes en paralelo en varias sesiones"
+  - "Crear desde la investigación primaria hasta un deck de propuesta"
+  - "Combinar Commands, Skills y SubAgents"
+  - "Crear informes semanales verificables y QA de tres perspectivas"

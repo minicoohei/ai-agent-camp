@@ -126,10 +126,10 @@ AIエージェントを「専門家向けのツール」から「すべての職
 - 業務別のワークフローサンプル
 
 📚 **包括的なカリキュラム**
-- AI基礎（Foundation）11チャプター
-- 環境セットアップ（Setup）3チャプター
+- AI基礎（Foundation）26チャプター
+- 環境セットアップ（Setup）6チャプター
 - 提供中の26個のコアモジュール（Google Workspace・動画制作・要件定義・マーケティング等を含む）
-- CursorBootcamp YAML メタデータ対応（全25チャプター）
+- CursorBootcamp YAML メタデータ対応（全62チャプター）
 - 総学習時間：約24時間（演習込みで約30時間以上）
 
 🔒 **セキュリティとベストプラクティス**
@@ -343,7 +343,7 @@ codex
 
 ### フェーズ1: Foundation（AI基礎）- 5時間
 
-AI エージェントの基本を学びます。11チャプターで幅広く理解します。
+AI エージェントの基本を学びます。下記の学習パスは最初の11チャプター（約5時間）を扱います。Foundation レッスン全体では26チャプターあります。
 
 | チャプター | 内容 | 学習時間 |
 |-----------|------|---------|
@@ -441,15 +441,16 @@ Module 1 → Module 17 → Module 13 → Module 15 → Module 14 → Module 16
 
 ### CursorBootcamp YAML メタデータ
 
-`courses/aiagent/` に、CursorBootcamp プラットフォーム向けの YAML メタデータを配備しています。各チャプターには `practice/`（演習）と `final/`（最終課題）が含まれます。
+`courses/aiagent/` に、CursorBootcamp プラットフォーム向けの YAML メタデータを配備しています。一部のチャプターには `practice/`（演習）と `final/`（最終課題）が含まれます（web 教材へリンクするチャプターにはありません）。
 
 | レッスン | チャプター数 | 内容 |
 |---------|-----------|------|
-| **Lesson 01: Foundation** | 11 | LLM基礎、Token、Agent、Context Engineering、MCP、マルチモーダル、RAG、SubAgent、ハルシネーション、セキュリティ |
-| **Lesson 02: Setup** | 3 | 環境構築、拡張機能、API設定 |
-| **Lesson 03: Core** | 20 | Banner ～ Freee/MoneyForward（全コアモジュール対応） |
+| **Lesson 01: Foundation** | 26 | LLM基礎、Token、Agent、Context Engineering、MCP、マルチモーダル、RAG、SubAgent、ハルシネーション、セキュリティ、計測、実現可能性 |
+| **Lesson 02: Setup** | 6 | 環境構築、拡張機能、API設定、セキュリティ確認、リモート環境、ナレッジベース |
+| **Lesson 03: Core** | 26 | Banner ～ slide-forge（全コアモジュール対応） |
+| **Lesson 04: Practice** | 4 | 図解演習、並列セッション、調査→提案デッキ、PMO定例運用（`practice/` / `final/` ディレクトリなし） |
 
-合計 **34 チャプター**、全チャプターに practice/final コンテンツ付き。
+合計 **62 チャプター**。
 
 ---
 
@@ -465,12 +466,14 @@ ai-agent-camp/
 │       ├── course.en.yaml              # コース全体定義（英語）
 │       ├── course.es.yaml              # コース全体定義（スペイン語）
 │       ├── cover.png                   # コースカバー画像
-│       ├── lesson01-foundation/        # 基礎知識（11 チャプター）
-│       │   └── ch01 ~ ch11/           # LLM, Token, Agent, MCP, RAG, Security 等
-│       ├── lesson02-setup/             # 環境構築（3 チャプター）
-│       │   └── ch01 ~ ch03/           # 環境, 拡張機能, API設定
-│       └── lesson03-core/              # コアスキル（提供中 26 モジュール）
-│           └── module01 ~ module25, module29/ # Banner ～ slide-forge
+│       ├── lesson01-foundation/        # 基礎知識（26 チャプター）
+│       │   └── ch00 ~ ch24/           # LLM, Token, Agent, MCP, RAG, Security, 計測, 実現可能性 等
+│       ├── lesson02-setup/             # 環境構築（6 チャプター）
+│       │   └── ch01 ~ ch06/           # 環境, 拡張機能, API設定, セキュリティ確認, リモート環境, ナレッジベース
+│       ├── lesson03-core/              # コアスキル（提供中 26 モジュール）
+│       │   └── module01 ~ module25, module29/ # Banner ～ slide-forge
+│       └── lesson04-practice/          # 実践演習（4 チャプター）
+│           └── ex01 ~ ex04/           # 図解演習, 並列セッション, 提案デッキ, PMO定例
 │
 ├── 💻 .cursor/commands/                # docs/commands-reference.md を参照
 │   ├── lesson/                         # 学習用コマンド

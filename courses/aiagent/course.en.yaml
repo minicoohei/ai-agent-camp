@@ -9,7 +9,7 @@ description: >
   workflows across Slack, Google Workspace, GitHub Actions, Notion, email, marketing, and PM
   requirements definition — building a foundation for safe, continuous AI agent use.
 icon: "bot"
-version: "1.4.0"
+version: "1.5.0"
 author: "AI Brain Partners"
 audience: "Non-engineers (marketing, sales, planning, etc.)"
 estimatedHours: 50
@@ -31,4 +31,4 @@ tags:
   - "Business Automation"
   - "Efficiency"
 language: "en"
-lastUpdated: "2026-07-06"
+lastUpdated: "2026-07-31"

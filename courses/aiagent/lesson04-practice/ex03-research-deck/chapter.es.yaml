@@ -1,0 +1,14 @@
+# Capítulo 3: Lección 3 Investigación → verificación → propuesta
+id: "ex03-research-deck"
+order: 3
+name: "Lección 3 Investigación → verificación → propuesta"
+description: "Crea un camino reproducible desde fuentes primarias y Semantic INDEX hasta WBS, presentación y resultados del juez."
+type: "manual"
+estimatedMinutes: 45
+objectives:
+  - "Crear desde la investigación primaria hasta un deck de propuesta"
+  - "Crear Semantic INDEX y WBS en un flujo reproducible"
+  - "Incluir los resultados del juez en el camino"
+externalContent:
+  manual: "https://ai-agent.camp/es/course/lesson-3"
+  slides: "https://ai-agent.camp/es/course/lesson-3"
