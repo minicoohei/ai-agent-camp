@@ -61,7 +61,7 @@ moviepy>=1.0.3,<2.0.0
 # Testing
 pytest>=7.4.0,<9.0.0
 pytest-mock>=3.10.0,<4.0.0
-pytest-cov>=4.1.0,<6.0
+pytest-cov>=4.1.0,<8.0
 coverage>=7.0,<7.7
 
 # Marimo (Interactive Notebooks)
