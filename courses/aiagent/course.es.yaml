@@ -9,7 +9,7 @@ description: >
   diagramas, análisis de datos y flujos de trabajo en Slack, Google Workspace, GitHub Actions,
   Notion, correo, marketing y definición de requisitos de PM.
 icon: "bot"
-version: "1.4.0"
+version: "1.5.0"
 author: "AI Brain Partners"
 audience: "No ingenieros (marketing, ventas, planificación, etc.)"
 estimatedHours: 50
@@ -31,4 +31,4 @@ tags:
   - "Automatización empresarial"
   - "Eficiencia"
 language: "es"
-lastUpdated: "2026-07-29"
+lastUpdated: "2026-07-31"
