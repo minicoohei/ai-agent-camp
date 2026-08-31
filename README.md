@@ -126,11 +126,10 @@ Democratize AI agents from "tools for specialists" to "tools everyone can use," 
   - Business-specific workflow samples
 
 - **Comprehensive Curriculum**
-  - AI Fundamentals (Foundation) - 26 chapters
-  - Environment Setup - 6 chapters
-  - 26 available core modules (Google Workspace, video production, requirements definition, marketing, and more)
-  - CursorBootcamp YAML metadata support (62 chapters)
-  - Total study time: approx. 24 hours (30+ hours including exercises)
+  - Official web catalog at [ai-agent.camp](https://ai-agent.camp) (as of 2026-08-31): **47 modules**, FAQ study time about **50–60 hours**
+  - This repository: 26 Foundation chapters, 6 Setup chapters, 26 core modules (numbered 1–25 and 29; 26–28 unused), 4 practice chapters — **62** course chapters
+  - 138 runnable `start-*` lessons in [`courses/lessons.manifest.yaml`](courses/lessons.manifest.yaml)
+  - `course.yaml` estimates **50 hours**; the public FAQ uses 50–60 hours for the full web catalog
 
 - **Security and Best Practices**
   - API key management guidelines
@@ -154,7 +153,7 @@ Democratize AI agents from "tools for specialists" to "tools everyone can use," 
 - Python 3.9+
 - Internet connection
 - Cursor, Claude Code, or Codex available
-- **Windows users: WSL2 + Ubuntu is required.** Native Windows (PowerShell / cmd) is not supported. See [docs/terminal-guide.md](docs/terminal-guide.md) for WSL2 setup.
+- **Windows and macOS are both supported.** Some features (MCP integrations, for example) can differ by OS. For CLI-heavy workflows in this repository, [docs/terminal-guide.md](docs/terminal-guide.md) documents WSL2 + Ubuntu as a recommended Windows path.
 
 > **Which tool should I choose?** Run `/start-0-8` (Tool Selection Guide) to compare Cursor / Claude Code / Codex and find the best fit.
 
@@ -301,9 +300,9 @@ codex
 
 > **Want a guided, structured learning experience?**
 >
-> [AI Agent Camp](https://ai-agent.camp) offers a comprehensive web-based course with 28 modules, 100+ lessons, and 70+ practical skills — including a 24/7 AI tutor and a dedicated desktop app for automated environment setup.
+> [AI Agent Camp](https://ai-agent.camp) is the official web course. As of 2026-08-31 the public catalog lists **47 modules**, and the FAQ estimates about **50–60 hours** to finish. A 24/7 AI tutor and a desktop app for environment setup are available on the site.
 >
-> The web course covers the same curriculum as this repository, plus additional content and interactive features designed for non-engineers.
+> This repository is the Cursor / Claude Code / Codex workspace for the same curriculum. It ships **138** `start-*` lessons (see `courses/lessons.manifest.yaml`). Copilot / ACP is not a first-class track here.
 >
 > 👉 **[Start learning at ai-agent.camp](https://ai-agent.camp)**
 
@@ -386,9 +385,9 @@ Prepare to actually use AI agents.
 
 ---
 
-### Phase 3: Core Modules - 17.5 hours
+### Phase 3: Core Modules
 
-Acquire skills you can use in real work.
+Acquire skills you can use in real work. Lesson counts below match `courses/lessons.manifest.yaml` (modules 26–28 are unused).
 
 | # | Module | Key Skills | Lessons | Difficulty |
 |---|--------|------------|---------|------------|
@@ -397,23 +396,29 @@ Acquire skills you can use in real work.
 | **3** | **Tutorials** | screenshot-analyzer, tutorial-generator | 6 | ★★ |
 | **4** | **Google Workspace** | gogcli, Gmail, Calendar, Drive, Sheets | 7 | ★★★ |
 | **5** | **PPTX Analysis & Editing** | pptx-analyzer, pptx-creator, pptx-converter | 2 | ★★ |
-| **6** | **Agent Development** | Commands/Skills creation, customization | 5 | ★★★★ |
+| **6** | **Agent Development** | Commands/Skills creation, customization | 9 | ★★★★ |
 | **7** | **Skills & Commands** | Skill design, SKILL.md implementation, testing, design patterns | 8 | ★★★★ |
 | **8** | **Data Analysis & EDA** | data-analyst, BigQuery, Marimo | 4 | ★★★ |
-| **9** | **Slack Integration** | slack-search, check-inbox, task-manager | 2 | ★ |
-| **10** | **GAS Automation** | gas-clasp-ops, Calendar, Sheets | 3 | ★★★ |
-| **11** | **GitHub Actions** | Workflow, Secrets, CI/CD | 2 | ★★★ |
+| **9** | **Slack Integration** | slack-search, check-inbox, task-manager | 3 | ★ |
+| **10** | **GAS Automation** | gas-clasp-ops, Calendar, Sheets | 4 | ★★★ |
+| **11** | **GitHub Actions** | Workflow, Secrets, CI/CD | 5 | ★★★ |
 | **12** | **Notion Integration** | Notion MCP, DB operations, ncli | 6 | ★★ |
 | **13** | **LP/HP Creation** | Messaging, wireframes, Pencil design, HTML, Vercel deploy | 5 | ★★★ |
 | **14** | **Article Writing** | article-writer, copy-editing, fact-checker | 7 | ★★★ |
-| **15** | **Video Production** | Kling, HeyGen, Veo, Remotion, MV | 8 | ★★★ |
+| **15** | **Video Production** | Kling, HeyGen, Veo, Remotion, MV | 13 | ★★★ |
 | **16** | **Email/LINE Automation** | email-sequence, Resend, LINE API | 8 | ★★★ |
-| **17** | **Marketing** | X posts, SEO research, copywriting, design mocks | 4 | ★★★ |
+| **17** | **Marketing** | X posts, SEO research, copywriting, design mocks | 5 | ★★★ |
 | **18** | **Requirements & System Dev** | pm-toolkit, test-planner, Notion integration | 20 | ★★★★★ |
-| **19** | **Microsoft Office (Outlook)** | Outlook MCP integration | 1 | ★★ |
+| **19** | **Microsoft Office (Outlook)** | Outlook MCP integration | 2 | ★★ |
 | **20** | **Freee/MoneyForward** | Freee MCP accounting data operations | 1 | ★★ |
+| **21** | **Figma** | Figma MCP | 1 | ★★ |
+| **22** | **Discord** | Discord Bot / channel operations | 1 | ★★ |
+| **23** | **LINE** | LINE official account | 1 | ★★ |
+| **24** | **Salesforce** | Salesforce CLI | 1 | ★★ |
+| **25** | **Google Ads** | Google Ads API | 1 | ★★ |
+| **29** | **slide-forge** | Slide generation and revision | 4 | ★★ |
 
-**Total study time: approx. 24 hours (30+ hours including exercises and hands-on tasks)**
+**This repository:** 138 `start-*` lessons (including Module 0 setup). **Web course catalog** ([ai-agent.camp](https://ai-agent.camp), as of 2026-08-31): 47 modules; FAQ study time about 50–60 hours.
 
 ### Learning Options
 
@@ -846,7 +851,7 @@ A: No. You can study in any order you like. However, we recommend completing the
 
 **Q: How long does the course take?**
 
-A: The lecture content takes about 24 hours. Including exercises and hands-on tasks, expect 30+ hours. At 2-3 hours per day, you can complete it in about 2 weeks.
+A: The official web course FAQ on [ai-agent.camp](https://ai-agent.camp) (as of 2026-08-31) estimates about **50–60 hours** for the full 47-module catalog. This repository's `course.yaml` estimates 50 hours. At about 1 hour per day, that is 1–2 months; at 4 hours per day, about 2 weeks. You can also start from the modules you need.
 
 **Q: Is there a certificate of completion?**
 

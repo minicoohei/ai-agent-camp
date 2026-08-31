@@ -241,7 +241,7 @@ Start the first lesson (Banner Generation Intro) with /start-1-1!
 }
 ```
 
-(web_course -> Guide: "You can access the web course at https://ai-agent.camp. It includes 28 modules, 100+ lessons, 70+ practical skills, plus an AI tutor and dedicated desktop app.")
+(web_course -> Guide: "https://ai-agent.camp is the official web course. As of 2026-08-31 the public catalog lists 47 modules, and the FAQ estimates about 50–60 hours, plus an AI tutor and dedicated desktop app.")
 
 (start_lesson -> Guide to /start-1-1)
 (overview -> Guide to /overview)

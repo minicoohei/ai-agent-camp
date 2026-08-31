@@ -126,11 +126,10 @@ AIエージェントを「専門家向けのツール」から「すべての職
 - 業務別のワークフローサンプル
 
 📚 **包括的なカリキュラム**
-- AI基礎（Foundation）26チャプター
-- 環境セットアップ（Setup）6チャプター
-- 提供中の26個のコアモジュール（Google Workspace・動画制作・要件定義・マーケティング等を含む）
-- CursorBootcamp YAML メタデータ対応（全62チャプター）
-- 総学習時間：約24時間（演習込みで約30時間以上）
+- 公式Webカタログ [ai-agent.camp](https://ai-agent.camp)（2026-08-31 時点）：**47モジュール**、FAQ の修了目安は約 **50〜60時間**
+- このリポジトリ：Foundation 26チャプター、Setup 6チャプター、コアモジュール 26個（番号は 1–25 と 29。26–28 は欠番）、演習 4チャプター — 合計 **62** チャプター
+- [`courses/lessons.manifest.yaml`](courses/lessons.manifest.yaml) の実行可能な `start-*` レッスンは **138** 件
+- `course.yaml` の見積もりは **50時間**。公開 FAQ は Web カタログ全体を 50〜60時間としています
 
 🔒 **セキュリティとベストプラクティス**
 - API キー管理のガイドライン
@@ -154,7 +153,7 @@ AIエージェントを「専門家向けのツール」から「すべての職
 - Python 3.9 以上
 - インターネット接続
 - Cursor、Claude Code、または Codex が利用可能
-- **Windows ユーザーは WSL2 + Ubuntu が必須です。** Windows ネイティブ（PowerShell / cmd）はサポート対象外です。WSL2 のセットアップは [docs/terminal-guide.md](docs/terminal-guide.md) を参照してください。
+- **Windows と macOS のどちらでも受講できます。** MCP 連携など、一部機能は OS で差が出ることがあります。このリポジトリの CLI 作業では、[docs/terminal-guide.md](docs/terminal-guide.md) が Windows 向けに WSL2 + Ubuntu を推奨手順として案内しています。
 
 > **どのツールを選べばいい？** `/start-0-8`（ツール選択ガイド）で Cursor / Claude Code / Codex の比較と選び方を確認できます。
 
@@ -301,9 +300,9 @@ codex
 
 > **体系的に学びたい方へ**
 >
-> [AI Agent Camp](https://ai-agent.camp) では、28モジュール、100以上のレッスン、70以上の実務スキルを備えたWeb版コースを提供しています。24/7 AIチューターや環境構築を自動化する専用デスクトップアプリも利用可能です。
+> [AI Agent Camp](https://ai-agent.camp) が公式の Web コースです。2026-08-31 時点の公開カタログは **47モジュール**、FAQ の修了目安は約 **50〜60時間** です。サイトでは 24/7 AIチューターと環境構築用デスクトップアプリも利用できます。
 >
-> このリポジトリと同じカリキュラムに加え、非エンジニア向けのインタラクティブな機能や追加コンテンツが含まれています。
+> このリポジトリは Cursor / Claude Code / Codex 向けのワークスペースです。`start-*` レッスンは **138** 件（`courses/lessons.manifest.yaml`）です。Copilot / ACP はこのリポジトリの第一級トラックではありません。
 >
 > 👉 **[ai-agent.camp で学習を始める](https://ai-agent.camp)**
 
@@ -386,9 +385,9 @@ AIエージェントを実際に使うための準備です。
 
 ---
 
-### フェーズ3: Core Modules（コアスキル）- 17.5時間
+### フェーズ3: Core Modules（コアスキル）
 
-実際の業務で使えるスキルを習得します。
+実際の業務で使えるスキルを習得します。レッスン数は `courses/lessons.manifest.yaml` に合わせています（26–28 は欠番）。
 
 | # | モジュール | 主な Skills | レッスン数 | 難易度 |
 |---|-----------|-----------|---------|--------|
@@ -397,23 +396,29 @@ AIエージェントを実際に使うための準備です。
 | **3** | **チュートリアル** | screenshot-analyzer, tutorial-generator | 6 | ⭐⭐ |
 | **4** | **Google Workspace** | gogcli, Gmail, Calendar, Drive, Sheets | 7 | ⭐⭐⭐ |
 | **5** | **PPTX 解析・編集** | pptx-analyzer, pptx-creator, pptx-converter | 2 | ⭐⭐ |
-| **6** | **エージェント開発** | Commands/Skills 作成、カスタマイズ | 5 | ⭐⭐⭐⭐ |
+| **6** | **エージェント開発** | Commands/Skills 作成、カスタマイズ | 9 | ⭐⭐⭐⭐ |
 | **7** | **Skill/Commands** | Skill設計、SKILL.md実装、テスト、デザインパターン | 8 | ⭐⭐⭐⭐ |
 | **8** | **データ分析・EDA** | data-analyst, BigQuery, Marimo | 4 | ⭐⭐⭐ |
-| **9** | **Slack 連携** | slack-search, check-inbox, task-manager | 2 | ⭐ |
-| **10** | **GAS 自動化** | gas-clasp-ops, Calendar, Sheets | 3 | ⭐⭐⭐ |
-| **11** | **GitHub Actions** | Workflow, Secrets, CI/CD | 2 | ⭐⭐⭐ |
+| **9** | **Slack 連携** | slack-search, check-inbox, task-manager | 3 | ⭐ |
+| **10** | **GAS 自動化** | gas-clasp-ops, Calendar, Sheets | 4 | ⭐⭐⭐ |
+| **11** | **GitHub Actions** | Workflow, Secrets, CI/CD | 5 | ⭐⭐⭐ |
 | **12** | **Notion 連携** | Notion MCP, DB操作, ncli | 6 | ⭐⭐ |
 | **13** | **LP/HP 制作** | 訴求整理、WF作成、Pencilデザイン、HTML実装、Vercelデプロイ | 5 | ⭐⭐⭐ |
 | **14** | **記事制作** | article-writer, copy-editing, fact-checker | 7 | ⭐⭐⭐ |
-| **15** | **動画制作** | Kling, HeyGen, Veo, Remotion, MV | 8 | ⭐⭐⭐ |
+| **15** | **動画制作** | Kling, HeyGen, Veo, Remotion, MV | 13 | ⭐⭐⭐ |
 | **16** | **メール/LINE 自動化** | email-sequence, Resend, LINE API | 8 | ⭐⭐⭐ |
-| **17** | **マーケティング** | X投稿、SEO調査、コピーライティング、デザインモック | 4 | ⭐⭐⭐ |
+| **17** | **マーケティング** | X投稿、SEO調査、コピーライティング、デザインモック | 5 | ⭐⭐⭐ |
 | **18** | **要件定義/システム開発** | pm-toolkit, test-planner, Notion連携 | 20 | ⭐⭐⭐⭐⭐ |
-| **19** | **Microsoft Office (Outlook)** | Outlook MCP 連携 | 1 | ⭐⭐ |
+| **19** | **Microsoft Office (Outlook)** | Outlook MCP 連携 | 2 | ⭐⭐ |
 | **20** | **Freee/MoneyForward** | Freee MCP 会計データ操作 | 1 | ⭐⭐ |
+| **21** | **Figma** | Figma MCP | 1 | ⭐⭐ |
+| **22** | **Discord** | Discord Bot / チャンネル操作 | 1 | ⭐⭐ |
+| **23** | **LINE** | LINE 公式アカウント | 1 | ⭐⭐ |
+| **24** | **Salesforce** | Salesforce CLI | 1 | ⭐⭐ |
+| **25** | **Google Ads** | Google Ads API | 1 | ⭐⭐ |
+| **29** | **slide-forge** | スライド生成・改訂 | 4 | ⭐⭐ |
 
-**総学習時間: 約 24 時間（演習・実践課題を含めると約 30 時間以上）**
+**このリポジトリ:** `start-*` レッスン 138 件（Module 0 のセットアップを含む）。**Web コースの公開カタログ**（[ai-agent.camp](https://ai-agent.camp)、2026-08-31 時点）: 47モジュール、FAQ の修了目安は約 50〜60時間。
 
 ### 学習オプション
 
@@ -850,7 +855,7 @@ A: いいえ。興味のある順に学習できます。ただし、Foundation 
 
 **Q: 学習にかかる時間は？**
 
-A: 講義部分で約 24 時間、演習・実践課題を含めると約 30 時間以上です。1 日 2-3 時間で 2 週間程度で完了できます。
+A: 公式 Web コースの FAQ（[ai-agent.camp](https://ai-agent.camp)、2026-08-31 時点）では、47モジュール全体の修了目安を約 **50〜60時間** としています。このリポジトリの `course.yaml` の見積もりは 50時間です。1日1時間なら 1〜2ヶ月、1日4時間なら約2週間が目安です。必要なモジュールから始めることもできます。
 
 **Q: 修了証はもらえるか？**
 

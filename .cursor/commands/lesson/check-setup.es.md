@@ -241,7 +241,7 @@ Comience la primera leccion (Introduccion a generacion de banners) con /start-1-
 }
 ```
 
-(web_course -> Guiar: "Puede acceder al curso web en https://ai-agent.camp. Incluye 28 modulos, 100+ lecciones, 70+ habilidades prácticas, además de un tutor de IA y una aplicación de escritorio dedicada.")
+(web_course -> Guiar: "https://ai-agent.camp es el curso web oficial. Al 2026-08-31 el catalogo publico lista 47 modulos, y el FAQ estima unas 50–60 horas, además de un tutor de IA y una aplicación de escritorio dedicada.")
 
 (start_lesson -> Guiar a /start-1-1)
 (overview -> Guiar a /overview)
