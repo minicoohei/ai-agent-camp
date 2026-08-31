@@ -126,11 +126,10 @@ Democratizar los agentes de IA, transformandolos de "herramientas para especiali
   - Muestras de flujos de trabajo por area de negocio
 
 - **Curriculo integral**
-  - Fundamentos de IA (Foundation): 26 capitulos
-  - Configuracion del entorno (Setup): 6 capitulos
-  - 26 modulos principales disponibles (incluyendo Google Workspace, produccion de video, definicion de requisitos, marketing, etc.)
-  - Metadatos YAML compatibles con CursorBootcamp (62 capitulos en total)
-  - Tiempo total de aprendizaje: aprox. 24 horas (mas de 30 horas con ejercicios)
+  - Catalogo web oficial en [ai-agent.camp](https://ai-agent.camp) (al 2026-08-31): **47 modulos**, FAQ de unas **50–60 horas**
+  - Este repositorio: 26 capitulos de Foundation, 6 de Setup, 26 modulos principales (numerados 1–25 y 29; 26–28 no se usan), 4 capitulos de practica — **62** capitulos
+  - 138 lecciones ejecutables `start-*` en [`courses/lessons.manifest.yaml`](courses/lessons.manifest.yaml)
+  - `course.yaml` estima **50 horas**; el FAQ publico usa 50–60 horas para el catalogo web completo
 
 - **Seguridad y mejores practicas**
   - Directrices de gestion de claves API
@@ -154,7 +153,7 @@ Democratizar los agentes de IA, transformandolos de "herramientas para especiali
 - Python 3.9 o superior
 - Conexion a internet
 - Cursor, Claude Code o Codex disponible
-- **Usuarios de Windows: se requiere WSL2 + Ubuntu.** Windows nativo (PowerShell / cmd) no está soportado. Consulte [docs/terminal-guide.md](docs/terminal-guide.md) para la configuración de WSL2.
+- **Windows y macOS estan soportados.** Algunas funciones (por ejemplo, integraciones MCP) pueden diferir segun el SO. Para flujos CLI de este repositorio, [docs/terminal-guide.md](docs/terminal-guide.md) documenta WSL2 + Ubuntu como ruta recomendada en Windows.
 
 > **Cual herramienta elegir?** Con `/start-0-8` (Guia de seleccion de herramientas) puedes comparar Cursor / Claude Code / Codex y ver como elegir.
 
@@ -301,9 +300,9 @@ codex
 
 > **Quieres una experiencia de aprendizaje guiada y estructurada?**
 >
-> [AI Agent Camp](https://ai-agent.camp) ofrece un curso web completo con 28 modulos, mas de 100 lecciones y mas de 70 habilidades practicas, incluyendo un tutor de IA 24/7 y una aplicacion de escritorio dedicada para la configuracion automatica del entorno.
+> [AI Agent Camp](https://ai-agent.camp) es el curso web oficial. Al 2026-08-31 el catalogo publico lista **47 modulos**, y el FAQ estima unas **50–60 horas** para completarlo. El sitio incluye un tutor de IA 24/7 y una aplicacion de escritorio para la configuracion del entorno.
 >
-> El curso web cubre el mismo plan de estudios que este repositorio, ademas de contenido adicional y funciones interactivas disenadas para no ingenieros.
+> Este repositorio es el espacio de trabajo para Cursor / Claude Code / Codex del mismo plan de estudios. Incluye **138** lecciones `start-*` (ver `courses/lessons.manifest.yaml`). Copilot / ACP no es una pista de primer nivel aqui.
 >
 > **[Comienza a aprender en ai-agent.camp](https://ai-agent.camp)**
 
@@ -386,9 +385,9 @@ Preparacion para usar agentes de IA en la practica.
 
 ---
 
-### Fase 3: Core Modules (Habilidades Principales) - 17.5 horas
+### Fase 3: Core Modules (Habilidades Principales)
 
-Adquiere habilidades que puedes usar en el trabajo real.
+Adquiere habilidades que puedes usar en el trabajo real. El recuento de lecciones coincide con `courses/lessons.manifest.yaml` (los modulos 26–28 no se usan).
 
 | # | Modulo | Skills principales | Lecciones | Dificultad |
 |---|--------|-------------------|-----------|------------|
@@ -397,23 +396,29 @@ Adquiere habilidades que puedes usar en el trabajo real.
 | **3** | **Tutoriales** | screenshot-analyzer, tutorial-generator | 6 | ** |
 | **4** | **Google Workspace** | gogcli, Gmail, Calendar, Drive, Sheets | 7 | *** |
 | **5** | **Analisis y edicion de PPTX** | pptx-analyzer, pptx-creator, pptx-converter | 2 | ** |
-| **6** | **Desarrollo de agentes** | Creacion de Commands/Skills, personalizacion | 5 | **** |
+| **6** | **Desarrollo de agentes** | Creacion de Commands/Skills, personalizacion | 9 | **** |
 | **7** | **Skill/Commands** | Diseno de Skills, implementacion de SKILL.md, pruebas, patrones de diseno | 8 | **** |
 | **8** | **Analisis de datos y EDA** | data-analyst, BigQuery, Marimo | 4 | *** |
-| **9** | **Integracion con Slack** | slack-search, check-inbox, task-manager | 2 | * |
-| **10** | **Automatizacion con GAS** | gas-clasp-ops, Calendar, Sheets | 3 | *** |
-| **11** | **GitHub Actions** | Workflow, Secrets, CI/CD | 2 | *** |
+| **9** | **Integracion con Slack** | slack-search, check-inbox, task-manager | 3 | * |
+| **10** | **Automatizacion con GAS** | gas-clasp-ops, Calendar, Sheets | 4 | *** |
+| **11** | **GitHub Actions** | Workflow, Secrets, CI/CD | 5 | *** |
 | **12** | **Integracion con Notion** | Notion MCP, operaciones de BD, ncli | 6 | ** |
 | **13** | **Creacion de LP/HP** | Propuestas, wireframes, diseno con Pencil, implementacion HTML, despliegue en Vercel | 5 | *** |
 | **14** | **Creacion de articulos** | article-writer, copy-editing, fact-checker | 7 | *** |
-| **15** | **Produccion de video** | Kling, HeyGen, Veo, Remotion, MV | 8 | *** |
+| **15** | **Produccion de video** | Kling, HeyGen, Veo, Remotion, MV | 13 | *** |
 | **16** | **Automatizacion de email/LINE** | email-sequence, Resend, LINE API | 8 | *** |
-| **17** | **Marketing** | Publicaciones en X, investigacion SEO, copywriting, maquetas de diseno | 4 | *** |
+| **17** | **Marketing** | Publicaciones en X, investigacion SEO, copywriting, maquetas de diseno | 5 | *** |
 | **18** | **Definicion de requisitos/Desarrollo de sistemas** | pm-toolkit, test-planner, integracion con Notion | 20 | ***** |
-| **19** | **Microsoft Office (Outlook)** | Integracion con Outlook MCP | 1 | ** |
+| **19** | **Microsoft Office (Outlook)** | Integracion con Outlook MCP | 2 | ** |
 | **20** | **Freee/MoneyForward** | Operaciones contables con Freee MCP | 1 | ** |
+| **21** | **Figma** | Figma MCP | 1 | ** |
+| **22** | **Discord** | Bot de Discord / canales | 1 | ** |
+| **23** | **LINE** | Cuenta oficial de LINE | 1 | ** |
+| **24** | **Salesforce** | Salesforce CLI | 1 | ** |
+| **25** | **Google Ads** | Google Ads API | 1 | ** |
+| **29** | **slide-forge** | Generacion y revision de diapositivas | 4 | ** |
 
-**Tiempo total de aprendizaje: aprox. 24 horas (mas de 30 horas con ejercicios y practicas)**
+**Este repositorio:** 138 lecciones `start-*` (incluido el setup del Modulo 0). **Catalogo del curso web** ([ai-agent.camp](https://ai-agent.camp), al 2026-08-31): 47 modulos; el FAQ estima unas 50–60 horas.
 
 ### Opciones de Aprendizaje
 
@@ -843,7 +848,7 @@ R: No. Puedes aprender en el orden que te interese. Sin embargo, se recomienda c
 
 **P: Cuanto tiempo toma el aprendizaje?**
 
-R: La parte teorica toma aproximadamente 24 horas, y con ejercicios y practicas mas de 30 horas. Con 2-3 horas diarias, se puede completar en unas 2 semanas.
+R: El FAQ del curso web oficial en [ai-agent.camp](https://ai-agent.camp) (al 2026-08-31) estima unas **50–60 horas** para el catalogo completo de 47 modulos. `course.yaml` de este repositorio estima 50 horas. A 1 hora al dia son 1–2 meses; a 4 horas al dia, unas 2 semanas. Tambien puedes empezar por los modulos que necesites.
 
 **P: Se obtiene un certificado de finalizacion?**
 
