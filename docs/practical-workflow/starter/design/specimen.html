@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="架空の見積確認を題材にしたデザイン部品と4状態の静的見本">
+  <title>見積確認：部品と状態の見本</title>
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--color-text); background: var(--color-background);
+      font: var(--font-body)/var(--line-height) system-ui, sans-serif; }
+    main { max-width: 1040px; margin: auto; padding: var(--space-lg); }
+    h1 { font-size: var(--font-heading); margin: 0 0 var(--space-sm); }
+    h2 { font-size: 20px; margin: 0 0 var(--space-md); }
+    p { margin: 0 0 var(--space-md); overflow-wrap: anywhere; }
+    .intro { color: var(--color-muted); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-md); }
+    .card { min-width: 0; padding: var(--space-lg); background: var(--color-surface);
+      border: 1px solid var(--color-border); border-radius: var(--radius-card); }
+    .status { display: inline-block; padding: var(--space-sm); border: 1px solid var(--color-border);
+      border-radius: var(--radius-card); margin-bottom: var(--space-md); }
+    .status-error { color: var(--color-error); border-color: var(--color-error); }
+    .amount { font-weight: 700; font-variant-numeric: tabular-nums; }
+    button { font: inherit; border: 0; padding: var(--space-sm) var(--space-md);
+      border-radius: var(--radius-card); color: var(--color-surface); background: var(--color-primary);
+      max-width: 100%; white-space: normal; }
+    button:disabled { opacity: .55; }
+    button:focus-visible { outline: 3px solid var(--color-text); outline-offset: 3px; }
+    .note { margin-top: var(--space-lg); color: var(--color-muted); }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } main { padding: var(--space-md); } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>見積確認の共通部品</h1>
+    <p class="intro">青空商事（架空）の演習用。ボタンは見た目とフォーカスの確認用で、操作機能は未実装です。</p>
+    <div class="grid">
+      <section class="card" data-state="normal" aria-labelledby="normal-title">
+        <h2 id="normal-title">通常</h2>
+        <span class="status">確認待ち</span>
+        <p>Q-001・青空商事（架空）<br><span class="amount">提示額 60,500円</span></p>
+        <button type="button" aria-describedby="mock-note">見積を見る（見本）</button>
+      </section>
+      <section class="card" data-state="empty" aria-labelledby="empty-title">
+        <h2 id="empty-title">空</h2>
+        <span class="status">0件</span>
+        <p>見積はまだありません。新しい見積を追加すると、ここに表示されます。</p>
+        <button type="button" aria-describedby="mock-note">新規作成（見本）</button>
+      </section>
+      <section class="card" data-state="loading" aria-labelledby="loading-title">
+        <h2 id="loading-title">処理中</h2>
+        <span class="status">計算中です</span>
+        <p>結果が表示されるまでお待ちください。この見本は自動更新しません。</p>
+        <button type="button" disabled>計算中（見本）</button>
+      </section>
+      <section class="card" data-state="error" aria-labelledby="error-title">
+        <h2 id="error-title">失敗</h2>
+        <span class="status status-error">計算できませんでした</span>
+        <p>実アプリでは入力を保持し、内容を確認して再試行できるようにします。</p>
+        <button type="button" aria-describedby="mock-note">再試行（見本）</button>
+      </section>
+    </div>
+    <p class="note" id="mock-note">これは静的見本です。計算・保存・送信の成功は、別途機能テストで確認してください。</p>
+  </main>
+</body>
+</html>
