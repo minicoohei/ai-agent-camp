@@ -44,7 +44,7 @@ AIとターミナルの作業フォルダは `camp-practice` のままです。�
 AIに依頼します。
 
 ```text
-design/tokens.css と specimen.html を読み、見積一覧と詳細に使う共通部品の仕様を
+design/tokens.css と design/specimen.html を読み、見積一覧と詳細に使う共通部品の仕様を
 design/components.md に書いてください。部品名、役割、使うトークン、表示する情報を含めてください。
 通常・空・処理中・失敗の4状態について、文言、できる操作、できない操作を表にしてください。
 現状は静的見本なので、未実装の計算や送信を実装済みとは書かないでください。
@@ -66,10 +66,10 @@ design/components.md に書いてください。部品名、役割、使うト�
 まずAIに3ファイルを読ませ、作る画面・再利用する部品・確認する状態を短く説明してもらいます。認識が合っていることを確かめてから、次を依頼します。
 
 ```text
-design/decisions.md、components.md、tokens.css に従い、架空の見積一覧と詳細の
+design/decisions.md、design/components.md、design/tokens.css に従い、架空の見積一覧と詳細の
 静的プロトタイプを design/prototype.html に作成してください。
 cases.json の2件だけを使用し、全て架空であることを明記してください。
-tokens.css を共通参照し、カードや状態ラベルは共通CSSクラスを使ってください。
+design/tokens.css を共通参照し、カードや状態ラベルは共通CSSクラスを使ってください。
 4状態を確認できる見本を並べ、未実装の操作はそう表示してください。外部通信は不要です。
 ```
 
