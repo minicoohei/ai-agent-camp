@@ -70,7 +70,7 @@ git commit -m "Fix last item and discount boundary"
 git diff main...HEAD -- quote.py
 ```
 
-オンライン実習をしない場合は、ここで `evidence/pr-draft.md` に以下のPR本文を保存します。ローカル差分確認まで完了、PRとActionsは未実施と記録してください。
+オンライン実習をしない場合は、ここで `evidence/pr-draft.md` に手順3のコードブロックにあるPR本文を保存します。ローカル差分確認まで完了、PRとActionsは未実施と記録してください。
 
 ## 手順3：自分のPrivateリポジトリでPRを開く（10分）
 
