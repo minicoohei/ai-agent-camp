@@ -2,6 +2,8 @@
 
 # ai-agent-camp
 
+追加演習： [GitHub・Skills・反復ループ・デザインシステムを実務手順で学ぶ](docs/practical-workflow/README.md)。架空の見積データを使い、初心者向けの4演習を既存章とつないで進められます。
+
 **非エンジニア向けAIエージェント研修 - Claude Code / Cursor / Codex 活用完全ガイド**
 
 [![GitHub](https://img.shields.io/badge/GitHub-minicoohei%2Faiagent--base-181717?style=flat&logo=github)](https://github.com/minicoohei/ai-agent-camp)

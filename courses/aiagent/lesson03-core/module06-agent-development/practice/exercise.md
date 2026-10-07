@@ -6,6 +6,8 @@
 
 Claude Code のカスタム Agent、Skill、Command を自分で開発する方法を学びます。日報生成コマンドとコードレビュースキルという2つの実用的なツールを作成し、Claude Code の拡張方法を体験します。
 
+作ったSkillを別案件でも使えるか確かめるには、[追加演習：Skillsを別の入力へ再利用する](../../../../../docs/practical-workflow/02-skills.md)へ進みます。架空の見積2件を使い、入力と手順の分離、根拠の確認、共通手順の改善を30分で体験できます。Codex・Claude Code・Cursorの共通手順です。
+
 ## 前提条件
 
 - Claude Code が使えること

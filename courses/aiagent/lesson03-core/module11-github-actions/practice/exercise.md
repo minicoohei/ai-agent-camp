@@ -8,6 +8,8 @@ GitHub Actions を使って CI/CD パイプライン、定期実行ジョブ、P
 
 ## 前提条件
 
+GitやPRの操作が初めての方は、先に[追加演習：GitHubで変更をレビューする](../../../../../docs/practical-workflow/01-github.md)を行ってください。自分のPrivateリポジトリで最初のPRを作り、固定テストとActionsのログを確認します。以下のCI/CD・定期実行・Secretsの内容へ進むための45分の準備演習です。
+
 - GitHub アカウントがあり、リポジトリの作成・管理ができること
 - Git の基本操作（push, pull, branch）が使えること
 - YAML の基本文法を理解していること
