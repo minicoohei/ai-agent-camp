@@ -77,8 +77,8 @@ def test_anthropic():
                 "content-type": "application/json",
             },
             json={
-                "model": "claude-sonnet-4-20250514",
-                "max_tokens": 10,
+                "model": "claude-sonnet-5-5",
+                "max_tokens": 1024,
                 "messages": [{"role": "user", "content": "ping"}],
             },
             timeout=15
